@@ -35,14 +35,14 @@
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
         <li><a href="#carouselSection">Home</a></li>
-        <li><a href="#carouselSection">News</a></li>
-        <li><a href="#">Yayasan</a></li>
+        <li><a href="#newsServices">News</a></li>
+        <li><a href="#yayasanSection">Yayasan</a></li>
         <li><a href="#portfolioSection">TK</a></li>
         <li><a href="#meetourteamSection">SD</a></li>
         <li><a href="#recentpostSection">SMP</a></li>
         <li><a href="#contactSection">SMA</a></li>
-        <li><a href="#">DKM</a></li>
-        <li><a href="#">Informasi</a></li>
+        <li><a href="#dkmSection">DKM</a></li>
+        <li><a href="#informasiServices">Informasi</a></li>
         <li><a href="{{ url('login') }}">Sign In</a></li>
 
       </ul>
@@ -51,79 +51,61 @@
 </nav>
     </div>
 
-<!-- <div class="container">
-    <div class="span3 logo"><img style="height:80px;width:80px;" src="{{ url('http://alfajarbekasi.or.id/ppdb/images/logo.png') }}"> Al - Fajar</div>
-
-        <div class="navbar">
-
-
-            <div class="nav-collapse">
-                <div>
-
-                <ul class="nav mynav">
-                    <li><a href="#carouselSection">Home</a></li>
-                    <li><a href="#carouselSection">News</a></li>
-                    <li>
-                    <a href="#">Yayasan</a>
-                        <ul class="dropdown-menu">
-                            <li><a href="#">Visi Misi</a></li>
-                            <li><a href="#">Sistem Pendidikan</a></li>
-                            <li><a href="#">Profil</a></li>
-                            <li><a href="#">Galeri</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="#ourServices">What we do?</a></li>
-                    <li><a href="#portfolioSection">TK</a></li>
-                    <li><a href="#meetourteamSection">SD</a></li>
-                    <li><a href="#recentpostSection">SMP</a></li>
-                    <li><a href="#contactSection">SMA</a></li>
-                    <li><a href="#">DKM</a></li>
-                    <li><a href="#">Informasi</a></li>
-                    <li><a href="{{ url('login') }}">Sign In</a></li>
-                </ul>
-                </div>
-
-            <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-                <span class="line"></span>
-                <span class="line"></span>
-                <span class="line"></span>
-            </button>
-        </div>
-    </div>  -->
-
 <!--Header Ends================================================ -->
-
-<!-- <div id="carouselSection" class="cntr">  -->
         <div id="myCarousel" class="carousel slide">
 
             <div class="carousel-inner">
                 <div class="item active">
                     <a class="cntr" href="#"><img class="img-slide" src="images/TK.png" alt=""></a>
+                    <div class="desc-img">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et quam est. Mauris faucibus tellus ac auctor posuere.
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et quam est. Mauris faucibus tellus ac auctor posuere.
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et quam est. Mauris faucibus tellus ac auctor posuere.
+                </div>
+                <a href="#" class="btn btn-large btn-primary" style="color: #a2a3a3;background-color: #fff;">READ MORE</a>
                 </div>
 
                 <div class="item">
                     <a class="cntr" href="#"><img class="img-slide" src="images/SD.png" alt=""></a>
+                    <div class="desc-img">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et quam est. Mauris faucibus tellus ac auctor posuere.
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et quam est. Mauris faucibus tellus ac auctor posuere.
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et quam est. Mauris faucibus tellus ac auctor posuere.
+                </div>
+                <a href="#" class="btn btn-large btn-primary" style="color: #a2a3a3;background-color: #fff;">READ MORE</a>
                 </div>
 
                 <div class="item">
                     <a class="cntr" href="#"><img class="img-slide" src="images/SMP.png" alt=""></a>
+                    <div class="desc-img">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et quam est. Mauris faucibus tellus ac auctor posuere.
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et quam est. Mauris faucibus tellus ac auctor posuere.
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et quam est. Mauris faucibus tellus ac auctor posuere.
+                </div>
+                <a href="#" class="btn btn-large btn-primary" style="color: #a2a3a3;background-color: #fff;">READ MORE</a>
                 </div>
 
                 <div class="item">
                     <a class="cntr" href="#"><img class="img-slide" src="images/SMA.png" alt=""></a>
+                    <div class="desc-img">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et quam est. Mauris faucibus tellus ac auctor posuere.
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et quam est. Mauris faucibus tellus ac auctor posuere.
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et quam est. Mauris faucibus tellus ac auctor posuere.
                 </div>
-
-
+                <a href="#" class="btn btn-large btn-primary" style="color: #a2a3a3;background-color: #fff;">READ MORE</a>
+                </div>
             </div>
             <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
             <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
         </div>
-<!-- </div> -->
 
 <!-- Sectionone block ends======================================== -->
 
-<!-- Our Services======================================== -->
-<!-- <div id="ourServices">
+<!-- NEWS======================================== -->
+<div id="newsServices">
+<div class="title-news">
+  NEWS
+</div>
 <div class="container">
                 <div class="row">
 
@@ -146,8 +128,11 @@
       </div>
     </div>
 </div>
+<a href="#" class="btn btn-large btn-primary" style="color: #a2a3a3;background-color: #fff;">ALL NEWS</a>
 </div>
-</div> -->
+</div>
+
+<!-- NEWS======================================== -->
 
 <div class="modal fade" id="myModalport1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog-front">
@@ -518,7 +503,165 @@
 </div>
 </div>
 
-<!-- Our Portfolio======================================== -->
+
+<div class="modal fade" id="myModalyay1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog-front">
+        <div class="modal-content">
+            <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h4 class="modal-title" id="myModalLabel">Yayasan : Visi - Misi</h4>
+            </div>
+                <div class="modal-body-front">
+                   Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+                   Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+                   Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+<div class="modal fade" id="myModalyay2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog-front">
+        <div class="modal-content">
+            <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h4 class="modal-title" id="myModalLabel">Yayasan : Sistem Pendidikan</h4>
+            </div>
+                <div class="modal-body-front">
+                   Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+                   Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+                   Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+<div class="modal fade" id="myModalyay3" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog-front">
+        <div class="modal-content">
+            <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h4 class="modal-title" id="myModalLabel">Yayasan : Profile</h4>
+            </div>
+                <div class="modal-body-front">
+                   Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+                   Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+                   Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+<div class="modal fade" id="myModalyay4" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog-front">
+        <div class="modal-content">
+            <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h4 class="modal-title" id="myModalLabel">Yayasan : Galeri</h4>
+            </div>
+                <div class="modal-body-front">
+                   Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+                   Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+                   Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+<div class="modal fade" id="myModaldkm1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog-front">
+        <div class="modal-content">
+            <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h4 class="modal-title" id="myModalLabel">DKM : Fasilitas</h4>
+            </div>
+                <div class="modal-body-front">
+                   Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+                   Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+                   Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+<div class="modal fade" id="myModaldkm2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog-front">
+        <div class="modal-content">
+            <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h4 class="modal-title" id="myModalLabel">DKM : Galeri</h4>
+            </div>
+                <div class="modal-body-front">
+                   Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+                   Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+                   Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+
+<!-- YAYASAN -->
+
+<div id="yayasanSection">
+<div class="content-port">
+<div class="class-img">
+    <img class="img-c" src="{{ url('images/TK.png') }}">
+</div>
+<div style="padding-top:30px;" class="class-lab">
+    <a class="a-lab-yay" data-toggle="modal" data-target="#myModalyay1" href="#"><label class="lab-c-yay">Visi - Misi</label></a>
+    <a class="a-lab-yay" data-toggle="modal" data-target="#myModalyay2" href="#"><label style="font-size:17px;" class="lab-c-yay">Sistem Pendidikan</label></a>
+    <a class="a-lab-yay" data-toggle="modal" data-target="#myModalyay3" href="#"><label class="lab-c-yay">Profile</label></a>
+    <a class="a-lab-yay" data-toggle="modal" data-target="#myModalyay4" href="#"><label class="lab-c-yay">Galeri</label></a>
+</div>
+</div>
+</div>
+
+<!-- YAYASAN END -->
+
+<!-- TK======================================== -->
 <div id="portfolioSection">
 <div class="content-port">
 <div class="class-img">
@@ -535,7 +678,7 @@
 </div>
 </div>
 
-<!-- Meet our team======================================== -->
+<!-- SD ======================================== -->
 <div id="meetourteamSection">
 <div class="content-port">
 <div class="class-img">
@@ -553,7 +696,7 @@
 </div>
 
 
-<!-- recent post======================================== -->
+<!-- SMP======================================== -->
 <div id="recentpostSection">
 <div class="content-port">
 <div class="class-img">
@@ -570,7 +713,7 @@
 </div>
 </div>
 
-<!-- Contact Section -->
+<!-- SMA -->
 <div id="contactSection">
 <div class="content-port">
 <div class="class-img">
@@ -585,23 +728,69 @@
     <a class="a-lab-cont" href="#"><label class="lab-c-cont">Pendaftaran</label></a>
 </div>
 </div>
+</div>
+
+<!-- DKM -->
+
+<div id="dkmSection">
+<div class="content-port">
+<div class="class-img">
+    <img class="img-c" src="{{ url('images/SMA.png') }}">
+</div>
+<div style="padding-top:50px;" class="class-lab">
+    <a class="a-lab-dkm" data-toggle="modal" data-target="#myModaldkm1" href="#"><label class="lab-c-dkm">Fasilitas</label></a>
+    <a class="a-lab-dkm" data-toggle="modal" data-target="#myModaldkm2" href="#"><label class="lab-c-dkm">Galeri</label></a>
+</div>
+</div>
+</div>
+
+<!-- Informasi -->
+
+<div id="informasiServices">
+<div class="title-news">
+  INFORMASI
+</div>
+<div class="container">
+                <div class="row">
+
+      <div class="col-md-4 col-xs-12">
+
+      <div class="info-img">
+        <img class="infoimg" src="img/img-5.png" ></div>
+        <h4>Agenda</h4>
+      </div>
+      <div class="col-md-4 col-xs-12">
+        <div class="info-img">
+        <img class="infoimg" src="img/img-6.png" ></div>
+        <h4>Pengumuman</h4>
+      </div>
+      <div class="col-md-4 col-xs-12">
+        <div class="info-img">
+        <img class="infoimg" src="img/img-7.png" ></div>
+        <h4>Artikel</h4>
+      </div>
+    </div>
+</div>
+</div>
+</div>
 
 
+<!-- Letter -->
+<div id="letterServices">
+<div class="title-news">
+</div>
+<div class="container">
+    <form class="form-letter">
+      New Letter
+      <input class="input-letter" name="" placeholder="Your Email">
+      <button class="button-letter" type="submit">Send</button>
+    </form>
+</div>
+</div>
+</div>
 
+<!-- footer -->
      <div class="footerSection container">
-
-
-
-
-
-
-       <!--  <div class="copyright"><p>  Copyright 2014 | Developed By <a href="http://www.tb3.co.in">tB3</a> edited by rzd</p></div>
-        To remove this copyright notice, please donate via Xtendify at - https://www.xtendify.com/en/product/103-colorful-flat-bootstrap-theme. It will support the development process
-
-    </div> -->
-
-
-
 
 </div>
 <div class="footer-wel">

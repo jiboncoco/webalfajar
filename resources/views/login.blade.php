@@ -72,7 +72,13 @@
                   				<div class="login-form">
 				<form action="#" method="POST">
 					<input class="login-input" name="" placeholder="NIK"></input>
-					<input class="login-input" name="" placeholder="Students Grade"></input>
+                    <select style="width:70%;margin:auto;border-radius:1px;height:5.5%;" class="form-control" id="sel1">
+                    <option>Students Grade</option>
+                    <option>TK</option>
+                    <option>SD</option>
+                    <option>SMP</option>
+                    <option>SMA</option>
+                    </select>
 					<input class="login-input" name="" placeholder="Username"></input>
 					<input class="login-input" name="" placeholder="Password"></input><br>
 					<button class="login-button" type="submit">Login</button>
@@ -97,7 +103,13 @@
                   				<div class="login-form">
 				<form action="#" method="POST">
 					<input class="login-input" name="" placeholder="NIK"></input>
-					<input class="login-input" name="" placeholder="Grade"></input>
+					<select style="width:70%;margin:auto;border-radius:1px;height:5.5%;" class="form-control" id="sel1">
+                    <option>Grade</option>
+                    <option>TK</option>
+                    <option>SD</option>
+                    <option>SMP</option>
+                    <option>SMA</option>
+                    </select>
 					<input class="login-input" name="" placeholder="Username"></input>
 					<input class="login-input" name="" placeholder="Password"></input><br>
 					<button class="login-button" type="submit">Login</button>
