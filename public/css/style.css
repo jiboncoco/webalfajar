@@ -958,7 +958,18 @@ border-bottom: 0;
 	float:right;
 	margin-right:67px;
 }
+#btn-rm-s{
+	color: white;
+	background-color: rgb(34, 174, 226);
+}
+#btn-rm-s:hover{
+	color: rgb(34, 174, 226);
+	border: 1px solid rgb(34, 174, 226);
+	background-color: white;
+}
+
 @media only screen and (max-width : 992px) {
+
 #btn-s{
 	float:right;
 	margin-right:0px;

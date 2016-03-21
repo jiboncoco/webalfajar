@@ -62,7 +62,7 @@
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et quam est. Mauris faucibus tellus ac auctor posuere.
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et quam est. Mauris faucibus tellus ac auctor posuere.
                 </div>
-                <a href="#" class="btn btn-large btn-primary" style="color: white;background-color: rgb(34, 174, 226);">READ MORE</a>
+                <a href="#" class="btn btn-large btn-primary" id="btn-rm-s">READ MORE</a>
                 </div>
 
                 <div class="item">
@@ -72,7 +72,7 @@
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et quam est. Mauris faucibus tellus ac auctor posuere.
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et quam est. Mauris faucibus tellus ac auctor posuere.
                 </div>
-                <a href="#" class="btn btn-large btn-primary" style="color: white;background-color: rgb(34, 174, 226);">READ MORE</a>
+                <a href="#" class="btn btn-large btn-primary" id="btn-rm-s">READ MORE</a>
                 </div>
 
                 <div class="item">
@@ -82,7 +82,7 @@
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et quam est. Mauris faucibus tellus ac auctor posuere.
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et quam est. Mauris faucibus tellus ac auctor posuere.
                 </div>
-                <a href="#" class="btn btn-large btn-primary" style="color: white;background-color: rgb(34, 174, 226);">READ MORE</a>
+                <a href="#" class="btn btn-large btn-primary" id="btn-rm-s">READ MORE</a>
                 </div>
 
                 <div class="item">
@@ -92,7 +92,7 @@
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et quam est. Mauris faucibus tellus ac auctor posuere.
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et quam est. Mauris faucibus tellus ac auctor posuere.
                 </div>
-                <a href="#" class="btn btn-large btn-primary" style="color: white;background-color: rgb(34, 174, 226);">READ MORE</a>
+                <a href="#" class="btn btn-large btn-primary" id="btn-rm-s">READ MORE</a>
                 </div>
             </div>
             <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
@@ -128,7 +128,7 @@
       </div>
     </div>
 </div>
-<a href="{{ url('news') }}" class="btn btn-large btn-primary" style="color: white;background-color: rgb(34, 174, 226);">ALL NEWS</a>
+<a href="{{ url('news') }}" class="btn btn-large btn-primary" id="btn-rm-s">ALL NEWS</a>
 </div>
 </div>
 
