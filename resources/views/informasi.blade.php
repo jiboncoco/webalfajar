@@ -34,8 +34,8 @@
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-        <li><a href="#carouselSection">Home</a></li>
-        <li><a href="#carouselSection">News</a></li>
+        <li><a href="{{ url('/')}}">Home</a></li>
+        <li><a href="#newsSection">News</a></li>
         <li class="dropdown">
           <a class="dropdown-toggle" data-toggle="dropdown" href="#">Yayasan <span class="caret"></span></a>
           <ul class="dropdown-menu">
@@ -157,6 +157,7 @@
                 </div>
                 <a href="#" class="btn btn-large btn-primary" style="color: white;background-color: rgb(34, 174, 226);">READ MORE</a>
                 </div>
+                <div id="newsSection">
             </div>
             <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
             <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
@@ -165,7 +166,6 @@
 <!-- Sectionone block ends======================================== -->
 
 <!-- informasi -->
-
 <div class="fullcontent">
 
 <!-- content1 -->
@@ -174,7 +174,7 @@
     <div class="content-s">
       <form>
         <span class="input-group-btn">
-        <button style="float:right" class="btn btn-default" type="button"><i class="fa fa-search"></i></button>
+        <button id="btn-s" class="btn btn-default" type="button"><i class="fa fa-search"></i></button>
       <input class="fcs" placeholder="Search" />
       </span>
       </form>
@@ -289,7 +289,7 @@
     <div class="content2-s">
       <form>
         <span class="input-group-btn">
-        <button style="float:right" class="btn btn-default" type="button"><i class="fa fa-search"></i></button>
+        <button id="btn-s2" class="btn btn-default" type="button"><i class="fa fa-search"></i></button>
       <input class="fnip" placeholder="NIP" />
       </span>
       </form>
@@ -300,7 +300,7 @@
         Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
       </div>
         <div class="content2-notif">
-        <p class="notif-p">Pengumuman</p>
+        <p class="notif-p">PENGUMUMAN</p>
         <div class="notif">
           <label class="no-notif">1.</label>
           <label class="title-notif">Lorem Ipsum</label>
@@ -321,7 +321,7 @@
         </div>
         </div>
           <div class="content2-notif">
-            <p class="notif-p">Artikel</p>
+            <p class="notif-p">ARTIKEL</p>
         <div class="notif">
           <label class="no-notif">1.</label>
           <label class="title-notif">Lorem Ipsum</label>
@@ -342,13 +342,14 @@
         </div>
           </div>
             <div class="content2-fb">
-              <label class="title-fb">Facebook Pages</label>
+              <p class="title-fb">FACEBOOK PAGES</p>
             </div>
               <div class="content2-maps">
-              <label class="title-maps">Maps</label>
+              <p class="title-maps">MAPS</p>
               </div>
     </div>
   </div>
+</div>
 </div>
 
 <!-- Letter -->
