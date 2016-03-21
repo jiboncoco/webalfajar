@@ -756,17 +756,17 @@
       <div class="col-md-4 col-xs-12">
 
       <div class="info-img">
-        <img class="infoimg" src="img/img-5.png" ></div>
+        <img class="infoimg" src="img/img_home/img-agenda.png" ></div>
         <h4>Agenda</h4>
       </div>
       <div class="col-md-4 col-xs-12">
         <div class="info-img">
-        <img class="infoimg" src="img/img-6.png" ></div>
+        <img class="infoimg" src="img/img_home/img-pengumuman.png" ></div>
         <h4>Pengumuman</h4>
       </div>
       <div class="col-md-4 col-xs-12">
         <div class="info-img">
-        <img class="infoimg" src="img/img-7.png" ></div>
+        <img class="infoimg" src="img/img_home/img-artikel.png" ></div>
         <h4>Artikel</h4>
       </div>
     </div>
