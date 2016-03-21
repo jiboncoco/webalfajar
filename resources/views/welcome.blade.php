@@ -28,7 +28,7 @@
       </button>
 
       <a class="navbar-brand" href="#">
-      <img class="navbar-brand" style="height:80px;width:80px;margin-top:-31px" src="{{ url('http://alfajarbekasi.or.id/ppdb/images/logo.png') }}">
+      <img class="navbar-brand" style="height:80px;width:80px;margin-top:-31px" src="img/all_icon/logo.png">
       Al - Fajar</a>
 
     </div>
@@ -56,7 +56,7 @@
 
             <div class="carousel-inner">
                 <div class="item active">
-                    <a class="cntr" href="#"><img class="img-slide" src="images/TK.png" alt=""></a>
+                    <a class="cntr" href="#"><img class="img-slide" src="img/img_home/TK.png" alt=""></a>
                     <div class="desc-img">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et quam est. Mauris faucibus tellus ac auctor posuere.
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et quam est. Mauris faucibus tellus ac auctor posuere.
@@ -66,7 +66,7 @@
                 </div>
 
                 <div class="item">
-                    <a class="cntr" href="#"><img class="img-slide" src="images/SD.png" alt=""></a>
+                    <a class="cntr" href="#"><img class="img-slide" src="img/img_home/SD.png" alt=""></a>
                     <div class="desc-img">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et quam est. Mauris faucibus tellus ac auctor posuere.
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et quam est. Mauris faucibus tellus ac auctor posuere.
@@ -76,7 +76,7 @@
                 </div>
 
                 <div class="item">
-                    <a class="cntr" href="#"><img class="img-slide" src="images/SMP.png" alt=""></a>
+                    <a class="cntr" href="#"><img class="img-slide" src="img/img_home/SMP.png" alt=""></a>
                     <div class="desc-img">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et quam est. Mauris faucibus tellus ac auctor posuere.
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et quam est. Mauris faucibus tellus ac auctor posuere.
@@ -86,7 +86,7 @@
                 </div>
 
                 <div class="item">
-                    <a class="cntr" href="#"><img class="img-slide" src="images/SMA.png" alt=""></a>
+                    <a class="cntr" href="#"><img class="img-slide" src="img/img_home/SMA.png" alt=""></a>
                     <div class="desc-img">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et quam est. Mauris faucibus tellus ac auctor posuere.
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et quam est. Mauris faucibus tellus ac auctor posuere.
@@ -648,7 +648,7 @@
 <div id="yayasanSection">
 <div class="content-port">
 <div class="class-img">
-    <img class="img-c" src="{{ url('images/TK.png') }}">
+    <img class="img-c" src="{{ url('img/img_home/TK.png') }}">
 </div>
 <div style="padding-top:30px;" class="class-lab">
     <a class="a-lab-yay" data-toggle="modal" data-target="#myModalyay1" href="#"><label class="lab-c-yay">Visi - Misi</label></a>
@@ -665,7 +665,7 @@
 <div id="portfolioSection">
 <div class="content-port">
 <div class="class-img">
-    <img class="img-c" src="{{ url('images/TK.png') }}">
+    <img class="img-c" src="{{ url('img/img_home/TK.png') }}">
 </div>
 <div class="class-lab">
     <a class="a-lab-port" href="#"><label class="lab-c-port">Beranda</label></a>
@@ -682,7 +682,7 @@
 <div id="meetourteamSection">
 <div class="content-port">
 <div class="class-img">
-    <img class="img-c" src="{{ url('images/SD.png') }}">
+    <img class="img-c" src="{{ url('img/img_home/SD.png') }}">
 </div>
 <div class="class-lab">
     <a class="a-lab-meet" href="#"><label class="lab-c-meet">Beranda</label></a>
@@ -700,7 +700,7 @@
 <div id="recentpostSection">
 <div class="content-port">
 <div class="class-img">
-    <img class="img-c" src="{{ url('images/SMP.png') }}">
+    <img class="img-c" src="{{ url('img/img_home/SMP.png') }}">
 </div>
 <div class="class-lab">
     <a class="a-lab-rec" href="#"><label class="lab-c-rec">Beranda</label></a>
@@ -717,7 +717,7 @@
 <div id="contactSection">
 <div class="content-port">
 <div class="class-img">
-    <img class="img-c" src="{{ url('images/SMA.png') }}">
+    <img class="img-c" src="{{ url('img/img_home/SMA.png') }}">
 </div>
 <div class="class-lab">
     <a class="a-lab-cont" href="#"><label class="lab-c-cont">Beranda</label></a>
@@ -735,7 +735,7 @@
 <div id="dkmSection">
 <div class="content-port">
 <div class="class-img">
-    <img class="img-c" src="{{ url('images/SMA.png') }}">
+    <img class="img-c" src="{{ url('img/img_home/SMA.png') }}">
 </div>
 <div style="padding-top:50px;" class="class-lab">
     <a class="a-lab-dkm" data-toggle="modal" data-target="#myModaldkm1" href="#"><label class="lab-c-dkm">Fasilitas</label></a>

@@ -6,6 +6,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <link id="callCss" rel="stylesheet" href="css/bootstrap.min.css" type="text/css" media="screen" charset="utf-8" />
+    <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="{{ url('font-awesome/css/font-awesome.min.css') }}">
     <link id="callCss"rel="stylesheet" href="css/style.css" type="text/css" media="screen" charset="utf-8" />
 
@@ -31,7 +32,7 @@
 			</div>
         </div>
             <div class="modal-footer">
-                <button style="border:none" type="button" class="btn btn-danger" data-dismiss="modal">Close</button> 
+                <button style="border:none" type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
             </div>
             </div>
             </div>
@@ -55,7 +56,7 @@
 			</div>
         </div>
             <div class="modal-footer">
-                <button style="border:none" type="button" class="btn btn-danger" data-dismiss="modal">Close</button> 
+                <button style="border:none" type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
             </div>
             </div>
             </div>
@@ -86,7 +87,7 @@
 			</div>
         </div>
             <div class="modal-footer">
-                <button style="border:none" type="button" class="btn btn-danger" data-dismiss="modal">Close</button> 
+                <button style="border:none" type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
             </div>
             </div>
             </div>
@@ -117,7 +118,7 @@
 			</div>
         </div>
             <div class="modal-footer">
-                <button style="border:none" type="button" class="btn btn-danger" data-dismiss="modal">Close</button> 
+                <button style="border:none" type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
             </div>
             </div>
             </div>
@@ -128,28 +129,28 @@
 <div class="login-page">
 	<div class="login-content">
 		<div data-toggle="modal" data-target="#myModal1" class="login-box" style="margin-right:20px;">
-			<img class="login-img" src="{{ url('images/teacher_login.png') }}">
+			<img class="login-img" src="{{ url('img/img_login/teacher_login.png') }}">
 			<div class="div-lab">
 			<lable class="login-lable">Login Teacher</lable>
 			</div>
 		</div>
 
 		<div data-toggle="modal" data-target="#myModal2" class="login-box">
-			<img class="login-img" src="{{ url('images/staff_login.png') }}">
+			<img class="login-img" src="{{ url('img/img_login/staff_login.png') }}">
 			<div class="div-lab">
 			<lable class="login-lable">Login Staff</lable>
 			</div>
 		</div>
 
 		<div data-toggle="modal" data-target="#myModal3" class="login-box" style="margin-right:20px;">
-			<img class="login-img" src="{{ url('images/parents_login.png') }}">
+			<img class="login-img" src="{{ url('img/img_login/parents_login.png') }}">
 			<div class="div-lab">
 			<lable class="login-lable">Login Parents</lable>
 			</div>
 		</div>
 
 		<div data-toggle="modal" data-target="#myModal4" class="login-box">
-			<img class="login-img" src="{{ url('images/students_login.png') }}">
+			<img class="login-img" src="{{ url('img/img_login/students_login.png') }}">
 			<div class="div-lab">
 			<lable class="login-lable">Login Students</lable>
 			</div>
