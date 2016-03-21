@@ -125,7 +125,7 @@
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et quam est. Mauris faucibus tellus ac auctor posuere.
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et quam est. Mauris faucibus tellus ac auctor posuere.
                 </div>
-                <a href="#" class="btn btn-large btn-primary" style="color: #a2a3a3;background-color: #fff;">READ MORE</a>
+                <a href="#" class="btn btn-large btn-primary" style="color: white;background-color: rgb(34, 174, 226);">READ MORE</a>
                 </div>
 
                 <div class="item">
@@ -135,7 +135,7 @@
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et quam est. Mauris faucibus tellus ac auctor posuere.
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et quam est. Mauris faucibus tellus ac auctor posuere.
                 </div>
-                <a href="#" class="btn btn-large btn-primary" style="color: #a2a3a3;background-color: #fff;">READ MORE</a>
+                <a href="#" class="btn btn-large btn-primary" style="color: white;background-color: rgb(34, 174, 226);">READ MORE</a>
                 </div>
 
                 <div class="item">
@@ -145,7 +145,7 @@
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et quam est. Mauris faucibus tellus ac auctor posuere.
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et quam est. Mauris faucibus tellus ac auctor posuere.
                 </div>
-                <a href="#" class="btn btn-large btn-primary" style="color: #a2a3a3;background-color: #fff;">READ MORE</a>
+                <a href="#" class="btn btn-large btn-primary" style="color: white;background-color: rgb(34, 174, 226);">READ MORE</a>
                 </div>
 
                 <div class="item">
@@ -155,7 +155,7 @@
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et quam est. Mauris faucibus tellus ac auctor posuere.
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et quam est. Mauris faucibus tellus ac auctor posuere.
                 </div>
-                <a href="#" class="btn btn-large btn-primary" style="color: #a2a3a3;background-color: #fff;">READ MORE</a>
+                <a href="#" class="btn btn-large btn-primary" style="color: white;background-color: rgb(34, 174, 226);">READ MORE</a>
                 </div>
             </div>
             <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
