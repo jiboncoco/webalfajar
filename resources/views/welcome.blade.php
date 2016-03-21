@@ -128,11 +128,7 @@
       </div>
     </div>
 </div>
-<<<<<<< HEAD
-<a href="{{ url('news') }}" class="btn btn-large btn-primary" style="color: #a2a3a3;background-color: #fff;">ALL NEWS</a>
-=======
 <a href="{{ url('informasi') }}" class="btn btn-large btn-primary" style="color: white;background-color: rgb(34, 174, 226);">ALL NEWS</a>
->>>>>>> 5726f790e7267d4432502126865fee44b5ba0d2a
 </div>
 </div>
 
