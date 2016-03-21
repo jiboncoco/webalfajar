@@ -62,7 +62,7 @@
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et quam est. Mauris faucibus tellus ac auctor posuere.
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et quam est. Mauris faucibus tellus ac auctor posuere.
                 </div>
-                <a href="#" class="btn btn-large btn-primary" style="color: #a2a3a3;background-color: #fff;">READ MORE</a>
+                <a href="#" class="btn btn-large btn-primary" style="color: white;background-color: rgb(34, 174, 226);">READ MORE</a>
                 </div>
 
                 <div class="item">
@@ -72,7 +72,7 @@
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et quam est. Mauris faucibus tellus ac auctor posuere.
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et quam est. Mauris faucibus tellus ac auctor posuere.
                 </div>
-                <a href="#" class="btn btn-large btn-primary" style="color: #a2a3a3;background-color: #fff;">READ MORE</a>
+                <a href="#" class="btn btn-large btn-primary" style="color: white;background-color: rgb(34, 174, 226);">READ MORE</a>
                 </div>
 
                 <div class="item">
@@ -82,7 +82,7 @@
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et quam est. Mauris faucibus tellus ac auctor posuere.
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et quam est. Mauris faucibus tellus ac auctor posuere.
                 </div>
-                <a href="#" class="btn btn-large btn-primary" style="color: #a2a3a3;background-color: #fff;">READ MORE</a>
+                <a href="#" class="btn btn-large btn-primary" style="color: white;background-color: rgb(34, 174, 226);">READ MORE</a>
                 </div>
 
                 <div class="item">
@@ -92,7 +92,7 @@
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et quam est. Mauris faucibus tellus ac auctor posuere.
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et quam est. Mauris faucibus tellus ac auctor posuere.
                 </div>
-                <a href="#" class="btn btn-large btn-primary" style="color: #a2a3a3;background-color: #fff;">READ MORE</a>
+                <a href="#" class="btn btn-large btn-primary" style="color: white;background-color: rgb(34, 174, 226);">READ MORE</a>
                 </div>
             </div>
             <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
@@ -112,23 +112,23 @@
       <div class="col-md-4 col-xs-12">
 
       <div class="info-img">
-        <img src="img/img-1.png" ></div>
+        <img src="img/img_home/img-1.png" ></div>
         <h4>Flat Design</h4>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et quam est. Mauris faucibus tellus ac auctor posuere. </p>
       </div>
       <div class="col-md-4 col-xs-12">
-        <div class="info-img"><img src="img/img-2.png" ></div>
+        <div class="info-img"><img src="img/img_home/img-2.png" ></div>
         <h4>Great Ideas</h4>
          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et quam est. Mauris faucibus tellus ac auctor posuere. </p>
       </div>
       <div class="col-md-4 col-xs-12">
-        <div class="info-img"><img src="img/img-3.png" ></div>
+        <div class="info-img"><img src="img/img_home/img-3.png" ></div>
         <h4>Browser  Compatibility</h4>
          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et quam est. Mauris faucibus tellus ac auctor posuere. </p>
       </div>
     </div>
 </div>
-<a href="{{ url('informasi') }}" class="btn btn-large btn-primary" style="color: #a2a3a3;background-color: #fff;">ALL NEWS</a>
+<a href="{{ url('informasi') }}" class="btn btn-large btn-primary" style="color: white;background-color: rgb(34, 174, 226);">ALL NEWS</a>
 </div>
 </div>
 
