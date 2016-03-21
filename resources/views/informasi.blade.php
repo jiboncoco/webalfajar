@@ -119,43 +119,43 @@
 
             <div class="carousel-inner">
                 <div class="item active">
-                    <a class="cntr" href="#"><img class="img-slide" src="images/TK.png" alt=""></a>
+                    <a class="cntr" href="#"><img class="img-slide" src="img/img_news/TK.png" alt=""></a>
                     <div class="desc-img">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et quam est. Mauris faucibus tellus ac auctor posuere.
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et quam est. Mauris faucibus tellus ac auctor posuere.
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et quam est. Mauris faucibus tellus ac auctor posuere.
                 </div>
-                <a href="#" class="btn btn-large btn-primary" style="color: #a2a3a3;background-color: #fff;">READ MORE</a>
+                <a href="#" class="btn btn-large btn-primary" style="color: white;background-color: rgb(34, 174, 226);">READ MORE</a>
                 </div>
 
                 <div class="item">
-                    <a class="cntr" href="#"><img class="img-slide" src="images/SD.png" alt=""></a>
+                    <a class="cntr" href="#"><img class="img-slide" src="img/img_news/SD.png" alt=""></a>
                     <div class="desc-img">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et quam est. Mauris faucibus tellus ac auctor posuere.
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et quam est. Mauris faucibus tellus ac auctor posuere.
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et quam est. Mauris faucibus tellus ac auctor posuere.
                 </div>
-                <a href="#" class="btn btn-large btn-primary" style="color: #a2a3a3;background-color: #fff;">READ MORE</a>
+                <a href="#" class="btn btn-large btn-primary" style="color: white;background-color: rgb(34, 174, 226);">READ MORE</a>
                 </div>
 
                 <div class="item">
-                    <a class="cntr" href="#"><img class="img-slide" src="images/SMP.png" alt=""></a>
+                    <a class="cntr" href="#"><img class="img-slide" src="img/img_news/SMP.png" alt=""></a>
                     <div class="desc-img">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et quam est. Mauris faucibus tellus ac auctor posuere.
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et quam est. Mauris faucibus tellus ac auctor posuere.
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et quam est. Mauris faucibus tellus ac auctor posuere.
                 </div>
-                <a href="#" class="btn btn-large btn-primary" style="color: #a2a3a3;background-color: #fff;">READ MORE</a>
+                <a href="#" class="btn btn-large btn-primary" style="color: white;background-color: rgb(34, 174, 226);">READ MORE</a>
                 </div>
 
                 <div class="item">
-                    <a class="cntr" href="#"><img class="img-slide" src="images/SMA.png" alt=""></a>
+                    <a class="cntr" href="#"><img class="img-slide" src="img/img_news/SMA.png" alt=""></a>
                     <div class="desc-img">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et quam est. Mauris faucibus tellus ac auctor posuere.
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et quam est. Mauris faucibus tellus ac auctor posuere.
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et quam est. Mauris faucibus tellus ac auctor posuere.
                 </div>
-                <a href="#" class="btn btn-large btn-primary" style="color: #a2a3a3;background-color: #fff;">READ MORE</a>
+                <a href="#" class="btn btn-large btn-primary" style="color: white;background-color: rgb(34, 174, 226);">READ MORE</a>
                 </div>
                 <div id="newsSection">
             </div>
@@ -181,7 +181,7 @@
     </div>
     <div class="content1-box-all">
     <div class="content1-box">
-        <img class="cb-img" src="img/img-4.png" />
+        <img class="cb-img" src="img/img_news/news1.png" />
       <div class="cb-title">
         Lorem Ipsum
       </div>
@@ -197,7 +197,7 @@
       </div>
     </div>
     <div class="content1-box">
-        <img class="cb-img" src="img/img-4.png" />
+        <img class="cb-img" src="img/img_news/news1.png" />
       <div class="cb-title">
         Lorem Ipsum
       </div>
@@ -213,7 +213,7 @@
       </div>
     </div>
     <div class="content1-box">
-        <img class="cb-img" src="img/img-4.png" />
+        <img class="cb-img" src="img/img_news/news1.png" />
       <div class="cb-title">
         Lorem Ipsum
       </div>
@@ -229,7 +229,7 @@
       </div>
     </div>
     <div class="content1-box">
-        <img class="cb-img" src="img/img-4.png" />
+        <img class="cb-img" src="img/img_news/news1.png" />
       <div class="cb-title">
         Lorem Ipsum
       </div>
@@ -245,7 +245,7 @@
       </div>
     </div>
     <div class="content1-box">
-        <img class="cb-img" src="img/img-4.png" />
+        <img class="cb-img" src="img/img_news/news1.png" />
       <div class="cb-title">
         Lorem Ipsum
       </div>
@@ -261,7 +261,7 @@
       </div>
     </div>
     <div class="content1-box">
-        <img class="cb-img" src="img/img-4.png" />
+        <img class="cb-img" src="img/img_news/news1.png" />
       <div class="cb-title">
         Lorem Ipsum
       </div>
