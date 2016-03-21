@@ -782,7 +782,7 @@
 <div class="container">
     <form class="form-letter">
       New Letter
-      <input class="input-letter" name="" placeholder="Your Email">
+      <input class="input-letter" name="" type="email" placeholder="Your Email">
       <button class="button-letter" type="submit">Send</button>
     </form>
 </div>
