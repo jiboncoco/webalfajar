@@ -652,7 +652,7 @@
 </div>
 <div style="padding-top:30px;" class="class-lab">
     <a class="a-lab-yay" data-toggle="modal" data-target="#myModalyay1" href="#"><label class="lab-c-yay">Visi - Misi</label></a>
-    <a class="a-lab-yay" data-toggle="modal" data-target="#myModalyay2" href="#"><label style="font-size:17px;" class="lab-c-yay">Sistem Pendidikan</label></a>
+    <a class="a-lab-yay" data-toggle="modal" data-target="#myModalyay2" href="#"><label style="font-size:16px;" class="lab-c-yay">Sistem Pendidikan</label></a>
     <a class="a-lab-yay" data-toggle="modal" data-target="#myModalyay3" href="#"><label class="lab-c-yay">Profile</label></a>
     <a class="a-lab-yay" data-toggle="modal" data-target="#myModalyay4" href="#"><label class="lab-c-yay">Galeri</label></a>
 </div>
