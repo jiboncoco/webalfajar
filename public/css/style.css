@@ -49,9 +49,9 @@ h1.brand {
 .clr{clear:both}
 .cntr{text-align:center}
 .navbar{margin-top:18px; position:relative;z-index:999; }
-.navbar .nav, .navbar .nav > li{float:none; text-align:right;margin-top: 3px;}
+.navbar .nav, .navbar .nav > li{float:none; text-align:right;margin-top: 9px;}
 .nav li{display:inline-block; float:none;}
-.nav a {padding: 3px 18px;color:inherit;border-radius:10px;}
+.nav a {padding: 3px 18px;color:inherit;border-radius:0px;}
 .mynav li{
 	font-size: 17px;font-family: 'Raleway', sans-serif;display: inline-block; color:#3A494C !important;
 }
@@ -380,7 +380,7 @@ height: 2px;
 
 .carousel-inner{
 	text-align: center;
-	padding: 30px;
+	margin-top: -60px;
 	background-color: #A5D2DA;
 }
 .input-letter{
@@ -421,6 +421,13 @@ height: 2px;
 	height: 80%;
 	width: 80%;
 	border-radius: 60%;
+	-webkit-transition: -webkit-transform .8s ease-in-out;
+  	transition: transform .8s ease-in-out;
+}
+.infoimg:hover{
+	border: 3px solid rgb(34, 174, 226);
+	-webkit-transform: rotate(360deg);
+  	transform: rotate(360deg);
 }
 
 @media (max-width: 1200px){
@@ -961,11 +968,15 @@ border-bottom: 0;
 #btn-rm-s{
 	color: white;
 	background-color: rgb(34, 174, 226);
+	margin-bottom: 15px;
 }
 #btn-rm-s:hover{
 	color: rgb(34, 174, 226);
 	border: 1px solid rgb(34, 174, 226);
 	background-color: white;
+}
+#nb-logo{
+	margin-top:15px;
 }
 
 @media only screen and (max-width : 992px) {
