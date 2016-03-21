@@ -16,7 +16,7 @@ Route::get('/', function () {
 });
 
 Route::get('login', 'Controller@login');
-Route::get('informasi', 'Controller@informasi');
+Route::get('news', 'Controller@informasi');
 
 /*
 |--------------------------------------------------------------------------
