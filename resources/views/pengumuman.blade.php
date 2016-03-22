@@ -916,7 +916,7 @@
 </div>
 <div class="container">
     <form class="form-letter">
-      New Letter
+      News Letter
       <input class="input-letter" name="" type="email" placeholder="Your Email">
       <button class="button-letter" type="submit">Send</button>
     </form>
