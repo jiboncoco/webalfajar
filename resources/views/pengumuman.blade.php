@@ -102,7 +102,6 @@
           <ul class="dropdown-menu">
             <li><a href="#">Pengumuman</a></li>
             <li><a href="#">Agenda</a></li>
-            <li><a href="#">Berita</a></li>
             <li><a href="#">Artikel</a></li>
           </ul>
         </li>
