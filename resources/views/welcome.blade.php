@@ -108,7 +108,7 @@
 </div>
 <div class="container">
                 <div class="row">
-      <a href="#">            
+      <a href="#">
       <div id="info-boxx" class="col-md-4 col-xs-12">
       <div class="info-img">
         <img class="infoimg2" src="img/img_home/img-1.png" ></div>
@@ -778,7 +778,7 @@
         <div class="info-img">
       <a href="{{ url('artikel') }}">
         <img class="infoimg" src="img/img_home/img-artikel.png" ></div>
-      </a>  
+      </a>
         <h4>Artikel</h4>
       </div>
     </div>
