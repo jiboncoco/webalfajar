@@ -631,9 +631,15 @@
         <li class="dropdown">
           <a class="dropdown-toggle" data-toggle="dropdown" href="#">Informasi <span class="caret"></span></a>
           <ul class="dropdown-menu">
+<<<<<<< HEAD
             <li><a href="{{ url('pengumuman') }}">Pengumuman</a></li>
             <li><a href="{{ url('agenda') }}">Agenda</a></li>
             <li><a href="{{ url('artikel') }}">Artikel</a></li>
+=======
+            <li><a href="#">Pengumuman</a></li>
+            <li><a href="#">Agenda</a></li>
+            <li><a href="#">Artikel</a></li>
+>>>>>>> b00b40bc6dbac606183ff1d954864402b214c840
           </ul>
         </li>
         <li><a href="{{ url('login') }}">Sign In</a></li>
