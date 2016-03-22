@@ -756,17 +756,23 @@
       <div class="col-md-4 col-xs-12">
 
       <div class="info-img">
+      <a href="{{ url('agenda') }}">
         <img class="infoimg" src="img/img_home/img-agenda.png" ></div>
+      </a>
         <h4>Agenda</h4>
       </div>
       <div class="col-md-4 col-xs-12">
         <div class="info-img">
+      <a href="pengumuman">
         <img class="infoimg" src="img/img_home/img-pengumuman.png" ></div>
+      </a>
         <h4>Pengumuman</h4>
       </div>
       <div class="col-md-4 col-xs-12">
         <div class="info-img">
+      <a href="{{ url('artikel') }}">
         <img class="infoimg" src="img/img_home/img-artikel.png" ></div>
+      </a>  
         <h4>Artikel</h4>
       </div>
     </div>

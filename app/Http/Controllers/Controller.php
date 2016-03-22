@@ -16,8 +16,24 @@ class Controller extends BaseController
     	return view('login');
     }
 
-    public function informasi()
+    public function news()
     {
-      return view('informasi');
+      return view('news');
     }
+
+    public function agenda()
+    {
+      return view('agenda');
+    }
+
+    public function pengumuman()
+    {
+      return view('pengumuman');
+    }
+
+    public function artikel()
+    {
+      return view('artikel');
+    }
+
 }

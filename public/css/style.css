@@ -965,6 +965,9 @@ border-bottom: 0;
 	float:right;
 	margin-right:67px;
 }
+.nav .dropdown-menu li{
+	width: 100%;
+}
 #btn-rm-s{
 	color: white;
 	background-color: rgb(34, 174, 226);
@@ -980,6 +983,12 @@ border-bottom: 0;
 }
 
 @media only screen and (max-width : 992px) {
+.nav li:a{
+	color: #9d9d9d !important;
+}
+.nav li:hover a {
+color: white !important;
+}
 
 #btn-s{
 	float:right;
