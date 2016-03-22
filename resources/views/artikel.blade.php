@@ -100,9 +100,9 @@
         <li class="dropdown">
           <a class="dropdown-toggle" data-toggle="dropdown" href="#">Informasi <span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a href="#">Pengumuman</a></li>
-            <li><a href="#">Agenda</a></li>
-            <li><a href="#">Artikel</a></li>
+            <li><a href="{{ url('pengumuman') }}">Pengumuman</a></li>
+            <li><a href="{{ url('agenda') }}">Agenda</a></li>
+            <li><a href="{{ url('artikel') }}">Artikel</a></li>
           </ul>
         </li>
         <li><a href="{{ url('login') }}">Sign In</a></li>
