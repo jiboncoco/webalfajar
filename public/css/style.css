@@ -366,7 +366,7 @@ height: 2px;
 .title-news{
 	padding-bottom: 40px;
     font-size: 30px;
-    padding-top: 30px;
+    padding-top: 10px;
 }
 .desc-img{
 	text-align: center;
@@ -380,7 +380,7 @@ height: 2px;
 
 .carousel-inner{
 	text-align: center;
-	margin-top: -60px;
+	margin-top: -70px;
 	background-color: #A5D2DA;
 }
 .input-letter{
@@ -401,7 +401,7 @@ height: 2px;
 	font-size: 13px;
 }
 .form-letter{
-	margin-top: -70px;
+	margin-top: -40px;
 }
 .button-letter{
 	width: 8%;
@@ -428,6 +428,16 @@ height: 2px;
 	border: 3px solid rgb(34, 174, 226);
 	-webkit-transform: rotate(360deg);
   	transform: rotate(360deg);
+}
+.infoimg2{
+	padding: 30px;
+	border: 3px solid white;
+	transition: transform .8s ease-in-out;
+}
+.infoimg2:hover{
+	transition: transform .8s ease-in-out;
+	padding: 30px;
+	border: 3px solid rgb(34, 174, 226)
 }
 
 @media (max-width: 1200px){
@@ -830,10 +840,17 @@ border-bottom: 0;
   padding: 8px;
   display: inline-table;
   margin: 20px;
+  color: #333 !important;
+}
+.content1-box:hover{
+  border: 1px solid #A2A2A2;
 }
 .cb-img{
   width: 100%;
   height: 200px;
+}
+.cb-img:hover{
+	opacity: 0.6;
 }
 .cb-title{
   padding-top: 5px;
@@ -896,10 +913,13 @@ border-bottom: 0;
 	padding: 5px;
 }
 .notif{
+	color: #333 !important;
 	padding: 10px;
 	font-size: 16px;
 }
 .no-notif{
+	color: #333 !important;
+	cursor: pointer;
 	margin-right: 10px;
 	font-weight: bold;
 }
@@ -945,7 +965,12 @@ border-bottom: 0;
 	margin-right: 16px;
 }
 .title-notif{
+	color: #333 !important;
+	cursor: pointer;
 	font-weight: bold;
+}
+.title-notif:hover{
+	color: #000 !important;
 }
 .title-fb{
 	padding: 5px;
@@ -971,7 +996,7 @@ border-bottom: 0;
 #btn-rm-s{
 	color: white;
 	background-color: rgb(34, 174, 226);
-	margin-bottom: 15px;
+	margin-bottom: 30px;
 }
 #btn-rm-s:hover{
 	color: rgb(34, 174, 226);

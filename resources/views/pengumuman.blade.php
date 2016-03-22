@@ -566,7 +566,7 @@
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
         <li><a href="{{ url('/')}}">Home</a></li>
-        <li><a href="#newsSection">News</a></li>
+        <li><a href="{{url('news')}}">News</a></li>
         <li class="dropdown">
           <a class="dropdown-toggle" data-toggle="dropdown" href="#">Yayasan <span class="caret"></span></a>
           <ul class="dropdown-menu">
@@ -579,7 +579,7 @@
         <li class="dropdown">
           <a class="dropdown-toggle" data-toggle="dropdown" href="#">TK <span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a href="#">Beranda</a></li>
+            <li><a href="#">Portal TK</a></li>
             <li><a data-toggle="modal" data-target="#myModaltk1" href="#">Visi Misi</a></li>
             <li><a data-toggle="modal" data-target="#myModaltk2" href="#">Kurikulum</a></li>
             <li><a data-toggle="modal" data-target="#myModaltk3" href="#">Fasilitas</a></li>
@@ -590,7 +590,7 @@
         <li class="dropdown">
           <a class="dropdown-toggle" data-toggle="dropdown" href="#">SD <span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a href="#">Beranda</a></li>
+            <li><a href="#">Portal SD</a></li>
             <li><a data-toggle="modal" data-target="#myModalsd1" href="#">Visi Misi</a></li>
             <li><a data-toggle="modal" data-target="#myModalsd2" href="#">Kurikulum</a></li>
             <li><a data-toggle="modal" data-target="#myModalsd3" href="#">Fasilitas</a></li>
@@ -601,7 +601,7 @@
         <li class="dropdown">
           <a class="dropdown-toggle" data-toggle="dropdown" href="#">SMP <span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a href="#">Beranda</a></li>
+            <li><a href="#">Portal SMP</a></li>
             <li><a data-toggle="modal" data-target="#myModalsmp1" href="#">Visi Misi</a></li>
             <li><a data-toggle="modal" data-target="#myModalsmp2" href="#">Kurikulum</a></li>
             <li><a data-toggle="modal" data-target="#myModalsmp3" href="#">Fasilitas</a></li>
@@ -612,7 +612,7 @@
         <li class="dropdown">
           <a class="dropdown-toggle" data-toggle="dropdown" href="#">SMA <span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a href="#">Beranda</a></li>
+            <li><a href="#">Portal SMA</a></li>
             <li><a data-toggle="modal" data-target="#myModalsma1" href="#">Visi Misi</a></li>
             <li><a data-toggle="modal" data-target="#myModalsma2" href="#">Kurikulum</a></li>
             <li><a data-toggle="modal" data-target="#myModalsma3" href="#">Fasilitas</a></li>
@@ -631,7 +631,7 @@
         <li class="dropdown">
           <a class="dropdown-toggle" data-toggle="dropdown" href="#">Informasi <span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a href="{{ url('pengumuman') }}">Pengumuman</a></li>
+            <li><a href="#newsSection">Pengumuman</a></li>
             <li><a href="{{ url('agenda') }}">Agenda</a></li>
             <li><a href="{{ url('artikel') }}">Artikel</a></li>
           </ul>
@@ -710,6 +710,7 @@
       </form>
     </div>
     <div class="content1-box-all">
+    <a href="#">
     <div class="content1-box">
         <img class="cb-img" src="img/img_news/news1.png" />
       <div class="cb-title">
@@ -726,6 +727,8 @@
         </p>
       </div>
     </div>
+    </a>
+    <a href="#">
     <div class="content1-box">
         <img class="cb-img" src="img/img_news/news1.png" />
       <div class="cb-title">
@@ -742,6 +745,8 @@
         </p>
       </div>
     </div>
+    </a>
+    <a href="#">
     <div class="content1-box">
         <img class="cb-img" src="img/img_news/news1.png" />
       <div class="cb-title">
@@ -758,6 +763,8 @@
         </p>
       </div>
     </div>
+    </a>
+    <a href="#">
     <div class="content1-box">
         <img class="cb-img" src="img/img_news/news1.png" />
       <div class="cb-title">
@@ -774,6 +781,8 @@
         </p>
       </div>
     </div>
+    </a>
+    <a href="#">
     <div class="content1-box">
         <img class="cb-img" src="img/img_news/news1.png" />
       <div class="cb-title">
@@ -790,6 +799,8 @@
         </p>
       </div>
     </div>
+    </a>
+    <a href="#">
     <div class="content1-box">
         <img class="cb-img" src="img/img_news/news1.png" />
       <div class="cb-title">
@@ -800,16 +811,17 @@
         Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
       </div>
       <div class="cb-inf">
-        <i class="fa fa-user"></i> Authors : Admin
+      <i class="fa fa-user"></i> Authors : Admin
         <p class="cb-date">
           31 Desember 2015
         </p>
       </div>
     </div>
+    </a>
 
     </div>
       <div class="content1-button">
-        <button class="cb-button">More News</button>
+        <a href="#"> <button class="cb-button">More News</button></a>
       </div>
   </div>
 
@@ -830,45 +842,61 @@
         Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
       </div>
         <div class="content2-notif">
-        <p class="notif-p">PENGUMUMAN</p>
+        <p class="notif-p">AGENDA</p>
         <div class="notif">
+          <a href="#">
           <label class="no-notif">1.</label>
           <label class="title-notif">Lorem Ipsum</label>
+          </a>
           <p class="date-notif">31 Desember 2016</p>
         </div>
         <div class="notif">
+          <a href="#">
           <label class="no-notif">2.</label>
           <label class="title-notif">Lorem Ipsum</label>
+          </a>
           <p class="date-notif">31 Desember 2016</p>
         </div>
         <div class="notif">
+          <a href="#">
           <label class="no-notif">3.</label>
           <label class="title-notif">Lorem Ipsum</label>
+          </a>
           <p class="date-notif">31 Desember 2016</p>
         </div>
         <div class="notif-button">
+          <a href="{{ url('agenda') }}">
           <button class="notif-b">More</button>
+          </a>
         </div>
         </div>
           <div class="content2-notif">
             <p class="notif-p">ARTIKEL</p>
         <div class="notif">
+          <a href="#">
           <label class="no-notif">1.</label>
           <label class="title-notif">Lorem Ipsum</label>
+          </a>
           <p class="date-notif">31 Desember 2016</p>
         </div>
         <div class="notif">
+          <a href="#">
           <label class="no-notif">2.</label>
           <label class="title-notif">Lorem Ipsum</label>
+          </a>
           <p class="date-notif">31 Desember 2016</p>
         </div>
         <div class="notif">
+          <a href="#">
           <label class="no-notif">3.</label>
           <label class="title-notif">Lorem Ipsum</label>
+          </a>
           <p class="date-notif">31 Desember 2016</p>
         </div>
         <div class="notif-button">
+          <a href="{{ url('artikel') }}">
           <button class="notif-b">More</button>
+          </a>
         </div>
           </div>
             <div class="content2-fb">
@@ -889,13 +917,12 @@
 <div class="container">
     <form class="form-letter">
       New Letter
-      <input class="input-letter" name="" placeholder="Your Email">
+      <input class="input-letter" name="" type="email" placeholder="Your Email">
       <button class="button-letter" type="submit">Send</button>
     </form>
 </div>
 </div>
 </div>
-
 <!-- footer -->
      <div class="footerSection container">
 

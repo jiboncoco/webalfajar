@@ -108,24 +108,30 @@
 </div>
 <div class="container">
                 <div class="row">
-
+      <a href="#">            
       <div class="col-md-4 col-xs-12">
-
       <div class="info-img">
-        <img src="img/img_home/img-1.png" ></div>
+        <img class="infoimg2" src="img/img_home/img-1.png" ></div>
         <h4>Flat Design</h4>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et quam est. Mauris faucibus tellus ac auctor posuere. </p>
       </div>
+      </a>
+      <a href="#">
       <div class="col-md-4 col-xs-12">
-        <div class="info-img"><img src="img/img_home/img-2.png" ></div>
+        <div class="info-img">
+        <img class="infoimg2" src="img/img_home/img-2.png" ></div>
         <h4>Great Ideas</h4>
          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et quam est. Mauris faucibus tellus ac auctor posuere. </p>
       </div>
+      </a>
+      <a href="#">
       <div class="col-md-4 col-xs-12">
-        <div class="info-img"><img src="img/img_home/img-3.png" ></div>
+        <div class="info-img">
+        <img class="infoimg2" src="img/img_home/img-3.png" ></div>
         <h4>Browser  Compatibility</h4>
          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et quam est. Mauris faucibus tellus ac auctor posuere. </p>
       </div>
+      </a>
     </div>
 </div>
 <a href="{{ url('news') }}" class="btn btn-large btn-primary" id="btn-rm-s">ALL NEWS</a>
@@ -668,7 +674,7 @@
     <img class="img-c" src="{{ url('img/img_home/TK.png') }}">
 </div>
 <div class="class-lab">
-    <a class="a-lab-port" href="#"><label class="lab-c-port">Beranda</label></a>
+    <a class="a-lab-port" href="#"><label class="lab-c-port">Portal TK</label></a>
     <a class="a-lab-port" data-toggle="modal" data-target="#myModalport1" href="#"><label class="lab-c-port">Visi - Misi</label></a>
     <a class="a-lab-port" data-toggle="modal" data-target="#myModalport2" href="#"><label class="lab-c-port">Kurikulum</label></a>
     <a class="a-lab-port" data-toggle="modal" data-target="#myModalport3" href="#"><label class="lab-c-port">Fasilitas</label></a>
@@ -685,7 +691,7 @@
     <img class="img-c" src="{{ url('img/img_home/SD.png') }}">
 </div>
 <div class="class-lab">
-    <a class="a-lab-meet" href="#"><label class="lab-c-meet">Beranda</label></a>
+    <a class="a-lab-meet" href="#"><label class="lab-c-meet">Portal SD</label></a>
     <a class="a-lab-meet" data-toggle="modal" data-target="#myModalmeet1" href="#"><label class="lab-c-meet">Visi - Misi</label></a>
     <a class="a-lab-meet" data-toggle="modal" data-target="#myModalmeet2" href="#"><label class="lab-c-meet">Kurikulum</label></a>
     <a class="a-lab-meet" data-toggle="modal" data-target="#myModalmeet3" href="#"><label class="lab-c-meet">Fasilitas</label></a>
@@ -703,7 +709,7 @@
     <img class="img-c" src="{{ url('img/img_home/SMP.png') }}">
 </div>
 <div class="class-lab">
-    <a class="a-lab-rec" href="#"><label class="lab-c-rec">Beranda</label></a>
+    <a class="a-lab-rec" href="#"><label class="lab-c-rec">Portal SMP</label></a>
     <a class="a-lab-rec" data-toggle="modal" data-target="#myModalrec1" href="#"><label class="lab-c-rec">Visi - Misi</label></a>
     <a class="a-lab-rec" data-toggle="modal" data-target="#myModalrec2" href="#"><label class="lab-c-rec">Kurikulum</label></a>
     <a class="a-lab-rec" data-toggle="modal" data-target="#myModalrec3" href="#"><label class="lab-c-rec">Fasilitas</label></a>
@@ -720,7 +726,7 @@
     <img class="img-c" src="{{ url('img/img_home/SMA.png') }}">
 </div>
 <div class="class-lab">
-    <a class="a-lab-cont" href="#"><label class="lab-c-cont">Beranda</label></a>
+    <a class="a-lab-cont" href="#"><label class="lab-c-cont">Portal SMA</label></a>
     <a class="a-lab-cont" data-toggle="modal" data-target="#myModalcont1" href="#"><label class="lab-c-cont">Visi - Misi</label></a>
     <a class="a-lab-cont" data-toggle="modal" data-target="#myModalcont2" href="#"><label class="lab-c-cont">Kurikulum</label></a>
     <a class="a-lab-cont" data-toggle="modal" data-target="#myModalcont3" href="#"><label class="lab-c-cont">Fasilitas</label></a>

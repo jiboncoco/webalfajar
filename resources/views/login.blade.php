@@ -24,9 +24,9 @@
                   			<div class="modal-body">
                   				<div class="login-form">
 				<form action="#" method="POST">
-					<input class="login-input" name="" placeholder="NIP Al-Fajar"></input>
-					<input class="login-input" name="" placeholder="Username"></input>
-					<input class="login-input" name="" placeholder="Password"></input><br>
+					<input class="login-input" name=""  placeholder="NIP Al-Fajar" required></input>
+					<input class="login-input" name=""  placeholder="Username" required></input>
+					<input class="login-input" name="" type="password" placeholder="Password" required></input><br>
 					<button class="login-button" type="submit">Login</button>
 				</form>
 			</div>
@@ -48,9 +48,9 @@
                   			<div class="modal-body">
                   				<div class="login-form">
 				<form action="#" method="POST">
-					<input class="login-input" name="" placeholder="Access"></input>
-					<input class="login-input" name="" placeholder="Username"></input>
-					<input class="login-input" name="" placeholder="Password"></input><br>
+					<input class="login-input" name="" placeholder="Access" required></input>
+					<input class="login-input" name="" placeholder="Username" required></input>
+					<input class="login-input" name="" type="password" placeholder="Password" required></input><br>
 					<button class="login-button" type="submit">Login</button>
 				</form>
 			</div>
@@ -72,16 +72,16 @@
                   			<div class="modal-body">
                   				<div class="login-form">
 				<form action="#" method="POST">
-					<input class="login-input" name="" placeholder="NIK"></input>
-                    <select style="width:70%;margin:auto;border-radius:1px;height:5.5%;" class="form-control" id="sel1">
-                    <option>Students Grade</option>
-                    <option>TK</option>
-                    <option>SD</option>
-                    <option>SMP</option>
-                    <option>SMA</option>
+					<input class="login-input" name="" placeholder="NIK" required></input>
+                    <select name="" style="width:70%;margin:auto;border-radius:1px;height:5.5%;" class="form-control" id="sel1">
+                    <option value="">Students Grade</option>
+                    <option value="#">TK</option>
+                    <option value="#">SD</option>
+                    <option value="#">SMP</option>
+                    <option value="#">SMA</option>
                     </select>
-					<input class="login-input" name="" placeholder="Username"></input>
-					<input class="login-input" name="" placeholder="Password"></input><br>
+					<input class="login-input" name="" placeholder="Username" required></input>
+					<input class="login-input" name="" type="password" placeholder="Password" required></input><br>
 					<button class="login-button" type="submit">Login</button>
 				</form>
 			</div>
@@ -103,16 +103,16 @@
                   			<div class="modal-body">
                   				<div class="login-form">
 				<form action="#" method="POST">
-					<input class="login-input" name="" placeholder="NIK"></input>
-					<select style="width:70%;margin:auto;border-radius:1px;height:5.5%;" class="form-control" id="sel1">
-                    <option>Grade</option>
-                    <option>TK</option>
-                    <option>SD</option>
-                    <option>SMP</option>
-                    <option>SMA</option>
+					<input class="login-input" name="" placeholder="NIK" required></input>
+					<select name="" style="width:70%;margin:auto;border-radius:1px;height:5.5%;" class="form-control" id="sel1">
+                    <option value="">Grade</option>
+                    <option value="#">TK</option>
+                    <option value="#">SD</option>
+                    <option value="#">SMP</option>
+                    <option value="#">SMA</option>
                     </select>
-					<input class="login-input" name="" placeholder="Username"></input>
-					<input class="login-input" name="" placeholder="Password"></input><br>
+					<input class="login-input" name="" placeholder="Username" required></input>
+					<input class="login-input" name="" type="password" placeholder="Password" required></input><br>
 					<button class="login-button" type="submit">Login</button>
 				</form>
 			</div>
