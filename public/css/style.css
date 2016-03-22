@@ -78,7 +78,7 @@ h1.brand {
     color: #5E5E5E;
     font-size: 19px;
     line-height: 27px;
-    padding-bottom: 30px;
+    padding-bottom: 10px;
 }
 
 #informasiServices{background: #fff;text-align: center;border-top: 1px solid #ddd;}
@@ -430,14 +430,7 @@ height: 2px;
   	transform: rotate(360deg);
 }
 .infoimg2{
-	padding: 30px;
-	border: 3px solid white;
-	transition: transform .8s ease-in-out;
-}
-.infoimg2:hover{
-	transition: transform .8s ease-in-out;
-	padding: 30px;
-	border: 3px solid rgb(34, 174, 226)
+	padding: 20px;
 }
 
 @media (max-width: 1200px){
@@ -970,7 +963,7 @@ border-bottom: 0;
 	font-weight: bold;
 }
 .title-notif:hover{
-	color: #000 !important;
+	color: #1fbba6 !important;
 }
 .title-fb{
 	padding: 5px;
@@ -997,6 +990,7 @@ border-bottom: 0;
 	color: white;
 	background-color: rgb(34, 174, 226);
 	margin-bottom: 30px;
+	margin-top: 25px;
 }
 #btn-rm-s:hover{
 	color: rgb(34, 174, 226);
@@ -1005,6 +999,12 @@ border-bottom: 0;
 }
 #nb-logo{
 	margin-top:15px;
+}
+#info-boxx{
+	border: 3px solid white;
+}
+#info-boxx:hover{
+	border: 3px solid rgb(34, 174, 226);
 }
 
 @media only screen and (max-width : 992px) {

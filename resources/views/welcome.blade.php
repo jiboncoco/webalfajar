@@ -109,7 +109,7 @@
 <div class="container">
                 <div class="row">
       <a href="#">            
-      <div class="col-md-4 col-xs-12">
+      <div id="info-boxx" class="col-md-4 col-xs-12">
       <div class="info-img">
         <img class="infoimg2" src="img/img_home/img-1.png" ></div>
         <h4>Flat Design</h4>
@@ -117,7 +117,7 @@
       </div>
       </a>
       <a href="#">
-      <div class="col-md-4 col-xs-12">
+      <div id="info-boxx" class="col-md-4 col-xs-12">
         <div class="info-img">
         <img class="infoimg2" src="img/img_home/img-2.png" ></div>
         <h4>Great Ideas</h4>
@@ -125,7 +125,7 @@
       </div>
       </a>
       <a href="#">
-      <div class="col-md-4 col-xs-12">
+      <div id="info-boxx" class="col-md-4 col-xs-12">
         <div class="info-img">
         <img class="infoimg2" src="img/img_home/img-3.png" ></div>
         <h4>Browser  Compatibility</h4>
