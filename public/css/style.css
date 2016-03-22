@@ -48,7 +48,7 @@ h1.brand {
 }
 .clr{clear:both}
 .cntr{text-align:center}
-.navbar{margin-top:18px; position:relative;z-index:999; }
+.navbar{margin-top:6px; position:relative;z-index:999; }
 .navbar .nav, .navbar .nav > li{float:none; text-align:right;margin-top: 9px;}
 .nav li{display:inline-block; float:none;}
 .nav a {padding: 3px 18px;color:inherit;border-radius:0px;}
