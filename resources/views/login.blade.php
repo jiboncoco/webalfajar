@@ -80,7 +80,7 @@
                   	<div class="login-form">
 				<form action="#" method="POST">
 					<input class="login-input" name="" id="log-inp" placeholder="NIK" required></input>
-                    <select name="" style="width:60%;margin:auto;border-radius:2px;height:5.5%;" class="form-control" id="sel1">
+                    <select name="" style="width:90%;margin:auto;border-radius:2px;height:5.8%;" class="form-control" id="sel1">
                     <option value="">Students Grade</option>
                     <option value="#">TK</option>
                     <option value="#">SD</option>
@@ -114,7 +114,7 @@
                   	<div class="login-form">
 				<form action="#" method="POST">
 					<input class="login-input" name="" id="log-inp" placeholder="NIK" required></input>
-					<select name="" style="width:60%;margin:auto;border-radius:2px;height:5.5%;" class="form-control" id="sel1">
+					<select name="" style="width:90%;margin:auto;border-radius:2px;height:5.8%;" class="form-control" id="sel1">
                     <option value="">Grade</option>
                     <option value="#">TK</option>
                     <option value="#">SD</option>
