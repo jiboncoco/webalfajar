@@ -718,6 +718,7 @@ border-bottom: 0;
     border: 1px solid #C1BFBF;
     transition: all ease-in .5s;
     color: #52A254;
+    font-family: 'Open Sans', sans-serif;
 }
 
 .login-button{
@@ -821,6 +822,7 @@ border-bottom: 0;
 	color: #fff !important;
 }
 .fcs{
+	font-family: 'Open Sans', sans-serif;
 	float: right;
 	width: 29%;
 	font-size: 14px;
@@ -909,6 +911,7 @@ border-bottom: 0;
 	padding: 5px;
 	border: 1px solid #cccccc;
 	border-radius: 2px;
+	font-family: 'Open Sans', sans-serif;
 }
 .content2-text{
 	width: 90%;
