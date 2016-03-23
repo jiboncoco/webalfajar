@@ -41,4 +41,19 @@ class Controller extends BaseController
       return view('portal_tk');
     }
 
+    public function portal_sd()
+    {
+      return view('portal_sd');
+    }
+
+    public function portal_smp()
+    {
+      return view('portal_smp');
+    }
+
+    public function portal_sma()
+    {
+      return view('portal_sma');
+    }
+
 }
