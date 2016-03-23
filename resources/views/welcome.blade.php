@@ -33,17 +33,17 @@
 
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
-      <ul class="nav navbar-nav">
-        <li><a href="#carouselSection">Home</a></li>
-        <li><a href="#newsServices">News</a></li>
-        <li><a href="#yayasanSection">Yayasan</a></li>
-        <li><a href="#portfolioSection">TK</a></li>
-        <li><a href="#meetourteamSection">SD</a></li>
-        <li><a href="#recentpostSection">SMP</a></li>
-        <li><a href="#contactSection">SMA</a></li>
-        <li><a href="#dkmSection">DKM</a></li>
-        <li><a href="#informasiServices">Informasi</a></li>
-        <li><a href="{{ url('login') }}">Sign In</a></li>
+      <ul style="margin-top:15px;" class="nav navbar-nav">
+        <a class="a-li" href="#carouselSection"><li>Home</li></a>
+        <a class="a-li" href="#newsServices"><li>News</li></a>
+        <a class="a-li" href="#yayasanSection"><li>Yayasan</li></a>
+        <a class="a-li" href="#portfolioSection"><li>TK</li></a>
+        <a class="a-li" href="#meetourteamSection"><li>SD</li></a>
+        <a class="a-li" href="#recentpostSection"><li>SMP</li></a>
+        <a class="a-li" href="#contactSection"><li>SMA</li></a>
+        <a class="a-li" href="#dkmSection"><li>DKM</li></a>
+        <a class="a-li" href="#informasiServices"><li>Informasi</li></a>
+        <a class="a-li" href="{{ url('login') }}"><li>Sign In</li></a>
 
       </ul>
     </div>

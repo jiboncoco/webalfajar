@@ -565,10 +565,10 @@
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-        <li><a href="{{ url('/')}}">Home</a></li>
-        <li><a href="{{url('news')}}">News</a></li>
+        <a class="a-li" href="{{ url('/')}}"><li>Home</li></a>
+        <a class="a-li" href="{{url('news')}}"><li>News</li></a>
         <li class="dropdown">
-          <a class="dropdown-toggle" data-toggle="dropdown" href="#">Yayasan <span class="caret"></span></a>
+          <a class="dropdown-toggle" id="no-li"data-toggle="dropdown" href="#">Yayasan <span class="caret"></span></a>
           <ul class="dropdown-menu">
             <li><a data-toggle="modal" data-target="#myModalyay1" href="#">Visi Misi</a></li>
             <li><a data-toggle="modal" data-target="#myModalyay2" href="#">Sistem Pendidikan</a></li>
@@ -577,7 +577,7 @@
           </ul>
         </li>
         <li class="dropdown">
-          <a class="dropdown-toggle" data-toggle="dropdown" href="#">TK <span class="caret"></span></a>
+          <a class="dropdown-toggle" id="no-li"data-toggle="dropdown" href="#">TK <span class="caret"></span></a>
           <ul class="dropdown-menu">
             <li><a href="{{ url('portal_tk') }}">Portal TK</a></li>
             <li><a data-toggle="modal" data-target="#myModaltk1" href="#">Visi Misi</a></li>
@@ -588,7 +588,7 @@
           </ul>
         </li>
         <li class="dropdown">
-          <a class="dropdown-toggle" data-toggle="dropdown" href="#">SD <span class="caret"></span></a>
+          <a class="dropdown-toggle" id="no-li"data-toggle="dropdown" href="#">SD <span class="caret"></span></a>
           <ul class="dropdown-menu">
             <li><a href="{{ url('portal_sd') }}">Portal SD</a></li>
             <li><a data-toggle="modal" data-target="#myModalsd1" href="#">Visi Misi</a></li>
@@ -599,7 +599,7 @@
           </ul>
         </li>
         <li class="dropdown">
-          <a class="dropdown-toggle" data-toggle="dropdown" href="#">SMP <span class="caret"></span></a>
+          <a class="dropdown-toggle" id="no-li"data-toggle="dropdown" href="#">SMP <span class="caret"></span></a>
           <ul class="dropdown-menu">
             <li><a href="{{ url('portal_smp') }}">Portal SMP</a></li>
             <li><a data-toggle="modal" data-target="#myModalsmp1" href="#">Visi Misi</a></li>
@@ -610,7 +610,7 @@
           </ul>
         </li>
         <li class="dropdown">
-          <a class="dropdown-toggle" data-toggle="dropdown" href="#">SMA <span class="caret"></span></a>
+          <a class="dropdown-toggle" id="no-li"data-toggle="dropdown" href="#">SMA <span class="caret"></span></a>
           <ul class="dropdown-menu">
             <li><a href="{{ url('portal_sma') }}">Portal SMA</a></li>
             <li><a data-toggle="modal" data-target="#myModalsma1" href="#">Visi Misi</a></li>
@@ -622,21 +622,21 @@
         </li>
 
         <li class="dropdown">
-          <a class="dropdown-toggle" data-toggle="dropdown" href="#">DKM <span class="caret"></span></a>
+          <a class="dropdown-toggle" id="no-li"data-toggle="dropdown" href="#">DKM <span class="caret"></span></a>
           <ul class="dropdown-menu">
             <li><a data-toggle="modal" data-target="#myModaldkm1" href="#">Fasilitas</a></li>
             <li><a data-toggle="modal" data-target="#myModaldkm2" href="#">Galeri Kegiatan</a></li>
           </ul>
         </li>
         <li class="dropdown">
-          <a class="dropdown-toggle" data-toggle="dropdown" href="#">Informasi <span class="caret"></span></a>
+          <a class="dropdown-toggle"  id="no-li"data-toggle="dropdown" href="#">Informasi <span class="caret"></span></a>
           <ul class="dropdown-menu">
             <li><a href="#newsSection">Pengumuman</a></li>
             <li><a href="{{ url('agenda') }}">Agenda</a></li>
             <li><a href="{{ url('artikel') }}">Artikel</a></li>
           </ul>
         </li>
-        <li><a href="{{ url('login') }}">Sign In</a></li>
+        <a class="a-li" href="{{ url('login') }}"><li>Sign In</li></a>
 
       </ul>
     </div>

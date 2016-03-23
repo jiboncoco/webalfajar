@@ -315,17 +315,16 @@
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-        <li><a href="{{ url('/')}}">Home</a></li>
+        <a class="a-li" href="{{ url('/')}}"><li>Home</li></a>
         <li class="dropdown">
-          <a class="dropdown-toggle" data-toggle="dropdown" href="#">Profile <span class="caret"></span></a>
+          <a class="dropdown-toggle" id="profile-li" data-toggle="dropdown" href="#">Profile <span class="caret"></span></a>
           <ul class="dropdown-menu">
             <li><a data-toggle="modal" data-target="#myModalvimi" href="#">Visi Misi</a></li>
             <li><a data-toggle="modal" data-target="#myModalkur" href="#">Kurikulum</a></li>
             <li><a data-toggle="modal" data-target="#myModalfas" href="#">Fasilitas</a></li>
             <li><a data-toggle="modal" data-target="#myModalkepsek" href="#">Kepala Sekolah</a></li>
             <li><a data-toggle="modal" data-target="#myModalguru" href="#">Guru</a></li>
-            <li>
-            <a class="trigger right-caret" href="#">Siswa</a>
+            <li><a class="trigger right-caret" href="#">Siswa</a>
             <ul class="dropdown-menu sub-menu">
               <li><a data-toggle="modal" data-target="#myModalsiswa" href="#">Siswa</a></li>
               <li><a data-toggle="modal" data-target="#myModalalumni" href="#">Alumni</a></li>
@@ -337,10 +336,10 @@
             <li><a data-toggle="modal" data-target="#myModalekskul" href="#">Ekstrakulikuler</a></li>
           </ul>
         </li>
-        <li><a data-toggle="modal" data-target="#myModalgaleritk" href="{{ url('#')}}">Galeri</a></li>
-        <li><a href="{{ url('#newsSection')}}">Informasi</a></li>
-        <li><a href="{{ url('#')}}">Pendaftaran</a></li>
-        <li><a href="{{ url('login') }}">Sign In</a></li>
+        <a data-toggle="modal" id="galeri-li" data-target="#myModalgaleritk" href="{{ url('#')}}"><li>Galeri</li></a>
+        <a class="a-li" href="{{ url('#newsSection')}}"><li>Informasi</li></a>
+        <a class="a-li" href="{{ url('#')}}"><li>Pendaftaran</li></a>
+        <a class="a-li" href="{{ url('login') }}"><li>Sign In</li></a>
 
       </ul>
     </div>
@@ -415,19 +414,17 @@
       </form>
     </div>
     <div class="cs-com">
-      <div class="btn-group">
-      <button type="button" id="btn-com" class="btn btn-default">Informasi</button>
-      <button type="button" id="btn-drop" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        <span class="caret"></span>
-        <span class="sr-only">Toggle Dropdown</span>
-      </button>
-      <ul class="dropdown-menu">
-        <li><a href="#">Berita</a></li>
+    <div class="btn-group">
+  <button id="btn-com" type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Informasi <span class="caret"></span>
+  </button>
+  <ul class="dropdown-menu">
+    <li><a href="#">Berita</a></li>
     <li><a href="#">Pengumuman</a></li>
     <li><a href="#">Agenda</a></li>
     <li><a href="#">Artikel</a></li>
-      </ul>
-      </div>
+  </ul>
+</div>
     </div>
     </div>
     <div class="content1-box-all">

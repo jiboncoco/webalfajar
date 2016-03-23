@@ -1,5 +1,5 @@
 // Scroll page with easing effect
-    $('.navbar ul li a[href*=#]').bind('click', function(e) {
+    $('.navbar ul a[href*=#]').bind('click', function(e) {
         e.preventDefault();
         target = this.hash;
         $.scrollTo(target, 1500, {
