@@ -36,4 +36,9 @@ class Controller extends BaseController
       return view('artikel');
     }
 
+    public function portal_tk()
+    {
+      return view('portal_tk');
+    }
+
 }

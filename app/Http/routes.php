@@ -20,6 +20,7 @@ Route::get('news', 'Controller@news');
 Route::get('agenda', 'Controller@agenda');
 Route::get('pengumuman', 'Controller@pengumuman');
 Route::get('artikel', 'Controller@artikel');
+Route::get('portal_tk', 'Controller@portal_tk');
 
 /*
 |--------------------------------------------------------------------------

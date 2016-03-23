@@ -674,7 +674,7 @@
     <img class="img-c" src="{{ url('img/img_home/TK.png') }}">
 </div>
 <div class="class-lab">
-    <a class="a-lab-port" href="#"><label class="lab-c-port">Portal TK</label></a>
+    <a class="a-lab-port" href="{{ url('portal_tk') }}"><label class="lab-c-port">Portal TK</label></a>
     <a class="a-lab-port" data-toggle="modal" data-target="#myModalport1" href="#"><label class="lab-c-port">Visi - Misi</label></a>
     <a class="a-lab-port" data-toggle="modal" data-target="#myModalport2" href="#"><label class="lab-c-port">Kurikulum</label></a>
     <a class="a-lab-port" data-toggle="modal" data-target="#myModalport3" href="#"><label class="lab-c-port">Fasilitas</label></a>
@@ -691,7 +691,7 @@
     <img class="img-c" src="{{ url('img/img_home/SD.png') }}">
 </div>
 <div class="class-lab">
-    <a class="a-lab-meet" href="#"><label class="lab-c-meet">Portal SD</label></a>
+    <a class="a-lab-meet" href="{{ url('portal_sd') }}"><label class="lab-c-meet">Portal SD</label></a>
     <a class="a-lab-meet" data-toggle="modal" data-target="#myModalmeet1" href="#"><label class="lab-c-meet">Visi - Misi</label></a>
     <a class="a-lab-meet" data-toggle="modal" data-target="#myModalmeet2" href="#"><label class="lab-c-meet">Kurikulum</label></a>
     <a class="a-lab-meet" data-toggle="modal" data-target="#myModalmeet3" href="#"><label class="lab-c-meet">Fasilitas</label></a>
@@ -709,7 +709,7 @@
     <img class="img-c" src="{{ url('img/img_home/SMP.png') }}">
 </div>
 <div class="class-lab">
-    <a class="a-lab-rec" href="#"><label class="lab-c-rec">Portal SMP</label></a>
+    <a class="a-lab-rec" href="{{ url('portal_smp') }}"><label class="lab-c-rec">Portal SMP</label></a>
     <a class="a-lab-rec" data-toggle="modal" data-target="#myModalrec1" href="#"><label class="lab-c-rec">Visi - Misi</label></a>
     <a class="a-lab-rec" data-toggle="modal" data-target="#myModalrec2" href="#"><label class="lab-c-rec">Kurikulum</label></a>
     <a class="a-lab-rec" data-toggle="modal" data-target="#myModalrec3" href="#"><label class="lab-c-rec">Fasilitas</label></a>
@@ -726,7 +726,7 @@
     <img class="img-c" src="{{ url('img/img_home/SMA.png') }}">
 </div>
 <div class="class-lab">
-    <a class="a-lab-cont" href="#"><label class="lab-c-cont">Portal SMA</label></a>
+    <a class="a-lab-cont" href="{{ url('portal_sma') }}"><label class="lab-c-cont">Portal SMA</label></a>
     <a class="a-lab-cont" data-toggle="modal" data-target="#myModalcont1" href="#"><label class="lab-c-cont">Visi - Misi</label></a>
     <a class="a-lab-cont" data-toggle="modal" data-target="#myModalcont2" href="#"><label class="lab-c-cont">Kurikulum</label></a>
     <a class="a-lab-cont" data-toggle="modal" data-target="#myModalcont3" href="#"><label class="lab-c-cont">Fasilitas</label></a>

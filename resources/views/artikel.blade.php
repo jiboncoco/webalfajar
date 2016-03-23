@@ -579,7 +579,7 @@
         <li class="dropdown">
           <a class="dropdown-toggle" data-toggle="dropdown" href="#">TK <span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a href="#">Portal TK</a></li>
+            <li><a href="{{ url('portal_tk') }}">Portal TK</a></li>
             <li><a data-toggle="modal" data-target="#myModaltk1" href="#">Visi Misi</a></li>
             <li><a data-toggle="modal" data-target="#myModaltk2" href="#">Kurikulum</a></li>
             <li><a data-toggle="modal" data-target="#myModaltk3" href="#">Fasilitas</a></li>
@@ -590,7 +590,7 @@
         <li class="dropdown">
           <a class="dropdown-toggle" data-toggle="dropdown" href="#">SD <span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a href="#">Portal SD</a></li>
+            <li><a href="{{ url('portal_sd') }}">Portal SD</a></li>
             <li><a data-toggle="modal" data-target="#myModalsd1" href="#">Visi Misi</a></li>
             <li><a data-toggle="modal" data-target="#myModalsd2" href="#">Kurikulum</a></li>
             <li><a data-toggle="modal" data-target="#myModalsd3" href="#">Fasilitas</a></li>
@@ -601,7 +601,7 @@
         <li class="dropdown">
           <a class="dropdown-toggle" data-toggle="dropdown" href="#">SMP <span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a href="#">Portal SMP</a></li>
+            <li><a href="{{ url('portal_smp') }}">Portal SMP</a></li>
             <li><a data-toggle="modal" data-target="#myModalsmp1" href="#">Visi Misi</a></li>
             <li><a data-toggle="modal" data-target="#myModalsmp2" href="#">Kurikulum</a></li>
             <li><a data-toggle="modal" data-target="#myModalsmp3" href="#">Fasilitas</a></li>
@@ -612,7 +612,7 @@
         <li class="dropdown">
           <a class="dropdown-toggle" data-toggle="dropdown" href="#">SMA <span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a href="#">Portal SMA</a></li>
+            <li><a href="{{ url('portal_sma') }}">Portal SMA</a></li>
             <li><a data-toggle="modal" data-target="#myModalsma1" href="#">Visi Misi</a></li>
             <li><a data-toggle="modal" data-target="#myModalsma2" href="#">Kurikulum</a></li>
             <li><a data-toggle="modal" data-target="#myModalsma3" href="#">Fasilitas</a></li>
