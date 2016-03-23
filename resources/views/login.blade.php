@@ -182,7 +182,7 @@
 <script src="js/jquery.easing-1.3.min.js"></script>
 <script src="js/default.js"></script>
 
-<script type="text/javascript">
+<!-- <script type="text/javascript">
 
     $(document).ready(function() {
     $('#myCarousel').carousel({
@@ -192,10 +192,7 @@
     });
 
 
-
-
-
-</script>
+</script> -->
 
 </body>
 </html>

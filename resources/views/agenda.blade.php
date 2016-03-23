@@ -833,7 +833,7 @@
       <form>
         <span class="input-group-btn">
         <button id="btn-s2" class="btn btn-default" type="button"><i class="fa fa-search"></i></button>
-      <input class="fnip" placeholder="NIP" />
+      <input Not Like "*[!a-z]*" class="fnip" placeholder="NIP" required/>
       </span>
       </form>
     </div>
@@ -918,7 +918,7 @@
 <div class="container">
     <form class="form-letter">
       News Letter
-      <input class="input-letter" name="" type="email" placeholder="Your Email">
+      <input class="input-letter" name="" type="email" placeholder="Your Email" required>
       <button class="button-letter" type="submit">Send</button>
     </form>
 </div>
