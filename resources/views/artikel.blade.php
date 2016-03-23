@@ -833,7 +833,7 @@
       <form>
         <span class="input-group-btn">
         <button id="btn-s2" class="btn btn-default" type="button"><i class="fa fa-search"></i></button>
-      <input class="fnip" placeholder="NIP" />
+      <input Not Like "*[!a-z]*" class="fnip" placeholder="NIP" required/>
       </span>
       </form>
     </div>
