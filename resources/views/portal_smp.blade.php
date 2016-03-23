@@ -414,12 +414,13 @@
       </span>
       </form>
     </div>
-    <div class="cs-com">
+   <div class="cs-com">
     <div class="btn-group">
   <button id="btn-com" type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
     Informasi <span class="caret"></span>
   </button>
-  <ul class="dropdown-menu">
+  <ul id="info-ul" class="dropdown-menu">
+    <li><a href="#">All</a></li>
     <li><a href="#">Berita</a></li>
     <li><a href="#">Pengumuman</a></li>
     <li><a href="#">Agenda</a></li>
