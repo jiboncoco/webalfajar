@@ -380,7 +380,7 @@ height: 2px;
 
 .carousel-inner{
 	text-align: center;
-	margin-top: -70px;
+	margin-top: -80px;
 	background-color: #A5D2DA;
 }
 .input-letter{
@@ -1007,8 +1007,8 @@ border-bottom: 0;
 #btn-rm-s{
 	color: white;
 	background-color: rgb(34, 174, 226);
-	margin-bottom: 30px;
-	margin-top: 30px;
+	margin-bottom: 20px;
+	margin-top: 20px;
 }
 #btn-rm-s:hover{
 	color: rgb(34, 174, 226);
@@ -1072,11 +1072,13 @@ border-bottom: 0;
 .cs-com{
 	margin-top: 20px;
 	margin-left: 0px;
-	float: left;
 }
 #btn-com{
 	border-radius: 2px;
-	width: 340px;
+	width: 300px;
+}
+#btn-drop{
+	float: right;
 }
 .nav li:a{
 	color: #9d9d9d !important;
