@@ -638,7 +638,7 @@
 <div class="container">
     <form class="form-letter">
       News Letter
-      <input class="input-letter" name="" type="email" placeholder="Your Email">
+      <input class="input-letter" name="" type="email" placeholder="Your Email" required>
       <button class="button-letter" type="submit">Send</button>
     </form>
 </div>
