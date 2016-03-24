@@ -56,4 +56,9 @@ class Controller extends BaseController
       return view('portal_sma');
     }
 
+    public function view()
+    {
+      return view('view');
+    }
+
 }

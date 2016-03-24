@@ -24,6 +24,7 @@ Route::get('portal_tk', 'Controller@portal_tk');
 Route::get('portal_sd', 'Controller@portal_sd');
 Route::get('portal_smp', 'Controller@portal_smp');
 Route::get('portal_sma', 'Controller@portal_sma');
+Route::get('view', 'Controller@view');
 
 /*
 |--------------------------------------------------------------------------

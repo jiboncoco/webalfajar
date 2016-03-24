@@ -14,7 +14,6 @@
 </head>
 <body class="body-login">
 
-<!-- <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal1"> Buka Modal </button> -->
         <div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content-login">
@@ -28,7 +27,7 @@
 					<input class="login-input" name="" id="log-inp" placeholder="NIP Al-Fajar" required></input>
 					<input class="login-input" name="" id="log-inp" placeholder="Username" required></input>
 					<input class="login-input" name="" type="password" placeholder="Password" required></input><br>
-                    <div class="checkbox">
+                    <div id="cb-log" class="checkbox">
                     <label><input type="checkbox" value=""> Remember me</label>
                     </div>
 					<button class="login-button" type="submit">Login</button>
@@ -89,7 +88,7 @@
                     </select>
 					<input class="login-input" name="" id="log-inp" placeholder="Username" required></input>
 					<input class="login-input" name="" type="password" placeholder="Password" required></input><br>
-                    <div class="checkbox">
+                    <div id="cb-log" class="checkbox">
                     <label><input type="checkbox" value=""> Remember me</label>
                     </div>
 					<button class="login-button" type="submit">Login</button>
