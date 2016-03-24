@@ -651,32 +651,201 @@
 
 <div class="allcontentview">
   <div class="contentview1">
+  <div class="fillcv1">
 
     <div class="cv-title">
-      TITLE
+      LOREM IPSUM
     </div>
 
     <div class="cv-property">
-      <div class="cv-comment">
+    <a href="#"><div class="cv-comment">
         <i id="fa-com" class="fa fa-comments"></i>
-        <label class="lab-jml-com">1</label>
-      </div>
-      <div class="cv-fb">
+         <label class="lab-jml-com"> 1</label>
+    </div></a>
+    <a href="#"><div class="cv-fb">
         <i id="fa-fb" class="fa fa-facebook-square"></i>
-        <label class="lab-fb">Facebook</label>
-      </div>
-      <div class="cv-tweet">
+         <label class="lab-fb"> Facebook</label>
+    </div></a>
+    <a href="#"><div class="cv-tweet">
         <i id="fa-tweet" class="fa fa-twitter-square"></i>
-        <label class="lab-tweet">Twitter</label>
+         <label class="lab-tweet"> Twitter</label>
+    </div></a>
+    </div>
+
+    <div class="cv-img">
+      <img class="img-cv" src="{{url('img/img_news/news1.png')}}">
+    </div>
+
+    <div class="cv-auth">
+      <i id="fa-usr" class="fa fa-user"></i>
+      <label class="lab-cv-auth"> Authors : Admin</label>
+      <p class="cv-date">31 Desember 2015</p>
+    </div>
+
+    <div class="cv-text-news">
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    </div>
+
+    <div class="cv-comments">
+      <div class="img-user-com">
+        <img class="img-uc" src="{{url('img/img_home/img-pengumuman.png')}}">
+      </div>
+      <div class="inp-com">
+      <form>
+        <input class="input-com" name="" placeholder="Comment" required/>
+        <div class="but-comm">
+        <button class="button-com" type="submit">Send</button>
+        </div>
+      </form>
       </div>
     </div>
 
-    <div class="cv-img"></div>
+    <div class="view-comment">
+      <p class="title-vc">Comment</p>
+      <div class="line-comment">
+        <div class="lc-img">
+          <img class="img-lc" src="{{url('img/img_home/img-pengumuman.png')}}">
+        </div>
+        <div class="lc-text">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        </div>
+      </div>
+      <div class="line-comment">
+        <div class="lc-img">
+          <img class="img-lc" src="{{url('img/img_home/img-pengumuman.png')}}">
+        </div>
+        <div class="lc-text">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        </div>
+      </div>
+    </div>
+
+    <div class="but-more-comment">
+      <a href="#"><button class="button-mc">More Comment</button></a>
+    </div>
+
+    <div class="other-news">
+      <p class="title-on">Other News</p>
+      <a href="#"><div class="on-box">
+        <img class="on-img" src="{{url('img/img_news/news1.png')}}">
+        <div class="on-title">Lorem Ipsum</div>
+      </div></a>
+      <a href="#"><div class="on-box">
+        <img class="on-img" src="{{url('img/img_news/news1.png')}}">
+        <div class="on-title">Lorem Ipsum</div>
+      </div></a>
+      <a href="#"><div class="on-box">
+        <img class="on-img" src="{{url('img/img_news/news1.png')}}">
+        <div class="on-title">Lorem Ipsum</div>
+      </div></a>
+    </div>
 
   </div>
+  </div>
+
+  <div class="contentview2">
+      <div class="content2">
+    <div class="content2-s">
+      <form>
+        <span class="input-group-btn">
+        <button id="btn-s2" class="btn btn-default" type="submit"><i class="fa fa-search"></i></button>
+      <input class="fnip" placeholder="NIP" required/>
+      </span>
+      </form>
+    </div>
+    <div class="content2-all">
+      <div class="content2-text">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+      </div>
+        <div class="content2-notif">
+        <p class="notif-p">PENGUMUMAN</p>
+        <div class="notif">
+          <a href="#">
+          <label class="no-notif">1.</label>
+          <label class="title-notif">Lorem Ipsum</label>
+          </a>
+          <p class="date-notif">31 Desember 2016</p>
+        </div>
+        <div class="notif">
+          <a href="#">
+          <label class="no-notif">2.</label>
+          <label class="title-notif">Lorem Ipsum</label>
+          </a>
+          <p class="date-notif">31 Desember 2016</p>
+        </div>
+        <div class="notif">
+          <a href="#">
+          <label class="no-notif">3.</label>
+          <label class="title-notif">Lorem Ipsum</label>
+          </a>
+          <p class="date-notif">31 Desember 2016</p>
+        </div>
+        <div class="notif-button">
+          <a href="{{ url('pengumuman') }}">
+          <button class="notif-b">More</button>
+          </a>
+        </div>
+        </div>
+          <div class="content2-notif">
+            <p class="notif-p">ARTIKEL</p>
+        <div class="notif">
+          <a href="#">
+          <label class="no-notif">1.</label>
+          <label class="title-notif">Lorem Ipsum</label>
+          </a>
+          <p class="date-notif">31 Desember 2016</p>
+        </div>
+        <div class="notif">
+          <a href="#">
+          <label class="no-notif">2.</label>
+          <label class="title-notif">Lorem Ipsum</label>
+          </a>
+          <p class="date-notif">31 Desember 2016</p>
+        </div>
+        <div class="notif">
+          <a href="#">
+          <label class="no-notif">3.</label>
+          <label class="title-notif">Lorem Ipsum</label>
+          </a>
+          <p class="date-notif">31 Desember 2016</p>
+        </div>
+        <div class="notif-button">
+          <a href="{{ url('artikel') }}">
+          <button class="notif-b">More</button>
+          </a>
+        </div>
+          </div>
+            <div class="content2-fb">
+              <p class="title-fb">FACEBOOK PAGES</p>
+            </div>
+              <div class="content2-maps">
+              <p class="title-maps">MAPS</p>
+              </div>
+    </div>
+  </div>
+  </div>
+
 </div>
 
 <!-- allcontentview end-->
+
+<!-- footer -->
+     <div class="footerSection container">
+
+</div>
+<div class="footer-wel">
+    <div class="footer-content">
+        <div class="footer-lable">
+            <label><a class="footer-a1" href="#">Facebook</a></label>
+            <label><a class="footer-a1" href="#">Twitter</a></label>
+            <label><a class="footer-a1" href="#">Meet The Team</a></label>
+        </div>
+        <div class="footer-lable2">
+            <label style="color : rgb(20, 210, 210)">© 2016 JICOS, All rights reserved. <a class="footer-a" href="#"> Achmad Fauzi </a> and <a <a class="footer-a" href=""> Rizda Annisa .</a> Perguruan Islam Al - Fajar <a class="footer-a" href=""> Contact , </a> and JICOS <a class="footer-a" href=""> About. </a>.</label>
+        </div>
+    </div>
+</div>
 
 <!-- Sectionone block ends======================================== -->
 
