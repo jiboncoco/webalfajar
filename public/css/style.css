@@ -1113,8 +1113,12 @@ border-bottom: 0;
 	float: left;
 	width: 70%;
 	padding: 10px;
+	overflow-x: hidden;
+    overflow-y: auto;
 }
 .fillcv1{
+	overflow-x: hidden;
+    overflow-y: auto;
 	padding: 10px;
     width: 93%;
     margin-left: 55px;
@@ -1144,6 +1148,9 @@ border-bottom: 0;
     text-align: center;
     margin-right: 20px;
 }
+.cv-fb:hover{
+	opacity: 0.8;
+}
 .cv-tweet{
 	width: 20%;
     color: white !important;
@@ -1152,6 +1159,10 @@ border-bottom: 0;
     display: inline-table;
     text-align: center;
 }
+.cv-tweet:hover{
+	opacity: 0.8;
+}
+
 .cv-img{
 	width: 100%;
 	padding: 10px;
@@ -1182,7 +1193,7 @@ border-bottom: 0;
 }
 .cv-comments{
 	display: inline-flex;
-	width: 90%;
+	width: 100%;
 }
 .img-user-com{
 	padding: 10px;
@@ -1199,11 +1210,16 @@ border-bottom: 0;
     padding: 10px;
 }
 .input-com{
-	width: 83%;
+	width: 85%;
     height: 50px;
     padding: 10px;
     border-radius: 5px;
     border: 1px solid #BBB1B1;
+}
+.input-com:hover{
+	transition: all .5s ease-in-out;
+	border: 1px solid #2D506F;
+	box-shadow:0 0 4px #2D506F;
 }
 .button-com{
 	width: 200%;
@@ -1213,6 +1229,12 @@ border-bottom: 0;
     border: 1px solid white;
     color: white;
     border-radius: 5px;
+}
+.button-com:hover{
+    background: white;
+    border: 1px solid #2D506F;
+    color: #2D506F;
+    transition: all .5s ease-in-out;
 }
 .but-comm{
 	display: inline-table;
@@ -1256,6 +1278,12 @@ border-bottom: 0;
     border: 1px solid white;
     border-radius: 5px;
 }
+.button-mc:hover{
+    color: #0269c2;
+    background: white;
+    border: 1px solid #0269c2;
+    transition: all .5s ease-in-out;
+}
 .other-news{
 	padding: 10px;
 	width: 100%;
@@ -1265,10 +1293,14 @@ border-bottom: 0;
 }
 .on-box{
 	display: inline-table;
-    width: 33%;
+    width: 32.9%;
     border: 1px solid #eee;
     padding: 5px;
     text-align: center;
+}
+.on-box:hover{
+	transition: all .5s ease-in-out;
+	opacity: 0.6;
 }
 .on-img{
 	height: 90%;
@@ -1283,6 +1315,85 @@ border-bottom: 0;
 
 
 @media only screen and (max-width : 992px) {
+.contentview1{
+	float: none;
+	width: 100%;
+}
+.fillcv1{
+	margin: 0px;
+	width: 100%;
+}
+.cv-title {
+    font-size: 20px;
+}
+.cv-fb {
+	margin-right: 10px;
+    width: 20%;
+}
+.cv-tweet{
+    width: 20%;
+}
+.lab-fb{
+	display: none;
+}
+.lab-tweet{
+	display: none;
+}
+.cv-comment {
+    width: 25%;
+	font-size: 20px;
+}
+.img-cv {
+    width: 100%;
+    height: 200px;
+}
+.lab-cv-auth{
+	font-size: 14px;
+}
+.cv-text-news{
+	font-size: 15px;
+}
+.img-uc {
+    height: 40px;
+    width: 40px;
+}
+.img-user-com {
+    margin-right: 0px;
+}
+.input-com {
+	font-size: 14px;
+	width: 97%;
+	height: 40px;
+}
+.but-comm{
+	float: right;
+}
+.button-com {
+	font-size: 13px;
+    width: 120%;
+    margin-left: 0px;
+    margin-right: 6px;
+    height: 40px;
+    float: right;
+    margin-top: 10px;
+}
+.lc-text {
+    font-size: 12px;
+    width: 78%;
+}
+.button-mc {
+    text-align: center;
+    width: 55%;
+    font-size: 13px;
+}
+.on-box {
+    width: 100%;
+    margin-bottom: 10px;
+}
+.on-img {
+    height: 200px;
+    width: 100%;
+}
 #cb-log{
 	width: 90%;
     margin: auto;
