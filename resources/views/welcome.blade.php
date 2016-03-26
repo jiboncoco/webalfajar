@@ -655,7 +655,7 @@
 <div id="yayasanSection">
 <div class="content-port">
 <div class="class-img">
-    <img class="img-c" src="{{ url('img/img_home/TK.png') }}">
+    <img class="img-c" src="{{ url('img/img_home/yayasan.png') }}">
 </div>
 <div style="padding-top:30px;" class="class-lab">
     <a class="a-lab-yay" data-toggle="modal" data-target="#myModalyay1" href="#"><label class="lab-c-yay">Visi - Misi</label></a>
