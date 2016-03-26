@@ -782,9 +782,9 @@ border-bottom: 0;
   display: inline-table;
 }
 .content-s{
-	float: right;
+  float: right;
   padding: 15px;
-  width: 90%;
+  width: 100%;
   display: inline-table;
 }
 .cs-com{
@@ -829,7 +829,7 @@ border-bottom: 0;
 .fcs{
 	font-family: 'Open Sans', sans-serif;
 	float: right;
-	width: 50%;
+	width: 39%;
 	font-size: 14px;
 	padding: 5px;
 	border: 1px solid #cccccc;
@@ -1102,10 +1102,6 @@ border-bottom: 0;
     margin: auto;
     text-align: left;
 }
-.cs-search{
-	width: 60%;
-    float: right;
-}
 .allcontentview{
 	width: 100%;
 }
@@ -1174,6 +1170,7 @@ border-bottom: 0;
 .cv-auth{
 	padding: 10px;
 	width: 100%;
+	color: #598A84;
 }
 .cv-date{
 	font-size: 13px;
@@ -1312,9 +1309,30 @@ border-bottom: 0;
     padding: 10px;
     text-align: center;
 }
-
-
+#sg{
+	width:60%;
+	margin:auto;
+	border-radius:2px;
+	height:5.8%;
+}
+.cs-search {
+    width: 89.5%;
+    margin-left: 480px;
+}
+/*@media only screen and (max-width : 3600px) {
+.cs-search {
+    width: 89.5%;
+    margin-left: 20px;
+}
+}*/
 @media only screen and (max-width : 992px) {
+.cs-search {
+    width: 89.5%;
+    margin-left: 20px;
+}
+#sg{
+	width:90%;
+}
 .contentview1{
 	float: none;
 	width: 100%;
@@ -1646,11 +1664,11 @@ color: white !important;
 	width: 100%;
 }
 .fcs{
-	width: 135%;
+	width: 82%;
     float: none;
     margin-top: 70px;
     margin-bottom: -30px;
-    margin-left: -123px;
+    margin-left: 15px;
 }
 .fullcontent{
 	width: 100%;

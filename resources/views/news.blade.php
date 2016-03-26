@@ -711,7 +711,7 @@
       </form>
     </div>
     <div class="content1-box-all">
-    <a href="#">
+    <a href="{{ url('view') }}">
     <div class="content1-box">
         <img class="cb-img" src="img/img_news/news1.png" />
       <div class="cb-title">
@@ -729,7 +729,7 @@
       </div>
     </div>
     </a>
-    <a href="#">
+    <a href="{{ url('view') }}">
     <div class="content1-box">
         <img class="cb-img" src="img/img_news/news1.png" />
       <div class="cb-title">
@@ -747,7 +747,7 @@
       </div>
     </div>
     </a>
-    <a href="#">
+    <a href="{{ url('view') }}">
     <div class="content1-box">
         <img class="cb-img" src="img/img_news/news1.png" />
       <div class="cb-title">
@@ -765,7 +765,7 @@
       </div>
     </div>
     </a>
-    <a href="#">
+    <a href="{{ url('view') }}">
     <div class="content1-box">
         <img class="cb-img" src="img/img_news/news1.png" />
       <div class="cb-title">
@@ -783,7 +783,7 @@
       </div>
     </div>
     </a>
-    <a href="#">
+    <a href="{{ url('view') }}">
     <div class="content1-box">
         <img class="cb-img" src="img/img_news/news1.png" />
       <div class="cb-title">
@@ -801,7 +801,7 @@
       </div>
     </div>
     </a>
-    <a href="#">
+    <a href="{{ url('view') }}">
     <div class="content1-box">
         <img class="cb-img" src="img/img_news/news1.png" />
       <div class="cb-title">

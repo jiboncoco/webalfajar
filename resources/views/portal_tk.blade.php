@@ -407,26 +407,24 @@
   <div class="content1">
     <div class="content-s">
     <div class="cs-search">
-      <form>
-        <span class="input-group-btn">
-        <button id="btn-s" class="btn btn-default" type="submit"><i class="fa fa-search"></i></button>
-      <input class="fcs" name="" placeholder="Search" required/>
-      </span>
-      </form>
-    </div>
-    <div class="cs-com">
-    <div class="btn-group">
-  <button id="btn-com" type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    Informasi <span class="caret"></span>
-  </button>
-  <ul id="info-ul" class="dropdown-menu">
-    <li><a href="#">All</a></li>
-    <li><a href="#">Berita</a></li>
-    <li><a href="#">Pengumuman</a></li>
-    <li><a href="#">Agenda</a></li>
-    <li><a href="#">Artikel</a></li>
-  </ul>
-</div>
+    <div class="row">
+  <div class="col-lg-6">
+    <div class="input-group">
+      <input type="text" class="form-control" aria-label="..." placeholder="Search" required/>
+      <div class="input-group-btn">
+        <button type="submit" class="btn btn-default dropdown-toggle" data-toggle="dropdown" style="margin-bottom:10px;" aria-haspopup="true" aria-expanded="false">Informasi <span class="caret"></span></button>
+        <ul class="dropdown-menu">
+          <li><a href="#">All</a></li>
+          <li><a href="#">Berita</a></li>
+          <li><a href="#">Pengumuman</a></li>
+          <li><a href="#">Agenda</a></li>
+          <li><a href="#">Artikel</a></li>
+        </ul>
+      </div><!-- /btn-group -->
+    </div><!-- /input-group -->
+  </div><!-- /.col-lg-6 -->
+</div><!-- /.row -->
+      
     </div>
     </div>
     <div class="content1-box-all">
