@@ -17,7 +17,6 @@
 <div id="carouselSection" class="cntr">
 </div>
 <div id="headerSection">
-
     <nav class="navbar navbar-inverse">
   <div class="container-fluid">
 
