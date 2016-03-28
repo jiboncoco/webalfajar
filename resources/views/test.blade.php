@@ -15,14 +15,14 @@
 </head>
 <body>
 <div class="collapse" id="exCollapsingNavbar">
-  <div class="bg-inverse p-a-1">
+  <div class="bg-inverse p-a-1" style="padding:30px;background:#eee">
     <h4>Collapsed content</h4>
     <span class="text-muted">Toggleable via the navbar brand.</span>
   </div>
 </div>
-<div id="carouselSection" class="cntr">
+<div id="carouselSection" style="height:35px" class="cntr">
 </div>
-<div id="headerSection">
+<div id="headerSection" style="position:relative">
     
     <nav class="navbar navbar-inverse">
   <div class="container-fluid">
