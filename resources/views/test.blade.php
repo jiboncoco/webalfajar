@@ -20,9 +20,9 @@
     <span class="text-muted">Toggleable via the navbar brand.</span>
   </div>
 </div>
-<div id="carouselSection" style="height:35px" class="cntr">
+<div id="carouselSection" style="height:0px" class="cntr">
 </div>
-<div id="headerSection" style="position:relative">
+<div id="headerSection" style="position:relative;margin-top:0px">
     
     <nav class="navbar navbar-inverse">
   <div class="container-fluid">
