@@ -679,7 +679,7 @@
     <a class="a-lab-port" data-toggle="modal" data-target="#myModalport2" href="#"><label class="lab-c-port">Kurikulum</label></a>
     <a class="a-lab-port" data-toggle="modal" data-target="#myModalport3" href="#"><label class="lab-c-port">Fasilitas</label></a>
     <a class="a-lab-port" data-toggle="modal" data-target="#myModalport4" href="#"><label class="lab-c-port">Galeri Kegiatan</label></a>
-    <a class="a-lab-port" href="#"><label class="lab-c-port">Pendaftaran</label></a>
+    <a class="a-lab-port" href="{{ url('pendaftaran') }}"><label class="lab-c-port">Pendaftaran</label></a>
 </div>
 </div>
 </div>
@@ -696,7 +696,7 @@
     <a class="a-lab-meet" data-toggle="modal" data-target="#myModalmeet2" href="#"><label class="lab-c-meet">Kurikulum</label></a>
     <a class="a-lab-meet" data-toggle="modal" data-target="#myModalmeet3" href="#"><label class="lab-c-meet">Fasilitas</label></a>
     <a class="a-lab-meet" data-toggle="modal" data-target="#myModalmeet4" href="#"><label class="lab-c-meet">Galeri Kegiatan</label></a>
-    <a class="a-lab-meet" href="#"><label class="lab-c-meet">Pendaftaran</label></a>
+    <a class="a-lab-meet" href="{{ url('pendaftaran') }}"><label class="lab-c-meet">Pendaftaran</label></a>
 </div>
 </div>
 </div>
@@ -714,7 +714,7 @@
     <a class="a-lab-rec" data-toggle="modal" data-target="#myModalrec2" href="#"><label class="lab-c-rec">Kurikulum</label></a>
     <a class="a-lab-rec" data-toggle="modal" data-target="#myModalrec3" href="#"><label class="lab-c-rec">Fasilitas</label></a>
     <a class="a-lab-rec" data-toggle="modal" data-target="#myModalrec4" href="#"><label class="lab-c-rec">Galeri Kegiatan</label></a>
-    <a class="a-lab-rec" href="#"><label class="lab-c-rec">Pendaftaran</label></a>
+    <a class="a-lab-rec" href="{{ url('pendaftaran') }}"><label class="lab-c-rec">Pendaftaran</label></a>
 </div>
 </div>
 </div>
@@ -731,7 +731,7 @@
     <a class="a-lab-cont" data-toggle="modal" data-target="#myModalcont2" href="#"><label class="lab-c-cont">Kurikulum</label></a>
     <a class="a-lab-cont" data-toggle="modal" data-target="#myModalcont3" href="#"><label class="lab-c-cont">Fasilitas</label></a>
     <a class="a-lab-cont" data-toggle="modal" data-target="#myModalcont4" href="#"><label class="lab-c-cont">Galeri Kegiatan</label></a>
-    <a class="a-lab-cont" href="#"><label class="lab-c-cont">Pendaftaran</label></a>
+    <a class="a-lab-cont" href="{{ url('pendaftaran') }}"><label class="lab-c-cont">Pendaftaran</label></a>
 </div>
 </div>
 </div>

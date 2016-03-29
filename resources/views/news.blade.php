@@ -585,7 +585,7 @@
             <li><a data-toggle="modal" data-target="#myModaltk2" href="#">Kurikulum</a></li>
             <li><a data-toggle="modal" data-target="#myModaltk3" href="#">Fasilitas</a></li>
             <li><a data-toggle="modal" data-target="#myModaltk4" href="#">Galeri Kegiatan</a></li>
-            <li><a href="#">Pendaftaran</a></li>
+            <li><a href="{{ url('pendaftaran') }}">Pendaftaran</a></li>
           </ul>
         </li>
         <li class="dropdown">
@@ -596,7 +596,7 @@
             <li><a data-toggle="modal" data-target="#myModalsd2" href="#">Kurikulum</a></li>
             <li><a data-toggle="modal" data-target="#myModalsd3" href="#">Fasilitas</a></li>
             <li><a data-toggle="modal" data-target="#myModalsd4" href="#">Galeri Kegiatan</a></li>
-            <li><a href="#">Pendaftaran</a></li>
+            <li><a href="{{ url('pendaftaran') }}">Pendaftaran</a></li>
           </ul>
         </li>
         <li class="dropdown">
@@ -607,7 +607,7 @@
             <li><a data-toggle="modal" data-target="#myModalsmp2" href="#">Kurikulum</a></li>
             <li><a data-toggle="modal" data-target="#myModalsmp3" href="#">Fasilitas</a></li>
             <li><a data-toggle="modal" data-target="#myModalsmp4" href="#">Galeri Kegiatan</a></li>
-            <li><a href="#">Pendaftaran</a></li>
+            <li><a href="{{ url('pendaftaran') }}">Pendaftaran</a></li>
           </ul>
         </li>
         <li class="dropdown">
@@ -618,7 +618,7 @@
             <li><a data-toggle="modal" data-target="#myModalsma2" href="#">Kurikulum</a></li>
             <li><a data-toggle="modal" data-target="#myModalsma3" href="#">Fasilitas</a></li>
             <li><a data-toggle="modal" data-target="#myModalsma4" href="#">Galeri Kegiatan</a></li>
-            <li><a href="#">Pendaftaran</a></li>
+            <li><a href="{{ url('pendaftaran') }}">Pendaftaran</a></li>
           </ul>
         </li>
 

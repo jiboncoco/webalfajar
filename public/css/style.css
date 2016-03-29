@@ -1319,13 +1319,136 @@ border-bottom: 0;
     width: 89.5%;
     margin-left: 480px;
 }
-/*@media only screen and (max-width : 3600px) {
-.cs-search {
-    width: 89.5%;
-    margin-left: 20px;
+.title-pendaftaran{
+	background-color: #eee;
+	width: 100%;
+	padding: 10px;
+	text-align: center;
+	font-size: 25px;
+	font-weight: bold;
+	border-bottom: 1px solid #eee; 
 }
-}*/
+.full-pendaftaran{
+	text-align: center;
+	width: 100%;
+	display: inline-table;
+	padding: 20px;
+}
+.box-pendaftaran{
+	border-top-left-radius: 15px;
+	border-top-right-radius: 15px;
+	width: 35%;
+	margin: 20px;
+	border: 1px solid #eee;
+	display: inline-table;
+	cursor: pointer;
+}
+.box-pendaftaran:hover{
+	border: 1px solid #0275d8;
+}
+.img-pendaftaran{
+	padding: 20px;
+	width: 100%;
+	margin: auto;
+}
+.img-daftar{
+	width: 98%;
+	height: 300px;
+}
+.img-daftar:hover{
+	opacity: 0.8;
+}
+.titlebox{
+	color: #333 !important;
+	width: 100%;
+    text-align: center;
+    margin-top: -17px;
+    font-weight: bold;
+    font-size: 25px;
+    padding-bottom: 15px;
+}
+.titlefullboxtk{
+	border-top: 1px solid #00bfa5;
+	width: 100%;
+	padding: 10px;
+	background-color: #00bfa5;
+	color: white;
+	font-size: 18px;
+	font-weight: bold;
+}
+.titlefullboxtk:hover{
+	border-top: 1px solid #00bfa5;
+	width: 100%;
+	padding: 10px;
+	background-color: white;
+	color: #00bfa5 !important;
+	font-size: 18px;
+}
+.titlefullboxsd{
+	border-top: 1px solid #e57373;
+	width: 100%;
+	padding: 10px;
+	background-color: #e57373;
+	color: white;
+	font-size: 18px;
+	font-weight: bold;
+}
+.titlefullboxsd:hover{
+	border-top: 1px solid #e57373;
+	width: 100%;
+	padding: 10px;
+	background-color: white;
+	color: #e57373 !important;
+	font-size: 18px;
+}
+.titlefullboxsmp{
+	border-top: 1px solid #81AFD5;
+	width: 100%;
+	padding: 10px;
+	background-color: #81AFD5;
+	color: white;
+	font-size: 18px;
+	font-weight: bold;
+}
+.titlefullboxsmp:hover{
+	border-top: 1px solid #81AFD5;
+	width: 100%;
+	padding: 10px;
+	background-color: white;
+	color: #81AFD5 !important;
+	font-size: 18px;
+}
+.titlefullboxsma{
+	border-top: 1px solid #78909c;
+	width: 100%;
+	padding: 10px;
+	background-color: #78909c;
+	color: white;
+	font-size: 18px;
+	font-weight: bold;
+}
+.titlefullboxsma:hover{
+	border-top: 1px solid #78909c;
+	width: 100%;
+	padding: 10px;
+	background-color: white;
+	color: #78909c !important;
+	font-size: 18px;
+}
+.requireddaftar{
+	color: red;
+	font-size: 25px;
+}
+
+
 @media only screen and (max-width : 992px) {
+.title-pendaftaran{
+	margin-top: -10px;
+}
+.box-pendaftaran{
+	width: 100%;
+	margin: 20px 0 0;
+}
 .cs-search {
     width: 89.5%;
     margin-left: 20px;

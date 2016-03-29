@@ -65,4 +65,12 @@ class Controller extends BaseController
     {
       return view('test');
     }
+
+    public function pendaftaran()
+    {
+      return view('pendaftaran');
+    }
+
 }
+
+

@@ -26,6 +26,7 @@ Route::get('portal_smp', 'Controller@portal_smp');
 Route::get('portal_sma', 'Controller@portal_sma');
 Route::get('view', 'Controller@view');
 Route::get('test', 'Controller@test');
+Route::get('pendaftaran', 'Controller@pendaftaran');
 
 /*
 |--------------------------------------------------------------------------
