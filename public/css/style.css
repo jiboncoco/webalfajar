@@ -101,7 +101,7 @@ h1.brand {
 }
 
 #yayasanSection{
-	background-color: #66bb6a;
+	background-color: #86D88A;
 	text-align: center;
     padding: 70px 0;
 }
@@ -1319,12 +1319,41 @@ border-bottom: 0;
     width: 89.5%;
     margin-left: 480px;
 }
-/*@media only screen and (max-width : 3600px) {
-.cs-search {
-    width: 89.5%;
+/*[class*="span"] {
+    float: right;
+    min-height: 1px;
     margin-left: 20px;
-}
 }*/
+
+.row div {
+    height: 200px;
+    -webkit-transition: width 0.3s ease, margin 0.3s ease;
+    -moz-transition: width 0.3s ease, margin 0.3s ease;
+    -o-transition: width 0.3s ease, margin 0.3s ease;
+    transition: width 0.3s ease, margin 0.3s ease;
+}
+
+.span0 {
+    width: 0;
+    margin-left: 0;
+}
+
+#colPush {
+    background-color: #A6BFBA;
+}
+
+#colMain {
+    background-color: #DE4124;
+}
+
+#trig {
+    margin: 50px;
+}
+
+.row div + div {
+    margin-left: 0;
+}
+
 @media only screen and (max-width : 992px) {
 .cs-search {
     width: 89.5%;
