@@ -1442,6 +1442,11 @@ border-bottom: 0;
 
 
 @media only screen and (max-width : 992px) {
+
+.img-daftar{
+	width: 98%;
+	height: 200px;
+}
 .title-pendaftaran{
 	margin-top: -10px;
 }
