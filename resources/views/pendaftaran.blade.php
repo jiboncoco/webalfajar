@@ -1268,16 +1268,12 @@
   </div>
   </div>
 
-  <div class="form-group row">
-    <div style="margin-left:0px;" class="col-sm-offset-2 col-sm-10">
-      <button type="submit" class="btn btn-secondary">Daftar</button>
-      <button type="submit" class="btn btn-secondary">Print</button>
-    </div>
-  </div>
-</form>
 
             </div>
             <div class="modal-footer">
+              <button type="submit" id="btndaftar" class="btn btn-default">Daftar</button>
+              <button type="submit" id="btnprint" class="btn btn-default">Print</button>
+              </form>
               <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
             </div>
         </div>
@@ -2013,38 +2009,23 @@
   </div>
   </div>
 
-  <div class="container">
-    <div class="row">
-        <div class='col-sm-6'>
-            <div class="form-group">
-                <div class='input-group date' id='datetimepicker2'>
-                    <input type='text' class="form-control" />
-                    <span class="input-group-addon">
-                        <span class="glyphicon glyphicon-calendar"></span>
-                    </span>
-                </div>
-            </div>
-        </div>
-        <script type="text/javascript">
-            $(function () {
-                $('#datetimepicker2').datetimepicker({
-                    locale: 'ru'
-                });
-            });
-        </script>
-    </div>
+<script type="text/javascript">
+  var checkin = $('#dpd1').datepicker({
+  onRender: function(date) {
+    return date.valueOf() < now.valueOf() ? 'disabled' : '';
+  }
+});
+</script>
+<div class="input-append date" id="dp1" data-date="12-02-2012" data-date-format="dd-mm-yyyy">
+  <input class="span2" size="16" type="text" id="dp1">
+  <span class="add-on"><i class="icon-th"></i></span>
 </div>
-
-  <div class="form-group row">
-    <div style="margin-left:0px;" class="col-sm-offset-2 col-sm-10">
-      <button type="submit" class="btn btn-secondary">Daftar</button>
-      <button type="submit" class="btn btn-secondary">Print</button>
-    </div>
-  </div>
-</form>
 
             </div>
             <div class="modal-footer">
+              <button type="submit" id="btndaftar" class="btn btn-default">Daftar</button>
+              <button type="submit" id="btnprint" class="btn btn-default">Print</button>
+              </form>
               <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
             </div>
         </div>
@@ -2780,16 +2761,12 @@
   </div>
   </div>
 
-  <div class="form-group row">
-    <div style="margin-left:0px" class="col-sm-offset-2 col-sm-10">
-      <button type="submit" class="btn btn-secondary">Daftar</button>
-      <button type="submit" class="btn btn-secondary">Print</button>
-    </div>
-  </div>
-</form>
 
             </div>
             <div class="modal-footer">
+              <button type="submit" id="btndaftar" class="btn btn-default">Daftar</button>
+              <button type="submit" id="btnprint" class="btn btn-default">Print</button>
+              </form>
               <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
             </div>
         </div>
@@ -3525,16 +3502,13 @@
   </div>
   </div>
 
-  <div class="form-group row">
-    <div style="margin-left:0px;" class="col-sm-offset-2 col-sm-10">
-      <button type="submit" class="btn btn-secondary">Daftar</button>
-      <button type="submit" class="btn btn-secondary">Print</button>
-    </div>
-  </div>
-</form>
+  
 
             </div>
             <div class="modal-footer">
+              <button type="submit" id="btndaftar" class="btn btn-default">Daftar</button>
+              <button type="submit" id="btnprint" class="btn btn-default">Print</button>
+              </form>
               <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
             </div>
         </div>
@@ -3587,7 +3561,7 @@
             <li><a data-toggle="modal" data-target="#myModaltk2" href="#">Kurikulum</a></li>
             <li><a data-toggle="modal" data-target="#myModaltk3" href="#">Fasilitas</a></li>
             <li><a data-toggle="modal" data-target="#myModaltk4" href="#">Galeri Kegiatan</a></li>
-            <li><a href="#pendaftaran">Pendaftaran</a></li>
+            <li><a href="#pendaftarantk">Pendaftaran</a></li>
           </ul>
         </li>
         <li class="dropdown">
@@ -3598,7 +3572,7 @@
             <li><a data-toggle="modal" data-target="#myModalsd2" href="#">Kurikulum</a></li>
             <li><a data-toggle="modal" data-target="#myModalsd3" href="#">Fasilitas</a></li>
             <li><a data-toggle="modal" data-target="#myModalsd4" href="#">Galeri Kegiatan</a></li>
-            <li><a href="#pendaftaran">Pendaftaran</a></li>
+            <li><a href="#pendaftaransd">Pendaftaran</a></li>
           </ul>
         </li>
         <li class="dropdown">
@@ -3609,7 +3583,7 @@
             <li><a data-toggle="modal" data-target="#myModalsmp2" href="#">Kurikulum</a></li>
             <li><a data-toggle="modal" data-target="#myModalsmp3" href="#">Fasilitas</a></li>
             <li><a data-toggle="modal" data-target="#myModalsmp4" href="#">Galeri Kegiatan</a></li>
-            <li><a href="#pendaftaran2">Pendaftaran</a></li>
+            <li><a href="#pendaftaransmp">Pendaftaran</a></li>
           </ul>
         </li>
         <li class="dropdown">
@@ -3620,7 +3594,7 @@
             <li><a data-toggle="modal" data-target="#myModalsma2" href="#">Kurikulum</a></li>
             <li><a data-toggle="modal" data-target="#myModalsma3" href="#">Fasilitas</a></li>
             <li><a data-toggle="modal" data-target="#myModalsma4" href="#">Galeri Kegiatan</a></li>
-            <li><a href="#pendaftaran2">Pendaftaran</a></li>
+            <li><a href="#pendaftaransma">Pendaftaran</a></li>
           </ul>
         </li>
 
@@ -3640,7 +3614,6 @@
           </ul>
         </li>
         <a class="a-li" href="{{ url('login') }}"><li>Sign In</li></a>
-
       </ul>
     </div>
   </div>
@@ -3649,14 +3622,15 @@
 
 <!--Header Ends================================================ -->
 
-<div id="pendaftaran" class="title-pendaftaran">
+<div class="title-pendaftaran">
   Penerimaan Peserta Didik Baru Online
 </div>
 
 <div class="full-pendaftaran">
 
+  <div id="pendaftarantk"></div>
   <a data-toggle="modal" data-target="#myModaldaftartk" href="#">
-  <div style="background:#00bfa5" class="box-pendaftaran">
+  <div style="background:#00bfa5" class="box-pendaftaran" >
     <div class="img-pendaftaran">
       <img class="img-daftar" src="{{ url('img/img_home/TK.png') }}">
     </div>
@@ -3670,7 +3644,7 @@
   </a>
 
   <a data-toggle="modal" data-target="#myModaldaftarsd" href="#">
-  <div style="background:#e57373" class="box-pendaftaran">
+  <div id="pendaftaransd" style="background:#e57373" class="box-pendaftaran">
     <div class="img-pendaftaran">
       <img class="img-daftar" src="{{ url('img/img_home/SD.png') }}">
     </div>
@@ -3683,7 +3657,7 @@
   </a>
 
   <a data-toggle="modal" data-target="#myModaldaftarsmp" href="#">
-  <div style="background:#81AFD5" id="pendaftaran2" class="box-pendaftaran">
+  <div id="pendaftaransmp" style="background:#81AFD5" class="box-pendaftaran">
     <div class="img-pendaftaran">
       <img class="img-daftar" src="{{ url('img/img_home/SMP.png') }}">
     </div>
@@ -3696,7 +3670,7 @@
   </a>
 
   <a data-toggle="modal" data-target="#myModaldaftarsma" href="#">
-  <div style="background:#78909c" class="box-pendaftaran">
+  <div id="pendaftaransma" style="background:#78909c" class="box-pendaftaran">
     <div class="img-pendaftaran">
       <img class="img-daftar" src="{{ url('img/img_home/SMA.png') }}">
     </div>
@@ -3732,7 +3706,7 @@
 
 <a href="#" class="go-top" ><i class="glyphicon glyphicon-arrow-up"></i></a>
 
-
+<script src="datepicker/js/bootstrap-datepicker.js"></script>
 <script src="js/jquery-1.9.1.min.js"></script>
 <script src="js/bootstrap.min.js" type="text/javascript"></script>
 <script src="js/jquery.scrollTo-1.4.3.1-min.js" type="text/javascript"></script>
@@ -3740,7 +3714,9 @@
 <script src="js/default.js"></script>
 
 <script type="text/javascript">
-
+  $('.datepicker').datepicker()
+</script>
+<script type="text/javascript">
     $(document).ready(function() {
     $('#myCarousel').carousel({
       interval: 3000
