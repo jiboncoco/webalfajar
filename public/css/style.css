@@ -1339,24 +1339,32 @@ border-bottom: 0;
 	border-top-right-radius: 15px;
 	width: 35%;
 	margin: 20px;
-	border: 1px solid #eee;
+	border: 2px solid white;
 	display: inline-table;
 	cursor: pointer;
 }
 .box-pendaftaran:hover{
-	border: 1px solid #0275d8;
+	border: 2px solid #bbdefb;
 }
+/*.class-img{
+	display: inline-table;
+	height: 50%;
+	width: 50%;
+}
+.img-c{
+	display: inline-table;
+	height: 95%;
+	width: 95%;
+}*/
 .img-pendaftaran{
 	padding: 20px;
 	width: 100%;
+	height: 100%;
 	margin: auto;
 }
 .img-daftar{
-	width: 98%;
-	height: 300px;
-}
-.img-daftar:hover{
-	opacity: 0.8;
+	width: 90%;
+    height: 90%;
 }
 .titlebox{
 	color: #333 !important;
@@ -1368,11 +1376,11 @@ border-bottom: 0;
     padding-bottom: 15px;
 }
 .titlefullboxtk{
+	background-color: white;
+	color: #00bfa5 !important;
 	border-top: 1px solid #00bfa5;
 	width: 100%;
 	padding: 10px;
-	background-color: #00bfa5;
-	color: white;
 	font-size: 18px;
 	font-weight: bold;
 }
@@ -1380,16 +1388,16 @@ border-bottom: 0;
 	border-top: 1px solid #00bfa5;
 	width: 100%;
 	padding: 10px;
-	background-color: white;
-	color: #00bfa5 !important;
+	background-color: #00bfa5;
+	color: white !important;
 	font-size: 18px;
 }
 .titlefullboxsd{
 	border-top: 1px solid #e57373;
 	width: 100%;
 	padding: 10px;
-	background-color: #e57373;
-	color: white;
+	background-color: white;
+	color: #e57373 !important;
 	font-size: 18px;
 	font-weight: bold;
 }
@@ -1397,16 +1405,16 @@ border-bottom: 0;
 	border-top: 1px solid #e57373;
 	width: 100%;
 	padding: 10px;
-	background-color: white;
-	color: #e57373 !important;
+	background-color: #e57373;
+	color: white !important;
 	font-size: 18px;
 }
 .titlefullboxsmp{
 	border-top: 1px solid #81AFD5;
 	width: 100%;
 	padding: 10px;
-	background-color: #81AFD5;
-	color: white;
+	background-color: white;
+	color: #81AFD5 !important;
 	font-size: 18px;
 	font-weight: bold;
 }
@@ -1414,16 +1422,16 @@ border-bottom: 0;
 	border-top: 1px solid #81AFD5;
 	width: 100%;
 	padding: 10px;
-	background-color: white;
-	color: #81AFD5 !important;
+	background-color: #81AFD5;
+	color: white !important;
 	font-size: 18px;
 }
 .titlefullboxsma{
 	border-top: 1px solid #78909c;
 	width: 100%;
 	padding: 10px;
-	background-color: #78909c;
-	color: white;
+	background-color: white;
+	color: #78909c !important;
 	font-size: 18px;
 	font-weight: bold;
 }
@@ -1431,8 +1439,8 @@ border-bottom: 0;
 	border-top: 1px solid #78909c;
 	width: 100%;
 	padding: 10px;
-	background-color: white;
-	color: #78909c !important;
+	background-color: #78909c;
+	color: white !important;
 	font-size: 18px;
 }
 .requireddaftar{
@@ -1442,11 +1450,10 @@ border-bottom: 0;
 
 
 @media only screen and (max-width : 992px) {
-
-.img-daftar{
-	width: 98%;
-	height: 200px;
-}
+/*.img-daftar{
+	width: 95%;
+    height: 300px;
+}*/
 .title-pendaftaran{
 	margin-top: -10px;
 }

@@ -1269,7 +1269,7 @@
   </div>
 
   <div class="form-group row">
-    <div class="col-sm-offset-2 col-sm-10">
+    <div style="margin-left:0px;" class="col-sm-offset-2 col-sm-10">
       <button type="submit" class="btn btn-secondary">Daftar</button>
       <button type="submit" class="btn btn-secondary">Print</button>
     </div>
@@ -2013,8 +2013,30 @@
   </div>
   </div>
 
+  <div class="container">
+    <div class="row">
+        <div class='col-sm-6'>
+            <div class="form-group">
+                <div class='input-group date' id='datetimepicker2'>
+                    <input type='text' class="form-control" />
+                    <span class="input-group-addon">
+                        <span class="glyphicon glyphicon-calendar"></span>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript">
+            $(function () {
+                $('#datetimepicker2').datetimepicker({
+                    locale: 'ru'
+                });
+            });
+        </script>
+    </div>
+</div>
+
   <div class="form-group row">
-    <div class="col-sm-offset-2 col-sm-10">
+    <div style="margin-left:0px;" class="col-sm-offset-2 col-sm-10">
       <button type="submit" class="btn btn-secondary">Daftar</button>
       <button type="submit" class="btn btn-secondary">Print</button>
     </div>
@@ -2759,7 +2781,7 @@
   </div>
 
   <div class="form-group row">
-    <div class="col-sm-offset-2 col-sm-10">
+    <div style="margin-left:0px" class="col-sm-offset-2 col-sm-10">
       <button type="submit" class="btn btn-secondary">Daftar</button>
       <button type="submit" class="btn btn-secondary">Print</button>
     </div>
@@ -3504,7 +3526,7 @@
   </div>
 
   <div class="form-group row">
-    <div class="col-sm-offset-2 col-sm-10">
+    <div style="margin-left:0px;" class="col-sm-offset-2 col-sm-10">
       <button type="submit" class="btn btn-secondary">Daftar</button>
       <button type="submit" class="btn btn-secondary">Print</button>
     </div>
@@ -3634,12 +3656,12 @@
 <div class="full-pendaftaran">
 
   <a data-toggle="modal" data-target="#myModaldaftartk" href="#">
-  <div class="box-pendaftaran">
+  <div style="background:#00bfa5" class="box-pendaftaran">
     <div class="img-pendaftaran">
-      <img class="img-daftar" src="{{ url('img/img_news/news1.png') }}">
+      <img class="img-daftar" src="{{ url('img/img_home/TK.png') }}">
     </div>
     <div class="titlebox">
-      TK
+      
     </div>
     <div class="titlefullboxtk">
       Pendaftaran Online
@@ -3648,12 +3670,11 @@
   </a>
 
   <a data-toggle="modal" data-target="#myModaldaftarsd" href="#">
-  <div class="box-pendaftaran">
+  <div style="background:#e57373" class="box-pendaftaran">
     <div class="img-pendaftaran">
-      <img class="img-daftar" src="{{ url('img/img_news/news1.png') }}">
+      <img class="img-daftar" src="{{ url('img/img_home/SD.png') }}">
     </div>
     <div class="titlebox">
-      SD
     </div>
     <div class="titlefullboxsd">
       Pendaftaran Online
@@ -3662,12 +3683,11 @@
   </a>
 
   <a data-toggle="modal" data-target="#myModaldaftarsmp" href="#">
-  <div id="pendaftaran2" class="box-pendaftaran">
+  <div style="background:#81AFD5" id="pendaftaran2" class="box-pendaftaran">
     <div class="img-pendaftaran">
-      <img class="img-daftar" src="{{ url('img/img_news/news1.png') }}">
+      <img class="img-daftar" src="{{ url('img/img_home/SMP.png') }}">
     </div>
     <div class="titlebox">
-      SMP
     </div>
     <div class="titlefullboxsmp">
       Pendaftaran Online
@@ -3676,12 +3696,11 @@
   </a>
 
   <a data-toggle="modal" data-target="#myModaldaftarsma" href="#">
-  <div class="box-pendaftaran">
+  <div style="background:#78909c" class="box-pendaftaran">
     <div class="img-pendaftaran">
-      <img class="img-daftar" src="{{ url('img/img_news/news1.png') }}">
+      <img class="img-daftar" src="{{ url('img/img_home/SMA.png') }}">
     </div>
     <div class="titlebox">
-      SMA
     </div>
     <div class="titlefullboxsma">
       Pendaftaran Online
