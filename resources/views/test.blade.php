@@ -113,7 +113,7 @@
   NEWS
 </div>
 <div class="container">
-                <div class="row">
+                <div class="row" style="border-bottom:none;">
       <a href="#">
       <div id="info-boxx" class="col-md-4 col-xs-12">
       <div class="info-img">
@@ -763,7 +763,7 @@
   INFORMASI
 </div>
 <div class="container">
-                <div class="row">
+                <div class="row" style="border-bottom:none;">
 
       <div class="col-md-4 col-xs-12">
 
