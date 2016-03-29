@@ -14,12 +14,25 @@
 
 </head>
 <body>
+<<<<<<< HEAD
 <div id="carouselSection" class="cntr">
 </div>
 <div id="headerSection">
 
 
 
+=======
+<div class="collapse" id="exCollapsingNavbar">
+  <div class="bg-inverse p-a-1" style="padding:30px;background:#eee">
+    <h4>Collapsed content</h4>
+    <span class="text-muted">Toggleable via the navbar brand.</span>
+  </div>
+</div>
+<div id="carouselSection" style="height:0px" class="cntr">
+</div>
+<div id="headerSection" style="position:relative;margin-top:0px">
+    
+>>>>>>> ef988660b26d1341070b52b6b429fb874d0381cb
     <nav class="navbar navbar-inverse">
   <div class="container-fluid">
 
@@ -46,8 +59,12 @@
         <a class="a-li" href="#contactSection"><li>SMA</li></a>
         <a class="a-li" href="#dkmSection"><li>DKM</li></a>
         <a class="a-li" href="#informasiServices"><li>Informasi</li></a>
+<<<<<<< HEAD
         <a class="a-li" href="{{ url('login') }}"><li>Sign In</li></a>
 
+=======
+        <a id="a-li" style="cursor:pointer" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar"><li>Setting</li></a>
+>>>>>>> ef988660b26d1341070b52b6b429fb874d0381cb
       </ul>
     </div>
   </div>
