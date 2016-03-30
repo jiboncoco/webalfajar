@@ -407,7 +407,7 @@
   <div class="content1">
     <div class="content-s">
     <div class="cs-search">
-      <div class="row">
+      <div class="row" style="border:none;margin-top:0px">
   <div class="col-lg-6">
     <div class="input-group">
       <input type="text" class="form-control" aria-label="..." placeholder="Search" required/>
