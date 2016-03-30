@@ -27,7 +27,10 @@ Route::get('portal_sma', 'Controller@portal_sma');
 Route::get('view', 'Controller@view');
 Route::get('test', 'Controller@test');
 Route::get('pendaftaran', 'Controller@pendaftaran');
-
+Route::get('pendaftaran/TK-PDF', 'Controller@pendaftarantk_pdf');
+Route::get('pendaftaran/SD-PDF', 'Controller@pendaftaransd_pdf');
+Route::get('pendaftaran/SMP-PDF', 'Controller@pendaftaransmp_pdf');
+Route::get('pendaftaran/SMA-PDF', 'Controller@pendaftaransma_pdf');
 /*
 |--------------------------------------------------------------------------
 | Application Routes

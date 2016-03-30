@@ -595,7 +595,7 @@
   <div class="form-group row">
     <label for="inputPassword3" class="col-sm-2 form-control-label">Tanggal Lahir <label class="requireddaftar">*</label></label>
     <div class="col-sm-3">
-      <input class="form-control" id="inputPassword3" required/>
+      <input style="height: 34px;width:200px" value="01/07/2004" class="datepicker" id="inputPassword3" required/>
     </div>
   </div>
 
@@ -917,7 +917,7 @@
   <div class="form-group row">
     <label for="inputPassword3" class="col-sm-2 form-control-label">Tanggal Lahir Ayah <label class="requireddaftar">*</label></label>
     <div class="col-sm-3">
-      <input class="form-control" id="inputPassword3" required/>
+      <input style="height: 34px;width:200px" value="12/05/1964" class="datepicker" id="inputPassword3" required/>
     </div>
   </div>
 
@@ -1034,7 +1034,7 @@
   <div class="form-group row">
     <label for="inputPassword3" class="col-sm-2 form-control-label">Tanggal Lahir Ibu <label class="requireddaftar">*</label></label>
     <div class="col-sm-3">
-      <input class="form-control" id="inputPassword3" required/>
+      <input style="height: 34px;width:200px" value="18/10/1974" class="datepicker" id="inputPassword3" required/>
     </div>
   </div>
 
@@ -1151,7 +1151,7 @@
   <div class="form-group row">
     <label for="inputPassword3" class="col-sm-2 form-control-label">Tanggal Lahir Wali <label class="requireddaftar">*</label></label>
     <div class="col-sm-3">
-      <input class="form-control" id="inputPassword3" required/>
+      <input style="height: 34px;width:200px" value="31/07/1984" class="datepicker" id="inputPassword3" required/>
     </div>
   </div>
 
@@ -1254,7 +1254,7 @@
   <div class="form-group row">
     <label for="inputPassword3" class="col-sm-2 form-control-label">Kode/Unit Sekolah </label>
     <div class="col-sm-1">
-      <input class="form-control" placeholder="5" id="inputPassword3" readonly>
+      <input class="form-control" placeholder="1" id="inputPassword3" readonly>
     </div>
   </div>
 
@@ -1262,8 +1262,9 @@
   <label for="inputPassword3" class="col-sm-2 form-control-label">Kelas </label>
   <div class="col-sm-1">
     <select class="form-control" id="exampleSelect1">
-      <option value="11">A</option>
-      <option value="12">B</option>
+      <option value="11">TK A</option>
+      <option value="12">TK B</option>
+      <option value="">PG</option>
     </select>
   </div>
   </div>
@@ -1272,8 +1273,8 @@
             </div>
             <div class="modal-footer">
               <button type="submit" id="btndaftar" class="btn btn-default">Daftar</button>
-              <button type="submit" id="btnprint" class="btn btn-default">Print</button>
               </form>
+              <a href="{{url('pendaftaran/TK-PDF') }}" target="_blank"><button style="margin-left:20px;"  type="submit" id="btnprint" class="btn btn-default">Print Manual</button></a>
               <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
             </div>
         </div>
@@ -1336,7 +1337,7 @@
   <div class="form-group row">
     <label for="inputPassword3" class="col-sm-2 form-control-label">Tanggal Lahir <label class="requireddaftar">*</label></label>
     <div class="col-sm-3">
-      <input class="form-control" id="inputPassword3" required/>
+      <input style="height: 34px;width:200px" value="01/07/2004" class="datepicker" id="inputPassword3" required/>
     </div>
   </div>
 
@@ -1658,7 +1659,7 @@
   <div class="form-group row">
     <label for="inputPassword3" class="col-sm-2 form-control-label">Tanggal Lahir Ayah <label class="requireddaftar">*</label></label>
     <div class="col-sm-3">
-      <input class="form-control" id="inputPassword3" required/>
+      <input style="height: 34px;width:200px" value="22/09/1970" class="datepicker" id="inputPassword3" required/>
     </div>
   </div>
 
@@ -1775,7 +1776,7 @@
   <div class="form-group row">
     <label for="inputPassword3" class="col-sm-2 form-control-label">Tanggal Lahir Ibu <label class="requireddaftar">*</label></label>
     <div class="col-sm-3">
-      <input class="form-control" id="inputPassword3" required/>
+      <input style="height: 34px;width:200px" value="15/05/1989" class="datepicker" id="inputPassword3" required/>
     </div>
   </div>
 
@@ -1892,7 +1893,7 @@
   <div class="form-group row">
     <label for="inputPassword3" class="col-sm-2 form-control-label">Tanggal Lahir Wali <label class="requireddaftar">*</label></label>
     <div class="col-sm-3">
-      <input class="form-control" id="inputPassword3" required/>
+      <input style="height: 34px;width:200px" value="27/07/1991" class="datepicker" id="inputPassword3" required/>
     </div>
   </div>
 
@@ -2003,29 +2004,21 @@
   <label for="inputPassword3" class="col-sm-2 form-control-label">Kelas </label>
   <div class="col-sm-1">
     <select class="form-control" id="exampleSelect1">
-      <option value="11">A</option>
-      <option value="12">B</option>
+      <option value="11">01</option>
+      <option value="12">02</option>
+      <option value="12">03</option>
+      <option value="12">04</option>
+      <option value="12">05</option>
+      <option value="12">06</option>
     </select>
   </div>
   </div>
 
-<script type="text/javascript">
-  var checkin = $('#dpd1').datepicker({
-  onRender: function(date) {
-    return date.valueOf() < now.valueOf() ? 'disabled' : '';
-  }
-});
-</script>
-<div class="input-append date" id="dp1" data-date="12-02-2012" data-date-format="dd-mm-yyyy">
-  <input class="span2" size="16" type="text" id="dp1">
-  <span class="add-on"><i class="icon-th"></i></span>
-</div>
-
             </div>
             <div class="modal-footer">
               <button type="submit" id="btndaftar" class="btn btn-default">Daftar</button>
-              <button type="submit" id="btnprint" class="btn btn-default">Print</button>
               </form>
+              <a href="{{url('pendaftaran/SD-PDF') }}" target="_blank"><button style="margin-left:20px;" type="submit" id="btnprint" class="btn btn-default">Print Manual</button></a>
               <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
             </div>
         </div>
@@ -2088,7 +2081,7 @@
   <div class="form-group row">
     <label for="inputPassword3" class="col-sm-2 form-control-label">Tanggal Lahir <label class="requireddaftar">*</label></label>
     <div class="col-sm-3">
-      <input class="form-control" id="inputPassword3" required/>
+      <input style="height: 34px;width:200px" value="01/07/2004" class="datepicker" id="inputPassword3" required/>
     </div>
   </div>
 
@@ -2410,7 +2403,7 @@
   <div class="form-group row">
     <label for="inputPassword3" class="col-sm-2 form-control-label">Tanggal Lahir Ayah <label class="requireddaftar">*</label></label>
     <div class="col-sm-3">
-      <input class="form-control" id="inputPassword3" required/>
+      <input style="height: 34px;width:200px" value="11/04/1974" class="datepicker" id="inputPassword3" required/>
     </div>
   </div>
 
@@ -2527,7 +2520,7 @@
   <div class="form-group row">
     <label for="inputPassword3" class="col-sm-2 form-control-label">Tanggal Lahir Ibu <label class="requireddaftar">*</label></label>
     <div class="col-sm-3">
-      <input class="form-control" id="inputPassword3" required/>
+      <input style="height: 34px;width:200px" value="12/02/1984" class="datepicker" id="inputPassword3" required/>
     </div>
   </div>
 
@@ -2644,7 +2637,7 @@
   <div class="form-group row">
     <label for="inputPassword3" class="col-sm-2 form-control-label">Tanggal Lahir Wali <label class="requireddaftar">*</label></label>
     <div class="col-sm-3">
-      <input class="form-control" id="inputPassword3" required/>
+      <input style="height: 34px;width:200px" value="01/07/1994" class="datepicker" id="inputPassword3" required/>
     </div>
   </div>
 
@@ -2747,7 +2740,7 @@
   <div class="form-group row">
     <label for="inputPassword3" class="col-sm-2 form-control-label">Kode/Unit Sekolah </label>
     <div class="col-sm-1">
-      <input class="form-control" placeholder="5" id="inputPassword3" readonly>
+      <input class="form-control" placeholder="6" id="inputPassword3" readonly>
     </div>
   </div>
 
@@ -2755,8 +2748,9 @@
   <label for="inputPassword3" class="col-sm-2 form-control-label">Kelas </label>
   <div class="col-sm-1">
     <select class="form-control" id="exampleSelect1">
-      <option value="11">A</option>
-      <option value="12">B</option>
+      <option value="11">07</option>
+      <option value="12">08</option>
+      <option value="12">09</option>
     </select>
   </div>
   </div>
@@ -2765,8 +2759,8 @@
             </div>
             <div class="modal-footer">
               <button type="submit" id="btndaftar" class="btn btn-default">Daftar</button>
-              <button type="submit" id="btnprint" class="btn btn-default">Print</button>
               </form>
+              <a href="{{url('pendaftaran/SMP-PDF') }}" target="_blank"><button style="margin-left:20px;" type="submit" id="btnprint" class="btn btn-default">Print Manual</button></a>
               <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
             </div>
         </div>
@@ -2829,7 +2823,7 @@
   <div class="form-group row">
     <label for="inputPassword3" class="col-sm-2 form-control-label">Tanggal Lahir <label class="requireddaftar">*</label></label>
     <div class="col-sm-3">
-      <input class="form-control" id="inputPassword3" required/>
+      <input style="height: 34px;width:200px" value="01/07/2004" class="datepicker" id="inputPassword3" required/>
     </div>
   </div>
 
@@ -3151,7 +3145,7 @@
   <div class="form-group row">
     <label for="inputPassword3" class="col-sm-2 form-control-label">Tanggal Lahir Ayah <label class="requireddaftar">*</label></label>
     <div class="col-sm-3">
-      <input class="form-control" id="inputPassword3" required/>
+      <input style="height: 34px;width:200px" value="01/07/1969" class="datepicker" id="inputPassword3" required/>
     </div>
   </div>
 
@@ -3268,7 +3262,7 @@
   <div class="form-group row">
     <label for="inputPassword3" class="col-sm-2 form-control-label">Tanggal Lahir Ibu <label class="requireddaftar">*</label></label>
     <div class="col-sm-3">
-      <input class="form-control" id="inputPassword3" required/>
+      <input style="height: 34px;width:200px" value="21/11/1974" class="datepicker" id="inputPassword3" required/>
     </div>
   </div>
 
@@ -3385,7 +3379,7 @@
   <div class="form-group row">
     <label for="inputPassword3" class="col-sm-2 form-control-label">Tanggal Lahir Wali <label class="requireddaftar">*</label></label>
     <div class="col-sm-3">
-      <input class="form-control" id="inputPassword3" required/>
+      <input style="height: 34px;width:200px" value="20/07/1980" class="datepicker" id="inputPassword3" required/>
     </div>
   </div>
 
@@ -3488,7 +3482,7 @@
   <div class="form-group row">
     <label for="inputPassword3" class="col-sm-2 form-control-label">Kode/Unit Sekolah </label>
     <div class="col-sm-1">
-      <input class="form-control" placeholder="5" id="inputPassword3" readonly>
+      <input class="form-control" placeholder="13" id="inputPassword3" readonly>
     </div>
   </div>
 
@@ -3496,8 +3490,9 @@
   <label for="inputPassword3" class="col-sm-2 form-control-label">Kelas </label>
   <div class="col-sm-1">
     <select class="form-control" id="exampleSelect1">
-      <option value="11">A</option>
-      <option value="12">B</option>
+      <option value="11">10</option>
+      <option value="12">11</option>
+      <option value="12">12</option>
     </select>
   </div>
   </div>
@@ -3507,8 +3502,8 @@
             </div>
             <div class="modal-footer">
               <button type="submit" id="btndaftar" class="btn btn-default">Daftar</button>
-              <button type="submit" id="btnprint" class="btn btn-default">Print</button>
               </form>
+              <a href="{{url('pendaftaran/SMA-PDF') }}" target="_blank"><button style="margin-left:20px;" type="submit" id="btnprint" class="btn btn-default">Print Manual</button></a>
               <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
             </div>
         </div>
@@ -3541,79 +3536,15 @@
 
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
-      <ul class="nav navbar-nav">
-        <a class="a-li" href="{{ url('/')}}"><li>Home</li></a>
-        <a class="a-li" href="{{ url('news')}}"><li>News</li></a>
-        <li class="dropdown">
-          <a class="dropdown-toggle" id="no-li" data-toggle="dropdown" href="#">Yayasan <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a data-toggle="modal" data-target="#myModalyay1" href="#">Visi Misi</a></li>
-            <li><a data-toggle="modal" data-target="#myModalyay2" href="#">Sistem Pendidikan</a></li>
-            <li><a data-toggle="modal" data-target="#myModalyay3" href="#">Profil</a></li>
-            <li><a data-toggle="modal" data-target="#myModalyay4" href="#">Galeri Kegiatan</a></li>
-          </ul>
-        </li>
-        <li class="dropdown">
-          <a class="dropdown-toggle" id="no-li" data-toggle="dropdown" href="#">TK <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="{{ url('portal_tk') }}">Portal TK</a></li>
-            <li><a data-toggle="modal" data-target="#myModaltk1" href="#">Visi Misi</a></li>
-            <li><a data-toggle="modal" data-target="#myModaltk2" href="#">Kurikulum</a></li>
-            <li><a data-toggle="modal" data-target="#myModaltk3" href="#">Fasilitas</a></li>
-            <li><a data-toggle="modal" data-target="#myModaltk4" href="#">Galeri Kegiatan</a></li>
-            <li><a href="#pendaftarantk">Pendaftaran</a></li>
-          </ul>
-        </li>
-        <li class="dropdown">
-          <a class="dropdown-toggle" id="no-li" data-toggle="dropdown" href="#">SD <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="{{ url('portal_sd') }}">Portal SD</a></li>
-            <li><a data-toggle="modal" data-target="#myModalsd1" href="#">Visi Misi</a></li>
-            <li><a data-toggle="modal" data-target="#myModalsd2" href="#">Kurikulum</a></li>
-            <li><a data-toggle="modal" data-target="#myModalsd3" href="#">Fasilitas</a></li>
-            <li><a data-toggle="modal" data-target="#myModalsd4" href="#">Galeri Kegiatan</a></li>
-            <li><a href="#pendaftaransd">Pendaftaran</a></li>
-          </ul>
-        </li>
-        <li class="dropdown">
-          <a class="dropdown-toggle" id="no-li" data-toggle="dropdown" href="#">SMP <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="{{ url('portal_smp') }}">Portal SMP</a></li>
-            <li><a data-toggle="modal" data-target="#myModalsmp1" href="#">Visi Misi</a></li>
-            <li><a data-toggle="modal" data-target="#myModalsmp2" href="#">Kurikulum</a></li>
-            <li><a data-toggle="modal" data-target="#myModalsmp3" href="#">Fasilitas</a></li>
-            <li><a data-toggle="modal" data-target="#myModalsmp4" href="#">Galeri Kegiatan</a></li>
-            <li><a href="#pendaftaransmp">Pendaftaran</a></li>
-          </ul>
-        </li>
-        <li class="dropdown">
-          <a class="dropdown-toggle" id="no-li" data-toggle="dropdown" href="#">SMA <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="{{ url('portal_sma') }}">Portal SMA</a></li>
-            <li><a data-toggle="modal" data-target="#myModalsma1" href="#">Visi Misi</a></li>
-            <li><a data-toggle="modal" data-target="#myModalsma2" href="#">Kurikulum</a></li>
-            <li><a data-toggle="modal" data-target="#myModalsma3" href="#">Fasilitas</a></li>
-            <li><a data-toggle="modal" data-target="#myModalsma4" href="#">Galeri Kegiatan</a></li>
-            <li><a href="#pendaftaransma">Pendaftaran</a></li>
-          </ul>
-        </li>
-
-        <li class="dropdown">
-          <a class="dropdown-toggle" id="no-li" data-toggle="dropdown" href="#">DKM <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a data-toggle="modal" data-target="#myModaldkm1" href="#">Fasilitas</a></li>
-            <li><a data-toggle="modal" data-target="#myModaldkm2" href="#">Galeri Kegiatan</a></li>
-          </ul>
-        </li>
-        <li class="dropdown">
-          <a class="dropdown-toggle" id="no-li" data-toggle="dropdown" href="#">Informasi <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="{{ url('pengumuman') }}">Pengumuman</a></li>
-            <li><a href="{{ url('agenda') }}">Agenda</a></li>
-            <li><a href="{{ url('artikel') }}">Artikel</a></li>
-          </ul>
-        </li>
+      <ul style="margin-top:15px;" class="nav navbar-nav">
+        <a class="a-li" href="{{url('/')}}"><li>Home</li></a>
+        <a class="a-li" href="{{url('news')}}"><li>News</li></a>
+        <a class="a-li" href="{{url('portal_tk')}}"><li>TK</li></a>
+        <a class="a-li" href="{{url('portal_sd')}}"><li>SD</li></a>
+        <a class="a-li" href="{{url('portal_smp')}}"><li>SMP</li></a>
+        <a class="a-li" href="{{url('portal_smp')}}"><li>SMA</li></a>
         <a class="a-li" href="{{ url('login') }}"><li>Sign In</li></a>
+
       </ul>
     </div>
   </div>
@@ -3706,22 +3637,21 @@
 
 <a href="#" class="go-top" ><i class="glyphicon glyphicon-arrow-up"></i></a>
 
-<script src="datepicker/js/bootstrap-datepicker.js"></script>
 <script src="js/jquery-1.9.1.min.js"></script>
 <script src="js/bootstrap.min.js" type="text/javascript"></script>
 <script src="js/jquery.scrollTo-1.4.3.1-min.js" type="text/javascript"></script>
 <script src="js/jquery.easing-1.3.min.js"></script>
 <script src="js/default.js"></script>
+<script src="datepicker/js/bootstrap-datepicker.js"></script>
 
 <script type="text/javascript">
-  $('.datepicker').datepicker()
+  $('.datepicker').datepicker();
 </script>
 <script type="text/javascript">
     $(document).ready(function() {
-    $('#myCarousel').carousel({
-      interval: 3000
-    });
-
+      $('#myCarousel').carousel({
+        interval: 3000
+      });
     });
 
 
