@@ -23,6 +23,9 @@ h1.brand {
 	display:table;
 	float:right;
 }
+.class-lab{
+	padding-top: 5%;
+}
 .item img{
 	margin:auto;
 	max-width:80%;
@@ -58,7 +61,7 @@ h1.brand {
 	font-size: 17px;font-family: 'Raleway', sans-serif;display: inline-block; color:#3A494C !important;
 }
 .img-slide{
-	width: 45%;
+	width: 54%;
 }
 .mynav li a:hover{
 	background:#0275d8;
@@ -345,7 +348,6 @@ text-decoration: none;
 border-radius: 10px;
 }
 
-
 #headerSection .btn.btn-navbar {
 width: 16%;
 text-align: center;
@@ -531,13 +533,12 @@ border-bottom: 0;
 	width: 95%;
 }
 .class-lab{
-	margin-top: 12%;
+	margin-top: 8%;
 	width: 45%;
 	float: right;
 	padding: 10px auto;
 }
 .class-lab:hover{
-	margin-top: 12%;
 	width: 45%;
 	float: right;
 	padding: 10px auto;
@@ -616,7 +617,7 @@ border-bottom: 0;
 }
 .lab-c-yay{
 	background-color: transparent;
-	padding: 15px 5px;
+	padding: 15px 4.5px;
 	color: white;
 	border-radius: 6px;
 	margin: 10px;
@@ -625,7 +626,10 @@ border-bottom: 0;
 	cursor: pointer;
 	border: 1px solid white;
 	font-weight: bold;
-	font-size: 18px;
+	font-size: 16px;
+}
+#lab-c-font{
+	font-size: 15px;
 }
 .lab-c-yay:hover{
 	background-color: white;
@@ -814,10 +818,11 @@ border-bottom: 0;
   display: inline-table;
 }
 .content-s{
-  float: right;
-  padding: 15px;
-  width: 100%;
-  display: inline-table;
+    float: right;
+    padding: 15px;
+    width: 94%;
+    display: inline-table;
+    margin-right: 17px;
 }
 .cs-com{
 	margin-left: 200px;
@@ -861,7 +866,7 @@ border-bottom: 0;
 .fcs{
 	font-family: 'Open Sans', sans-serif;
 	float: right;
-	width: 39%;
+	width: 46%;
 	font-size: 14px;
 	padding: 5px;
 	border: 1px solid #cccccc;
@@ -942,13 +947,13 @@ border-bottom: 0;
   margin-top: 36px;
 }
 .fnip{
-	float: right;
-	width: 66%;
-	font-size: 14px;
-	padding: 5px;
-	border: 1px solid #cccccc;
-	border-radius: 2px;
-	font-family: 'Open Sans', sans-serif;
+	width: 77%;
+    font-size: 14px;
+    padding: 5px;
+    border: 1px solid #cccccc;
+    border-radius: 2px;
+    font-family: 'Open Sans', sans-serif;
+    margin-left: 15px;
 }
 .content2-text{
 	width: 90%;
@@ -1378,16 +1383,6 @@ border-bottom: 0;
 .box-pendaftaran:hover{
 	border: 2px solid #bbdefb;
 }
-/*.class-img{
-	display: inline-table;
-	height: 50%;
-	width: 50%;
-}
-.img-c{
-	display: inline-table;
-	height: 95%;
-	width: 95%;
-}*/
 .img-pendaftaran{
 	padding: 20px;
 	width: 100%;
@@ -1504,8 +1499,66 @@ border-bottom: 0;
     border-radius: 4px;
 	z-index: 1051;
 }
-
+#lab-c-font{
+	font-size:16px;
+}
+@media only screen and (max-width : 1285px) {
+.content1-box {
+    margin: 12px;
+}
+.content-s{
+	margin-right: 3.5% 
+}
+}
 @media only screen and (max-width : 992px) {
+#lab-c-font{
+	font-size: 17.05px;
+}
+.img-slide{
+      width: 80%;
+    }
+    .class-lab{
+    	margin-top: 0px;
+    	padding: 0px;
+		width: auto;
+		float: none;
+    }
+    .img-c {
+      width: 100%;
+    }
+    .class-img{
+      width: 100%;
+    }
+    .lab-c-yay{
+      padding: 10px;
+      width: 40%;
+    }
+    .lab-c-port{
+      padding: 10px;
+      font-size: 15pt !important;
+      width: 40%;
+    }
+    .lab-c-meet{
+      padding: 10px;
+      font-size: 15pt !important;
+      width: 40%;
+    }
+    .lab-c-cont{
+      padding: 10px;
+      font-size: 15pt !important;
+      width: 40%;
+    }
+    .lab-c-rec{
+      padding: 10px;
+      font-size: 15pt !important;
+      width: 40%;
+    }
+    .lab-c-dkm{
+      padding: 10px;
+      font-size: 15pt !important;
+      width: 40%;
+      margin: 2px;
+    }
 .modal-galeri{
 	width: 95%;
 	margin-left: 0px;
@@ -1679,84 +1732,78 @@ color: white !important;
 	float:right;
 	margin-right:0px;
 }
-.class-lab{
-	margin-top: 0px;
-	width: auto;
-	float: none;
-	padding: 0px;
-	}
-.lab-c-rec{
+/*.lab-c-rec{
 	background-color: none;
 	padding: 2px 2px;
 	margin: 2px;
 	width: auto;
 	font-size: 15px;
 	font-weight: normal;
-	}
+	}*/
 .lab-c-rec:hover{
 	background-color: white;
 	transition: all .5s ease-in-out;
 	font-size: 15px;
 }
-.lab-c-cont{
+/*.lab-c-cont{
 	background-color: none;
 	padding: 2px 2px;
 	margin: 2px;
 	width: auto;
 	font-size: 15px;
 	font-weight: normal;
-	}
+	}*/
 .lab-c-cont:hover{
 	background-color: white;
 	transition: all .5s ease-in-out;
 	font-size: 15px;
 }
-.lab-c-yay{
+/*.lab-c-yay{
 	background-color: none;
 	padding: 2px 2px;
 	margin: 2px;
 	width: auto;
 	font-size: 15px !important;
 	font-weight: normal;
-	}
+	}*/
 .lab-c-yay:hover{
 	background-color: white;
 	transition: all .5s ease-in-out;
 	font-size: 15px;
 }
-.lab-c-dkm{
+/*.lab-c-dkm{
 	background-color: none;
 	padding: 2px 2px;
 	width: auto;
 	font-size: 15px;
 	font-weight: normal;
-	}
+	}*/
 .lab-c-dkm:hover{
 	background-color: white;
 	transition: all .5s ease-in-out;
 	font-size: 15px;
 }
-.lab-c-meet{
+/*.lab-c-meet{
 	background-color: none;
 	padding: 2px 2px;
 	margin: 2px;
 	width: auto;
 	font-size: 15px;
 	font-weight: normal;
-	}
+	}*/
 .lab-c-meet:hover{
 	background-color: white;
 	transition: all .5s ease-in-out;
 	font-size: 15px;
 }
-.lab-c-port{
+/*.lab-c-port{
 	background-color: none;
 	padding: 2px 2px;
 	margin: 2px;
 	width: auto;
 	font-size: 15px;
 	font-weight: normal;
-	}
+	}*/
 .lab-c-port:hover{
 	background-color: white;
 	transition: all .5s ease-in-out;
@@ -1801,7 +1848,7 @@ color: white !important;
 	font-size: 80%;
 }
 .desc-img{
-	margin-top: 30px;
+	margin-top: -70px;
 	font-size: 12px;
 	width: 100%;
 }
@@ -1857,11 +1904,11 @@ color: white !important;
 	width: 100%;
 }
 .fcs{
-	width: 82%;
+	width: 96%;
     float: none;
     margin-top: 70px;
     margin-bottom: -30px;
-    margin-left: 15px;
+    margin-left: 40px;
 }
 .fullcontent{
 	width: 100%;
@@ -1871,7 +1918,7 @@ color: white !important;
 }
 .content1-box{
 	margin: 30px;
-	width: 85%;
+    width: 42%;
 }
 .content1-button{
 	width: 100%;
@@ -1906,28 +1953,36 @@ color: white !important;
 	margin-right: 0px;
 }
 .content2-notif{
-	width: 100%;
-	margin-bottom: 10px;
-	margin-left: 0px;
-	margin-right: 0px;
+	width: 45.5%;
+    margin-bottom: 10px;
+    margin-left: 0px;
+    margin-right: 0px;
+    display: inline-table;
+    margin: 15px;
 }
 .content2-fb{
-	width: 100%;
-	margin-bottom: 10px;
-	margin-left: 0px;
-	margin-right: 0px;
+	width: 45.5%;
+    margin-bottom: 10px;
+    margin-left: 0px;
+    margin-right: 0px;
+    display: inline-table;
+    margin: 15px;
 }
 .content2-maps{
-	width: 100%;
-	margin-bottom: 10px;
-	margin-left: 0px;
-	margin-right: 0px;
+	width: 46%;
+    margin-bottom: 10px;
+    margin-left: 0px;
+    margin-right: 0px;
+    display: inline-table;
+    margin: 14px;
 }
 .input-group-btn {
 	margin-left: 20px;
 }
-
-@media screen and (max-width: 480px) {
+.desc-img {
+    font-size: 16px;
+}
+@media screen and (max-width: 800px) {
     .img-slide{
       width: 80%;
     }
@@ -1966,6 +2021,57 @@ color: white !important;
       padding: 10px;
       font-size: 15pt !important;
       width: 100%;
-      margin: 2px;
+      margin-bottom: 15px;
     }
+
+    .desc-img {
+    font-size: 14px;
+	}
+
+	.fcs{
+		margin-left: 5.5%;
+		width: 96.3%;
+	}
+
+	.content1-box{
+		width: 92%;
+		margin: 20px;
+	}
+
+	.content2-fb{
+	width: 100%;
+    margin-bottom: 10px;
+    margin-left: 0px;
+    margin-right: 0px;
+    display: inline-table;
+    margin: 0px;
+}
+.content2-maps{
+	width: 100%;
+    margin-bottom: 10px;
+    margin-left: 0px;
+    margin-right: 0px;
+    display: inline-table;
+    margin: 0px;
+}
+.content2-notif{
+	width: 100%;
+    margin-bottom: 10px;
+    margin-left: 0px;
+    margin-right: 0px;
+    display: inline-table;
+    margin: 0px;
+}
+
+}
+
+@media screen and (max-width: 480px) {
+	fcs{
+		margin-left: 3.5%;
+		width: 96.3%;
+	}
+
+	.content1-box{
+		width: 87%;
+	}	
 }
