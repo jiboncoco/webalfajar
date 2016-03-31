@@ -425,7 +425,7 @@
 <!-- content1 -->
 
   <div class="content1">
-    <div class="content-s">
+    <div class="content-s-portal">
     <div class="cs-search">
       <div class="row" style="border:none;margin-top:0px">
   <div class="col-lg-6">
@@ -568,7 +568,6 @@
     <div class="content2-s">
       <form>
         <span class="input-group-btn">
-        <button id="btn-s2" class="btn btn-default" type="submit"><i class="fa fa-search"></i></button>
       <input Not Like "*[!a-z]*" class="fnip" placeholder="NIP" required/>
       </span>
       </form>

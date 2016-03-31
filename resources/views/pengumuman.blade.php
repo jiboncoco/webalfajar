@@ -823,10 +823,9 @@
 
   <div class="content1">
     <div class="content-s">
-      <form>
+      <form role="form" data-toggle="validator">
         <span class="input-group-btn">
-        <button id="btn-s" class="btn btn-default" type="button"><i class="fa fa-search"></i></button>
-      <input class="fcs" placeholder="Search" />
+      <input class="fcs" name="" placeholder="Search" required/>
       </span>
       </form>
     </div>
@@ -950,10 +949,9 @@
 
   <div class="content2">
     <div class="content2-s">
-      <form>
+     <form>
         <span class="input-group-btn">
-        <button id="btn-s2" class="btn btn-default" type="button"><i class="fa fa-search"></i></button>
-        <input Not Like "*[!a-z]*" class="fnip" placeholder="NIP" required/>
+      <input Not Like "*[!a-z]*" class="fnip" placeholder="NIP" required/>
       </span>
       </form>
     </div>

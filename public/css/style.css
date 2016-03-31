@@ -23,6 +23,11 @@ h1.brand {
 	display:table;
 	float:right;
 }
+.content-s-portal{
+	    width: 96%;
+    margin-left: 5px;
+    margin-top: 15px;
+}
 .class-lab{
 	padding-top: 5%;
 }
@@ -822,7 +827,7 @@ border-bottom: 0;
     padding: 15px;
     width: 94%;
     display: inline-table;
-    margin-right: 17px;
+    margin-right: 5%;
 }
 .cs-com{
 	margin-left: 200px;
@@ -1509,6 +1514,14 @@ border-bottom: 0;
 .content-s{
 	margin-right: 3.5% 
 }
+.content-s-portal{
+    width: 100%;
+    margin-left: 0px;
+	}
+	.cs-search{
+		width: 95%;
+		 margin-left: 30px;
+	}
 }
 @media only screen and (max-width : 992px) {
 #lab-c-font{
@@ -1574,8 +1587,8 @@ border-bottom: 0;
 	margin: 20px 0 0;
 }
 .cs-search {
-    width: 89.5%;
-    margin-left: 20px;
+    width: 98%;
+    margin-left: 3px;
 }
 #sg{
 	width:90%;
@@ -2052,7 +2065,7 @@ color: white !important;
     margin-left: 0px;
     margin-right: 0px;
     display: inline-table;
-    margin: 0px;
+    margin-bottom: 10px;
 }
 .content2-notif{
 	width: 100%;
@@ -2060,12 +2073,19 @@ color: white !important;
     margin-left: 0px;
     margin-right: 0px;
     display: inline-table;
-    margin: 0px;
+    margin-bottom: 10px;
+}
+.content-s{
+    padding: 15px;
+    width: 100%;
+    margin-right: 6%;
+	}
+	.cs-search{
+		width: 100%;
+	}
 }
 
-}
-
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 580px) {
 	fcs{
 		margin-left: 3.5%;
 		width: 96.3%;
@@ -2074,4 +2094,13 @@ color: white !important;
 	.content1-box{
 		width: 87%;
 	}	
+	.content-s{
+    padding: 15px;
+    width: 100%;
+    margin-right: 6%;
+	}
+	.cs-search{
+		width: 100%;
+		margin-left: 0px;	
+	}
 }
