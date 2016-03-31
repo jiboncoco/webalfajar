@@ -1255,15 +1255,15 @@ border-bottom: 0;
 	width: 200%;
     margin-left: 23px;
     height: 50px;
-    background: #2D506F;
+    background: #09db96;
     border: 1px solid white;
     color: white;
     border-radius: 5px;
 }
 .button-com:hover{
     background: white;
-    border: 1px solid #2D506F;
-    color: #2D506F;
+    border: 1px solid #09db96;
+    color: #09db96;
     transition: all .5s ease-in-out;
 }
 .but-comm{
@@ -1928,4 +1928,47 @@ color: white !important;
 }
 .input-group-btn {
 	margin-left: 20px;
+}
+
+@media screen and (max-width: 480px) {
+    .img-slide{
+      width: 80%;
+    }
+    .img-c {
+      width: 100%;
+    }
+    .class-img{
+      width: 100%;
+    }
+    .lab-c-yay{
+      padding: 10px;
+      font-size: 15pt !important;
+      width: 100%;
+    }
+    .lab-c-port{
+      padding: 10px;
+      font-size: 15pt !important;
+      width: 100%;
+    }
+    .lab-c-meet{
+      padding: 10px;
+      font-size: 15pt !important;
+      width: 100%;
+    }
+    .lab-c-cont{
+      padding: 10px;
+      font-size: 15pt !important;
+      width: 100%;
+    }
+    .lab-c-rec{
+      padding: 10px;
+      font-size: 15pt !important;
+      width: 100%;
+    }
+    .lab-c-dkm{
+      padding: 10px;
+      font-size: 15pt !important;
+      width: 100%;
+      margin: 2px;
+    }
 }

@@ -863,7 +863,7 @@
 <div id="dkmSection">
 <div class="content-port">
 <div class="class-img">
-    <img class="img-c" src="{{ url('img/img_home/SMA.png') }}">
+    <img class="img-c" src="{{ url('img/img_home/dkm.png') }}">
 </div>
 <div style="padding-top:50px;" class="class-lab">
     <a class="a-lab-dkm" data-toggle="modal" data-target="#myModaldkm1" href="#"><label class="lab-c-dkm">Fasilitas</label></a>
