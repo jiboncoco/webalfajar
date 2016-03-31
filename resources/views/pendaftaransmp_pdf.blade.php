@@ -25,7 +25,7 @@
 
 <table>
 	<tr>
-		<th class="th-title">REGISTRASI CALON PESERTA DIDIK TAMAN KANAK-KANAK</th>
+		<th class="th-title">REGISTRASI CALON PESERTA DIDIK SEKOLAH MENENGAH PERTAMA</th>
 	</tr>
 </table><br><br>
 
@@ -61,7 +61,7 @@
 	<tr>
 		<td>Tanggal Lahir</td>
 		<td>:</td>
-		<td>23/07/2010</td>
+		<td>23/07/2002</td>
 	</tr>
 	<tr>
 		<td>Agama</td>
@@ -378,12 +378,12 @@
 	<tr>
 		<td>Kode/Unit Sekolah</td>
 		<td>:</td>
-		<td>1</td>
+		<td>6</td>
 	</tr>
 	<tr>
 		<td>Kelas</td>
 		<td>:</td>
-		<td>TK A</td>
+		<td>07</td>
 	</tr>
 
 </table>

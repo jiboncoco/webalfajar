@@ -223,12 +223,32 @@
             <h4 class="modal-title" id="myModalLabel">TK : Galeri Kegiatan</h4>
             </div>
                 <div class="modal-body-front">
-                   Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-
-                   Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-
-                   Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                </form>
+                   <div class="modal-galeri">
+                  <div class="box-m-galeri">
+                    <img class="bm-galeri" src="{{url('img/img_home/img-artikel.png')}}">
+                    <label class="bm-desc">31 Desember 2016</label>
+                  </div>
+                  <div class="box-m-galeri">
+                    <img class="bm-galeri" src="{{url('img/img_home/img-artikel.png')}}">
+                    <label class="bm-desc">31 Desember 2016</label>
+                  </div>
+                  <div class="box-m-galeri">
+                    <img class="bm-galeri" src="{{url('img/img_home/img-artikel.png')}}">
+                    <label class="bm-desc">31 Desember 2016</label>
+                  </div>
+                  <div class="box-m-galeri">
+                    <img class="bm-galeri" src="{{url('img/img_home/img-artikel.png')}}">
+                    <label class="bm-desc">31 Desember 2016</label>
+                  </div>
+                  <div class="box-m-galeri">
+                    <img class="bm-galeri" src="{{url('img/img_home/img-artikel.png')}}">
+                    <label class="bm-desc">31 Desember 2016</label>
+                  </div>
+                  <div class="box-m-galeri">
+                    <img class="bm-galeri" src="{{url('img/img_home/img-artikel.png')}}">
+                    <label class="bm-desc">31 Desember 2016</label>
+                  </div>
+                </div> </form>
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
@@ -315,12 +335,32 @@
             <h4 class="modal-title" id="myModalLabel">SD : Galeri Kegiatan</h4>
             </div>
                 <div class="modal-body-front">
-                   Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-
-                   Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-
-                   Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                </form>
+                   <div class="modal-galeri">
+                  <div class="box-m-galeri">
+                    <img class="bm-galeri" src="{{url('img/img_home/img-artikel.png')}}">
+                    <label class="bm-desc">31 Desember 2016</label>
+                  </div>
+                  <div class="box-m-galeri">
+                    <img class="bm-galeri" src="{{url('img/img_home/img-artikel.png')}}">
+                    <label class="bm-desc">31 Desember 2016</label>
+                  </div>
+                  <div class="box-m-galeri">
+                    <img class="bm-galeri" src="{{url('img/img_home/img-artikel.png')}}">
+                    <label class="bm-desc">31 Desember 2016</label>
+                  </div>
+                  <div class="box-m-galeri">
+                    <img class="bm-galeri" src="{{url('img/img_home/img-artikel.png')}}">
+                    <label class="bm-desc">31 Desember 2016</label>
+                  </div>
+                  <div class="box-m-galeri">
+                    <img class="bm-galeri" src="{{url('img/img_home/img-artikel.png')}}">
+                    <label class="bm-desc">31 Desember 2016</label>
+                  </div>
+                  <div class="box-m-galeri">
+                    <img class="bm-galeri" src="{{url('img/img_home/img-artikel.png')}}">
+                    <label class="bm-desc">31 Desember 2016</label>
+                  </div>
+                </div></form>
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
@@ -408,12 +448,32 @@
             <h4 class="modal-title" id="myModalLabel">SMP : Galeri Kegiatan</h4>
             </div>
                 <div class="modal-body-front">
-                   Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-
-                   Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-
-                   Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                </form>
+                  <div class="modal-galeri">
+                  <div class="box-m-galeri">
+                    <img class="bm-galeri" src="{{url('img/img_home/img-artikel.png')}}">
+                    <label class="bm-desc">31 Desember 2016</label>
+                  </div>
+                  <div class="box-m-galeri">
+                    <img class="bm-galeri" src="{{url('img/img_home/img-artikel.png')}}">
+                    <label class="bm-desc">31 Desember 2016</label>
+                  </div>
+                  <div class="box-m-galeri">
+                    <img class="bm-galeri" src="{{url('img/img_home/img-artikel.png')}}">
+                    <label class="bm-desc">31 Desember 2016</label>
+                  </div>
+                  <div class="box-m-galeri">
+                    <img class="bm-galeri" src="{{url('img/img_home/img-artikel.png')}}">
+                    <label class="bm-desc">31 Desember 2016</label>
+                  </div>
+                  <div class="box-m-galeri">
+                    <img class="bm-galeri" src="{{url('img/img_home/img-artikel.png')}}">
+                    <label class="bm-desc">31 Desember 2016</label>
+                  </div>
+                  <div class="box-m-galeri">
+                    <img class="bm-galeri" src="{{url('img/img_home/img-artikel.png')}}">
+                    <label class="bm-desc">31 Desember 2016</label>
+                  </div>
+                </div></form>
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
@@ -500,12 +560,32 @@
             <h4 class="modal-title" id="myModalLabel">SMA : Galeri Kegiatan</h4>
             </div>
                 <div class="modal-body-front">
-                   Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-
-                   Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-
-                   Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                </form>
+                   <div class="modal-galeri">
+                  <div class="box-m-galeri">
+                    <img class="bm-galeri" src="{{url('img/img_home/img-artikel.png')}}">
+                    <label class="bm-desc">31 Desember 2016</label>
+                  </div>
+                  <div class="box-m-galeri">
+                    <img class="bm-galeri" src="{{url('img/img_home/img-artikel.png')}}">
+                    <label class="bm-desc">31 Desember 2016</label>
+                  </div>
+                  <div class="box-m-galeri">
+                    <img class="bm-galeri" src="{{url('img/img_home/img-artikel.png')}}">
+                    <label class="bm-desc">31 Desember 2016</label>
+                  </div>
+                  <div class="box-m-galeri">
+                    <img class="bm-galeri" src="{{url('img/img_home/img-artikel.png')}}">
+                    <label class="bm-desc">31 Desember 2016</label>
+                  </div>
+                  <div class="box-m-galeri">
+                    <img class="bm-galeri" src="{{url('img/img_home/img-artikel.png')}}">
+                    <label class="bm-desc">31 Desember 2016</label>
+                  </div>
+                  <div class="box-m-galeri">
+                    <img class="bm-galeri" src="{{url('img/img_home/img-artikel.png')}}">
+                    <label class="bm-desc">31 Desember 2016</label>
+                  </div>
+                </div></form>
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
@@ -593,12 +673,32 @@
             <h4 class="modal-title" id="myModalLabel">Yayasan : Galeri</h4>
             </div>
                 <div class="modal-body-front">
-                   Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-
-                   Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-
-                   Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                </form>
+                   <div class="modal-galeri">
+                  <div class="box-m-galeri">
+                    <img class="bm-galeri" src="{{url('img/img_home/img-artikel.png')}}">
+                    <label class="bm-desc">31 Desember 2016</label>
+                  </div>
+                  <div class="box-m-galeri">
+                    <img class="bm-galeri" src="{{url('img/img_home/img-artikel.png')}}">
+                    <label class="bm-desc">31 Desember 2016</label>
+                  </div>
+                  <div class="box-m-galeri">
+                    <img class="bm-galeri" src="{{url('img/img_home/img-artikel.png')}}">
+                    <label class="bm-desc">31 Desember 2016</label>
+                  </div>
+                  <div class="box-m-galeri">
+                    <img class="bm-galeri" src="{{url('img/img_home/img-artikel.png')}}">
+                    <label class="bm-desc">31 Desember 2016</label>
+                  </div>
+                  <div class="box-m-galeri">
+                    <img class="bm-galeri" src="{{url('img/img_home/img-artikel.png')}}">
+                    <label class="bm-desc">31 Desember 2016</label>
+                  </div>
+                  <div class="box-m-galeri">
+                    <img class="bm-galeri" src="{{url('img/img_home/img-artikel.png')}}">
+                    <label class="bm-desc">31 Desember 2016</label>
+                  </div>
+                </div></form>
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
@@ -639,12 +739,32 @@
             <h4 class="modal-title" id="myModalLabel">DKM : Galeri Kegiatan</h4>
             </div>
                 <div class="modal-body-front">
-                   Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-
-                   Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-
-                   Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                </form>
+                   <div class="modal-galeri">
+                  <div class="box-m-galeri">
+                    <img class="bm-galeri" src="{{url('img/img_home/img-artikel.png')}}">
+                    <label class="bm-desc">31 Desember 2016</label>
+                  </div>
+                  <div class="box-m-galeri">
+                    <img class="bm-galeri" src="{{url('img/img_home/img-artikel.png')}}">
+                    <label class="bm-desc">31 Desember 2016</label>
+                  </div>
+                  <div class="box-m-galeri">
+                    <img class="bm-galeri" src="{{url('img/img_home/img-artikel.png')}}">
+                    <label class="bm-desc">31 Desember 2016</label>
+                  </div>
+                  <div class="box-m-galeri">
+                    <img class="bm-galeri" src="{{url('img/img_home/img-artikel.png')}}">
+                    <label class="bm-desc">31 Desember 2016</label>
+                  </div>
+                  <div class="box-m-galeri">
+                    <img class="bm-galeri" src="{{url('img/img_home/img-artikel.png')}}">
+                    <label class="bm-desc">31 Desember 2016</label>
+                  </div>
+                  <div class="box-m-galeri">
+                    <img class="bm-galeri" src="{{url('img/img_home/img-artikel.png')}}">
+                    <label class="bm-desc">31 Desember 2016</label>
+                  </div>
+                </div></form>
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
