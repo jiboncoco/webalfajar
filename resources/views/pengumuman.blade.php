@@ -95,27 +95,27 @@
                 <div class="modal-body-front">
                    <div class="modal-galeri">
                   <div class="box-m-galeri">
-                    <img class="bm-galeri" src="{{url('img/img_home/img-artikel.png')}}">
+                    <img class="bm-galeri" src="{{url('img/img_galery/galery.jpg')}}">
                     <label class="bm-desc">31 Desember 2016</label>
                   </div>
                   <div class="box-m-galeri">
-                    <img class="bm-galeri" src="{{url('img/img_home/img-artikel.png')}}">
+                    <img class="bm-galeri" src="{{url('img/img_galery/galery.jpg')}}">
                     <label class="bm-desc">31 Desember 2016</label>
                   </div>
                   <div class="box-m-galeri">
-                    <img class="bm-galeri" src="{{url('img/img_home/img-artikel.png')}}">
+                    <img class="bm-galeri" src="{{url('img/img_galery/galery.jpg')}}">
                     <label class="bm-desc">31 Desember 2016</label>
                   </div>
                   <div class="box-m-galeri">
-                    <img class="bm-galeri" src="{{url('img/img_home/img-artikel.png')}}">
+                    <img class="bm-galeri" src="{{url('img/img_galery/galery.jpg')}}">
                     <label class="bm-desc">31 Desember 2016</label>
                   </div>
                   <div class="box-m-galeri">
-                    <img class="bm-galeri" src="{{url('img/img_home/img-artikel.png')}}">
+                    <img class="bm-galeri" src="{{url('img/img_galery/galery.jpg')}}">
                     <label class="bm-desc">31 Desember 2016</label>
                   </div>
                   <div class="box-m-galeri">
-                    <img class="bm-galeri" src="{{url('img/img_home/img-artikel.png')}}">
+                    <img class="bm-galeri" src="{{url('img/img_galery/galery.jpg')}}">
                     <label class="bm-desc">31 Desember 2016</label>
                   </div>
                 </div></form>
@@ -210,27 +210,27 @@
                 <div class="modal-body-front">
                    <div class="modal-galeri">
                   <div class="box-m-galeri">
-                    <img class="bm-galeri" src="{{url('img/img_home/img-artikel.png')}}">
+                    <img class="bm-galeri" src="{{url('img/img_galery/galery.jpg')}}">
                     <label class="bm-desc">31 Desember 2016</label>
                   </div>
                   <div class="box-m-galeri">
-                    <img class="bm-galeri" src="{{url('img/img_home/img-artikel.png')}}">
+                    <img class="bm-galeri" src="{{url('img/img_galery/galery.jpg')}}">
                     <label class="bm-desc">31 Desember 2016</label>
                   </div>
                   <div class="box-m-galeri">
-                    <img class="bm-galeri" src="{{url('img/img_home/img-artikel.png')}}">
+                    <img class="bm-galeri" src="{{url('img/img_galery/galery.jpg')}}">
                     <label class="bm-desc">31 Desember 2016</label>
                   </div>
                   <div class="box-m-galeri">
-                    <img class="bm-galeri" src="{{url('img/img_home/img-artikel.png')}}">
+                    <img class="bm-galeri" src="{{url('img/img_galery/galery.jpg')}}">
                     <label class="bm-desc">31 Desember 2016</label>
                   </div>
                   <div class="box-m-galeri">
-                    <img class="bm-galeri" src="{{url('img/img_home/img-artikel.png')}}">
+                    <img class="bm-galeri" src="{{url('img/img_galery/galery.jpg')}}">
                     <label class="bm-desc">31 Desember 2016</label>
                   </div>
                   <div class="box-m-galeri">
-                    <img class="bm-galeri" src="{{url('img/img_home/img-artikel.png')}}">
+                    <img class="bm-galeri" src="{{url('img/img_galery/galery.jpg')}}">
                     <label class="bm-desc">31 Desember 2016</label>
                   </div>
                 </div></form>
@@ -326,27 +326,27 @@
                 <div class="modal-body-front">
                    <div class="modal-galeri">
                   <div class="box-m-galeri">
-                    <img class="bm-galeri" src="{{url('img/img_home/img-artikel.png')}}">
+                    <img class="bm-galeri" src="{{url('img/img_galery/galery.jpg')}}">
                     <label class="bm-desc">31 Desember 2016</label>
                   </div>
                   <div class="box-m-galeri">
-                    <img class="bm-galeri" src="{{url('img/img_home/img-artikel.png')}}">
+                    <img class="bm-galeri" src="{{url('img/img_galery/galery.jpg')}}">
                     <label class="bm-desc">31 Desember 2016</label>
                   </div>
                   <div class="box-m-galeri">
-                    <img class="bm-galeri" src="{{url('img/img_home/img-artikel.png')}}">
+                    <img class="bm-galeri" src="{{url('img/img_galery/galery.jpg')}}">
                     <label class="bm-desc">31 Desember 2016</label>
                   </div>
                   <div class="box-m-galeri">
-                    <img class="bm-galeri" src="{{url('img/img_home/img-artikel.png')}}">
+                    <img class="bm-galeri" src="{{url('img/img_galery/galery.jpg')}}">
                     <label class="bm-desc">31 Desember 2016</label>
                   </div>
                   <div class="box-m-galeri">
-                    <img class="bm-galeri" src="{{url('img/img_home/img-artikel.png')}}">
+                    <img class="bm-galeri" src="{{url('img/img_galery/galery.jpg')}}">
                     <label class="bm-desc">31 Desember 2016</label>
                   </div>
                   <div class="box-m-galeri">
-                    <img class="bm-galeri" src="{{url('img/img_home/img-artikel.png')}}">
+                    <img class="bm-galeri" src="{{url('img/img_galery/galery.jpg')}}">
                     <label class="bm-desc">31 Desember 2016</label>
                   </div>
                 </div></form>
@@ -443,27 +443,27 @@
                 <div class="modal-body-front">
                    <div class="modal-galeri">
                   <div class="box-m-galeri">
-                    <img class="bm-galeri" src="{{url('img/img_home/img-artikel.png')}}">
+                    <img class="bm-galeri" src="{{url('img/img_galery/galery.jpg')}}">
                     <label class="bm-desc">31 Desember 2016</label>
                   </div>
                   <div class="box-m-galeri">
-                    <img class="bm-galeri" src="{{url('img/img_home/img-artikel.png')}}">
+                    <img class="bm-galeri" src="{{url('img/img_galery/galery.jpg')}}">
                     <label class="bm-desc">31 Desember 2016</label>
                   </div>
                   <div class="box-m-galeri">
-                    <img class="bm-galeri" src="{{url('img/img_home/img-artikel.png')}}">
+                    <img class="bm-galeri" src="{{url('img/img_galery/galery.jpg')}}">
                     <label class="bm-desc">31 Desember 2016</label>
                   </div>
                   <div class="box-m-galeri">
-                    <img class="bm-galeri" src="{{url('img/img_home/img-artikel.png')}}">
+                    <img class="bm-galeri" src="{{url('img/img_galery/galery.jpg')}}">
                     <label class="bm-desc">31 Desember 2016</label>
                   </div>
                   <div class="box-m-galeri">
-                    <img class="bm-galeri" src="{{url('img/img_home/img-artikel.png')}}">
+                    <img class="bm-galeri" src="{{url('img/img_galery/galery.jpg')}}">
                     <label class="bm-desc">31 Desember 2016</label>
                   </div>
                   <div class="box-m-galeri">
-                    <img class="bm-galeri" src="{{url('img/img_home/img-artikel.png')}}">
+                    <img class="bm-galeri" src="{{url('img/img_galery/galery.jpg')}}">
                     <label class="bm-desc">31 Desember 2016</label>
                   </div>
                 </div> </form>
@@ -559,27 +559,27 @@
                 <div class="modal-body-front">
                    <div class="modal-galeri">
                   <div class="box-m-galeri">
-                    <img class="bm-galeri" src="{{url('img/img_home/img-artikel.png')}}">
+                    <img class="bm-galeri" src="{{url('img/img_galery/galery.jpg')}}">
                     <label class="bm-desc">31 Desember 2016</label>
                   </div>
                   <div class="box-m-galeri">
-                    <img class="bm-galeri" src="{{url('img/img_home/img-artikel.png')}}">
+                    <img class="bm-galeri" src="{{url('img/img_galery/galery.jpg')}}">
                     <label class="bm-desc">31 Desember 2016</label>
                   </div>
                   <div class="box-m-galeri">
-                    <img class="bm-galeri" src="{{url('img/img_home/img-artikel.png')}}">
+                    <img class="bm-galeri" src="{{url('img/img_galery/galery.jpg')}}">
                     <label class="bm-desc">31 Desember 2016</label>
                   </div>
                   <div class="box-m-galeri">
-                    <img class="bm-galeri" src="{{url('img/img_home/img-artikel.png')}}">
+                    <img class="bm-galeri" src="{{url('img/img_galery/galery.jpg')}}">
                     <label class="bm-desc">31 Desember 2016</label>
                   </div>
                   <div class="box-m-galeri">
-                    <img class="bm-galeri" src="{{url('img/img_home/img-artikel.png')}}">
+                    <img class="bm-galeri" src="{{url('img/img_galery/galery.jpg')}}">
                     <label class="bm-desc">31 Desember 2016</label>
                   </div>
                   <div class="box-m-galeri">
-                    <img class="bm-galeri" src="{{url('img/img_home/img-artikel.png')}}">
+                    <img class="bm-galeri" src="{{url('img/img_galery/galery.jpg')}}">
                     <label class="bm-desc">31 Desember 2016</label>
                   </div>
                 </div></form>
@@ -629,27 +629,27 @@
                 <div class="modal-body-front">
                    <div class="modal-galeri">
                   <div class="box-m-galeri">
-                    <img class="bm-galeri" src="{{url('img/img_home/img-artikel.png')}}">
+                    <img class="bm-galeri" src="{{url('img/img_galery/galery.jpg')}}">
                     <label class="bm-desc">31 Desember 2016</label>
                   </div>
                   <div class="box-m-galeri">
-                    <img class="bm-galeri" src="{{url('img/img_home/img-artikel.png')}}">
+                    <img class="bm-galeri" src="{{url('img/img_galery/galery.jpg')}}">
                     <label class="bm-desc">31 Desember 2016</label>
                   </div>
                   <div class="box-m-galeri">
-                    <img class="bm-galeri" src="{{url('img/img_home/img-artikel.png')}}">
+                    <img class="bm-galeri" src="{{url('img/img_galery/galery.jpg')}}">
                     <label class="bm-desc">31 Desember 2016</label>
                   </div>
                   <div class="box-m-galeri">
-                    <img class="bm-galeri" src="{{url('img/img_home/img-artikel.png')}}">
+                    <img class="bm-galeri" src="{{url('img/img_galery/galery.jpg')}}">
                     <label class="bm-desc">31 Desember 2016</label>
                   </div>
                   <div class="box-m-galeri">
-                    <img class="bm-galeri" src="{{url('img/img_home/img-artikel.png')}}">
+                    <img class="bm-galeri" src="{{url('img/img_galery/galery.jpg')}}">
                     <label class="bm-desc">31 Desember 2016</label>
                   </div>
                   <div class="box-m-galeri">
-                    <img class="bm-galeri" src="{{url('img/img_home/img-artikel.png')}}">
+                    <img class="bm-galeri" src="{{url('img/img_galery/galery.jpg')}}">
                     <label class="bm-desc">31 Desember 2016</label>
                   </div>
                 </div></form>
