@@ -36,13 +36,13 @@
       <ul style="margin-top:15px;" class="nav navbar-nav">
         <a class="a-li" href="#carouselSection"><li>Home</li></a>
         <a class="a-li" href="#newsServices"><li>News</li></a>
-        <a class="a-li" href="#yayasanSection"><li>Yayasan</li></a>
+        <a class="a-li" href="#yayasanSection"><li>Foundation</li></a>
         <a class="a-li" href="#portfolioSection"><li>TK</li></a>
         <a class="a-li" href="#meetourteamSection"><li>SD</li></a>
         <a class="a-li" href="#recentpostSection"><li>SMP</li></a>
         <a class="a-li" href="#contactSection"><li>SMA</li></a>
         <a class="a-li" href="#dkmSection"><li>DKM</li></a>
-        <a class="a-li" href="#informasiServices"><li>Informasi</li></a>
+        <a class="a-li" href="#informasiServices"><li>Information</li></a>
         <a class="a-li" href="{{ url('login') }}"><li>Sign In</li></a>
 
       </ul>
@@ -145,7 +145,7 @@
         <div class="modal-content">
             <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-            <h4 class="modal-title" id="myModalLabel">TK : Visi - Misi</h4>
+            <h4 class="modal-title" id="myModalLabel">TK : Vision & Mission</h4>
             </div>
                 <div class="modal-body-front">
                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
@@ -168,7 +168,7 @@
         <div class="modal-content">
             <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-            <h4 class="modal-title" id="myModalLabel">TK : Kurikulum</h4>
+            <h4 class="modal-title" id="myModalLabel">TK : Curriculum</h4>
             </div>
                 <div class="modal-body-front">
                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
@@ -191,7 +191,7 @@
         <div class="modal-content">
             <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-            <h4 class="modal-title" id="myModalLabel">TK : Fasilitas</h4>
+            <h4 class="modal-title" id="myModalLabel">TK : Facilities</h4>
             </div>
                 <div class="modal-body-front">
                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
@@ -214,7 +214,7 @@
         <div class="modal-content">
             <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-            <h4 class="modal-title" id="myModalLabel">TK : Galeri Kegiatan</h4>
+            <h4 class="modal-title" id="myModalLabel">TK : Galery</h4>
             </div>
                 <div class="modal-body-front">
                 <div class="modal-galeri">
@@ -258,7 +258,7 @@
         <div class="modal-content">
             <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-            <h4 class="modal-title" id="myModalLabel">SD : Visi - Misi</h4>
+            <h4 class="modal-title" id="myModalLabel">SD : Vision & Mission</h4>
             </div>
                 <div class="modal-body-front">
                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
@@ -281,7 +281,7 @@
         <div class="modal-content">
             <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-            <h4 class="modal-title" id="myModalLabel">SD : Kurikulum</h4>
+            <h4 class="modal-title" id="myModalLabel">SD : Curriculum</h4>
             </div>
                 <div class="modal-body-front">
                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
@@ -304,7 +304,7 @@
         <div class="modal-content">
             <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-            <h4 class="modal-title" id="myModalLabel">SD : Fasilitas</h4>
+            <h4 class="modal-title" id="myModalLabel">SD : Facilities</h4>
             </div>
                 <div class="modal-body-front">
                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
@@ -327,7 +327,7 @@
         <div class="modal-content">
             <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-            <h4 class="modal-title" id="myModalLabel">SD : Galeri Kegiatan</h4>
+            <h4 class="modal-title" id="myModalLabel">SD : Galery</h4>
             </div>
                 <div class="modal-body-front">
                   <div class="modal-galeri">
@@ -372,7 +372,7 @@
         <div class="modal-content">
             <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-            <h4 class="modal-title" id="myModalLabel">SMP : Visi - Misi</h4>
+            <h4 class="modal-title" id="myModalLabel">SMP : Vision & Mission</h4>
             </div>
                 <div class="modal-body-front">
                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
@@ -395,7 +395,7 @@
         <div class="modal-content">
             <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-            <h4 class="modal-title" id="myModalLabel">SMP : Kurikulum</h4>
+            <h4 class="modal-title" id="myModalLabel">SMP : Curriculum</h4>
             </div>
                 <div class="modal-body-front">
                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
@@ -418,7 +418,7 @@
         <div class="modal-content">
             <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-            <h4 class="modal-title" id="myModalLabel">SMP : Fasilitas</h4>
+            <h4 class="modal-title" id="myModalLabel">SMP : Facilities</h4>
             </div>
                 <div class="modal-body-front">
                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
@@ -441,7 +441,7 @@
         <div class="modal-content">
             <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-            <h4 class="modal-title" id="myModalLabel">SMP : Galeri Kegiatan</h4>
+            <h4 class="modal-title" id="myModalLabel">SMP : Galery</h4>
             </div>
                 <div class="modal-body-front">
                    <div class="modal-galeri">
@@ -484,7 +484,7 @@
         <div class="modal-content">
             <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-            <h4 class="modal-title" id="myModalLabel">SMA : Visi - Misi</h4>
+            <h4 class="modal-title" id="myModalLabel">SMA : Vision & Mission</h4>
             </div>
                 <div class="modal-body-front">
                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
@@ -507,7 +507,7 @@
         <div class="modal-content">
             <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-            <h4 class="modal-title" id="myModalLabel">SMA : Kurikulum</h4>
+            <h4 class="modal-title" id="myModalLabel">SMA : Curriculum</h4>
             </div>
                 <div class="modal-body-front">
                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
@@ -530,7 +530,7 @@
         <div class="modal-content">
             <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-            <h4 class="modal-title" id="myModalLabel">SMA : Fasilitas</h4>
+            <h4 class="modal-title" id="myModalLabel">SMA : Facilities</h4>
             </div>
                 <div class="modal-body-front">
                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
@@ -553,7 +553,7 @@
         <div class="modal-content">
             <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-            <h4 class="modal-title" id="myModalLabel">SMA : Galeri Kegiatan</h4>
+            <h4 class="modal-title" id="myModalLabel">SMA : Galery</h4>
             </div>
                 <div class="modal-body-front">
                    <div class="modal-galeri">
@@ -597,7 +597,7 @@
         <div class="modal-content">
             <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-            <h4 class="modal-title" id="myModalLabel">Yayasan : Visi - Misi</h4>
+            <h4 class="modal-title" id="myModalLabel">Foundation : Vision & Mission </h4>
             </div>
                 <div class="modal-body-front">
                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
@@ -620,7 +620,7 @@
         <div class="modal-content">
             <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-            <h4 class="modal-title" id="myModalLabel">Yayasan : Sistem Pendidikan</h4>
+            <h4 class="modal-title" id="myModalLabel">Foundation : Education</h4>
             </div>
                 <div class="modal-body-front">
                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
@@ -643,7 +643,7 @@
         <div class="modal-content">
             <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-            <h4 class="modal-title" id="myModalLabel">Yayasan : Profile</h4>
+            <h4 class="modal-title" id="myModalLabel">Foundation : Profile</h4>
             </div>
                 <div class="modal-body-front">
                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
@@ -666,7 +666,7 @@
         <div class="modal-content">
             <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-            <h4 class="modal-title" id="myModalLabel">Yayasan : Galeri</h4>
+            <h4 class="modal-title" id="myModalLabel">Foundation : Galery</h4>
             </div>
                 <div class="modal-body-front">
                    <div class="modal-galeri">
@@ -709,7 +709,7 @@
         <div class="modal-content">
             <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-            <h4 class="modal-title" id="myModalLabel">DKM : Fasilitas</h4>
+            <h4 class="modal-title" id="myModalLabel">DKM : Facilities</h4>
             </div>
                 <div class="modal-body-front">
                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
@@ -732,7 +732,7 @@
         <div class="modal-content">
             <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-            <h4 class="modal-title" id="myModalLabel">DKM : Galeri Kegiatan</h4>
+            <h4 class="modal-title" id="myModalLabel">DKM : Galery</h4>
             </div>
                 <div class="modal-body-front">
                    <div class="modal-galeri">
@@ -779,10 +779,10 @@
     <img class="img-c" src="{{ url('img/img_home/yayasan.png') }}">
 </div>
 <div class="class-lab">
-    <a class="a-lab-yay" data-toggle="modal" data-target="#myModalyay1" href="#"><label class="lab-c-yay">Visi - Misi</label></a>
-    <a class="a-lab-yay" data-toggle="modal" data-target="#myModalyay2" href="#"><label id="lab-c-font" class="lab-c-yay">Pendidikan</label></a>
+    <a class="a-lab-yay" data-toggle="modal" data-target="#myModalyay1" href="#"><label class="lab-c-yay">Visions</label></a>
+    <a class="a-lab-yay" data-toggle="modal" data-target="#myModalyay2" href="#"><label id="lab-c-font" class="lab-c-yay">Education</label></a>
     <a class="a-lab-yay" data-toggle="modal" data-target="#myModalyay3" href="#"><label class="lab-c-yay">Profile</label></a>
-    <a class="a-lab-yay" data-toggle="modal" data-target="#myModalyay4" href="#"><label class="lab-c-yay">Galeri</label></a>
+    <a class="a-lab-yay" data-toggle="modal" data-target="#myModalyay4" href="#"><label class="lab-c-yay">Galery</label></a>
 </div>
 </div>
 </div>
@@ -797,11 +797,11 @@
 </div>
 <div class="class-lab">
     <a class="a-lab-port" href="{{ url('portal_tk') }}"><label class="lab-c-port">Portal TK</label></a>
-    <a class="a-lab-port" data-toggle="modal" data-target="#myModalport1" href="#"><label class="lab-c-port">Visi - Misi</label></a>
-    <a class="a-lab-port" data-toggle="modal" data-target="#myModalport2" href="#"><label class="lab-c-port">Kurikulum</label></a>
-    <a class="a-lab-port" data-toggle="modal" data-target="#myModalport3" href="#"><label class="lab-c-port">Fasilitas</label></a>
-    <a class="a-lab-port" data-toggle="modal" data-target="#myModalport4" href="#"><label class="lab-c-port">Galeri Kegiatan</label></a>
-    <a class="a-lab-port" href="{{ url('pendaftaran') }}"><label class="lab-c-port">Pendaftaran</label></a>
+    <a class="a-lab-port" data-toggle="modal" data-target="#myModalport1" href="#"><label class="lab-c-port">Visions</label></a>
+    <a class="a-lab-port" data-toggle="modal" data-target="#myModalport2" href="#"><label class="lab-c-port">Curriculum</label></a>
+    <a class="a-lab-port" data-toggle="modal" data-target="#myModalport3" href="#"><label class="lab-c-port">Facilities</label></a>
+    <a class="a-lab-port" data-toggle="modal" data-target="#myModalport4" href="#"><label class="lab-c-port">Galery</label></a>
+    <a class="a-lab-port" href="{{ url('pendaftaran') }}"><label class="lab-c-port">Registration</label></a>
 </div>
 </div>
 </div>
@@ -814,11 +814,11 @@
 </div>
 <div class="class-lab">
     <a class="a-lab-meet" href="{{ url('portal_sd') }}"><label class="lab-c-meet">Portal SD</label></a>
-    <a class="a-lab-meet" data-toggle="modal" data-target="#myModalmeet1" href="#"><label class="lab-c-meet">Visi - Misi</label></a>
-    <a class="a-lab-meet" data-toggle="modal" data-target="#myModalmeet2" href="#"><label class="lab-c-meet">Kurikulum</label></a>
-    <a class="a-lab-meet" data-toggle="modal" data-target="#myModalmeet3" href="#"><label class="lab-c-meet">Fasilitas</label></a>
-    <a class="a-lab-meet" data-toggle="modal" data-target="#myModalmeet4" href="#"><label class="lab-c-meet">Galeri Kegiatan</label></a>
-    <a class="a-lab-meet" href="{{ url('pendaftaran') }}"><label class="lab-c-meet">Pendaftaran</label></a>
+    <a class="a-lab-meet" data-toggle="modal" data-target="#myModalmeet1" href="#"><label class="lab-c-meet">Visions</label></a>
+    <a class="a-lab-meet" data-toggle="modal" data-target="#myModalmeet2" href="#"><label class="lab-c-meet">Curriculum</label></a>
+    <a class="a-lab-meet" data-toggle="modal" data-target="#myModalmeet3" href="#"><label class="lab-c-meet">Facilities</label></a>
+    <a class="a-lab-meet" data-toggle="modal" data-target="#myModalmeet4" href="#"><label class="lab-c-meet">Galery</label></a>
+    <a class="a-lab-meet" href="{{ url('pendaftaran') }}"><label class="lab-c-meet">Registration</label></a>
 </div>
 </div>
 </div>
@@ -832,11 +832,11 @@
 </div>
 <div class="class-lab">
     <a class="a-lab-rec" href="{{ url('portal_smp') }}"><label class="lab-c-rec">Portal SMP</label></a>
-    <a class="a-lab-rec" data-toggle="modal" data-target="#myModalrec1" href="#"><label class="lab-c-rec">Visi - Misi</label></a>
-    <a class="a-lab-rec" data-toggle="modal" data-target="#myModalrec2" href="#"><label class="lab-c-rec">Kurikulum</label></a>
-    <a class="a-lab-rec" data-toggle="modal" data-target="#myModalrec3" href="#"><label class="lab-c-rec">Fasilitas</label></a>
-    <a class="a-lab-rec" data-toggle="modal" data-target="#myModalrec4" href="#"><label class="lab-c-rec">Galeri Kegiatan</label></a>
-    <a class="a-lab-rec" href="{{ url('pendaftaran') }}"><label class="lab-c-rec">Pendaftaran</label></a>
+    <a class="a-lab-rec" data-toggle="modal" data-target="#myModalrec1" href="#"><label class="lab-c-rec">Visions</label></a>
+    <a class="a-lab-rec" data-toggle="modal" data-target="#myModalrec2" href="#"><label class="lab-c-rec">Curriculum</label></a>
+    <a class="a-lab-rec" data-toggle="modal" data-target="#myModalrec3" href="#"><label class="lab-c-rec">Facilities</label></a>
+    <a class="a-lab-rec" data-toggle="modal" data-target="#myModalrec4" href="#"><label class="lab-c-rec">Galery</label></a>
+    <a class="a-lab-rec" href="{{ url('pendaftaran') }}"><label class="lab-c-rec">Registration</label></a>
 </div>
 </div>
 </div>
@@ -849,11 +849,11 @@
 </div>
 <div class="class-lab">
     <a class="a-lab-cont" href="{{ url('portal_sma') }}"><label class="lab-c-cont">Portal SMA</label></a>
-    <a class="a-lab-cont" data-toggle="modal" data-target="#myModalcont1" href="#"><label class="lab-c-cont">Visi - Misi</label></a>
-    <a class="a-lab-cont" data-toggle="modal" data-target="#myModalcont2" href="#"><label class="lab-c-cont">Kurikulum</label></a>
-    <a class="a-lab-cont" data-toggle="modal" data-target="#myModalcont3" href="#"><label class="lab-c-cont">Fasilitas</label></a>
-    <a class="a-lab-cont" data-toggle="modal" data-target="#myModalcont4" href="#"><label class="lab-c-cont">Galeri Kegiatan</label></a>
-    <a class="a-lab-cont" href="{{ url('pendaftaran') }}"><label class="lab-c-cont">Pendaftaran</label></a>
+    <a class="a-lab-cont" data-toggle="modal" data-target="#myModalcont1" href="#"><label class="lab-c-cont">Visions</label></a>
+    <a class="a-lab-cont" data-toggle="modal" data-target="#myModalcont2" href="#"><label class="lab-c-cont">Curriculum</label></a>
+    <a class="a-lab-cont" data-toggle="modal" data-target="#myModalcont3" href="#"><label class="lab-c-cont">Facilities</label></a>
+    <a class="a-lab-cont" data-toggle="modal" data-target="#myModalcont4" href="#"><label class="lab-c-cont">Galery</label></a>
+    <a class="a-lab-cont" href="{{ url('pendaftaran') }}"><label class="lab-c-cont">Registration</label></a>
 </div>
 </div>
 </div>
@@ -866,8 +866,8 @@
     <img class="img-c" src="{{ url('img/img_home/dkm.png') }}">
 </div>
 <div style="padding-top:50px;" class="class-lab">
-    <a class="a-lab-dkm" data-toggle="modal" data-target="#myModaldkm1" href="#"><label class="lab-c-dkm">Fasilitas</label></a>
-    <a class="a-lab-dkm" data-toggle="modal" data-target="#myModaldkm2" href="#"><label class="lab-c-dkm">Galeri Kegiatan</label></a>
+    <a class="a-lab-dkm" data-toggle="modal" data-target="#myModaldkm1" href="#"><label class="lab-c-dkm">Facilities</label></a>
+    <a class="a-lab-dkm" data-toggle="modal" data-target="#myModaldkm2" href="#"><label class="lab-c-dkm">Galery</label></a>
 </div>
 </div>
 </div>
@@ -876,7 +876,7 @@
 
 <div id="informasiServices">
 <div class="title-news">
-  INFORMASI
+  INFORMATION
 </div>
 <div class="container">
                 <div class="row" style="border-bottom:none;">
@@ -894,14 +894,14 @@
       <a href="pengumuman">
         <img class="infoimg" src="img/img_home/img-pengumuman.png" ></div>
       </a>
-        <h4>Pengumuman</h4>
+        <h4>Announcement</h4>
       </div>
       <div class="col-md-4 col-xs-12">
         <div class="info-img">
       <a href="{{ url('artikel') }}">
         <img class="infoimg" src="img/img_home/img-artikel.png" ></div>
       </a>
-        <h4>Artikel</h4>
+        <h4>Article</h4>
       </div>
     </div>
 </div>
