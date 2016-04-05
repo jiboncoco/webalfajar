@@ -1515,7 +1515,7 @@ border-bottom: 0;
 	margin-right: 3.5% 
 }
 .content-s-portal{
-    width: 100%;
+    width: 95%;
     margin-left: 0px;
 	}
 	.cs-search{
@@ -1919,7 +1919,7 @@ color: white !important;
 .fcs{
 	width: 96%;
     float: none;
-    margin-top: 70px;
+    margin-top: 25px;
     margin-bottom: -30px;
     margin-left: 40px;
 }
@@ -1947,14 +1947,11 @@ color: white !important;
 .content2-s{
 	width: 100%;
 }
-.content2-notif{
-	margin: 0px;
-	width: 100%;
-}
 .fnip{
 	width: 91%;
 	float: none;
-	margin-bottom: 10px;
+	    margin-top: 20px;
+    margin-bottom: -15px;
 }
 .content2-all{
 	width: 100%;
@@ -1996,6 +1993,37 @@ color: white !important;
     font-size: 16px;
 }
 @media screen and (max-width: 800px) {
+	.content2-notif{
+	width: 45.5%;
+    margin-bottom: 10px;
+    margin-left: 0px;
+    margin-right: 0px;
+    display: inline-table;
+    margin: 10px;
+}
+.content2-fb{
+	width: 45.5%;
+    margin-bottom: 10px;
+    margin-left: 0px;
+    margin-right: 0px;
+    display: inline-table;
+    margin: 10px;
+}
+.content2-maps{
+	width: 46%;
+    margin-bottom: 10px;
+    margin-left: 0px;
+    margin-right: 0px;
+    display: inline-table;
+    margin: 10px;
+}
+	.content1-box-all{
+	width: 100%;
+}
+.content1-box{
+	margin: 20px;
+    width: 42%;
+}
     .img-slide{
       width: 80%;
     }
@@ -2046,12 +2074,36 @@ color: white !important;
 		width: 96.3%;
 	}
 
-	.content1-box{
-		width: 92%;
-		margin: 20px;
+
+.content-s{
+    padding: 15px;
+    width: 100%;
+    margin-right: 6%;
+	}
+	.cs-search{
+		width: 100%;
+	}
+}
+
+@media screen and (max-width: 580px) {
+	fcs{
+		margin-left: 3.5%;
+		width: 96.3%;
 	}
 
-	.content2-fb{
+	.content1-box{
+		width: 87%;
+	}	
+	.content-s{
+    padding: 15px;
+    width: 100%;
+    margin-right: 4%;
+	}
+	.cs-search{
+		width: 100%;
+		margin-left: 0px;	
+	}
+		.content2-fb{
 	width: 100%;
     margin-bottom: 10px;
     margin-left: 0px;
@@ -2075,32 +2127,4 @@ color: white !important;
     display: inline-table;
     margin-bottom: 10px;
 }
-.content-s{
-    padding: 15px;
-    width: 100%;
-    margin-right: 6%;
-	}
-	.cs-search{
-		width: 100%;
-	}
-}
-
-@media screen and (max-width: 580px) {
-	fcs{
-		margin-left: 3.5%;
-		width: 96.3%;
-	}
-
-	.content1-box{
-		width: 87%;
-	}	
-	.content-s{
-    padding: 15px;
-    width: 100%;
-    margin-right: 6%;
-	}
-	.cs-search{
-		width: 100%;
-		margin-left: 0px;	
-	}
 }
