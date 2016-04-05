@@ -51,7 +51,7 @@
                   			<div class="modal-body">
                   				<div class="login-form">
 				<form action="#" method="POST">
-					<input class="login-input" name="" id="log-inp" placeholder="Access" required></input>
+					<input class="login-input" type="password" name="" id="log-inp" placeholder="Access" required></input>
 					<input class="login-input" name="" id="log-inp" placeholder="Username" required></input>
 					<input class="login-input" name="" type="password" placeholder="Password" required></input><br>
                     <div id="cb-log" class="checkbox">
