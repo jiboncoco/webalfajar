@@ -75,6 +75,9 @@ h1.brand {
 	overflow: hidden;
 	transition:all ease-in .5s;
 }
+.animatedParent{
+	overflow: hidden;
+}
  #portfolioSection, #ourServices, #newsServices,
 #informasiServices, #blogSection{padding:100px 0 ; }
 .txtR{text-align:right}
@@ -103,13 +106,13 @@ h1.brand {
 }
 
 #dkmSection{
-	background-color: #CCC741;
+	background-color: #EFC956;
 	text-align: center;
     padding: 70px 0;
 }
 
 #yayasanSection{
-	background-color: #66bb6a;
+	background-color: #3BD87C;
 	text-align: center;
     padding: 70px 0;
 }
@@ -1514,14 +1517,10 @@ border-bottom: 0;
 .content-s{
 	margin-right: 3.5% 
 }
-.content-s-portal{
-    width: 95%;
-    margin-left: 0px;
-	}
-	.cs-search{
-		width: 95%;
-		 margin-left: 30px;
-	}
+.cs-search{
+	width: 95%;
+	margin-left: 30px;
+}
 }
 @media only screen and (max-width : 992px) {
 #lab-c-font{
@@ -1989,6 +1988,14 @@ border-bottom: 0;
 .desc-img {
     font-size: 16px;
 }
+@media screen and (max-width: 1000px) {
+.content-s-portal{
+    width: 98%;
+	margin-left: 7px;
+    margin-top: 35px;
+    margin-bottom: -35px;
+}
+}
 @media screen and (max-width: 800px) {
 	.content2-notif{
 	width: 45.5%;
@@ -1997,6 +2004,12 @@ border-bottom: 0;
     margin-right: 0px;
     display: inline-table;
     margin: 10px;
+}
+.content-s-portal{
+	width: 95%;
+	margin-left: 4px;
+    margin-top: 35px;
+    margin-bottom: -25px;
 }
 .content2-fb{
 	width: 45.5%;

@@ -11,6 +11,7 @@
     <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="{{ url('font-awesome/css/font-awesome.min.css') }}">
     <link id="callCss"rel="stylesheet" href="css/style.css" type="text/css" media="screen" charset="utf-8" />
+    <link href="{{ url('css/animations.css') }}" rel='stylesheet'>
 
 </head>
 <body>
@@ -102,7 +103,7 @@
 <!-- Sectionone block ends======================================== -->
 
 <!-- NEWS======================================== -->
-<div id="newsServices">
+<div id="newsServices" class="animatedParent">
 <div class="title-news">
   NEWS
 </div>
@@ -111,30 +112,30 @@
       <a href="#">
       <div id="info-boxx" class="col-md-4 col-xs-12">
       <div class="info-img">
-        <img class="infoimg2" src="img/img_home/img-1.png" ></div>
+        <img class="infoimg2 animated bounceInLeft" src="img/img_home/img-1.png" ></div>
         <h4>Flat Design</h4>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et quam est. Mauris faucibus tellus ac auctor posuere. </p>
+        <p class="animated flipInY">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et quam est. Mauris faucibus tellus ac auctor posuere. </p>
       </div>
       </a>
       <a href="#">
       <div id="info-boxx" class="col-md-4 col-xs-12">
         <div class="info-img">
-        <img class="infoimg2" src="img/img_home/img-2.png" ></div>
+        <img class="infoimg2 animated bounceInDown" src="img/img_home/img-2.png" ></div>
         <h4>Great Ideas</h4>
-         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et quam est. Mauris faucibus tellus ac auctor posuere. </p>
+         <p class="animated flipInY">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et quam est. Mauris faucibus tellus ac auctor posuere. </p>
       </div>
       </a>
       <a href="#">
       <div id="info-boxx" class="col-md-4 col-xs-12">
         <div class="info-img">
-        <img class="infoimg2" src="img/img_home/img-3.png" ></div>
+        <img class="infoimg2 animated bounceInRight" src="img/img_home/img-3.png" ></div>
         <h4>Browser  Compatibility</h4>
-         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et quam est. Mauris faucibus tellus ac auctor posuere. </p>
+         <p class="animated flipInY">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et quam est. Mauris faucibus tellus ac auctor posuere. </p>
       </div>
       </a>
     </div>
 </div>
-<a href="{{ url('news') }}" class="btn btn-large btn-primary" id="btn-rm-s">ALL NEWS</a>
+<a href="{{ url('news') }}" class="btn btn-large btn-primary animated rotateInUpLeft" id="btn-rm-s">ALL NEWS</a>
 </div>
 </div>
 
@@ -773,16 +774,16 @@
 
 <!-- YAYASAN -->
 
-<div id="yayasanSection">
+<div id="yayasanSection" class="animatedParent">
 <div class="content-port">
-<div class="class-img">
+<div class="class-img  animated fadeInDown">
     <img class="img-c" src="{{ url('img/img_home/yayasan.png') }}">
 </div>
 <div class="class-lab">
-    <a class="a-lab-yay" data-toggle="modal" data-target="#myModalyay1" href="#"><label class="lab-c-yay">Visions</label></a>
-    <a class="a-lab-yay" data-toggle="modal" data-target="#myModalyay2" href="#"><label id="lab-c-font" class="lab-c-yay">Education</label></a>
-    <a class="a-lab-yay" data-toggle="modal" data-target="#myModalyay3" href="#"><label class="lab-c-yay">Profile</label></a>
-    <a class="a-lab-yay" data-toggle="modal" data-target="#myModalyay4" href="#"><label class="lab-c-yay">Galery</label></a>
+    <a class="a-lab-yay" data-toggle="modal" data-target="#myModalyay1" href="#"><label class="lab-c-yay animated rotateInDownLeft">Visions</label></a>
+    <a class="a-lab-yay" data-toggle="modal" data-target="#myModalyay2" href="#"><label id="lab-c-font" class="lab-c-yay animated rotateInDownLeft">Education</label></a>
+    <a class="a-lab-yay" data-toggle="modal" data-target="#myModalyay3" href="#"><label class="lab-c-yay animated rotateInUpRight">Profile</label></a>
+    <a class="a-lab-yay" data-toggle="modal" data-target="#myModalyay4" href="#"><label class="lab-c-yay animated rotateInUpRight">Galery</label></a>
 </div>
 </div>
 </div>
@@ -790,91 +791,91 @@
 <!-- YAYASAN END -->
 
 <!-- TK======================================== -->
-<div id="portfolioSection">
+<div id="portfolioSection" class="animatedParent">
 <div class="content-port">
-<div class="class-img">
+<div class="class-img  animated fadeInDown">
     <img class="img-c" src="{{ url('img/img_home/TK.png') }}">
 </div>
 <div class="class-lab">
-    <a class="a-lab-port" href="{{ url('portal_tk') }}"><label class="lab-c-port">Portal TK</label></a>
-    <a class="a-lab-port" data-toggle="modal" data-target="#myModalport1" href="#"><label class="lab-c-port">Visions</label></a>
-    <a class="a-lab-port" data-toggle="modal" data-target="#myModalport2" href="#"><label class="lab-c-port">Curriculum</label></a>
-    <a class="a-lab-port" data-toggle="modal" data-target="#myModalport3" href="#"><label class="lab-c-port">Facilities</label></a>
-    <a class="a-lab-port" data-toggle="modal" data-target="#myModalport4" href="#"><label class="lab-c-port">Galery</label></a>
-    <a class="a-lab-port" href="{{ url('pendaftaran') }}"><label class="lab-c-port">Registration</label></a>
+    <a class="a-lab-port" href="{{ url('portal_tk') }}"><label class="lab-c-port animated fadeInLeft">Portal TK</label></a>
+    <a class="a-lab-port" data-toggle="modal" data-target="#myModalport1" href="#"><label class="lab-c-port animated fadeInLeft">Visions</label></a>
+    <a class="a-lab-port" data-toggle="modal" data-target="#myModalport2" href="#"><label class="lab-c-port animated fadeInDown">Curriculum</label></a>
+    <a class="a-lab-port" data-toggle="modal" data-target="#myModalport3" href="#"><label class="lab-c-port animated fadeInDown">Facilities</label></a>
+    <a class="a-lab-port" data-toggle="modal" data-target="#myModalport4" href="#"><label class="lab-c-port animated fadeInRight">Galery</label></a>
+    <a class="a-lab-port" href="{{ url('pendaftaran') }}"><label class="lab-c-port animated fadeInRight">Registration</label></a>
 </div>
 </div>
 </div>
 
 <!-- SD ======================================== -->
-<div id="meetourteamSection">
+<div id="meetourteamSection" class="animatedParent">
 <div class="content-port">
-<div class="class-img">
+<div class="class-img  animated fadeInDown">
     <img class="img-c" src="{{ url('img/img_home/SD.png') }}">
 </div>
-<div class="class-lab">
-    <a class="a-lab-meet" href="{{ url('portal_sd') }}"><label class="lab-c-meet">Portal SD</label></a>
-    <a class="a-lab-meet" data-toggle="modal" data-target="#myModalmeet1" href="#"><label class="lab-c-meet">Visions</label></a>
-    <a class="a-lab-meet" data-toggle="modal" data-target="#myModalmeet2" href="#"><label class="lab-c-meet">Curriculum</label></a>
-    <a class="a-lab-meet" data-toggle="modal" data-target="#myModalmeet3" href="#"><label class="lab-c-meet">Facilities</label></a>
-    <a class="a-lab-meet" data-toggle="modal" data-target="#myModalmeet4" href="#"><label class="lab-c-meet">Galery</label></a>
-    <a class="a-lab-meet" href="{{ url('pendaftaran') }}"><label class="lab-c-meet">Registration</label></a>
+<div class="class-lab ">
+    <a class="a-lab-meet" href="{{ url('portal_sd') }}"><label class="lab-c-meet animated fadeInLeft">Portal SD</label></a>
+    <a class="a-lab-meet" data-toggle="modal" data-target="#myModalmeet1" href="#"><label class="lab-c-meet animated fadeInLeft">Visions</label></a>
+    <a class="a-lab-meet" data-toggle="modal" data-target="#myModalmeet2" href="#"><label class="lab-c-meet animated fadeInDown">Curriculum</label></a>
+    <a class="a-lab-meet" data-toggle="modal" data-target="#myModalmeet3" href="#"><label class="lab-c-meet animated fadeInDown">Facilities</label></a>
+    <a class="a-lab-meet" data-toggle="modal" data-target="#myModalmeet4" href="#"><label class="lab-c-meet animated fadeInRight">Galery</label></a>
+    <a class="a-lab-meet" href="{{ url('pendaftaran') }}"><label class="lab-c-meet animated fadeInRight">Registration</label></a>
 </div>
 </div>
 </div>
 
 
 <!-- SMP======================================== -->
-<div id="recentpostSection">
+<div id="recentpostSection" class="animatedParent">
 <div class="content-port">
-<div class="class-img">
+<div class="class-img  animated fadeInDown">
     <img class="img-c" src="{{ url('img/img_home/SMP.png') }}">
 </div>
-<div class="class-lab">
-    <a class="a-lab-rec" href="{{ url('portal_smp') }}"><label class="lab-c-rec">Portal SMP</label></a>
-    <a class="a-lab-rec" data-toggle="modal" data-target="#myModalrec1" href="#"><label class="lab-c-rec">Visions</label></a>
-    <a class="a-lab-rec" data-toggle="modal" data-target="#myModalrec2" href="#"><label class="lab-c-rec">Curriculum</label></a>
-    <a class="a-lab-rec" data-toggle="modal" data-target="#myModalrec3" href="#"><label class="lab-c-rec">Facilities</label></a>
-    <a class="a-lab-rec" data-toggle="modal" data-target="#myModalrec4" href="#"><label class="lab-c-rec">Galery</label></a>
-    <a class="a-lab-rec" href="{{ url('pendaftaran') }}"><label class="lab-c-rec">Registration</label></a>
+<div class="class-lab ">
+    <a class="a-lab-rec" href="{{ url('portal_smp') }}"><label class="lab-c-rec animated fadeInLeft">Portal SMP</label></a>
+    <a class="a-lab-rec" data-toggle="modal" data-target="#myModalrec1" href="#"><label class="lab-c-rec animated fadeInLeft">Visions</label></a>
+    <a class="a-lab-rec" data-toggle="modal" data-target="#myModalrec2" href="#"><label class="lab-c-rec animated fadeInDown">Curriculum</label></a>
+    <a class="a-lab-rec" data-toggle="modal" data-target="#myModalrec3" href="#"><label class="lab-c-rec animated fadeInDown">Facilities</label></a>
+    <a class="a-lab-rec" data-toggle="modal" data-target="#myModalrec4" href="#"><label class="lab-c-rec animated fadeInRight">Galery</label></a>
+    <a class="a-lab-rec" href="{{ url('pendaftaran') }}"><label class="lab-c-rec animated fadeInRight">Registration</label></a>
 </div>
 </div>
 </div>
 
 <!-- SMA -->
-<div id="contactSection">
+<div id="contactSection" class="animatedParent">
 <div class="content-port">
-<div class="class-img">
+<div class="class-img  animated fadeInDown">
     <img class="img-c" src="{{ url('img/img_home/SMA.png') }}">
 </div>
-<div class="class-lab">
-    <a class="a-lab-cont" href="{{ url('portal_sma') }}"><label class="lab-c-cont">Portal SMA</label></a>
-    <a class="a-lab-cont" data-toggle="modal" data-target="#myModalcont1" href="#"><label class="lab-c-cont">Visions</label></a>
-    <a class="a-lab-cont" data-toggle="modal" data-target="#myModalcont2" href="#"><label class="lab-c-cont">Curriculum</label></a>
-    <a class="a-lab-cont" data-toggle="modal" data-target="#myModalcont3" href="#"><label class="lab-c-cont">Facilities</label></a>
-    <a class="a-lab-cont" data-toggle="modal" data-target="#myModalcont4" href="#"><label class="lab-c-cont">Galery</label></a>
-    <a class="a-lab-cont" href="{{ url('pendaftaran') }}"><label class="lab-c-cont">Registration</label></a>
+<div class="class-lab ">
+    <a class="a-lab-cont" href="{{ url('portal_sma') }}"><label class="lab-c-cont animated fadeInLeft">Portal SMA</label></a>
+    <a class="a-lab-cont" data-toggle="modal" data-target="#myModalcont1" href="#"><label class="lab-c-cont animated fadeInLeft">Visions</label></a>
+    <a class="a-lab-cont" data-toggle="modal" data-target="#myModalcont2" href="#"><label class="lab-c-cont animated fadeInDown">Curriculum</label></a>
+    <a class="a-lab-cont" data-toggle="modal" data-target="#myModalcont3" href="#"><label class="lab-c-cont animated fadeInDown">Facilities</label></a>
+    <a class="a-lab-cont" data-toggle="modal" data-target="#myModalcont4" href="#"><label class="lab-c-cont animated fadeInRight">Galery</label></a>
+    <a class="a-lab-cont" href="{{ url('pendaftaran') }}"><label class="lab-c-cont animated fadeInRight">Registration</label></a>
 </div>
 </div>
 </div>
 
 <!-- DKM -->
 
-<div id="dkmSection">
+<div id="dkmSection" class="animatedParent">
 <div class="content-port">
-<div class="class-img">
+<div class="class-img  animated fadeInDown">
     <img class="img-c" src="{{ url('img/img_home/dkm.png') }}">
 </div>
-<div style="padding-top:50px;" class="class-lab">
-    <a class="a-lab-dkm" data-toggle="modal" data-target="#myModaldkm1" href="#"><label class="lab-c-dkm">Facilities</label></a>
-    <a class="a-lab-dkm" data-toggle="modal" data-target="#myModaldkm2" href="#"><label class="lab-c-dkm">Galery</label></a>
+<div style="padding-top:70px;" class="class-lab ">
+    <a class="a-lab-dkm" data-toggle="modal" data-target="#myModaldkm1" href="#"><label class="lab-c-dkm animated rollIn">Facilities</label></a>
+    <a class="a-lab-dkm" data-toggle="modal" data-target="#myModaldkm2" href="#"><label class="lab-c-dkm animated rotateInDownRight">Galery</label></a>
 </div>
 </div>
 </div>
 
 <!-- Informasi -->
 
-<div id="informasiServices">
+<div id="informasiServices" class="animatedParent">
 <div class="title-news">
   INFORMATION
 </div>
@@ -883,21 +884,21 @@
 
       <div class="col-md-4 col-xs-12">
 
-      <div class="info-img">
+      <div class="info-img animated pulse">
       <a href="{{ url('agenda') }}">
         <img class="infoimg" src="img/img_home/img-agenda.png" ></div>
       </a>
         <h4>Agenda</h4>
       </div>
       <div class="col-md-4 col-xs-12">
-        <div class="info-img">
+        <div class="info-img animated pulse">
       <a href="pengumuman">
         <img class="infoimg" src="img/img_home/img-pengumuman.png" ></div>
       </a>
         <h4>Announcement</h4>
       </div>
       <div class="col-md-4 col-xs-12">
-        <div class="info-img">
+        <div class="info-img animated pulse">
       <a href="{{ url('artikel') }}">
         <img class="infoimg" src="img/img_home/img-artikel.png" ></div>
       </a>
@@ -951,6 +952,7 @@
 <script src="js/jquery.scrollTo-1.4.3.1-min.js" type="text/javascript"></script>
 <script src="js/jquery.easing-1.3.min.js"></script>
 <script src="js/default.js"></script>
+<script src="js/css3-animate-it.js"></script>
 
 <script type="text/javascript">
 
