@@ -103,6 +103,11 @@ class Controller extends BaseController
         return $pdf->stream();
     }
 
+    public function admin()
+    {
+        return view('admin');
+    }
+
 }
 
 
