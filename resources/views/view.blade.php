@@ -26,7 +26,7 @@
                 <div class="modal-body-front">
                    <div class="line-comment">
         <div class="lc-img">
-          <img class="img-lc" src="{{url('img/img_home/img-pengumuman.png')}}">
+          <img class="img-lc" src="{{url('img/img_user/user_male.png')}}">
         </div>
         <div class="lc-text">
           Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
@@ -35,7 +35,7 @@
       </div>
       <div class="line-comment">
         <div class="lc-img">
-          <img class="img-lc" src="{{url('img/img_home/img-pengumuman.png')}}">
+          <img class="img-lc" src="{{url('img/img_user/user_male.png')}}">
         </div>
         <div class="lc-text">
           Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
@@ -43,7 +43,7 @@
         </div>
       </div><div class="line-comment">
         <div class="lc-img">
-          <img class="img-lc" src="{{url('img/img_home/img-pengumuman.png')}}">
+          <img class="img-lc" src="{{url('img/img_user/user_male.png')}}">
         </div>
         <div class="lc-text">
           Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
@@ -52,7 +52,7 @@
       </div>
       <div class="line-comment">
         <div class="lc-img">
-          <img class="img-lc" src="{{url('img/img_home/img-pengumuman.png')}}">
+          <img class="img-lc" src="{{url('img/img_user/user_male.png')}}">
         </div>
         <div class="lc-text">
           Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
@@ -60,7 +60,7 @@
         </div>
       </div><div class="line-comment">
         <div class="lc-img">
-          <img class="img-lc" src="{{url('img/img_home/img-pengumuman.png')}}">
+          <img class="img-lc" src="{{url('img/img_user/user_male.png')}}">
         </div>
         <div class="lc-text">
           Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
@@ -69,7 +69,7 @@
       </div>
       <div class="line-comment">
         <div class="lc-img">
-          <img class="img-lc" src="{{url('img/img_home/img-pengumuman.png')}}">
+          <img class="img-lc" src="{{url('img/img_user/user_male.png')}}">
         </div>
         <div class="lc-text">
           Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
@@ -78,7 +78,7 @@
       </div>
       <div class="line-comment">
         <div class="lc-img">
-          <img class="img-lc" src="{{url('img/img_home/img-pengumuman.png')}}">
+          <img class="img-lc" src="{{url('img/img_user/user_male.png')}}">
         </div>
         <div class="lc-text">
           Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
@@ -87,7 +87,7 @@
       </div>
       <div class="line-comment">
         <div class="lc-img">
-          <img class="img-lc" src="{{url('img/img_home/img-pengumuman.png')}}">
+          <img class="img-lc" src="{{url('img/img_user/user_male.png')}}">
         </div>
         <div class="lc-text">
           Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
@@ -96,7 +96,7 @@
       </div>
       <div class="line-comment">
         <div class="lc-img">
-          <img class="img-lc" src="{{url('img/img_home/img-pengumuman.png')}}">
+          <img class="img-lc" src="{{url('img/img_user/user_male.png')}}">
         </div>
         <div class="lc-text">
           Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
@@ -105,7 +105,7 @@
       </div>
       <div class="line-comment">
         <div class="lc-img">
-          <img class="img-lc" src="{{url('img/img_home/img-pengumuman.png')}}">
+          <img class="img-lc" src="{{url('img/img_user/user_male.png')}}">
         </div>
         <div class="lc-text">
           Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
@@ -114,7 +114,7 @@
       </div>
       <div class="line-comment">
         <div class="lc-img">
-          <img class="img-lc" src="{{url('img/img_home/img-pengumuman.png')}}">
+          <img class="img-lc" src="{{url('img/img_user/user_male.png')}}">
         </div>
         <div class="lc-text">
           Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
@@ -123,7 +123,7 @@
       </div>
       <div class="line-comment">
         <div class="lc-img">
-          <img class="img-lc" src="{{url('img/img_home/img-pengumuman.png')}}">
+          <img class="img-lc" src="{{url('img/img_user/user_male.png')}}">
         </div>
         <div class="lc-text">
           Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
