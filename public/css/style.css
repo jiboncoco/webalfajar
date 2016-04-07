@@ -1210,8 +1210,8 @@ border-bottom: 0;
 	padding: 10px;
 }
 .img-cv{
-	width: 100%;
-	height: 400px;
+	max-width: 100%;
+	height: auto;
 }
 .cv-auth{
 	padding: 10px;
@@ -1346,7 +1346,7 @@ border-bottom: 0;
 }
 .on-img{
 	height: auto;
-    width: 100%;
+    max-width: 100%;
 }
 .on-title{
 	font-size: 14px;
@@ -1620,10 +1620,6 @@ border-bottom: 0;
     width: 25%;
 	font-size: 20px;
 }
-.img-cv {
-    width: 100%;
-    height: 200px;
-}
 .lab-cv-auth{
 	font-size: 14px;
 }
@@ -1665,10 +1661,6 @@ border-bottom: 0;
 .on-box {
     width: 100%;
     margin-bottom: 10px;
-}
-.on-img {
-    height: 200px;
-    width: 100%;
 }
 #cb-log{
 	width: 90%;

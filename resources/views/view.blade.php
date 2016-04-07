@@ -995,8 +995,7 @@
     <div class="content2-s">
       <form>
         <span class="input-group-btn">
-        <button id="btn-s2" class="btn btn-default" type="submit"><i class="fa fa-search"></i></button>
-      <input class="fnip" placeholder="NIP" required/>
+      <input Not Like "*[!a-z]*" class="fnip" placeholder="NIP" required/>
       </span>
       </form>
     </div>
