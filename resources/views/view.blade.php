@@ -918,7 +918,7 @@
     </div>
 
     <div class="cv-img">
-      <img class="img-cv" src="{{url('img/img_news/news1.png')}}">
+      <img height="385" width="570" class="img-cv" src="{{url('img/img_news/news1.png')}}">
     </div>
 
     <div class="cv-auth">
