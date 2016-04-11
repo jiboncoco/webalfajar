@@ -359,7 +359,7 @@
         </li>
         <a data-toggle="modal" id="galeri-li" data-target="#myModalgaleritk" href="{{ url('#')}}"><li>Galery</li></a>
         <a class="a-li" href="{{ url('#newsSection')}}"><li>Information</li></a>
-        <a class="a-li" href="{{ url('#')}}"><li>Registration</li></a>
+        <a class="a-li" href="{{ url('pendaftaran') }}"><li>Registration</li></a>
         <a class="a-li" href="{{ url('login') }}"><li>Sign In</li></a>
 
       </ul>
@@ -437,7 +437,7 @@
           <li><a href="#">All</a></li>
           <li><a href="#">News</a></li>
           <li><a href="#">Agenda</a></li>
-          <li><a href="#">Annoucement </a></li>
+          <li><a href="#">Announcement </a></li>
           <li><a href="#">Article</a></li>
         </ul>
       </div><!-- /btn-group -->
@@ -608,7 +608,7 @@
         </div>
         </div>
           <div class="content2-notif">
-            <p class="notif-p">ARTIKEL</p>
+            <p class="notif-p">ARTICLE</p>
         <div class="notif">
           <a href="#">
           <label class="no-notif">1.</label>

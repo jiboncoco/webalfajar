@@ -951,7 +951,7 @@
     <div class="content2-s">
       <form>
         <span class="input-group-btn">
-      <input Not Like "*[!a-z]*" class="fnip" placeholder="NIP" required/>
+      <input Not Like "*[!a-z]*" class="fnip" placeholder="NISN" required/>
       </span>
       </form>
     </div>
@@ -961,7 +961,7 @@
         Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
       </div>
         <div class="content2-notif">
-        <p class="notif-p">PENGUMUMAN</p>
+        <p class="notif-p">ANNOUNCEMENT</p>
         <div class="notif">
           <a href="#">
           <label class="no-notif">1.</label>

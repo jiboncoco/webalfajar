@@ -705,7 +705,7 @@
             <li><a data-toggle="modal" data-target="#myModaltk2" href="#">Curriculum</a></li>
             <li><a data-toggle="modal" data-target="#myModaltk3" href="#">Facilities</a></li>
             <li><a data-toggle="modal" data-target="#myModaltk4" href="#">Galery</a></li>
-            <li><a href="#">Registration</a></li>
+            <li><a href="{{ url('pendaftaran') }}">Registration</a></li>
           </ul>
         </li>
         <li class="dropdown">
@@ -716,7 +716,7 @@
             <li><a data-toggle="modal" data-target="#myModalsd2" href="#">Curriculum</a></li>
             <li><a data-toggle="modal" data-target="#myModalsd3" href="#">Facilities</a></li>
             <li><a data-toggle="modal" data-target="#myModalsd4" href="#">Galery</a></li>
-            <li><a href="#">Registration</a></li>
+            <li><a href="{{ url('pendaftaran') }}">Registration</a></li>
           </ul>
         </li>
         <li class="dropdown">
@@ -727,7 +727,7 @@
             <li><a data-toggle="modal" data-target="#myModalsmp2" href="#">Curriculum</a></li>
             <li><a data-toggle="modal" data-target="#myModalsmp3" href="#">Facilities</a></li>
             <li><a data-toggle="modal" data-target="#myModalsmp4" href="#">Galery</a></li>
-            <li><a href="#">Registration</a></li>
+            <li><a href="{{ url('pendaftaran') }}">Registration</a></li>
           </ul>
         </li>
         <li class="dropdown">
@@ -738,7 +738,7 @@
             <li><a data-toggle="modal" data-target="#myModalsma2" href="#">Curriculum</a></li>
             <li><a data-toggle="modal" data-target="#myModalsma3" href="#">Facilities</a></li>
             <li><a data-toggle="modal" data-target="#myModalsma4" href="#">Galery</a></li>
-            <li><a href="#">Registration</a></li>
+            <li><a href="{{ url('pendaftaran') }}">Registration</a></li>
           </ul>
         </li>
 
@@ -951,7 +951,7 @@
     <div class="content2-s">
       <form>
         <span class="input-group-btn">
-      <input Not Like "*[!a-z]*" class="fnip" placeholder="NIP" required/>
+      <input Not Like "*[!a-z]*" class="fnip" placeholder="NISN" required/>
       </span>
       </form>
     </div>
@@ -961,7 +961,7 @@
         Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
       </div>
         <div class="content2-notif">
-        <p class="notif-p">PENGUMUMAN</p>
+        <p class="notif-p">ANNOUNCEMENT</p>
         <div class="notif">
           <a href="#">
           <label class="no-notif">1.</label>
@@ -990,7 +990,7 @@
         </div>
         </div>
           <div class="content2-notif">
-            <p class="notif-p">ARTIKEL</p>
+            <p class="notif-p">ARTICLE</p>
         <div class="notif">
           <a href="#">
           <label class="no-notif">1.</label>
