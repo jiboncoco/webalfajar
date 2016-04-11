@@ -59,14 +59,20 @@ class LoginController extends Controller
 
 						    if(isset($akses_status_dataa)){
 
-									$akses_uname_pwd = \DB::table('akses')
-									        ->where('akses_username', 'like', $akses_username, 'AND', 'akses_password', 'like',$akses_password)
+									$akses_uname = \DB::table('akses')
+									        ->where('akses_username', 'like', $akses_username)
 									        ->count();
-						    		if ($akses_uname_pwd==1) {
+						    		if ($akses_uname==1) {
+						    			$akses_pwd = \DB::table('akses')
+									        ->where('akses_password', 'like',$akses_password)
+									        ->count();
+						    		if ($akses_pwd==1) {
 						    			 return redirect('admin');
-								}
-								else{
-									echo "Username or Password you’ve entered doesn’t match any account";
+									}else{
+										echo "Password you’ve entered doesn’t match any account";
+									}
+								}else{
+									echo "Username you’ve entered doesn’t match any account";
 								}
 						    }
 					    	else{
