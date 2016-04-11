@@ -8,15 +8,14 @@ use App\Http\Requests;
 
 class AdminController extends Controller
 {
- //    public function __construct()
-	// {
-	// 	$this->middleware('auth');
-
-	// } 
-
 	public function admin()
     {
-		  
+		
+		if(session_id() == '') {
+	    header ("Location: login");
+	    exit;
+	}else{
         return view('admin');
+	}
     }
 }

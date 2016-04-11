@@ -1,6 +1,13 @@
 @extends('app_admin')
 
 @section('content')
+<?php
+if(session_id() == '') {
+    header ("Location: login");
+    exit;
+}
+?>
+
   <body class="hold-transition skin-blue sidebar-mini">
     <div class="wrapper">
 
