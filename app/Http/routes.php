@@ -31,7 +31,10 @@ Route::get('pendaftaran/TK-PDF', 'Controller@pendaftarantk_pdf');
 Route::get('pendaftaran/SD-PDF', 'Controller@pendaftaransd_pdf');
 Route::get('pendaftaran/SMP-PDF', 'Controller@pendaftaransmp_pdf');
 Route::get('pendaftaran/SMA-PDF', 'Controller@pendaftaransma_pdf');
-Route::get('admin', 'Controller@admin');
+
+Route::get('admin', 'AdminController@admin');
+Route::post('login_staff', 'LoginController@login_staff');
+Route::get('logout', 'LoginController@logout');
 /*
 |--------------------------------------------------------------------------
 | Application Routes
