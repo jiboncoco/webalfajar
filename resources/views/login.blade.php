@@ -1,3 +1,4 @@
+
 <html lang="en">
 <head>
     <meta charset="utf-8">
@@ -13,7 +14,6 @@
 
 </head>
 <body class="body-login">
-
         <div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content-login">
@@ -23,7 +23,7 @@
                     </div>
                   	<div class="modal-body">
                   	<div class="login-form">
-				    <form action="#" method="POST">
+				    <form action="#" method="POST">2
 					<input class="login-input" name="" id="log-inp" placeholder="NIP Al-Fajar" required></input>
 					<input class="login-input" name="" id="log-inp" placeholder="Username" required></input>
 					<input class="login-input" name="" type="password" placeholder="Password" required></input><br>
@@ -51,7 +51,7 @@
                   			<div class="modal-body">
                   				<div class="login-form">
 				<form action="{{url('login_staff') }}" method="POST">
-					<input class="login-input" type="password" name="akses_type" id="log-inp" placeholder="Access" required></input>
+					<input class="login-input" name="akses_type" id="log-inp" placeholder="Access" required></input>
 					<input class="login-input" name="akses_username" id="log-inp" placeholder="Username" required></input>
 					<input class="login-input" name="akses_password" type="password" placeholder="Password" required></input><br>
                     <div id="cb-log" class="checkbox">
@@ -139,6 +139,16 @@
 <!-- box -->
 
 <div class="login-page">
+<?php
+                    session_start();
+                    if(isset($_SESSION['error_msg']))
+                    {
+                    echo "<div class='alert alert-warning'>
+                      <strong>".$_SESSION['error_msg']."</strong>
+                    </div>";
+                    unset($_SESSION['error_msg']);
+                    }
+                    ?>
 	<div class="login-content">
 		<div data-toggle="modal" data-target="#myModal1" class="login-box" style="margin-right:20px;">
 			<img class="login-img" src="{{ url('img/img_login/teacher_login.png') }}">

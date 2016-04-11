@@ -11,11 +11,13 @@ class AdminController extends Controller
 	public function admin()
     {
 		
-		if(session_id() == '') {
-	    header ("Location: login");
-	    exit;
-	}else{
-        return view('admin');
-	}
+	// 	if(session_id() == '') {
+	//     header ("Location: login");
+	//     exit;
+	// }else{
+ //        return view('admin');
+	// }
+ //    }
+    	return view('admin');
     }
 }
