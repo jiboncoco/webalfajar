@@ -51,11 +51,8 @@
                   			<div class="modal-body">
                   				<div class="login-form">
 				<form action="{{url('login_staff') }}" method="POST">
-<<<<<<< HEAD
+
 					<input class="login-input" name="akses_type" type="password" id="log-inp" placeholder="Access Code" required></input>
-=======
-					<input class="login-input" name="akses_code" id="log-inp" placeholder="Access" required></input>
->>>>>>> 0d7198b6f7ab8f266a770226038a9020a03c2867
 					<input class="login-input" name="akses_username" id="log-inp" placeholder="Username" required></input>
 					<input class="login-input" name="akses_password" type="password" placeholder="Password" required></input><br>
                     <div id="cb-log" class="checkbox">
