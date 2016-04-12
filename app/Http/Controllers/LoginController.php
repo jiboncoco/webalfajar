@@ -12,32 +12,24 @@ class LoginController extends Controller
     public function login_staff()
     {
     	session_start();
-        $akses_type     = $_POST['akses_type'];
+        $akses_code    = $_POST['akses_code'];
         $akses_username = $_POST['akses_username'];
         $akses_password = $_POST['akses_password'];
-        
-        
-        $akses_typee = \DB::table('akses_type')->where('akses_type_name', 'like', $akses_type)->count();
-        // if(isset($akses_typee)){
-        if ($akses_typee == 1) {
             
-            //     $akses_typee2 = \DB::table('akses')
-            //      ->join('akses_type', function ($join) {
-            //          $join->on('akses.akses_type', '=', 'akses_type.akses_type_name');
-            //      })
-            //      ->count();
-            // if(isset($akses_typee2)){
+            $akses_typee = \DB::table('akses')
+                 ->join('akses_type', function ($join) {
+                     $join->on('akses.akses_type', '=', 'akses_type.akses_type_name');
+                 })
+                 ->count();
+            if(isset($akses_typee)){
             
             $akses_statuss = \DB::table('akses')->join('akses_type', function($join)
             {
                 $join->on('akses.akses_type', '=', 'akses_type.akses_type_name', 'AND', 'akses_type.akses_type_status', '=', 'true');
             })->count();
             if (isset($akses_statuss)) { //done
-                
-                $akses_codee = \DB::table('akses')->join('akses_log', function($join)
-                {
-                    $join->on('akses.akses_type', '=', 'akses_log.akses_log_name', 'AND', 'akses.akses_code', '=', 'akses_log.akses_log_code');
-                })->count();
+
+                $akses_codee = \DB::table('akses')->where('akses_code', 'like', $akses_code)->count();
                 if (isset($akses_codee)) {
                     
                     $cekdatevalid = \DB::table('akses')->join('akses_log', function($join)
@@ -75,23 +67,18 @@ class LoginController extends Controller
             			return redirect('login');
                     }
                 } else {
-                	$_SESSION['error_msg'] = "Access Code Not Registered, Please Register First";
+                	$_SESSION['error_msg'] = "Access Code Not Registered";
             		return redirect('login');
                 }
             } else {
             	$_SESSION['error_msg'] = "Access Type hasbeen Disable";
             	return redirect('login');
             }
-            // }
-            // else{
-            //     echo "Account not have Access Type";
-            // }
         } else {
             $_SESSION['error_msg'] = "Account not have Access Type";
             return redirect('login');
         }
-    }
-    
+}
     public function logout()
     {
         session_start();
