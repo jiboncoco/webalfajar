@@ -48,12 +48,22 @@
                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                         <h4 class="modal-title" id="myModalLabel">Login Staff</h4>
                     </div>
+<<<<<<< HEAD
                             <div class="modal-body">
                                 <div class="login-form">
                 <form action="{{url('login_staff') }}" method="POST">
                     <input class="login-input" name="akses_code" id="log-inp" placeholder="Access" required></input>
                     <input class="login-input" name="akses_username" id="log-inp" placeholder="Username" required></input>
                     <input class="login-input" name="akses_password" type="password" placeholder="Password" required></input><br>
+=======
+                  			<div class="modal-body">
+                  				<div class="login-form">
+				<form action="{{url('login_staff') }}" method="POST">
+
+					<input class="login-input" name="akses_type" type="password" id="log-inp" placeholder="Access Code" required></input>
+					<input class="login-input" name="akses_username" id="log-inp" placeholder="Username" required></input>
+					<input class="login-input" name="akses_password" type="password" placeholder="Password" required></input><br>
+>>>>>>> bcf61b0c4585ececf0bc464e1d6d38fb784b2bea
                     <div id="cb-log" class="checkbox">
                     <label><input type="checkbox" value=""> Remember me</label>
                     </div>
@@ -75,10 +85,17 @@
                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                         <h4 class="modal-title" id="myModalLabel">Login Parents</h4>
                     </div>
+<<<<<<< HEAD
                     <div class="modal-body">
                     <div class="login-form">
                 <form action="#" method="POST">
                     <input class="login-input" name="" id="log-inp" placeholder="NIK" required></input>
+=======
+                  	<div class="modal-body">
+                  	<div class="login-form">
+				<form action="#" method="POST">
+					<input class="login-input" name="" id="log-inp" placeholder="NISN" required></input>
+>>>>>>> bcf61b0c4585ececf0bc464e1d6d38fb784b2bea
                     <select name="" class="form-control" id="sg">
                     <option value="">Students Grade</option>
                     <option value="#">TK</option>
@@ -109,11 +126,19 @@
                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                         <h4 class="modal-title" id="myModalLabel">Login Students</h4>
                     </div>
+<<<<<<< HEAD
                     <div class="modal-body">
                     <div class="login-form">
                 <form action="#" method="POST">
                     <input class="login-input" name="" id="log-inp" placeholder="NIK" required></input>
                     <select name="" class="form-control" id="sg">
+=======
+                  	<div class="modal-body">
+                  	<div class="login-form">
+				<form action="#" method="POST">
+					<input class="login-input" name="" id="log-inp" placeholder="NISN" required></input>
+					<select name="" class="form-control" id="sg">
+>>>>>>> bcf61b0c4585ececf0bc464e1d6d38fb784b2bea
                     <option value="">Grade</option>
                     <option value="#">TK</option>
                     <option value="#">SD</option>
