@@ -51,7 +51,7 @@
                   			<div class="modal-body">
                   				<div class="login-form">
 				<form action="{{url('login_staff') }}" method="POST">
-					<input class="login-input" name="akses_type" id="log-inp" placeholder="Access" required></input>
+					<input class="login-input" name="akses_type" type="password" id="log-inp" placeholder="Access Code" required></input>
 					<input class="login-input" name="akses_username" id="log-inp" placeholder="Username" required></input>
 					<input class="login-input" name="akses_password" type="password" placeholder="Password" required></input><br>
                     <div id="cb-log" class="checkbox">
@@ -78,7 +78,7 @@
                   	<div class="modal-body">
                   	<div class="login-form">
 				<form action="#" method="POST">
-					<input class="login-input" name="" id="log-inp" placeholder="NIK" required></input>
+					<input class="login-input" name="" id="log-inp" placeholder="NISN" required></input>
                     <select name="" class="form-control" id="sg">
                     <option value="">Students Grade</option>
                     <option value="#">TK</option>
@@ -112,7 +112,7 @@
                   	<div class="modal-body">
                   	<div class="login-form">
 				<form action="#" method="POST">
-					<input class="login-input" name="" id="log-inp" placeholder="NIK" required></input>
+					<input class="login-input" name="" id="log-inp" placeholder="NISN" required></input>
 					<select name="" class="form-control" id="sg">
                     <option value="">Grade</option>
                     <option value="#">TK</option>
