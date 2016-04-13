@@ -12,7 +12,6 @@ class LoginController extends Controller
 	public function login_staff()
 	{
 		session_start();
-
 		$akses_code     = $_POST['akses_code'];
 		$akses_username = $_POST['akses_username'];
 		$akses_password = $_POST['akses_password'];
@@ -29,9 +28,8 @@ class LoginController extends Controller
 					{
 						$join->on('akses.akses_id', '=', 'akses_log.akses_log_id');
 					})->get();
-					$tanggal      = \DateTime::createFromFormat('Y-m-d H:i:s', $cekdatevalid[0]->akses_log_timestamp)->format('d');
+					$tanggal = \DateTime::createFromFormat('Y-m-d H:i:s', $cekdatevalid[0]->akses_log_timestamp)->format('d');
 		
-					
 					if (!empty($cekdatevalid)) {
 						
 						$akses_status_dataa = \DB::table('akses')->where('akses_code', 'like', $akses_code, 'AND', 'akses.akses_status_data', '=', 'active')->count();
@@ -83,11 +81,18 @@ class LoginController extends Controller
 			return redirect('login');
 		}
 	}
+
+	public function login_teacher()
+	{
+
+	}
+
 	public function logout()
 	{
 		session_start();
 		session_destroy();
 		return redirect('login');
+		exit;
 	}
 	
 }

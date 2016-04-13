@@ -13,7 +13,13 @@ class Controller extends BaseController
 
     public function login()
     {
-      return view('login');
+      session_start();
+        if(isset($_SESSION['logged_in'])){
+            return redirect('admin');
+        }
+        else{
+            return view('login');
+        }
     }
 
     public function news()

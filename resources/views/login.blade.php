@@ -140,7 +140,7 @@
 
 <div class="login-page">
 <?php
-                    session_start();
+                    
                     if(isset($_SESSION['error_msg']))
                     {
                     echo "<div class='alert alert-warning'>
