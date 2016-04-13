@@ -23,7 +23,7 @@
                     </div>
                     <div class="modal-body">
                     <div class="login-form">
-                    <form action="#" method="POST">2
+                    <form action="#" method="POST">
                     <input class="login-input" name="" id="log-inp" placeholder="NIP Al-Fajar" required></input>
                     <input class="login-input" name="" id="log-inp" placeholder="Username" required></input>
                     <input class="login-input" name="" type="password" placeholder="Password" required></input><br>

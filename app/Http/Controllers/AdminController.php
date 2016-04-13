@@ -10,14 +10,12 @@ class AdminController extends Controller
 {
 	public function admin()
     {
-		
-	// 	if(session_id() == '') {
-	//     header ("Location: login");
-	//     exit;
-	// }else{
- //        return view('admin');
-	// }
- //    }
-    	return view('admin');
+    	session_start();
+    	if(isset($_SESSION['logged_in'])){
+			return view('admin');
+		}
+		else{
+			return redirect('login');
+		}	
     }
 }
