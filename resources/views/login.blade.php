@@ -23,10 +23,10 @@
                     </div>
                     <div class="modal-body">
                     <div class="login-form">
-                    <form action="#" method="POST">
-                    <input class="login-input" name="" id="log-inp" placeholder="NIP Al-Fajar" required></input>
-                    <input class="login-input" name="" id="log-inp" placeholder="Username" required></input>
-                    <input class="login-input" name="" type="password" placeholder="Password" required></input><br>
+                    <form action="login_teacher" method="POST">
+                    <input class="login-input" name="akses_code" id="log-inp" placeholder="NIP Al-Fajar" required></input>
+                    <input class="login-input" name="akses_username" id="log-inp" placeholder="Username" required></input>
+                    <input class="login-input" name="akses_password" type="password" placeholder="Password" required></input><br>
                     <div id="cb-log" class="checkbox">
                     <label><input type="checkbox" value=""> Remember me</label>
                     </div>
