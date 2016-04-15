@@ -51,7 +51,7 @@
                             <div class="modal-body">
                                 <div class="login-form">
                 <form action="{{url('login_staff') }}" method="POST">
-                    <input class="login-input" name="akses_code" id="log-inp" placeholder="Access Code" required></input>
+                    <input class="login-input" name="akses_code" type="password" id="log-inp" placeholder="Access Code" required></input>
                     <input class="login-input" name="akses_username" id="log-inp" placeholder="Username" required></input>
                     <input class="login-input" name="akses_password" type="password" placeholder="Password" required></input><br>
                     <div id="cb-log" class="checkbox">
@@ -140,7 +140,7 @@
 
 <div class="login-page">
 <?php
-                    
+
                     if(isset($_SESSION['error_msg']))
                     {
                     echo "<div class='alert alert-warning'>
