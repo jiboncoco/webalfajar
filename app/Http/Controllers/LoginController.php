@@ -21,10 +21,10 @@ class LoginController extends Controller
 				if (!empty($akses_codee)) {
 
 					$cekdatevalid = \DB::table('akses_log')->where('akses_log_code', 'like', $akses_code)->get();
-					$tanggal = \DateTime::createFromFormat('Y-m-d H:i:s', $cekdatevalid[0]->akses_log_timestamp)->format('d');
-					$cekdatevalidd = \DB::table('akses_log')->where('akses_log_datevalid',$tanggal)->count();
+					// $tanggal = \DateTime::createFromFormat('Y-m-d H:i:s', $cekdatevalid[0]->akses_log_timestamp)->format('d');
+					// $cekdatevalidd = \DB::table('akses_log')->where('akses_log_datevalid',$tanggal)->count();
 		
-					if ($cekdatevalidd == 1) {
+					if ($cekdatevalid[0]->akses_log_datevalid == date('d')) {
 
 						$akses_status_dataa = \DB::table('akses_type')->where([
 							['akses_type.akses_type_name', 'like', 'staff'],
@@ -76,7 +76,7 @@ class LoginController extends Controller
 						return redirect('login');
 					}
 				} else {
-					$_SESSION['error_msg'] = "Access Type hasbeen Disable";
+					$_SESSION['error_msg'] = "Access Type has been Disable";
 					return redirect('login');
 				}
 			} else {
