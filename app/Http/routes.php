@@ -36,6 +36,8 @@ Route::get('admin', 'AdminController@admin');
 
 Route::post('login_staff', 'LoginController@login_staff');
 Route::post('login_teacher', 'LoginController@login_teacher');
+Route::post('login_parent', 'LoginController@login_parent');
+Route::post('login_student', 'LoginController@login_student');
 
 Route::get('logout', 'LoginController@logout');
 /*

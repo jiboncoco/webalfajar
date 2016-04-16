@@ -23,7 +23,7 @@
                     </div>
                     <div class="modal-body">
                     <div class="login-form">
-                    <form action="login_teacher" method="POST">
+                    <form action="{{ url('login_teacher') }}" method="POST">
                     <input class="login-input" name="akses_code" id="log-inp" placeholder="NIP Al-Fajar" required></input>
                     <input class="login-input" name="akses_username" id="log-inp" placeholder="Username" required></input>
                     <input class="login-input" name="akses_password" type="password" placeholder="Password" required></input><br>
@@ -50,7 +50,7 @@
                     </div>
                             <div class="modal-body">
                                 <div class="login-form">
-                <form action="{{url('login_staff') }}" method="POST">
+                <form action="{{ url('login_staff') }}" method="POST">
                     <input class="login-input" name="akses_code" id="log-inp" placeholder="Access Code" required></input>
                     <input class="login-input" name="akses_username" id="log-inp" placeholder="Username" required></input>
                     <input class="login-input" name="akses_password" type="password" placeholder="Password" required></input><br>
@@ -77,17 +77,17 @@
                     </div>
                     <div class="modal-body">
                     <div class="login-form">
-                <form action="#" method="POST">
-                    <input class="login-input" name="" id="log-inp" placeholder="NISN" required></input>
-                    <select name="" class="form-control" id="sg">
+                <form action="{{ url('login_parent') }}" method="POST">
+                    <input class="login-input" name="akses_code" id="log-inp" placeholder="NISN" required></input>
+                    <select name="dt_student_grade" class="form-control" id="sg">
                     <option value="">Students Grade</option>
-                    <option value="#">TK</option>
-                    <option value="#">SD</option>
-                    <option value="#">SMP</option>
-                    <option value="#">SMA</option>
+                    <option value="TK">TK</option>
+                    <option value="SD">SD</option>
+                    <option value="SMP">SMP</option>
+                    <option value="SMA">SMA</option>
                     </select>
-                    <input class="login-input" name="" id="log-inp" placeholder="Username" required></input>
-                    <input class="login-input" name="" type="password" placeholder="Password" required></input><br>
+                    <input class="login-input" name="akses_username" id="log-inp" placeholder="Username" required></input>
+                    <input class="login-input" name="akses_password" type="password" placeholder="Password" required></input><br>
                     <div id="cb-log" class="checkbox">
                     <label><input type="checkbox" value=""> Remember me</label>
                     </div>
@@ -111,17 +111,17 @@
                     </div>
                     <div class="modal-body">
                     <div class="login-form">
-                <form action="#" method="POST">
-                    <input class="login-input" name="" id="log-inp" placeholder="NISN" required></input>
-                    <select name="" class="form-control" id="sg">
+                <form action="{{ url('login_student') }}" method="POST">
+                    <input class="login-input" name="akses_code" id="log-inp" placeholder="NISN" required></input>
+                    <select name="dt_student_grade" class="form-control" id="sg">
                     <option value="">Grade</option>
-                    <option value="#">TK</option>
-                    <option value="#">SD</option>
-                    <option value="#">SMP</option>
-                    <option value="#">SMA</option>
+                    <option value="TK">TK</option>
+                    <option value="SD">SD</option>
+                    <option value="SMP">SMP</option>
+                    <option value="SMA">SMA</option>
                     </select>
-                    <input class="login-input" name="" id="log-inp" placeholder="Username" required></input>
-                    <input class="login-input" name="" type="password" placeholder="Password" required></input><br>
+                    <input class="login-input" name="akses_username" id="log-inp" placeholder="Username" required></input>
+                    <input class="login-input" name="akses_password" type="password" placeholder="Password" required></input><br>
                     <div id="cb-log" class="checkbox">
                     <label><input type="checkbox" value=""> Remember me</label>
                     </div>
