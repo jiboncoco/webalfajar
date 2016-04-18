@@ -389,7 +389,78 @@ height: 2px;
 	margin-top: -110px;
 	padding-bottom: 20px;
 }
-
+.body-set{
+	text-align: center;
+	width: 100%;
+}
+.user-info{
+	text-align: center;
+	width: 40%;
+	display: inline-table;
+	border: 1px solid #eee;
+	padding: 10px;
+	margin: 30px;
+	height: 412px;
+}
+.title-ui{
+	font-size: 18px;
+	color: #333;
+	font-weight: bold;
+	text-align: center;
+}
+.title-as{
+	margin-bottom: 20px;
+	font-size: 18px;
+	color: #333;
+	font-weight: bold;
+	text-align: center;
+}
+.img-ui{
+	margin: auto;
+	text-align: center;
+	width: 45%;
+	border: 1px solid #eee;
+}
+.inp-files{
+	width: 88%;
+	margin: 29px;
+	height: 40px;
+	padding: 7px;
+	border: 1px solid #eee;
+}
+.fam{
+	margin: 40px auto;
+	width: 80%;
+	height: 45px;
+}
+.ui-button{
+	background: #0275d8;
+	height: 50px;
+	padding: 10px;
+	font-size: 20px;
+	width: 80%;
+	border-radius: 10px;
+}
+.as-button{
+	background: #0275d8;
+	height: 50px;
+	padding: 10px;
+	font-size: 20px;
+	width: 80%;
+	border-radius: 10px;
+}
+.ui-img{
+	width: 100%;
+}
+.account-setting{
+	text-align: center;
+	width: 40%;
+	display: inline-table;
+	border: 1px solid #eee;
+	padding: 10px;
+	margin: 30px;
+	height: 412px;
+}
 .carousel-inner{
 	text-align: center;
 	margin-top: -80px;
@@ -2115,10 +2186,138 @@ border-bottom: 0;
 	.cs-search{
 		width: 100%;
 	}
+
+.user-info{
+	text-align: center;
+	width: 45.5%;
+	display: inline-table;
+	border: 1px solid #eee;
+	padding: 10px;
+	margin: 10px;
+	height: 412px;
+}
+.title-ui{
+	font-size: 18px;
+	color: #333;
+	font-weight: bold;
+	text-align: center;
+}
+.title-as{
+	margin-bottom: 25px;
+	font-size: 18px;
+	color: #333;
+	font-weight: bold;
+	text-align: center;
+}
+.img-ui{
+	margin: auto;
+	text-align: center;
+	width: 65%;
+	border: 1px solid #eee;
+}
+.inp-files{
+	width: 75%;
+	margin: 30px;
+	height: 40px;
+	padding: 7px;
+	border: 1px solid #eee;
+}
+.fam{
+	margin: 23.5px auto;
+	width: 80%;
+	height: 45px;
+}
+.ui-button{
+	background: #0275d8;
+	height: 50px;
+	padding: 10px;
+	font-size: 20px;
+	width: 80%;
+	border-radius: 10px;
+}
+.as-button{
+	background: #0275d8;
+	height: 50px;
+	padding: 10px;
+	font-size: 20px;
+	width: 80%;
+	border-radius: 10px;
+}
+.ui-img{
+	width: 100%;
+}
+.account-setting{
+	text-align: center;
+	width: 45.5%;
+	display: inline-table;
+	border: 1px solid #eee;
+	padding: 10px;
+	margin: 10px;
+}
 }
 
 @media screen and (max-width: 580px) {
-	.on-box{
+
+.user-info{
+	width: 100%;
+	margin: 10px auto;
+}
+.title-ui{
+	font-size: 18px;
+	color: #333;
+	font-weight: bold;
+	text-align: center;
+}
+.title-as{
+	margin-bottom: 25px;
+	font-size: 18px;
+	color: #333;
+	font-weight: bold;
+	text-align: center;
+}
+.img-ui{
+	margin: auto;
+	text-align: center;
+	width: 45%;
+	border: 1px solid #eee;
+}
+.inp-files{
+	width: 86%;
+	margin: 30px;
+	height: 40px;
+	padding: 7px;
+	border: 1px solid #eee;
+}
+.fam{
+	margin: 40px auto;
+	width: 80%;
+	height: 45px;
+}
+.ui-button{
+	background: #0275d8;
+	height: 50px;
+	padding: 10px;
+	font-size: 20px;
+	width: 80%;
+	border-radius: 10px;
+}
+.as-button{
+	background: #0275d8;
+	height: 50px;
+	padding: 10px;
+	font-size: 20px;
+	width: 80%;
+	border-radius: 10px;
+}
+.ui-img{
+	width: 100%;
+}
+.account-setting{
+	width: 100%;
+	margin: 10px auto;
+}
+
+.on-box{
 	width: 100%;
 	margin-bottom: 10px;
 }

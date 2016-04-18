@@ -15,9 +15,34 @@
 </head>
 <body>
 <div class="collapse" id="exCollapsingNavbar">
-  <div class="bg-inverse p-a-1" style="padding:30px;background:#eee">
-    <h4>Collapsed content</h4>
-    <span class="text-muted">Toggleable via the navbar brand.</span>
+  <div class="bg-inverse p-a-1" style="padding:30px;background:#fff">
+  <div class="body-set">
+    <div class="user-info">
+      <label class="title-ui">USER INFO</label>
+      <div class="img-ui">
+        <img class="ui-img" src="{{ url('img/img_user/user_female.png') }}">
+      </div>
+      <form class="form-ui" action="#">
+      <input class="inp-files" type="file" name="">
+      <button type="submit" class="btn btn-primary ui-button">Save</button>
+      </form>
+    </div>
+    <div class="account-setting">
+      <label class="title-as">ACCOUNT SETTING</label>
+      <form>
+          <div class="form-group">
+            <input type="email" class="form-control fam" id="exampleInputEmail1" placeholder="Email" required/>
+          </div>
+          <div class="form-group">
+            <input type="text" class="form-control fam" id="exampleInputEmail1" placeholder="Username" required/>
+          </div>
+          <div class="form-group">
+            <input type="password" class="form-control fam" id="exampleInputPassword1" placeholder="Password" required/>
+          </div>
+          <button type="submit" class="btn btn-primary as-button">Save</button>
+      </form>
+    </div>
+  </div>
   </div>
 </div>
 <div id="carouselSection" style="height:0px" class="cntr">
@@ -50,7 +75,7 @@
         <a class="a-li" href="#contactSection"><li>SMA</li></a>
         <a class="a-li" href="#dkmSection"><li>DKM</li></a>
         <a class="a-li" href="#informasiServices"><li>Informasi</li></a>
-        <a id="a-li" style="cursor:pointer" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar"><li>Setting</li></a>
+        <a id="a-li" style="cursor:pointer" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar"><li>Manage</li></a>
       </ul>
     </div>
   </div>
