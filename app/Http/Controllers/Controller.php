@@ -69,7 +69,13 @@ class Controller extends BaseController
 
     public function test()
     {
-      return view('test');
+      session_start();
+        if(isset($_SESSION['logged_in'])){
+            return view('test');
+        }
+        else{
+            return redirect('login');
+        }
     }
 
     public function pendaftaran()

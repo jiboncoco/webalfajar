@@ -15,7 +15,7 @@
 </head>
 <body>
 <div class="collapse" id="exCollapsingNavbar">
-  <div class="bg-inverse p-a-1" style="padding:30px;background:#fff">
+  <div class="bg-inverse p-a-1" style="padding:30px;background:#fff;position:relative">
   <div class="body-set">
     <div class="user-info">
       <label class="title-ui">USER INFO</label>
@@ -42,12 +42,17 @@
           <button type="submit" class="btn btn-primary as-button">Save</button>
       </form>
     </div>
+    <div class="b-close">
+      <a id="a-li" style="cursor:pointer" class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar" aria-expanded="false">
+      <i class="fa fa-times close-b" aria-hidden="true"></i>
+      </a>
+    </div>
   </div>
   </div>
 </div>
 <div id="carouselSection" style="height:0px" class="cntr">
 </div>
-<div id="headerSection" style="position:relative;margin-top:0px">
+<div id="headerSection" class="smint" style="margin-top:0px">
     
     <nav class="navbar navbar-inverse">
   <div class="container-fluid">
@@ -980,6 +985,7 @@
 <script src="js/jquery.scrollTo-1.4.3.1-min.js" type="text/javascript"></script>
 <script src="js/jquery.easing-1.3.min.js"></script>
 <script src="js/default.js"></script>
+<script src="js/jquery.smint.js"></script>
 
 <script type="text/javascript">
 
@@ -991,6 +997,14 @@
     });
 
 
+</script>
+
+<script type="text/javascript">
+$(document).ready( function() {
+    $('.subMenu').smint({
+      'scrollSpeed' : 1000
+    });
+});
 </script>
 
 </body>

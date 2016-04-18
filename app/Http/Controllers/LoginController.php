@@ -246,7 +246,7 @@ class LoginController extends Controller
 												if (!empty($akses_statuss_student)) {
 
 													$_SESSION['logged_in'] = 1;
-													return redirect('admin');
+													return redirect('test');
 												} else {
 													$_SESSION['error_msg'] = "Account Student has been Disable";
 													return redirect('login');
@@ -361,7 +361,7 @@ class LoginController extends Controller
 												if (!empty($akses_statuss2)) {
 
 													$_SESSION['logged_in'] = 1;
-													return redirect('admin');
+													return redirect('test');
 												} else {
 													$_SESSION['error_msg'] = "Your Account has been Disable";
 													return redirect('login');
