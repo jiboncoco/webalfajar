@@ -15,7 +15,9 @@
 </head>
 <body>
 <div class="collapse" id="exCollapsingNavbar">
-  <div class="bg-inverse p-a-1" style="padding:30px;background:#fff;position:relative">
+<div id="carouselSection" style="height:0px" class="cntr">
+</div>
+  <div class="bg-inverse p-a-1 subMenu" style="padding:30px;background:#fff;position:relative">
   <div class="body-set">
     <div class="user-info">
       <label class="title-ui">USER INFO</label>
@@ -49,8 +51,6 @@
     </div>
   </div>
   </div>
-</div>
-<div id="carouselSection" style="height:0px" class="cntr">
 </div>
 <div id="headerSection" class="smint" style="margin-top:0px">
     
@@ -1001,7 +1001,7 @@
 
 <script type="text/javascript">
 $(document).ready( function() {
-    $('.subMenu').smint({
+    $('#headerSection').smint({
       'scrollSpeed' : 1000
     });
 });

@@ -1,3 +1,14 @@
+/*
+
+SMINT V1.0 by Robert McCracken
+
+SMINT is my first dabble into jQuery plugins!
+
+http://www.outyear.co.uk/smint/
+
+If you like Smint, or have suggestions on how it could be improved, send me a tweet @rabmyself
+
+*/
 (function(){
 
 	
@@ -34,7 +45,7 @@
 							
 				// if we scroll more than the navigation, change its position to fixed and add class 'fxd', otherwise change it back to absolute and remove the class
 				if (scrollTop > stickyTop) { 
-					$('.smint').css({ 'position': 'fixed', 'top':0 }).addClass('fxd');
+					$('.smint').css({ 'position': 'fixed', 'top':0}).addClass('fxd');
 
 					} else {
 						$('.smint').css({ 'position': 'relative', 'top':stickyTop }).removeClass('fxd'); 
