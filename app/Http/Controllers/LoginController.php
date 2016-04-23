@@ -54,9 +54,10 @@ class LoginController extends Controller
 											['akses_status_data', 'like', 'active']
 											])->count();
 							
-										if (!empty($akses_statuss)) { 
+										if (!empty($akses_statuss)) {
+										\Session::put('akses_type', 'staff');
 										$_SESSION['logged_in'] = 1;
-									return redirect('admin');
+									return redirect('/');
 								} else {
 									$_SESSION['error_msg'] = "Account has been Disable";
 									return redirect('login');
@@ -138,9 +139,9 @@ class LoginController extends Controller
 										])->count();
 									
 										if (!empty($akses_statuss_person)) {
-
+											$_SESSION['akses_type'] = 'teacher';
 											$_SESSION['logged_in'] = 1;
-											return redirect('admin');
+											return redirect('/');
 										
 										} else {
 											$_SESSION['error_msg'] = "Account has been Disable";
@@ -244,9 +245,9 @@ class LoginController extends Controller
 												])->count();
 
 												if (!empty($akses_statuss_student)) {
-
+													$_SESSION['akses_type'] = 'student';
 													$_SESSION['logged_in'] = 1;
-													return redirect('test');
+													return redirect('/');
 												} else {
 													$_SESSION['error_msg'] = "Account Student has been Disable";
 													return redirect('login');
@@ -359,9 +360,9 @@ class LoginController extends Controller
 												])->count();
 
 												if (!empty($akses_statuss2)) {
-
+													$_SESSION['akses_type'] = 'student';
 													$_SESSION['logged_in'] = 1;
-													return redirect('test');
+													return redirect('/');
 												} else {
 													$_SESSION['error_msg'] = "Your Account has been Disable";
 													return redirect('login');

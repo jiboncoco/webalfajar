@@ -15,6 +15,53 @@
 </head>
 <body style="background:#fff">
 
+<!-- modal manage -->
+<div class="modal fade" id="myModalmanage" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog-front">
+        <div class="modal-content">
+            <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h4 class="modal-title" id="myModalLabel">Manage</h4>
+            </div>
+                <div class="modal-body-front">
+                      <div class="body-set">
+                      <div class="user-info">
+                        <label class="title-ui">USER INFO</label>
+                        <div class="img-ui">
+                          <img class="ui-img" src="{{ url('img/img_user/user_female.png') }}">
+                        </div>
+                        <form class="form-ui" action="#">
+                        <input class="inp-files" type="file" name="">
+                        <button type="submit" class="btn btn-primary ui-button">Save</button>
+                        </form>
+                      </div>
+                      <div class="account-setting">
+                        <label class="title-as">ACCOUNT SETTING</label>
+                        <form>
+                            <div class="form-group">
+                              <input type="email" class="form-control fam" id="exampleInputEmail1" placeholder="Email" required/>
+                            </div>
+                            <div class="form-group">
+                              <input type="text" class="form-control fam" id="exampleInputEmail1" placeholder="Username" required/>
+                            </div>
+                            <div class="form-group">
+                              <input type="password" class="form-control fam" id="exampleInputPassword1" placeholder="Password" required/>
+                            </div>
+                            <button type="submit" class="btn btn-primary as-button">Save</button>
+                        </form>
+                      </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+<!-- modal manage end -->
+
 <!-- modal yayasan -->
 <div class="modal fade" id="myModalyay1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog-front">
@@ -3675,7 +3722,19 @@
         <a class="a-li" href="{{url('portal_sd')}}"><li>SD</li></a>
         <a class="a-li" href="{{url('portal_smp')}}"><li>SMP</li></a>
         <a class="a-li" href="{{url('portal_smp')}}"><li>SMA</li></a>
+        @if(isset($_SESSION['logged_in']))
+        @if(isset($_SESSION['akses_type']))
+          @if($_SESSION['akses_type'] == 'student' || $_SESSION['akses_type'] == 'parent')
+        <a id="a-li" style="cursor:pointer" data-toggle="modal" data-target="#myModalmanage"><li>Manage</li></a>
+        <a class="a-li" href="{{url('logout')}}"><li>Logout</li></a>
+          @else
+        <a class="a-li" href="{{url('admin')}}"><li>Manage</li></a>
+        <a class="a-li" href="{{url('logout')}}"><li>Logout</li></a>
+          @endif
+         @endif
+         @else
         <a class="a-li" href="{{ url('login') }}"><li>Sign In</li></a>
+        @endif
 
       </ul>
     </div>
@@ -3775,6 +3834,7 @@
 <script src="js/jquery.easing-1.3.min.js"></script>
 <script src="js/default.js"></script>
 <script src="datepicker/js/bootstrap-datepicker.js"></script>
+
 
 <script type="text/javascript">
   $('.datepicker').datepicker();

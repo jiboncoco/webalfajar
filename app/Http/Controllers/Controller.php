@@ -24,63 +24,117 @@ class Controller extends BaseController
 
     public function news()
     {
-      return view('news');
+       session_start();
+        if(isset($_SESSION['logged_in'])){
+            return view('news');
+        }
+        else{
+            return view('news');
+        }
     }
 
     public function agenda()
     {
-      return view('agenda');
+       session_start();
+        if(isset($_SESSION['logged_in'])){
+            return view('agenda');
+        }
+        else{
+            return view('agenda');
+        }
     }
 
     public function pengumuman()
     {
-      return view('pengumuman');
+       session_start();
+        if(isset($_SESSION['logged_in'])){
+            return view('pengumuman');
+        }
+        else{
+            return view('pengumuman');
+        }
     }
 
     public function artikel()
     {
-      return view('artikel');
+       session_start();
+        if(isset($_SESSION['logged_in'])){
+            return view('artikel');
+        }
+        else{
+            return view('artikel');
+        }
     }
 
     public function portal_tk()
     {
-      return view('portal_tk');
+       session_start();
+        if(isset($_SESSION['logged_in'])){
+            return view('portal_tk');
+        }
+        else{
+            return view('portal_tk');
+        }
     }
 
     public function portal_sd()
     {
-      return view('portal_sd');
+       session_start();
+        if(isset($_SESSION['logged_in'])){
+            return view('portal_sd');
+        }
+        else{
+            return view('portal_sd');
+        }
     }
 
     public function portal_smp()
     {
-      return view('portal_smp');
+       session_start();
+        if(isset($_SESSION['logged_in'])){
+            return view('portal_smp');
+        }
+        else{
+            return view('portal_smp');
+        }
     }
 
     public function portal_sma()
     {
-      return view('portal_sma');
+       session_start();
+        if(isset($_SESSION['logged_in'])){
+            return view('portal_sma');
+        }
+        else{
+            return view('portal_sma');
+        }
     }
 
     public function view()
     {
-      return view('view');
+       session_start();
+        if(isset($_SESSION['logged_in'])){
+            return view('view');
+        }
+        else{
+            return view('view');
+        }
     }
 
     public function test()
     {
-      session_start();
-        if(isset($_SESSION['logged_in'])){
             return view('test');
-        }
-        else{
-            return redirect('login');
-        }
     }
 
     public function pendaftaran()
     {
-      return view('pendaftaran');
+       session_start();
+        if(isset($_SESSION['logged_in'])){
+            return view('pendaftaran');
+        }
+        else{
+            return view('pendaftaran');
+        }
     }
 
     public function pendaftarantk_pdf()

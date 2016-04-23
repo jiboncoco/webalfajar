@@ -12,7 +12,13 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+	session_start();
+        if(isset($_SESSION['logged_in'])){
+            return view('welcome');
+        }
+        else{
+            return view('welcome');
+        }
 });
 
 Route::get('login', 'Controller@login');
