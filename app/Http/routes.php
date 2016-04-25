@@ -24,19 +24,18 @@ Route::get('/', function () {
 Route::get('login', 'Controller@login');
 Route::get('news', 'Controller@news');
 Route::get('agenda', 'Controller@agenda');
-Route::get('pengumuman', 'Controller@pengumuman');
-Route::get('artikel', 'Controller@artikel');
+Route::get('announcement', 'Controller@pengumuman');
+Route::get('article', 'Controller@artikel');
 Route::get('portal_tk', 'Controller@portal_tk');
 Route::get('portal_sd', 'Controller@portal_sd');
 Route::get('portal_smp', 'Controller@portal_smp');
 Route::get('portal_sma', 'Controller@portal_sma');
 Route::get('view', 'Controller@view');
-Route::get('test', 'Controller@test');
-Route::get('pendaftaran', 'Controller@pendaftaran');
-Route::get('pendaftaran/TK-PDF', 'Controller@pendaftarantk_pdf');
-Route::get('pendaftaran/SD-PDF', 'Controller@pendaftaransd_pdf');
-Route::get('pendaftaran/SMP-PDF', 'Controller@pendaftaransmp_pdf');
-Route::get('pendaftaran/SMA-PDF', 'Controller@pendaftaransma_pdf');
+Route::get('registration', 'Controller@pendaftaran');
+Route::get('registration/TK-PDF', 'Controller@registration_tk_pdf');
+Route::get('registration/SD-PDF', 'Controller@registration_sd_pdf');
+Route::get('registration/SMP-PDF', 'Controller@registration_smp_pdf');
+Route::get('registration/SMA-PDF', 'Controller@registration_sma_pdf');
 
 Route::get('manage', 'AdminController@admin');
 

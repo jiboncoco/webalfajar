@@ -137,33 +137,33 @@ class Controller extends BaseController
         }
     }
 
-    public function pendaftarantk_pdf()
+    public function registration_tk_pdf()
     {
-        $view = \View::make('pendaftarantk_pdf');
+        $view = \View::make('registration_tk_pdf');
         $pdf = \App::make('dompdf.wrapper');
         $pdf->loadHTML($view)->setPaper('a4')->setOrientation('potrait');
         return $pdf->stream();
     }
 
-    public function pendaftaransd_pdf()
+    public function registration_sd_pdf()
     {
-        $view = \View::make('pendaftaransd_pdf');
+        $view = \View::make('registration_sd_pdf');
         $pdf = \App::make('dompdf.wrapper');
         $pdf->loadHTML($view)->setPaper('a4')->setOrientation('potrait');
         return $pdf->stream();
     }
 
-    public function pendaftaransmp_pdf()
+    public function registration_smp_pdf()
     {
-        $view = \View::make('pendaftaransmp_pdf');
+        $view = \View::make('registration_smp_pdf');
         $pdf = \App::make('dompdf.wrapper');
         $pdf->loadHTML($view)->setPaper('a4')->setOrientation('potrait');
         return $pdf->stream();
     }
 
-    public function pendaftaransma_pdf()
+    public function registration_sma_pdf()
     {
-        $view = \View::make('pendaftaransma_pdf');
+        $view = \View::make('registration_sma_pdf');
         $pdf = \App::make('dompdf.wrapper');
         $pdf->loadHTML($view)->setPaper('a4')->setOrientation('potrait');
         return $pdf->stream();

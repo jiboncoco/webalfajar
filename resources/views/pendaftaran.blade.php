@@ -1397,9 +1397,9 @@
 
             </div>
             <div class="modal-footer">
-              <button type="submit" id="btndaftar" class="btn btn-default">Daftar</button>
+              <button type="submit" id="btndaftar" class="btn btn-default">Register</button>
               </form>
-              <a href="{{url('pendaftaran/TK-PDF') }}" target="_blank"><button style="margin-left:20px;"  type="submit" id="btnprint" class="btn btn-default">Print Manual</button></a>
+              <a href="{{url('registration/TK-PDF') }}" target="_blank"><button style="margin-left:20px;"  type="submit" id="btnprint" class="btn btn-default">Manual Print</button></a>
               <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
             </div>
         </div>
@@ -2144,9 +2144,9 @@
 
             </div>
             <div class="modal-footer">
-              <button type="submit" id="btndaftar" class="btn btn-default">Daftar</button>
+              <button type="submit" id="btndaftar" class="btn btn-default">Register</button>
               </form>
-              <a href="{{url('pendaftaran/SD-PDF') }}" target="_blank"><button style="margin-left:20px;" type="submit" id="btnprint" class="btn btn-default">Print Manual</button></a>
+              <a href="{{url('registration/SD-PDF') }}" target="_blank"><button style="margin-left:20px;" type="submit" id="btnprint" class="btn btn-default">Manual Print</button></a>
               <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
             </div>
         </div>
@@ -2889,9 +2889,9 @@
 
             </div>
             <div class="modal-footer">
-              <button type="submit" id="btndaftar" class="btn btn-default">Daftar</button>
+              <button type="submit" id="btndaftar" class="btn btn-default">Register</button>
               </form>
-              <a href="{{url('pendaftaran/SMP-PDF') }}" target="_blank"><button style="margin-left:20px;" type="submit" id="btnprint" class="btn btn-default">Print Manual</button></a>
+              <a href="{{url('registration/SMP-PDF') }}" target="_blank"><button style="margin-left:20px;" type="submit" id="btnprint" class="btn btn-default">Manual Print</button></a>
               <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
             </div>
         </div>
@@ -3635,9 +3635,9 @@
 
             </div>
             <div class="modal-footer">
-              <button type="submit" id="btndaftar" class="btn btn-default">Daftar</button>
+              <button type="submit" id="btndaftar" class="btn btn-default">Register</button>
               </form>
-              <a href="{{url('pendaftaran/SMA-PDF') }}" target="_blank"><button style="margin-left:20px;" type="submit" id="btnprint" class="btn btn-default">Print Manual</button></a>
+              <a href="{{url('registration/SMA-PDF') }}" target="_blank"><button style="margin-left:20px;" type="submit" id="btnprint" class="btn btn-default">Manual Print</button></a>
               <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
             </div>
         </div>
@@ -3688,7 +3688,7 @@
           @endif
          @endif
          @else
-        <a class="a-li" href="{{ url('login') }}"><li>Sign In</li></a>
+        <a class="a-li" href="{{ url('login') }}"><li>Login</li></a>
         @endif
 
       </ul>

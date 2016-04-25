@@ -707,7 +707,7 @@
             <li><a data-toggle="modal" data-target="#myModaltk2" href="#">Curriculum</a></li>
             <li><a data-toggle="modal" data-target="#myModaltk3" href="#">Facilities</a></li>
             <li><a data-toggle="modal" data-target="#myModaltk4" href="#">Galery</a></li>
-            <li><a href="{{ url('pendaftaran') }}">Registration</a></li>
+            <li><a href="{{ url('registration') }}">Registration</a></li>
           </ul>
         </li>
         <li class="dropdown">
@@ -718,7 +718,7 @@
             <li><a data-toggle="modal" data-target="#myModalsd2" href="#">Curriculum</a></li>
             <li><a data-toggle="modal" data-target="#myModalsd3" href="#">Facilities</a></li>
             <li><a data-toggle="modal" data-target="#myModalsd4" href="#">Galery</a></li>
-            <li><a href="{{ url('pendaftaran') }}">Registration</a></li>
+            <li><a href="{{ url('registration') }}">Registration</a></li>
           </ul>
         </li>
         <li class="dropdown">
@@ -729,7 +729,7 @@
             <li><a data-toggle="modal" data-target="#myModalsmp2" href="#">Curriculum</a></li>
             <li><a data-toggle="modal" data-target="#myModalsmp3" href="#">Facilities</a></li>
             <li><a data-toggle="modal" data-target="#myModalsmp4" href="#">Galery</a></li>
-            <li><a href="{{ url('pendaftaran') }}">Registration</a></li>
+            <li><a href="{{ url('registration') }}">Registration</a></li>
           </ul>
         </li>
         <li class="dropdown">
@@ -740,7 +740,7 @@
             <li><a data-toggle="modal" data-target="#myModalsma2" href="#">Curriculum</a></li>
             <li><a data-toggle="modal" data-target="#myModalsma3" href="#">Facilities</a></li>
             <li><a data-toggle="modal" data-target="#myModalsma4" href="#">Galery</a></li>
-            <li><a href="{{ url('pendaftaran') }}">Registration</a></li>
+            <li><a href="{{ url('registration') }}">Registration</a></li>
           </ul>
         </li>
 
@@ -756,7 +756,7 @@
           <ul class="dropdown-menu">
             <li><a href="{{ url('agenda') }}">Agenda</a></li>
             <li><a href="#newsSection">Announcement</a></li>
-            <li><a href="{{ url('artikel') }}">Article</a></li>
+            <li><a href="{{ url('article') }}">Article</a></li>
           </ul>
         </li>
         @if(isset($_SESSION['logged_in']))
@@ -770,7 +770,7 @@
           @endif
          @endif
          @else
-        <a class="a-li" href="{{ url('login') }}"><li>Sign In</li></a>
+        <a class="a-li" href="{{ url('login') }}"><li>Login</li></a>
         @endif
 
       </ul>
@@ -1027,7 +1027,7 @@
           <p class="date-notif">31 Desember 2016</p>
         </div>
         <div class="notif-button">
-          <a href="{{ url('artikel') }}">
+          <a href="{{ url('article') }}">
           <button class="notif-b">More</button>
           </a>
         </div>

@@ -361,7 +361,7 @@
         </li>
         <a data-toggle="modal" id="galeri-li" data-target="#myModalgaleritk" href="{{ url('#')}}"><li>Galery</li></a>
         <a class="a-li" href="{{ url('#newsSection')}}"><li>Information</li></a>
-        <a class="a-li" href="{{ url('pendaftaran') }}"><li>Registration</li></a>
+        <a class="a-li" href="{{ url('registration') }}"><li>Registration</li></a>
         @if(isset($_SESSION['logged_in']))
         @if(isset($_SESSION['akses_type']))
           @if($_SESSION['akses_type'] == 'student' || $_SESSION['akses_type'] == 'parent')
@@ -373,7 +373,7 @@
           @endif
          @endif
          @else
-        <a class="a-li" href="{{ url('login') }}"><li>Sign In</li></a>
+        <a class="a-li" href="{{ url('login') }}"><li>Login</li></a>
         @endif
 
       </ul>
@@ -645,7 +645,7 @@
           <p class="date-notif">31 Desember 2016</p>
         </div>
         <div class="notif-button">
-          <a href="{{ url('artikel') }}">
+          <a href="{{ url('article') }}">
           <button class="notif-b">More</button>
           </a>
         </div>

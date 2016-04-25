@@ -55,7 +55,7 @@
           @endif
          @endif
          @else
-        <a class="a-li" href="{{ url('login') }}"><li>Sign In</li></a>
+        <a class="a-li" href="{{ url('login') }}"><li>Login</li></a>
         @endif
 
       </ul>
@@ -815,7 +815,7 @@
     <a class="a-lab-port" data-toggle="modal" data-target="#myModalport2" href="#"><label class="lab-c-port animated fadeInDown">Curriculum</label></a>
     <a class="a-lab-port" data-toggle="modal" data-target="#myModalport3" href="#"><label class="lab-c-port animated fadeInDown">Facilities</label></a>
     <a class="a-lab-port" data-toggle="modal" data-target="#myModalport4" href="#"><label class="lab-c-port animated fadeInRight">Galery</label></a>
-    <a class="a-lab-port" href="{{ url('pendaftaran') }}"><label class="lab-c-port animated fadeInRight">Registration</label></a>
+    <a class="a-lab-port" href="{{ url('registration') }}"><label class="lab-c-port animated fadeInRight">Registration</label></a>
 </div>
 </div>
 </div>
@@ -832,7 +832,7 @@
     <a class="a-lab-meet" data-toggle="modal" data-target="#myModalmeet2" href="#"><label class="lab-c-meet animated fadeInDown">Curriculum</label></a>
     <a class="a-lab-meet" data-toggle="modal" data-target="#myModalmeet3" href="#"><label class="lab-c-meet animated fadeInDown">Facilities</label></a>
     <a class="a-lab-meet" data-toggle="modal" data-target="#myModalmeet4" href="#"><label class="lab-c-meet animated fadeInRight">Galery</label></a>
-    <a class="a-lab-meet" href="{{ url('pendaftaran') }}"><label class="lab-c-meet animated fadeInRight">Registration</label></a>
+    <a class="a-lab-meet" href="{{ url('registration') }}"><label class="lab-c-meet animated fadeInRight">Registration</label></a>
 </div>
 </div>
 </div>
@@ -850,7 +850,7 @@
     <a class="a-lab-rec" data-toggle="modal" data-target="#myModalrec2" href="#"><label class="lab-c-rec animated fadeInDown">Curriculum</label></a>
     <a class="a-lab-rec" data-toggle="modal" data-target="#myModalrec3" href="#"><label class="lab-c-rec animated fadeInDown">Facilities</label></a>
     <a class="a-lab-rec" data-toggle="modal" data-target="#myModalrec4" href="#"><label class="lab-c-rec animated fadeInRight">Galery</label></a>
-    <a class="a-lab-rec" href="{{ url('pendaftaran') }}"><label class="lab-c-rec animated fadeInRight">Registration</label></a>
+    <a class="a-lab-rec" href="{{ url('registration') }}"><label class="lab-c-rec animated fadeInRight">Registration</label></a>
 </div>
 </div>
 </div>
@@ -867,7 +867,7 @@
     <a class="a-lab-cont" data-toggle="modal" data-target="#myModalcont2" href="#"><label class="lab-c-cont animated fadeInDown">Curriculum</label></a>
     <a class="a-lab-cont" data-toggle="modal" data-target="#myModalcont3" href="#"><label class="lab-c-cont animated fadeInDown">Facilities</label></a>
     <a class="a-lab-cont" data-toggle="modal" data-target="#myModalcont4" href="#"><label class="lab-c-cont animated fadeInRight">Galery</label></a>
-    <a class="a-lab-cont" href="{{ url('pendaftaran') }}"><label class="lab-c-cont animated fadeInRight">Registration</label></a>
+    <a class="a-lab-cont" href="{{ url('registration') }}"><label class="lab-c-cont animated fadeInRight">Registration</label></a>
 </div>
 </div>
 </div>
@@ -905,14 +905,14 @@
       </div>
       <div class="col-md-4 col-xs-12">
         <div class="info-img animated pulse">
-      <a href="pengumuman">
+      <a href="{{ url('announcement') }}">
         <img class="infoimg" src="img/img_home/img-pengumuman.png" ></div>
       </a>
         <h4>Announcement</h4>
       </div>
       <div class="col-md-4 col-xs-12">
         <div class="info-img animated pulse">
-      <a href="{{ url('artikel') }}">
+      <a href="{{ url('article') }}">
         <img class="infoimg" src="img/img_home/img-artikel.png" ></div>
       </a>
         <h4>Article</h4>
