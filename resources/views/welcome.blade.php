@@ -45,15 +45,15 @@
         <a class="a-li" href="#dkmSection"><li>DKM</li></a>
         <a class="a-li" href="#informasiServices"><li>Information</li></a>
         @if(isset($_SESSION['logged_in']))
-        @if(isset($_SESSION['akses_type']))
-          @if($_SESSION['akses_type'] == 'student' || $_SESSION['akses_type'] == 'parent')
+        @if(!empty($_SESSION['akses_type']))
+          <!-- @if($_SESSION['akses_type'] == 'student' || $_SESSION['akses_type'] == 'parent'  || $_SESSION['akses_type'] == 'staff' || $_SESSION['akses_type'] == 'teacher') -->
         <a id="a-li" style="cursor:pointer" href="{{url('manage')}}"><li>Manage</li></a>
         <a class="a-li" href="{{url('logout')}}"><li>Logout</li></a>
-          @else
+        <!--   @else -->
         <a class="a-li" href="{{url('manage')}}"><li>Manage</li></a>
         <a class="a-li" href="{{url('logout')}}"><li>Logout</li></a>
           @endif
-         @endif
+         <!-- @endif -->
          @else
         <a class="a-li" href="{{ url('login') }}"><li>Login</li></a>
         @endif

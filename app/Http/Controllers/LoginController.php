@@ -55,7 +55,8 @@ class LoginController extends Controller
 											])->count();
 							
 										if (!empty($akses_statuss)) {
-										\Session::put('akses_type', 'staff');
+										// \Session::put('akses_type', 'staff');
+										$_SESSION['akses_type'] = 'staff';
 										$_SESSION['logged_in'] = 1;
 									return redirect('/');
 								} else {
