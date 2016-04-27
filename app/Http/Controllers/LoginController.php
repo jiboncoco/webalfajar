@@ -57,6 +57,7 @@ class LoginController extends Controller
 										if (!empty($akses_statuss)) {
 										// \Session::put('akses_type', 'staff');
 										$_SESSION['akses_type'] = 'staff';
+										$_SESSION['akses_username'] = $akses_username;
 										$_SESSION['logged_in'] = 1;
 									return redirect('/');
 								} else {
