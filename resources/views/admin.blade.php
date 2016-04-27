@@ -33,6 +33,9 @@
 
       <!-- Content Wrapper. Contains page content -->
       <div class="content-wrapper">
+
+        <!-- Main content -->
+        <section class="content">
           <div class="admin-seacrh">
             <div class="col-lg-12">
               <div class="input-group">
@@ -50,8 +53,6 @@
               </div><!-- /input-group -->
             </div><!-- /.col-lg-6 -->
           </div>
-        <!-- Main content -->
-        <section class="content">
 
         <div class="admin-news">
           <div class="detail-news">
