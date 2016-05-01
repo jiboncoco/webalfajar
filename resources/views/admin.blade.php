@@ -41,14 +41,14 @@
               <div class="input-group">
                 <input type="text" class="form-control" aria-label="..." placeholder="Search" required/>
                 <div class="input-group-btn">
-                  <button type="submit" class="btn btn-default dropdown-toggle" data-toggle="dropdown" style="margin-bottom:0px;" aria-haspopup="true" aria-expanded="false">All Information </button>
-                  <!-- <ul class="dropdown-menu">
+                  <button type="submit" class="btn btn-default dropdown-toggle" data-toggle="dropdown" style="margin-bottom:0px;" aria-haspopup="true" aria-expanded="false">All Information <span class="caret"></span></button>
+                  <ul class="dropdown-menu">
                     <li><a href="#">News</a></li>
                     <li><a href="#">Agenda</a></li>
                     <li><a href="#">Announcement </a></li>
                     <li><a href="#">Article</a></li>
                     <li><a href="#">All Information</a></li>
-                  </ul> -->
+                  </ul>
                 </div><!-- /btn-group -->
               </div><!-- /input-group -->
             </div><!-- /.col-lg-6 -->

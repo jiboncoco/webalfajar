@@ -9,7 +9,7 @@ use App\Http\Requests;
 class LoginController extends Controller
 {
 	
-	public function login_staff()
+	public function login_staff(Request $request)
 	{
 		session_start();
 		$akses_code     = $_POST['akses_code'];
@@ -56,8 +56,10 @@ class LoginController extends Controller
 							
 										if (!empty($akses_statuss)) {
 										// \Session::put('akses_type', 'staff');
+										$request->session()->put('akses_type', 'staff');
+										$request->session()->put('akses_username', $akses_username);
+										$request->session()->put('logged_in', 1);
 										$_SESSION['akses_type'] = 'staff';
-										$_SESSION['akses_username'] = $akses_username;
 										$_SESSION['logged_in'] = 1;
 									return redirect('/');
 								} else {
@@ -90,7 +92,7 @@ class LoginController extends Controller
 		}
 	}
 
-	public function login_teacher()
+	public function login_teacher(Request $request)
 	{
 		session_start();
 		$akses_code     = $_POST['akses_code'];
@@ -141,6 +143,9 @@ class LoginController extends Controller
 										])->count();
 									
 										if (!empty($akses_statuss_person)) {
+											$request->session()->put('akses_type', 'teacher');
+											$request->session()->put('akses_username', $akses_username);
+											$request->session()->put('logged_in', 1);
 											$_SESSION['akses_type'] = 'teacher';
 											$_SESSION['logged_in'] = 1;
 											return redirect('/');
@@ -182,7 +187,7 @@ class LoginController extends Controller
 
 	}
 
-	public function login_parent()
+	public function login_parent(Request $request)
 	{
 		session_start();
 		$akses_code     = $_POST['akses_code'];
@@ -247,6 +252,9 @@ class LoginController extends Controller
 												])->count();
 
 												if (!empty($akses_statuss_student)) {
+													$request->session()->put('akses_type', 'parent');
+													$request->session()->put('akses_username', $akses_username);
+													$request->session()->put('logged_in', 1);
 													$_SESSION['akses_type'] = 'student';
 													$_SESSION['logged_in'] = 1;
 													return redirect('/');
@@ -297,7 +305,7 @@ class LoginController extends Controller
 									
 	}
 
-	public function login_student()
+	public function login_student(Request $request)
 	{
 		session_start();
 		$akses_code     = $_POST['akses_code'];
@@ -362,6 +370,9 @@ class LoginController extends Controller
 												])->count();
 
 												if (!empty($akses_statuss2)) {
+													$request->session()->put('akses_type', 'student');
+													$request->session()->put('akses_username', $akses_username);
+													$request->session()->put('logged_in', 1);
 													$_SESSION['akses_type'] = 'student';
 													$_SESSION['logged_in'] = 1;
 													return redirect('/');

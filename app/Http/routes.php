@@ -10,6 +10,8 @@
 | and give it the controller to call when that URI is requested.
 |
 */
+Route::group(['middleware' => ['web']], function () {
+
 
 Route::get('/', function () {
 	session_start();
@@ -55,7 +57,5 @@ Route::get('logout', 'LoginController@logout');
 | kernel and includes session state, CSRF protection, and more.
 |
 */
-
-Route::group(['middleware' => ['web']], function () {
-    //
+// your routes here
 });

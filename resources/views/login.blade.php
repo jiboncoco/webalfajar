@@ -24,6 +24,7 @@
                     <div class="modal-body">
                     <div class="login-form">
                     <form action="{{ url('login_teacher') }}" method="POST">
+                    {{ csrf_field() }}
                     <input class="login-input" name="akses_code" id="log-inp" placeholder="NIP Al-Fajar" required></input>
                     <input class="login-input" name="akses_username" id="log-inp" placeholder="Username" required></input>
                     <input class="login-input" name="akses_password" type="password" placeholder="Password" required></input><br>
@@ -50,7 +51,8 @@
                     </div>
                             <div class="modal-body">
                                 <div class="login-form">
-                <form action="{{ url('login_staff') }}" method="POST">
+                    <form action="{{ url('login_staff') }}" method="POST">
+                    {{ csrf_field() }}
                     <input class="login-input" name="akses_code" id="log-inp" placeholder="Access Code" required></input>
                     <input class="login-input" name="akses_username" id="log-inp" placeholder="Username" required></input>
                     <input class="login-input" name="akses_password" type="password" placeholder="Password" required></input><br>
@@ -77,7 +79,8 @@
                     </div>
                     <div class="modal-body">
                     <div class="login-form">
-                <form action="{{ url('login_parent') }}" method="POST">
+                    <form action="{{ url('login_parent') }}" method="POST">
+                    {{ csrf_field() }}
                     <input class="login-input" name="akses_code" id="log-inp" placeholder="NISN" required></input>
                     <select name="dt_student_grade" class="form-control" id="sg">
                     <option value="">Students Grade</option>
@@ -111,7 +114,8 @@
                     </div>
                     <div class="modal-body">
                     <div class="login-form">
-                <form action="{{ url('login_student') }}" method="POST">
+                    <form action="{{ url('login_student') }}" method="POST">
+                    {{ csrf_field() }}
                     <input class="login-input" name="akses_code" id="log-inp" placeholder="NISN" required></input>
                     <select name="dt_student_grade" class="form-control" id="sg">
                     <option value="">Grade</option>
