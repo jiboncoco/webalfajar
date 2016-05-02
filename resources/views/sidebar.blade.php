@@ -176,13 +176,47 @@
             </li>
             <li class="treeview">
               <a href="#">
-                <i class="fa fa-folder"></i> 
-                <span>Manage Registration</span>
+                <i class="fa fa-cogs"></i>
+                <span>Manage Setting</span>
                 <i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">
-                <li><a href="{{ url('manage_registration/master_new_student')}}"><i class="fa fa-user-plus"></i> Master New Student</a></li>
-                <li><a href="{{ url('manage_registration/filter_new_student')}}"><i class="fa fa-check-square-o"></i> Filter New Student</a></li>
+                <li><a href="{{ url('manage_setting/edit_profile')}}"><i class="fa fa-cog"></i> Edit Profile</a></li>
+                <li><a href="{{ url('manage_setting/alfajar_help')}}"><i class="fa fa-bookmark-o"></i> Al - Fajar Help</a></li>
+              </ul>
+            </li>
+          </ul>
+
+          @elseif($_SESSION['akses_type'] == 'student')
+           <ul class="sidebar-menu">
+            <li class="header">NAVIGATION</li>
+            <li class="active treeview">
+              <a href="{{ url('manage') }}">
+                <i class="fa fa-dashboard"></i> <span>Dashboard</span>
+              </a>
+            </li>
+            <li class="treeview">
+              <a href="#">
+                <i class="fa fa-laptop"></i>
+                <span>Manage Student</span>
+                <i class="fa fa-angle-left pull-right"></i>
+              </a>
+              <ul class="treeview-menu">
+              <li><a href="{{ url('manage_student/activity_student') }}"><i class="fa fa-puzzle-piece"></i> Activity Student</a></li>
+              <li><a href="{{ url('manage_student/student_assignments') }}"><i class="fa fa-file-text-o"></i> Student Assignments</a></li>
+                <li><a href="{{ url('manage_student/schedule_student') }}"><i class="fa fa-calendar"></i> Schedule Student</a></li>
+                <li><a href="{{ url('manage_student/report_student') }}"><i class="fa fa-envelope"></i> Report Student</a></li>
+              </ul>
+            </li>
+            <li class="treeview">
+              <a href="#">
+                <i class="fa fa-archive"></i>
+                <span>Manage Post</span>
+                <i class="fa fa-angle-left pull-right"></i>
+              </a>
+              <ul class="treeview-menu">
+                <li><a href="{{ url('manage_post/master_post') }}"><i class="fa fa-th"></i> Master Post</a></li>
+                <li><a href="{{ url('manage_post/your_post') }}"><i class="fa fa-edit"></i> Your Post</a></li>
               </ul>
             </li>
             <li class="treeview">
@@ -197,6 +231,50 @@
               </ul>
             </li>
           </ul>
+
+          @elseif($_SESSION['akses_type'] == 'parent')
+           <ul class="sidebar-menu">
+            <li class="header">NAVIGATION</li>
+            <li class="active treeview">
+              <a href="{{ url('manage') }}">
+                <i class="fa fa-dashboard"></i> <span>Dashboard</span>
+              </a>
+            </li>
+            <li class="treeview">
+              <a href="#">
+                <i class="fa fa-laptop"></i>
+                <span>Manage Student</span>
+                <i class="fa fa-angle-left pull-right"></i>
+              </a>
+              <ul class="treeview-menu">
+              <li><a href="{{ url('manage_student/activity_student') }}"><i class="fa fa-puzzle-piece"></i> Activity Student</a></li>
+                <li><a href="{{ url('manage_student/report_student') }}"><i class="fa fa-envelope"></i> Report Student</a></li>
+              </ul>
+            </li>
+            <li class="treeview">
+              <a href="#">
+                <i class="fa fa-archive"></i>
+                <span>Manage Post</span>
+                <i class="fa fa-angle-left pull-right"></i>
+              </a>
+              <ul class="treeview-menu">
+                <li><a href="{{ url('manage_post/master_post') }}"><i class="fa fa-th"></i> Master Post</a></li>
+                <li><a href="{{ url('manage_post/your_post') }}"><i class="fa fa-edit"></i> Your Post</a></li>
+              </ul>
+            </li>
+            <li class="treeview">
+              <a href="#">
+                <i class="fa fa-cogs"></i>
+                <span>Manage Setting</span>
+                <i class="fa fa-angle-left pull-right"></i>
+              </a>
+              <ul class="treeview-menu">
+                <li><a href="{{ url('manage_setting/edit_profile')}}"><i class="fa fa-cog"></i> Edit Profile</a></li>
+                <li><a href="{{ url('manage_setting/alfajar_help')}}"><i class="fa fa-bookmark-o"></i> Al - Fajar Help</a></li>
+              </ul>
+            </li>
+          </ul>
+          
           @endif
           @endif
           @endif

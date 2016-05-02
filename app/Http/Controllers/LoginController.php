@@ -255,7 +255,7 @@ class LoginController extends Controller
 													$request->session()->put('akses_type', 'parent');
 													$request->session()->put('akses_username', $akses_username);
 													$request->session()->put('logged_in', 1);
-													$_SESSION['akses_type'] = 'student';
+													$_SESSION['akses_type'] = 'parent';
 													$_SESSION['logged_in'] = 1;
 													return redirect('/');
 												} else {
