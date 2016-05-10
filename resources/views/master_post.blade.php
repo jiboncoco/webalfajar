@@ -32,33 +32,63 @@
 
       <!-- Content Wrapper. Contains page content -->
       <div class="content-wrapper">
-
         <!-- Main content -->
         <section class="content">
+    <blockquote class="master_p">Master Post</blockquote>
+    <div class="master_post_content">
+      <form method="POST"  action="{{ url('manage_post/save_post') }}">
+        <label for="exampleInputPassword1">Select a Type</label>
+      <select id="selecttype" name="dt_blog_type" class="form-control">
+      @foreach($m_blogs as $m_blog)
+        <option value="{{ $m_blog -> m_blog_name_type }}">{{ $m_blog -> m_blog_name_type }}</option>
+      @endforeach
+      </select>
+      <br>
+      <label for="exampleInputPassword1">This Text For</label>
+      <select name="dt_blog_for" class="form-control col-lg-6">
+      @foreach($m_kelass as $m_kelas)
+        <option value="{{ $m_kelas -> m_kelas_name }}">{{ $m_kelas -> m_kelas_name }}</option>
+      @endforeach
+      </select>
+    <br>
+    <div id="inputdate">
+    <label for="exampleInputPassword1">Date Event</label>
+    <div class='input-group date' id='datetimepicker1'>
+      <input type='text' name="dt_blog_date_event" class="form-control for_date" />
+        <span class="input-group-addon">
+        <span class="glyphicon glyphicon-calendar"></span>
+        </span>
+    </div>
+    </div>
+    <br>
+        <div class="form-group">
+          <label for="exampleInputPassword1">Title</label>
+          <input type="text" name="dt_blog_title" class="form-control" id="exampleInputEmail1" placeholder="Title">
+          <input type="hidden" name="_token" value="{{ csrf_token() }}">
+        </div>
+    <br>
+        <div class="form-group">
+          <label for="exampleInputPassword1">Content</label>
+          <textarea class="form-control ckeditor" id="editor1" name="dt_blog_text" placeholder="Content" class="materialize-textarea" rows="6"></textarea>
+        </div>
+      <br><br>
+        <button type="submit" class="btn btn-default">Save Post</button>
+      </form>
+    </div>
 
-			<form>
-			  <div class="form-group">
-			    <label for="exampleInputEmail1">Email address</label>
-			    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
-			  </div>
-			  <div class="form-group">
-			    <label for="exampleInputPassword1">Password</label>
-			    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-			  </div>
-			  <div class="form-group">
-			    <label for="exampleInputFile">File input</label>
-			    <input type="file" id="exampleInputFile">
-			    <p class="help-block">Example block-level help text here.</p>
-			  </div>
-			  <div class="checkbox">
-			    <label>
-			      <input type="checkbox"> Check me out
-			    </label>
-			  </div>
-			  <button type="submit" class="btn btn-default">Submit</button>
-			</form>
+</div>
+</div>
+</div>
 
-</div>
-</div>
-</div>
+<script type="text/javascript">
+  $(".for_date").datepicker();
+      $('#selecttype').change(function(){
+        if($(this).val() == "agenda"){
+          $('#inputdate').show();
+        }
+        else{
+          $('#inputdate').hide();
+        }
+      });
+      </script>
 @endsection

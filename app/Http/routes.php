@@ -47,9 +47,12 @@ Route::post('login_parent', 'LoginController@login_parent');
 Route::post('login_student', 'LoginController@login_student');
 
 Route::get('manage_post/master_post', 'PostController@master_post');
-Route::post('save_post', 'PostController@save_post');
+Route::post('manage_post/save_post', 'PostController@save_post');
 
 Route::get('logout', 'LoginController@logout');
+
+Route::post('uploadimagedrag', 'ImageController@uploadDragAndDropCKEDITOR');
+Route::post('uploadimagefilebrowser', 'ImageController@uploadFileBrowserCKEDITOR');
 /*
 |--------------------------------------------------------------------------
 | Application Routes

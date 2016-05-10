@@ -1,5 +1,6 @@
       <aside class="main-sidebar">
         <!-- sidebar: style can be found in sidebar.less -->
+        <div class="slimScrollDiv" style="position: relative; overflow: hidden; width: auto; height: 343px;">
         <section class="sidebar">
           <!-- Sidebar user panel -->
           <div class="user-panel">
@@ -79,7 +80,8 @@
               </a>
               <ul class="treeview-menu">
                 <li><a href="{{ url('manage_post/master_post') }}"><i class="fa fa-th"></i> Master Post</a></li>
-                <li><a href="{{ url('manage_post/activity_post') }}"><i class="fa fa-edit"></i> Activity Post</a></li>
+                <li><a href="{{ url('manage_post/master_type_post') }}"><i class="fa fa-list"></i> Master Type Post</a></li>
+                <li><a href="{{ url('manage_post/master_class_post') }}"><i class="fa fa-columns"></i> Master Class Post</a></li>
               </ul>
             </li>
             <li class="treeview">
@@ -171,7 +173,8 @@
               </a>
               <ul class="treeview-menu">
                 <li><a href="{{ url('manage_post/master_post') }}"><i class="fa fa-th"></i> Master Post</a></li>
-                <li><a href="{{ url('manage_post/activity_post') }}"><i class="fa fa-edit"></i> Activity Post</a></li>
+                <li><a href="{{ url('manage_post/master_type_post') }}"><i class="fa fa-list"></i> Master Type Post</a></li>
+                <li><a href="{{ url('manage_post/master_class_post') }}"><i class="fa fa-columns"></i> Master Class Post</a></li>
               </ul>
             </li>
             <li class="treeview">
@@ -216,7 +219,6 @@
               </a>
               <ul class="treeview-menu">
                 <li><a href="{{ url('manage_post/master_post') }}"><i class="fa fa-th"></i> Master Post</a></li>
-                <li><a href="{{ url('manage_post/your_post') }}"><i class="fa fa-edit"></i> Your Post</a></li>
               </ul>
             </li>
             <li class="treeview">
@@ -259,7 +261,6 @@
               </a>
               <ul class="treeview-menu">
                 <li><a href="{{ url('manage_post/master_post') }}"><i class="fa fa-th"></i> Master Post</a></li>
-                <li><a href="{{ url('manage_post/your_post') }}"><i class="fa fa-edit"></i> Your Post</a></li>
               </ul>
             </li>
             <li class="treeview">
@@ -274,10 +275,11 @@
               </ul>
             </li>
           </ul>
-          
+
           @endif
           @endif
           @endif
         </section>
+      </div>
         <!-- /.sidebar -->
       </aside>

@@ -31,6 +31,51 @@ html,body{min-height:100%;}.layout-boxed html,.layout-boxed body{height:100%}bod
 	padding: 30px;
 	text-align: center;
 }
+.smp1{
+	width: 30%;
+	display: inline-table;
+}
+.smp2{
+	width: 30%;
+	display: inline-table;
+}
+.smp_all{
+	display: inline-table;
+	width: 100%;
+}
+.btn-file {
+  position: relative;
+  overflow: hidden;
+}
+.btn-file input[type=file] {
+  position: absolute;
+  top: 0;
+  right: 0;
+  min-width: 100%;
+  min-height: 100%;
+  font-size: 100px;
+  text-align: right;
+  filter: alpha(opacity=0);
+  opacity: 0;
+  background: red;
+  cursor: inherit;
+  display: block;
+}
+input[readonly] {
+  background-color: white !important;
+  cursor: text !important;
+}
+.master_post_content{
+	margin: 30px auto;
+	width: 90%;
+	border: 1px solid #eee;
+	border-radius: 10px;
+	padding: 40px;
+}
+.master_p{
+	margin-top: 60px;
+	font-size: 25px;
+}
 
 @media only screen and (max-width : 1000px) {
 .detail-news{
@@ -52,12 +97,20 @@ html,body{min-height:100%;}.layout-boxed html,.layout-boxed body{height:100%}bod
 
 }
 @media only screen and (max-width : 767px) {
+.master_p{
+	margin-top: 110px;
+	font-size: 25px;
+}
 .admin-seacrh{
 	margin-top: 120px !important;
 	}
 }
 
 @media only screen and (max-width : 580px) {
+.master_p{
+	margin-top: 110px;
+	font-size: 25px;
+}
 .admin-seacrh{
 	margin-top: 120px !important	;
 	}

@@ -21,11 +21,22 @@
     <!-- AdminLTE Skins. Choose a skin from the css/skins
          folder instead of downloading all of them to reduce the load. -->
     <link rel="stylesheet" href="{{ url('adminlte/dist/css/skins/_all-skins.min.css') }}">
-
+    <link rel="stylesheet" type="text/css" href="{{ url('adminlte/select2/select2.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url('adminlte/dtpicker/css/bootstrap-datetimepicker.min.css') }}">
         <!-- jQuery 2.1.4 -->
-    <script src="{{ url('adminlte/plugins/jQuery/jQuery-2.1.4.min.js') }}"></script>
+    
     <!-- Bootstrap 3.3.5 -->
+    <script src="{{ url('adminlte/plugins/jQuery/jQuery-2.1.4.min.js') }}"></script>
+    <script src="{{ url('adminlte/dtpicker/moment.js')}}"></script>
+    <script src="{{ url('adminlte/bootstrap/js/transition.js') }}"></script>
+    <script src="{{ url('adminlte/bootstrap/js/collapse.js') }}"></script>
     <script src="{{ url('adminlte/bootstrap/js/bootstrap.min.js') }}"></script>
+    <script src="{{ url('adminlte/dtpicker/js/bootstrap-datetimepicker.min.js')}}"></script>
+        <script src="{{ url('adminlte/dist/js/demo.js') }}"></script>
+    <script src="{{ url('adminlte/ckeditor/ckeditor.js') }}"></script>
+    <script src="{{ url('adminlte/select2/select2.full.js') }}"></script>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css" />
+    <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
     <!-- FastClick -->
     <script src="{{ url('adminlte/plugins/fastclick/fastclick.min.js') }}"></script>
     <!-- AdminLTE App -->
@@ -42,7 +53,7 @@
     <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
     <script src="{{ url('adminlte/dist/js/pages/dashboard2.js') }}"></script>
     <!-- AdminLTE for demo purposes -->
-    <script src="{{ url('adminlte/dist/js/demo.js') }}"></script>
+
   </head>
 
   <body>
