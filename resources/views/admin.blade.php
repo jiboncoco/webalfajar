@@ -83,8 +83,8 @@
           </a>
           <div class="attr">
           <hr/>
-            <label><a href="{{ url('manage_post/edit_post/'.$dt_blog_admin->id) }}"> Edit Post </a></label>
-            <label><a href="{{ url('manage_post/delete_post/'.$dt_blog_admin->id) }}"> Delete Post </a></label>
+            <label><a href="{{ url('manage_post/edit_post/'.$dt_blog_admin->id) }}"> <i class="fa fa-pencil-square-o"></i> </a></label>
+            <label><a href="{{ url('manage_post/delete_post/'.$dt_blog_admin->id) }}"> <i class="fa fa-trash"></i> </a></label>
           </div>
           </div>
           @endforeach
