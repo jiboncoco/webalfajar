@@ -16,10 +16,18 @@ Route::group(['middleware' => ['web']], function () {
 Route::get('/', function () {
 	session_start();
         if(isset($_SESSION['logged_in'])){
-            return view('welcome');
+        	$dt_blog = \DB::table('dt_blog')
+                ->orderBy('id', 'desc')
+                ->take(3)
+                ->get();
+            return \View::make('welcome')->with('dt_blogs',$dt_blog);
         }
         else{
-            return view('welcome');
+            $dt_blog = \DB::table('dt_blog')
+                ->orderBy('id', 'desc')
+                ->take(3)
+                ->get();
+            return \View::make('welcome')->with('dt_blogs',$dt_blog);
         }
 });
 
@@ -28,11 +36,18 @@ Route::get('news', 'Controller@news');
 Route::get('agenda', 'Controller@agenda');
 Route::get('announcement', 'Controller@pengumuman');
 Route::get('article', 'Controller@artikel');
+
 Route::get('portal_tk', 'Controller@portal_tk');
+Route::get('portal_tk/all', 'Controller@portal_tk_all');
+Route::get('portal_tk/news', 'Controller@portal_tk_news');
+Route::get('portal_tk/agenda', 'Controller@portal_tk_agenda');
+Route::get('portal_tk/announcement', 'Controller@portal_tk_announcement');
+Route::get('portal_tk/article', 'Controller@portal_tk_article');
+
 Route::get('portal_sd', 'Controller@portal_sd');
 Route::get('portal_smp', 'Controller@portal_smp');
 Route::get('portal_sma', 'Controller@portal_sma');
-Route::get('view', 'Controller@view');
+Route::get('view/{id}', 'Controller@view');
 Route::get('registration', 'Controller@pendaftaran');
 Route::get('registration/TK-PDF', 'Controller@registration_tk_pdf');
 Route::get('registration/SD-PDF', 'Controller@registration_sd_pdf');
@@ -49,6 +64,25 @@ Route::post('login_student', 'LoginController@login_student');
 Route::get('manage_post/master_post', 'PostController@master_post');
 Route::post('manage_post/save_post', 'PostController@save_post');
 
+Route::get('/images/{filename}',
+    function ($filename)
+{
+    $path = storage_path() . '/' . $filename;
+
+    $file = File::get($path);
+    $type = File::mimeType($path);
+
+    $response = Response::make($file, 200);
+    $response->header("Content-Type", $type);
+
+    return $response;
+});
+
+Route::get('manage_post/edit_post/{id}', 'PostController@edit_post');
+Route::post('manage_post/save_edit_post', 'PostController@save_edit_post');
+Route::get('manage_post/delete_post/{id}', 'PostController@delete_post');
+
+Route::post('save_comment', 'PostController@save_comment');
 Route::get('logout', 'LoginController@logout');
 
 Route::post('uploadimagedrag', 'ImageController@uploadDragAndDropCKEDITOR');

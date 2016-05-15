@@ -6,11 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link id="callCss" rel="stylesheet" href="css/bootstrap.min.css" type="text/css" media="screen" charset="utf-8" />
+    <link id="callCss" rel="stylesheet" href="/css/bootstrap.min.css" type="text/css" media="screen" charset="utf-8" />
     <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="{{ url('font-awesome/css/font-awesome.min.css') }}">
-    <link id="callCss"rel="stylesheet" href="css/style.css" type="text/css" media="screen" charset="utf-8" />
+    <link id="callCss"rel="stylesheet" href="/css/style.css" type="text/css" media="screen" charset="utf-8" />
 
 </head>
 <body>
@@ -387,7 +387,7 @@
 
             <div class="carousel-inner">
                 <div class="item active">
-                    <a class="cntr" href="#"><img class="img-slide" src="img/img_news/TK.png" alt=""></a>
+                    <a class="cntr" href="#"><img class="img-slide" src="/img/img_news/TK.png" alt=""></a>
                     <div class="desc-img">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et quam est. Mauris faucibus tellus ac auctor posuere.
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et quam est. Mauris faucibus tellus ac auctor posuere.
@@ -397,7 +397,7 @@
                 </div>
 
                 <div class="item">
-                    <a class="cntr" href="#"><img class="img-slide" src="img/img_news/SD.png" alt=""></a>
+                    <a class="cntr" href="#"><img class="img-slide" src="/img/img_news/SD.png" alt=""></a>
                     <div class="desc-img">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et quam est. Mauris faucibus tellus ac auctor posuere.
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et quam est. Mauris faucibus tellus ac auctor posuere.
@@ -407,7 +407,7 @@
                 </div>
 
                 <div class="item">
-                    <a class="cntr" href="#"><img class="img-slide" src="img/img_news/SMP.png" alt=""></a>
+                    <a class="cntr" href="#"><img class="img-slide" src="/img/img_news/SMP.png" alt=""></a>
                     <div class="desc-img">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et quam est. Mauris faucibus tellus ac auctor posuere.
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et quam est. Mauris faucibus tellus ac auctor posuere.
@@ -417,7 +417,7 @@
                 </div>
 
                 <div class="item">
-                    <a class="cntr" href="#"><img class="img-slide" src="img/img_news/SMA.png" alt=""></a>
+                    <a class="cntr" href="#"><img class="img-slide" src="/img/img_news/SMA.png" alt=""></a>
                     <div class="desc-img">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et quam est. Mauris faucibus tellus ac auctor posuere.
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et quam est. Mauris faucibus tellus ac auctor posuere.
@@ -461,115 +461,38 @@
     </div>
     </div>
     <div class="content1-box-all">
-    <a href="#">
+    @foreach($dt_blog_all_portal_smp as $dt_blog_all_portal_smp)
+    <a href="{{ url('view/'.$dt_blog_all_portal_smp->id) }}">
     <div class="content1-box">
-        <img class="cb-img" src="img/img_news/news1.png" />
+      <img class="cb-img" src="{{ url('images/'.$dt_blog_all_portal_sma->cover_photo) }}" />
       <div class="cb-title">
-        Lorem Ipsum
+        {!! $dt_blog_all_portal_smp->dt_blog_title !!}
       </div>
       <div class="cb-desc">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-      </div>
-      <div class="cb-inf">
-        <i class="fa fa-user"></i> Authors : Admin
-        <p class="cb-date">
-          31 Desember 2015
-        </p>
-      </div>
-    </div>
-    </a>
-    <a href="#">
-    <div class="content1-box">
-        <img class="cb-img" src="img/img_news/news1.png" />
-      <div class="cb-title">
-        Lorem Ipsum
-      </div>
-      <div class="cb-desc">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-      </div>
-      <div class="cb-inf">
-        <i class="fa fa-user"></i> Authors : Admin
-        <p class="cb-date">
-          31 Desember 2015
-        </p>
-      </div>
-    </div>
-    </a>
-    <a href="#">
-    <div class="content1-box">
-        <img class="cb-img" src="img/img_news/news1.png" />
-      <div class="cb-title">
-        Lorem Ipsum
-      </div>
-      <div class="cb-desc">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-      </div>
-      <div class="cb-inf">
-        <i class="fa fa-user"></i> Authors : Admin
-        <p class="cb-date">
-          31 Desember 2015
-        </p>
-      </div>
-    </div>
-    </a>
-    <a href="#">
-    <div class="content1-box">
-        <img class="cb-img" src="img/img_news/news1.png" />
-      <div class="cb-title">
-        Lorem Ipsum
-      </div>
-      <div class="cb-desc">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-      </div>
-      <div class="cb-inf">
-        <i class="fa fa-user"></i> Authors : Admin
-        <p class="cb-date">
-          31 Desember 2015
-        </p>
-      </div>
-    </div>
-    </a>
-    <a href="#">
-    <div class="content1-box">
-        <img class="cb-img" src="img/img_news/news1.png" />
-      <div class="cb-title">
-        Lorem Ipsum
-      </div>
-      <div class="cb-desc">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-      </div>
-      <div class="cb-inf">
-        <i class="fa fa-user"></i> Authors : Admin
-        <p class="cb-date">
-          31 Desember 2015
-        </p>
-      </div>
-    </div>
-    </a>
-    <a href="#">
-    <div class="content1-box">
-        <img class="cb-img" src="img/img_news/news1.png" />
-      <div class="cb-title">
-        Lorem Ipsum
-      </div>
-      <div class="cb-desc">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-      </div>
-      <div class="cb-inf">
-      <i class="fa fa-user"></i> Authors : Admin
-        <p class="cb-date">
-          31 Desember 2015
-        </p>
-      </div>
-    </div>
-    </a>
+      <!-- {!! substr(preg_replace("/<img\s[^>]*?src\s*=\s*['\"]([^'\"]*?)['\"][^>]*?>/",'',$dt_blog_all_portal_smp->dt_blog_text),0,400) !!}...... -->
+      <?php
+            $string = strip_tags($dt_blog_all_portal_smp->dt_blog_text);
 
+            if (strlen($string) > 300) {
+
+                // truncate string
+                $stringCut = substr($string, 0, 300);
+
+                // make sure it ends in a word so assassinate doesn't become ass...
+                $string = substr($stringCut, 0, strrpos($stringCut, ' ')).'...';
+            }
+            echo $string;
+      ?>
+      </div>
+      <div class="cb-inf">
+        <i class="fa fa-user"></i> {{$dt_blog_all_portal_smp->dt_blog_create_by}} ({{$dt_blog_all_portal_smp->dt_blog_by}})
+        <p class="cb-date">
+          {{$dt_blog_all_portal_smp->created_at}}
+        </p>
+      </div>
+    </div>
+    @endforeach
+    </a>
     </div>
       <div class="content1-button">
         <a href="#"> <button class="cb-button">More News</button></a>

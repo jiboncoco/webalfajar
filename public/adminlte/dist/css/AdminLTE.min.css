@@ -47,6 +47,11 @@ html,body{min-height:100%;}.layout-boxed html,.layout-boxed body{height:100%}bod
   position: relative;
   overflow: hidden;
 }
+.cover_photo_edit{
+	max-width: 500px;
+	max-height: 300px;
+	margin-bottom: 10px;
+}
 .btn-file input[type=file] {
   position: absolute;
   top: 0;

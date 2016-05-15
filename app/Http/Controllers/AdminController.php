@@ -12,6 +12,7 @@ class AdminController extends Controller
     {
     	session_start();
     	if(isset($_SESSION['logged_in'])){
+    		
 			return view('admin')->with('request',$request);
 		}
 		else{

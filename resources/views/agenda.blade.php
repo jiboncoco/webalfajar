@@ -844,113 +844,37 @@
       </form>
     </div>
     <div class="content1-box-all">
-    <a href="#">
+    @foreach($dt_blog_all_agenda as $dt_blog_all_agenda)
+    <a href="{{ url('view/'.$dt_blog_all_agenda->id) }}">
     <div class="content1-box">
-        <img class="cb-img" src="img/img_news/news1.png" />
+      <img class="cb-img" src="{{ url('images/'.$dt_blog_all_agenda->cover_photo) }}" />
       <div class="cb-title">
-        Lorem Ipsum
+        {!! $dt_blog_all_agenda->dt_blog_title !!}
       </div>
       <div class="cb-desc">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+      <!-- {!! substr(preg_replace("/<img\s[^>]*?src\s*=\s*['\"]([^'\"]*?)['\"][^>]*?>/",'',$dt_blog_all_agenda->dt_blog_text),0,400) !!}...... -->
+      <?php
+            $string = strip_tags($dt_blog_all_agenda->dt_blog_text);
+
+            if (strlen($string) > 300) {
+
+                // truncate string
+                $stringCut = substr($string, 0, 300);
+
+                // make sure it ends in a word so assassinate doesn't become ass...
+                $string = substr($stringCut, 0, strrpos($stringCut, ' ')).'...';
+            }
+            echo $string;
+      ?>
       </div>
       <div class="cb-inf">
-        <i class="fa fa-user"></i> Authors : Admin
+        <i class="fa fa-user"></i> {{$dt_blog_all_agenda->dt_blog_create_by}} ({{$dt_blog_all_agenda->dt_blog_by}})
         <p class="cb-date">
-          31 Desember 2015
+          {{$dt_blog_all_agenda->created_at}}
         </p>
       </div>
     </div>
-    </a>
-    <a href="#">
-    <div class="content1-box">
-        <img class="cb-img" src="img/img_news/news1.png" />
-      <div class="cb-title">
-        Lorem Ipsum
-      </div>
-      <div class="cb-desc">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-      </div>
-      <div class="cb-inf">
-        <i class="fa fa-user"></i> Authors : Admin
-        <p class="cb-date">
-          31 Desember 2015
-        </p>
-      </div>
-    </div>
-    </a>
-    <a href="#">
-    <div class="content1-box">
-        <img class="cb-img" src="img/img_news/news1.png" />
-      <div class="cb-title">
-        Lorem Ipsum
-      </div>
-      <div class="cb-desc">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-      </div>
-      <div class="cb-inf">
-        <i class="fa fa-user"></i> Authors : Admin
-        <p class="cb-date">
-          31 Desember 2015
-        </p>
-      </div>
-    </div>
-    </a>
-    <a href="#">
-    <div class="content1-box">
-        <img class="cb-img" src="img/img_news/news1.png" />
-      <div class="cb-title">
-        Lorem Ipsum
-      </div>
-      <div class="cb-desc">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-      </div>
-      <div class="cb-inf">
-        <i class="fa fa-user"></i> Authors : Admin
-        <p class="cb-date">
-          31 Desember 2015
-        </p>
-      </div>
-    </div>
-    </a>
-    <a href="#">
-    <div class="content1-box">
-        <img class="cb-img" src="img/img_news/news1.png" />
-      <div class="cb-title">
-        Lorem Ipsum
-      </div>
-      <div class="cb-desc">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-      </div>
-      <div class="cb-inf">
-        <i class="fa fa-user"></i> Authors : Admin
-        <p class="cb-date">
-          31 Desember 2015
-        </p>
-      </div>
-    </div>
-    </a>
-    <a href="#">
-    <div class="content1-box">
-        <img class="cb-img" src="img/img_news/news1.png" />
-      <div class="cb-title">
-        Lorem Ipsum
-      </div>
-      <div class="cb-desc">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-      </div>
-      <div class="cb-inf">
-      <i class="fa fa-user"></i> Authors : Admin
-        <p class="cb-date">
-          31 Desember 2015
-        </p>
-      </div>
-    </div>
+    @endforeach
     </a>
 
     </div>

@@ -6,11 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link id="callCss" rel="stylesheet" href="css/bootstrap.min.css" type="text/css" media="screen" charset="utf-8" />
+    <link id="callCss" rel="stylesheet" href="/css/bootstrap.min.css" type="text/css" media="screen" charset="utf-8" />
     <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="{{ url('font-awesome/css/font-awesome.min.css') }}">
-    <link id="callCss"rel="stylesheet" href="css/style.css" type="text/css" media="screen" charset="utf-8" />
+    <link id="callCss"rel="stylesheet" href="/css/style.css" type="text/css" media="screen" charset="utf-8" />
 
 </head>
 <body class="body-view">
@@ -25,111 +25,15 @@
             <h4 class="modal-title" id="myModalLabel">More Comment</h4>
             </div>
                 <div class="modal-body-front">
-                   <div class="line-comment">
+          <div class="line-comment">
+          @foreach($dt_comment_all as $all_comments)
         <div class="lc-img">
           <img class="img-lc" src="{{url('img/img_user/user_male.png')}}">
         </div>
         <div class="lc-text">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-          sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          {{ $all_comments->dt_comment_text }}
         </div>
-      </div>
-      <div class="line-comment">
-        <div class="lc-img">
-          <img class="img-lc" src="{{url('img/img_user/user_male.png')}}">
-        </div>
-        <div class="lc-text">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-          sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-        </div>
-      </div><div class="line-comment">
-        <div class="lc-img">
-          <img class="img-lc" src="{{url('img/img_user/user_male.png')}}">
-        </div>
-        <div class="lc-text">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-          sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-        </div>
-      </div>
-      <div class="line-comment">
-        <div class="lc-img">
-          <img class="img-lc" src="{{url('img/img_user/user_male.png')}}">
-        </div>
-        <div class="lc-text">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-          sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-        </div>
-      </div><div class="line-comment">
-        <div class="lc-img">
-          <img class="img-lc" src="{{url('img/img_user/user_male.png')}}">
-        </div>
-        <div class="lc-text">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-          sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-        </div>
-      </div>
-      <div class="line-comment">
-        <div class="lc-img">
-          <img class="img-lc" src="{{url('img/img_user/user_male.png')}}">
-        </div>
-        <div class="lc-text">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-          sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-        </div>
-      </div>
-      <div class="line-comment">
-        <div class="lc-img">
-          <img class="img-lc" src="{{url('img/img_user/user_male.png')}}">
-        </div>
-        <div class="lc-text">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-          sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-        </div>
-      </div>
-      <div class="line-comment">
-        <div class="lc-img">
-          <img class="img-lc" src="{{url('img/img_user/user_male.png')}}">
-        </div>
-        <div class="lc-text">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-          sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-        </div>
-      </div>
-      <div class="line-comment">
-        <div class="lc-img">
-          <img class="img-lc" src="{{url('img/img_user/user_male.png')}}">
-        </div>
-        <div class="lc-text">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-          sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-        </div>
-      </div>
-      <div class="line-comment">
-        <div class="lc-img">
-          <img class="img-lc" src="{{url('img/img_user/user_male.png')}}">
-        </div>
-        <div class="lc-text">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-          sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-        </div>
-      </div>
-      <div class="line-comment">
-        <div class="lc-img">
-          <img class="img-lc" src="{{url('img/img_user/user_male.png')}}">
-        </div>
-        <div class="lc-text">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-          sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-        </div>
-      </div>
-      <div class="line-comment">
-        <div class="lc-img">
-          <img class="img-lc" src="{{url('img/img_user/user_male.png')}}">
-        </div>
-        <div class="lc-text">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-          sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-        </div>
+          @endforeach
       </div>
                 </form>
             </div>
@@ -814,7 +718,7 @@
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
         <a class="a-li" href="{{ url('/')}}"><li>Home</li></a>
-        <a class="a-li" href="#newsSection"><li>News</li></a>
+        <a class="a-li" href="{{ url('news') }}"><li>News</li></a>
         <li class="dropdown">
           <a class="dropdown-toggle" id="no-li" data-toggle="dropdown" href="#">Yayasan <span class="caret"></span></a>
           <ul class="dropdown-menu">
@@ -911,8 +815,9 @@
   <div class="contentview1">
   <div class="fillcv1">
 
+  @foreach ($dt_blogs as $detail_view)
     <div class="cv-title">
-      LOREM IPSUM
+      {{ $detail_view->dt_blog_title }}
     </div>
 
     <div class="cv-property">
@@ -931,52 +836,48 @@
     </div>
 
     <div class="cv-img">
-      <img height="385" width="570" class="img-cv" src="{{url('img/img_news/news1.png')}}">
+      <img height="385" width="570" class="img-cv" src="{{ url('images/'.$detail_view->cover_photo) }}">
     </div>
 
     <div class="cv-auth">
       <i id="fa-usr" class="fa fa-user"></i>
-      <label class="lab-cv-auth"> Authors : Admin</label>
-      <p class="cv-date">31 Desember 2015</p>
+      <label class="lab-cv-auth"> Authors : {{ $detail_view->dt_blog_create_by }} as ({{ $detail_view->dt_blog_by }})</label>
+      <p class="cv-date">{{ $detail_view->created_at }}</p>
     </div>
 
     <div class="cv-text-news">
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      {!! $detail_view->dt_blog_text !!}
     </div>
 
+    
     <div class="cv-comments">
       <div class="img-user-com">
         <img class="img-uc" src="{{url('img/img_user/user_male.png')}}">
       </div>
       <div class="inp-com">
-      <form>
-        <input class="input-com" name="" placeholder="Comment" required/>
+      <form method="POST" action="{{ url('save_comment') }}">
+        <input class="input-com" name="dt_comment_text" id="dt_comment_text" placeholder="Comment" required/>
+        <input type="hidden" name="dt_comment_blog_id" value="{{ $detail_view->id}}">
+        <input type="hidden" name="_token" value="{{ csrf_token() }}">
         <div class="but-comm">
         <button class="button-com" type="submit">Send</button>
         </div>
       </form>
       </div>
     </div>
+@endforeach
 
     <div class="view-comment">
       <p class="title-vc">Comment</p>
       <div class="line-comment">
+      @foreach($dt_comments as $comments)
         <div class="lc-img">
           <img class="img-lc" src="{{url('img/img_user/user_male.png')}}">
         </div>
-        <div class="lc-text">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-          sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        <div class="lc-text" id="komentar">
+          {{ $comments->dt_comment_text }}
         </div>
-      </div>
-      <div class="line-comment">
-        <div class="lc-img">
-          <img class="img-lc" src="{{url('img/img_user/user_male.png')}}">
-        </div>
-        <div class="lc-text">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-          sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-        </div>
+      @endforeach        
       </div>
     </div>
 
@@ -1111,11 +1012,11 @@
 <a href="#" class="go-top" ><i class="glyphicon glyphicon-arrow-up"></i></a>
 
 
-<script src="js/jquery-1.9.1.min.js"></script>
-<script src="js/bootstrap.min.js" type="text/javascript"></script>
-<script src="js/jquery.scrollTo-1.4.3.1-min.js" type="text/javascript"></script>
-<script src="js/jquery.easing-1.3.min.js"></script>
-<script src="js/default.js"></script>
+<script src="/js/jquery-1.9.1.min.js"></script>
+<script src="/js/bootstrap.min.js" type="text/javascript"></script>
+<script src="/js/jquery.scrollTo-1.4.3.1-min.js" type="text/javascript"></script>
+<script src="/js/jquery.easing-1.3.min.js"></script>
+<script src="/js/default.js"></script>
 
 
 <script type="text/javascript">
