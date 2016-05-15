@@ -83,8 +83,8 @@
           </a>
           <div class="attr">
           <hr/>
-            <label><a href="{{ url('manage_post/edit_post/'.$dt_blog_admin->id) }}"> <i class="fa fa-pencil-square-o"></i> </a></label>
-            <label><a href="{{ url('manage_post/delete_post/'.$dt_blog_admin->id) }}"> <i class="fa fa-trash"></i> </a></label>
+            <label><a href="{{ url('manage_post/edit_post/'.$dt_blog_admin->id) }}"> <i style="font-size:24px;margin-right:20px;" class="fa fa-pencil-square-o"></i> </a></label>
+            <label><a href="{{ url('manage_post/delete_post/'.$dt_blog_admin->id) }}"> <i style="font-size:24px;color:rgb(202, 65, 65)" class="fa fa-trash"></i> </a></label>
           </div>
           </div>
           @endforeach
