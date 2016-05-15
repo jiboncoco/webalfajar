@@ -466,7 +466,7 @@
     @foreach($dt_blog_all_portal_sd as $dt_blog_all_portal_sd)
     <a href="{{ url('view/'.$dt_blog_all_portal_sd->id) }}">
     <div class="content1-box">
-      <img class="cb-img" src="{{ url('images/'.$dt_blog_all_portal_tk->cover_photo) }}" />
+      <img class="cb-img" src="{{ url('images/'.$dt_blog_all_portal_sd ->cover_photo) }}" />
       <div class="cb-title">
         {!! $dt_blog_all_portal_sd->dt_blog_title !!}
       </div>

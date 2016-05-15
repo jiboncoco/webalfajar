@@ -55,66 +55,40 @@
           </div>
 
         <div class="admin-news">
+        @foreach($dt_blog_admins as $dt_blog_admin)
+        
           <div class="detail-news">
+          <a href="{{ url('view/'.$dt_blog_admin->id) }}">
             <div class="img-detail-news">
-              <img class="img-dn" src="{{ url('img/img_news/news2.jpg') }}">
+              <img class="img-dn" src="{{ url('images/'.$dt_blog_admin ->cover_photo) }}">
             </div>
             <div class="title-detail-news">
-              LOREM IPSUM
+              {{ $dt_blog_admin->dt_blog_title }}
             </div>
             <div class="content-detail-news">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-              tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-              quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-              consequat.
-            </div>
-          </div>
+              <?php
+            $string = strip_tags($dt_blog_admin->dt_blog_text);
 
-          <div class="detail-news">
-            <div class="img-detail-news">
-              <img class="img-dn" src="{{ url('img/img_news/news2.jpg') }}">
-            </div>
-            <div class="title-detail-news">
-              LOREM IPSUM
-            </div>
-            <div class="content-detail-news">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-              tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-              quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-              consequat.
-            </div>
-          </div>
+            if (strlen($string) > 300) {
 
-          <div class="detail-news">
-            <div class="img-detail-news">
-              <img class="img-dn" src="{{ url('img/img_news/news2.jpg') }}">
-            </div>
-            <div class="title-detail-news">
-              LOREM IPSUM
-            </div>
-            <div class="content-detail-news">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-              tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-              quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-              consequat.
-            </div>
-          </div>
+                // truncate string
+                $stringCut = substr($string, 0, 300);
 
-          <div class="detail-news">
-            <div class="img-detail-news">
-              <img class="img-dn" src="{{ url('img/img_news/news2.jpg') }}">
+                // make sure it ends in a word so assassinate doesn't become ass...
+                $string = substr($stringCut, 0, strrpos($stringCut, ' ')).'...';
+            }
+                echo $string;
+              ?>
             </div>
-            <div class="title-detail-news">
-              LOREM IPSUM
-            </div>
-            <div class="content-detail-news">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-              tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-              quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-              consequat.
-            </div>
+          </a>
+          <div class="attr">
+          <hr/>
+            <label><a href="{{ url('manage_post/edit_post/'.$dt_blog_admin->id) }}"> Edit Post </a></label>
+            <label><a href="{{ url('manage_post/delete_post/'.$dt_blog_admin->id) }}"> Delete Post </a></label>
           </div>
-        </div>
+          </div>
+          @endforeach
+          </div>
 
         </section><!-- /.content -->
         <div class="button-admin">

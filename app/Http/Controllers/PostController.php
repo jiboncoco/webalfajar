@@ -107,7 +107,7 @@ class PostController extends Controller
 
         $post->save();
 
-        return redirect(url('manage_post/master_post'));
+        return redirect(url('manage'));
     }
 
     public function delete_post($id)

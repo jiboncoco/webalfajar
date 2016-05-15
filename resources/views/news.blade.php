@@ -848,7 +848,7 @@
     <div class="content1-box">
       <img class="cb-img" src="{{ url('images/'.$dt_blog_all_news->cover_photo) }}" />
       <div class="cb-title">
-        {!! $dt_blog_all_news->dt_blog_title !!}
+        {{ $dt_blog_all_news->dt_blog_title }}
       </div>
       <div class="cb-desc">
       <!-- {!! substr(preg_replace("/<img\s[^>]*?src\s*=\s*['\"]([^'\"]*?)['\"][^>]*?>/",'',$dt_blog_all_news->dt_blog_text),0,400) !!}...... -->

@@ -121,15 +121,31 @@
 </div>
 <div class="container">
                 <div class="row" style="border-bottom:none;">
-      <a href="#">
+      @foreach($dt_blogs as $dt_blog)
+      <a href="{{ url('view/'.$dt_blog->id) }}">
       <div id="info-boxx" class="col-md-4 col-xs-12">
       <div class="info-img">
-        <img class="infoimg2 animated bounceInLeft" src="img/img_home/img-1.png" ></div>
-        <h4>Flat Design</h4>
-        <p class="animated flipInY">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et quam est. Mauris faucibus tellus ac auctor posuere. </p>
+        <img class="infoimg2 animated bounceInLeft" src="{{ url('images/'.$dt_blog->cover_photo) }}" ></div>
+        <h4>{{ $dt_blog->dt_blog_title }}</h4>
+        <p class="animated flipInY">
+                <?php
+            $string = strip_tags($dt_blog->dt_blog_text);
+
+            if (strlen($string) > 300) {
+
+                // truncate string
+                $stringCut = substr($string, 0, 150);
+
+                // make sure it ends in a word so assassinate doesn't become ass...
+                $string = substr($stringCut, 0, strrpos($stringCut, ' ')).'...';
+            }
+            echo $string;
+      ?>
+        </p>
       </div>
       </a>
-      <a href="#">
+      @endforeach
+     <!--  <a href="#">
       <div id="info-boxx" class="col-md-4 col-xs-12">
         <div class="info-img">
         <img class="infoimg2 animated bounceInDown" src="img/img_home/img-2.png" ></div>
@@ -144,7 +160,7 @@
         <h4>Browser  Compatibility</h4>
          <p class="animated flipInY">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et quam est. Mauris faucibus tellus ac auctor posuere. </p>
       </div>
-      </a>
+      </a> -->
     </div>
 </div>
 <a href="{{ url('news') }}" class="btn btn-large btn-primary animated rotateInUpLeft" id="btn-rm-s">ALL NEWS</a>

@@ -9,9 +9,9 @@ html,body{min-height:100%;}.layout-boxed html,.layout-boxed body{height:100%}bod
 .admin-seacrh{margin-top: 70px !important;height: 50px;}
 .admin-news{padding:10px;display: inline-table;}
 .detail-news{width:45%;padding: 10px;display: inline-table;border:1px solid #eee;margin:25px;cursor: pointer}
-.img-detail-news{width: 95%;margin:auto;padding:10px 0px;}.img-dn{width: 100%;}
-.title-detail-news{text-align: left;font-size: 16px;font-weight: bold;padding: 10px;}
-.content-detail-news{text-align: justify;padding: 10px;}
+.img-detail-news{width: 95%;margin:auto;padding:10px 0px;}.img-dn{width: 100%;height: 250px;}
+.title-detail-news{text-align: left;font-size: 16px;font-weight: bold;padding: 10px;color: #333;}
+.content-detail-news{text-align: justify;padding: 10px;color: #333;}
 .detail-news:hover{border: 1px solid #B4CCD4;}
 .img-detail-news:hover{opacity:0.6;transition: all .5s ease-in-out;}
 .admin-cb-button{
@@ -30,6 +30,10 @@ html,body{min-height:100%;}.layout-boxed html,.layout-boxed body{height:100%}bod
 }.button-admin{
 	padding: 30px;
 	text-align: center;
+}
+.attr{
+	float: right;
+	padding: 10px;
 }
 .smp1{
 	width: 30%;

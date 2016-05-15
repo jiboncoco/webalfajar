@@ -101,9 +101,11 @@ h1.brand {
 
 #newsServices p {
     color: #5E5E5E;
-    font-size: 19px;
+    font-size: 16px;
     line-height: 27px;
     padding-bottom: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
 #informasiServices{background: #fff;text-align: center;border-top: 1px solid #ddd;}
@@ -526,6 +528,8 @@ height: 2px;
 }
 .infoimg2{
 	padding: 20px;
+	width: 370px;
+    height: 250px;
 }
 
 @media (max-width: 1200px){
@@ -1029,7 +1033,6 @@ border-bottom: 0;
   margin: 0px;
 }
 .content2{
-	border-left: 1px solid #EEEEEE;
 	width: 30%;
 	float: right;
 	padding: 19px;
@@ -1241,6 +1244,7 @@ border-bottom: 0;
 	padding: 10px;
 	overflow-x: hidden;
     overflow-y: auto;
+    border-right: 1px solid #EEEEEE;
 }
 .fillcv1{
 	overflow-x: hidden;

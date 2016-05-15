@@ -37,7 +37,7 @@
     <blockquote class="master_p">Edit Post</blockquote>
     <div class="master_post_content">
 
-      <form method="POST"  action="{{ url('manage_post/save_edit_post') }}">
+      <form method="POST"  action="{{ url('manage_post/save_edit_post') }}" enctype="multipart/form-data">
         <label for="exampleInputPassword1">Select a Type</label>
       <select id="selecttype" name="dt_blog_type" class="form-control">
       @foreach($m_blogs as $m_blog)
@@ -55,7 +55,7 @@
 
         <label for="exampleInputPassword1">Cover Photo</label><br>
       <img class="cover_photo_edit" src="{{ url('images/'.$data->cover_photo) }}">
-      <input value="{{ $data->cover_photo }}" type="file" name="cover_photo" required/>
+      <input type="file" name="cover_photo" required/>
       <br>
     <div id="inputdate">
     
@@ -71,6 +71,7 @@
         <div class="form-group">
           <label for="exampleInputPassword1">Title</label>
           <input type="text" value="{{ $data->dt_blog_title}}" name="dt_blog_title" class="form-control" id="exampleInputEmail1" placeholder="Title">
+          <input type="hidden" name="id" value="{{ $data->id }}">
           <input type="hidden" name="_token" value="{{ csrf_token() }}">
         </div>
     <br>

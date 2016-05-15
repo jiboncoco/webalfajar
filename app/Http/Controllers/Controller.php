@@ -187,12 +187,12 @@ class Controller extends BaseController
     {
        session_start();
         if(isset($_SESSION['logged_in'])){
-            $dt_blog_portal_sd = \DB::table('dt_blog')->where('dt_blog_for', '=', 'SD')->get();
-            return \View::make('portal_sd')->with('dt_blog_portal_sd', $dt_blog_portal_sd);
+            $dt_blog_all_portal_sd = \DB::table('dt_blog')->where('dt_blog_for', '=', 'SD')->get();
+            return \View::make('portal_sd')->with('dt_blog_all_portal_sd', $dt_blog_all_portal_sd);
         }
         else{
-            $dt_blog_portal_sd = \DB::table('dt_blog')->where('dt_blog_for', '=', 'SD')->get();
-            return \View::make('portal_sd')->with('dt_blog_portal_sd', $dt_blog_portal_sd);
+            $dt_blog_all_portal_sd = \DB::table('dt_blog')->where('dt_blog_for', '=', 'SD')->get();
+            return \View::make('portal_sd')->with('dt_blog_all_portal_sd', $dt_blog_all_portal_sd);
         }
     }
 
@@ -494,15 +494,17 @@ class Controller extends BaseController
        session_start();
         if(isset($_SESSION['logged_in'])){
             $dt_blog = array('data'=>\App\dt_blog::find($id));
+            $dt_blog_random=\App\dt_blog::all()->random(3);
             $dt_comment = \DB::table('dt_comment')->where('dt_comment_blog_id', '=', $id)->take(2)->get();
             $dt_comment_all = \DB::table('dt_comment')->where('dt_comment_blog_id', '=', $id)->get();
-            return \View::make('view')->with('dt_blogs',$dt_blog)->with('dt_comments',$dt_comment)->with('dt_comment_all',$dt_comment_all);
+            return \View::make('view')->with('dt_blog_random',$dt_blog_random)->with('dt_blogs',$dt_blog)->with('dt_comments',$dt_comment)->with('dt_comment_all',$dt_comment_all);
         }
         else{
             $dt_blog = array('data'=>\App\dt_blog::find($id));
+            $dt_blog_random=\App\dt_blog::all()->random(3);
             $dt_comment = \DB::table('dt_comment')->where('dt_comment_blog_id', '=', $id)->take(2)->get();
             $dt_comment_all = \DB::table('dt_comment')->where('dt_comment_blog_id', '=', $id)->get();
-            return \View::make('view')->with('dt_blogs',$dt_blog)->with('dt_comments',$dt_comment)->with('dt_comment_all',$dt_comment_all);
+            return \View::make('view')->with('dt_blog_random',$dt_blog_random)->with('dt_blogs',$dt_blog)->with('dt_comments',$dt_comment)->with('dt_comment_all',$dt_comment_all);
         }
     }
 

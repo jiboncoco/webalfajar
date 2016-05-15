@@ -887,18 +887,13 @@
 
     <div class="other-news">
       <p class="title-on">Other News</p>
-      <a href="#"><div class="on-box">
-        <img class="on-img" src="{{url('img/img_news/news1.png')}}">
-        <div class="on-title">Lorem Ipsum</div>
-      </div></a>
-      <a href="#"><div class="on-box">
-        <img class="on-img" src="{{url('img/img_news/news1.png')}}">
-        <div class="on-title">Lorem Ipsum</div>
-      </div></a>
-      <a href="#"><div class="on-box">
-        <img class="on-img" src="{{url('img/img_news/news1.png')}}">
-        <div class="on-title">Lorem Ipsum</div>
-      </div></a>
+      @foreach($dt_blog_random as $dt_blog_random)
+      <a href="{{ url('view/'.$dt_blog_random->id) }}"><div class="on-box">
+        <img class="on-img" src="{{ url('images/'.$dt_blog_random->cover_photo) }}">
+        <div class="on-title">{{ $dt_blog_random->dt_blog_title }}</div>
+      </div>
+      </a>
+      @endforeach
     </div>
 
   </div>
