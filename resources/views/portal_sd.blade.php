@@ -387,7 +387,7 @@
 
             <div class="carousel-inner">
                 <div class="item active">
-                    <a class="cntr" href="#"><img class="img-slide" src="/img/img_news/TK.png" alt=""></a>
+                    <a class="cntr" href="#"><img class="img-slide" src="{{ url('img/img_news/TK.png') }}" alt=""></a>
                     <div class="desc-img">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et quam est. Mauris faucibus tellus ac auctor posuere.
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et quam est. Mauris faucibus tellus ac auctor posuere.
@@ -397,7 +397,7 @@
                 </div>
 
                 <div class="item">
-                    <a class="cntr" href="#"><img class="img-slide" src="/img/img_news/SD.png" alt=""></a>
+                    <a class="cntr" href="#"><img class="img-slide" src="{{ url('img/img_news/SD.png') }}" alt=""></a>
                     <div class="desc-img">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et quam est. Mauris faucibus tellus ac auctor posuere.
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et quam est. Mauris faucibus tellus ac auctor posuere.
@@ -407,7 +407,7 @@
                 </div>
 
                 <div class="item">
-                    <a class="cntr" href="#"><img class="img-slide" src="/img/img_news/SMP.png" alt=""></a>
+                    <a class="cntr" href="#"><img class="img-slide" src="{{ url('img/img_news/SMP.png') }}" alt=""></a>
                     <div class="desc-img">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et quam est. Mauris faucibus tellus ac auctor posuere.
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et quam est. Mauris faucibus tellus ac auctor posuere.
@@ -417,7 +417,7 @@
                 </div>
 
                 <div class="item">
-                    <a class="cntr" href="#"><img class="img-slide" src="/img/img_news/SMA.png" alt=""></a>
+                    <a class="cntr" href="#"><img class="img-slide" src="{{ url('img/img_news/SMA.png') }}" alt=""></a>
                     <div class="desc-img">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et quam est. Mauris faucibus tellus ac auctor posuere.
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et quam est. Mauris faucibus tellus ac auctor posuere.

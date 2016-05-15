@@ -387,7 +387,7 @@
 
             <div class="carousel-inner">
                 <div class="item active">
-                    <a class="cntr" href="#"><img class="img-slide" src="/img/img_news/TK.png" alt=""></a>
+                    <a class="cntr" href="#"><img class="img-slide" src="{{ url('img/img_news/TK.png') }}" alt=""></a>
                     <div class="desc-img">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et quam est. Mauris faucibus tellus ac auctor posuere.
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et quam est. Mauris faucibus tellus ac auctor posuere.
@@ -397,7 +397,7 @@
                 </div>
 
                 <div class="item">
-                    <a class="cntr" href="#"><img class="img-slide" src="/img/img_news/SD.png" alt=""></a>
+                    <a class="cntr" href="#"><img class="img-slide" src="{{ url('img/img_news/SD.png') }}" alt=""></a>
                     <div class="desc-img">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et quam est. Mauris faucibus tellus ac auctor posuere.
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et quam est. Mauris faucibus tellus ac auctor posuere.
@@ -407,7 +407,7 @@
                 </div>
 
                 <div class="item">
-                    <a class="cntr" href="#"><img class="img-slide" src="/img/img_news/SMP.png" alt=""></a>
+                    <a class="cntr" href="#"><img class="img-slide" src="{{ url('img/img_news/SMP.png') }}" alt=""></a>
                     <div class="desc-img">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et quam est. Mauris faucibus tellus ac auctor posuere.
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et quam est. Mauris faucibus tellus ac auctor posuere.
@@ -417,7 +417,7 @@
                 </div>
 
                 <div class="item">
-                    <a class="cntr" href="#"><img class="img-slide" src="/img/img_news/SMA.png" alt=""></a>
+                    <a class="cntr" href="#"><img class="img-slide" src="{{ url('img/img_news/SMA.png') }}" alt=""></a>
                     <div class="desc-img">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et quam est. Mauris faucibus tellus ac auctor posuere.
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et quam est. Mauris faucibus tellus ac auctor posuere.
@@ -461,17 +461,17 @@
     </div>
     </div>
     <div class="content1-box-all">
-    @foreach($dt_blog_all_portal_smp as $dt_blog_all_portal_smp)
-    <a href="{{ url('view/'.$dt_blog_all_portal_smp->id) }}">
+    @foreach($dt_blog_portal_smp as $dt_blog_portal_smp)
+    <a href="{{ url('view/'.$dt_blog_portal_smp->id) }}">
     <div class="content1-box">
-      <img class="cb-img" src="{{ url('images/'.$dt_blog_all_portal_sma->cover_photo) }}" />
+      <img class="cb-img" src="{{ url('images/'.$dt_blog_portal_smp->cover_photo) }}" />
       <div class="cb-title">
-        {!! $dt_blog_all_portal_smp->dt_blog_title !!}
+        {!! $dt_blog_portal_smp->dt_blog_title !!}
       </div>
       <div class="cb-desc">
-      <!-- {!! substr(preg_replace("/<img\s[^>]*?src\s*=\s*['\"]([^'\"]*?)['\"][^>]*?>/",'',$dt_blog_all_portal_smp->dt_blog_text),0,400) !!}...... -->
+      <!-- {!! substr(preg_replace("/<img\s[^>]*?src\s*=\s*['\"]([^'\"]*?)['\"][^>]*?>/",'',$dt_blog_portal_smp->dt_blog_text),0,400) !!}...... -->
       <?php
-            $string = strip_tags($dt_blog_all_portal_smp->dt_blog_text);
+            $string = strip_tags($dt_blog_portal_smp->dt_blog_text);
 
             if (strlen($string) > 300) {
 
@@ -485,9 +485,9 @@
       ?>
       </div>
       <div class="cb-inf">
-        <i class="fa fa-user"></i> {{$dt_blog_all_portal_smp->dt_blog_create_by}} ({{$dt_blog_all_portal_smp->dt_blog_by}})
+        <i class="fa fa-user"></i> {{$dt_blog_portal_smp->dt_blog_create_by}} ({{$dt_blog_portal_smp->dt_blog_by}})
         <p class="cb-date">
-          {{$dt_blog_all_portal_smp->created_at}}
+          {{$dt_blog_portal_smp->created_at}}
         </p>
       </div>
     </div>
