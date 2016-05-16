@@ -28,13 +28,13 @@ class Controller extends BaseController
     {
        session_start();
         if(isset($_SESSION['logged_in'])){
-            $dt_blog_all_news = \DB::table('dt_blog')->where('dt_blog_type', '=', 'news')->get();
+            $dt_blog_all_news = \DB::table('dt_blog')->where('dt_blog_type', '=', 'news')->orderBy('id', 'desc')->get();
             // return $dt_blog_all_news;
             return \View::make('news')->with('dt_blog_all_news', $dt_blog_all_news);
             
         }
         else{
-            $dt_blog_all_news = \DB::table('dt_blog')->where('dt_blog_type', '=', 'news')->get();
+            $dt_blog_all_news = \DB::table('dt_blog')->where('dt_blog_type', '=', 'news')->orderBy('id', 'desc')->get();
             // return $dt_blog_all_news;
             return \View::make('news')->with('dt_blog_all_news', $dt_blog_all_news);
             
@@ -45,11 +45,11 @@ class Controller extends BaseController
     {
        session_start();
         if(isset($_SESSION['logged_in'])){
-            $dt_blog_all_agenda = \DB::table('dt_blog')->where('dt_blog_type', '=', 'agenda')->get();
+            $dt_blog_all_agenda = \DB::table('dt_blog')->where('dt_blog_type', '=', 'agenda')->orderBy('id', 'desc')->get();
             return \View::make('agenda')->with('dt_blog_all_agenda', $dt_blog_all_agenda);
         }
         else{
-            $dt_blog_all_agenda = \DB::table('dt_blog')->where('dt_blog_type', '=', 'agenda')->get();
+            $dt_blog_all_agenda = \DB::table('dt_blog')->where('dt_blog_type', '=', 'agenda')->orderBy('id', 'desc')->get();
             return \View::make('agenda')->with('dt_blog_all_agenda', $dt_blog_all_agenda);
         }
     }
@@ -58,11 +58,11 @@ class Controller extends BaseController
     {
        session_start();
         if(isset($_SESSION['logged_in'])){
-            $dt_blog_all_pengumuman = \DB::table('dt_blog')->where('dt_blog_type', '=', 'announcement')->get();
+            $dt_blog_all_pengumuman = \DB::table('dt_blog')->where('dt_blog_type', '=', 'announcement')->orderBy('id', 'desc')->get();
             return \View::make('pengumuman')->with('dt_blog_all_pengumuman', $dt_blog_all_pengumuman);
         }
         else{
-            $dt_blog_all_pengumuman = \DB::table('dt_blog')->where('dt_blog_type', '=', 'announcement')->get();
+            $dt_blog_all_pengumuman = \DB::table('dt_blog')->where('dt_blog_type', '=', 'announcement')->orderBy('id', 'desc')->get();
             return \View::make('pengumuman')->with('dt_blog_all_pengumuman', $dt_blog_all_pengumuman);
         }
     }
@@ -71,11 +71,11 @@ class Controller extends BaseController
     {
        session_start();
         if(isset($_SESSION['logged_in'])){
-            $dt_blog_all_artikel = \DB::table('dt_blog')->where('dt_blog_type', '=', 'article')->get();
+            $dt_blog_all_artikel = \DB::table('dt_blog')->where('dt_blog_type', '=', 'article')->orderBy('id', 'desc')->get();
             return \View::make('artikel')->with('dt_blog_all_artikel', $dt_blog_all_artikel);
         }
         else{
-            $dt_blog_all_artikel = \DB::table('dt_blog')->where('dt_blog_type', '=', 'article')->get();
+            $dt_blog_all_artikel = \DB::table('dt_blog')->where('dt_blog_type', '=', 'article')->orderBy('id', 'desc')->get();
             return \View::make('artikel')->with('dt_blog_all_artikel', $dt_blog_all_artikel);
         }
     }
@@ -84,11 +84,11 @@ class Controller extends BaseController
     {
        session_start();
         if(isset($_SESSION['logged_in'])){
-            $dt_blog_all_portal_tk = \DB::table('dt_blog')->where('dt_blog_for', '=', 'TK')->get();
+            $dt_blog_all_portal_tk = \DB::table('dt_blog')->where('dt_blog_for', '=', 'TK')->orderBy('id', 'desc')->get();
             return \View::make('portal_tk')->with('dt_blog_all_portal_tk', $dt_blog_all_portal_tk);
         }
         else{
-            $dt_blog_all_portal_tk = \DB::table('dt_blog')->where('dt_blog_for', '=', 'TK')->get();
+            $dt_blog_all_portal_tk = \DB::table('dt_blog')->where('dt_blog_for', '=', 'TK')->orderBy('id', 'desc')->get();
             return \View::make('portal_tk')->with('dt_blog_all_portal_tk', $dt_blog_all_portal_tk);
         }
     }
@@ -97,11 +97,11 @@ class Controller extends BaseController
     {
        session_start();
         if(isset($_SESSION['logged_in'])){
-            $dt_blog_all_portal_tk = \DB::table('dt_blog')->where('dt_blog_type', '=', 'all', 'AND', 'dt_blog_for', '=', 'TK')->get();
+            $dt_blog_all_portal_tk = \DB::table('dt_blog')->where('dt_blog_type', '=', 'all', 'AND', 'dt_blog_for', '=', 'TK')->orderBy('id', 'desc')->get();
             return \View::make('portal_tk')->with('dt_blog_all_portal_tk', $dt_blog_all_portal_tk);
         }
         else{
-            $dt_blog_all_portal_tk = \DB::table('dt_blog')->where('dt_blog_type', '=', 'all', 'AND', 'dt_blog_for', '=', 'TK')->get();
+            $dt_blog_all_portal_tk = \DB::table('dt_blog')->where('dt_blog_type', '=', 'all', 'AND', 'dt_blog_for', '=', 'TK')->orderBy('id', 'desc')->get();
             return \View::make('portal_tk')->with('dt_blog_all_portal_tk', $dt_blog_all_portal_tk);
         }
     }    
@@ -113,14 +113,14 @@ class Controller extends BaseController
             $dt_blog_all_portal_tk = \DB::table('dt_blog')->where([
                                                                     ['dt_blog_type', '=', 'news'],
                                                                     ['dt_blog_for', '=', 'TK']
-                                                                    ])->get();
+                                                                    ])->orderBy('id', 'desc')->get();
             return \View::make('portal_tk')->with('dt_blog_all_portal_tk', $dt_blog_all_portal_tk);
         }
         else{
             $dt_blog_all_portal_tk = \DB::table('dt_blog')->where([
                                                                     ['dt_blog_type', '=', 'news'],
                                                                     ['dt_blog_for', '=', 'TK']
-                                                                    ])->get();
+                                                                    ])->orderBy('id', 'desc')->get();
             return \View::make('portal_tk')->with('dt_blog_all_portal_tk', $dt_blog_all_portal_tk);
         }
     }    
@@ -132,14 +132,14 @@ class Controller extends BaseController
             $dt_blog_all_portal_tk = \DB::table('dt_blog')->where([
                                                                     ['dt_blog_type', '=', 'agenda'],
                                                                     ['dt_blog_for', '=', 'TK']
-                                                                    ])->get();
+                                                                    ])->orderBy('id', 'desc')->get();
             return \View::make('portal_tk')->with('dt_blog_all_portal_tk', $dt_blog_all_portal_tk);
         }
         else{
             $dt_blog_all_portal_tk = \DB::table('dt_blog')->where([
                                                                     ['dt_blog_type', '=', 'agenda'],
                                                                     ['dt_blog_for', '=', 'TK']
-                                                                    ])->get();
+                                                                    ])->orderBy('id', 'desc')->get();
             return \View::make('portal_tk')->with('dt_blog_all_portal_tk', $dt_blog_all_portal_tk);
         }
     }
@@ -151,14 +151,14 @@ class Controller extends BaseController
             $dt_blog_all_portal_tk = \DB::table('dt_blog')->where([
                                                                     ['dt_blog_type', '=', 'announcement'],
                                                                     ['dt_blog_for', '=', 'TK']
-                                                                    ])->get();
+                                                                    ])->orderBy('id', 'desc')->get();
             return \View::make('portal_tk')->with('dt_blog_all_portal_tk', $dt_blog_all_portal_tk);
         }
         else{
             $dt_blog_all_portal_tk = \DB::table('dt_blog')->where([
                                                                     ['dt_blog_type', '=', 'announcement'],
                                                                     ['dt_blog_for', '=', 'TK']
-                                                                    ])->get();
+                                                                    ])->orderBy('id', 'desc')->get();
             return \View::make('portal_tk')->with('dt_blog_all_portal_tk', $dt_blog_all_portal_tk);
         }
     }    
@@ -170,14 +170,14 @@ class Controller extends BaseController
             $dt_blog_all_portal_tk = \DB::table('dt_blog')->where([
                                                                     ['dt_blog_type', '=', 'article'],
                                                                     ['dt_blog_for', '=', 'TK']
-                                                                    ])->get();
+                                                                    ])->orderBy('id', 'desc')->get();
             return \View::make('portal_tk')->with('dt_blog_all_portal_tk', $dt_blog_all_portal_tk);
         }
         else{
             $dt_blog_all_portal_tk = \DB::table('dt_blog')->where([
                                                                     ['dt_blog_type', '=', 'article'],
                                                                     ['dt_blog_for', '=', 'TK']
-                                                                    ])->get();
+                                                                    ])->orderBy('id', 'desc')->get();
             return \View::make('portal_tk')->with('dt_blog_all_portal_tk', $dt_blog_all_portal_tk);
         }
     }    
@@ -187,11 +187,11 @@ class Controller extends BaseController
     {
        session_start();
         if(isset($_SESSION['logged_in'])){
-            $dt_blog_all_portal_sd = \DB::table('dt_blog')->where('dt_blog_for', '=', 'SD')->get();
+            $dt_blog_all_portal_sd = \DB::table('dt_blog')->where('dt_blog_for', '=', 'SD')->orderBy('id', 'desc')->get();
             return \View::make('portal_sd')->with('dt_blog_all_portal_sd', $dt_blog_all_portal_sd);
         }
         else{
-            $dt_blog_all_portal_sd = \DB::table('dt_blog')->where('dt_blog_for', '=', 'SD')->get();
+            $dt_blog_all_portal_sd = \DB::table('dt_blog')->where('dt_blog_for', '=', 'SD')->orderBy('id', 'desc')->get();
             return \View::make('portal_sd')->with('dt_blog_all_portal_sd', $dt_blog_all_portal_sd);
         }
     }
@@ -200,11 +200,11 @@ class Controller extends BaseController
     {
        session_start();
         if(isset($_SESSION['logged_in'])){
-            $dt_blog_all_portal_sd = \DB::table('dt_blog')->where('dt_blog_type', '=', 'all', 'AND', 'dt_blog_for', '=', 'sd')->get();
+            $dt_blog_all_portal_sd = \DB::table('dt_blog')->where('dt_blog_type', '=', 'all', 'AND', 'dt_blog_for', '=', 'sd')->orderBy('id', 'desc')->get();
             return \View::make('portal_sd')->with('dt_blog_all_portal_sd', $dt_blog_all_portal_sd);
         }
         else{
-            $dt_blog_all_portal_sd = \DB::table('dt_blog')->where('dt_blog_type', '=', 'all', 'AND', 'dt_blog_for', '=', 'sd')->get();
+            $dt_blog_all_portal_sd = \DB::table('dt_blog')->where('dt_blog_type', '=', 'all', 'AND', 'dt_blog_for', '=', 'sd')->orderBy('id', 'desc')->get();
             return \View::make('portal_sd')->with('dt_blog_all_portal_sd', $dt_blog_all_portal_sd);
         }
     }    
@@ -216,14 +216,14 @@ class Controller extends BaseController
             $dt_blog_all_portal_sd = \DB::table('dt_blog')->where([
                                                                     ['dt_blog_type', '=', 'news'],
                                                                     ['dt_blog_for', '=', 'sd']
-                                                                    ])->get();
+                                                                    ])->orderBy('id', 'desc')->get();
             return \View::make('portal_sd')->with('dt_blog_all_portal_sd', $dt_blog_all_portal_sd);
         }
         else{
             $dt_blog_all_portal_sd = \DB::table('dt_blog')->where([
                                                                     ['dt_blog_type', '=', 'news'],
                                                                     ['dt_blog_for', '=', 'sd']
-                                                                    ])->get();
+                                                                    ])->orderBy('id', 'desc')->get();
             return \View::make('portal_sd')->with('dt_blog_all_portal_sd', $dt_blog_all_portal_sd);
         }
     }    
@@ -235,14 +235,14 @@ class Controller extends BaseController
             $dt_blog_all_portal_sd = \DB::table('dt_blog')->where([
                                                                     ['dt_blog_type', '=', 'agenda'],
                                                                     ['dt_blog_for', '=', 'sd']
-                                                                    ])->get();
+                                                                    ])->orderBy('id', 'desc')->get();
             return \View::make('portal_sd')->with('dt_blog_all_portal_sd', $dt_blog_all_portal_sd);
         }
         else{
             $dt_blog_all_portal_sd = \DB::table('dt_blog')->where([
                                                                     ['dt_blog_type', '=', 'agenda'],
                                                                     ['dt_blog_for', '=', 'sd']
-                                                                    ])->get();
+                                                                    ])->orderBy('id', 'desc')->get();
             return \View::make('portal_sd')->with('dt_blog_all_portal_sd', $dt_blog_all_portal_sd);
         }
     }
@@ -254,14 +254,14 @@ class Controller extends BaseController
             $dt_blog_all_portal_sd = \DB::table('dt_blog')->where([
                                                                     ['dt_blog_type', '=', 'announcement'],
                                                                     ['dt_blog_for', '=', 'sd']
-                                                                    ])->get();
+                                                                    ])->orderBy('id', 'desc')->get();
             return \View::make('portal_sd')->with('dt_blog_all_portal_sd', $dt_blog_all_portal_sd);
         }
         else{
             $dt_blog_all_portal_sd = \DB::table('dt_blog')->where([
                                                                     ['dt_blog_type', '=', 'announcement'],
                                                                     ['dt_blog_for', '=', 'sd']
-                                                                    ])->get();
+                                                                    ])->orderBy('id', 'desc')->get();
             return \View::make('portal_sd')->with('dt_blog_all_portal_sd', $dt_blog_all_portal_sd);
         }
     }    
@@ -273,14 +273,14 @@ class Controller extends BaseController
             $dt_blog_all_portal_sd = \DB::table('dt_blog')->where([
                                                                     ['dt_blog_type', '=', 'article'],
                                                                     ['dt_blog_for', '=', 'sd']
-                                                                    ])->get();
+                                                                    ])->orderBy('id', 'desc')->get();
             return \View::make('portal_sd')->with('dt_blog_all_portal_sd', $dt_blog_all_portal_sd);
         }
         else{
             $dt_blog_all_portal_sd = \DB::table('dt_blog')->where([
                                                                     ['dt_blog_type', '=', 'article'],
                                                                     ['dt_blog_for', '=', 'sd']
-                                                                    ])->get();
+                                                                    ])->orderBy('id', 'desc')->get();
             return \View::make('portal_sd')->with('dt_blog_all_portal_sd', $dt_blog_all_portal_sd);
         }
     }  
@@ -289,11 +289,11 @@ class Controller extends BaseController
     {
        session_start();
         if(isset($_SESSION['logged_in'])){
-            $dt_blog_portal_smp = \DB::table('dt_blog')->where('dt_blog_for', '=', 'SMP')->get();
+            $dt_blog_portal_smp = \DB::table('dt_blog')->where('dt_blog_for', '=', 'SMP')->orderBy('id', 'desc')->get();
             return \View::make('portal_smp')->with('dt_blog_portal_smp', $dt_blog_portal_smp);
         }
         else{
-            $dt_blog_portal_smp = \DB::table('dt_blog')->where('dt_blog_for', '=', 'smp')->get();
+            $dt_blog_portal_smp = \DB::table('dt_blog')->where('dt_blog_for', '=', 'smp')->orderBy('id', 'desc')->get();
             return \View::make('portal_smp')->with('dt_blog_portal_smp', $dt_blog_portal_smp);
         }
     }
@@ -302,11 +302,11 @@ class Controller extends BaseController
     {
        session_start();
         if(isset($_SESSION['logged_in'])){
-            $dt_blog_all_portal_smp = \DB::table('dt_blog')->where('dt_blog_type', '=', 'all', 'AND', 'dt_blog_for', '=', 'smp')->get();
+            $dt_blog_all_portal_smp = \DB::table('dt_blog')->where('dt_blog_type', '=', 'all', 'AND', 'dt_blog_for', '=', 'smp')->orderBy('id', 'desc')->get();
             return \View::make('portal_smp')->with('dt_blog_all_portal_smp', $dt_blog_all_portal_smp);
         }
         else{
-            $dt_blog_all_portal_smp = \DB::table('dt_blog')->where('dt_blog_type', '=', 'all', 'AND', 'dt_blog_for', '=', 'smp')->get();
+            $dt_blog_all_portal_smp = \DB::table('dt_blog')->where('dt_blog_type', '=', 'all', 'AND', 'dt_blog_for', '=', 'smp')->orderBy('id', 'desc')->get();
             return \View::make('portal_smp')->with('dt_blog_all_portal_smp', $dt_blog_all_portal_smp);
         }
     }    
@@ -318,14 +318,14 @@ class Controller extends BaseController
             $dt_blog_all_portal_smp = \DB::table('dt_blog')->where([
                                                                     ['dt_blog_type', '=', 'news'],
                                                                     ['dt_blog_for', '=', 'smp']
-                                                                    ])->get();
+                                                                    ])->orderBy('id', 'desc')->get();
             return \View::make('portal_smp')->with('dt_blog_all_portal_smp', $dt_blog_all_portal_smp);
         }
         else{
             $dt_blog_all_portal_smp = \DB::table('dt_blog')->where([
                                                                     ['dt_blog_type', '=', 'news'],
                                                                     ['dt_blog_for', '=', 'smp']
-                                                                    ])->get();
+                                                                    ])->orderBy('id', 'desc')->get();
             return \View::make('portal_smp')->with('dt_blog_all_portal_smp', $dt_blog_all_portal_smp);
         }
     }    
@@ -337,14 +337,14 @@ class Controller extends BaseController
             $dt_blog_all_portal_smp = \DB::table('dt_blog')->where([
                                                                     ['dt_blog_type', '=', 'agenda'],
                                                                     ['dt_blog_for', '=', 'smp']
-                                                                    ])->get();
+                                                                    ])->orderBy('id', 'desc')->get();
             return \View::make('portal_smp')->with('dt_blog_all_portal_smp', $dt_blog_all_portal_smp);
         }
         else{
             $dt_blog_all_portal_smp = \DB::table('dt_blog')->where([
                                                                     ['dt_blog_type', '=', 'agenda'],
                                                                     ['dt_blog_for', '=', 'smp']
-                                                                    ])->get();
+                                                                    ])->orderBy('id', 'desc')->get();
             return \View::make('portal_smp')->with('dt_blog_all_portal_smp', $dt_blog_all_portal_smp);
         }
     }
@@ -356,14 +356,14 @@ class Controller extends BaseController
             $dt_blog_all_portal_smp = \DB::table('dt_blog')->where([
                                                                     ['dt_blog_type', '=', 'announcement'],
                                                                     ['dt_blog_for', '=', 'smp']
-                                                                    ])->get();
+                                                                    ])->orderBy('id', 'desc')->get();
             return \View::make('portal_smp')->with('dt_blog_all_portal_smp', $dt_blog_all_portal_smp);
         }
         else{
             $dt_blog_all_portal_smp = \DB::table('dt_blog')->where([
                                                                     ['dt_blog_type', '=', 'announcement'],
                                                                     ['dt_blog_for', '=', 'smp']
-                                                                    ])->get();
+                                                                    ])->orderBy('id', 'desc')->get();
             return \View::make('portal_smp')->with('dt_blog_all_portal_smp', $dt_blog_all_portal_smp);
         }
     }    
@@ -375,14 +375,14 @@ class Controller extends BaseController
             $dt_blog_all_portal_smp = \DB::table('dt_blog')->where([
                                                                     ['dt_blog_type', '=', 'article'],
                                                                     ['dt_blog_for', '=', 'smp']
-                                                                    ])->get();
+                                                                    ])->orderBy('id', 'desc')->get();
             return \View::make('portal_smp')->with('dt_blog_all_portal_smp', $dt_blog_all_portal_smp);
         }
         else{
             $dt_blog_all_portal_smp = \DB::table('dt_blog')->where([
                                                                     ['dt_blog_type', '=', 'article'],
                                                                     ['dt_blog_for', '=', 'smp']
-                                                                    ])->get();
+                                                                    ])->orderBy('id', 'desc')->get();
             return \View::make('portal_smp')->with('dt_blog_all_portal_smp', $dt_blog_all_portal_smp);
         }
     }  
@@ -391,11 +391,11 @@ class Controller extends BaseController
     {
        session_start();
         if(isset($_SESSION['logged_in'])){
-            $dt_blog_portal_sma = \DB::table('dt_blog')->where('dt_blog_for', '=', 'SMA')->get();
+            $dt_blog_portal_sma = \DB::table('dt_blog')->where('dt_blog_for', '=', 'SMA')->orderBy('id', 'desc')->get();
             return \View::make('portal_sma')->with('dt_blog_portal_sma', $dt_blog_portal_sma);
         }
         else{
-            $dt_blog_portal_sma = \DB::table('dt_blog')->where('dt_blog_for', '=', 'SMA')->get();
+            $dt_blog_portal_sma = \DB::table('dt_blog')->where('dt_blog_for', '=', 'SMA')->orderBy('id', 'desc')->get();
             return \View::make('portal_sma')->with('dt_blog_portal_sma', $dt_blog_portal_sma);
         }
     }
@@ -404,11 +404,11 @@ class Controller extends BaseController
     {
        session_start();
         if(isset($_SESSION['logged_in'])){
-            $dt_blog_all_portal_sma = \DB::table('dt_blog')->where('dt_blog_type', '=', 'all', 'AND', 'dt_blog_for', '=', 'sma')->get();
+            $dt_blog_all_portal_sma = \DB::table('dt_blog')->where('dt_blog_type', '=', 'all', 'AND', 'dt_blog_for', '=', 'sma')->orderBy('id', 'desc')->get();
             return \View::make('portal_sma')->with('dt_blog_all_portal_sma', $dt_blog_all_portal_sma);
         }
         else{
-            $dt_blog_all_portal_sma = \DB::table('dt_blog')->where('dt_blog_type', '=', 'all', 'AND', 'dt_blog_for', '=', 'sma')->get();
+            $dt_blog_all_portal_sma = \DB::table('dt_blog')->where('dt_blog_type', '=', 'all', 'AND', 'dt_blog_for', '=', 'sma')->orderBy('id', 'desc')->get();
             return \View::make('portal_sma')->with('dt_blog_all_portal_sma', $dt_blog_all_portal_sma);
         }
     }    
@@ -420,14 +420,14 @@ class Controller extends BaseController
             $dt_blog_all_portal_sma = \DB::table('dt_blog')->where([
                                                                     ['dt_blog_type', '=', 'news'],
                                                                     ['dt_blog_for', '=', 'sma']
-                                                                    ])->get();
+                                                                    ])->orderBy('id', 'desc')->get();
             return \View::make('portal_sma')->with('dt_blog_all_portal_sma', $dt_blog_all_portal_sma);
         }
         else{
             $dt_blog_all_portal_sma = \DB::table('dt_blog')->where([
                                                                     ['dt_blog_type', '=', 'news'],
                                                                     ['dt_blog_for', '=', 'sma']
-                                                                    ])->get();
+                                                                    ])->orderBy('id', 'desc')->get();
             return \View::make('portal_sma')->with('dt_blog_all_portal_sma', $dt_blog_all_portal_sma);
         }
     }    
@@ -439,14 +439,14 @@ class Controller extends BaseController
             $dt_blog_all_portal_sma = \DB::table('dt_blog')->where([
                                                                     ['dt_blog_type', '=', 'agenda'],
                                                                     ['dt_blog_for', '=', 'sma']
-                                                                    ])->get();
+                                                                    ])->orderBy('id', 'desc')->get();
             return \View::make('portal_sma')->with('dt_blog_all_portal_sma', $dt_blog_all_portal_sma);
         }
         else{
             $dt_blog_all_portal_sma = \DB::table('dt_blog')->where([
                                                                     ['dt_blog_type', '=', 'agenda'],
                                                                     ['dt_blog_for', '=', 'sma']
-                                                                    ])->get();
+                                                                    ])->orderBy('id', 'desc')->get();
             return \View::make('portal_sma')->with('dt_blog_all_portal_sma', $dt_blog_all_portal_sma);
         }
     }
@@ -458,14 +458,14 @@ class Controller extends BaseController
             $dt_blog_all_portal_sma = \DB::table('dt_blog')->where([
                                                                     ['dt_blog_type', '=', 'announcement'],
                                                                     ['dt_blog_for', '=', 'sma']
-                                                                    ])->get();
+                                                                    ])->orderBy('id', 'desc')->get();
             return \View::make('portal_sma')->with('dt_blog_all_portal_sma', $dt_blog_all_portal_sma);
         }
         else{
             $dt_blog_all_portal_sma = \DB::table('dt_blog')->where([
                                                                     ['dt_blog_type', '=', 'announcement'],
                                                                     ['dt_blog_for', '=', 'sma']
-                                                                    ])->get();
+                                                                    ])->orderBy('id', 'desc')->get();
             return \View::make('portal_sma')->with('dt_blog_all_portal_sma', $dt_blog_all_portal_sma);
         }
     }    
@@ -477,14 +477,14 @@ class Controller extends BaseController
             $dt_blog_all_portal_sma = \DB::table('dt_blog')->where([
                                                                     ['dt_blog_type', '=', 'article'],
                                                                     ['dt_blog_for', '=', 'sma']
-                                                                    ])->get();
+                                                                    ])->orderBy('id', 'desc')->get();
             return \View::make('portal_sma')->with('dt_blog_all_portal_sma', $dt_blog_all_portal_sma);
         }
         else{
             $dt_blog_all_portal_sma = \DB::table('dt_blog')->where([
                                                                     ['dt_blog_type', '=', 'article'],
                                                                     ['dt_blog_for', '=', 'sma']
-                                                                    ])->get();
+                                                                    ])->orderBy('id', 'desc')->get();
             return \View::make('portal_sma')->with('dt_blog_all_portal_sma', $dt_blog_all_portal_sma);
         }
     }  
@@ -495,15 +495,15 @@ class Controller extends BaseController
         if(isset($_SESSION['logged_in'])){
             $dt_blog = array('data'=>\App\dt_blog::find($id));
             $dt_blog_random=\App\dt_blog::all()->random(3);
-            $dt_comment = \DB::table('dt_comment')->where('dt_comment_blog_id', '=', $id)->take(2)->get();
-            $dt_comment_all = \DB::table('dt_comment')->where('dt_comment_blog_id', '=', $id)->get();
+            $dt_comment = \DB::table('dt_comment')->where('dt_comment_blog_id', '=', $id)->take(2)->orderBy('dt_comment_id', 'desc')->get();
+            $dt_comment_all = \DB::table('dt_comment')->where('dt_comment_blog_id', '=', $id)->orderBy('dt_comment_id', 'desc')->get();
             return \View::make('view')->with('dt_blog_random',$dt_blog_random)->with('dt_blogs',$dt_blog)->with('dt_comments',$dt_comment)->with('dt_comment_all',$dt_comment_all);
         }
         else{
             $dt_blog = array('data'=>\App\dt_blog::find($id));
             $dt_blog_random=\App\dt_blog::all()->random(3);
-            $dt_comment = \DB::table('dt_comment')->where('dt_comment_blog_id', '=', $id)->take(2)->get();
-            $dt_comment_all = \DB::table('dt_comment')->where('dt_comment_blog_id', '=', $id)->get();
+            $dt_comment = \DB::table('dt_comment')->where('dt_comment_blog_id', '=', $id)->take(2)->orderBy('dt_comment_id', 'desc')->get();
+            $dt_comment_all = \DB::table('dt_comment')->where('dt_comment_blog_id', '=', $id)->orderBy('dt_comment_id', 'desc')->get();
             return \View::make('view')->with('dt_blog_random',$dt_blog_random)->with('dt_blogs',$dt_blog)->with('dt_comments',$dt_comment)->with('dt_comment_all',$dt_comment_all);
         }
     }

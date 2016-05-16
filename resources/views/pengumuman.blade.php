@@ -845,7 +845,7 @@
     </div>
     <div class="content1-box-all">
     @foreach($dt_blog_all_pengumuman as $dt_blog_all_pengumuman)
-    <a href="{{ url('view'.post->id) }}">
+    <a href="{{ url('view/'.$dt_blog_all_pengumuman->id) }}">
     <div class="content1-box">
       <img class="cb-img" src="{{ url('images/'.$dt_blog_all_pengumuman->cover_photo) }}" />
       <div class="cb-title">
