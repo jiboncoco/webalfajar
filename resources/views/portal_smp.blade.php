@@ -444,7 +444,7 @@
      <div class="row" style="border:none;margin-top:0px">
   <div class="col-lg-6">
     <div class="input-group">
-      <input class="fcs" name="search_smp" id="search_smp" placeholder="Search" required/>
+      <input type="text" class="form-control" name="search_smp" id="search_smp" placeholder="Search" required/>
       <div class="input-group-btn">
         <button type="submit" class="btn btn-default dropdown-toggle" data-toggle="dropdown" style="margin-bottom:10px;" aria-haspopup="true" aria-expanded="false">Informasi <span class="caret"></span></button>
         <ul class="dropdown-menu">
