@@ -293,7 +293,7 @@ class PostController extends Controller
         $i = 1;
         $data = \DB::table('dt_blog')->where([
                                                ['dt_blog_title', 'LIKE', '%'.$search_sma.'%'],
-                                               ['dt_blog_for', '=', 'TK']
+                                               ['dt_blog_for', '=', 'SMA']
                                                ])->orderBy('id', 'desc')->get();
         // return $data;
         foreach ($data as $dt_blog_sma) {
