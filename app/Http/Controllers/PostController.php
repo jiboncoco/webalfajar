@@ -48,7 +48,7 @@ class PostController extends Controller
 
     	$post->save();
 
-		return redirect(url('manage_post/master_post'));
+		return redirect(url('manage'));
     }
 
     public function save_comment()
@@ -115,7 +115,7 @@ class PostController extends Controller
        session_start();
         if(isset($_SESSION['logged_in'])){
             \App\dt_blog::find($id)->delete();
-            return redirect( url('/'));
+            return redirect( url('manage'));
         }
         else{
             return redirect(url('login'));
