@@ -839,7 +839,7 @@
     <div class="content-s">
       <form role="form" data-toggle="validator">
         <span class="input-group-btn">
-      <input class="fcs" name="" placeholder="Search" required/>
+      <input class="fcs" name="search" id="search" placeholder="Search" required/>
       </span>
       </form>
     </div>
@@ -1007,6 +1007,29 @@
 
 
 </script>
+
+<script>
+$.ajaxSetup({
+   headers: {'X-CSRF-Token': $('meta[name=csrf_token]').attr('content')}
+});
+        $("input[name='search']").keyup(function(e){
+            // alert('asdasd');
+            setTimeout(function(){
+                $('.content1-box-all').html('<div class="content1-box-all">Loading...</div>');
+                $.ajax({
+                    'type': 'GET',
+                    'url': '/search_post/'+$("input[name='search']").val(),
+                    'success': function(data){
+                    if (data) {
+                        $('.content1-box-all').html(data);
+                    }else{
+                        $('.content1-box-all').html('<div class="content1-box-all">Pencarian tidak ditemukan..</div>');
+                    }
+                    }
+                });
+            }, 500);
+        });
+    </script>
 
 </body>
 </html>

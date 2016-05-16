@@ -85,6 +85,13 @@ Route::get('manage_post/delete_post/{id}', 'PostController@delete_post');
 Route::post('save_comment', 'PostController@save_comment');
 Route::get('logout', 'LoginController@logout');
 
+Route::get('search_post/{search}', 'PostController@search_post');
+Route::get('search_post_tk/{search_tk}', 'PostController@search_post_tk');
+Route::get('search_post_sd/{search_sd}', 'PostController@search_post_sd');
+Route::get('search_post_smp/{search_smp}', 'PostController@search_post_smp');
+Route::get('search_post_sma/{search_sma}', 'PostController@search_post_sma');
+Route::get('search_post_admin/{search_admin}', 'PostController@search_post_admin');
+
 Route::post('uploadimagedrag', 'ImageController@uploadDragAndDropCKEDITOR');
 Route::post('uploadimagefilebrowser', 'ImageController@uploadFileBrowserCKEDITOR');
 /*

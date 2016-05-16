@@ -445,7 +445,7 @@
       <div class="row" style="border:none;margin-top:0px">
   <div class="col-lg-6">
     <div class="input-group">
-      <input type="text" class="form-control" aria-label="..." placeholder="Search" required/>
+      <input class="fcs" name="search_sd" id="search_sd" placeholder="Search" required/>
       <div class="input-group-btn">
         <button type="submit" class="btn btn-default dropdown-toggle" data-toggle="dropdown" style="margin-bottom:10px;" aria-haspopup="true" aria-expanded="false">Information <span class="caret"></span></button>
         <ul class="dropdown-menu">
@@ -659,6 +659,29 @@ $(function(){
   });
 });
 </script>
+
+<script>
+$.ajaxSetup({
+   headers: {'X-CSRF-Token': $('meta[name=csrf_token]').attr('content')}
+});
+        $("input[name='search_sd']").keyup(function(e){
+            // alert('asdasd');
+            setTimeout(function(){
+                $('.content1-box-all').html('<div class="content1-box-all">Loading...</div>');
+                $.ajax({
+                    'type': 'GET',
+                    'url': '/search_post_sd/'+$("input[name='search_sd']").val(),
+                    'success': function(data){
+                    if (data) {
+                        $('.content1-box-all').html(data);
+                    }else{
+                        $('.content1-box-all').html('<div class="content1-box-all">Pencarian tidak ditemukan..</div>');
+                    }
+                    }
+                });
+            }, 500);
+        });
+    </script>
 
 </body>
 </html>

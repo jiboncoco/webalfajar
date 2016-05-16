@@ -39,7 +39,7 @@
           <div class="admin-seacrh">
             <div class="col-lg-12">
               <div class="input-group">
-                <input type="text" class="form-control" aria-label="..." placeholder="Search" required/>
+                <input class="fcs" name="search_admin" id="search_admin" placeholder="Search" required/>
                 <div class="input-group-btn">
                   <button type="submit" class="btn btn-default dropdown-toggle" data-toggle="dropdown" style="margin-bottom:0px;" aria-haspopup="true" aria-expanded="false">All Information <span class="caret"></span></button>
                   <ul class="dropdown-menu">
@@ -102,4 +102,26 @@
 
 
     </div><!-- ./wrapper -->
+    <script>
+$.ajaxSetup({
+   headers: {'X-CSRF-Token': $('meta[name=csrf_token]').attr('content')}
+});
+        $("input[name='search_admin']").keyup(function(e){
+            // alert('asdasd');
+            setTimeout(function(){
+                $('.content1-box-all').html('<div class="content1-box-all">Loading...</div>');
+                $.ajax({
+                    'type': 'GET',
+                    'url': '/search_post_admin/'+$("input[name='search_admin']").val(),
+                    'success': function(data){
+                    if (data) {
+                        $('.content1-box-all').html(data);
+                    }else{
+                        $('.content1-box-all').html('<div class="content1-box-all">Pencarian tidak ditemukan..</div>');
+                    }
+                    }
+                });
+            }, 500);
+        });
+    </script>
 @endsection

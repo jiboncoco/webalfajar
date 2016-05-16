@@ -123,4 +123,253 @@ class PostController extends Controller
     }
 
 
+    public function search_post($search)
+    {
+        $i = 1;
+        $data = \App\dt_blog::where('dt_blog_title', 'LIKE', '%'.$search.'%')->orderBy('id','desc')->get();
+        // return $data;
+        foreach ($data as $dt_blog_all_news) {
+            $string = strip_tags($dt_blog_all_news->dt_blog_text);
+
+            if (strlen($string) > 300) {
+
+                // truncate string
+                $stringCut = substr($string, 0, 300);
+
+                // make sure it ends in a word so assassinate doesn't become ass...
+                $string = substr($stringCut, 0, strrpos($stringCut, ' ')).'...';
+            }
+            echo 
+                "<a href=".url('view/'.$dt_blog_all_news->id).">
+                <div class=\"content1-box\">
+                  <img class=\"cb-img\" src=".url('images/'.$dt_blog_all_news->cover_photo)." />
+                  <div class=\"cb-title\">
+                    ".$dt_blog_all_news->dt_blog_title."
+                  </div>
+                  <div class=\"cb-desc\">
+                  ".$string."
+                
+                  </div>
+                  <div class=\"cb-inf\">
+                    <i class=\"fa fa-user\"></i> ".$dt_blog_all_news->dt_blog_create_by ." - ".($dt_blog_all_news->dt_blog_by)."
+                    <p class=\"cb-date\">
+                      ".$dt_blog_all_news->created_at."
+                    </p>
+                  </div>
+                </div>
+                </a>";
+        $i++;
+        }
+    }
+
+    public function search_post_tk($search_tk)
+    {
+        $i = 1;
+        $data = \DB::table('dt_blog')->where([
+                                               ['dt_blog_title', 'LIKE', '%'.$search_tk.'%'],
+                                               ['dt_blog_for', '=', 'TK']
+                                               ])->orderBy('id', 'desc')->get();
+        // return $data;
+        foreach ($data as $dt_blog_tk) {
+            $string = strip_tags($dt_blog_tk->dt_blog_text);
+
+            if (strlen($string) > 300) {
+
+                // truncate string
+                $stringCut = substr($string, 0, 300);
+
+                // make sure it ends in a word so assassinate doesn't become ass...
+                $string = substr($stringCut, 0, strrpos($stringCut, ' ')).'...';
+            }
+            echo 
+                "<a href=".url('view/'.$dt_blog_tk->id).">
+                <div class=\"content1-box\">
+                  <img class=\"cb-img\" src=".url('images/'.$dt_blog_tk->cover_photo)." />
+                  <div class=\"cb-title\">
+                    ".$dt_blog_tk->dt_blog_title."
+                  </div>
+                  <div class=\"cb-desc\">
+                  ".$string."
+                
+                  </div>
+                  <div class=\"cb-inf\">
+                    <i class=\"fa fa-user\"></i> ".$dt_blog_tk->dt_blog_create_by ." - ".($dt_blog_tk->dt_blog_by)."
+                    <p class=\"cb-date\">
+                      ".$dt_blog_tk->created_at."
+                    </p>
+                  </div>
+                </div>
+                </a>";
+        $i++;
+        }
+    }
+
+    public function search_post_sd($search_sd)
+    {
+        $i = 1;
+        $data = \DB::table('dt_blog')->where([
+                                               ['dt_blog_title', 'LIKE', '%'.$search_sd.'%'],
+                                               ['dt_blog_for', '=', 'SD']
+                                               ])->orderBy('id', 'desc')->get();
+        // return $data;
+        foreach ($data as $dt_blog_sd) {
+            $string = strip_tags($dt_blog_sd->dt_blog_text);
+
+            if (strlen($string) > 300) {
+
+                // truncate string
+                $stringCut = substr($string, 0, 300);
+
+                // make sure it ends in a word so assassinate doesn't become ass...
+                $string = substr($stringCut, 0, strrpos($stringCut, ' ')).'...';
+            }
+            echo 
+                "<a href=".url('view/'.$dt_blog_sd->id).">
+                <div class=\"content1-box\">
+                  <img class=\"cb-img\" src=".url('images/'.$dt_blog_sd->cover_photo)." />
+                  <div class=\"cb-title\">
+                    ".$dt_blog_sd->dt_blog_title."
+                  </div>
+                  <div class=\"cb-desc\">
+                  ".$string."
+                
+                  </div>
+                  <div class=\"cb-inf\">
+                    <i class=\"fa fa-user\"></i> ".$dt_blog_sd->dt_blog_create_by ." - ".($dt_blog_sd->dt_blog_by)."
+                    <p class=\"cb-date\">
+                      ".$dt_blog_sd->created_at."
+                    </p>
+                  </div>
+                </div>
+                </a>";
+        $i++;
+        }
+    }
+
+    public function search_post_smp($search_smp)
+    {
+        $i = 1;
+        $data = \DB::table('dt_blog')->where([
+                                               ['dt_blog_title', 'LIKE', '%'.$search_smp.'%'],
+                                               ['dt_blog_for', '=', 'SMP']
+                                               ])->orderBy('id', 'desc')->get();
+        // return $data;
+        foreach ($data as $dt_blog_smp) {
+            $string = strip_tags($dt_blog_smp->dt_blog_text);
+
+            if (strlen($string) > 300) {
+
+                // truncate string
+                $stringCut = substr($string, 0, 300);
+
+                // make sure it ends in a word so assassinate doesn't become ass...
+                $string = substr($stringCut, 0, strrpos($stringCut, ' ')).'...';
+            }
+            echo 
+                "<a href=".url('view/'.$dt_blog_smp->id).">
+                <div class=\"content1-box\">
+                  <img class=\"cb-img\" src=".url('images/'.$dt_blog_smp->cover_photo)." />
+                  <div class=\"cb-title\">
+                    ".$dt_blog_smp->dt_blog_title."
+                  </div>
+                  <div class=\"cb-desc\">
+                  ".$string."
+                
+                  </div>
+                  <div class=\"cb-inf\">
+                    <i class=\"fa fa-user\"></i> ".$dt_blog_smp->dt_blog_create_by ." - ".($dt_blog_smp->dt_blog_by)."
+                    <p class=\"cb-date\">
+                      ".$dt_blog_smp->created_at."
+                    </p>
+                  </div>
+                </div>
+                </a>";
+        $i++;
+        }
+    }
+
+    public function search_post_sma($search_sma)
+    {
+        $i = 1;
+        $data = \DB::table('dt_blog')->where([
+                                               ['dt_blog_title', 'LIKE', '%'.$search_sma.'%'],
+                                               ['dt_blog_for', '=', 'TK']
+                                               ])->orderBy('id', 'desc')->get();
+        // return $data;
+        foreach ($data as $dt_blog_sma) {
+            $string = strip_tags($dt_blog_sma->dt_blog_text);
+
+            if (strlen($string) > 300) {
+
+                // truncate string
+                $stringCut = substr($string, 0, 300);
+
+                // make sure it ends in a word so assassinate doesn't become ass...
+                $string = substr($stringCut, 0, strrpos($stringCut, ' ')).'...';
+            }
+            echo 
+                "<a href=".url('view/'.$dt_blog_sma->id).">
+                <div class=\"content1-box\">
+                  <img class=\"cb-img\" src=".url('images/'.$dt_blog_sma->cover_photo)." />
+                  <div class=\"cb-title\">
+                    ".$dt_blog_sma->dt_blog_title."
+                  </div>
+                  <div class=\"cb-desc\">
+                  ".$string."
+                
+                  </div>
+                  <div class=\"cb-inf\">
+                    <i class=\"fa fa-user\"></i> ".$dt_blog_sma->dt_blog_create_by ." - ".($dt_blog_sma->dt_blog_by)."
+                    <p class=\"cb-date\">
+                      ".$dt_blog_sma->created_at."
+                    </p>
+                  </div>
+                </div>
+                </a>";
+        $i++;
+        }
+    } 
+
+    public function search_post_admin($search_admin)
+    {
+        $i = 1;
+        $data = \DB::table('dt_blog')->where([
+                                               ['dt_blog_title', 'LIKE', '%'.$search_admin.'%'],
+                                               ['dt_blog_create_by','=',session('akses_username')]
+                                               ])->orderBy('id', 'desc')->take(6)->get();
+        // return $data;
+        foreach ($data as $dt_blog_admin) {
+            $string = strip_tags($dt_blog_admin->dt_blog_text);
+
+            if (strlen($string) > 300) {
+
+                // truncate string
+                $stringCut = substr($string, 0, 300);
+
+                // make sure it ends in a word so assassinate doesn't become ass...
+                $string = substr($stringCut, 0, strrpos($stringCut, ' ')).'...';
+            }
+            echo 
+                "<a href=".url('view/'.$dt_blog_admin->id).">
+                <div class=\"content1-box\">
+                  <img class=\"cb-img\" src=".url('images/'.$dt_blog_admin->cover_photo)." />
+                  <div class=\"cb-title\">
+                    ".$dt_blog_admin->dt_blog_title."
+                  </div>
+                  <div class=\"cb-desc\">
+                  ".$string."
+                
+                  </div>
+                  <div class=\"cb-inf\">
+                    <i class=\"fa fa-user\"></i> ".$dt_blog_admin->dt_blog_create_by ." - ".($dt_blog_admin->dt_blog_by)."
+                    <p class=\"cb-date\">
+                      ".$dt_blog_admin->created_at."
+                    </p>
+                  </div>
+                </div>
+                </a>";
+        $i++;
+        }
+    }   
+
 }
