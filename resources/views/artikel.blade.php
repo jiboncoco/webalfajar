@@ -844,17 +844,17 @@
       </form>
     </div>
     <div class="content1-box-all">
-    @foreach($dt_blog_all_artikel as $dt_blog_all_artikel)
-    <a href="{{ url('view/'.$dt_blog_all_artikel->id) }}">
+    @foreach($dt_blog_all_artikel as $dt_blog_all_artikel2)
+    <a href="{{ url('view/'.$dt_blog_all_artikel2->id) }}">
     <div class="content1-box">
-      <img class="cb-img" src="{{ url('images/'.$dt_blog_all_artikel->cover_photo) }}" />
+      <img class="cb-img" src="{{ url('images/'.$dt_blog_all_artikel2->cover_photo) }}" />
       <div class="cb-title">
-        {!! $dt_blog_all_artikel->dt_blog_title !!}
+        {!! $dt_blog_all_artikel2->dt_blog_title !!}
       </div>
       <div class="cb-desc">
-      <!-- {!! substr(preg_replace("/<img\s[^>]*?src\s*=\s*['\"]([^'\"]*?)['\"][^>]*?>/",'',$dt_blog_all_artikel->dt_blog_text),0,400) !!}...... -->
+      <!-- {!! substr(preg_replace("/<img\s[^>]*?src\s*=\s*['\"]([^'\"]*?)['\"][^>]*?>/",'',$dt_blog_all_artikel2->dt_blog_text),0,400) !!}...... -->
       <?php
-            $string = strip_tags($dt_blog_all_artikel->dt_blog_text);
+            $string = strip_tags($dt_blog_all_artikel2->dt_blog_text);
 
             if (strlen($string) > 300) {
 
@@ -868,9 +868,9 @@
       ?>
       </div>
       <div class="cb-inf">
-        <i class="fa fa-user"></i> {{$dt_blog_all_artikel->dt_blog_create_by}} ({{$dt_blog_all_artikel->dt_blog_by}})
+        <i class="fa fa-user"></i> {{$dt_blog_all_artikel2->dt_blog_create_by}} ({{$dt_blog_all_artikel2->dt_blog_by}})
         <p class="cb-date">
-          {{$dt_blog_all_artikel->created_at}}
+          {{$dt_blog_all_artikel2->created_at}}
         </p>
       </div>
     </div>
@@ -879,7 +879,9 @@
    
     </div>
       <div class="content1-button">
-        <a href="#"> <button class="cb-button">More Post</button></a>
+          <ul class="pagination">
+          {!! $dt_blog_all_artikel->render() !!}
+          </ul>
       </div>
   </div>
 
@@ -900,27 +902,16 @@
       </div>
         <div class="content2-notif">
         <p class="notif-p">ANNOUNCEMENT</p>
+        <?php $i=1; ?>
+        @foreach($announcement as $announcement)
         <div class="notif">
-          <a href="#">
-          <label class="no-notif">1.</label>
-          <label class="title-notif">Lorem Ipsum</label>
+          <a href="{{ url('view/'.$announcement->id) }}">
+          <label class="no-notif">{{ $i++ }}.</label>
+          <label class="title-notif">{{ $announcement->dt_blog_title }}</label>
           </a>
-          <p class="date-notif">31 Desember 2016</p>
+          <p class="date-notif">{{ $announcement->created_at }}</p>
         </div>
-        <div class="notif">
-          <a href="#">
-          <label class="no-notif">2.</label>
-          <label class="title-notif">Lorem Ipsum</label>
-          </a>
-          <p class="date-notif">31 Desember 2016</p>
-        </div>
-        <div class="notif">
-          <a href="#">
-          <label class="no-notif">3.</label>
-          <label class="title-notif">Lorem Ipsum</label>
-          </a>
-          <p class="date-notif">31 Desember 2016</p>
-        </div>
+        @endforeach
         <div class="notif-button">
           <a href="{{ url('announcement') }}">
           <button class="notif-b">More</button>
@@ -929,27 +920,16 @@
         </div>
           <div class="content2-notif">
             <p class="notif-p">AGENDA</p>
+        <?php $z=1; ?>
+        @foreach($agenda as $agenda)
         <div class="notif">
-          <a href="#">
-          <label class="no-notif">1.</label>
-          <label class="title-notif">Lorem Ipsum</label>
+          <a href="{{ url('view/'.$agenda->id) }}">
+          <label class="no-notif">{{ $z++ }}.</label>
+          <label class="title-notif">{{ $agenda->dt_blog_title }}</label>
           </a>
-          <p class="date-notif">31 Desember 2016</p>
+          <p class="date-notif">{{ $agenda->created_at }}</p>
         </div>
-        <div class="notif">
-          <a href="#">
-          <label class="no-notif">2.</label>
-          <label class="title-notif">Lorem Ipsum</label>
-          </a>
-          <p class="date-notif">31 Desember 2016</p>
-        </div>
-        <div class="notif">
-          <a href="#">
-          <label class="no-notif">3.</label>
-          <label class="title-notif">Lorem Ipsum</label>
-          </a>
-          <p class="date-notif">31 Desember 2016</p>
-        </div>
+        @endforeach
         <div class="notif-button">
           <a href="{{ url('agenda') }}">
           <button class="notif-b">More</button>

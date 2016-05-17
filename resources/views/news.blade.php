@@ -843,17 +843,17 @@
       </form>
     </div>
     <div class="content1-box-all">
-    @foreach($dt_blog_all_news as $dt_blog_all_news)
-    <a href="{{ url('view/'.$dt_blog_all_news->id) }}">
+    @foreach($dt_blog_all_news as $dt_blog_all_news2)
+    <a href="{{ url('view/'.$dt_blog_all_news2->id) }}">
     <div class="content1-box">
-      <img class="cb-img" src="{{ url('images/'.$dt_blog_all_news->cover_photo) }}" />
+      <img class="cb-img" src="{{ url('images/'.$dt_blog_all_news2->cover_photo) }}" />
       <div class="cb-title">
-        {{ $dt_blog_all_news->dt_blog_title }}
+        {{ $dt_blog_all_news2->dt_blog_title }}
       </div>
       <div class="cb-desc">
-      <!-- {!! substr(preg_replace("/<img\s[^>]*?src\s*=\s*['\"]([^'\"]*?)['\"][^>]*?>/",'',$dt_blog_all_news->dt_blog_text),0,400) !!}...... -->
+      <!-- {!! substr(preg_replace("/<img\s[^>]*?src\s*=\s*['\"]([^'\"]*?)['\"][^>]*?>/",'',$dt_blog_all_news2->dt_blog_text),0,400) !!}...... -->
       <?php
-            $string = strip_tags($dt_blog_all_news->dt_blog_text);
+            $string = strip_tags($dt_blog_all_news2->dt_blog_text);
 
             if (strlen($string) > 300) {
 
@@ -867,9 +867,9 @@
       ?>
       </div>
       <div class="cb-inf">
-        <i class="fa fa-user"></i> {{$dt_blog_all_news->dt_blog_create_by}} ({{$dt_blog_all_news->dt_blog_by}})
+        <i class="fa fa-user"></i> {{$dt_blog_all_news2->dt_blog_create_by}} ({{$dt_blog_all_news2->dt_blog_by}})
         <p class="cb-date">
-          {{$dt_blog_all_news->created_at}}
+          {{$dt_blog_all_news2->created_at}}
         </p>
       </div>
     </div>
@@ -877,7 +877,9 @@
     @endforeach
         </div>
       <div class="content1-button">
-        <a href="#"> <button class="cb-button">More Post</button></a>
+          <ul class="pagination">
+          {!! $dt_blog_all_news->render() !!}
+          </ul>
       </div>
   </div>
 
@@ -898,27 +900,16 @@
       </div>
         <div class="content2-notif">
         <p class="notif-p">ANNOUNCEMENT</p>
+        <?php $i=1; ?>
+        @foreach($announcement as $announcement)
         <div class="notif">
-          <a href="#">
-          <label class="no-notif">1.</label>
-          <label class="title-notif">Lorem Ipsum</label>
+          <a href="{{ url('view/'.$announcement->id) }}">
+          <label class="no-notif">{{ $i++ }}.</label>
+          <label class="title-notif">{{ $announcement->dt_blog_title }}</label>
           </a>
-          <p class="date-notif">31 Desember 2016</p>
+          <p class="date-notif">{{ $announcement->created_at }}</p>
         </div>
-        <div class="notif">
-          <a href="#">
-          <label class="no-notif">2.</label>
-          <label class="title-notif">Lorem Ipsum</label>
-          </a>
-          <p class="date-notif">31 Desember 2016</p>
-        </div>
-        <div class="notif">
-          <a href="#">
-          <label class="no-notif">3.</label>
-          <label class="title-notif">Lorem Ipsum</label>
-          </a>
-          <p class="date-notif">31 Desember 2016</p>
-        </div>
+        @endforeach
         <div class="notif-button">
           <a href="{{ url('announcement') }}">
           <button class="notif-b">More</button>
@@ -926,28 +917,18 @@
         </div>
         </div>
           <div class="content2-notif">
-            <p class="notif-p">ARTICLE</p>
+
+          <p class="notif-p">ARTICLE</p>
+        <?php $z=1; ?>
+        @foreach($article as $article)
         <div class="notif">
-          <a href="#">
-          <label class="no-notif">1.</label>
-          <label class="title-notif">Lorem Ipsum</label>
+          <a href="{{ url('view/'.$article->id) }}">
+          <label class="no-notif">{{ $z++ }}.</label>
+          <label class="title-notif">{{ $article->dt_blog_title }}</label>
           </a>
-          <p class="date-notif">31 Desember 2016</p>
+          <p class="date-notif">{{ $article->dt_blog_title }}</p>
         </div>
-        <div class="notif">
-          <a href="#">
-          <label class="no-notif">2.</label>
-          <label class="title-notif">Lorem Ipsum</label>
-          </a>
-          <p class="date-notif">31 Desember 2016</p>
-        </div>
-        <div class="notif">
-          <a href="#">
-          <label class="no-notif">3.</label>
-          <label class="title-notif">Lorem Ipsum</label>
-          </a>
-          <p class="date-notif">31 Desember 2016</p>
-        </div>
+        @endforeach
         <div class="notif-button">
           <a href="{{ url('article') }}">
           <button class="notif-b">More</button>
@@ -1025,13 +1006,13 @@
 $.ajaxSetup({
    headers: {'X-CSRF-Token': $('meta[name=csrf_token]').attr('content')}
 });
-        $("input[name='search']").keyup(function(e){
+        $('input[name=search]').keyup(function(e){
             // alert('asdasd');
             setTimeout(function(){
                 $('.content1-box-all').html('<div class="content1-box-all">Loading...</div>');
                 $.ajax({
                     'type': 'GET',
-                    'url': '/search_post/'+$("input[name='search']").val(),
+                    'url': 'http://localhost:8000/search_post/'+$('input[name=search]').val(),
                     'success': function(data){
                     if (data) {
                         $('.content1-box-all').html(data);

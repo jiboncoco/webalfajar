@@ -55,19 +55,19 @@
           </div>
 
         <div class="admin-news">
-        @foreach($dt_blog_admins as $dt_blog_admin)
+        @foreach($dt_blog_admins as $dt_blog_admin2)
         
           <div class="detail-news">
-          <a href="{{ url('view/'.$dt_blog_admin->id) }}">
+          <a href="{{ url('view/'.$dt_blog_admin2->id) }}">
             <div class="img-detail-news">
-              <img class="img-dn" src="{{ url('images/'.$dt_blog_admin ->cover_photo) }}">
+              <img class="img-dn" src="{{ url('images/'.$dt_blog_admin2 ->cover_photo) }}">
             </div>
             <div class="title-detail-news">
-              {{ $dt_blog_admin->dt_blog_title }}
+              {{ $dt_blog_admin2->dt_blog_title }}
             </div>
             <div class="content-detail-news">
               <?php
-            $string = strip_tags($dt_blog_admin->dt_blog_text);
+            $string = strip_tags($dt_blog_admin2->dt_blog_text);
 
             if (strlen($string) > 300) {
 
@@ -83,8 +83,8 @@
           </a>
           <div class="attr">
           <hr/>
-            <label><a href="{{ url('manage_post/edit_post/'.$dt_blog_admin->id) }}"> <i style="font-size:24px;margin-right:20px;" class="fa fa-pencil-square-o"></i> </a></label>
-            <label><a href="{{ url('manage_post/delete_post/'.$dt_blog_admin->id) }}"> <i style="font-size:24px;color:rgb(202, 65, 65)" class="fa fa-trash"></i> </a></label>
+            <label><a href="{{ url('manage_post/edit_post/'.$dt_blog_admin2->id) }}"> <i style="font-size:24px;margin-right:20px;" class="fa fa-pencil-square-o"></i> </a></label>
+            <label><a href="{{ url('manage_post/delete_post/'.$dt_blog_admin2->id) }}"> <i style="font-size:24px;color:rgb(202, 65, 65)" class="fa fa-trash"></i> </a></label>
           </div>
           </div>
           @endforeach
@@ -92,11 +92,11 @@
 
         </section><!-- /.content -->
         <div class="button-admin">
-        <a href="#">
-          <button class="admin-cb-button">
-            More Information
-          </button>
-        </a>
+        <div class="content1-button">
+          <ul class="pagination">
+          {!! $dt_blog_admins->render() !!}
+          </ul>
+      </div>
         </div>
       </div><!-- /.content-wrapper -->
 

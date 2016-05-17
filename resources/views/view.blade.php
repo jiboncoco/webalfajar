@@ -924,28 +924,17 @@
         Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
       </div>
         <div class="content2-notif">
-        <p class="notif-p">PENGUMUMAN</p>
+        <p class="notif-p">ANNOUNCEMENT</p>
+        <?php $i=1; ?>
+        @foreach($announcement as $announcement)
         <div class="notif">
-          <a href="#">
-          <label class="no-notif">1.</label>
-          <label class="title-notif">Lorem Ipsum</label>
+          <a href="{{ url('view/'.$announcement->id) }}">
+          <label class="no-notif">{{ $i++ }}.</label>
+          <label class="title-notif">{{ $announcement->dt_blog_title }}</label>
           </a>
-          <p class="date-notif">31 Desember 2016</p>
+          <p class="date-notif">{{ $announcement->created_at }}</p>
         </div>
-        <div class="notif">
-          <a href="#">
-          <label class="no-notif">2.</label>
-          <label class="title-notif">Lorem Ipsum</label>
-          </a>
-          <p class="date-notif">31 Desember 2016</p>
-        </div>
-        <div class="notif">
-          <a href="#">
-          <label class="no-notif">3.</label>
-          <label class="title-notif">Lorem Ipsum</label>
-          </a>
-          <p class="date-notif">31 Desember 2016</p>
-        </div>
+        @endforeach
         <div class="notif-button">
           <a href="{{ url('announcement') }}">
           <button class="notif-b">More</button>
@@ -953,28 +942,17 @@
         </div>
         </div>
           <div class="content2-notif">
-            <p class="notif-p">ARTIKEL</p>
+            <p class="notif-p">ARTICLE</p>
+          <?php $z=1; ?>
+         @foreach($article as $article)
         <div class="notif">
-          <a href="#">
-          <label class="no-notif">1.</label>
-          <label class="title-notif">Lorem Ipsum</label>
+          <a href="{{ url('view/'.$article->id) }}">
+          <label class="no-notif">{{ $z++ }}.</label>
+          <label class="title-notif">{{ $article->dt_blog_title }}</label>
           </a>
-          <p class="date-notif">31 Desember 2016</p>
+          <p class="date-notif">{{ $article->dt_blog_title }}</p>
         </div>
-        <div class="notif">
-          <a href="#">
-          <label class="no-notif">2.</label>
-          <label class="title-notif">Lorem Ipsum</label>
-          </a>
-          <p class="date-notif">31 Desember 2016</p>
-        </div>
-        <div class="notif">
-          <a href="#">
-          <label class="no-notif">3.</label>
-          <label class="title-notif">Lorem Ipsum</label>
-          </a>
-          <p class="date-notif">31 Desember 2016</p>
-        </div>
+        @endforeach
         <div class="notif-button">
           <a href="{{ url('article') }}">
           <button class="notif-b">More</button>

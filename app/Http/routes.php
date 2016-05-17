@@ -16,14 +16,18 @@ Route::group(['middleware' => ['web']], function () {
 Route::get('/', function () {
 	session_start();
         if(isset($_SESSION['logged_in'])){
-        	$dt_blog = \DB::table('dt_blog')
+        	$dt_blog = \DB::table('dt_blog')->where([
+                ['dt_blog_type', '=', 'news'],
+                ])
                 ->orderBy('id', 'desc')
                 ->take(3)
                 ->get();
             return \View::make('welcome')->with('dt_blogs',$dt_blog);
         }
         else{
-            $dt_blog = \DB::table('dt_blog')
+            $dt_blog = \DB::table('dt_blog')->where([
+                ['dt_blog_type', '=', 'news'],
+                ])
                 ->orderBy('id', 'desc')
                 ->take(3)
                 ->get();
