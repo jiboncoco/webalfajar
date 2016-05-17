@@ -856,7 +856,17 @@
       </div>
       <div class="inp-com">
       <form method="POST" action="{{ url('save_comment') }}">
-        <input class="input-com" name="dt_comment_text" id="dt_comment_text" placeholder="Comment" required/>
+      <script type="text/javascript">
+      function minmax(value, min, max) 
+      {
+          if(parseInt(value) < min || isNaN(value)) 
+              return value; 
+          else if(parseInt(value) > max) 
+              return 140; 
+          else return value;
+      }
+      </script>
+        <input class="input-com" maxlength="140" name="dt_comment_text" id="dt_comment_text" placeholder="Comment" type="text" onkeyup="this.value = minmax(this.value, 0, 140)" required/>
         <input type="hidden" name="dt_comment_blog_id" value="{{ $detail_view->id}}">
         <input type="hidden" name="_token" value="{{ csrf_token() }}">
         <div class="but-comm">
@@ -886,7 +896,7 @@
     </div>
 
     <div class="other-news">
-      <p class="title-on">Other News</p>
+      <p class="title-on">More Post</p>
       @foreach($dt_blog_random as $dt_blog_random)
       <a href="{{ url('view/'.$dt_blog_random->id) }}"><div class="on-box">
         <img class="on-img" src="{{ url('images/'.$dt_blog_random->cover_photo) }}">

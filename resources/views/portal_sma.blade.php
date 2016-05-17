@@ -496,7 +496,7 @@
    
     </div>
       <div class="content1-button">
-        <a href="#"> <button class="cb-button">More News</button></a>
+        <a href="#"> <button class="cb-button">More Post</button></a>
       </div>
   </div>
 
