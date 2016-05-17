@@ -110,9 +110,10 @@ $.ajaxSetup({
             // alert('asdasd');
             setTimeout(function(){
                 $('.content1-box-all').html('<div class="content1-box-all">Loading...</div>');
+                var url = '{{url("search_post")}}/'+$('input[name=search]').val(),
                 $.ajax({
                     'type': 'GET',
-                    'url': '/search_post_admin/'+$("input[name='search_admin']").val(),
+                    'url': url,
                     'success': function(data){
                     if (data) {
                         $('.content1-box-all').html(data);
