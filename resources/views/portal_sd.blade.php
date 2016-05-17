@@ -449,11 +449,11 @@
       <div class="input-group-btn">
         <button type="submit" class="btn btn-default dropdown-toggle" data-toggle="dropdown" style="margin-bottom:10px;" aria-haspopup="true" aria-expanded="false">Information <span class="caret"></span></button>
         <ul class="dropdown-menu">
-          <li><a href="#">All</a></li>
-          <li><a href="#">News</a></li>
-          <li><a href="#">Agenda</a></li>
-          <li><a href="#">Announcement</a></li>
-          <li><a href="#">Article</a></li>
+          <li><a href="{{ url('portal_sd/all') }}">All</a></li>
+          <li><a href="{{ url('portal_sd/news') }}">News</a></li>
+          <li><a href="{{ url('portal_sd/agenda') }}">Agenda</a></li>
+          <li><a href="{{ url('portal_sd/announcement') }}">Announcement </a></li>
+          <li><a href="{{ url('portal_sd/article') }}">Article</a></li>
         </ul>
       </div><!-- /btn-group -->
     </div><!-- /input-group -->

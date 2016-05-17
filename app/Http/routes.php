@@ -49,8 +49,26 @@ Route::get('portal_tk/announcement', 'Controller@portal_tk_announcement');
 Route::get('portal_tk/article', 'Controller@portal_tk_article');
 
 Route::get('portal_sd', 'Controller@portal_sd');
+Route::get('portal_sd/all', 'Controller@portal_sd_all');
+Route::get('portal_sd/news', 'Controller@portal_sd_news');
+Route::get('portal_sd/agenda', 'Controller@portal_sd_agenda');
+Route::get('portal_sd/announcement', 'Controller@portal_sd_announcement');
+Route::get('portal_sd/article', 'Controller@portal_sd_article');
+
 Route::get('portal_smp', 'Controller@portal_smp');
+Route::get('portal_smp/all', 'Controller@portal_smp_all');
+Route::get('portal_smp/news', 'Controller@portal_smp_news');
+Route::get('portal_smp/agenda', 'Controller@portal_smp_agenda');
+Route::get('portal_smp/announcement', 'Controller@portal_smp_announcement');
+Route::get('portal_smp/article', 'Controller@portal_smp_article');
+
 Route::get('portal_sma', 'Controller@portal_sma');
+Route::get('portal_sma/all', 'Controller@portal_sma_all');
+Route::get('portal_sma/news', 'Controller@portal_sma_news');
+Route::get('portal_sma/agenda', 'Controller@portal_sma_agenda');
+Route::get('portal_sma/announcement', 'Controller@portal_sma_announcement');
+Route::get('portal_sma/article', 'Controller@portal_sma_article');
+
 Route::get('view/{id}', 'Controller@view');
 Route::get('registration', 'Controller@pendaftaran');
 Route::get('registration/TK-PDF', 'Controller@registration_tk_pdf');
@@ -59,6 +77,12 @@ Route::get('registration/SMP-PDF', 'Controller@registration_smp_pdf');
 Route::get('registration/SMA-PDF', 'Controller@registration_sma_pdf');
 
 Route::get('manage', 'AdminController@admin');
+Route::get('manage/all', 'AdminController@manage_all');
+Route::get('manage/news', 'AdminController@manage_news');
+Route::get('manage/agenda', 'AdminController@manage_agenda');
+Route::get('manage/announcement', 'AdminController@manage_announcement');
+Route::get('manage/article', 'AdminController@manage_article');
+
 
 Route::post('login_staff', 'LoginController@login_staff');
 Route::post('login_teacher', 'LoginController@login_teacher');

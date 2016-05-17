@@ -350,26 +350,27 @@ class PostController extends Controller
                 $string = substr($stringCut, 0, strrpos($stringCut, ' ')).'...';
             }
             echo 
-                "<a href=".url('view/'.$dt_blog_admin->id).">
-                <div class=\"content1-box\">
-                  <img class=\"cb-img\" src=".url('images/'.$dt_blog_admin->cover_photo)." />
-                  <div class=\"cb-title\">
+                "<div class=\"detail-news\">
+                <a href=".url('view/'.$dt_blog_admin->id).">
+                <div class=\"img-detail-news\">
+                  <img class=\"img-dn\" src=".url('images/'.$dt_blog_admin->cover_photo)." />
+                </div>
+                  <div class=\"title-detail-news\">
                     ".$dt_blog_admin->dt_blog_title."
                   </div>
-                  <div class=\"cb-desc\">
+                  <div class=\"content-detail-news\">
                   ".$string."
                 
                   </div>
-                  <div class=\"cb-inf\">
-                    <i class=\"fa fa-user\"></i> ".$dt_blog_admin->dt_blog_create_by ." - ".($dt_blog_admin->dt_blog_by)."
-                    <p class=\"cb-date\">
-                      ".$dt_blog_admin->created_at."
-                    </p>
-                  </div>
+                  </a>
+                  <div class=\"attr\">
+                  <hr/>
+                  <label><a href=".url('manage_post/edit_post/'.$dt_blog_admin->id)."> <i style=\"font-size:24px;margin-right:20px;\" class=\"fa fa-pencil-square-o\"></i> </a></label>
+                  <label><a href=".url('manage_post/delete_post/'.$dt_blog_admin->id)."> <i style=\"font-size:24px;color:rgb(202, 65, 65)\" class=\"fa fa-trash\"></i> </a></label>
                 </div>
-                </a>";
+                </div>";
         $i++;
         }
     }   
 
-}
+}         

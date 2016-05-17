@@ -43,11 +43,11 @@
                 <div class="input-group-btn">
                   <button type="submit" class="btn btn-default dropdown-toggle" data-toggle="dropdown" style="margin-bottom:0px;" aria-haspopup="true" aria-expanded="false">All Information <span class="caret"></span></button>
                   <ul class="dropdown-menu">
-                    <li><a href="#">News</a></li>
-                    <li><a href="#">Agenda</a></li>
-                    <li><a href="#">Announcement </a></li>
-                    <li><a href="#">Article</a></li>
-                    <li><a href="#">All Information</a></li>
+                    <li><a href="{{ url('manage/news') }}">News</a></li>
+                    <li><a href="{{ url('manage/agenda') }}">Agenda</a></li>
+                    <li><a href="{{ url('manage/announcement') }}">Announcement </a></li>
+                    <li><a href="{{ url('manage/article') }}">Article</a></li>
+                    <li><a href="{{ url('manage/all') }}">All Information</a></li>
                   </ul>
                 </div><!-- /btn-group -->
               </div><!-- /input-group -->
@@ -102,23 +102,24 @@
 
 
     </div><!-- ./wrapper -->
-    <script>
-$.ajaxSetup({
+
+    <script type="text/javascript">
+
+    $.ajaxSetup({
    headers: {'X-CSRF-Token': $('meta[name=csrf_token]').attr('content')}
 });
-        $("input[name='search_admin']").keyup(function(e){
+        $('input[name=search_admin]').keyup(function(e){
             // alert('asdasd');
             setTimeout(function(){
-                $('.content1-box-all').html('<div class="content1-box-all">Loading...</div>');
-                var url = '{{url("search_post_admin")}}/'+$('input[name=search_admin]').val(),
+                $('.admin-news').html('<div class="admin-news">Loading...</div>');
                 $.ajax({
                     'type': 'GET',
-                    'url': url,
+                    'url': '{{url("search_post_admin")}}/'+$('input[name=search_admin]').val(),
                     'success': function(data){
                     if (data) {
-                        $('.content1-box-all').html(data);
+                        $('.admin-news').html(data);
                     }else{
-                        $('.content1-box-all').html('<div class="content1-box-all">Pencarian tidak ditemukan..</div>');
+                        $('.admin-news').html('<div class="admin-news">Pencarian tidak ditemukan..</div>');
                     }
                     }
                 });

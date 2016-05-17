@@ -448,11 +448,11 @@
       <div class="input-group-btn">
         <button type="submit" class="btn btn-default dropdown-toggle" data-toggle="dropdown" style="margin-bottom:10px;" aria-haspopup="true" aria-expanded="false">Information <span class="caret"></span></button>
         <ul class="dropdown-menu">
-          <li><a href="#">All</a></li>
-          <li><a href="#">News</a></li>
-          <li><a href="#">Agenda</a></li>
-          <li><a href="#">Announcement</a></li>
-          <li><a href="#">Article</a></li>
+          <li><a href="{{ url('portal_sma/all') }}">All</a></li>
+          <li><a href="{{ url('portal_sma/news') }}">News</a></li>
+          <li><a href="{{ url('portal_sma/agenda') }}">Agenda</a></li>
+          <li><a href="{{ url('portal_sma/announcement') }}">Announcement </a></li>
+          <li><a href="{{ url('portal_sma/article') }}">Article</a></li>
         </ul>
       </div><!-- /btn-group -->
     </div><!-- /input-group -->
