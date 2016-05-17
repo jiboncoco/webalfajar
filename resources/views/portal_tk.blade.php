@@ -649,7 +649,7 @@ $.ajaxSetup({
                 $('.content1-box-all').html('<div class="content1-box-all">Loading...</div>');
                 $.ajax({
                     'type': 'GET',
-                    'url': '/search_post_tk/'+$("input[name='search_tk']").val(),
+                    'url': '{{url("search_post_tk")}}/'+$('input[name=search_tk]').val(),
                     'success': function(data){
                     if (data) {
                         $('.content1-box-all').html(data);

@@ -650,7 +650,7 @@ $.ajaxSetup({
                 $('.content1-box-all').html('<div class="content1-box-all">Loading...</div>');
                 $.ajax({
                     'type': 'GET',
-                    'url': '/search_post_sd/'+$("input[name='search_sd']").val(),
+                    'url': '{{url("search_post_sd")}}/'+$('input[name=search_sd]').val(),
                     'success': function(data){
                     if (data) {
                         $('.content1-box-all').html(data);

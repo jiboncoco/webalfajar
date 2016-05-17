@@ -110,7 +110,7 @@ $.ajaxSetup({
             // alert('asdasd');
             setTimeout(function(){
                 $('.content1-box-all').html('<div class="content1-box-all">Loading...</div>');
-                var url = '{{url("search_post")}}/'+$('input[name=search]').val(),
+                var url = '{{url("search_post_admin")}}/'+$('input[name=search_admin]').val(),
                 $.ajax({
                     'type': 'GET',
                     'url': url,

@@ -1010,7 +1010,7 @@ $.ajaxSetup({
                 $('.content1-box-all').html('<div class="content1-box-all">Loading...</div>');
                 $.ajax({
                     'type': 'GET',
-                    'url': '/search_post/'+$("input[name='search']").val(),
+                    'url': '{{url("search_post")}}/'+$('input[name=search]').val(),
                     'success': function(data){
                     if (data) {
                         $('.content1-box-all').html(data);
