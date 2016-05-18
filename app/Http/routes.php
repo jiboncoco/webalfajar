@@ -93,6 +93,9 @@ Route::get('manage/article', 'AdminController@manage_article');
 
 Route::get('manage_teacher/master_teacher', 'AdminController@master_teacher');
 Route::post('manage_teacher/save_master_teacher', 'AdminController@save_master_teacher');
+Route::get('manage_teacher/edit_master_teacher/{id}', 'AdminController@edit_master_teacher');
+Route::post('manage_teacher/save_edit_master_teacher', 'AdminController@save_edit_master_teacher');
+Route::get('manage_teacher/delete_master_teacher/{id}', 'AdminController@delete_master_teacher');
 
 Route::post('login_staff', 'LoginController@login_staff');
 Route::post('login_teacher', 'LoginController@login_teacher');

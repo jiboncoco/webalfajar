@@ -93,7 +93,8 @@ class AdminController extends Controller
     {
        session_start();
         if(isset($_SESSION['logged_in'])){
-            return view('master_teacher');
+            $data_teacher = \App\dt_teacher::all();
+            return view('master_teacher')->with('data_teacher',$data_teacher);
         }
         else{
             return redirect('login');
@@ -104,16 +105,57 @@ class AdminController extends Controller
     {
         $post = new \App\dt_teacher;
         $post->dt_teacher_nip = Input::get('dt_teacher_nip');
-        $post->dt_teacher_name = Input::get('dt_teacher_fname'+'dt_teacher_lname');
+        $post->dt_teacher_name = Input::get('dt_teacher_fname')." ".Input::get('dt_teacher_lname');
         $post->dt_teacher_position = Input::get('dt_teacher_position');
         $post->dt_teacher_for = Input::get('dt_teacher_for');
         $post->dt_teacher_statuslog = Input::get('dt_teacher_statuslog');
         $post->dt_teacher_create_by = session('akses_username');
-        $post->dt_teacher_code_absen = Input::get('dt_teacher_nip'+'dt_teacher_fname');
+        $post->dt_teacher_code_absen = Input::get('dt_teacher_nip')."".Input::get('dt_teacher_fname');
 
         $post->save();
 
         return redirect(url('manage_teacher/master_teacher'));
+    }
+
+    public function edit_master_teacher($id)
+    {
+       session_start();
+        if(isset($_SESSION['logged_in'])){
+            $data_edit = \App\dt_teacher::find($id);
+            $data_teacher = \App\dt_teacher::all();
+            return view('edit_master_teacher')->with('data_teacher',$data_teacher)->with('data_edit',$data_edit);
+        }
+        else{
+            return redirect('login');
+        }
+    }
+
+    public function save_edit_master_teacher()
+    {
+        $post = \App\dt_teacher::find(Input::get('id'));
+        $post->dt_teacher_nip = Input::get('dt_teacher_nip');
+        $post->dt_teacher_name = Input::get('dt_teacher_fname')." ".Input::get('dt_teacher_lname');
+        $post->dt_teacher_position = Input::get('dt_teacher_position');
+        $post->dt_teacher_for = Input::get('dt_teacher_for');
+        $post->dt_teacher_statuslog = Input::get('dt_teacher_statuslog');
+        $post->dt_teacher_update_by = session('akses_username');
+        $post->dt_teacher_code_absen = Input::get('dt_teacher_nip')."".Input::get('dt_teacher_fname');
+
+        $post->save();
+
+        return redirect(url('manage_teacher/master_teacher'));
+    }
+
+    public function delete_master_teacher($id)
+    {
+       session_start();
+        if(isset($_SESSION['logged_in'])){
+            \App\dt_teacher::find($id)->delete();
+            return redirect( url('manage_teacher/master_teacher'));
+        }
+        else{
+            return redirect(url('login'));
+        }
     }
 
 }

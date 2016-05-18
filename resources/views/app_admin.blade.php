@@ -35,14 +35,14 @@
         <script src="{{ url('adminlte/dist/js/demo.js') }}"></script>
     <script src="{{ url('adminlte/ckeditor/ckeditor.js') }}"></script>
     <script src="{{ url('adminlte/select2/select2.full.js') }}"></script>
+    <script src"{{ url('adminlte/plugins/datatables/jquery.dataTables.min.js') }}"></script>
+    <script src"{{ url('adminlte/plugins/datatables/dataTables.bootstrap.min.js') }}"></script>
     <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css" />
     <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
     <!-- FastClick -->
     <script src="{{ url('adminlte/plugins/fastclick/fastclick.min.js') }}"></script>
     <!-- AdminLTE App -->
     <script src="{{ url('adminlte/dist/js/app.min.js') }}"></script>
-    <script src"{{ url('adminlte/plugins/datatables/jquery.dataTables.min.js') }}"></script>
-    <script src"{{ url('adminlte/plugins/datatables/dataTables.bootstrap.min.js') }}"></script>
     <!-- Sparkline -->
     <script src="{{ url('adminlte/plugins/sparkline/jquery.sparkline.min.js') }}"></script>
     <!-- jvectormap -->
