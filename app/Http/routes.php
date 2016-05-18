@@ -37,9 +37,17 @@ Route::get('/', function () {
 
 Route::get('login', 'Controller@login');
 Route::get('news', 'Controller@news');
+Route::get('search_news2/', 'PostController@search_news2');
+Route::get('search_news/{search_news}', 'PostController@search_news');
+
 Route::get('agenda', 'Controller@agenda');
+Route::get('search_agenda/{search_agenda}', 'PostController@search_agenda');
+
 Route::get('announcement', 'Controller@pengumuman');
+Route::get('search_announcement/{search_announcement}', 'PostController@search_announcement');
+
 Route::get('article', 'Controller@artikel');
+Route::get('search_article/{search_article}', 'PostController@search_article');
 
 Route::get('portal_tk', 'Controller@portal_tk');
 Route::get('portal_tk/all', 'Controller@portal_tk_all');
@@ -83,6 +91,8 @@ Route::get('manage/agenda', 'AdminController@manage_agenda');
 Route::get('manage/announcement', 'AdminController@manage_announcement');
 Route::get('manage/article', 'AdminController@manage_article');
 
+Route::get('manage_teacher/master_teacher', 'AdminController@master_teacher');
+Route::post('manage_teacher/save_master_teacher', 'AdminController@save_master_teacher');
 
 Route::post('login_staff', 'LoginController@login_staff');
 Route::post('login_teacher', 'LoginController@login_teacher');
@@ -113,7 +123,6 @@ Route::get('manage_post/delete_post/{id}', 'PostController@delete_post');
 Route::post('save_comment', 'PostController@save_comment');
 Route::get('logout', 'LoginController@logout');
 
-Route::get('search_post/{search}', 'PostController@search_post');
 Route::get('search_post_tk/{search_tk}', 'PostController@search_post_tk');
 Route::get('search_post_sd/{search_sd}', 'PostController@search_post_sd');
 Route::get('search_post_smp/{search_smp}', 'PostController@search_post_smp');

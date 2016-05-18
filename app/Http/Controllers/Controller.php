@@ -27,7 +27,7 @@ class Controller extends BaseController
     public function news()
     {
        session_start();
-        if(isset($_SESSION['logged_in'])){
+        if(isset($_SESSION['logged_in'])){        
             $dt_blog_all_news = \DB::table('dt_blog')->where('dt_blog_type', '=', 'news')->orderBy('id', 'desc')->paginate(6);
             $announcement = \DB::table('dt_blog')->where('dt_blog_type','=','announcement')->take(3)->orderBy('id', 'desc')->get();
             $article = \DB::table('dt_blog')->where('dt_blog_type', '=', 'article')->take(3)->orderBy('id', 'desc')->get();

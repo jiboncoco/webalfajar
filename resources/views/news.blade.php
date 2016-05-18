@@ -838,7 +838,7 @@
     <div class="content-s">
       <form role="form" data-toggle="validator">
         <span class="input-group-btn">
-      <input class="fcs" name="search" id="search" placeholder="Search" required/>
+      <input class="fcs" name="search_news" id="search_news" placeholder="Search News..." required/>
       </span>
       </form>
     </div>
@@ -1005,14 +1005,14 @@
 <script>
 $.ajaxSetup({
    headers: {'X-CSRF-Token': $('meta[name=csrf_token]').attr('content')}
-});
-        $('input[name=search]').keyup(function(e){
-            // alert('asdasd');
+      });
+        $('input[name=search_news]').keyup(function(e){
+            
             setTimeout(function(){
                 $('.content1-box-all').html('<div class="content1-box-all">Loading...</div>');
                 $.ajax({
                     'type': 'GET',
-                    'url': '{{url("search_post")}}/'+$('input[name=search]').val(),
+                    'url': '{{url("search_news")}}/'+$('input[name=search_news]').val(),
                     'success': function(data){
                     if (data) {
                         $('.content1-box-all').html(data);
@@ -1023,7 +1023,7 @@ $.ajaxSetup({
                 });
             }, 500);
         });
-    </script>
+</script>
 
 </body>
 </html>

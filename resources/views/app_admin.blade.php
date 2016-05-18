@@ -41,6 +41,8 @@
     <script src="{{ url('adminlte/plugins/fastclick/fastclick.min.js') }}"></script>
     <!-- AdminLTE App -->
     <script src="{{ url('adminlte/dist/js/app.min.js') }}"></script>
+    <script src"{{ url('adminlte/plugins/datatables/jquery.dataTables.min.js') }}"></script>
+    <script src"{{ url('adminlte/plugins/datatables/dataTables.bootstrap.min.js') }}"></script>
     <!-- Sparkline -->
     <script src="{{ url('adminlte/plugins/sparkline/jquery.sparkline.min.js') }}"></script>
     <!-- jvectormap -->
