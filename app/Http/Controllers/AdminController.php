@@ -122,7 +122,7 @@ class AdminController extends Controller
        session_start();
         if(isset($_SESSION['logged_in'])){
             $data_edit = \App\dt_teacher::find($id);
-            $data_teacher = \App\dt_teacher::all();
+            $data_teacher = \App\dt_teacher::paginate(10);
             return view('edit_master_teacher')->with('data_teacher',$data_teacher)->with('data_edit',$data_edit);
         }
         else{
