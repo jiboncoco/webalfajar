@@ -311,7 +311,7 @@
                     @foreach($data_teacher as $teachers)
                       <tr>
                         <td>{{$i++}}</td>
-                        <td>{{ $teachers->dt_teacher_name}}</td>
+                        <td>{{ preg_replace('/\|/', ' ', $teachers->dt_teacher_name) }}</td>
                         <td>{{ $teachers->dt_teacher_nip}}</td>
                         <td>{{ $teachers->dt_teacher_for}}</td>
                         <td>{{ $teachers->dt_teacher_position}}</td>

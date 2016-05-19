@@ -230,7 +230,7 @@
                       </tr>
                     </thead>
                     <tbody>
-                    <?php $i=1; ?>
+                    <?php $i=$data_teacher->firstItem(); ?>
                     @foreach($data_teacher as $teachers)
                       <tr>
                         <td>{{$i++}}</td>
@@ -249,6 +249,9 @@
                     @endforeach
                     </tfoot>
                   </table>
+                   <ul class="pagination">
+                  {!! $data_teacher->render() !!}
+                  </ul>
                 </div><!-- /.box-body -->
               </div><!-- /.box -->
               </div>
