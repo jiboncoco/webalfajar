@@ -30,7 +30,80 @@
       <!-- Left side column. contains the logo and sidebar -->
 
           @include('sidebar')
-
+        <div class="modal fade" id="myModaldetailteacher" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog-front">
+                <div class="modal-content">
+                    <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title" id="myModalLabel">Data Teachers</h4>
+                    </div>
+                        <div class="modal-body-front">
+                <div class="box-header">
+                </div><!-- /.box-header -->
+                <div class="box-body">
+                  <table id="example2" class="table table-bordered table-hover">
+                    <thead>
+                      <tr>
+                        <th>No.</th>
+                        <th>NIP</th>
+                        <th>Name</th>
+                        <th>Gender</th>
+                        <th>Birth Place and Date</th>
+                        <th>Religion</th>
+                        <th>Position</th>
+                        <th>Age</th>
+                        <th>Bloodtype</th>
+                        <th>Teacher For</th>
+                        <th>Email</th>
+                        <th>Contact</th>
+                        <th>Address</th>
+                        <th>Absen Code</th>
+                        <th>Photo</th>
+                        <th>Status Log</th>
+                        <th>Action</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                    <?php $i=$data_teacher->firstItem(); ?>
+                    @foreach($data_teacher as $teachers)
+                      <tr>
+                        <td>{{$i++}}</td>
+                        <td>{{ $teachers->dt_teacher_nip}}</td>
+                        <td>{{ preg_replace('/\|/', ' ', $teachers->dt_teacher_name) }}</td>
+                        <td>{{ $teachers->dt_teacher_gender}}</td>
+                        <td>{{ $teachers->dt_teacher_dobplace}}</td>
+                        <td>{{ $teachers->dt_teacher_religion}}</td>
+                        <td>{{ $teachers->dt_teacher_position}}</td>
+                        <td>{{ $teachers->dt_teacher_age}}</td>
+                        <td>{{ $teachers->dt_teacher_bloodtype}}</td>
+                        <td>{{ $teachers->dt_teacher_for}}</td>
+                        <td>{{ $teachers->dt_teacher_email}}</td>
+                        <td>{{ $teachers->dt_teacher_contact}}</td>
+                        <td>{{ $teachers->dt_teacher_address}}</td>
+                        <td>{{ $teachers->dt_teacher_code_absen}}</td>
+                        <td><img class="cover_photo_edit" src="{{ url('images/'.$teachers->photo) }}"></td>
+                        <td>{{ $teachers->dt_teacher_statuslog}}</td>
+                        <td>
+                        <a href="{{ url('manage_teacher/edit_master_teacher/'.$teachers->id)}}"><i class="fa fa-pencil-square-o"></i> </a>
+                        <a href="{{ url('manage_teacher/delete_master_teacher/'.$teachers->id)}}"><i class="fa fa-trash"></i> </a>
+                        </td>
+                      </tr>
+                    @endforeach
+                    </tfoot>
+                  </table>
+                   <ul class="pagination">
+                  {!! $data_teacher->render() !!}
+                  </ul>
+                </div><!-- /.box-body -->
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
       <!-- Content Wrapper. Contains page content -->
       <div class="content-wrapper">
 
@@ -243,7 +316,7 @@
                         <td>
                         <a href="{{ url('manage_teacher/edit_master_teacher/'.$teachers->id)}}"><i class="fa fa-pencil-square-o"></i> </a>
                         <a href="{{ url('manage_teacher/delete_master_teacher/'.$teachers->id)}}"><i class="fa fa-trash"></i> </a>
-                        <a href="{{ url('manage_teacher/detail_master_teacher/'.$teachers->id)}}"><i class="fa fa-eye"></i> </a>
+                        <a data-toggle="modal" data-target="#myModaldetailteacher" href="#"><i class="fa fa-eye"></i> </a>
                         </td>
                       </tr>
                     @endforeach
