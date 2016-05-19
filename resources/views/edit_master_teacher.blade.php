@@ -93,7 +93,7 @@
                   }
                   </script>
                     <label for="exampleInputPassword1">First Name</label>
-                    <input type="text" value="{{ $data_edit->dt_teacher_name}}" name="dt_teacher_fname" class="form-control" maxlength="50" placeholder="First Name" onkeyup="this.value = minmaxname(this.value, 0, 50)" required/>
+                    <input type="text" value="{{ preg_replace('/\|.+/', '', $data_edit->dt_teacher_name) }}" name="dt_teacher_fname" class="form-control" maxlength="50" placeholder="First Name" onkeyup="this.value = minmaxname(this.value, 0, 50)" required/>
                   </div>
                   <div class="col-xs-6 col-md-4">
                  <script type="text/javascript">
@@ -107,7 +107,7 @@
                   }
                   </script>
                     <label for="exampleInputPassword1">Last Name</label>
-                    <input type="text" value="{{ $data_edit->dt_teacher_name}}" name="dt_teacher_lname" class="form-control" maxlength="50" placeholder="Last Name" onkeyup="this.value = minmaxname(this.value, 0, 50)" required/>
+                    <input type="text" value="{{ preg_replace('/.+\|/', '', $data_edit->dt_teacher_name) }}" name="dt_teacher_lname" class="form-control" maxlength="50" placeholder="Last Name" onkeyup="this.value = minmaxname(this.value, 0, 50)" required/>
                   </div>
                   </div>
                   <br>

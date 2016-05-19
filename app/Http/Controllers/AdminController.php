@@ -105,7 +105,7 @@ class AdminController extends Controller
     {
         $post = new \App\dt_teacher;
         $post->dt_teacher_nip = Input::get('dt_teacher_nip');
-        $post->dt_teacher_name = Input::get('dt_teacher_fname')." ".Input::get('dt_teacher_lname');
+        $post->dt_teacher_name = Input::get('dt_teacher_fname')."|".Input::get('dt_teacher_lname');
         $post->dt_teacher_position = Input::get('dt_teacher_position');
         $post->dt_teacher_for = Input::get('dt_teacher_for');
         $post->dt_teacher_statuslog = Input::get('dt_teacher_statuslog');
@@ -134,7 +134,7 @@ class AdminController extends Controller
     {
         $post = \App\dt_teacher::find(Input::get('id'));
         $post->dt_teacher_nip = Input::get('dt_teacher_nip');
-        $post->dt_teacher_name = Input::get('dt_teacher_fname')." ".Input::get('dt_teacher_lname');
+        $post->dt_teacher_name = Input::get('dt_teacher_fname')."|".Input::get('dt_teacher_lname');
         $post->dt_teacher_position = Input::get('dt_teacher_position');
         $post->dt_teacher_for = Input::get('dt_teacher_for');
         $post->dt_teacher_statuslog = Input::get('dt_teacher_statuslog');
