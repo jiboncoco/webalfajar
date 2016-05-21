@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" style="padding:0px;">
 <head>
     <meta charset="utf-8">
     <title>Website Sekolah</title>

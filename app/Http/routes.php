@@ -96,6 +96,11 @@ Route::post('manage_teacher/save_master_teacher', 'AdminController@save_master_t
 Route::get('manage_teacher/edit_master_teacher/{id}', 'AdminController@edit_master_teacher');
 Route::post('manage_teacher/save_edit_master_teacher', 'AdminController@save_edit_master_teacher');
 Route::get('manage_teacher/delete_master_teacher/{id}', 'AdminController@delete_master_teacher');
+Route::get('manage_teacher/export_data/xls', 'PostController@exportxls_data_master_teacher');
+Route::get('manage_teacher/export_data/xlsx', 'PostController@exportxlsx_data_master_teacher');
+Route::get('manage_teacher/export_data/csv', 'PostController@exportcsv_data_master_teacher');
+Route::get('manage_teacher/export_data/{$type}', 'PostController@export_data_master_teacher');
+Route::get('manage_teacher/import_data/', 'PostController@import_data_master_teacher');
 
 Route::post('login_staff', 'LoginController@login_staff');
 Route::post('login_teacher', 'LoginController@login_teacher');

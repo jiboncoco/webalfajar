@@ -13,27 +13,27 @@ class PostController extends Controller
 {
     public function master_post(Request $request)
     {
-    	session_start();
-    	if(isset($_SESSION['logged_in'])){
-    		$m_blog = \App\m_blog::all();
-    		$m_kelas = \App\m_kelas::all();
-			return \View::make('master_post')->with('request',$request)->with('m_blogs', $m_blog)->with('m_kelass', $m_kelas);
-		}
-		else{
-			return redirect('login')->with('request',$request);
-		}	
+      session_start();
+      if(isset($_SESSION['logged_in'])){
+        $m_blog = \App\m_blog::all();
+        $m_kelas = \App\m_kelas::all();
+      return \View::make('master_post')->with('request',$request)->with('m_blogs', $m_blog)->with('m_kelass', $m_kelas);
+    }
+    else{
+      return redirect('login')->with('request',$request);
+    } 
     }
 
     public function save_post()
     {
         $post = new \App\dt_blog;
-    	$post->dt_blog_type = Input::get('dt_blog_type');
-    	$post->dt_blog_date_event = Input::get('dt_blog_date_event');
-    	$post->dt_blog_title = Input::get('dt_blog_title');
-    	$post->dt_blog_text = Input::get('dt_blog_text');
-    	$post->dt_blog_for = Input::get('dt_blog_for');
-    	$post->dt_blog_by = session('akses_type');
-    	$post->dt_blog_create_by = session('akses_username');
+      $post->dt_blog_type = Input::get('dt_blog_type');
+      $post->dt_blog_date_event = Input::get('dt_blog_date_event');
+      $post->dt_blog_title = Input::get('dt_blog_title');
+      $post->dt_blog_text = Input::get('dt_blog_text');
+      $post->dt_blog_for = Input::get('dt_blog_for');
+      $post->dt_blog_by = session('akses_type');
+      $post->dt_blog_create_by = session('akses_username');
         $post->slug = str_slug(Input::get('dt_blog_title'));
 
         if(Input::hasFile('cover_photo')){
@@ -46,9 +46,9 @@ class PostController extends Controller
             $post->cover_photo = $cover_photo;
         }
 
-    	$post->save();
+      $post->save();
 
-		return redirect(url('manage'));
+    return redirect(url('manage'));
     }
 
     public function save_comment()
@@ -542,6 +542,87 @@ class PostController extends Controller
                 </div>";
         $i++;
         }
-    }   
+    }
+
+    public function exportxls_data_master_teacher()
+    {
+
+      $data_teacher = \App\dt_teacher::select('dt_teacher.dt_teacher_nip','dt_teacher.dt_teacher_name','dt_teacher.dt_teacher_gender','dt_teacher.dt_teacher_dobplace','dt_teacher.dt_teacher_religion','dt_teacher.dt_teacher_position','dt_teacher.dt_teacher_age','dt_teacher.dt_teacher_bloodtype','dt_teacher.dt_teacher_for','dt_teacher.dt_teacher_email','dt_teacher.dt_teacher_contact','dt_teacher.dt_teacher_address','dt_teacher.dt_teacher_code_absen','dt_teacher.dt_teacher_statuslog')->get()->toArray();
+      return \Excel::create('Master_Data_Teacher', function($excel) use ($data_teacher)
+      {
+          $excel->sheet('mySheet', function($sheet) use ($data_teacher)
+          {
+              $sheet->fromArray($data_teacher);
+          });
+      })->download('xls');
+
+    }
+
+        public function exportxlsx_data_master_teacher()
+    {
+
+      $data_teacher = \App\dt_teacher::select('dt_teacher.dt_teacher_nip','dt_teacher.dt_teacher_name','dt_teacher.dt_teacher_gender','dt_teacher.dt_teacher_dobplace','dt_teacher.dt_teacher_religion','dt_teacher.dt_teacher_position','dt_teacher.dt_teacher_age','dt_teacher.dt_teacher_bloodtype','dt_teacher.dt_teacher_for','dt_teacher.dt_teacher_email','dt_teacher.dt_teacher_contact','dt_teacher.dt_teacher_address','dt_teacher.dt_teacher_code_absen','dt_teacher.dt_teacher_statuslog')->get()->toArray();
+      return \Excel::create('Master_Data_Teacher', function($excel) use ($data_teacher)
+      {
+          $excel->sheet('mySheet', function($sheet) use ($data_teacher)
+          {
+              $sheet->fromArray($data_teacher);
+          });
+      })->download('xlsx');
+
+    }
+
+        public function exportcsv_data_master_teacher()
+    {
+
+      $data_teacher = \App\dt_teacher::select('dt_teacher.dt_teacher_nip','dt_teacher.dt_teacher_name','dt_teacher.dt_teacher_gender','dt_teacher.dt_teacher_dobplace','dt_teacher.dt_teacher_religion','dt_teacher.dt_teacher_position','dt_teacher.dt_teacher_age','dt_teacher.dt_teacher_bloodtype','dt_teacher.dt_teacher_for','dt_teacher.dt_teacher_email','dt_teacher.dt_teacher_contact','dt_teacher.dt_teacher_address','dt_teacher.dt_teacher_code_absen','dt_teacher.dt_teacher_statuslog')->get()->toArray();
+      return \Excel::create('Master_Data_Teacher', function($excel) use ($data_teacher)
+      {
+          $excel->sheet('mySheet', function($sheet) use ($data_teacher)
+          {
+              $sheet->fromArray($data_teacher);
+          });
+      })->download('csv');
+
+    }
+
+    public function import_data_master_teacher()
+    {
+
+      if(\Input::hasFile('import_data_master_teacher'))
+      {
+        $path = \Input::file('import_data_master_teacher')->getRealPath();
+        $data = \Excel::load($path, function($reader){
+        })->get();
+        if(!empty($data) && $data->count())
+        {
+          foreach ($data as $key => $value)
+          {
+            $insert[] = ['dt_teacher_nip' => $value->nip, 
+                        'dt_teacher_name' => $value->name,
+                        'dt_teacher_gender' => $value->gender,
+                        'dt_teacher_dobplace' => $value->dobplace,
+                        'dt_teacher_religion' => $value->religion,
+                        'dt_teacher_position' => $value->position,
+                        'dt_teacher_age' => $value->age,
+                        'dt_teacher_bloodtype' => $value->bloodtype,
+                        'dt_teacher_for' => $value->for,
+                        'dt_teacher_email' => $value->email,
+                        'dt_teacher_contact' => $value->contact,
+                        'dt_teacher_address' => $value->address,
+                        'dt_teacher_code_absen' => $value->code_absen,
+                        'dt_teacher_name_img' => $value->name_img,
+                        'dt_teacher_statuslog' => $value->statuslog,
+                        ];
+          }
+          if(!empty($insert))
+          {
+            \DB::table('dt_blog')->insert($insert);
+            dd('Insert Record Successfully!');
+          }
+        }
+      }
+      return back();
+    }
 
 }         

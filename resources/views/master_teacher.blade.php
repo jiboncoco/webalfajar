@@ -91,9 +91,6 @@
                     @endforeach
                     </tfoot>
                   </table>
-                   <ul class="pagination">
-                  {!! $data_teacher->render() !!}
-                  </ul>
                 </div><!-- /.box-body -->
                         </form>
                     </div>
@@ -134,12 +131,12 @@
                   }
                   </script>
                     <label for="exampleInputPassword1">NIP</label>
-                    <input type="text" name="dt_teacher_nip" class="form-control" maxlength="10" placeholder="NIP" onkeyup="this.value = minmaxnip(this.value, 0, 10)" required/>
+                    <input type="text" name="dt_teacher_nip" class="form-control not-res" maxlength="10" placeholder="NIP" onkeyup="this.value = minmaxnip(this.value, 0, 10)" required/>
                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
                   </div>
                   <div class="col-xs-6 col-md-4">
                       <label for="exampleInputPassword1">Gender</label>
-                      <select id="selecttype" name="dt_teacher_gender" class="form-control">
+                      <select id="selecttype" name="dt_teacher_gender" class="form-control not-res">
                         <option value="male">Male</option>
                         <option value="female">Female</option>
                       </select>
@@ -160,7 +157,7 @@
                   }
                   </script>
                     <label for="exampleInputPassword1">First Name</label>
-                    <input type="text" name="dt_teacher_fname" class="form-control" maxlength="50" placeholder="First Name" onkeyup="this.value = minmaxname(this.value, 0, 50)" required/>
+                    <input type="text" name="dt_teacher_fname" class="form-control not-res" maxlength="50" placeholder="First Name" onkeyup="this.value = minmaxname(this.value, 0, 50)" required/>
                   </div>
                   <div class="col-xs-6 col-md-4">
                  <script type="text/javascript">
@@ -174,7 +171,7 @@
                   }
                   </script>
                     <label for="exampleInputPassword1">Last Name</label>
-                    <input type="text" name="dt_teacher_lname" class="form-control" maxlength="50" placeholder="Last Name" onkeyup="this.value = minmaxname(this.value, 0, 50)" required/>
+                    <input type="text" name="dt_teacher_lname" class="form-control not-res" maxlength="50" placeholder="Last Name" onkeyup="this.value = minmaxname(this.value, 0, 50)" required/>
                   </div>
                   </div>
                   <br>
@@ -182,20 +179,20 @@
                   <div class="row">
                   <div class="col-xs-6 col-md-4">
                     <label for="exampleInputPassword1">Birth Place</label>
-                    <input type="text" name="dt_teacher_dobplace" class="form-control" placeholder="Birth Place"/>
+                    <input type="text" name="dt_teacher_dobplace" class="form-control not-res" placeholder="Birth Place"/>
                   </div>
                   <div class="col-xs-6 col-md-4">
                     <label for="exampleInputPassword1">Birth Date</label>
                     <div class='input-group date' id='datetimepicker1'>
-                        <input type='text' name="dt_teacher_dobplace" class="form-control birth_date" />
+                        <input type='text' name="dt_teacher_dobplace" class="form-control not-res birth_date" />
                         <span class="input-group-addon">
                         <span class="glyphicon glyphicon-calendar"></span>
                         </span>
                     </div>
                   </div>
-                  <div class="col-xs-2">
+                  <div class="col-xs-4">
                       <label for="exampleInputPassword1">Age</label>
-                      <select id="selecttype" name="dt_teacher_age" class="form-control">
+                      <select id="selecttype" name="dt_teacher_age" class="form-control not-res-s">
                         @for($i=1;$i<101;$i++)
                         <option value="{{$i}}">{{$i}}</option>
                         @endfor
@@ -207,7 +204,7 @@
                   <div class="row">
                     <div class="col-xs-6 col-md-4">
                       <label for="exampleInputPassword1">Religion</label>
-                      <select id="selecttype" name="dt_teacher_religion" class="form-control">
+                      <select id="selecttype" name="dt_teacher_religion" class="form-control not-res">
                         <option value="islam">Islam</option>
                         <option value="kristen">Kristen</option>
                         <option value="konghucu">Konghucu</option>
@@ -217,14 +214,14 @@
                     </div>
                     <div class="col-xs-6 col-md-4">
                       <label for="exampleInputPassword1">Position</label>
-                      <select id="selecttype" name="dt_teacher_position" class="form-control">
+                      <select id="selecttype" name="dt_teacher_position" class="form-control not-res">
                         <option value="tetap">Tetap</option>
                         <option value="kontrak">Kontrak</option>
                       </select>
                     </div>
-                    <div class="col-xs-2">
+                    <div class="col-xs-4">
                       <label for="exampleInputPassword1">Bloodtype</label>
-                      <select id="selecttype" name="dt_teacher_bloodtype" class="form-control">
+                      <select id="selecttype" name="dt_teacher_bloodtype" class="form-control not-res-s">
                         <option value="A">A</option>
                         <option value="B">B</option>
                         <option value="AB">AB</option>
@@ -237,15 +234,15 @@
                   <div class="row">
                   <div class="col-xs-6 col-md-4">
                     <label for="exampleInputPassword1">Contact</label>
-                    <input type="text" name="dt_teacher_contact" class="form-control" placeholder="Contact"/>
+                    <input type="text" name="dt_teacher_contact" class="form-control not-res" placeholder="Contact"/>
                   </div>
                   <div class="col-xs-6 col-md-4">
                     <label for="exampleInputPassword1">Email</label>
-                    <input type="text" name="dt_teacher_email" class="form-control" placeholder="Email"/>
+                    <input type="text" name="dt_teacher_email" class="form-control not-res" placeholder="Email"/>
                   </div>
-                  <div class="col-xs-2">
+                  <div class="col-xs-4">
                       <label for="exampleInputPassword1">Teacher For</label>
-                      <select id="selecttype" name="dt_teacher_for" class="form-control">
+                      <select id="selecttype" name="dt_teacher_for" class="form-control not-res-s">
                         <option value="TK">TK</option>
                         <option value="SD">SD</option>
                         <option value="SMP">SMP</option>
@@ -258,7 +255,7 @@
                   <div class="row">
                       <div class="col-xs-10">
                         <label for="exampleInputPassword1">Address</label>
-                        <input type="text" name="dt_teacher_address" class="form-control" placeholder="Address"/>
+                        <input type="text" name="dt_teacher_address" class="form-control not-res" placeholder="Address"/>
                       </div>
                   </div>
                   <br>
@@ -266,11 +263,11 @@
                   <div class="row">
                       <div class="col-xs-6 col-md-4">
                         <label for="exampleInputPassword1">Photo</label>
-                        <input type="file" name="dt_teacher_name_img" class="form-control" placeholder="Photo"/>
+                        <input type="file" name="dt_teacher_name_img" class="form-control not-res" placeholder="Photo"/>
                       </div>
                   <div class="col-xs-6 col-md-4">
                       <label for="exampleInputPassword1">Status Log</label>
-                      <select id="selecttype" name="dt_teacher_statuslog" class="form-control">
+                      <select id="selecttype" name="dt_teacher_statuslog" class="form-control not-res">
                         <option value="active">Active</option>
                         <option value="disable">Disable</option>                      
                       </select>
@@ -282,7 +279,15 @@
                 </form>
                 </div><!-- /.box-body -->
               </div><!-- /.box -->
-            
+              
+
+<!--               <form method="POST" action="{{ url('manage_teacher/import_data_teacher') }}" enctype="multipart/form-data">
+                
+                <input type="file" name="import_file"/>
+                <button type="submit">Import File</button>
+
+              </form> -->
+
               <br><br>
           <div style="width:80%;margin:auto" class="box">
                 <div class="box-header">
@@ -322,8 +327,15 @@
                     @endforeach
                     </tfoot>
                   </table>
-                   <ul class="pagination">
+                  <div class="export">
+                  <a href="{{ url('manage_teacher/export_data/xls') }}"><button class="btn btn-success">Export Data xls</button></a>
+                  <a href="{{ url('manage_teacher/export_data/xlsx') }}"><button class="btn btn-info">Export Data xlsx</button></a>
+                  <a href="{{ url('manage_teacher/export_data/csv') }}"><button class="btn btn-warning">Export Data csv</button></a>
+                  </div>
+                   <ul class="pagination pull-right">
+                  
                   {!! $data_teacher->render() !!}
+                  
                   </ul>
                 </div><!-- /.box-body -->
               </div><!-- /.box -->
