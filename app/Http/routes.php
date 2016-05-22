@@ -38,16 +38,16 @@ Route::get('/', function () {
 Route::get('login', 'Controller@login');
 Route::get('news', 'Controller@news');
 Route::get('search_news2/', 'PostController@search_news2');
-Route::get('search_news/{search_news}', 'PostController@search_news');
+Route::get('search_news/{search_news?}', 'PostController@search_news');
 
 Route::get('agenda', 'Controller@agenda');
-Route::get('search_agenda/{search_agenda}', 'PostController@search_agenda');
+Route::get('search_agenda/{search_agenda?}', 'PostController@search_agenda');
 
 Route::get('announcement', 'Controller@pengumuman');
-Route::get('search_announcement/{search_announcement}', 'PostController@search_announcement');
+Route::get('search_announcement/{search_announcement?}', 'PostController@search_announcement');
 
 Route::get('article', 'Controller@artikel');
-Route::get('search_article/{search_article}', 'PostController@search_article');
+Route::get('search_article/{search_article?}', 'PostController@search_article');
 
 Route::get('portal_tk', 'Controller@portal_tk');
 Route::get('portal_tk/all', 'Controller@portal_tk_all');
@@ -131,14 +131,30 @@ Route::get('manage_post/delete_post/{id}', 'PostController@delete_post');
 Route::post('save_comment', 'PostController@save_comment');
 Route::get('logout', 'LoginController@logout');
 
-Route::get('search_post_tk/{search_tk}', 'PostController@search_post_tk');
-Route::get('search_post_sd/{search_sd}', 'PostController@search_post_sd');
-Route::get('search_post_smp/{search_smp}', 'PostController@search_post_smp');
-Route::get('search_post_sma/{search_sma}', 'PostController@search_post_sma');
-Route::get('search_post_admin/{search_admin}', 'PostController@search_post_admin');
+Route::get('search_post_tk/{search_tk?}', 'PostController@search_post_tk');
+Route::get('search_post_sd/{search_sd?}', 'PostController@search_post_sd');
+Route::get('search_post_smp/{search_smp?}', 'PostController@search_post_smp');
+Route::get('search_post_sma/{search_sma?}', 'PostController@search_post_sma');
+Route::get('search_post_admin/{search_admin?}', 'PostController@search_post_admin');
 
 Route::post('uploadimagedrag', 'ImageController@uploadDragAndDropCKEDITOR');
 Route::post('uploadimagefilebrowser', 'ImageController@uploadFileBrowserCKEDITOR');
+
+Route::get('manage_account/all_account', 'AdminController@manage_all_account');
+Route::post('manage_account/save_account', 'AdminController@save_account');
+Route::get('manage_account/edit_account/{id}', 'AdminController@edit_account');
+Route::post('manage_account/update_account', 'AdminController@update_account');
+Route::get('manage_account/delete_account/{id}', 'AdminController@delete_account');
+Route::get('validate_nip', 'AdminController@validate_nip');
+Route::post('validate_nisn_student', 'AdminController@validate_nisn_student');
+Route::post('validate_nisn_parent', 'AdminController@validate_nisn_parent');
+
+Route::get('manage_parent/master_parent', 'AdminController@manage_parent');
+Route::post('manage_parent/save_parent', 'AdminController@save_parent');
+Route::get('manage_parent/edit_parent/{id}', 'AdminController@edit_parent');
+Route::post('manage_parent/update_parent', 'AdminController@update_parent');
+Route::get('manage_parent/delete_parent/{id}', 'AdminController@delete_parent');
+Route::post('validate_parent', 'AdminController@validate_parent');
 /*
 |--------------------------------------------------------------------------
 | Application Routes

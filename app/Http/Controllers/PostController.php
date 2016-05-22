@@ -123,7 +123,7 @@ class PostController extends Controller
     }
 
 
-    public function search_news($search_news)
+    public function search_news($search_news="")
     {
         $i = 1;
         $data = \DB::table('dt_blog')->where([
@@ -165,7 +165,7 @@ class PostController extends Controller
         }
     }
 
-    public function search_agenda($search_agenda)
+    public function search_agenda($search_agenda="")
     {
         $i = 1;
         $data = \DB::table('dt_blog')->where([
@@ -207,7 +207,7 @@ class PostController extends Controller
         }
     }
 
-    public function search_article($search_article)
+    public function search_article($search_article="")
     {
         $i = 1;
         $data = \DB::table('dt_blog')->where([
@@ -249,7 +249,7 @@ class PostController extends Controller
         }
     }
 
-    public function search_announcement($search_announcement)
+    public function search_announcement($search_announcement="")
     {
         $i = 1;
         $data = \DB::table('dt_blog')->where([
@@ -291,49 +291,7 @@ class PostController extends Controller
         }
     }
 
-    public function search_news2()
-    {
-        $i = 1;
-        $data = \DB::table('dt_blog')->where([
-                                              ['dt_blog_title', 'LIKE', '%'.$search_news.'%'],
-                                              ['dt_blog_type', '=', 'news']
-                                              ])->orderBy('id', 'desc')->get();
-        // return $data;
-        foreach ($data as $dt_blog_all_news) {
-            $string = strip_tags($dt_blog_all_news->dt_blog_text);
-
-            if (strlen($string) > 300) {
-
-                // truncate string
-                $stringCut = substr($string, 0, 300);
-
-                // make sure it ends in a word so assassinate doesn't become ass...
-                $string = substr($stringCut, 0, strrpos($stringCut, ' ')).'...';
-            }
-            echo 
-                "<a href=".url('view/'.$dt_blog_all_news->id).">
-                <div class=\"content1-box\">
-                  <img class=\"cb-img\" src=".url('images/'.$dt_blog_all_news->cover_photo)." />
-                  <div class=\"cb-title\">
-                    ".$dt_blog_all_news->dt_blog_title."
-                  </div>
-                  <div class=\"cb-desc\">
-                  ".$string."
-                
-                  </div>
-                  <div class=\"cb-inf\">
-                    <i class=\"fa fa-user\"></i> ".$dt_blog_all_news->dt_blog_create_by ." - ".($dt_blog_all_news->dt_blog_by)."
-                    <p class=\"cb-date\">
-                      ".$dt_blog_all_news->created_at."
-                    </p>
-                  </div>
-                </div>
-                </a>";
-        $i++;
-        }
-    }
-
-    public function search_post_tk($search_tk)
+    public function search_post_tk($search_tk="")
     {
         $i = 1;
         $data = \DB::table('dt_blog')->where([
@@ -375,7 +333,7 @@ class PostController extends Controller
         }
     }
 
-    public function search_post_sd($search_sd)
+    public function search_post_sd($search_sd="")
     {
         $i = 1;
         $data = \DB::table('dt_blog')->where([
@@ -417,7 +375,7 @@ class PostController extends Controller
         }
     }
 
-    public function search_post_smp($search_smp)
+    public function search_post_smp($search_smp="")
     {
         $i = 1;
         $data = \DB::table('dt_blog')->where([
@@ -459,7 +417,7 @@ class PostController extends Controller
         }
     }
 
-    public function search_post_sma($search_sma)
+    public function search_post_sma($search_sma="")
     {
         $i = 1;
         $data = \DB::table('dt_blog')->where([
@@ -501,7 +459,7 @@ class PostController extends Controller
         }
     } 
 
-    public function search_post_admin($search_admin)
+    public function search_post_admin($search_admin="")
     {
         $i = 1;
         $data = \DB::table('dt_blog')->where([

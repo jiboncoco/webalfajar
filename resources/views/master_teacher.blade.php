@@ -81,7 +81,7 @@
                         <td>{{ $teachers->dt_teacher_contact}}</td>
                         <td>{{ $teachers->dt_teacher_address}}</td>
                         <td>{{ $teachers->dt_teacher_code_absen}}</td>
-                        <td><img class="cover_photo_edit" src="{{ url('images/'.$teachers->photo) }}"></td>
+                        <td><img class="cover_photo_edit"></td>
                         <td>{{ $teachers->dt_teacher_statuslog}}</td>
                         <td>
                         <a href="{{ url('manage_teacher/edit_master_teacher/'.$teachers->id)}}"><i class="fa fa-pencil-square-o"></i> </a>
@@ -108,7 +108,7 @@
         <section class="content">
         <div class="admin-seacrh" style="height:2px;">
             </div>
-              <div style="width:80%;margin:auto;" class="box box-default collapsed-box box-solid">
+              <div style="width:95%;margin:auto;" class="box box-default collapsed-box box-solid">
                 <div class="box-header with-border">
                   <h3 class="box-title">Master Teacher</h3>
                   <div class="box-tools pull-right">
@@ -289,7 +289,7 @@
               </form> -->
 
               <br><br>
-          <div style="width:80%;margin:auto" class="box">
+          <div style="width:95%;margin:auto" class="box">
                 <div class="box-header">
                   <h3 class="box-title">Data Teachers</h3>
                 </div><!-- /.box-header -->
@@ -328,9 +328,9 @@
                     </tfoot>
                   </table>
                   <div class="export">
-                  <a href="{{ url('manage_teacher/export_data/xls') }}"><button class="btn btn-success">Export Data xls</button></a>
-                  <a href="{{ url('manage_teacher/export_data/xlsx') }}"><button class="btn btn-info">Export Data xlsx</button></a>
-                  <a href="{{ url('manage_teacher/export_data/csv') }}"><button class="btn btn-warning">Export Data csv</button></a>
+                  <a href="{{ url('manage_teacher/export_data/xls') }}"><button class="btn btn-success"><i class="fa fa-paper-plane-o"></i> xls</button></a>
+                  <a href="{{ url('manage_teacher/export_data/xlsx') }}"><button class="btn btn-info"><i class="fa fa-paper-plane-o"></i> xlsx</button></a>
+                  <a href="{{ url('manage_teacher/export_data/csv') }}"><button class="btn btn-warning"><i class="fa fa-paper-plane-o"></i> csv</button></a>
                   </div>
                    <ul class="pagination pull-right">
                   
@@ -347,15 +347,14 @@
 </body>
 
     <script type="text/javascript">
+            $('#example2').DataTable({
+              "paging": true,
+              "lengthChange": false,
+              "searching": false,
+              "ordering": true,
+              "info": true,
+              "autoWidth": false
+            });
     $('.birth_date').datetimepicker({ format: 'YYYY-MM-DD' });
-
-        $('#example2').DataTable({
-          "paging": true,
-          "lengthChange": false,
-          "searching": false,
-          "ordering": true,
-          "info": true,
-          "autoWidth": false
-        });
     </script>
 @endsection

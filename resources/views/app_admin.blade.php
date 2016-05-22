@@ -23,6 +23,7 @@
     <link rel="stylesheet" href="{{ url('adminlte/dist/css/skins/_all-skins.min.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ url('adminlte/select2/select2.min.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ url('adminlte/dtpicker/css/bootstrap-datetimepicker.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url('adminlte/plugins/datatables/jquery.dataTables.css') }}">
         <!-- jQuery 2.1.4 -->
     
     <!-- Bootstrap 3.3.5 -->
@@ -32,11 +33,10 @@
     <script src="{{ url('adminlte/bootstrap/js/collapse.js') }}"></script>
     <script src="{{ url('adminlte/bootstrap/js/bootstrap.min.js') }}"></script>
     <script src="{{ url('adminlte/dtpicker/js/bootstrap-datetimepicker.min.js')}}"></script>
-        <script src="{{ url('adminlte/dist/js/demo.js') }}"></script>
+    <script src="{{ url('adminlte/dist/js/demo.js') }}"></script>
     <script src="{{ url('adminlte/ckeditor/ckeditor.js') }}"></script>
     <script src="{{ url('adminlte/select2/select2.full.js') }}"></script>
-    <script src"{{ url('adminlte/plugins/datatables/jquery.dataTables.min.js') }}"></script>
-    <script src"{{ url('adminlte/plugins/datatables/dataTables.bootstrap.min.js') }}"></script>
+    <script src="{{ url('adminlte/plugins/datatables/jquery.dataTables.js') }}"></script>
     <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css" />
     <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
     <!-- FastClick -->
@@ -53,7 +53,7 @@
     <!-- ChartJS 1.0.1 -->
     <script src="{{ url('adminlte/plugins/chartjs/Chart.min.js') }}"></script>
     <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-    <script src="{{ url('adminlte/dist/js/pages/dashboard2.js') }}"></script>
+    
     <!-- AdminLTE for demo purposes -->
 
   </head>

@@ -158,4 +158,185 @@ class AdminController extends Controller
         }
     }
 
+    public function manage_all_account()
+    {
+       session_start();
+        if(isset($_SESSION['logged_in'])){
+            $akses = \App\akses::all();
+            $dt_teacher = \App\dt_teacher::all();
+            $dt_parent = \App\dt_parent::all();
+            $dt_student = \App\dt_student::all();
+            return \View::make('manage_all_account')->with('aksess', $akses)->with('dt_teachers', $dt_teacher)->with('dt_parents', $dt_parent)->with('dt_students', $dt_student);
+        }
+        else{
+            return redirect(url('login'));
+        }
+    }
+
+    public function validate_nip()
+    {
+       session_start();
+        if(isset($_SESSION['logged_in'])){
+            $nip = \App\dt_teacher::where('dt_teacher_nip', Input::get('akses_code'))->first();
+             if($nip != null){
+             $stat = "ada";
+             } else {
+                 $stat = "kosong";
+             }
+
+             $data[] = array(
+                 'stat' => $stat
+             );
+
+             return json_encode($data);
+            
+        }
+        else{
+            return redirect(url('login'));
+        }
+    }
+
+    public function validate_nisn_student()
+    {
+       session_start();
+        if(isset($_SESSION['logged_in'])){
+            $nisn_student = \DB::table('dt_student')->where('dt_student_nisn', '=', Input::get('akses_code'))->count();
+            return $nisn_student;
+            
+        }
+        else{
+            return redirect(url('login'));
+        }
+    }
+
+    public function validate_nisn_parent()
+    {
+       session_start();
+        if(isset($_SESSION['logged_in'])){
+            $nisn_parent = \DB::table('dt_parent')->where('dt_parent_nisn', '=', Input::get('akses_code'))->count();
+            return $nisn_parent;
+            
+        }
+        else{
+            return redirect(url('login'));
+        }
+    }
+
+    public function save_account()
+    {
+        $post = new \App\akses;
+        $post->akses_type = Input::get('akses_type');
+        $post->akses_code = Input::get('akses_code');
+        $post->akses_status_data = Input::get('akses_status_data');
+        $post->akses_username = Input::get('akses_username');
+        $post->akses_password = Input::get('akses_password');
+        $post->akses_create_by = session('akses_username');
+
+        $post->save();
+
+        return redirect(url('manage_account/all_account'));
+    }
+
+    public function edit_account($id)
+    {
+       session_start();
+        if(isset($_SESSION['logged_in'])){
+        $akses_edit = \App\akses::find($id);
+        $akses = \App\akses::paginate(5);
+        return \View::make('edit_account')->with('aksess', $akses)->with('akses_edit', $akses_edit);
+        }
+        else{
+            return redirect(url('login'));
+        }
+    }
+
+    public function update_account()
+    {
+        $post = \App\akses::find(Input::get('id'));
+        $post->akses_type = Input::get('akses_type');
+        $post->akses_code = Input::get('akses_code');
+        $post->akses_status_data = Input::get('akses_status_data');
+        $post->akses_username = Input::get('akses_username');
+        $post->akses_password = Input::get('akses_password');
+        $post->akses_update_by = session('akses_username');
+
+        $post->save();
+
+        return redirect(url('manage_account/all_account'));
+    }
+
+    public function delete_account($id)
+    {
+       session_start();
+        if(isset($_SESSION['logged_in'])){
+            \App\akses::find($id)->delete();
+            return redirect( url('manage_account/all_account'));
+        }
+        else{
+            return redirect(url('login'));
+        }
+    }
+
+    public function manage_parent()
+    {
+       session_start();
+        if(isset($_SESSION['logged_in'])){
+            $data_parent = \App\dt_parent::all();
+            $data_student = \App\dt_student::all();
+            return \View::make('master_parent')->with('data_parent', $data_parent)->with('data_student', $data_student);
+        }
+        else{
+            return redirect(url('login'));
+        }
+    }
+
+    public function save_parent()
+    {
+        $post = new \App\dt_parent;
+        $post->dt_parent_nisn = Input::get('dt_parent_nisn');
+        $post->dt_parent_name = Input::get('dt_parent_fname')."|".Input::get('dt_parent_lname');
+        $post->dt_parent_statuslog = Input::get('dt_parent_statuslog');
+        $post->save();
+
+        return redirect(url('manage_parent/master_parent'));
+    }
+
+    public function edit_parent($id)
+    {
+       session_start();
+        if(isset($_SESSION['logged_in'])){
+        $data_parent = \App\dt_parent::all();
+        $data_edit = \App\dt_parent::find($id);
+        $data_student = \App\dt_student::all();
+        return \View::make('edit_parent')->with('data_parent', $data_parent)->with('data_student', $data_student)->with('data_edit', $data_edit);
+        }
+        else{
+            return redirect(url('login'));
+        }
+    }
+
+    public function update_parent()
+    {
+        $post = \App\dt_parent::find(Input::get('id'));
+        $post->dt_parent_nisn = Input::get('dt_parent_nisn');
+        $post->dt_parent_name = Input::get('dt_parent_fname')."|".Input::get('dt_parent_lname');
+        $post->dt_parent_statuslog = Input::get('dt_parent_statuslog');
+        $post->save();
+
+        return redirect(url('manage_parent/master_parent'));
+    }
+
+    public function delete_parent($id)
+    {
+       session_start();
+        if(isset($_SESSION['logged_in'])){
+            \App\dt_parent::find($id)->delete();
+            return redirect( url('manage_parent/master_parent'));
+        }
+        else{
+            return redirect(url('login'));
+        }
+    }
+
+
 }
