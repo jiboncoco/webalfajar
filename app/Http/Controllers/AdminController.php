@@ -173,55 +173,6 @@ class AdminController extends Controller
         }
     }
 
-    public function validate_nip()
-    {
-       session_start();
-        if(isset($_SESSION['logged_in'])){
-            $nip = \App\dt_teacher::where('dt_teacher_nip', Input::get('akses_code'))->first();
-             if($nip != null){
-             $stat = "ada";
-             } else {
-                 $stat = "kosong";
-             }
-
-             $data[] = array(
-                 'stat' => $stat
-             );
-
-             return json_encode($data);
-            
-        }
-        else{
-            return redirect(url('login'));
-        }
-    }
-
-    public function validate_nisn_student()
-    {
-       session_start();
-        if(isset($_SESSION['logged_in'])){
-            $nisn_student = \DB::table('dt_student')->where('dt_student_nisn', '=', Input::get('akses_code'))->count();
-            return $nisn_student;
-            
-        }
-        else{
-            return redirect(url('login'));
-        }
-    }
-
-    public function validate_nisn_parent()
-    {
-       session_start();
-        if(isset($_SESSION['logged_in'])){
-            $nisn_parent = \DB::table('dt_parent')->where('dt_parent_nisn', '=', Input::get('akses_code'))->count();
-            return $nisn_parent;
-            
-        }
-        else{
-            return redirect(url('login'));
-        }
-    }
-
     public function save_account()
     {
         $post = new \App\akses;
@@ -338,5 +289,132 @@ class AdminController extends Controller
         }
     }
 
+    public function my_post()
+    {
+        session_start();
+        if(isset($_SESSION['logged_in'])){
+            $dt_blog_admin = \DB::table('dt_blog')->where('dt_blog_create_by',session('akses_username'))->take(6)->orderBy('id', 'desc')->paginate(6);
+            return \View::make('admin')->with('dt_blog_admins',$dt_blog_admin);
+        }
+        else{
+            return redirect('login');
+        }   
+    }
+
+    public function master_type_post()
+    {
+       session_start();
+        if(isset($_SESSION['logged_in'])){
+        $m_blog = \App\m_blog::all();
+        return \View::make('master_type_post')->with('m_blogs', $m_blog);
+        }
+        else{
+            return redirect(url('login'));
+        }
+    }
+
+
+    public function save_master_type_post()
+    {
+        $post = new \App\m_blog;
+        $post->m_blog_name_type = Input::get('m_blog_name_type');
+        $post->m_blog_status = Input::get('m_blog_status');
+        $post->save();
+
+        return redirect(url('manage_post/master_type_post'));
+    }
+
+    public function edit_master_type_post($id)
+    {
+       session_start();
+        if(isset($_SESSION['logged_in'])){
+        $m_blog = \App\m_blog::find($id);
+        $blog = \App\m_blog::all();
+        return \View::make('edit_master_type_post')->with('m_blogs', $m_blog)->with('blog', $blog);
+        }
+        else{
+            return redirect(url('login'));
+        }
+    }
+
+    public function update_master_type_post()
+    {
+        $post = \App\m_blog::find(Input::get('id'));
+        $post->m_blog_name_type = Input::get('m_blog_name_type');
+        $post->m_blog_status = Input::get('m_blog_status');
+        $post->save();
+
+        return redirect(url('manage_post/master_type_post'));
+    }
+
+    public function delete_master_type_post($id)
+    {
+       session_start();
+        if(isset($_SESSION['logged_in'])){
+            \App\m_blog::find($id)->delete();
+            return redirect( url('manage_post/master_type_post'));
+        }
+        else{
+            return redirect(url('login'));
+        }
+    }
+
+    public function master_class_post()
+    {
+       session_start();
+        if(isset($_SESSION['logged_in'])){
+        $m_kelas = \App\m_kelas::all();
+        return \View::make('master_class_post')->with('m_kelass', $m_kelas);
+        }
+        else{
+            return redirect(url('login'));
+        }
+    }
+
+
+    public function save_master_class_post()
+    {
+        $post = new \App\m_kelas;
+        $post->m_kelas_name = Input::get('m_kelas_name');
+        $post->m_kelas_status = Input::get('m_kelas_status');
+        $post->save();
+
+        return redirect(url('manage_post/master_class_post'));
+    }
+
+    public function edit_master_class_post($id)
+    {
+       session_start();
+        if(isset($_SESSION['logged_in'])){
+        $m_kelas = \App\m_kelas::find($id);
+        $kelas = \App\m_kelas::all();
+        return \View::make('edit_master_class_post')->with('m_kelass', $m_kelas)->with('kelas', $kelas);
+        }
+        else{
+            return redirect(url('login'));
+        }
+    }
+
+    public function update_master_class_post()
+    {
+        $post = \App\m_kelas::find(Input::get('id'));
+        $post->m_kelas_name = Input::get('m_kelas_name');
+        $post->m_kelas_status = Input::get('m_kelas_status');
+        $post->save();
+
+        return redirect(url('manage_post/master_class_post'));
+    }
+
+    public function delete_master_class_post($id)
+    {
+       session_start();
+        if(isset($_SESSION['logged_in'])){
+            \App\m_kelas::find($id)->delete();
+            return redirect( url('manage_post/master_class_post'));
+        }
+        else{
+            return redirect(url('login'));
+        }
+    }
 
 }

@@ -89,7 +89,7 @@
                 <li><a href="{{ url('manage_post/my_post') }}"><i class="fa fa-th"></i> My Post</a></li>
                 <li><a href="{{ url('manage_post/master_post') }}"><i class="fa fa-th"></i> Master Post</a></li>
                 <li><a href="{{ url('manage_post/master_type_post') }}"><i class="fa fa-list"></i> Master Type Post</a></li>
-                <li><a href="{{ url('manage_post/class_post') }}"><i class="fa fa-columns"></i> Class Post</a></li>
+                <li><a href="{{ url('manage_post/master_class_post') }}"><i class="fa fa-columns"></i> Master Class Post</a></li>
               </ul>
             </li>
             <li class="treeview">

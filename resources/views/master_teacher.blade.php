@@ -41,7 +41,7 @@
                 <div class="box-header">
                 </div><!-- /.box-header -->
                 <div class="box-body">
-                  <table id="example2" class="table table-bordered table-hover">
+                  <table id="for_datatable" class="table table-bordered table-hover">
                     <thead>
                       <tr>
                         <th>No.</th>
@@ -294,7 +294,7 @@
                   <h3 class="box-title">Data Teachers</h3>
                 </div><!-- /.box-header -->
                 <div class="box-body">
-                  <table id="example2" class="table table-bordered table-hover">
+                  <table id="for_datatable" class="table table-bordered table-hover">
                     <thead>
                       <tr>
                         <th>No.</th>
@@ -347,7 +347,7 @@
 </body>
 
     <script type="text/javascript">
-            $('#example2').DataTable({
+            $('#for_datatable').DataTable({
               "paging": true,
               "lengthChange": false,
               "searching": false,

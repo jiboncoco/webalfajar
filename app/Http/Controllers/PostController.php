@@ -544,6 +544,92 @@ class PostController extends Controller
 
     }
 
+    public function exportxls_data_master_all_account()
+    {
+
+      $data_account = \App\akses::select('akses.akses_code','akses.akses_type','akses.akses_username','akses.akses_password','akses.akses_status_data')->get()->toArray();
+      return \Excel::create('Master_Data_Account', function($excel) use ($data_account)
+      {
+          $excel->sheet('mySheet', function($sheet) use ($data_account)
+          {
+              $sheet->fromArray($data_account);
+          });
+      })->download('xls');
+
+    }
+
+        public function exportxlsx_data_master_all_account()
+    {
+
+      $data_account = \App\akses::select('akses.akses_code','akses.akses_type','akses.akses_username','akses.akses_password','akses.akses_status_data')->get()->toArray();
+      return \Excel::create('Master_Data_Account', function($excel) use ($data_account)
+      {
+          $excel->sheet('mySheet', function($sheet) use ($data_account)
+          {
+              $sheet->fromArray($data_account);
+          });
+      })->download('xlsx');
+
+    }
+
+        public function exportcsv_data_master_all_account()
+    {
+
+      $data_parent = \App\akses::select('akses.akses_code','akses.akses_type','akses.akses_username','akses.akses_password','akses.akses_status_data')->get()->toArray();
+      return \Excel::create('Master_Data_Parent', function($excel) use ($data_parent)
+      {
+          $excel->sheet('mySheet', function($sheet) use ($data_parent)
+          {
+              $sheet->fromArray($data_parent);
+          });
+      })->download('csv');
+
+    }
+
+    public function exportxls_data_parent()
+    {
+
+      $data_parent = \App\dt_parent::select('dt_parent.dt_parent_nisn','dt_parent.dt_parent_name','dt_parent.dt_parent_contact','dt_parent.dt_parent_email','dt_parent.dt_parent_age','dt_parent.dt_parent_address','dt_parent.dt_parent_statuslog')->get()->toArray();
+      return \Excel::create('Master_Data_Parent', function($excel) use ($data_parent)
+      {
+          $excel->sheet('mySheet', function($sheet) use ($data_parent)
+          {
+              $sheet->fromArray($data_parent);
+          });
+      })->download('xls');
+
+    }
+
+        public function exportxlsx_data_parent()
+    {
+
+      $data_parent = \App\dt_parent::select('dt_parent.dt_parent_nisn','dt_parent.dt_parent_name','dt_parent.dt_parent_contact','dt_parent.dt_parent_email','dt_parent.dt_parent_age','dt_parent.dt_parent_address','dt_parent.dt_parent_statuslog')->get()->toArray();
+      return \Excel::create('Master_Data_Parent', function($excel) use ($data_parent)
+      {
+          $excel->sheet('mySheet', function($sheet) use ($data_parent)
+          {
+              $sheet->fromArray($data_parent);
+          });
+      })->download('xlsx');
+
+    }
+
+        public function exportcsv_data_parent()
+    {
+
+      $data_parent = \App\dt_parent::select('dt_parent.dt_parent_nisn','dt_parent.dt_parent_name','dt_parent.dt_parent_contact','dt_parent.dt_parent_email','dt_parent.dt_parent_age','dt_parent.dt_parent_address','dt_parent.dt_parent_statuslog')->get()->toArray();
+      return \Excel::create('Master_Data_Parent', function($excel) use ($data_parent)
+      {
+          $excel->sheet('mySheet', function($sheet) use ($data_parent)
+          {
+              $sheet->fromArray($data_parent);
+          });
+      })->download('csv');
+
+    }
+
+
+
     public function import_data_master_teacher()
     {
 

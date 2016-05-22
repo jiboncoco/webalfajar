@@ -102,6 +102,14 @@ Route::get('manage_teacher/export_data/csv', 'PostController@exportcsv_data_mast
 Route::get('manage_teacher/export_data/{$type}', 'PostController@export_data_master_teacher');
 Route::get('manage_teacher/import_data/', 'PostController@import_data_master_teacher');
 
+Route::get('manage_all_account/export_data/xls', 'PostController@exportxls_data_master_all_account');
+Route::get('manage_all_account/export_data/xlsx', 'PostController@exportxlsx_data_master_all_account');
+Route::get('manage_all_account/export_data/csv', 'PostController@exportcsv_data_master_all_account');
+
+Route::get('manage_parent/export_data/xls', 'PostController@exportxls_data_parent');
+Route::get('manage_parent/export_data/xlsx', 'PostController@exportxlsx_data_parent');
+Route::get('manage_parent/export_data/csv', 'PostController@exportcsv_data_parent');
+
 Route::post('login_staff', 'LoginController@login_staff');
 Route::post('login_teacher', 'LoginController@login_teacher');
 Route::post('login_parent', 'LoginController@login_parent');
@@ -127,7 +135,6 @@ Route::get('/images/{filename}',
 Route::get('manage_post/edit_post/{id}', 'PostController@edit_post');
 Route::post('manage_post/save_edit_post', 'PostController@save_edit_post');
 Route::get('manage_post/delete_post/{id}', 'PostController@delete_post');
-
 Route::post('save_comment', 'PostController@save_comment');
 Route::get('logout', 'LoginController@logout');
 
@@ -145,16 +152,29 @@ Route::post('manage_account/save_account', 'AdminController@save_account');
 Route::get('manage_account/edit_account/{id}', 'AdminController@edit_account');
 Route::post('manage_account/update_account', 'AdminController@update_account');
 Route::get('manage_account/delete_account/{id}', 'AdminController@delete_account');
-Route::get('validate_nip', 'AdminController@validate_nip');
-Route::post('validate_nisn_student', 'AdminController@validate_nisn_student');
-Route::post('validate_nisn_parent', 'AdminController@validate_nisn_parent');
 
 Route::get('manage_parent/master_parent', 'AdminController@manage_parent');
 Route::post('manage_parent/save_parent', 'AdminController@save_parent');
 Route::get('manage_parent/edit_parent/{id}', 'AdminController@edit_parent');
 Route::post('manage_parent/update_parent', 'AdminController@update_parent');
 Route::get('manage_parent/delete_parent/{id}', 'AdminController@delete_parent');
-Route::post('validate_parent', 'AdminController@validate_parent');
+
+Route::get('manage_post/my_post', 'AdminController@my_post');
+
+Route::get('manage_post/master_type_post', 'AdminController@master_type_post');
+Route::post('manage_post/save_master_type_post/', 'AdminController@save_master_type_post');
+Route::get('manage_post/edit_master_type_post/{id}', 'AdminController@edit_master_type_post');
+Route::post('manage_post/update_master_type_post', 'AdminController@update_master_type_post');
+Route::get('manage_post/delete_master_type_post/{id}', 'AdminController@delete_master_type_post');
+
+Route::get('manage_post/master_class_post', 'AdminController@master_class_post');
+Route::get('manage_post/edit_master_class_post/{id}', 'AdminController@edit_master_class_post');
+Route::post('manage_post/save_master_class_post', 'AdminController@save_master_class_post');
+Route::post('manage_post/update_master_class_post', 'AdminController@update_master_class_post');
+Route::get('manage_post/delete_master_class_post/{id}', 'AdminController@delete_master_class_post');
+
+
+
 /*
 |--------------------------------------------------------------------------
 | Application Routes
