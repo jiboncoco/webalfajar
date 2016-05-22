@@ -92,6 +92,16 @@
                 <li><a href="{{ url('manage_post/master_class_post') }}"><i class="fa fa-columns"></i> Master Class Post</a></li>
               </ul>
             </li>
+             <li class="treeview">
+              <a href="#">
+                <i class="fa fa-laptop"></i>
+                <span>Manage Feature</span>
+                <i class="fa fa-angle-left pull-right"></i>
+              </a>
+              <ul class="treeview-menu">
+                <li><a href="{{ url('manage_feature/master_feature') }}"><i class="fa fa-user-secret"></i> Master Feature</a></li>
+               </ul>
+            </li>
             <li class="treeview">
               <a href="#">
                 <i class="fa fa-folder"></i> 

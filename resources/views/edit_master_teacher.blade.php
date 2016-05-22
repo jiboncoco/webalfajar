@@ -38,7 +38,7 @@
         <section class="content">
         <div class="admin-seacrh" style="height:2px;">
             </div>
-              <div style="width:80%;margin:auto;" class="box box-default collapsed-box box-solid">
+              <div style="width:95%;margin:auto;" class="box box-default collapsed-box box-solid">
                 <div class="box-header with-border">
                   <h3 class="box-title">Edit Master Teacher</h3>
                   <div class="box-tools pull-right">
@@ -288,12 +288,12 @@
               </div><!-- /.box -->
             
               <br><br>
-          <div style="width:80%;margin:auto" class="box">
+          <div style="width:95%;margin:auto" class="box">
                 <div class="box-header">
                   <h3 class="box-title">Data Teachers</h3>
                 </div><!-- /.box-header -->
                 <div class="box-body">
-                  <table id="example2" class="table table-bordered table-hover">
+                  <table class="for_datatable table table-bordered table-hover">
                     <thead>
                       <tr>
                         <th>No.</th>
@@ -341,7 +341,7 @@
     <script type="text/javascript">
     $('.birth_date').datetimepicker({ format: 'YYYY-MM-DD' });
 
-        $('#example2').DataTable({
+        $('.for_datatable').DataTable({
           "paging": true,
           "lengthChange": false,
           "searching": false,

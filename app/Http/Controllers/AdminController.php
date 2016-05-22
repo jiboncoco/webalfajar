@@ -417,4 +417,98 @@ class AdminController extends Controller
         }
     }
 
+    public function teacher_sch()
+    {
+       session_start();
+        if(isset($_SESSION['logged_in'])){
+            $teacher_sch = \App\dt_sch::all();
+            $dt_teacher = \App\dt_teacher::all();
+            return \View::make('teacher_sch')->with('teacher_sch',$teacher_sch)->with('dt_teachers',$dt_teacher);
+        }
+        else{
+            return redirect(url('login'));
+        }
+    }
+
+    public function save_teacher_sch()
+    {
+        $post = new \App\dt_sch;
+        $post->sch_code = Input::get('sch_code');
+        $post->sch_days = Input::get('sch_days');
+        $post->sch_month = Input::get('sch_month');
+        $post->sch_year = Input::get('sch_year');
+        $post->sch_time = Input::get('sch_time');
+        $post->sch_task = Input::get('sch_task');
+        $post->sch_create_by = session('akses_username');
+        $post->save();
+
+        return redirect(url('manage_teacher/schedule_teacher'));
+    }
+
+    public function edit_teacher_sch($id)
+    {
+       session_start();
+        if(isset($_SESSION['logged_in'])){
+            $teachersch = \App\dt_sch::all();
+            $teacher_sch = \App\dt_sch::find($id);
+            $dt_teacher = \App\dt_teacher::all();
+            return \View::make('edit_teacher_sch')->with('teacher_sch',$teacher_sch)->with('teachersch',$teachersch)->with('dt_teachers',$dt_teacher);
+        }
+        else{
+            return redirect(url('login'));
+        }
+    }
+
+    public function update_teacher_sch()
+    {
+        $post = \App\dt_sch::find(Input::get('id'));
+        $post->sch_code = Input::get('sch_code');
+        $post->sch_days = Input::get('sch_days');
+        $post->sch_month = Input::get('sch_month');
+        $post->sch_year = Input::get('sch_year');
+        $post->sch_time = Input::get('sch_time');
+        $post->sch_task = Input::get('sch_task');
+        $post->sch_create_by = session('akses_username');
+        $post->save();
+
+        return redirect(url('manage_teacher/schedule_teacher'));
+    }
+
+    public function delete_teacher_sch($id)
+    {
+       session_start();
+        if(isset($_SESSION['logged_in'])){
+            \App\dt_sch::find($id)->delete();
+            return redirect(url('manage_teacher/schedule_teacher'));        }
+        else{
+            return redirect(url('login'));
+        }
+    }
+    
+    public function master_feature()
+    {
+       session_start();
+        if(isset($_SESSION['logged_in'])){
+            $feature = \App\dt_feature::all();
+            return \View::make('master_feature')->with('feature',$feature);
+        }
+        else{
+            return redirect(url('login'));
+        }
+    }
+
+    public function save_feature()
+    {
+        $post = new \App\dt_feature;
+        $post->feature_to = Input::get('feature_to');
+        $post->feature_for = Input::get('feature_for');
+        $post->feature_text = Input::get('feature_text');
+        $post->feature_status = Input::get('feature_status');
+        $post->feature_create_by = session('akses_username');
+        $post->save();
+
+        return redirect(url('manage_feature/master_feature'));
+    }
+    
+
 }
