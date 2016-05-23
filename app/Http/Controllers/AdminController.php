@@ -509,6 +509,43 @@ class AdminController extends Controller
 
         return redirect(url('manage_feature/master_feature'));
     }
-    
+
+    public function edit_feature($id)
+    {
+       session_start();
+        if(isset($_SESSION['logged_in'])){
+            $feature = \App\dt_feature::all();
+            $feature_edit = \App\dt_feature::find($id);
+            return \View::make('edit_master_feature')->with('feature',$feature)->with('feature_edit',$feature_edit);
+        }
+        else{
+            return redirect(url('login'));
+        }
+    }
+
+    public function update_feature()
+    {
+        $post = \App\dt_feature::find(Input::get('id'));
+        $post->feature_to = Input::get('feature_to');
+        $post->feature_for = Input::get('feature_for');
+        $post->feature_text = Input::get('feature_text');
+        $post->feature_status = Input::get('feature_status');
+        $post->feature_update_by = session('akses_username');
+        $post->save();
+
+        return redirect(url('manage_feature/master_feature'));
+    }
+
+    public function delete_feature($id)
+    {
+       session_start();
+        if(isset($_SESSION['logged_in'])){
+            \App\dt_feature::find($id)->delete();
+            return redirect(url('manage_feature/master_feature'));        
+        }
+        else{
+            return redirect(url('login'));
+        }
+    }    
 
 }

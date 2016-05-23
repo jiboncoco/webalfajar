@@ -110,6 +110,9 @@ Route::get('manage_teacher/delete_schedule_teacher/{id}', 'AdminController@delet
 
 Route::get('manage_feature/master_feature', 'AdminController@master_feature');
 Route::post('manage_feature/save_feature', 'AdminController@save_feature');
+Route::get('manage_feature/edit_feature/{id}', 'AdminController@edit_feature');
+Route::post('manage_feature/update_feature', 'AdminController@update_feature');
+Route::get('manage_feature/delete_feature/{id}', 'AdminController@delete_feature');
 
 Route::get('manage_all_account/export_data/xls', 'PostController@exportxls_data_master_all_account');
 Route::get('manage_all_account/export_data/xlsx', 'PostController@exportxlsx_data_master_all_account');

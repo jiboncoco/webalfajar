@@ -39,14 +39,14 @@
             </div>
               <div style="width:95%;margin:auto;" class="box box-default collapsed-box box-solid">
                 <div class="box-header with-border">
-                  <h3 class="box-title">Master Feature</h3>
+                  <h3 class="box-title">Edit Feature</h3>
                   <div class="box-tools pull-right">
                     <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-plus"></i></button>
                   </div><!-- /.box-tools -->
                 </div><!-- /.box-header -->
                 <div class="box-body">
                   
-                <form method="POST"  action="{{ url('manage_feature/save_feature') }}" enctype="multipart/form-data">
+                <form method="POST"  action="{{ url('manage_feature/update_feature') }}" enctype="multipart/form-data">
 
                   <div class="row"> 
                   <div  class="col-xs-6 col-md-4">
@@ -85,7 +85,10 @@
                   <div class="row">
                   <div  class="col-xs-8">
                   <label for="exampleInputPassword1">Content</label>
-                  <textarea class="form-control ckeditor" id="editor1" name="feature_text" placeholder="Content" class="materialize-textarea" rows="6" required/></textarea>
+                  <textarea  class="form-control ckeditor" id="editor1" name="feature_text" placeholder="Content" class="materialize-textarea" rows="6" required/>
+                    {{ $feature_edit->feature_text }}
+                  </textarea>
+                  <input type="hidden" name="id" value="{{ $feature_edit->id }}">
                   <input type="hidden" name="_token" value="{{ csrf_token() }}">
                   </div>
                   </div>
