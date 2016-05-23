@@ -76,7 +76,7 @@
               </a>
               <ul class="treeview-menu">
                 <li><a href="{{ url('manage_class/master_class') }}"><i class="fa fa-user-secret"></i> Master Class</a></li>
-                <li><a href="{{ url('manage_class/mater_schedule_class') }}"><i class="fa fa-envelope"></i> Master Schedule Class</a></li>
+                <li><a href="{{ url('manage_class/master_schedule_class') }}"><i class="fa fa-envelope"></i> Master Schedule Class</a></li>
               </ul>
             </li>
             <li class="treeview">

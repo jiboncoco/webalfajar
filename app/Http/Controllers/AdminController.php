@@ -548,4 +548,138 @@ class AdminController extends Controller
         }
     }    
 
+    public function master_class()
+    {
+       session_start();
+        if(isset($_SESSION['logged_in'])){
+            $class = \App\dt_kelas::all();
+            return \View::make('master_class')->with('class',$class);
+        }
+        else{
+            return redirect(url('login'));
+        }
+    }
+
+    public function save_class()
+    {
+        $post = new \App\dt_kelas;
+        $post->dt_kelas_type = Input::get('dt_kelas_type');
+        $post->dt_kelas_name = Input::get('dt_kelas_name');
+        $post->dt_kelas_status = Input::get('dt_kelas_status');
+        $post->dt_kelas_create_by = session('akses_username');
+        $post->save();
+
+        return redirect(url('manage_class/master_class'));
+    }
+
+    public function edit_class($id)
+    {
+       session_start();
+        if(isset($_SESSION['logged_in'])){
+            $class = \App\dt_kelas::all();
+            $class_edit = \App\dt_kelas::find($id);
+            return \View::make('edit_class')->with('class',$class)->with('class_edit',$class_edit);
+        }
+        else{
+            return redirect(url('login'));
+        }
+    }
+
+    public function update_class()
+    {
+        $post = \App\dt_kelas::find(Input::get('id'));
+        $post->dt_kelas_type = Input::get('dt_kelas_type');
+        $post->dt_kelas_name = Input::get('dt_kelas_name');
+        $post->dt_kelas_status = Input::get('dt_kelas_status');
+        $post->dt_kelas_create_by = session('akses_username');
+        $post->save();
+
+        return redirect(url('manage_class/master_class'));
+    }
+
+    public function delete_class($id)
+    {
+       session_start();
+        if(isset($_SESSION['logged_in'])){
+            \App\dt_kelas::find($id)->delete();
+            return redirect(url('manage_class/master_class'));        
+        }
+        else{
+            return redirect(url('login'));
+        }
+    } 
+
+    public function class_sch()
+    {
+       session_start();
+        if(isset($_SESSION['logged_in'])){
+            $class_sch = \App\sch_class::all();
+            $dt_class = \App\dt_kelas::all();
+            $dt_teacher = \App\dt_teacher::all();
+            return \View::make('class_sch')->with('class_sch',$class_sch)->with('dt_class',$dt_class)->with('dt_teachers',$dt_teacher);
+        }
+        else{
+            return redirect(url('login'));
+        }
+    }
+
+    public function save_class_sch()
+    {
+        $post = new \App\sch_class;
+        $post->sch_class_forclass = Input::get('sch_class_forclass');
+        $post->sch_class_day = Input::get('sch_class_day');
+        $post->sch_class_month = Input::get('sch_class_month');
+        $post->sch_class_year = Input::get('sch_class_year');
+        $post->sch_class_time = Input::get('sch_class_time');
+        $post->sch_class_teacher = Input::get('sch_class_teacher');
+        $post->sch_class_schedule = Input::get('sch_class_schedule');
+        $post->sch_class_create_by = session('akses_username');
+        $post->save();
+
+        return redirect(url('manage_class/master_schedule_class'));
+    }
+
+    public function edit_class_sch($id)
+    {
+      session_start();
+        if(isset($_SESSION['logged_in'])){
+            $class_sch = \App\sch_class::all();
+            $class_sch_edit = \App\sch_class::find($id);
+            $dt_class = \App\dt_kelas::all();
+            $dt_teacher = \App\dt_teacher::all();
+            return \View::make('edit_class_sch')->with('class_sch',$class_sch)->with('dt_class',$dt_class)->with('dt_teachers',$dt_teacher)->with('class_sch_edit',$class_sch_edit);
+        }
+        else{
+            return redirect(url('login'));
+        }
+    }
+
+    public function update_class_sch()
+    {
+        $post = \App\sch_class::find(Input::get('id'));
+        $post->sch_class_forclass = Input::get('sch_class_forclass');
+        $post->sch_class_day = Input::get('sch_class_day');
+        $post->sch_class_month = Input::get('sch_class_month');
+        $post->sch_class_year = Input::get('sch_class_year');
+        $post->sch_class_time = Input::get('sch_class_time');
+        $post->sch_class_teacher = Input::get('sch_class_teacher');
+        $post->sch_class_schedule = Input::get('sch_class_schedule');
+        $post->sch_class_update_by = session('akses_username');
+        $post->save();
+
+        return redirect(url('manage_class/master_schedule_class'));
+    }
+
+    public function delete_class_sch($id)
+    {
+       session_start();
+        if(isset($_SESSION['logged_in'])){
+            \App\sch_class::find($id)->delete();
+            return redirect(url('manage_class/master_schedule_class'));        }
+        else{
+            return redirect(url('login'));
+        }
+    }
+
+
 }
