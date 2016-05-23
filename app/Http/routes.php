@@ -120,6 +120,12 @@ Route::get('manage_class/edit_schedule_class/{id}', 'AdminController@edit_class_
 Route::post('manage_class/update_schedule_class', 'AdminController@update_class_sch');
 Route::get('manage_class/delete_schedule_class/{id}', 'AdminController@delete_class_sch');
 
+Route::get('manage_class/master_class', 'AdminController@master_class');
+Route::post('manage_class/save_class', 'AdminController@save_class');
+Route::get('manage_class/edit_class/{id}', 'AdminController@edit_class');
+Route::post('manage_class/update_class', 'AdminController@update_class');
+Route::get('manage_class/delete_class/{id}', 'AdminController@delete_class');
+
 Route::get('manage_all_account/export_data/xls', 'PostController@exportxls_data_master_all_account');
 Route::get('manage_all_account/export_data/xlsx', 'PostController@exportxlsx_data_master_all_account');
 Route::get('manage_all_account/export_data/csv', 'PostController@exportcsv_data_master_all_account');
