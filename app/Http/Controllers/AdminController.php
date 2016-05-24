@@ -614,14 +614,27 @@ class AdminController extends Controller
        session_start();
         if(isset($_SESSION['logged_in'])){
             $class_sch = \App\sch_class::all();
+            $c_sch = \App\sch_class::all();
             $dt_class = \App\dt_kelas::all();
             $dt_teacher = \App\dt_teacher::all();
-            return \View::make('class_sch')->with('class_sch',$class_sch)->with('dt_class',$dt_class)->with('dt_teachers',$dt_teacher);
+            return \View::make('class_sch')->with('class_sch',$class_sch)->with('c_sch',$c_sch)->with('dt_class',$dt_class)->with('dt_teachers',$dt_teacher);
         }
         else{
             return redirect(url('login'));
         }
     }
+
+    // public function detail_class_sch($id)
+    // {
+    //    session_start();
+    //     if(isset($_SESSION['logged_in'])){
+    //         $c_sch = \App\sch_class::find($id);
+    //         return \View::make('class_sch')->with('c_sch',$c_sch);
+    //     }
+    //     else{
+    //         return redirect(url('login'));
+    //     }
+    // }
 
     public function save_class_sch()
     {
@@ -676,6 +689,85 @@ class AdminController extends Controller
         if(isset($_SESSION['logged_in'])){
             \App\sch_class::find($id)->delete();
             return redirect(url('manage_class/master_schedule_class'));        }
+        else{
+            return redirect(url('login'));
+        }
+    }
+
+    public function master_student()
+    {
+       session_start();
+        if(isset($_SESSION['logged_in'])){
+            $data_student = \App\dt_student::all();
+            $data_kelas = \App\dt_kelas::all();
+            $data_kelas_tk = \DB::table('dt_kelas')->where('dt_kelas_type', 'like', 'tk')->get();
+            $data_kelas_sd = \DB::table('dt_kelas')->where('dt_kelas_type', 'like', 'sd')->get();
+            $data_kelas_smp = \DB::table('dt_kelas')->where('dt_kelas_type', 'like', 'smp')->get();
+            $data_kelas_sma = \DB::table('dt_kelas')->where('dt_kelas_type', 'like', 'sma')->get();
+            return view('master_student')->with('data_student',$data_student)->with('data_kelas',$data_kelas)->with('data_kelas_tk',$data_kelas_tk)->with('data_kelas_sd',$data_kelas_sd)->with('data_kelas_smp',$data_kelas_smp)->with('data_kelas_sma',$data_kelas_sma);
+        }
+        else{
+            return redirect('login');
+        }
+    }
+
+    public function save_master_student()
+    {
+        $post = new \App\dt_student;
+        $post->dt_student_nisn = Input::get('dt_student_nisn');
+        $post->dt_student_name = Input::get('dt_student_fname')."|".Input::get('dt_student_lname');
+        $post->dt_student_grade = Input::get('dt_student_grade');
+        $post->dt_student_kelas = Input::get('dt_student_kelas');
+        $post->dt_student_statuslog = Input::get('dt_student_statuslog');
+        $post->dt_student_create_by = session('akses_username');
+        $post->dt_student_email = Input::get('dt_student_email');
+
+        $post->save();
+
+        return redirect(url('manage_student/master_student'));
+    }
+
+    public function edit_master_student($id)
+    {
+       session_start();
+        if(isset($_SESSION['logged_in'])){
+            $data_student = \App\dt_student::all();
+            $data_kelas = \App\dt_kelas::all();
+            $data_kelas_tk = \DB::table('dt_kelas')->where('dt_kelas_type', 'like', 'tk')->get();
+            $data_kelas_sd = \DB::table('dt_kelas')->where('dt_kelas_type', 'like', 'sd')->get();
+            $data_kelas_smp = \DB::table('dt_kelas')->where('dt_kelas_type', 'like', 'smp')->get();
+            $data_kelas_sma = \DB::table('dt_kelas')->where('dt_kelas_type', 'like', 'sma')->get();
+            $data_edit = \App\dt_student::find($id);
+            return view('edit_master_student')->with('data_student',$data_student)->with('data_edit',$data_edit)->with('data_kelas',$data_kelas)->with('data_kelas_tk',$data_kelas_tk)->with('data_kelas_sd',$data_kelas_sd)->with('data_kelas_smp',$data_kelas_smp)->with('data_kelas_sma',$data_kelas_sma);
+        }
+        else{
+            return redirect('login');
+        }
+    }
+
+    public function update_master_student()
+    {
+        $post = \App\dt_student::find(Input::get('id'));
+        $post->dt_student_nisn = Input::get('dt_student_nip');
+        $post->dt_student_name = Input::get('dt_student_fname')."|".Input::get('dt_student_lname');
+        $post->dt_student_grade = Input::get('dt_student_grade');
+        $post->dt_student_kelas = Input::get('dt_student_kelas');
+        $post->dt_student_statuslog = Input::get('dt_student_statuslog');
+        $post->dt_student_update_by = session('akses_username');
+        $post->dt_student_email = Input::get('dt_student_email');
+
+        $post->save();
+
+        return redirect(url('manage_student/master_student'));
+    }
+
+    public function delete_master_student($id)
+    {
+       session_start();
+        if(isset($_SESSION['logged_in'])){
+            \App\dt_student::find($id)->delete();
+            return redirect( url('manage_student/master_student'));
+        }
         else{
             return redirect(url('login'));
         }

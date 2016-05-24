@@ -64,28 +64,28 @@
                       </tr>
                     </thead>
                     <tbody>
-                    <?php $i=$data_teacher->firstItem(); ?>
-                    @foreach($data_teacher as $teachers)
+                    <?php $i=1; ?>
+                    @foreach($data_student as $teachers)
                       <tr>
                         <td>{{$i++}}</td>
-                        <td>{{ $teachers->dt_teacher_nip}}</td>
-                        <td>{{ preg_replace('/\|/', ' ', $teachers->dt_teacher_name) }}</td>
-                        <td>{{ $teachers->dt_teacher_gender}}</td>
-                        <td>{{ $teachers->dt_teacher_dobplace}}</td>
-                        <td>{{ $teachers->dt_teacher_religion}}</td>
-                        <td>{{ $teachers->dt_teacher_position}}</td>
-                        <td>{{ $teachers->dt_teacher_age}}</td>
-                        <td>{{ $teachers->dt_teacher_bloodtype}}</td>
-                        <td>{{ $teachers->dt_teacher_for}}</td>
-                        <td>{{ $teachers->dt_teacher_email}}</td>
-                        <td>{{ $teachers->dt_teacher_contact}}</td>
-                        <td>{{ $teachers->dt_teacher_address}}</td>
-                        <td>{{ $teachers->dt_teacher_code_absen}}</td>
+                        <td>{{ $teachers->dt_student_nip}}</td>
+                        <td>{{ preg_replace('/\|/', ' ', $teachers->dt_student_name) }}</td>
+                        <td>{{ $teachers->dt_student_gender}}</td>
+                        <td>{{ $teachers->dt_student_dobplace}}</td>
+                        <td>{{ $teachers->dt_student_religion}}</td>
+                        <td>{{ $teachers->dt_student_position}}</td>
+                        <td>{{ $teachers->dt_student_age}}</td>
+                        <td>{{ $teachers->dt_student_bloodtype}}</td>
+                        <td>{{ $teachers->dt_student_for}}</td>
+                        <td>{{ $teachers->dt_student_email}}</td>
+                        <td>{{ $teachers->dt_student_contact}}</td>
+                        <td>{{ $teachers->dt_student_address}}</td>
+                        <td>{{ $teachers->dt_student_code_absen}}</td>
                         <td><img class="cover_photo_edit"></td>
-                        <td>{{ $teachers->dt_teacher_statuslog}}</td>
+                        <td>{{ $teachers->dt_student_statuslog}}</td>
                         <td>
-                        <a href="{{ url('manage_teacher/edit_master_teacher/'.$teachers->id)}}"><i class="fa fa-pencil-square-o"></i> </a>
-                        <a href="{{ url('manage_teacher/delete_master_teacher/'.$teachers->id)}}"><i class="fa fa-trash"></i> </a>
+                        <a href="{{ url('manage_student/edit_master_student/'.$teachers->id)}}"><i class="fa fa-pencil-square-o"></i> </a>
+                        <a href="{{ url('manage_student/delete_master_student/'.$teachers->id)}}"><i class="fa fa-trash"></i> </a>
                         </td>
                       </tr>
                     @endforeach
@@ -110,14 +110,14 @@
             </div>
               <div style="width:95%;margin:auto;" class="box box-default collapsed-box box-solid">
                 <div class="box-header with-border">
-                  <h3 class="box-title">Master Teacher</h3>
+                  <h3 class="box-title">Edit Master Student</h3>
                   <div class="box-tools pull-right">
                     <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-plus"></i></button>
                   </div><!-- /.box-tools -->
                 </div><!-- /.box-header -->
                 <div class="box-body">
                   
-                <form method="POST"  action="{{ url('manage_teacher/save_master_teacher') }}" enctype="multipart/form-data">
+                <form method="POST"  action="{{ url('manage_student/update_master_student') }}" enctype="multipart/form-data">
                   <div class="row">
                   <div class="col-xs-6 col-md-4">
                  <script type="text/javascript">
@@ -130,15 +130,21 @@
                       else return value;
                   }
                   </script>
-                    <label for="exampleInputPassword1">NIP</label>
-                    <input type="text" name="dt_teacher_nip" class="form-control not-res" maxlength="10" placeholder="NIP" onkeyup="this.value = minmaxnip(this.value, 0, 10)" required/>
+                    <label for="exampleInputPassword1">NISN</label>
+                    <input value="{{ $data_edit->dt_student_nisn }}" type="text" name="dt_student_nisn" class="form-control not-res" maxlength="50" placeholder="NISN" onkeyup="this.value = minmaxnip(this.value, 0, 50)" required/>
+                    <input type="hidden" name="id" value="{{ $data_edit->id }}">
                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
                   </div>
                   <div class="col-xs-6 col-md-4">
                       <label for="exampleInputPassword1">Gender</label>
-                      <select id="selecttype" name="dt_teacher_gender" class="form-control not-res">
-                        <option value="male">Male</option>
+                      <select id="selecttype" name="dt_student_gender" class="form-control">
+                        @if($data_edit->dt_student_gender == "male")
+                        <option value="male" selected>Male</option>
                         <option value="female">Female</option>
+                        @else
+                        <option value="male">Male</option>
+                        <option value="female" selected>Female</option>
+                        @endif
                       </select>
                     </div>
                   </div>
@@ -157,7 +163,7 @@
                   }
                   </script>
                     <label for="exampleInputPassword1">First Name</label>
-                    <input type="text" name="dt_teacher_fname" class="form-control not-res" maxlength="50" placeholder="First Name" onkeyup="this.value = minmaxname(this.value, 0, 50)" required/>
+                    <input type="text" value="{{ preg_replace('/\|.+/', '', $data_edit->dt_student_name) }}" name="dt_student_fname" class="form-control not-res" maxlength="50" placeholder="First Name" onkeyup="this.value = minmaxname(this.value, 0, 50)" required/>
                   </div>
                   <div class="col-xs-6 col-md-4">
                  <script type="text/javascript">
@@ -171,40 +177,76 @@
                   }
                   </script>
                     <label for="exampleInputPassword1">Last Name</label>
-                    <input type="text" name="dt_teacher_lname" class="form-control not-res" maxlength="50" placeholder="Last Name" onkeyup="this.value = minmaxname(this.value, 0, 50)" required/>
+                    <input type="text" value="{{ preg_replace('/.+\|/', '', $data_edit->dt_student_name) }}" name="dt_student_lname" class="form-control not-res" maxlength="50" placeholder="Last Name" onkeyup="this.value = minmaxname(this.value, 0, 50)" required/>
                   </div>
                   </div>
                   <br>
 
                   <div class="row">
                   <div class="col-xs-6 col-md-4">
-                    <label for="exampleInputPassword1">Birth Place</label>
-                    <input type="text" name="dt_teacher_bplace" class="form-control not-res" placeholder="Birth Place"/>
-                  </div>
-                  <div class="col-xs-6 col-md-4">
-                    <label for="exampleInputPassword1">Birth Date</label>
-                    <div class='input-group date' id='datetimepicker1'>
-                        <input type='text' name="dt_teacher_dobplace" class="form-control not-res birth_date" />
-                        <span class="input-group-addon">
-                        <span class="glyphicon glyphicon-calendar"></span>
-                        </span>
+                      <label for="exampleInputPassword1">Select Grade</label>
+                      <select id="selecttypegrade" name="dt_student_grade" class="form-control not-res">
+                        @foreach($data_kelas as $grade)
+                        <option value="{{$grade->dt_kelas_type}}">{{$grade->dt_kelas_type}}</option>
+                        @endforeach
+                      </select>
                     </div>
-                  </div>
-                  <div class="col-xs-4">
-                      <label for="exampleInputPassword1">Age</label>
-                      <select id="selecttype" name="dt_teacher_age" class="form-control not-res-s">
-                        @for($i=1;$i<101;$i++)
-                        <option value="{{$i}}">{{$i}}</option>
-                        @endfor
+                  <div  id="selecttypeclasstk" class="col-xs-6 col-md-4">
+                      <label for="exampleInputPassword1">Select Class</label>
+                      <select name="dt_student_kelas" class="form-control not-res">
+                        @foreach($data_kelas_tk as $class_tk)
+                        <option value="{{$class_tk->dt_kelas_name}}">{{$class_tk->dt_kelas_name}}</option>
+                        @endforeach
+                      </select>
+                    </div>
+                  <div style="display:none" id="selecttypeclasssd" class="col-xs-6 col-md-4">
+                      <label for="exampleInputPassword1">Select Class</label>
+                      <select name="dt_student_kelas" class="form-control not-res">
+                        @foreach($data_kelas_sd as $class_sd)
+                        <option value="{{$class_sd->dt_kelas_name}}">{{$class_sd->dt_kelas_name}}</option>
+                        @endforeach
+                      </select>
+                    </div>
+                  <div  style="display:none" id="selecttypeclasssmp" class="col-xs-6 col-md-4">
+                      <label for="exampleInputPassword1">Select Class</label>
+                      <select name="dt_student_kelas" class="form-control not-res">
+                        @foreach($data_kelas_smp as $class_smp)
+                        <option value="{{$class_smp->dt_kelas_name}}">{{$class_smp->dt_kelas_name}}</option>
+                        @endforeach
+                      </select>
+                    </div>
+                  <div style="display:none" id="selecttypeclasssma" class="col-xs-6 col-md-4">
+                      <label for="exampleInputPassword1">Select Class</label>
+                      <select name="dt_student_kelas" class="form-control not-res">
+                        @foreach($data_kelas_sma as $class_sma)
+                        <option value="{{$class_sma->dt_kelas_name}}">{{$class_sma->dt_kelas_name}}</option>
+                        @endforeach
                       </select>
                     </div>
                   </div>
                   <br>
 
                   <div class="row">
+                  <div class="col-xs-6 col-md-4">
+                    <label for="exampleInputPassword1">Birth Place</label>
+                    <input value="{{ $data_edit->dt_student_bplace }}" type="text" name="dt_student_bplace" class="form-control not-res" placeholder="Birth Place"/>
+                  </div>
+                  <div class="col-xs-6 col-md-4">
+                    <label for="exampleInputPassword1">Birth Date</label>
+                    <div class='input-group date' id='datetimepicker1'>
+                        <input type='text' name="dt_student_dobplace" class="form-control not-res birth_date" />
+                        <span class="input-group-addon">
+                        <span class="glyphicon glyphicon-calendar"></span>
+                        </span>
+                    </div>
+                  </div>
+                  </div>
+                  <br>
+
+                  <div class="row">
                     <div class="col-xs-6 col-md-4">
                       <label for="exampleInputPassword1">Religion</label>
-                      <select id="selecttype" name="dt_teacher_religion" class="form-control not-res">
+                      <select id="selecttype" name="dt_student_religion" class="form-control not-res">
                         <option value="islam">Islam</option>
                         <option value="kristen">Kristen</option>
                         <option value="konghucu">Konghucu</option>
@@ -213,15 +255,12 @@
                       </select>
                     </div>
                     <div class="col-xs-6 col-md-4">
-                      <label for="exampleInputPassword1">Position</label>
-                      <select id="selecttype" name="dt_teacher_position" class="form-control not-res">
-                        <option value="tetap">Tetap</option>
-                        <option value="kontrak">Kontrak</option>
-                      </select>
-                    </div>
-                    <div class="col-xs-4">
+                    <label for="exampleInputPassword1">Parent Name</label>
+                    <input type="text" name="dt_student_nameparent" class="form-control not-res" placeholder="Parent Name"/>
+                  </div>
+                    <div class="col-xs-2">
                       <label for="exampleInputPassword1">Bloodtype</label>
-                      <select id="selecttype" name="dt_teacher_bloodtype" class="form-control not-res-s">
+                      <select id="selecttype" name="dt_student_bloodtype" class="form-control not-res-s">
                         <option value="A">A</option>
                         <option value="B">B</option>
                         <option value="AB">AB</option>
@@ -234,28 +273,27 @@
                   <div class="row">
                   <div class="col-xs-6 col-md-4">
                     <label for="exampleInputPassword1">Contact</label>
-                    <input type="text" name="dt_teacher_contact" class="form-control not-res" placeholder="Contact"/>
+                    <input value="{{ $data_edit->dt_student_contact }}" type="text" name="dt_student_contact" class="form-control not-res" placeholder="Contact"/>
                   </div>
                   <div class="col-xs-6 col-md-4">
                     <label for="exampleInputPassword1">Email</label>
-                    <input type="email" name="dt_teacher_email" class="form-control not-res" placeholder="Email"/>
+                    <input value="{{ $data_edit->dt_student_email }}" type="email" name="dt_student_email" class="form-control not-res" placeholder="Email" required/>
                   </div>
-                  <div class="col-xs-4">
-                      <label for="exampleInputPassword1">Teacher For</label>
-                      <select id="selecttype" name="dt_teacher_for" class="form-control not-res-s">
-                        <option value="TK">TK</option>
-                        <option value="SD">SD</option>
-                        <option value="SMP">SMP</option>
-                        <option value="SMA">SMA</option>
+                  <div class="col-xs-2">
+                      <label for="exampleInputPassword1">Age</label>
+                      <select id="selecttype" name="dt_student_age" class="form-control not-res-s">
+                        @for($i=1;$i<101;$i++)
+                        <option value="{{$i}}">{{$i}}</option>
+                        @endfor
                       </select>
                     </div>
                   </div>
                   <br>
 
                   <div class="row">
-                      <div class="col-xs-10">
+                      <div class="col-xs-8">
                         <label for="exampleInputPassword1">Address</label>
-                        <input type="text" name="dt_teacher_address" class="form-control not-res" placeholder="Address"/>
+                        <input value="{{ $data_edit->dt_student_address }}" type="text" name="dt_student_address" class="form-control not-res" placeholder="Address"/>
                       </div>
                   </div>
                   <br>
@@ -263,13 +301,18 @@
                   <div class="row">
                       <div class="col-xs-6 col-md-4">
                         <label for="exampleInputPassword1">Photo</label>
-                        <input type="file" name="dt_teacher_name_img" class="form-control not-res" placeholder="Photo"/>
+                        <input value="{{ $data_edit->dt_student_name_img }}" type="file" name="dt_student_name_img" class="form-control not-res" placeholder="Photo"/>
                       </div>
                   <div class="col-xs-6 col-md-4">
                       <label for="exampleInputPassword1">Status Log</label>
-                      <select id="selecttype" name="dt_teacher_statuslog" class="form-control not-res">
+                      <select id="selecttype" name="dt_student_statuslog" class="form-control">
+                        @if($data_edit->dt_student_statuslog == "active")
+                        <option value="active" selected>Active</option>
+                        <option value="disable">Disable</option> 
+                        @else
                         <option value="active">Active</option>
-                        <option value="disable">Disable</option>                      
+                        <option value="disable" selected>Disable</option> 
+                        @endif                     
                       </select>
                     </div>
                   </div>                  
@@ -281,7 +324,7 @@
               </div><!-- /.box -->
               
 
-<!--               <form method="POST" action="{{ url('manage_teacher/import_data_teacher') }}" enctype="multipart/form-data">
+<!--               <form method="POST" action="{{ url('manage_student/import_data_student') }}" enctype="multipart/form-data">
                 
                 <input type="file" name="import_file"/>
                 <button type="submit">Import File</button>
@@ -291,7 +334,7 @@
               <br><br>
           <div style="width:95%;margin:auto" class="box">
                 <div class="box-header">
-                  <h3 class="box-title">Data Teachers</h3>
+                  <h3 class="box-title">Data Students</h3>
                 </div><!-- /.box-header -->
                 <div class="box-body">
                   <table class="for_datatable table table-bordered table-hover">
@@ -299,28 +342,28 @@
                       <tr>
                         <th>No.</th>
                         <th>Name</th>
-                        <th>NIP</th>
-                        <th>Teacher For</th>
-                        <th>Position</th>
-                        <th>Absen Code</th>
+                        <th>NISN</th>
+                        <th>Grade</th>
+                        <th>Class</th>
+                        <th>email</th>
                         <th>Status Log</th>
                         <th>Action</th>
                       </tr>
                     </thead>
                     <tbody>
-                    <?php $i=$data_teacher->firstItem(); ?>
-                    @foreach($data_teacher as $teachers)
+                    <?php $i=1; ?>
+                    @foreach($data_student as $teachers)
                       <tr>
                         <td>{{$i++}}</td>
-                        <td>{{ preg_replace('/\|/', ' ', $teachers->dt_teacher_name) }}</td>
-                        <td>{{ $teachers->dt_teacher_nip}}</td>
-                        <td>{{ $teachers->dt_teacher_for}}</td>
-                        <td>{{ $teachers->dt_teacher_position}}</td>
-                        <td>{{ $teachers->dt_teacher_code_absen}}</td>
-                        <td>{{ $teachers->dt_teacher_statuslog}}</td>
+                        <td>{{ preg_replace('/\|/', ' ', $teachers->dt_student_name) }}</td>
+                        <td>{{ $teachers->dt_student_nisn}}</td>
+                        <td>{{ $teachers->dt_student_grade}}</td>
+                        <td>{{ $teachers->dt_student_kelas}}</td>
+                        <td>{{ $teachers->dt_student_email}}</td>
+                        <td>{{ $teachers->dt_student_statuslog}}</td>
                         <td>
-                        <a href="{{ url('manage_teacher/edit_master_teacher/'.$teachers->id)}}"><i class="fa fa-pencil-square-o"></i> </a>
-                        <a href="{{ url('manage_teacher/delete_master_teacher/'.$teachers->id)}}"><i class="fa fa-trash"></i> </a>
+                        <a href="{{ url('manage_student/edit_master_student/'.$teachers->id)}}"><i class="fa fa-pencil-square-o"></i> </a>
+                        <a href="{{ url('manage_student/delete_master_student/'.$teachers->id)}}"><i class="fa fa-trash"></i> </a>
                         <a data-toggle="modal" data-target="#myModaldetailteacher" href="#"><i class="fa fa-eye"></i> </a>
                         </td>
                       </tr>
@@ -328,15 +371,10 @@
                     </tfoot>
                   </table>
                   <div class="export">
-                  <a href="{{ url('manage_teacher/export_data/xls') }}"><button class="btn btn-success"><i class="fa fa-paper-plane-o"></i> xls</button></a>
-                  <a href="{{ url('manage_teacher/export_data/xlsx') }}"><button class="btn btn-info"><i class="fa fa-paper-plane-o"></i> xlsx</button></a>
-                  <a href="{{ url('manage_teacher/export_data/csv') }}"><button class="btn btn-warning"><i class="fa fa-paper-plane-o"></i> csv</button></a>
+                  <a href="{{ url('manage_student/export_data/xls') }}"><button class="btn btn-success"><i class="fa fa-paper-plane-o"></i> xls</button></a>
+                  <a href="{{ url('manage_student/export_data/xlsx') }}"><button class="btn btn-info"><i class="fa fa-paper-plane-o"></i> xlsx</button></a>
+                  <a href="{{ url('manage_student/export_data/csv') }}"><button class="btn btn-warning"><i class="fa fa-paper-plane-o"></i> csv</button></a>
                   </div>
-                   <ul class="pagination pull-right">
-                  
-                  {!! $data_teacher->render() !!}
-                  
-                  </ul>
                 </div><!-- /.box-body -->
               </div><!-- /.box -->
               </div>
@@ -357,4 +395,34 @@
             });
     $('.birth_date').datetimepicker({ format: 'YYYY-MM-DD' });
     </script>
+
+    <script type="text/javascript">
+        $('#selecttypegrade').change(function(){
+        if($(this).val() == "TK"){
+          $("#selecttypeclasstk").css("display","block");
+          $('#selecttypeclasssd').hide();
+          $('#selecttypeclasssmp').hide();
+          $('#selecttypeclasssma').hide();
+        }
+        else if($(this).val() == "SD"){
+          $("#selecttypeclasstk").hide();
+          $('#selecttypeclasssd').css("display","block");
+          $('#selecttypeclasssmp').hide();
+          $('#selecttypeclasssma').hide();
+        }
+        else if($(this).val() == "SMP"){
+          $("#selecttypeclasstk").hide();
+          $('#selecttypeclasssd').hide();
+          $('#selecttypeclasssmp').css("display","block");
+          $('#selecttypeclasssma').hide();
+        }
+        else if($(this).val() == "SMA"){
+          $("#selecttypeclasstk").hide();
+          $('#selecttypeclasssd').hide();
+          $('#selecttypeclasssmp').hide();
+          $('#selecttypeclasssma').css("display","block");
+        }
+      });
+
+</script>
 @endsection

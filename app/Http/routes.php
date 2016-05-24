@@ -91,6 +91,8 @@ Route::get('manage/agenda', 'AdminController@manage_agenda');
 Route::get('manage/announcement', 'AdminController@manage_announcement');
 Route::get('manage/article', 'AdminController@manage_article');
 
+//manage teacher staff
+
 Route::get('manage_teacher/master_teacher', 'AdminController@master_teacher');
 Route::post('manage_teacher/save_master_teacher', 'AdminController@save_master_teacher');
 Route::get('manage_teacher/edit_master_teacher/{id}', 'AdminController@edit_master_teacher');
@@ -101,6 +103,30 @@ Route::get('manage_teacher/export_data/xlsx', 'PostController@exportxlsx_data_ma
 Route::get('manage_teacher/export_data/csv', 'PostController@exportcsv_data_master_teacher');
 Route::get('manage_teacher/export_data/{$type}', 'PostController@export_data_master_teacher');
 Route::get('manage_teacher/import_data/', 'PostController@import_data_master_teacher');
+
+//manage teacher personal
+
+Route::get('manage_teacher/my_data', 'AksesController@teacher_my_data');
+Route::get('manage_teacher/my_schedule', 'AksesController@teacher_my_schedule');
+Route::get('manage_teacher/my_absen', 'AksesController@teacher_my_absen');
+Route::get('manage_teacher/master_recap', 'AksesController@teacher_master_recap');
+Route::get('manage_teacher/activity_student', 'AksesController@teacher_activity_student');
+Route::get('manage_teacher/detail_student_and_parent', 'AksesController@teacher_detail_student_and_parent');
+Route::get('manage_teacher/master_task', 'AksesController@teacher_master_task');
+Route::get('manage_teacher/my_post', 'AksesController@teacher_my_post');
+Route::get('manage_teacher/master_post', 'PostController@master_post');
+
+
+Route::get('manage_student/master_student', 'AdminController@master_student');
+Route::post('manage_student/save_master_student', 'AdminController@save_master_student');
+Route::get('manage_student/edit_master_student/{id}', 'AdminController@edit_master_student');
+Route::post('manage_student/update_master_student', 'AdminController@update_master_student');
+Route::get('manage_student/delete_master_student/{id}', 'AdminController@delete_master_student');
+Route::get('manage_student/export_data/xls', 'PostController@exportxls_data_master_student');
+Route::get('manage_student/export_data/xlsx', 'PostController@exportxlsx_data_master_student');
+Route::get('manage_student/export_data/csv', 'PostController@exportcsv_data_master_student');
+Route::get('manage_student/export_data/{$type}', 'PostController@export_data_master_student');
+Route::get('manage_student/import_data/', 'PostController@import_data_master_student');
 
 Route::get('manage_teacher/schedule_teacher', 'AdminController@teacher_sch');
 Route::post('manage_teacher/save_schedule_teacher', 'AdminController@save_teacher_sch');
@@ -115,6 +141,7 @@ Route::post('manage_feature/update_feature', 'AdminController@update_feature');
 Route::get('manage_feature/delete_feature/{id}', 'AdminController@delete_feature');
 
 Route::get('manage_class/master_schedule_class', 'AdminController@class_sch');
+Route::get('manage_class/detail_schedule_class/{id}', 'AdminController@_detail_class_sch');
 Route::post('manage_class/save_schedule_class', 'AdminController@save_class_sch');
 Route::get('manage_class/edit_schedule_class/{id}', 'AdminController@edit_class_sch');
 Route::post('manage_class/update_schedule_class', 'AdminController@update_class_sch');

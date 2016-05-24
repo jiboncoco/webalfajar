@@ -30,7 +30,68 @@
       <!-- Left side column. contains the logo and sidebar -->
 
           @include('sidebar')
-       
+<div class="modal fade" id="myModaldetailteacher" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog-front">
+                <div class="modal-content">
+                    <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title" id="myModalLabel">Master Data Schedule</h4>
+                    </div>
+                        <div class="modal-body-front">
+                <div class="box-header">
+                </div><!-- /.box-header -->
+               <div class="box-body">
+                   <table class="for_datatable table table-bordered table-hover">
+                    <thead>
+                      <tr>
+                        <th>No.</th>
+                        <th>Class</th>
+                        <th>Day</th>
+                        <th>Month</th>
+                        <th>Year</th>
+                        <th>Time</th>
+                        <th>Schedule Make At</th>
+                        <th>Teacher</th>
+                        <th>Schedule</th>
+                        <th>Action</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                    <?php $i=1; ?>
+                    @foreach($class_sch as $schs)
+                      <tr>
+                        <td>{{$i++}}</td>
+                        <td>{{ $schs->sch_class_forclass}}</td>
+                        <td>{{ $schs->sch_class_day}}</td>
+                        <td>{{ $schs->sch_class_month}}</td>
+                        <td>{{ $schs->sch_class_year}}</td>
+                        <td>{{ $schs->sch_class_time}}</td>
+                        <td>{{ $schs->created_at}}</td>
+                        <td>{{ preg_replace('/\|/', ' ', $schs->sch_class_teacher) }}</td>
+                        <td>{{ $schs->sch_class_schedule}}</td>
+                        <td>
+                        <a href="{{ url('manage_class/edit_schedule_class/'.$schs->id)}}"><i class="fa fa-pencil-square-o"></i> </a>
+                        <a href="{{ url('manage_class/delete_schedule_class/'.$schs->id)}}"><i class="fa fa-trash"></i> </a>
+                        </td>
+                      </tr>
+                    @endforeach
+                    </tfoot>
+                  </table>
+                  <div class="export">
+                 <!--  <a href="{{ url('manage_teacher/export_data/xls') }}"><button class="btn btn-success"><i class="fa fa-paper-plane-o"></i> xls</button></a>
+                  <a href="{{ url('manage_teacher/export_data/xlsx') }}"><button class="btn btn-info"><i class="fa fa-paper-plane-o"></i> xlsx</button></a>
+                  <a href="{{ url('manage_teacher/export_data/csv') }}"><button class="btn btn-warning"><i class="fa fa-paper-plane-o"></i> csv</button></a> -->
+                  </div>
+                </div><!-- /.box-body -->
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
       <!-- Content Wrapper. Contains page content -->
       <div class="content-wrapper">
         <!-- Main content -->
@@ -163,9 +224,6 @@
                         <th>Day</th>
                         <th>Month</th>
                         <th>Year</th>
-                        <th>Time</th>
-                        <th>Schedule Make At</th>
-                        <th>Teacher</th>
                         <th>Schedule</th>
                         <th>Action</th>
                       </tr>
@@ -179,9 +237,6 @@
                         <td>{{ $class_sch->sch_class_day}}</td>
                         <td>{{ $class_sch->sch_class_month}}</td>
                         <td>{{ $class_sch->sch_class_year}}</td>
-                        <td>{{ $class_sch->sch_class_time}}</td>
-                        <td>{{ $class_sch->created_at}}</td>
-                        <td>{{ preg_replace('/\|/', ' ', $class_sch->sch_class_teacher) }}</td>
                         <td>{{ $class_sch->sch_class_schedule}}</td>
                         <td>
                         <a href="{{ url('manage_class/edit_schedule_class/'.$class_sch->id)}}"><i class="fa fa-pencil-square-o"></i> </a>

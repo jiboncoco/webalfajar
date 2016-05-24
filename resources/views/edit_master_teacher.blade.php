@@ -115,7 +115,7 @@
                   <div class="row">
                   <div class="col-xs-6 col-md-4">
                     <label for="exampleInputPassword1">Birth Place</label>
-                    <input type="text" value="{{ $data_edit->dobplace}}" name="dt_teacher_dobplace" class="form-control" placeholder="Birth Place"/>
+                    <input type="text" value="{{ $data_edit->dobplace}}" name="dt_teacher_bplace" class="form-control" placeholder="Birth Place"/>
                   </div>
                   <div class="col-xs-6 col-md-4">
                     <label for="exampleInputPassword1">Birth Date</label>
