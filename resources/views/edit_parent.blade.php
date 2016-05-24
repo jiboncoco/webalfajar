@@ -125,6 +125,7 @@
                   <div class="row">
                       <div class="col-xs-6 col-md-4">
                         <label for="exampleInputPassword1">Photo</label>
+                        <img class="cover_photo_edit" src="{{ url('images/'.$data_edit->dt_parent_name_img) }}">
                         <input type="file" name="dt_parent_name_img" class="form-control not-res" placeholder="Photo"/>
                       </div>
                   <div class="col-xs-6 col-md-4">
@@ -153,7 +154,7 @@
                 <button type="submit">Import File</button>
 
               </form> -->
-
+@if(session('akses_type') == "staff")
               <br><br>
           <div style="width:95%;margin:auto" class="box">
                 <div class="box-header">
@@ -195,6 +196,8 @@
 
                 </div><!-- /.box-body -->
               </div><!-- /.box -->
+@else
+@endif
               </div>
         </section>
       </div>

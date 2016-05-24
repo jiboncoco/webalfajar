@@ -26,7 +26,8 @@ class PostController extends Controller
 
     public function save_post()
     {
-        $post = new \App\dt_blog;
+      session_start();
+      $post = new \App\dt_blog;
       $post->dt_blog_type = Input::get('dt_blog_type');
       $post->dt_blog_date_event = Input::get('dt_blog_date_event');
       $post->dt_blog_title = Input::get('dt_blog_title');
@@ -47,8 +48,13 @@ class PostController extends Controller
         }
 
       $post->save();
+    if(session('akses_type') == "staff"){
+      return redirect(url('manage'));
+    } 
+    else{
+      return redirect(url('manage_post/my_post'));
+    }
 
-    return redirect(url('manage'));
     }
 
     public function save_comment()

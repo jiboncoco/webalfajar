@@ -86,7 +86,7 @@
                 <i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">
-                <li><a href="{{ url('manage_post/my_post') }}"><i class="fa fa-th"></i> My Post</a></li>
+                <li><a href="{{ url('manage_post/my_post') }}"><i class="fa fa-list"></i> My Post</a></li>
                 <li><a href="{{ url('manage_post/master_post') }}"><i class="fa fa-th"></i> Master Post</a></li>
                 <li><a href="{{ url('manage_post/master_type_post') }}"><i class="fa fa-list"></i> Master Type Post</a></li>
                 <li><a href="{{ url('manage_post/master_class_post') }}"><i class="fa fa-columns"></i> Master Class Post</a></li>
@@ -141,7 +141,7 @@
                 <i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">
-                <li><a href="{{ url('manage_teacher/my_data') }}"><i class="fa fa-tasks"></i> My Data</a></li>
+                <li><a href="{{ url('manage_teacher/my_data') }}"><i class="fa fa-puzzle-piece"></i> My Data</a></li>
                 <li><a href="{{ url('manage_teacher/my_schedule') }}"><i class="fa fa-calendar"></i> My Schedule</a></li>
                 <li><a href="{{ url('manage_teacher/my_absen') }}"><i class="fa fa-thumb-tack"></i> My Absen</a></li>
                 <li><a href="{{ url('manage_teacher/master_recap') }}"><i class="fa fa-envelope"></i> Master Recap</a></li>
@@ -219,8 +219,8 @@
                 <i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">
-                <li><a href="{{ url('manage_post/master_post') }}"><i class="fa fa-th"></i> Master Post</a></li>
-                <li><a href="{{ url('manage_post/my_post') }}"><i class="fa fa-th"></i> Master Post</a></li>
+                <li><a href="{{ url('manage_post/my_post') }}"><i class="fa fa-th"></i> My Post</a></li>
+                <li><a href="{{ url('manage_post/master_post') }}"><i class="fa fa-th"></i> Master Post</a></li>              
               </ul>
             </li>
             <li class="treeview">
@@ -247,12 +247,12 @@
             <li class="treeview">
               <a href="#">
                 <i class="fa fa-laptop"></i>
-                <span>Manage Student</span>
+                <span>Manage Parent</span>
                 <i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">
-              <li><a href="{{ url('manage_student/activity_student') }}"><i class="fa fa-puzzle-piece"></i> Activity Student</a></li>
-                <li><a href="{{ url('manage_student/report_student') }}"><i class="fa fa-envelope"></i> Report Student</a></li>
+              <li><a href="{{ url('manage_parent/my_data') }}"><i class="fa fa-puzzle-piece"></i> My Data</a></li>
+                <li><a href="{{ url('manage_parent/student_activity') }}"><i class="fa fa-puzzle-piece"></i> Student Activity</a></li>
               </ul>
             </li>
             <li class="treeview">
@@ -262,6 +262,7 @@
                 <i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">
+                <li><a href="{{ url('manage_post/my_post') }}"><i class="fa fa-list"></i> My Post</a></li>
                 <li><a href="{{ url('manage_post/master_post') }}"><i class="fa fa-th"></i> Master Post</a></li>
               </ul>
             </li>

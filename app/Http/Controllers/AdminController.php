@@ -299,7 +299,9 @@ class AdminController extends Controller
     }
 
     public function update_parent()
-    {
+    {   
+       session_start();
+       if(session('akses_type') == "staff"){
         $post = \App\dt_parent::find(Input::get('id'));
         $post->dt_parent_nisn = Input::get('dt_parent_nisn');
         $post->dt_parent_name = Input::get('dt_parent_fname')."|".Input::get('dt_parent_lname');
@@ -307,6 +309,28 @@ class AdminController extends Controller
         $post->save();
 
         return redirect(url('manage_parent/master_parent'));
+        } else{
+        $post = \App\dt_parent::find(Input::get('id'));
+        $post->dt_parent_nisn = Input::get('dt_parent_nisn');
+        $post->dt_parent_name = Input::get('dt_parent_fname')."|".Input::get('dt_parent_lname');
+        $post->dt_parent_contact = Input::get('dt_parent_contact');
+        $post->dt_parent_email = Input::get('dt_parent_email');
+        $post->dt_parent_address = Input::get('dt_parent_address');
+        $post->dt_parent_age = Input::get('dt_parent_age');
+        $post->dt_parent_statuslog = Input::get('dt_parent_statuslog');
+         if(Input::hasFile('dt_parent_name_img')){
+            $dt_parent_name_img = date("YmdHis")
+            .uniqid()
+            ."."
+            .Input::file('dt_parent_name_img')->getClientOriginalExtension();
+        
+            Input::file('dt_parent_name_img')->move(storage_path(),$dt_parent_name_img);
+            $post->dt_parent_name_img = $dt_parent_name_img;
+        }
+        $post->save();
+
+        return redirect(url('manage_parent/my_data'));
+        }
     }
 
     public function delete_parent($id)
@@ -779,6 +803,8 @@ class AdminController extends Controller
 
     public function update_master_student()
     {
+        session_start();
+        if(session('akses_type') == "staff") {
         $post = \App\dt_student::find(Input::get('id'));
         $post->dt_student_nisn = Input::get('dt_student_nip');
         $post->dt_student_name = Input::get('dt_student_fname')."|".Input::get('dt_student_lname');
@@ -791,6 +817,29 @@ class AdminController extends Controller
         $post->save();
 
         return redirect(url('manage_student/master_student'));
+        } else
+        {
+        $post = \App\dt_student::find(Input::get('id'));
+        $post->dt_student_nisn = Input::get('dt_student_nisn');
+        $post->dt_student_name = Input::get('dt_student_fname')."|".Input::get('dt_student_lname');
+        $post->dt_student_grade = Input::get('dt_student_grade');
+        $post->dt_student_kelas = Input::get('dt_student_kelas');
+        $post->dt_student_bplace = Input::get('dt_student_bplace');
+        $post->dt_student_dobplace = Input::get('dt_student_dobplace');
+        $post->dt_student_bloodtype = Input::get('dt_student_bloodtype');
+        $post->dt_student_contact = Input::get('dt_student_contact');
+        $post->dt_student_address = Input::get('dt_student_address');
+        $post->dt_student_age = Input::get('dt_student_age');
+        $post->dt_student_gender = Input::get('dt_student_gender');
+        $post->dt_student_religion = Input::get('dt_student_religion');
+        $post->dt_student_nameparent = Input::get('dt_student_nameparent');
+        $post->dt_student_statuslog = Input::get('dt_student_statuslog');
+        $post->dt_student_update_by = session('akses_username');
+        $post->dt_student_email = Input::get('dt_student_email');
+
+        $post->save();
+        return redirect(url('manage_student/my_data'));
+        }
     }
 
     public function delete_master_student($id)

@@ -234,7 +234,7 @@
                   <div class="col-xs-6 col-md-4">
                     <label for="exampleInputPassword1">Birth Date</label>
                     <div class='input-group date' id='datetimepicker1'>
-                        <input type='text' name="dt_student_dobplace" class="form-control not-res birth_date" />
+                        <input type='text' value="{{ $data_edit->dt_student_dobbplace }}" name="dt_student_dobplace" class="form-control not-res birth_date" />
                         <span class="input-group-addon">
                         <span class="glyphicon glyphicon-calendar"></span>
                         </span>
@@ -256,7 +256,7 @@
                     </div>
                     <div class="col-xs-6 col-md-4">
                     <label for="exampleInputPassword1">Parent Name</label>
-                    <input type="text" name="dt_student_nameparent" class="form-control not-res" placeholder="Parent Name"/>
+                    <input value="{{ $data_edit->dt_student_nameparent }}" type="text" name="dt_student_nameparent" class="form-control not-res" placeholder="Parent Name"/>
                   </div>
                     <div class="col-xs-2">
                       <label for="exampleInputPassword1">Bloodtype</label>
@@ -299,10 +299,6 @@
                   <br>
 
                   <div class="row">
-                      <div class="col-xs-6 col-md-4">
-                        <label for="exampleInputPassword1">Photo</label>
-                        <input value="{{ $data_edit->dt_student_name_img }}" type="file" name="dt_student_name_img" class="form-control not-res" placeholder="Photo"/>
-                      </div>
                   <div class="col-xs-6 col-md-4">
                       <label for="exampleInputPassword1">Status Log</label>
                       <select id="selecttype" name="dt_student_statuslog" class="form-control">
@@ -330,7 +326,7 @@
                 <button type="submit">Import File</button>
 
               </form> -->
-
+              @if(session('akses_type') == "staff")
               <br><br>
           <div style="width:95%;margin:auto" class="box">
                 <div class="box-header">
@@ -377,6 +373,9 @@
                   </div>
                 </div><!-- /.box-body -->
               </div><!-- /.box -->
+
+        @else
+        @endif
               </div>
         </section>
       </div>
