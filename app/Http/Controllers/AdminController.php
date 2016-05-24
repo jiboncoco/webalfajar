@@ -132,6 +132,8 @@ class AdminController extends Controller
 
     public function save_edit_master_teacher()
     {
+        session_start();
+        if(session('akses_type') == "staff") {
         $post = \App\dt_teacher::find(Input::get('id'));
         $post->dt_teacher_nip = Input::get('dt_teacher_nip');
         $post->dt_teacher_name = Input::get('dt_teacher_fname')."|".Input::get('dt_teacher_lname');
@@ -142,8 +144,38 @@ class AdminController extends Controller
         $post->dt_teacher_code_absen = Input::get('dt_teacher_nip')."".Input::get('dt_teacher_fname');
 
         $post->save();
-
         return redirect(url('manage_teacher/master_teacher'));
+        }
+        else{
+        $post = \App\dt_teacher::find(Input::get('id'));
+        $post->dt_teacher_nip = Input::get('dt_teacher_nip');
+        $post->dt_teacher_name = Input::get('dt_teacher_fname')."|".Input::get('dt_teacher_lname');
+        $post->dt_teacher_gender = Input::get('dt_teacher_gender');
+        $post->dt_teacher_bplace = Input::get('dt_teacher_bplace');
+        $post->dt_teacher_dobplace = Input::get('dt_teacher_dobplace');
+        $post->dt_teacher_age = Input::get('dt_teacher_age');
+        $post->dt_teacher_bloodtype = Input::get('dt_teacher_bloodtype');
+        $post->dt_teacher_religion = Input::get('dt_teacher_religion');
+        $post->dt_teacher_email = Input::get('dt_teacher_email');
+        $post->dt_teacher_contact = Input::get('dt_teacher_contact');
+        $post->dt_teacher_address = Input::get('dt_teacher_address');
+        $post->dt_teacher_position = Input::get('dt_teacher_position');
+        $post->dt_teacher_for = Input::get('dt_teacher_for');
+        $post->dt_teacher_statuslog = Input::get('dt_teacher_statuslog');
+        $post->dt_teacher_update_by = session('akses_username');
+        $post->dt_teacher_code_absen = Input::get('dt_teacher_nip')."".Input::get('dt_teacher_fname');
+         if(Input::hasFile('dt_teacher_name_img')){
+            $dt_teacher_name_img = date("YmdHis")
+            .uniqid()
+            ."."
+            .Input::file('dt_teacher_name_img')->getClientOriginalExtension();
+        
+            Input::file('dt_teacher_name_img')->move(storage_path(),$dt_teacher_name_img);
+            $post->dt_teacher_name_img = $dt_teacher_name_img;
+        }
+        $post->save();
+        return redirect(url('manage_teacher/my_data'));
+        }
     }
 
     public function delete_master_teacher($id)

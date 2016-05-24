@@ -23,6 +23,10 @@ html,body{min-height:100%;}.layout-boxed html,.layout-boxed body{height:100%}bod
   border-radius: 5px;
   font-size: 23px;
 }
+.dt{
+	font-weight: bold;
+}
+
 .admin-cb-button:hover{
   background: #0275d8;
   color: white !important;

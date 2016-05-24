@@ -57,8 +57,10 @@ class LoginController extends Controller
 										if (!empty($akses_statuss)) {
 										// \Session::put('akses_type', 'staff');
 										$request->session()->put('akses_type', 'staff');
+										$request->session()->put('akses_code', $akses_code);
 										$request->session()->put('akses_username', $akses_username);
 										$request->session()->put('logged_in', 1);
+		
 										$_SESSION['akses_type'] = 'staff';
 										$_SESSION['logged_in'] = 1;
 									return redirect('/');
@@ -146,6 +148,8 @@ class LoginController extends Controller
 											$request->session()->put('akses_type', 'teacher');
 											$request->session()->put('akses_username', $akses_username);
 											$request->session()->put('logged_in', 1);
+											$request->session()->put('akses_code', $akses_code);
+			
 											$_SESSION['akses_type'] = 'teacher';
 											$_SESSION['logged_in'] = 1;
 											return redirect('/');
@@ -255,6 +259,7 @@ class LoginController extends Controller
 													$request->session()->put('akses_type', 'parent');
 													$request->session()->put('akses_username', $akses_username);
 													$request->session()->put('logged_in', 1);
+													$request->session()->put('akses_code', $akses_code);
 													$_SESSION['akses_type'] = 'parent';
 													$_SESSION['logged_in'] = 1;
 													return redirect('/');
@@ -373,7 +378,10 @@ class LoginController extends Controller
 													$request->session()->put('akses_type', 'student');
 													$request->session()->put('akses_username', $akses_username);
 													$request->session()->put('logged_in', 1);
+													$request->session()->put('akses_code', $akses_code);
+													$request->session()->put('dt_student_grade', $dt_student_grade);
 													$_SESSION['akses_type'] = 'student';
+					
 													$_SESSION['logged_in'] = 1;
 													return redirect('/');
 												} else {

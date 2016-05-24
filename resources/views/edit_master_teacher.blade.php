@@ -68,7 +68,7 @@
                   <div class="col-xs-6 col-md-4">
                       <label for="exampleInputPassword1">Gender</label>
                       <select id="selecttype" name="dt_teacher_gender" class="form-control">
-                        @if($data_edit->dt_teacher_gender == "Male")
+                        @if($data_edit->dt_teacher_gender == "male")
                         <option value="male" selected>Male</option>
                         <option value="female">Female</option>
                         @else
@@ -115,7 +115,7 @@
                   <div class="row">
                   <div class="col-xs-6 col-md-4">
                     <label for="exampleInputPassword1">Birth Place</label>
-                    <input type="text" value="{{ $data_edit->dobplace}}" name="dt_teacher_bplace" class="form-control" placeholder="Birth Place"/>
+                    <input type="text" value="{{ $data_edit->dt_teacher_bplace}}" name="dt_teacher_bplace" class="form-control" placeholder="Birth Place"/>
                   </div>
                   <div class="col-xs-6 col-md-4">
                     <label for="exampleInputPassword1">Birth Date</label>
@@ -181,7 +181,7 @@
                         <option value="tetap" selected>Tetap</option>
                         <option value="kontrak">Kontrak</option>
                         @else
-                        <option value="tetap">TEtap</option>
+                        <option value="tetap">Tetap</option>
                         <option value="kontrak" selected>Kontrak</option>
                         @endif
                       </select>
@@ -264,8 +264,8 @@
                   <div class="row">
                       <div class="col-xs-6 col-md-4">
                         <label for="exampleInputPassword1">Photo</label>
-                        <img class="cover_photo_edit" src="{{ url('images/'.$data_edit->photo) }}">
-                        <input  type="file" name="dt_teacher_name_img" class="form-control" placeholder="Photo"/>
+                        <img class="cover_photo_edit" src="{{ url('images/'.$data_edit->dt_teacher_name_img) }}">
+                        <input  type="file" value="{{ $data_edit->dt_teacher_name_img }}" name="dt_teacher_name_img" class="form-control" placeholder="Photo"/>
                       </div>
                   <div class="col-xs-6 col-md-4">
                       <label for="exampleInputPassword1">Status Log</label>
@@ -286,7 +286,7 @@
                 </form>
                 </div><!-- /.box-body -->
               </div><!-- /.box -->
-            
+@if(session('akses_type') == "staff")            
               <br><br>
           <div style="width:95%;margin:auto" class="box">
                 <div class="box-header">
@@ -331,6 +331,8 @@
                   </ul>
                 </div><!-- /.box-body -->
               </div><!-- /.box -->
+@else
+@endif
               </div>
         </section>
       </div>

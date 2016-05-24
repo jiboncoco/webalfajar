@@ -141,7 +141,7 @@
                 <i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">
-                <li><a href="{{ url('manage_teacher/my_data') }}"><i class="fa fa-calendar"></i> My Data</a></li>
+                <li><a href="{{ url('manage_teacher/my_data') }}"><i class="fa fa-tasks"></i> My Data</a></li>
                 <li><a href="{{ url('manage_teacher/my_schedule') }}"><i class="fa fa-calendar"></i> My Schedule</a></li>
                 <li><a href="{{ url('manage_teacher/my_absen') }}"><i class="fa fa-thumb-tack"></i> My Absen</a></li>
                 <li><a href="{{ url('manage_teacher/master_recap') }}"><i class="fa fa-envelope"></i> Master Recap</a></li>
@@ -207,10 +207,9 @@
                 <i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">
-              <li><a href="{{ url('manage_student/activity_student') }}"><i class="fa fa-puzzle-piece"></i> Activity Student</a></li>
-              <li><a href="{{ url('manage_student/student_assignments') }}"><i class="fa fa-file-text-o"></i> Student Assignments</a></li>
-                <li><a href="{{ url('manage_student/schedule_student') }}"><i class="fa fa-calendar"></i> Schedule Student</a></li>
-                <li><a href="{{ url('manage_student/report_student') }}"><i class="fa fa-envelope"></i> Report Student</a></li>
+              <li><a href="{{ url('manage_student/my_data') }}"><i class="fa fa-puzzle-piece"></i> My Data</a></li>
+              <li><a href="{{ url('manage_student/my_activity') }}"><i class="fa fa-file-text-o"></i> My Activity</a></li>
+              <li><a href="{{ url('manage_student/schedule_class') }}"><i class="fa fa-calendar"></i> Schedule Class</a></li>
               </ul>
             </li>
             <li class="treeview">
@@ -221,6 +220,7 @@
               </a>
               <ul class="treeview-menu">
                 <li><a href="{{ url('manage_post/master_post') }}"><i class="fa fa-th"></i> Master Post</a></li>
+                <li><a href="{{ url('manage_post/my_post') }}"><i class="fa fa-th"></i> Master Post</a></li>
               </ul>
             </li>
             <li class="treeview">

@@ -113,8 +113,9 @@ Route::get('manage_teacher/master_recap', 'AksesController@teacher_master_recap'
 Route::get('manage_teacher/activity_student', 'AksesController@teacher_activity_student');
 Route::get('manage_teacher/detail_student_and_parent', 'AksesController@teacher_detail_student_and_parent');
 Route::get('manage_teacher/master_task', 'AksesController@teacher_master_task');
-Route::get('manage_teacher/my_post', 'AksesController@teacher_my_post');
+Route::get('manage_teacher/my_post', 'AdminController@admin');
 Route::get('manage_teacher/master_post', 'PostController@master_post');
+Route::get('manage_teacher/edit_my_data/{id}', 'AdminController@edit_master_teacher');
 
 
 Route::get('manage_student/master_student', 'AdminController@master_student');

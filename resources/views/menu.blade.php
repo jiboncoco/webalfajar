@@ -40,7 +40,6 @@
                     <img src="{{ url('adminlte/dist/img/user2-160x160.jpg') }}" class="img-circle" alt="User Image">
                     <p>
                       {{ session('akses_username') }} - {{ session('akses_type') }}
-                      <small>Member since {{ session('created_at') }}</small>
                     </p>
                   </li>
                   <!-- Menu Footer-->
