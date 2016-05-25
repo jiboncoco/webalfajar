@@ -235,7 +235,6 @@
                     </label>
                   @endforeach
                 </div>
-                </form>
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
@@ -326,7 +325,6 @@
                     </label>
                   @endforeach
                 </div>
-                </form>
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
@@ -417,7 +415,7 @@
                       </blockquote>
                     </label>
                   @endforeach
-                </div></form>
+                </div>
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
@@ -506,7 +504,7 @@
                       </blockquote>
                     </label>
                   @endforeach
-                </div></form>
+                </div>
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>

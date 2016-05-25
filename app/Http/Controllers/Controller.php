@@ -21,11 +21,6 @@ class Controller extends BaseController
             $yayasan_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'galery'] ])->get();
             $yayasan_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'profile'] ])->get();
 
-            $yayasan_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'visi-misi'] ])->get();
-            $yayasan_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'pendidikan'] ])->get();
-            $yayasan_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'galery'] ])->get();
-            $yayasan_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'profile'] ])->get();
-
             $tk_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'visi-misi'] ])->get();
             $tk_kurkul = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'kurikulum'] ])->get();
             $tk_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'galery'] ])->get();
@@ -47,7 +42,10 @@ class Controller extends BaseController
             $sma_fasilitas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'fasilitas'] ])->get();
 
             $dkm_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'dkm'],['feature_for', '=', 'galery'] ])->get();
+
             $dkm_fasilitas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'dkm'],['feature_for', '=', 'fasilitas'] ])->get();            
+
+
 
             $dt_blog = \DB::table('dt_blog')->where([
                 ['dt_blog_type', '=', 'news'],
@@ -95,6 +93,7 @@ class Controller extends BaseController
             $sma_fasilitas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'fasilitas'] ])->get();
 
             $dkm_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'dkm'],['feature_for', '=', 'galery'] ])->get();
+
             $dkm_fasilitas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'dkm'],['feature_for', '=', 'fasilitas'] ])->get();            
 
             $dt_blog = \DB::table('dt_blog')->where([
@@ -158,6 +157,7 @@ class Controller extends BaseController
             $sma_fasilitas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'fasilitas'] ])->get();
 
             $dkm_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'dkm'],['feature_for', '=', 'galery'] ])->get();
+
             $dkm_fasilitas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'dkm'],['feature_for', '=', 'fasilitas'] ])->get(); 
             return \View::make('news')->with('dt_blog_all_news', $dt_blog_all_news)->with('announcement',$announcement)->with('article',$article)
             ->with('yayasan_vimi',$yayasan_vimi)->with('yayasan_edu',$yayasan_edu)
@@ -200,6 +200,7 @@ class Controller extends BaseController
             $sma_fasilitas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'fasilitas'] ])->get();
 
             $dkm_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'dkm'],['feature_for', '=', 'galery'] ])->get();
+
             $dkm_fasilitas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'dkm'],['feature_for', '=', 'fasilitas'] ])->get(); 
 
             return \View::make('news')->with('dt_blog_all_news', $dt_blog_all_news)->with('announcement',$announcement)->with('article',$article)
@@ -504,23 +505,60 @@ class Controller extends BaseController
             $tk_kurkul = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'kurikulum'] ])->get();
             $tk_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'galery'] ])->get();
             $tk_fasilitas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'fasilitas'] ])->get();
+            $tk_extra = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'ekstracurricular'] ])->get();
+            $tk_partners = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'partnerships'] ])->get();
+            $tk_achiev = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'achievment'] ])->get();
+            $tk_commit = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'committe'] ])->get();
+            $tk_alumni = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'alumni'] ])->get();
+            $tk_student = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'student'] ])->get();
+            $tk_headmas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'headmaster'] ])->get();
+            $tk_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'profile'] ])->get();
+            $tk_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'education'] ])->get();
 
             $sd_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'visi-misi'] ])->get();
             $sd_kurkul = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'kurikulum'] ])->get();
             $sd_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'galery'] ])->get();
             $sd_fasilitas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'fasilitas'] ])->get();
+            $sd_extra = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'ekstracurricular'] ])->get();
+            $sd_partners = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'partnerships'] ])->get();
+            $sd_achiev = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'achievment'] ])->get();
+            $sd_commit = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'committe'] ])->get();
+            $sd_alumni = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'alumni'] ])->get();
+            $sd_student = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'student'] ])->get();
+            $sd_headmas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'headmaster'] ])->get();
+            $sd_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'profile'] ])->get();
+            $sd_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'education'] ])->get();
 
             $smp_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'visi-misi'] ])->get();
             $smp_kurkul = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'kurikulum'] ])->get();
             $smp_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'galery'] ])->get();
             $smp_fasilitas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'fasilitas'] ])->get();
+            $smp_extra = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'ekstracurricular'] ])->get();
+            $smp_partners = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'partnerships'] ])->get();
+            $smp_achiev = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'achievment'] ])->get();
+            $smp_commit = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'committe'] ])->get();
+            $smp_alumni = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'alumni'] ])->get();
+            $smp_student = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'student'] ])->get();
+            $smp_headmas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'headmaster'] ])->get();
+            $smp_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'profile'] ])->get();
+            $smp_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'education'] ])->get();
 
             $sma_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'visi-misi'] ])->get();
             $sma_kurkul = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'kurikulum'] ])->get();
             $sma_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'galery'] ])->get();
             $sma_fasilitas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'fasilitas'] ])->get();
+            $sma_extra = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'ekstracurricular'] ])->get();
+            $sma_partners = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'partnerships'] ])->get();
+            $sma_achiev = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'achievment'] ])->get();
+            $sma_commit = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'committe'] ])->get();
+            $sma_alumni = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'alumni'] ])->get();
+            $sma_student = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'student'] ])->get();
+            $sma_headmas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'headmaster'] ])->get();
+            $sma_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'profile'] ])->get();
+            $sma_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'education'] ])->get();
 
             $dkm_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'dkm'],['feature_for', '=', 'galery'] ])->get();
+            $teacher = \App\dt_teacher::where('dt_teacher_for', 'TK')->get();
             $dkm_fasilitas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'dkm'],['feature_for', '=', 'fasilitas'] ])->get(); 
 
             return \View::make('portal_tk')->with('dt_blog_all_portal_tk', $dt_blog_all_portal_tk)->with('news',$news)->with('article',$article)
@@ -530,7 +568,15 @@ class Controller extends BaseController
             ->with('sd_kurkul',$sd_kurkul)->with('sd_galery',$sd_galery)->with('sd_fasilitas',$sd_fasilitas)->with('smp_vimi',$smp_vimi)
             ->with('smp_kurkul',$smp_kurkul)->with('smp_galery',$smp_galery)->with('smp_fasilitas',$smp_fasilitas)->with('sma_vimi',$sma_vimi)
             ->with('sma_kurkul',$sma_kurkul)->with('sma_galery',$sma_galery)->with('sma_fasilitas',$sma_fasilitas)->with('dkm_galery',$dkm_galery)
-            ->with('dkm_fasilitas',$dkm_fasilitas);
+            ->with('dkm_fasilitas',$dkm_fasilitas)->with('teacher',$teacher)->with('tk_extra',$tk_extra)->with('tk_partners',$tk_partners)
+            ->with('tk_achiev',$tk_achiev)->with('tk_commit',$tk_commit)->with('tk_alumni',$tk_alumni)->with('tk_student',$tk_student)
+            ->with('tk_headmas',$tk_headmas)->with('tk_profile',$tk_profile)->with('tk_edu',$tk_edu)->with('sd_extra',$sd_extra)->with('sd_partners',$sd_partners)
+            ->with('sd_achiev',$sd_achiev)->with('sd_commit',$sd_commit)->with('sd_alumni',$sd_alumni)->with('sd_student',$sd_student)
+            ->with('sd_headmas',$sd_headmas)->with('sd_profile',$sd_profile)->with('sd_edu',$sd_edu)->with('smp_extra',$smp_extra)->with('smp_partners',$smp_partners)
+            ->with('smp_achiev',$smp_achiev)->with('smp_commit',$smp_commit)->with('smp_alumni',$smp_alumni)->with('smp_student',$smp_student)
+            ->with('smp_headmas',$smp_headmas)->with('smp_profile',$smp_profile)->with('smp_edu',$smp_edu)->with('sma_extra',$sma_extra)->with('sma_partners',$sma_partners)
+            ->with('sma_achiev',$sma_achiev)->with('sma_commit',$sma_commit)->with('sma_alumni',$sma_alumni)->with('sma_student',$sma_student)
+            ->with('sma_headmas',$sma_headmas)->with('sma_profile',$sma_profile)->with('sma_edu',$sma_edu);
         }
         else{
             $dt_blog_all_portal_tk = \DB::table('dt_blog')->where('dt_blog_for', '=', 'TK')->orderBy('id', 'desc')->paginate(6);
@@ -548,27 +594,64 @@ class Controller extends BaseController
             $yayasan_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'galery'] ])->get();
             $yayasan_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'profile'] ])->get();
 
-            $tk_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'visi-misi'] ])->get();
+                        $tk_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'visi-misi'] ])->get();
             $tk_kurkul = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'kurikulum'] ])->get();
             $tk_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'galery'] ])->get();
             $tk_fasilitas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'fasilitas'] ])->get();
+            $tk_extra = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'ekstracurricular'] ])->get();
+            $tk_partners = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'partnerships'] ])->get();
+            $tk_achiev = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'achievment'] ])->get();
+            $tk_commit = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'committe'] ])->get();
+            $tk_alumni = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'alumni'] ])->get();
+            $tk_student = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'student'] ])->get();
+            $tk_headmas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'headmaster'] ])->get();
+            $tk_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'profile'] ])->get();
+            $tk_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'education'] ])->get();
 
             $sd_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'visi-misi'] ])->get();
             $sd_kurkul = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'kurikulum'] ])->get();
             $sd_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'galery'] ])->get();
             $sd_fasilitas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'fasilitas'] ])->get();
+            $sd_extra = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'ekstracurricular'] ])->get();
+            $sd_partners = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'partnerships'] ])->get();
+            $sd_achiev = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'achievment'] ])->get();
+            $sd_commit = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'committe'] ])->get();
+            $sd_alumni = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'alumni'] ])->get();
+            $sd_student = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'student'] ])->get();
+            $sd_headmas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'headmaster'] ])->get();
+            $sd_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'profile'] ])->get();
+            $sd_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'education'] ])->get();
 
             $smp_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'visi-misi'] ])->get();
             $smp_kurkul = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'kurikulum'] ])->get();
             $smp_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'galery'] ])->get();
             $smp_fasilitas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'fasilitas'] ])->get();
+            $smp_extra = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'ekstracurricular'] ])->get();
+            $smp_partners = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'partnerships'] ])->get();
+            $smp_achiev = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'achievment'] ])->get();
+            $smp_commit = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'committe'] ])->get();
+            $smp_alumni = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'alumni'] ])->get();
+            $smp_student = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'student'] ])->get();
+            $smp_headmas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'headmaster'] ])->get();
+            $smp_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'profile'] ])->get();
+            $smp_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'education'] ])->get();
 
             $sma_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'visi-misi'] ])->get();
             $sma_kurkul = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'kurikulum'] ])->get();
             $sma_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'galery'] ])->get();
             $sma_fasilitas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'fasilitas'] ])->get();
+            $sma_extra = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'ekstracurricular'] ])->get();
+            $sma_partners = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'partnerships'] ])->get();
+            $sma_achiev = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'achievment'] ])->get();
+            $sma_commit = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'committe'] ])->get();
+            $sma_alumni = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'alumni'] ])->get();
+            $sma_student = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'student'] ])->get();
+            $sma_headmas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'headmaster'] ])->get();
+            $sma_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'profile'] ])->get();
+            $sma_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'education'] ])->get();
 
             $dkm_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'dkm'],['feature_for', '=', 'galery'] ])->get();
+            $teacher = \App\dt_teacher::where('dt_teacher_for', 'TK')->get();
             $dkm_fasilitas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'dkm'],['feature_for', '=', 'fasilitas'] ])->get(); 
 
             return \View::make('portal_tk')->with('dt_blog_all_portal_tk', $dt_blog_all_portal_tk)->with('news',$news)->with('article',$article)
@@ -578,7 +661,15 @@ class Controller extends BaseController
             ->with('sd_kurkul',$sd_kurkul)->with('sd_galery',$sd_galery)->with('sd_fasilitas',$sd_fasilitas)->with('smp_vimi',$smp_vimi)
             ->with('smp_kurkul',$smp_kurkul)->with('smp_galery',$smp_galery)->with('smp_fasilitas',$smp_fasilitas)->with('sma_vimi',$sma_vimi)
             ->with('sma_kurkul',$sma_kurkul)->with('sma_galery',$sma_galery)->with('sma_fasilitas',$sma_fasilitas)->with('dkm_galery',$dkm_galery)
-            ->with('dkm_fasilitas',$dkm_fasilitas);
+            ->with('dkm_fasilitas',$dkm_fasilitas)->with('teacher',$teacher)->with('tk_extra',$tk_extra)->with('tk_partners',$tk_partners)
+            ->with('tk_achiev',$tk_achiev)->with('tk_commit',$tk_commit)->with('tk_alumni',$tk_alumni)->with('tk_student',$tk_student)
+            ->with('tk_headmas',$tk_headmas)->with('tk_profile',$tk_profile)->with('tk_edu',$tk_edu)->with('sd_extra',$sd_extra)->with('sd_partners',$sd_partners)
+            ->with('sd_achiev',$sd_achiev)->with('sd_commit',$sd_commit)->with('sd_alumni',$sd_alumni)->with('sd_student',$sd_student)
+            ->with('sd_headmas',$sd_headmas)->with('sd_profile',$sd_profile)->with('sd_edu',$sd_edu)->with('smp_extra',$smp_extra)->with('smp_partners',$smp_partners)
+            ->with('smp_achiev',$smp_achiev)->with('smp_commit',$smp_commit)->with('smp_alumni',$smp_alumni)->with('smp_student',$smp_student)
+            ->with('smp_headmas',$smp_headmas)->with('smp_profile',$smp_profile)->with('smp_edu',$smp_edu)->with('sma_extra',$sma_extra)->with('sma_partners',$sma_partners)
+            ->with('sma_achiev',$sma_achiev)->with('sma_commit',$sma_commit)->with('sma_alumni',$sma_alumni)->with('sma_student',$sma_student)
+            ->with('sma_headmas',$sma_headmas)->with('sma_profile',$sma_profile)->with('sma_edu',$sma_edu);    
         }
     }
 
@@ -601,27 +692,64 @@ class Controller extends BaseController
             $yayasan_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'galery'] ])->get();
             $yayasan_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'profile'] ])->get();
 
-            $tk_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'visi-misi'] ])->get();
+                        $tk_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'visi-misi'] ])->get();
             $tk_kurkul = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'kurikulum'] ])->get();
             $tk_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'galery'] ])->get();
             $tk_fasilitas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'fasilitas'] ])->get();
+            $tk_extra = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'ekstracurricular'] ])->get();
+            $tk_partners = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'partnerships'] ])->get();
+            $tk_achiev = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'achievment'] ])->get();
+            $tk_commit = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'committe'] ])->get();
+            $tk_alumni = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'alumni'] ])->get();
+            $tk_student = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'student'] ])->get();
+            $tk_headmas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'headmaster'] ])->get();
+            $tk_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'profile'] ])->get();
+            $tk_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'education'] ])->get();
 
             $sd_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'visi-misi'] ])->get();
             $sd_kurkul = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'kurikulum'] ])->get();
             $sd_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'galery'] ])->get();
             $sd_fasilitas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'fasilitas'] ])->get();
+            $sd_extra = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'ekstracurricular'] ])->get();
+            $sd_partners = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'partnerships'] ])->get();
+            $sd_achiev = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'achievment'] ])->get();
+            $sd_commit = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'committe'] ])->get();
+            $sd_alumni = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'alumni'] ])->get();
+            $sd_student = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'student'] ])->get();
+            $sd_headmas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'headmaster'] ])->get();
+            $sd_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'profile'] ])->get();
+            $sd_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'education'] ])->get();
 
             $smp_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'visi-misi'] ])->get();
             $smp_kurkul = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'kurikulum'] ])->get();
             $smp_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'galery'] ])->get();
             $smp_fasilitas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'fasilitas'] ])->get();
+            $smp_extra = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'ekstracurricular'] ])->get();
+            $smp_partners = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'partnerships'] ])->get();
+            $smp_achiev = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'achievment'] ])->get();
+            $smp_commit = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'committe'] ])->get();
+            $smp_alumni = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'alumni'] ])->get();
+            $smp_student = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'student'] ])->get();
+            $smp_headmas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'headmaster'] ])->get();
+            $smp_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'profile'] ])->get();
+            $smp_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'education'] ])->get();
 
             $sma_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'visi-misi'] ])->get();
             $sma_kurkul = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'kurikulum'] ])->get();
             $sma_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'galery'] ])->get();
             $sma_fasilitas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'fasilitas'] ])->get();
+            $sma_extra = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'ekstracurricular'] ])->get();
+            $sma_partners = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'partnerships'] ])->get();
+            $sma_achiev = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'achievment'] ])->get();
+            $sma_commit = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'committe'] ])->get();
+            $sma_alumni = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'alumni'] ])->get();
+            $sma_student = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'student'] ])->get();
+            $sma_headmas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'headmaster'] ])->get();
+            $sma_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'profile'] ])->get();
+            $sma_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'education'] ])->get();
 
             $dkm_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'dkm'],['feature_for', '=', 'galery'] ])->get();
+            $teacher = \App\dt_teacher::where('dt_teacher_for', 'TK')->get();
             $dkm_fasilitas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'dkm'],['feature_for', '=', 'fasilitas'] ])->get(); 
 
             return \View::make('portal_tk')->with('dt_blog_all_portal_tk', $dt_blog_all_portal_tk)->with('news',$news)->with('article',$article)
@@ -631,8 +759,15 @@ class Controller extends BaseController
             ->with('sd_kurkul',$sd_kurkul)->with('sd_galery',$sd_galery)->with('sd_fasilitas',$sd_fasilitas)->with('smp_vimi',$smp_vimi)
             ->with('smp_kurkul',$smp_kurkul)->with('smp_galery',$smp_galery)->with('smp_fasilitas',$smp_fasilitas)->with('sma_vimi',$sma_vimi)
             ->with('sma_kurkul',$sma_kurkul)->with('sma_galery',$sma_galery)->with('sma_fasilitas',$sma_fasilitas)->with('dkm_galery',$dkm_galery)
-            ->with('dkm_fasilitas',$dkm_fasilitas);
-        }
+            ->with('dkm_fasilitas',$dkm_fasilitas)->with('teacher',$teacher)->with('tk_extra',$tk_extra)->with('tk_partners',$tk_partners)
+            ->with('tk_achiev',$tk_achiev)->with('tk_commit',$tk_commit)->with('tk_alumni',$tk_alumni)->with('tk_student',$tk_student)
+            ->with('tk_headmas',$tk_headmas)->with('tk_profile',$tk_profile)->with('tk_edu',$tk_edu)->with('sd_extra',$sd_extra)->with('sd_partners',$sd_partners)
+            ->with('sd_achiev',$sd_achiev)->with('sd_commit',$sd_commit)->with('sd_alumni',$sd_alumni)->with('sd_student',$sd_student)
+            ->with('sd_headmas',$sd_headmas)->with('sd_profile',$sd_profile)->with('sd_edu',$sd_edu)->with('smp_extra',$smp_extra)->with('smp_partners',$smp_partners)
+            ->with('smp_achiev',$smp_achiev)->with('smp_commit',$smp_commit)->with('smp_alumni',$smp_alumni)->with('smp_student',$smp_student)
+            ->with('smp_headmas',$smp_headmas)->with('smp_profile',$smp_profile)->with('smp_edu',$smp_edu)->with('sma_extra',$sma_extra)->with('sma_partners',$sma_partners)
+            ->with('sma_achiev',$sma_achiev)->with('sma_commit',$sma_commit)->with('sma_alumni',$sma_alumni)->with('sma_student',$sma_student)
+            ->with('sma_headmas',$sma_headmas)->with('sma_profile',$sma_profile)->with('sma_edu',$sma_edu);    }
         else{
             $dt_blog_all_portal_tk = \DB::table('dt_blog')->where('dt_blog_type', '=', 'all', 'AND', 'dt_blog_for', '=', 'TK')->orderBy('id', 'desc')->paginate(6);
             $news = \DB::table('dt_blog')->where([
@@ -649,27 +784,64 @@ class Controller extends BaseController
             $yayasan_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'galery'] ])->get();
             $yayasan_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'profile'] ])->get();
 
-            $tk_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'visi-misi'] ])->get();
+                        $tk_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'visi-misi'] ])->get();
             $tk_kurkul = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'kurikulum'] ])->get();
             $tk_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'galery'] ])->get();
             $tk_fasilitas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'fasilitas'] ])->get();
+            $tk_extra = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'ekstracurricular'] ])->get();
+            $tk_partners = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'partnerships'] ])->get();
+            $tk_achiev = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'achievment'] ])->get();
+            $tk_commit = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'committe'] ])->get();
+            $tk_alumni = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'alumni'] ])->get();
+            $tk_student = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'student'] ])->get();
+            $tk_headmas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'headmaster'] ])->get();
+            $tk_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'profile'] ])->get();
+            $tk_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'education'] ])->get();
 
             $sd_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'visi-misi'] ])->get();
             $sd_kurkul = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'kurikulum'] ])->get();
             $sd_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'galery'] ])->get();
             $sd_fasilitas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'fasilitas'] ])->get();
+            $sd_extra = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'ekstracurricular'] ])->get();
+            $sd_partners = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'partnerships'] ])->get();
+            $sd_achiev = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'achievment'] ])->get();
+            $sd_commit = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'committe'] ])->get();
+            $sd_alumni = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'alumni'] ])->get();
+            $sd_student = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'student'] ])->get();
+            $sd_headmas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'headmaster'] ])->get();
+            $sd_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'profile'] ])->get();
+            $sd_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'education'] ])->get();
 
             $smp_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'visi-misi'] ])->get();
             $smp_kurkul = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'kurikulum'] ])->get();
             $smp_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'galery'] ])->get();
             $smp_fasilitas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'fasilitas'] ])->get();
+            $smp_extra = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'ekstracurricular'] ])->get();
+            $smp_partners = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'partnerships'] ])->get();
+            $smp_achiev = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'achievment'] ])->get();
+            $smp_commit = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'committe'] ])->get();
+            $smp_alumni = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'alumni'] ])->get();
+            $smp_student = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'student'] ])->get();
+            $smp_headmas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'headmaster'] ])->get();
+            $smp_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'profile'] ])->get();
+            $smp_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'education'] ])->get();
 
             $sma_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'visi-misi'] ])->get();
             $sma_kurkul = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'kurikulum'] ])->get();
             $sma_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'galery'] ])->get();
             $sma_fasilitas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'fasilitas'] ])->get();
+            $sma_extra = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'ekstracurricular'] ])->get();
+            $sma_partners = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'partnerships'] ])->get();
+            $sma_achiev = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'achievment'] ])->get();
+            $sma_commit = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'committe'] ])->get();
+            $sma_alumni = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'alumni'] ])->get();
+            $sma_student = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'student'] ])->get();
+            $sma_headmas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'headmaster'] ])->get();
+            $sma_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'profile'] ])->get();
+            $sma_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'education'] ])->get();
 
             $dkm_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'dkm'],['feature_for', '=', 'galery'] ])->get();
+            $teacher = \App\dt_teacher::where('dt_teacher_for', 'TK')->get();
             $dkm_fasilitas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'dkm'],['feature_for', '=', 'fasilitas'] ])->get(); 
 
             return \View::make('portal_tk')->with('dt_blog_all_portal_tk', $dt_blog_all_portal_tk)->with('news',$news)->with('article',$article)
@@ -679,8 +851,15 @@ class Controller extends BaseController
             ->with('sd_kurkul',$sd_kurkul)->with('sd_galery',$sd_galery)->with('sd_fasilitas',$sd_fasilitas)->with('smp_vimi',$smp_vimi)
             ->with('smp_kurkul',$smp_kurkul)->with('smp_galery',$smp_galery)->with('smp_fasilitas',$smp_fasilitas)->with('sma_vimi',$sma_vimi)
             ->with('sma_kurkul',$sma_kurkul)->with('sma_galery',$sma_galery)->with('sma_fasilitas',$sma_fasilitas)->with('dkm_galery',$dkm_galery)
-            ->with('dkm_fasilitas',$dkm_fasilitas);
-        }
+            ->with('dkm_fasilitas',$dkm_fasilitas)->with('teacher',$teacher)->with('tk_extra',$tk_extra)->with('tk_partners',$tk_partners)
+            ->with('tk_achiev',$tk_achiev)->with('tk_commit',$tk_commit)->with('tk_alumni',$tk_alumni)->with('tk_student',$tk_student)
+            ->with('tk_headmas',$tk_headmas)->with('tk_profile',$tk_profile)->with('tk_edu',$tk_edu)->with('sd_extra',$sd_extra)->with('sd_partners',$sd_partners)
+            ->with('sd_achiev',$sd_achiev)->with('sd_commit',$sd_commit)->with('sd_alumni',$sd_alumni)->with('sd_student',$sd_student)
+            ->with('sd_headmas',$sd_headmas)->with('sd_profile',$sd_profile)->with('sd_edu',$sd_edu)->with('smp_extra',$smp_extra)->with('smp_partners',$smp_partners)
+            ->with('smp_achiev',$smp_achiev)->with('smp_commit',$smp_commit)->with('smp_alumni',$smp_alumni)->with('smp_student',$smp_student)
+            ->with('smp_headmas',$smp_headmas)->with('smp_profile',$smp_profile)->with('smp_edu',$smp_edu)->with('sma_extra',$sma_extra)->with('sma_partners',$sma_partners)
+            ->with('sma_achiev',$sma_achiev)->with('sma_commit',$sma_commit)->with('sma_alumni',$sma_alumni)->with('sma_student',$sma_student)
+            ->with('sma_headmas',$sma_headmas)->with('sma_profile',$sma_profile)->with('sma_edu',$sma_edu);    }
     }    
 
     public function portal_tk_news()
@@ -705,27 +884,64 @@ class Controller extends BaseController
             $yayasan_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'galery'] ])->get();
             $yayasan_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'profile'] ])->get();
 
-            $tk_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'visi-misi'] ])->get();
+                        $tk_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'visi-misi'] ])->get();
             $tk_kurkul = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'kurikulum'] ])->get();
             $tk_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'galery'] ])->get();
             $tk_fasilitas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'fasilitas'] ])->get();
+            $tk_extra = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'ekstracurricular'] ])->get();
+            $tk_partners = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'partnerships'] ])->get();
+            $tk_achiev = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'achievment'] ])->get();
+            $tk_commit = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'committe'] ])->get();
+            $tk_alumni = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'alumni'] ])->get();
+            $tk_student = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'student'] ])->get();
+            $tk_headmas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'headmaster'] ])->get();
+            $tk_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'profile'] ])->get();
+            $tk_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'education'] ])->get();
 
             $sd_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'visi-misi'] ])->get();
             $sd_kurkul = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'kurikulum'] ])->get();
             $sd_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'galery'] ])->get();
             $sd_fasilitas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'fasilitas'] ])->get();
+            $sd_extra = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'ekstracurricular'] ])->get();
+            $sd_partners = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'partnerships'] ])->get();
+            $sd_achiev = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'achievment'] ])->get();
+            $sd_commit = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'committe'] ])->get();
+            $sd_alumni = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'alumni'] ])->get();
+            $sd_student = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'student'] ])->get();
+            $sd_headmas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'headmaster'] ])->get();
+            $sd_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'profile'] ])->get();
+            $sd_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'education'] ])->get();
 
             $smp_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'visi-misi'] ])->get();
             $smp_kurkul = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'kurikulum'] ])->get();
             $smp_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'galery'] ])->get();
             $smp_fasilitas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'fasilitas'] ])->get();
+            $smp_extra = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'ekstracurricular'] ])->get();
+            $smp_partners = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'partnerships'] ])->get();
+            $smp_achiev = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'achievment'] ])->get();
+            $smp_commit = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'committe'] ])->get();
+            $smp_alumni = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'alumni'] ])->get();
+            $smp_student = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'student'] ])->get();
+            $smp_headmas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'headmaster'] ])->get();
+            $smp_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'profile'] ])->get();
+            $smp_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'education'] ])->get();
 
             $sma_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'visi-misi'] ])->get();
             $sma_kurkul = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'kurikulum'] ])->get();
             $sma_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'galery'] ])->get();
             $sma_fasilitas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'fasilitas'] ])->get();
+            $sma_extra = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'ekstracurricular'] ])->get();
+            $sma_partners = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'partnerships'] ])->get();
+            $sma_achiev = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'achievment'] ])->get();
+            $sma_commit = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'committe'] ])->get();
+            $sma_alumni = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'alumni'] ])->get();
+            $sma_student = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'student'] ])->get();
+            $sma_headmas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'headmaster'] ])->get();
+            $sma_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'profile'] ])->get();
+            $sma_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'education'] ])->get();
 
             $dkm_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'dkm'],['feature_for', '=', 'galery'] ])->get();
+            $teacher = \App\dt_teacher::where('dt_teacher_for', 'TK')->get();
             $dkm_fasilitas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'dkm'],['feature_for', '=', 'fasilitas'] ])->get(); 
 
             return \View::make('portal_tk')->with('dt_blog_all_portal_tk', $dt_blog_all_portal_tk)->with('news',$news)->with('article',$article)
@@ -735,8 +951,15 @@ class Controller extends BaseController
             ->with('sd_kurkul',$sd_kurkul)->with('sd_galery',$sd_galery)->with('sd_fasilitas',$sd_fasilitas)->with('smp_vimi',$smp_vimi)
             ->with('smp_kurkul',$smp_kurkul)->with('smp_galery',$smp_galery)->with('smp_fasilitas',$smp_fasilitas)->with('sma_vimi',$sma_vimi)
             ->with('sma_kurkul',$sma_kurkul)->with('sma_galery',$sma_galery)->with('sma_fasilitas',$sma_fasilitas)->with('dkm_galery',$dkm_galery)
-            ->with('dkm_fasilitas',$dkm_fasilitas);
-        }
+            ->with('dkm_fasilitas',$dkm_fasilitas)->with('teacher',$teacher)->with('tk_extra',$tk_extra)->with('tk_partners',$tk_partners)
+            ->with('tk_achiev',$tk_achiev)->with('tk_commit',$tk_commit)->with('tk_alumni',$tk_alumni)->with('tk_student',$tk_student)
+            ->with('tk_headmas',$tk_headmas)->with('tk_profile',$tk_profile)->with('tk_edu',$tk_edu)->with('sd_extra',$sd_extra)->with('sd_partners',$sd_partners)
+            ->with('sd_achiev',$sd_achiev)->with('sd_commit',$sd_commit)->with('sd_alumni',$sd_alumni)->with('sd_student',$sd_student)
+            ->with('sd_headmas',$sd_headmas)->with('sd_profile',$sd_profile)->with('sd_edu',$sd_edu)->with('smp_extra',$smp_extra)->with('smp_partners',$smp_partners)
+            ->with('smp_achiev',$smp_achiev)->with('smp_commit',$smp_commit)->with('smp_alumni',$smp_alumni)->with('smp_student',$smp_student)
+            ->with('smp_headmas',$smp_headmas)->with('smp_profile',$smp_profile)->with('smp_edu',$smp_edu)->with('sma_extra',$sma_extra)->with('sma_partners',$sma_partners)
+            ->with('sma_achiev',$sma_achiev)->with('sma_commit',$sma_commit)->with('sma_alumni',$sma_alumni)->with('sma_student',$sma_student)
+            ->with('sma_headmas',$sma_headmas)->with('sma_profile',$sma_profile)->with('sma_edu',$sma_edu);    }
         else{
             $dt_blog_all_portal_tk = \DB::table('dt_blog')->where([
                                                                     ['dt_blog_type', '=', 'news'],
@@ -756,27 +979,64 @@ class Controller extends BaseController
             $yayasan_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'galery'] ])->get();
             $yayasan_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'profile'] ])->get();
 
-            $tk_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'visi-misi'] ])->get();
+                        $tk_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'visi-misi'] ])->get();
             $tk_kurkul = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'kurikulum'] ])->get();
             $tk_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'galery'] ])->get();
             $tk_fasilitas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'fasilitas'] ])->get();
+            $tk_extra = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'ekstracurricular'] ])->get();
+            $tk_partners = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'partnerships'] ])->get();
+            $tk_achiev = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'achievment'] ])->get();
+            $tk_commit = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'committe'] ])->get();
+            $tk_alumni = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'alumni'] ])->get();
+            $tk_student = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'student'] ])->get();
+            $tk_headmas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'headmaster'] ])->get();
+            $tk_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'profile'] ])->get();
+            $tk_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'education'] ])->get();
 
             $sd_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'visi-misi'] ])->get();
             $sd_kurkul = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'kurikulum'] ])->get();
             $sd_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'galery'] ])->get();
             $sd_fasilitas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'fasilitas'] ])->get();
+            $sd_extra = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'ekstracurricular'] ])->get();
+            $sd_partners = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'partnerships'] ])->get();
+            $sd_achiev = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'achievment'] ])->get();
+            $sd_commit = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'committe'] ])->get();
+            $sd_alumni = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'alumni'] ])->get();
+            $sd_student = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'student'] ])->get();
+            $sd_headmas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'headmaster'] ])->get();
+            $sd_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'profile'] ])->get();
+            $sd_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'education'] ])->get();
 
             $smp_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'visi-misi'] ])->get();
             $smp_kurkul = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'kurikulum'] ])->get();
             $smp_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'galery'] ])->get();
             $smp_fasilitas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'fasilitas'] ])->get();
+            $smp_extra = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'ekstracurricular'] ])->get();
+            $smp_partners = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'partnerships'] ])->get();
+            $smp_achiev = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'achievment'] ])->get();
+            $smp_commit = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'committe'] ])->get();
+            $smp_alumni = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'alumni'] ])->get();
+            $smp_student = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'student'] ])->get();
+            $smp_headmas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'headmaster'] ])->get();
+            $smp_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'profile'] ])->get();
+            $smp_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'education'] ])->get();
 
             $sma_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'visi-misi'] ])->get();
             $sma_kurkul = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'kurikulum'] ])->get();
             $sma_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'galery'] ])->get();
             $sma_fasilitas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'fasilitas'] ])->get();
+            $sma_extra = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'ekstracurricular'] ])->get();
+            $sma_partners = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'partnerships'] ])->get();
+            $sma_achiev = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'achievment'] ])->get();
+            $sma_commit = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'committe'] ])->get();
+            $sma_alumni = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'alumni'] ])->get();
+            $sma_student = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'student'] ])->get();
+            $sma_headmas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'headmaster'] ])->get();
+            $sma_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'profile'] ])->get();
+            $sma_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'education'] ])->get();
 
             $dkm_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'dkm'],['feature_for', '=', 'galery'] ])->get();
+            $teacher = \App\dt_teacher::where('dt_teacher_for', 'TK')->get();
             $dkm_fasilitas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'dkm'],['feature_for', '=', 'fasilitas'] ])->get(); 
 
             return \View::make('portal_tk')->with('dt_blog_all_portal_tk', $dt_blog_all_portal_tk)->with('news',$news)->with('article',$article)
@@ -786,8 +1046,15 @@ class Controller extends BaseController
             ->with('sd_kurkul',$sd_kurkul)->with('sd_galery',$sd_galery)->with('sd_fasilitas',$sd_fasilitas)->with('smp_vimi',$smp_vimi)
             ->with('smp_kurkul',$smp_kurkul)->with('smp_galery',$smp_galery)->with('smp_fasilitas',$smp_fasilitas)->with('sma_vimi',$sma_vimi)
             ->with('sma_kurkul',$sma_kurkul)->with('sma_galery',$sma_galery)->with('sma_fasilitas',$sma_fasilitas)->with('dkm_galery',$dkm_galery)
-            ->with('dkm_fasilitas',$dkm_fasilitas);
-        }
+            ->with('dkm_fasilitas',$dkm_fasilitas)->with('teacher',$teacher)->with('tk_extra',$tk_extra)->with('tk_partners',$tk_partners)
+            ->with('tk_achiev',$tk_achiev)->with('tk_commit',$tk_commit)->with('tk_alumni',$tk_alumni)->with('tk_student',$tk_student)
+            ->with('tk_headmas',$tk_headmas)->with('tk_profile',$tk_profile)->with('tk_edu',$tk_edu)->with('sd_extra',$sd_extra)->with('sd_partners',$sd_partners)
+            ->with('sd_achiev',$sd_achiev)->with('sd_commit',$sd_commit)->with('sd_alumni',$sd_alumni)->with('sd_student',$sd_student)
+            ->with('sd_headmas',$sd_headmas)->with('sd_profile',$sd_profile)->with('sd_edu',$sd_edu)->with('smp_extra',$smp_extra)->with('smp_partners',$smp_partners)
+            ->with('smp_achiev',$smp_achiev)->with('smp_commit',$smp_commit)->with('smp_alumni',$smp_alumni)->with('smp_student',$smp_student)
+            ->with('smp_headmas',$smp_headmas)->with('smp_profile',$smp_profile)->with('smp_edu',$smp_edu)->with('sma_extra',$sma_extra)->with('sma_partners',$sma_partners)
+            ->with('sma_achiev',$sma_achiev)->with('sma_commit',$sma_commit)->with('sma_alumni',$sma_alumni)->with('sma_student',$sma_student)
+            ->with('sma_headmas',$sma_headmas)->with('sma_profile',$sma_profile)->with('sma_edu',$sma_edu);    }
     }    
 
     public function portal_tk_agenda()
@@ -812,27 +1079,64 @@ class Controller extends BaseController
             $yayasan_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'galery'] ])->get();
             $yayasan_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'profile'] ])->get();
 
-            $tk_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'visi-misi'] ])->get();
+                        $tk_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'visi-misi'] ])->get();
             $tk_kurkul = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'kurikulum'] ])->get();
             $tk_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'galery'] ])->get();
             $tk_fasilitas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'fasilitas'] ])->get();
+            $tk_extra = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'ekstracurricular'] ])->get();
+            $tk_partners = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'partnerships'] ])->get();
+            $tk_achiev = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'achievment'] ])->get();
+            $tk_commit = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'committe'] ])->get();
+            $tk_alumni = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'alumni'] ])->get();
+            $tk_student = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'student'] ])->get();
+            $tk_headmas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'headmaster'] ])->get();
+            $tk_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'profile'] ])->get();
+            $tk_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'education'] ])->get();
 
             $sd_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'visi-misi'] ])->get();
             $sd_kurkul = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'kurikulum'] ])->get();
             $sd_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'galery'] ])->get();
             $sd_fasilitas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'fasilitas'] ])->get();
+            $sd_extra = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'ekstracurricular'] ])->get();
+            $sd_partners = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'partnerships'] ])->get();
+            $sd_achiev = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'achievment'] ])->get();
+            $sd_commit = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'committe'] ])->get();
+            $sd_alumni = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'alumni'] ])->get();
+            $sd_student = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'student'] ])->get();
+            $sd_headmas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'headmaster'] ])->get();
+            $sd_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'profile'] ])->get();
+            $sd_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'education'] ])->get();
 
             $smp_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'visi-misi'] ])->get();
             $smp_kurkul = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'kurikulum'] ])->get();
             $smp_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'galery'] ])->get();
             $smp_fasilitas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'fasilitas'] ])->get();
+            $smp_extra = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'ekstracurricular'] ])->get();
+            $smp_partners = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'partnerships'] ])->get();
+            $smp_achiev = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'achievment'] ])->get();
+            $smp_commit = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'committe'] ])->get();
+            $smp_alumni = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'alumni'] ])->get();
+            $smp_student = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'student'] ])->get();
+            $smp_headmas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'headmaster'] ])->get();
+            $smp_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'profile'] ])->get();
+            $smp_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'education'] ])->get();
 
             $sma_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'visi-misi'] ])->get();
             $sma_kurkul = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'kurikulum'] ])->get();
             $sma_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'galery'] ])->get();
             $sma_fasilitas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'fasilitas'] ])->get();
+            $sma_extra = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'ekstracurricular'] ])->get();
+            $sma_partners = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'partnerships'] ])->get();
+            $sma_achiev = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'achievment'] ])->get();
+            $sma_commit = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'committe'] ])->get();
+            $sma_alumni = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'alumni'] ])->get();
+            $sma_student = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'student'] ])->get();
+            $sma_headmas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'headmaster'] ])->get();
+            $sma_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'profile'] ])->get();
+            $sma_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'education'] ])->get();
 
             $dkm_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'dkm'],['feature_for', '=', 'galery'] ])->get();
+            $teacher = \App\dt_teacher::where('dt_teacher_for', 'TK')->get();
             $dkm_fasilitas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'dkm'],['feature_for', '=', 'fasilitas'] ])->get(); 
 
             return \View::make('portal_tk')->with('dt_blog_all_portal_tk', $dt_blog_all_portal_tk)->with('news',$news)->with('article',$article)
@@ -842,8 +1146,15 @@ class Controller extends BaseController
             ->with('sd_kurkul',$sd_kurkul)->with('sd_galery',$sd_galery)->with('sd_fasilitas',$sd_fasilitas)->with('smp_vimi',$smp_vimi)
             ->with('smp_kurkul',$smp_kurkul)->with('smp_galery',$smp_galery)->with('smp_fasilitas',$smp_fasilitas)->with('sma_vimi',$sma_vimi)
             ->with('sma_kurkul',$sma_kurkul)->with('sma_galery',$sma_galery)->with('sma_fasilitas',$sma_fasilitas)->with('dkm_galery',$dkm_galery)
-            ->with('dkm_fasilitas',$dkm_fasilitas);
-        }
+            ->with('dkm_fasilitas',$dkm_fasilitas)->with('teacher',$teacher)->with('tk_extra',$tk_extra)->with('tk_partners',$tk_partners)
+            ->with('tk_achiev',$tk_achiev)->with('tk_commit',$tk_commit)->with('tk_alumni',$tk_alumni)->with('tk_student',$tk_student)
+            ->with('tk_headmas',$tk_headmas)->with('tk_profile',$tk_profile)->with('tk_edu',$tk_edu)->with('sd_extra',$sd_extra)->with('sd_partners',$sd_partners)
+            ->with('sd_achiev',$sd_achiev)->with('sd_commit',$sd_commit)->with('sd_alumni',$sd_alumni)->with('sd_student',$sd_student)
+            ->with('sd_headmas',$sd_headmas)->with('sd_profile',$sd_profile)->with('sd_edu',$sd_edu)->with('smp_extra',$smp_extra)->with('smp_partners',$smp_partners)
+            ->with('smp_achiev',$smp_achiev)->with('smp_commit',$smp_commit)->with('smp_alumni',$smp_alumni)->with('smp_student',$smp_student)
+            ->with('smp_headmas',$smp_headmas)->with('smp_profile',$smp_profile)->with('smp_edu',$smp_edu)->with('sma_extra',$sma_extra)->with('sma_partners',$sma_partners)
+            ->with('sma_achiev',$sma_achiev)->with('sma_commit',$sma_commit)->with('sma_alumni',$sma_alumni)->with('sma_student',$sma_student)
+            ->with('sma_headmas',$sma_headmas)->with('sma_profile',$sma_profile)->with('sma_edu',$sma_edu);    }
         else{
             $dt_blog_all_portal_tk = \DB::table('dt_blog')->where([
                                                                     ['dt_blog_type', '=', 'agenda'],
@@ -863,27 +1174,64 @@ class Controller extends BaseController
             $yayasan_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'galery'] ])->get();
             $yayasan_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'profile'] ])->get();
 
-            $tk_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'visi-misi'] ])->get();
+                        $tk_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'visi-misi'] ])->get();
             $tk_kurkul = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'kurikulum'] ])->get();
             $tk_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'galery'] ])->get();
             $tk_fasilitas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'fasilitas'] ])->get();
+            $tk_extra = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'ekstracurricular'] ])->get();
+            $tk_partners = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'partnerships'] ])->get();
+            $tk_achiev = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'achievment'] ])->get();
+            $tk_commit = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'committe'] ])->get();
+            $tk_alumni = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'alumni'] ])->get();
+            $tk_student = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'student'] ])->get();
+            $tk_headmas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'headmaster'] ])->get();
+            $tk_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'profile'] ])->get();
+            $tk_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'education'] ])->get();
 
             $sd_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'visi-misi'] ])->get();
             $sd_kurkul = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'kurikulum'] ])->get();
             $sd_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'galery'] ])->get();
             $sd_fasilitas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'fasilitas'] ])->get();
+            $sd_extra = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'ekstracurricular'] ])->get();
+            $sd_partners = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'partnerships'] ])->get();
+            $sd_achiev = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'achievment'] ])->get();
+            $sd_commit = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'committe'] ])->get();
+            $sd_alumni = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'alumni'] ])->get();
+            $sd_student = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'student'] ])->get();
+            $sd_headmas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'headmaster'] ])->get();
+            $sd_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'profile'] ])->get();
+            $sd_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'education'] ])->get();
 
             $smp_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'visi-misi'] ])->get();
             $smp_kurkul = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'kurikulum'] ])->get();
             $smp_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'galery'] ])->get();
             $smp_fasilitas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'fasilitas'] ])->get();
+            $smp_extra = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'ekstracurricular'] ])->get();
+            $smp_partners = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'partnerships'] ])->get();
+            $smp_achiev = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'achievment'] ])->get();
+            $smp_commit = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'committe'] ])->get();
+            $smp_alumni = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'alumni'] ])->get();
+            $smp_student = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'student'] ])->get();
+            $smp_headmas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'headmaster'] ])->get();
+            $smp_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'profile'] ])->get();
+            $smp_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'education'] ])->get();
 
             $sma_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'visi-misi'] ])->get();
             $sma_kurkul = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'kurikulum'] ])->get();
             $sma_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'galery'] ])->get();
             $sma_fasilitas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'fasilitas'] ])->get();
+            $sma_extra = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'ekstracurricular'] ])->get();
+            $sma_partners = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'partnerships'] ])->get();
+            $sma_achiev = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'achievment'] ])->get();
+            $sma_commit = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'committe'] ])->get();
+            $sma_alumni = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'alumni'] ])->get();
+            $sma_student = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'student'] ])->get();
+            $sma_headmas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'headmaster'] ])->get();
+            $sma_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'profile'] ])->get();
+            $sma_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'education'] ])->get();
 
             $dkm_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'dkm'],['feature_for', '=', 'galery'] ])->get();
+            $teacher = \App\dt_teacher::where('dt_teacher_for', 'TK')->get();
             $dkm_fasilitas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'dkm'],['feature_for', '=', 'fasilitas'] ])->get(); 
 
             return \View::make('portal_tk')->with('dt_blog_all_portal_tk', $dt_blog_all_portal_tk)->with('news',$news)->with('article',$article)
@@ -893,8 +1241,15 @@ class Controller extends BaseController
             ->with('sd_kurkul',$sd_kurkul)->with('sd_galery',$sd_galery)->with('sd_fasilitas',$sd_fasilitas)->with('smp_vimi',$smp_vimi)
             ->with('smp_kurkul',$smp_kurkul)->with('smp_galery',$smp_galery)->with('smp_fasilitas',$smp_fasilitas)->with('sma_vimi',$sma_vimi)
             ->with('sma_kurkul',$sma_kurkul)->with('sma_galery',$sma_galery)->with('sma_fasilitas',$sma_fasilitas)->with('dkm_galery',$dkm_galery)
-            ->with('dkm_fasilitas',$dkm_fasilitas);
-        }
+            ->with('dkm_fasilitas',$dkm_fasilitas)->with('teacher',$teacher)->with('tk_extra',$tk_extra)->with('tk_partners',$tk_partners)
+            ->with('tk_achiev',$tk_achiev)->with('tk_commit',$tk_commit)->with('tk_alumni',$tk_alumni)->with('tk_student',$tk_student)
+            ->with('tk_headmas',$tk_headmas)->with('tk_profile',$tk_profile)->with('tk_edu',$tk_edu)->with('sd_extra',$sd_extra)->with('sd_partners',$sd_partners)
+            ->with('sd_achiev',$sd_achiev)->with('sd_commit',$sd_commit)->with('sd_alumni',$sd_alumni)->with('sd_student',$sd_student)
+            ->with('sd_headmas',$sd_headmas)->with('sd_profile',$sd_profile)->with('sd_edu',$sd_edu)->with('smp_extra',$smp_extra)->with('smp_partners',$smp_partners)
+            ->with('smp_achiev',$smp_achiev)->with('smp_commit',$smp_commit)->with('smp_alumni',$smp_alumni)->with('smp_student',$smp_student)
+            ->with('smp_headmas',$smp_headmas)->with('smp_profile',$smp_profile)->with('smp_edu',$smp_edu)->with('sma_extra',$sma_extra)->with('sma_partners',$sma_partners)
+            ->with('sma_achiev',$sma_achiev)->with('sma_commit',$sma_commit)->with('sma_alumni',$sma_alumni)->with('sma_student',$sma_student)
+            ->with('sma_headmas',$sma_headmas)->with('sma_profile',$sma_profile)->with('sma_edu',$sma_edu);    }
     }
 
     public function portal_tk_announcement()
@@ -919,27 +1274,64 @@ class Controller extends BaseController
             $yayasan_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'galery'] ])->get();
             $yayasan_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'profile'] ])->get();
 
-            $tk_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'visi-misi'] ])->get();
+                        $tk_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'visi-misi'] ])->get();
             $tk_kurkul = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'kurikulum'] ])->get();
             $tk_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'galery'] ])->get();
             $tk_fasilitas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'fasilitas'] ])->get();
+            $tk_extra = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'ekstracurricular'] ])->get();
+            $tk_partners = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'partnerships'] ])->get();
+            $tk_achiev = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'achievment'] ])->get();
+            $tk_commit = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'committe'] ])->get();
+            $tk_alumni = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'alumni'] ])->get();
+            $tk_student = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'student'] ])->get();
+            $tk_headmas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'headmaster'] ])->get();
+            $tk_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'profile'] ])->get();
+            $tk_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'education'] ])->get();
 
             $sd_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'visi-misi'] ])->get();
             $sd_kurkul = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'kurikulum'] ])->get();
             $sd_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'galery'] ])->get();
             $sd_fasilitas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'fasilitas'] ])->get();
+            $sd_extra = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'ekstracurricular'] ])->get();
+            $sd_partners = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'partnerships'] ])->get();
+            $sd_achiev = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'achievment'] ])->get();
+            $sd_commit = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'committe'] ])->get();
+            $sd_alumni = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'alumni'] ])->get();
+            $sd_student = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'student'] ])->get();
+            $sd_headmas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'headmaster'] ])->get();
+            $sd_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'profile'] ])->get();
+            $sd_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'education'] ])->get();
 
             $smp_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'visi-misi'] ])->get();
             $smp_kurkul = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'kurikulum'] ])->get();
             $smp_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'galery'] ])->get();
             $smp_fasilitas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'fasilitas'] ])->get();
+            $smp_extra = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'ekstracurricular'] ])->get();
+            $smp_partners = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'partnerships'] ])->get();
+            $smp_achiev = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'achievment'] ])->get();
+            $smp_commit = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'committe'] ])->get();
+            $smp_alumni = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'alumni'] ])->get();
+            $smp_student = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'student'] ])->get();
+            $smp_headmas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'headmaster'] ])->get();
+            $smp_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'profile'] ])->get();
+            $smp_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'education'] ])->get();
 
             $sma_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'visi-misi'] ])->get();
             $sma_kurkul = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'kurikulum'] ])->get();
             $sma_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'galery'] ])->get();
             $sma_fasilitas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'fasilitas'] ])->get();
+            $sma_extra = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'ekstracurricular'] ])->get();
+            $sma_partners = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'partnerships'] ])->get();
+            $sma_achiev = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'achievment'] ])->get();
+            $sma_commit = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'committe'] ])->get();
+            $sma_alumni = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'alumni'] ])->get();
+            $sma_student = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'student'] ])->get();
+            $sma_headmas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'headmaster'] ])->get();
+            $sma_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'profile'] ])->get();
+            $sma_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'education'] ])->get();
 
             $dkm_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'dkm'],['feature_for', '=', 'galery'] ])->get();
+            $teacher = \App\dt_teacher::where('dt_teacher_for', 'TK')->get();
             $dkm_fasilitas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'dkm'],['feature_for', '=', 'fasilitas'] ])->get(); 
 
             return \View::make('portal_tk')->with('dt_blog_all_portal_tk', $dt_blog_all_portal_tk)->with('news',$news)->with('article',$article)
@@ -949,8 +1341,15 @@ class Controller extends BaseController
             ->with('sd_kurkul',$sd_kurkul)->with('sd_galery',$sd_galery)->with('sd_fasilitas',$sd_fasilitas)->with('smp_vimi',$smp_vimi)
             ->with('smp_kurkul',$smp_kurkul)->with('smp_galery',$smp_galery)->with('smp_fasilitas',$smp_fasilitas)->with('sma_vimi',$sma_vimi)
             ->with('sma_kurkul',$sma_kurkul)->with('sma_galery',$sma_galery)->with('sma_fasilitas',$sma_fasilitas)->with('dkm_galery',$dkm_galery)
-            ->with('dkm_fasilitas',$dkm_fasilitas);
-        }
+            ->with('dkm_fasilitas',$dkm_fasilitas)->with('teacher',$teacher)->with('tk_extra',$tk_extra)->with('tk_partners',$tk_partners)
+            ->with('tk_achiev',$tk_achiev)->with('tk_commit',$tk_commit)->with('tk_alumni',$tk_alumni)->with('tk_student',$tk_student)
+            ->with('tk_headmas',$tk_headmas)->with('tk_profile',$tk_profile)->with('tk_edu',$tk_edu)->with('sd_extra',$sd_extra)->with('sd_partners',$sd_partners)
+            ->with('sd_achiev',$sd_achiev)->with('sd_commit',$sd_commit)->with('sd_alumni',$sd_alumni)->with('sd_student',$sd_student)
+            ->with('sd_headmas',$sd_headmas)->with('sd_profile',$sd_profile)->with('sd_edu',$sd_edu)->with('smp_extra',$smp_extra)->with('smp_partners',$smp_partners)
+            ->with('smp_achiev',$smp_achiev)->with('smp_commit',$smp_commit)->with('smp_alumni',$smp_alumni)->with('smp_student',$smp_student)
+            ->with('smp_headmas',$smp_headmas)->with('smp_profile',$smp_profile)->with('smp_edu',$smp_edu)->with('sma_extra',$sma_extra)->with('sma_partners',$sma_partners)
+            ->with('sma_achiev',$sma_achiev)->with('sma_commit',$sma_commit)->with('sma_alumni',$sma_alumni)->with('sma_student',$sma_student)
+            ->with('sma_headmas',$sma_headmas)->with('sma_profile',$sma_profile)->with('sma_edu',$sma_edu);    }
         else{
             $dt_blog_all_portal_tk = \DB::table('dt_blog')->where([
                                                                     ['dt_blog_type', '=', 'announcement'],
@@ -970,27 +1369,64 @@ class Controller extends BaseController
             $yayasan_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'galery'] ])->get();
             $yayasan_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'profile'] ])->get();
 
-            $tk_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'visi-misi'] ])->get();
+                        $tk_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'visi-misi'] ])->get();
             $tk_kurkul = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'kurikulum'] ])->get();
             $tk_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'galery'] ])->get();
             $tk_fasilitas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'fasilitas'] ])->get();
+            $tk_extra = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'ekstracurricular'] ])->get();
+            $tk_partners = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'partnerships'] ])->get();
+            $tk_achiev = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'achievment'] ])->get();
+            $tk_commit = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'committe'] ])->get();
+            $tk_alumni = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'alumni'] ])->get();
+            $tk_student = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'student'] ])->get();
+            $tk_headmas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'headmaster'] ])->get();
+            $tk_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'profile'] ])->get();
+            $tk_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'education'] ])->get();
 
             $sd_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'visi-misi'] ])->get();
             $sd_kurkul = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'kurikulum'] ])->get();
             $sd_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'galery'] ])->get();
             $sd_fasilitas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'fasilitas'] ])->get();
+            $sd_extra = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'ekstracurricular'] ])->get();
+            $sd_partners = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'partnerships'] ])->get();
+            $sd_achiev = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'achievment'] ])->get();
+            $sd_commit = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'committe'] ])->get();
+            $sd_alumni = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'alumni'] ])->get();
+            $sd_student = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'student'] ])->get();
+            $sd_headmas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'headmaster'] ])->get();
+            $sd_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'profile'] ])->get();
+            $sd_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'education'] ])->get();
 
             $smp_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'visi-misi'] ])->get();
             $smp_kurkul = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'kurikulum'] ])->get();
             $smp_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'galery'] ])->get();
             $smp_fasilitas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'fasilitas'] ])->get();
+            $smp_extra = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'ekstracurricular'] ])->get();
+            $smp_partners = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'partnerships'] ])->get();
+            $smp_achiev = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'achievment'] ])->get();
+            $smp_commit = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'committe'] ])->get();
+            $smp_alumni = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'alumni'] ])->get();
+            $smp_student = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'student'] ])->get();
+            $smp_headmas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'headmaster'] ])->get();
+            $smp_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'profile'] ])->get();
+            $smp_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'education'] ])->get();
 
             $sma_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'visi-misi'] ])->get();
             $sma_kurkul = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'kurikulum'] ])->get();
             $sma_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'galery'] ])->get();
             $sma_fasilitas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'fasilitas'] ])->get();
+            $sma_extra = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'ekstracurricular'] ])->get();
+            $sma_partners = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'partnerships'] ])->get();
+            $sma_achiev = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'achievment'] ])->get();
+            $sma_commit = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'committe'] ])->get();
+            $sma_alumni = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'alumni'] ])->get();
+            $sma_student = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'student'] ])->get();
+            $sma_headmas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'headmaster'] ])->get();
+            $sma_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'profile'] ])->get();
+            $sma_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'education'] ])->get();
 
             $dkm_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'dkm'],['feature_for', '=', 'galery'] ])->get();
+            $teacher = \App\dt_teacher::where('dt_teacher_for', 'TK')->get();
             $dkm_fasilitas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'dkm'],['feature_for', '=', 'fasilitas'] ])->get(); 
 
             return \View::make('portal_tk')->with('dt_blog_all_portal_tk', $dt_blog_all_portal_tk)->with('news',$news)->with('article',$article)
@@ -1000,8 +1436,15 @@ class Controller extends BaseController
             ->with('sd_kurkul',$sd_kurkul)->with('sd_galery',$sd_galery)->with('sd_fasilitas',$sd_fasilitas)->with('smp_vimi',$smp_vimi)
             ->with('smp_kurkul',$smp_kurkul)->with('smp_galery',$smp_galery)->with('smp_fasilitas',$smp_fasilitas)->with('sma_vimi',$sma_vimi)
             ->with('sma_kurkul',$sma_kurkul)->with('sma_galery',$sma_galery)->with('sma_fasilitas',$sma_fasilitas)->with('dkm_galery',$dkm_galery)
-            ->with('dkm_fasilitas',$dkm_fasilitas);
-        }
+            ->with('dkm_fasilitas',$dkm_fasilitas)->with('teacher',$teacher)->with('tk_extra',$tk_extra)->with('tk_partners',$tk_partners)
+            ->with('tk_achiev',$tk_achiev)->with('tk_commit',$tk_commit)->with('tk_alumni',$tk_alumni)->with('tk_student',$tk_student)
+            ->with('tk_headmas',$tk_headmas)->with('tk_profile',$tk_profile)->with('tk_edu',$tk_edu)->with('sd_extra',$sd_extra)->with('sd_partners',$sd_partners)
+            ->with('sd_achiev',$sd_achiev)->with('sd_commit',$sd_commit)->with('sd_alumni',$sd_alumni)->with('sd_student',$sd_student)
+            ->with('sd_headmas',$sd_headmas)->with('sd_profile',$sd_profile)->with('sd_edu',$sd_edu)->with('smp_extra',$smp_extra)->with('smp_partners',$smp_partners)
+            ->with('smp_achiev',$smp_achiev)->with('smp_commit',$smp_commit)->with('smp_alumni',$smp_alumni)->with('smp_student',$smp_student)
+            ->with('smp_headmas',$smp_headmas)->with('smp_profile',$smp_profile)->with('smp_edu',$smp_edu)->with('sma_extra',$sma_extra)->with('sma_partners',$sma_partners)
+            ->with('sma_achiev',$sma_achiev)->with('sma_commit',$sma_commit)->with('sma_alumni',$sma_alumni)->with('sma_student',$sma_student)
+            ->with('sma_headmas',$sma_headmas)->with('sma_profile',$sma_profile)->with('sma_edu',$sma_edu);    }
     }    
     
     public function portal_tk_article()
@@ -1026,27 +1469,64 @@ class Controller extends BaseController
             $yayasan_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'galery'] ])->get();
             $yayasan_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'profile'] ])->get();
 
-            $tk_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'visi-misi'] ])->get();
+                        $tk_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'visi-misi'] ])->get();
             $tk_kurkul = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'kurikulum'] ])->get();
             $tk_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'galery'] ])->get();
             $tk_fasilitas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'fasilitas'] ])->get();
+            $tk_extra = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'ekstracurricular'] ])->get();
+            $tk_partners = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'partnerships'] ])->get();
+            $tk_achiev = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'achievment'] ])->get();
+            $tk_commit = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'committe'] ])->get();
+            $tk_alumni = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'alumni'] ])->get();
+            $tk_student = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'student'] ])->get();
+            $tk_headmas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'headmaster'] ])->get();
+            $tk_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'profile'] ])->get();
+            $tk_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'education'] ])->get();
 
             $sd_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'visi-misi'] ])->get();
             $sd_kurkul = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'kurikulum'] ])->get();
             $sd_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'galery'] ])->get();
             $sd_fasilitas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'fasilitas'] ])->get();
+            $sd_extra = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'ekstracurricular'] ])->get();
+            $sd_partners = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'partnerships'] ])->get();
+            $sd_achiev = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'achievment'] ])->get();
+            $sd_commit = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'committe'] ])->get();
+            $sd_alumni = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'alumni'] ])->get();
+            $sd_student = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'student'] ])->get();
+            $sd_headmas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'headmaster'] ])->get();
+            $sd_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'profile'] ])->get();
+            $sd_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'education'] ])->get();
 
             $smp_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'visi-misi'] ])->get();
             $smp_kurkul = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'kurikulum'] ])->get();
             $smp_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'galery'] ])->get();
             $smp_fasilitas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'fasilitas'] ])->get();
+            $smp_extra = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'ekstracurricular'] ])->get();
+            $smp_partners = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'partnerships'] ])->get();
+            $smp_achiev = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'achievment'] ])->get();
+            $smp_commit = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'committe'] ])->get();
+            $smp_alumni = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'alumni'] ])->get();
+            $smp_student = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'student'] ])->get();
+            $smp_headmas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'headmaster'] ])->get();
+            $smp_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'profile'] ])->get();
+            $smp_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'education'] ])->get();
 
             $sma_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'visi-misi'] ])->get();
             $sma_kurkul = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'kurikulum'] ])->get();
             $sma_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'galery'] ])->get();
             $sma_fasilitas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'fasilitas'] ])->get();
+            $sma_extra = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'ekstracurricular'] ])->get();
+            $sma_partners = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'partnerships'] ])->get();
+            $sma_achiev = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'achievment'] ])->get();
+            $sma_commit = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'committe'] ])->get();
+            $sma_alumni = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'alumni'] ])->get();
+            $sma_student = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'student'] ])->get();
+            $sma_headmas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'headmaster'] ])->get();
+            $sma_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'profile'] ])->get();
+            $sma_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'education'] ])->get();
 
             $dkm_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'dkm'],['feature_for', '=', 'galery'] ])->get();
+            $teacher = \App\dt_teacher::where('dt_teacher_for', 'TK')->get();
             $dkm_fasilitas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'dkm'],['feature_for', '=', 'fasilitas'] ])->get(); 
 
             return \View::make('portal_tk')->with('dt_blog_all_portal_tk', $dt_blog_all_portal_tk)->with('news',$news)->with('article',$article)
@@ -1056,8 +1536,15 @@ class Controller extends BaseController
             ->with('sd_kurkul',$sd_kurkul)->with('sd_galery',$sd_galery)->with('sd_fasilitas',$sd_fasilitas)->with('smp_vimi',$smp_vimi)
             ->with('smp_kurkul',$smp_kurkul)->with('smp_galery',$smp_galery)->with('smp_fasilitas',$smp_fasilitas)->with('sma_vimi',$sma_vimi)
             ->with('sma_kurkul',$sma_kurkul)->with('sma_galery',$sma_galery)->with('sma_fasilitas',$sma_fasilitas)->with('dkm_galery',$dkm_galery)
-            ->with('dkm_fasilitas',$dkm_fasilitas);
-        }
+            ->with('dkm_fasilitas',$dkm_fasilitas)->with('teacher',$teacher)->with('tk_extra',$tk_extra)->with('tk_partners',$tk_partners)
+            ->with('tk_achiev',$tk_achiev)->with('tk_commit',$tk_commit)->with('tk_alumni',$tk_alumni)->with('tk_student',$tk_student)
+            ->with('tk_headmas',$tk_headmas)->with('tk_profile',$tk_profile)->with('tk_edu',$tk_edu)->with('sd_extra',$sd_extra)->with('sd_partners',$sd_partners)
+            ->with('sd_achiev',$sd_achiev)->with('sd_commit',$sd_commit)->with('sd_alumni',$sd_alumni)->with('sd_student',$sd_student)
+            ->with('sd_headmas',$sd_headmas)->with('sd_profile',$sd_profile)->with('sd_edu',$sd_edu)->with('smp_extra',$smp_extra)->with('smp_partners',$smp_partners)
+            ->with('smp_achiev',$smp_achiev)->with('smp_commit',$smp_commit)->with('smp_alumni',$smp_alumni)->with('smp_student',$smp_student)
+            ->with('smp_headmas',$smp_headmas)->with('smp_profile',$smp_profile)->with('smp_edu',$smp_edu)->with('sma_extra',$sma_extra)->with('sma_partners',$sma_partners)
+            ->with('sma_achiev',$sma_achiev)->with('sma_commit',$sma_commit)->with('sma_alumni',$sma_alumni)->with('sma_student',$sma_student)
+            ->with('sma_headmas',$sma_headmas)->with('sma_profile',$sma_profile)->with('sma_edu',$sma_edu);    }
         else{
             $dt_blog_all_portal_tk = \DB::table('dt_blog')->where([
                                                                     ['dt_blog_type', '=', 'article'],
@@ -1077,27 +1564,64 @@ class Controller extends BaseController
             $yayasan_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'galery'] ])->get();
             $yayasan_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'profile'] ])->get();
 
-            $tk_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'visi-misi'] ])->get();
+                        $tk_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'visi-misi'] ])->get();
             $tk_kurkul = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'kurikulum'] ])->get();
             $tk_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'galery'] ])->get();
             $tk_fasilitas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'fasilitas'] ])->get();
+            $tk_extra = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'ekstracurricular'] ])->get();
+            $tk_partners = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'partnerships'] ])->get();
+            $tk_achiev = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'achievment'] ])->get();
+            $tk_commit = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'committe'] ])->get();
+            $tk_alumni = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'alumni'] ])->get();
+            $tk_student = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'student'] ])->get();
+            $tk_headmas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'headmaster'] ])->get();
+            $tk_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'profile'] ])->get();
+            $tk_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'education'] ])->get();
 
             $sd_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'visi-misi'] ])->get();
             $sd_kurkul = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'kurikulum'] ])->get();
             $sd_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'galery'] ])->get();
             $sd_fasilitas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'fasilitas'] ])->get();
+            $sd_extra = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'ekstracurricular'] ])->get();
+            $sd_partners = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'partnerships'] ])->get();
+            $sd_achiev = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'achievment'] ])->get();
+            $sd_commit = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'committe'] ])->get();
+            $sd_alumni = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'alumni'] ])->get();
+            $sd_student = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'student'] ])->get();
+            $sd_headmas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'headmaster'] ])->get();
+            $sd_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'profile'] ])->get();
+            $sd_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'education'] ])->get();
 
             $smp_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'visi-misi'] ])->get();
             $smp_kurkul = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'kurikulum'] ])->get();
             $smp_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'galery'] ])->get();
             $smp_fasilitas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'fasilitas'] ])->get();
+            $smp_extra = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'ekstracurricular'] ])->get();
+            $smp_partners = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'partnerships'] ])->get();
+            $smp_achiev = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'achievment'] ])->get();
+            $smp_commit = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'committe'] ])->get();
+            $smp_alumni = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'alumni'] ])->get();
+            $smp_student = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'student'] ])->get();
+            $smp_headmas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'headmaster'] ])->get();
+            $smp_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'profile'] ])->get();
+            $smp_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'education'] ])->get();
 
             $sma_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'visi-misi'] ])->get();
             $sma_kurkul = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'kurikulum'] ])->get();
             $sma_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'galery'] ])->get();
             $sma_fasilitas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'fasilitas'] ])->get();
+            $sma_extra = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'ekstracurricular'] ])->get();
+            $sma_partners = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'partnerships'] ])->get();
+            $sma_achiev = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'achievment'] ])->get();
+            $sma_commit = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'committe'] ])->get();
+            $sma_alumni = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'alumni'] ])->get();
+            $sma_student = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'student'] ])->get();
+            $sma_headmas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'headmaster'] ])->get();
+            $sma_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'profile'] ])->get();
+            $sma_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'education'] ])->get();
 
             $dkm_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'dkm'],['feature_for', '=', 'galery'] ])->get();
+            $teacher = \App\dt_teacher::where('dt_teacher_for', 'TK')->get();
             $dkm_fasilitas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'dkm'],['feature_for', '=', 'fasilitas'] ])->get(); 
 
             return \View::make('portal_tk')->with('dt_blog_all_portal_tk', $dt_blog_all_portal_tk)->with('news',$news)->with('article',$article)
@@ -1107,8 +1631,15 @@ class Controller extends BaseController
             ->with('sd_kurkul',$sd_kurkul)->with('sd_galery',$sd_galery)->with('sd_fasilitas',$sd_fasilitas)->with('smp_vimi',$smp_vimi)
             ->with('smp_kurkul',$smp_kurkul)->with('smp_galery',$smp_galery)->with('smp_fasilitas',$smp_fasilitas)->with('sma_vimi',$sma_vimi)
             ->with('sma_kurkul',$sma_kurkul)->with('sma_galery',$sma_galery)->with('sma_fasilitas',$sma_fasilitas)->with('dkm_galery',$dkm_galery)
-            ->with('dkm_fasilitas',$dkm_fasilitas);
-        }
+            ->with('dkm_fasilitas',$dkm_fasilitas)->with('teacher',$teacher)->with('tk_extra',$tk_extra)->with('tk_partners',$tk_partners)
+            ->with('tk_achiev',$tk_achiev)->with('tk_commit',$tk_commit)->with('tk_alumni',$tk_alumni)->with('tk_student',$tk_student)
+            ->with('tk_headmas',$tk_headmas)->with('tk_profile',$tk_profile)->with('tk_edu',$tk_edu)->with('sd_extra',$sd_extra)->with('sd_partners',$sd_partners)
+            ->with('sd_achiev',$sd_achiev)->with('sd_commit',$sd_commit)->with('sd_alumni',$sd_alumni)->with('sd_student',$sd_student)
+            ->with('sd_headmas',$sd_headmas)->with('sd_profile',$sd_profile)->with('sd_edu',$sd_edu)->with('smp_extra',$smp_extra)->with('smp_partners',$smp_partners)
+            ->with('smp_achiev',$smp_achiev)->with('smp_commit',$smp_commit)->with('smp_alumni',$smp_alumni)->with('smp_student',$smp_student)
+            ->with('smp_headmas',$smp_headmas)->with('smp_profile',$smp_profile)->with('smp_edu',$smp_edu)->with('sma_extra',$sma_extra)->with('sma_partners',$sma_partners)
+            ->with('sma_achiev',$sma_achiev)->with('sma_commit',$sma_commit)->with('sma_alumni',$sma_alumni)->with('sma_student',$sma_student)
+            ->with('sma_headmas',$sma_headmas)->with('sma_profile',$sma_profile)->with('sma_edu',$sma_edu);    }
     }    
 
 
@@ -1131,27 +1662,64 @@ class Controller extends BaseController
             $yayasan_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'galery'] ])->get();
             $yayasan_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'profile'] ])->get();
 
-            $tk_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'visi-misi'] ])->get();
+                        $tk_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'visi-misi'] ])->get();
             $tk_kurkul = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'kurikulum'] ])->get();
             $tk_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'galery'] ])->get();
             $tk_fasilitas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'fasilitas'] ])->get();
+            $tk_extra = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'ekstracurricular'] ])->get();
+            $tk_partners = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'partnerships'] ])->get();
+            $tk_achiev = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'achievment'] ])->get();
+            $tk_commit = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'committe'] ])->get();
+            $tk_alumni = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'alumni'] ])->get();
+            $tk_student = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'student'] ])->get();
+            $tk_headmas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'headmaster'] ])->get();
+            $tk_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'profile'] ])->get();
+            $tk_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'education'] ])->get();
 
             $sd_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'visi-misi'] ])->get();
             $sd_kurkul = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'kurikulum'] ])->get();
             $sd_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'galery'] ])->get();
             $sd_fasilitas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'fasilitas'] ])->get();
+            $sd_extra = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'ekstracurricular'] ])->get();
+            $sd_partners = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'partnerships'] ])->get();
+            $sd_achiev = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'achievment'] ])->get();
+            $sd_commit = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'committe'] ])->get();
+            $sd_alumni = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'alumni'] ])->get();
+            $sd_student = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'student'] ])->get();
+            $sd_headmas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'headmaster'] ])->get();
+            $sd_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'profile'] ])->get();
+            $sd_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'education'] ])->get();
 
             $smp_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'visi-misi'] ])->get();
             $smp_kurkul = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'kurikulum'] ])->get();
             $smp_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'galery'] ])->get();
             $smp_fasilitas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'fasilitas'] ])->get();
+            $smp_extra = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'ekstracurricular'] ])->get();
+            $smp_partners = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'partnerships'] ])->get();
+            $smp_achiev = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'achievment'] ])->get();
+            $smp_commit = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'committe'] ])->get();
+            $smp_alumni = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'alumni'] ])->get();
+            $smp_student = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'student'] ])->get();
+            $smp_headmas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'headmaster'] ])->get();
+            $smp_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'profile'] ])->get();
+            $smp_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'education'] ])->get();
 
             $sma_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'visi-misi'] ])->get();
             $sma_kurkul = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'kurikulum'] ])->get();
             $sma_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'galery'] ])->get();
             $sma_fasilitas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'fasilitas'] ])->get();
+            $sma_extra = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'ekstracurricular'] ])->get();
+            $sma_partners = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'partnerships'] ])->get();
+            $sma_achiev = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'achievment'] ])->get();
+            $sma_commit = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'committe'] ])->get();
+            $sma_alumni = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'alumni'] ])->get();
+            $sma_student = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'student'] ])->get();
+            $sma_headmas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'headmaster'] ])->get();
+            $sma_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'profile'] ])->get();
+            $sma_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'education'] ])->get();
 
             $dkm_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'dkm'],['feature_for', '=', 'galery'] ])->get();
+            $teacher = \App\dt_teacher::where('dt_teacher_for', 'SD')->get();
             $dkm_fasilitas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'dkm'],['feature_for', '=', 'fasilitas'] ])->get(); 
 
             return \View::make('portal_sd')->with('dt_blog_all_portal_sd', $dt_blog_all_portal_sd)->with('news',$news)->with('article',$article)
@@ -1161,8 +1729,15 @@ class Controller extends BaseController
             ->with('sd_kurkul',$sd_kurkul)->with('sd_galery',$sd_galery)->with('sd_fasilitas',$sd_fasilitas)->with('smp_vimi',$smp_vimi)
             ->with('smp_kurkul',$smp_kurkul)->with('smp_galery',$smp_galery)->with('smp_fasilitas',$smp_fasilitas)->with('sma_vimi',$sma_vimi)
             ->with('sma_kurkul',$sma_kurkul)->with('sma_galery',$sma_galery)->with('sma_fasilitas',$sma_fasilitas)->with('dkm_galery',$dkm_galery)
-            ->with('dkm_fasilitas',$dkm_fasilitas);
-        }
+            ->with('dkm_fasilitas',$dkm_fasilitas)->with('teacher',$teacher)->with('tk_extra',$tk_extra)->with('tk_partners',$tk_partners)
+            ->with('tk_achiev',$tk_achiev)->with('tk_commit',$tk_commit)->with('tk_alumni',$tk_alumni)->with('tk_student',$tk_student)
+            ->with('tk_headmas',$tk_headmas)->with('tk_profile',$tk_profile)->with('tk_edu',$tk_edu)->with('sd_extra',$sd_extra)->with('sd_partners',$sd_partners)
+            ->with('sd_achiev',$sd_achiev)->with('sd_commit',$sd_commit)->with('sd_alumni',$sd_alumni)->with('sd_student',$sd_student)
+            ->with('sd_headmas',$sd_headmas)->with('sd_profile',$sd_profile)->with('sd_edu',$sd_edu)->with('smp_extra',$smp_extra)->with('smp_partners',$smp_partners)
+            ->with('smp_achiev',$smp_achiev)->with('smp_commit',$smp_commit)->with('smp_alumni',$smp_alumni)->with('smp_student',$smp_student)
+            ->with('smp_headmas',$smp_headmas)->with('smp_profile',$smp_profile)->with('smp_edu',$smp_edu)->with('sma_extra',$sma_extra)->with('sma_partners',$sma_partners)
+            ->with('sma_achiev',$sma_achiev)->with('sma_commit',$sma_commit)->with('sma_alumni',$sma_alumni)->with('sma_student',$sma_student)
+            ->with('sma_headmas',$sma_headmas)->with('sma_profile',$sma_profile)->with('sma_edu',$sma_edu);    }
         else{
             $dt_blog_all_portal_sd = \DB::table('dt_blog')->where('dt_blog_for', '=', 'SD')->orderBy('id', 'desc')->paginate(6);
             $news = \DB::table('dt_blog')->where([
@@ -1179,27 +1754,64 @@ class Controller extends BaseController
             $yayasan_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'galery'] ])->get();
             $yayasan_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'profile'] ])->get();
 
-            $tk_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'visi-misi'] ])->get();
+                        $tk_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'visi-misi'] ])->get();
             $tk_kurkul = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'kurikulum'] ])->get();
             $tk_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'galery'] ])->get();
             $tk_fasilitas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'fasilitas'] ])->get();
+            $tk_extra = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'ekstracurricular'] ])->get();
+            $tk_partners = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'partnerships'] ])->get();
+            $tk_achiev = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'achievment'] ])->get();
+            $tk_commit = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'committe'] ])->get();
+            $tk_alumni = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'alumni'] ])->get();
+            $tk_student = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'student'] ])->get();
+            $tk_headmas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'headmaster'] ])->get();
+            $tk_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'profile'] ])->get();
+            $tk_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'education'] ])->get();
 
             $sd_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'visi-misi'] ])->get();
             $sd_kurkul = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'kurikulum'] ])->get();
             $sd_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'galery'] ])->get();
             $sd_fasilitas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'fasilitas'] ])->get();
+            $sd_extra = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'ekstracurricular'] ])->get();
+            $sd_partners = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'partnerships'] ])->get();
+            $sd_achiev = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'achievment'] ])->get();
+            $sd_commit = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'committe'] ])->get();
+            $sd_alumni = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'alumni'] ])->get();
+            $sd_student = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'student'] ])->get();
+            $sd_headmas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'headmaster'] ])->get();
+            $sd_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'profile'] ])->get();
+            $sd_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'education'] ])->get();
 
             $smp_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'visi-misi'] ])->get();
             $smp_kurkul = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'kurikulum'] ])->get();
             $smp_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'galery'] ])->get();
             $smp_fasilitas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'fasilitas'] ])->get();
+            $smp_extra = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'ekstracurricular'] ])->get();
+            $smp_partners = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'partnerships'] ])->get();
+            $smp_achiev = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'achievment'] ])->get();
+            $smp_commit = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'committe'] ])->get();
+            $smp_alumni = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'alumni'] ])->get();
+            $smp_student = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'student'] ])->get();
+            $smp_headmas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'headmaster'] ])->get();
+            $smp_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'profile'] ])->get();
+            $smp_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'education'] ])->get();
 
             $sma_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'visi-misi'] ])->get();
             $sma_kurkul = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'kurikulum'] ])->get();
             $sma_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'galery'] ])->get();
             $sma_fasilitas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'fasilitas'] ])->get();
+            $sma_extra = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'ekstracurricular'] ])->get();
+            $sma_partners = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'partnerships'] ])->get();
+            $sma_achiev = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'achievment'] ])->get();
+            $sma_commit = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'committe'] ])->get();
+            $sma_alumni = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'alumni'] ])->get();
+            $sma_student = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'student'] ])->get();
+            $sma_headmas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'headmaster'] ])->get();
+            $sma_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'profile'] ])->get();
+            $sma_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'education'] ])->get();
 
             $dkm_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'dkm'],['feature_for', '=', 'galery'] ])->get();
+            $teacher = \App\dt_teacher::where('dt_teacher_for', 'SD')->get();
             $dkm_fasilitas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'dkm'],['feature_for', '=', 'fasilitas'] ])->get(); 
 
             return \View::make('portal_sd')->with('dt_blog_all_portal_sd', $dt_blog_all_portal_sd)->with('news',$news)->with('article',$article)
@@ -1209,8 +1821,15 @@ class Controller extends BaseController
             ->with('sd_kurkul',$sd_kurkul)->with('sd_galery',$sd_galery)->with('sd_fasilitas',$sd_fasilitas)->with('smp_vimi',$smp_vimi)
             ->with('smp_kurkul',$smp_kurkul)->with('smp_galery',$smp_galery)->with('smp_fasilitas',$smp_fasilitas)->with('sma_vimi',$sma_vimi)
             ->with('sma_kurkul',$sma_kurkul)->with('sma_galery',$sma_galery)->with('sma_fasilitas',$sma_fasilitas)->with('dkm_galery',$dkm_galery)
-            ->with('dkm_fasilitas',$dkm_fasilitas);
-        }
+            ->with('dkm_fasilitas',$dkm_fasilitas)->with('teacher',$teacher)->with('tk_extra',$tk_extra)->with('tk_partners',$tk_partners)
+            ->with('tk_achiev',$tk_achiev)->with('tk_commit',$tk_commit)->with('tk_alumni',$tk_alumni)->with('tk_student',$tk_student)
+            ->with('tk_headmas',$tk_headmas)->with('tk_profile',$tk_profile)->with('tk_edu',$tk_edu)->with('sd_extra',$sd_extra)->with('sd_partners',$sd_partners)
+            ->with('sd_achiev',$sd_achiev)->with('sd_commit',$sd_commit)->with('sd_alumni',$sd_alumni)->with('sd_student',$sd_student)
+            ->with('sd_headmas',$sd_headmas)->with('sd_profile',$sd_profile)->with('sd_edu',$sd_edu)->with('smp_extra',$smp_extra)->with('smp_partners',$smp_partners)
+            ->with('smp_achiev',$smp_achiev)->with('smp_commit',$smp_commit)->with('smp_alumni',$smp_alumni)->with('smp_student',$smp_student)
+            ->with('smp_headmas',$smp_headmas)->with('smp_profile',$smp_profile)->with('smp_edu',$smp_edu)->with('sma_extra',$sma_extra)->with('sma_partners',$sma_partners)
+            ->with('sma_achiev',$sma_achiev)->with('sma_commit',$sma_commit)->with('sma_alumni',$sma_alumni)->with('sma_student',$sma_student)
+            ->with('sma_headmas',$sma_headmas)->with('sma_profile',$sma_profile)->with('sma_edu',$sma_edu);    }
     }
 
         public function portal_sd_all()
@@ -1232,27 +1851,64 @@ class Controller extends BaseController
             $yayasan_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'galery'] ])->get();
             $yayasan_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'profile'] ])->get();
 
-            $tk_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'visi-misi'] ])->get();
+                        $tk_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'visi-misi'] ])->get();
             $tk_kurkul = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'kurikulum'] ])->get();
             $tk_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'galery'] ])->get();
             $tk_fasilitas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'fasilitas'] ])->get();
+            $tk_extra = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'ekstracurricular'] ])->get();
+            $tk_partners = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'partnerships'] ])->get();
+            $tk_achiev = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'achievment'] ])->get();
+            $tk_commit = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'committe'] ])->get();
+            $tk_alumni = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'alumni'] ])->get();
+            $tk_student = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'student'] ])->get();
+            $tk_headmas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'headmaster'] ])->get();
+            $tk_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'profile'] ])->get();
+            $tk_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'education'] ])->get();
 
             $sd_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'visi-misi'] ])->get();
             $sd_kurkul = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'kurikulum'] ])->get();
             $sd_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'galery'] ])->get();
             $sd_fasilitas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'fasilitas'] ])->get();
+            $sd_extra = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'ekstracurricular'] ])->get();
+            $sd_partners = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'partnerships'] ])->get();
+            $sd_achiev = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'achievment'] ])->get();
+            $sd_commit = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'committe'] ])->get();
+            $sd_alumni = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'alumni'] ])->get();
+            $sd_student = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'student'] ])->get();
+            $sd_headmas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'headmaster'] ])->get();
+            $sd_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'profile'] ])->get();
+            $sd_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'education'] ])->get();
 
             $smp_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'visi-misi'] ])->get();
             $smp_kurkul = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'kurikulum'] ])->get();
             $smp_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'galery'] ])->get();
             $smp_fasilitas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'fasilitas'] ])->get();
+            $smp_extra = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'ekstracurricular'] ])->get();
+            $smp_partners = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'partnerships'] ])->get();
+            $smp_achiev = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'achievment'] ])->get();
+            $smp_commit = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'committe'] ])->get();
+            $smp_alumni = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'alumni'] ])->get();
+            $smp_student = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'student'] ])->get();
+            $smp_headmas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'headmaster'] ])->get();
+            $smp_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'profile'] ])->get();
+            $smp_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'education'] ])->get();
 
             $sma_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'visi-misi'] ])->get();
             $sma_kurkul = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'kurikulum'] ])->get();
             $sma_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'galery'] ])->get();
             $sma_fasilitas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'fasilitas'] ])->get();
+            $sma_extra = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'ekstracurricular'] ])->get();
+            $sma_partners = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'partnerships'] ])->get();
+            $sma_achiev = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'achievment'] ])->get();
+            $sma_commit = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'committe'] ])->get();
+            $sma_alumni = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'alumni'] ])->get();
+            $sma_student = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'student'] ])->get();
+            $sma_headmas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'headmaster'] ])->get();
+            $sma_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'profile'] ])->get();
+            $sma_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'education'] ])->get();
 
             $dkm_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'dkm'],['feature_for', '=', 'galery'] ])->get();
+            $teacher = \App\dt_teacher::where('dt_teacher_for', 'SD')->get();
             $dkm_fasilitas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'dkm'],['feature_for', '=', 'fasilitas'] ])->get(); 
 
             return \View::make('portal_sd')->with('dt_blog_all_portal_sd', $dt_blog_all_portal_sd)->with('news',$news)->with('article',$article)
@@ -1262,8 +1918,15 @@ class Controller extends BaseController
             ->with('sd_kurkul',$sd_kurkul)->with('sd_galery',$sd_galery)->with('sd_fasilitas',$sd_fasilitas)->with('smp_vimi',$smp_vimi)
             ->with('smp_kurkul',$smp_kurkul)->with('smp_galery',$smp_galery)->with('smp_fasilitas',$smp_fasilitas)->with('sma_vimi',$sma_vimi)
             ->with('sma_kurkul',$sma_kurkul)->with('sma_galery',$sma_galery)->with('sma_fasilitas',$sma_fasilitas)->with('dkm_galery',$dkm_galery)
-            ->with('dkm_fasilitas',$dkm_fasilitas);
-        }
+            ->with('dkm_fasilitas',$dkm_fasilitas)->with('teacher',$teacher)->with('tk_extra',$tk_extra)->with('tk_partners',$tk_partners)
+            ->with('tk_achiev',$tk_achiev)->with('tk_commit',$tk_commit)->with('tk_alumni',$tk_alumni)->with('tk_student',$tk_student)
+            ->with('tk_headmas',$tk_headmas)->with('tk_profile',$tk_profile)->with('tk_edu',$tk_edu)->with('sd_extra',$sd_extra)->with('sd_partners',$sd_partners)
+            ->with('sd_achiev',$sd_achiev)->with('sd_commit',$sd_commit)->with('sd_alumni',$sd_alumni)->with('sd_student',$sd_student)
+            ->with('sd_headmas',$sd_headmas)->with('sd_profile',$sd_profile)->with('sd_edu',$sd_edu)->with('smp_extra',$smp_extra)->with('smp_partners',$smp_partners)
+            ->with('smp_achiev',$smp_achiev)->with('smp_commit',$smp_commit)->with('smp_alumni',$smp_alumni)->with('smp_student',$smp_student)
+            ->with('smp_headmas',$smp_headmas)->with('smp_profile',$smp_profile)->with('smp_edu',$smp_edu)->with('sma_extra',$sma_extra)->with('sma_partners',$sma_partners)
+            ->with('sma_achiev',$sma_achiev)->with('sma_commit',$sma_commit)->with('sma_alumni',$sma_alumni)->with('sma_student',$sma_student)
+            ->with('sma_headmas',$sma_headmas)->with('sma_profile',$sma_profile)->with('sma_edu',$sma_edu);    }
         else{
             $dt_blog_all_portal_sd = \DB::table('dt_blog')->where('dt_blog_type', '=', 'all', 'AND', 'dt_blog_for', '=', 'sd')->orderBy('id', 'desc')->paginate(6);
             $news = \DB::table('dt_blog')->where([
@@ -1280,27 +1943,64 @@ class Controller extends BaseController
             $yayasan_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'galery'] ])->get();
             $yayasan_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'profile'] ])->get();
 
-            $tk_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'visi-misi'] ])->get();
+                        $tk_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'visi-misi'] ])->get();
             $tk_kurkul = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'kurikulum'] ])->get();
             $tk_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'galery'] ])->get();
             $tk_fasilitas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'fasilitas'] ])->get();
+            $tk_extra = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'ekstracurricular'] ])->get();
+            $tk_partners = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'partnerships'] ])->get();
+            $tk_achiev = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'achievment'] ])->get();
+            $tk_commit = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'committe'] ])->get();
+            $tk_alumni = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'alumni'] ])->get();
+            $tk_student = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'student'] ])->get();
+            $tk_headmas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'headmaster'] ])->get();
+            $tk_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'profile'] ])->get();
+            $tk_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'education'] ])->get();
 
             $sd_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'visi-misi'] ])->get();
             $sd_kurkul = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'kurikulum'] ])->get();
             $sd_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'galery'] ])->get();
             $sd_fasilitas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'fasilitas'] ])->get();
+            $sd_extra = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'ekstracurricular'] ])->get();
+            $sd_partners = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'partnerships'] ])->get();
+            $sd_achiev = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'achievment'] ])->get();
+            $sd_commit = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'committe'] ])->get();
+            $sd_alumni = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'alumni'] ])->get();
+            $sd_student = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'student'] ])->get();
+            $sd_headmas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'headmaster'] ])->get();
+            $sd_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'profile'] ])->get();
+            $sd_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'education'] ])->get();
 
             $smp_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'visi-misi'] ])->get();
             $smp_kurkul = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'kurikulum'] ])->get();
             $smp_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'galery'] ])->get();
             $smp_fasilitas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'fasilitas'] ])->get();
+            $smp_extra = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'ekstracurricular'] ])->get();
+            $smp_partners = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'partnerships'] ])->get();
+            $smp_achiev = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'achievment'] ])->get();
+            $smp_commit = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'committe'] ])->get();
+            $smp_alumni = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'alumni'] ])->get();
+            $smp_student = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'student'] ])->get();
+            $smp_headmas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'headmaster'] ])->get();
+            $smp_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'profile'] ])->get();
+            $smp_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'education'] ])->get();
 
             $sma_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'visi-misi'] ])->get();
             $sma_kurkul = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'kurikulum'] ])->get();
             $sma_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'galery'] ])->get();
             $sma_fasilitas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'fasilitas'] ])->get();
+            $sma_extra = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'ekstracurricular'] ])->get();
+            $sma_partners = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'partnerships'] ])->get();
+            $sma_achiev = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'achievment'] ])->get();
+            $sma_commit = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'committe'] ])->get();
+            $sma_alumni = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'alumni'] ])->get();
+            $sma_student = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'student'] ])->get();
+            $sma_headmas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'headmaster'] ])->get();
+            $sma_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'profile'] ])->get();
+            $sma_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'education'] ])->get();
 
             $dkm_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'dkm'],['feature_for', '=', 'galery'] ])->get();
+            $teacher = \App\dt_teacher::where('dt_teacher_for', 'SD')->get();
             $dkm_fasilitas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'dkm'],['feature_for', '=', 'fasilitas'] ])->get(); 
 
             return \View::make('portal_sd')->with('dt_blog_all_portal_sd', $dt_blog_all_portal_sd)->with('news',$news)->with('article',$article)
@@ -1310,8 +2010,15 @@ class Controller extends BaseController
             ->with('sd_kurkul',$sd_kurkul)->with('sd_galery',$sd_galery)->with('sd_fasilitas',$sd_fasilitas)->with('smp_vimi',$smp_vimi)
             ->with('smp_kurkul',$smp_kurkul)->with('smp_galery',$smp_galery)->with('smp_fasilitas',$smp_fasilitas)->with('sma_vimi',$sma_vimi)
             ->with('sma_kurkul',$sma_kurkul)->with('sma_galery',$sma_galery)->with('sma_fasilitas',$sma_fasilitas)->with('dkm_galery',$dkm_galery)
-            ->with('dkm_fasilitas',$dkm_fasilitas);
-        }
+            ->with('dkm_fasilitas',$dkm_fasilitas)->with('teacher',$teacher)->with('tk_extra',$tk_extra)->with('tk_partners',$tk_partners)
+            ->with('tk_achiev',$tk_achiev)->with('tk_commit',$tk_commit)->with('tk_alumni',$tk_alumni)->with('tk_student',$tk_student)
+            ->with('tk_headmas',$tk_headmas)->with('tk_profile',$tk_profile)->with('tk_edu',$tk_edu)->with('sd_extra',$sd_extra)->with('sd_partners',$sd_partners)
+            ->with('sd_achiev',$sd_achiev)->with('sd_commit',$sd_commit)->with('sd_alumni',$sd_alumni)->with('sd_student',$sd_student)
+            ->with('sd_headmas',$sd_headmas)->with('sd_profile',$sd_profile)->with('sd_edu',$sd_edu)->with('smp_extra',$smp_extra)->with('smp_partners',$smp_partners)
+            ->with('smp_achiev',$smp_achiev)->with('smp_commit',$smp_commit)->with('smp_alumni',$smp_alumni)->with('smp_student',$smp_student)
+            ->with('smp_headmas',$smp_headmas)->with('smp_profile',$smp_profile)->with('smp_edu',$smp_edu)->with('sma_extra',$sma_extra)->with('sma_partners',$sma_partners)
+            ->with('sma_achiev',$sma_achiev)->with('sma_commit',$sma_commit)->with('sma_alumni',$sma_alumni)->with('sma_student',$sma_student)
+            ->with('sma_headmas',$sma_headmas)->with('sma_profile',$sma_profile)->with('sma_edu',$sma_edu);    }
     }    
 
     public function portal_sd_news()
@@ -1336,27 +2043,64 @@ class Controller extends BaseController
             $yayasan_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'galery'] ])->get();
             $yayasan_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'profile'] ])->get();
 
-            $tk_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'visi-misi'] ])->get();
+                        $tk_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'visi-misi'] ])->get();
             $tk_kurkul = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'kurikulum'] ])->get();
             $tk_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'galery'] ])->get();
             $tk_fasilitas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'fasilitas'] ])->get();
+            $tk_extra = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'ekstracurricular'] ])->get();
+            $tk_partners = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'partnerships'] ])->get();
+            $tk_achiev = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'achievment'] ])->get();
+            $tk_commit = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'committe'] ])->get();
+            $tk_alumni = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'alumni'] ])->get();
+            $tk_student = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'student'] ])->get();
+            $tk_headmas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'headmaster'] ])->get();
+            $tk_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'profile'] ])->get();
+            $tk_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'education'] ])->get();
 
             $sd_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'visi-misi'] ])->get();
             $sd_kurkul = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'kurikulum'] ])->get();
             $sd_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'galery'] ])->get();
             $sd_fasilitas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'fasilitas'] ])->get();
+            $sd_extra = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'ekstracurricular'] ])->get();
+            $sd_partners = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'partnerships'] ])->get();
+            $sd_achiev = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'achievment'] ])->get();
+            $sd_commit = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'committe'] ])->get();
+            $sd_alumni = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'alumni'] ])->get();
+            $sd_student = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'student'] ])->get();
+            $sd_headmas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'headmaster'] ])->get();
+            $sd_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'profile'] ])->get();
+            $sd_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'education'] ])->get();
 
             $smp_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'visi-misi'] ])->get();
             $smp_kurkul = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'kurikulum'] ])->get();
             $smp_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'galery'] ])->get();
             $smp_fasilitas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'fasilitas'] ])->get();
+            $smp_extra = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'ekstracurricular'] ])->get();
+            $smp_partners = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'partnerships'] ])->get();
+            $smp_achiev = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'achievment'] ])->get();
+            $smp_commit = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'committe'] ])->get();
+            $smp_alumni = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'alumni'] ])->get();
+            $smp_student = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'student'] ])->get();
+            $smp_headmas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'headmaster'] ])->get();
+            $smp_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'profile'] ])->get();
+            $smp_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'education'] ])->get();
 
             $sma_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'visi-misi'] ])->get();
             $sma_kurkul = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'kurikulum'] ])->get();
             $sma_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'galery'] ])->get();
             $sma_fasilitas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'fasilitas'] ])->get();
+            $sma_extra = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'ekstracurricular'] ])->get();
+            $sma_partners = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'partnerships'] ])->get();
+            $sma_achiev = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'achievment'] ])->get();
+            $sma_commit = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'committe'] ])->get();
+            $sma_alumni = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'alumni'] ])->get();
+            $sma_student = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'student'] ])->get();
+            $sma_headmas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'headmaster'] ])->get();
+            $sma_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'profile'] ])->get();
+            $sma_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'education'] ])->get();
 
             $dkm_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'dkm'],['feature_for', '=', 'galery'] ])->get();
+            $teacher = \App\dt_teacher::where('dt_teacher_for', 'SD')->get();
             $dkm_fasilitas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'dkm'],['feature_for', '=', 'fasilitas'] ])->get(); 
 
             return \View::make('portal_sd')->with('dt_blog_all_portal_sd', $dt_blog_all_portal_sd)->with('news',$news)->with('article',$article)
@@ -1366,8 +2110,15 @@ class Controller extends BaseController
             ->with('sd_kurkul',$sd_kurkul)->with('sd_galery',$sd_galery)->with('sd_fasilitas',$sd_fasilitas)->with('smp_vimi',$smp_vimi)
             ->with('smp_kurkul',$smp_kurkul)->with('smp_galery',$smp_galery)->with('smp_fasilitas',$smp_fasilitas)->with('sma_vimi',$sma_vimi)
             ->with('sma_kurkul',$sma_kurkul)->with('sma_galery',$sma_galery)->with('sma_fasilitas',$sma_fasilitas)->with('dkm_galery',$dkm_galery)
-            ->with('dkm_fasilitas',$dkm_fasilitas);
-        }
+            ->with('dkm_fasilitas',$dkm_fasilitas)->with('teacher',$teacher)->with('tk_extra',$tk_extra)->with('tk_partners',$tk_partners)
+            ->with('tk_achiev',$tk_achiev)->with('tk_commit',$tk_commit)->with('tk_alumni',$tk_alumni)->with('tk_student',$tk_student)
+            ->with('tk_headmas',$tk_headmas)->with('tk_profile',$tk_profile)->with('tk_edu',$tk_edu)->with('sd_extra',$sd_extra)->with('sd_partners',$sd_partners)
+            ->with('sd_achiev',$sd_achiev)->with('sd_commit',$sd_commit)->with('sd_alumni',$sd_alumni)->with('sd_student',$sd_student)
+            ->with('sd_headmas',$sd_headmas)->with('sd_profile',$sd_profile)->with('sd_edu',$sd_edu)->with('smp_extra',$smp_extra)->with('smp_partners',$smp_partners)
+            ->with('smp_achiev',$smp_achiev)->with('smp_commit',$smp_commit)->with('smp_alumni',$smp_alumni)->with('smp_student',$smp_student)
+            ->with('smp_headmas',$smp_headmas)->with('smp_profile',$smp_profile)->with('smp_edu',$smp_edu)->with('sma_extra',$sma_extra)->with('sma_partners',$sma_partners)
+            ->with('sma_achiev',$sma_achiev)->with('sma_commit',$sma_commit)->with('sma_alumni',$sma_alumni)->with('sma_student',$sma_student)
+            ->with('sma_headmas',$sma_headmas)->with('sma_profile',$sma_profile)->with('sma_edu',$sma_edu);    }
         else{
             $dt_blog_all_portal_sd = \DB::table('dt_blog')->where([
                                                                     ['dt_blog_type', '=', 'news'],
@@ -1387,27 +2138,64 @@ class Controller extends BaseController
             $yayasan_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'galery'] ])->get();
             $yayasan_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'profile'] ])->get();
 
-            $tk_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'visi-misi'] ])->get();
+                        $tk_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'visi-misi'] ])->get();
             $tk_kurkul = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'kurikulum'] ])->get();
             $tk_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'galery'] ])->get();
             $tk_fasilitas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'fasilitas'] ])->get();
+            $tk_extra = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'ekstracurricular'] ])->get();
+            $tk_partners = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'partnerships'] ])->get();
+            $tk_achiev = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'achievment'] ])->get();
+            $tk_commit = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'committe'] ])->get();
+            $tk_alumni = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'alumni'] ])->get();
+            $tk_student = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'student'] ])->get();
+            $tk_headmas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'headmaster'] ])->get();
+            $tk_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'profile'] ])->get();
+            $tk_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'education'] ])->get();
 
             $sd_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'visi-misi'] ])->get();
             $sd_kurkul = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'kurikulum'] ])->get();
             $sd_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'galery'] ])->get();
             $sd_fasilitas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'fasilitas'] ])->get();
+            $sd_extra = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'ekstracurricular'] ])->get();
+            $sd_partners = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'partnerships'] ])->get();
+            $sd_achiev = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'achievment'] ])->get();
+            $sd_commit = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'committe'] ])->get();
+            $sd_alumni = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'alumni'] ])->get();
+            $sd_student = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'student'] ])->get();
+            $sd_headmas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'headmaster'] ])->get();
+            $sd_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'profile'] ])->get();
+            $sd_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'education'] ])->get();
 
             $smp_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'visi-misi'] ])->get();
             $smp_kurkul = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'kurikulum'] ])->get();
             $smp_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'galery'] ])->get();
             $smp_fasilitas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'fasilitas'] ])->get();
+            $smp_extra = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'ekstracurricular'] ])->get();
+            $smp_partners = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'partnerships'] ])->get();
+            $smp_achiev = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'achievment'] ])->get();
+            $smp_commit = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'committe'] ])->get();
+            $smp_alumni = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'alumni'] ])->get();
+            $smp_student = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'student'] ])->get();
+            $smp_headmas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'headmaster'] ])->get();
+            $smp_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'profile'] ])->get();
+            $smp_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'education'] ])->get();
 
             $sma_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'visi-misi'] ])->get();
             $sma_kurkul = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'kurikulum'] ])->get();
             $sma_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'galery'] ])->get();
             $sma_fasilitas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'fasilitas'] ])->get();
+            $sma_extra = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'ekstracurricular'] ])->get();
+            $sma_partners = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'partnerships'] ])->get();
+            $sma_achiev = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'achievment'] ])->get();
+            $sma_commit = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'committe'] ])->get();
+            $sma_alumni = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'alumni'] ])->get();
+            $sma_student = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'student'] ])->get();
+            $sma_headmas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'headmaster'] ])->get();
+            $sma_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'profile'] ])->get();
+            $sma_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'education'] ])->get();
 
             $dkm_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'dkm'],['feature_for', '=', 'galery'] ])->get();
+            $teacher = \App\dt_teacher::where('dt_teacher_for', 'SD')->get();
             $dkm_fasilitas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'dkm'],['feature_for', '=', 'fasilitas'] ])->get(); 
 
             return \View::make('portal_sd')->with('dt_blog_all_portal_sd', $dt_blog_all_portal_sd)->with('news',$news)->with('article',$article)
@@ -1417,8 +2205,15 @@ class Controller extends BaseController
             ->with('sd_kurkul',$sd_kurkul)->with('sd_galery',$sd_galery)->with('sd_fasilitas',$sd_fasilitas)->with('smp_vimi',$smp_vimi)
             ->with('smp_kurkul',$smp_kurkul)->with('smp_galery',$smp_galery)->with('smp_fasilitas',$smp_fasilitas)->with('sma_vimi',$sma_vimi)
             ->with('sma_kurkul',$sma_kurkul)->with('sma_galery',$sma_galery)->with('sma_fasilitas',$sma_fasilitas)->with('dkm_galery',$dkm_galery)
-            ->with('dkm_fasilitas',$dkm_fasilitas);
-        }
+            ->with('dkm_fasilitas',$dkm_fasilitas)->with('teacher',$teacher)->with('tk_extra',$tk_extra)->with('tk_partners',$tk_partners)
+            ->with('tk_achiev',$tk_achiev)->with('tk_commit',$tk_commit)->with('tk_alumni',$tk_alumni)->with('tk_student',$tk_student)
+            ->with('tk_headmas',$tk_headmas)->with('tk_profile',$tk_profile)->with('tk_edu',$tk_edu)->with('sd_extra',$sd_extra)->with('sd_partners',$sd_partners)
+            ->with('sd_achiev',$sd_achiev)->with('sd_commit',$sd_commit)->with('sd_alumni',$sd_alumni)->with('sd_student',$sd_student)
+            ->with('sd_headmas',$sd_headmas)->with('sd_profile',$sd_profile)->with('sd_edu',$sd_edu)->with('smp_extra',$smp_extra)->with('smp_partners',$smp_partners)
+            ->with('smp_achiev',$smp_achiev)->with('smp_commit',$smp_commit)->with('smp_alumni',$smp_alumni)->with('smp_student',$smp_student)
+            ->with('smp_headmas',$smp_headmas)->with('smp_profile',$smp_profile)->with('smp_edu',$smp_edu)->with('sma_extra',$sma_extra)->with('sma_partners',$sma_partners)
+            ->with('sma_achiev',$sma_achiev)->with('sma_commit',$sma_commit)->with('sma_alumni',$sma_alumni)->with('sma_student',$sma_student)
+            ->with('sma_headmas',$sma_headmas)->with('sma_profile',$sma_profile)->with('sma_edu',$sma_edu);    }
     }    
 
     public function portal_sd_agenda()
@@ -1443,27 +2238,64 @@ class Controller extends BaseController
             $yayasan_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'galery'] ])->get();
             $yayasan_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'profile'] ])->get();
 
-            $tk_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'visi-misi'] ])->get();
+                        $tk_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'visi-misi'] ])->get();
             $tk_kurkul = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'kurikulum'] ])->get();
             $tk_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'galery'] ])->get();
             $tk_fasilitas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'fasilitas'] ])->get();
+            $tk_extra = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'ekstracurricular'] ])->get();
+            $tk_partners = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'partnerships'] ])->get();
+            $tk_achiev = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'achievment'] ])->get();
+            $tk_commit = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'committe'] ])->get();
+            $tk_alumni = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'alumni'] ])->get();
+            $tk_student = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'student'] ])->get();
+            $tk_headmas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'headmaster'] ])->get();
+            $tk_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'profile'] ])->get();
+            $tk_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'education'] ])->get();
 
             $sd_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'visi-misi'] ])->get();
             $sd_kurkul = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'kurikulum'] ])->get();
             $sd_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'galery'] ])->get();
             $sd_fasilitas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'fasilitas'] ])->get();
+            $sd_extra = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'ekstracurricular'] ])->get();
+            $sd_partners = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'partnerships'] ])->get();
+            $sd_achiev = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'achievment'] ])->get();
+            $sd_commit = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'committe'] ])->get();
+            $sd_alumni = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'alumni'] ])->get();
+            $sd_student = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'student'] ])->get();
+            $sd_headmas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'headmaster'] ])->get();
+            $sd_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'profile'] ])->get();
+            $sd_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'education'] ])->get();
 
             $smp_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'visi-misi'] ])->get();
             $smp_kurkul = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'kurikulum'] ])->get();
             $smp_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'galery'] ])->get();
             $smp_fasilitas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'fasilitas'] ])->get();
+            $smp_extra = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'ekstracurricular'] ])->get();
+            $smp_partners = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'partnerships'] ])->get();
+            $smp_achiev = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'achievment'] ])->get();
+            $smp_commit = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'committe'] ])->get();
+            $smp_alumni = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'alumni'] ])->get();
+            $smp_student = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'student'] ])->get();
+            $smp_headmas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'headmaster'] ])->get();
+            $smp_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'profile'] ])->get();
+            $smp_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'education'] ])->get();
 
             $sma_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'visi-misi'] ])->get();
             $sma_kurkul = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'kurikulum'] ])->get();
             $sma_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'galery'] ])->get();
             $sma_fasilitas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'fasilitas'] ])->get();
+            $sma_extra = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'ekstracurricular'] ])->get();
+            $sma_partners = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'partnerships'] ])->get();
+            $sma_achiev = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'achievment'] ])->get();
+            $sma_commit = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'committe'] ])->get();
+            $sma_alumni = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'alumni'] ])->get();
+            $sma_student = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'student'] ])->get();
+            $sma_headmas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'headmaster'] ])->get();
+            $sma_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'profile'] ])->get();
+            $sma_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'education'] ])->get();
 
             $dkm_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'dkm'],['feature_for', '=', 'galery'] ])->get();
+            $teacher = \App\dt_teacher::where('dt_teacher_for', 'SD')->get();
             $dkm_fasilitas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'dkm'],['feature_for', '=', 'fasilitas'] ])->get(); 
 
             return \View::make('portal_sd')->with('dt_blog_all_portal_sd', $dt_blog_all_portal_sd)->with('news',$news)->with('article',$article)
@@ -1473,8 +2305,15 @@ class Controller extends BaseController
             ->with('sd_kurkul',$sd_kurkul)->with('sd_galery',$sd_galery)->with('sd_fasilitas',$sd_fasilitas)->with('smp_vimi',$smp_vimi)
             ->with('smp_kurkul',$smp_kurkul)->with('smp_galery',$smp_galery)->with('smp_fasilitas',$smp_fasilitas)->with('sma_vimi',$sma_vimi)
             ->with('sma_kurkul',$sma_kurkul)->with('sma_galery',$sma_galery)->with('sma_fasilitas',$sma_fasilitas)->with('dkm_galery',$dkm_galery)
-            ->with('dkm_fasilitas',$dkm_fasilitas);
-        }
+            ->with('dkm_fasilitas',$dkm_fasilitas)->with('teacher',$teacher)->with('tk_extra',$tk_extra)->with('tk_partners',$tk_partners)
+            ->with('tk_achiev',$tk_achiev)->with('tk_commit',$tk_commit)->with('tk_alumni',$tk_alumni)->with('tk_student',$tk_student)
+            ->with('tk_headmas',$tk_headmas)->with('tk_profile',$tk_profile)->with('tk_edu',$tk_edu)->with('sd_extra',$sd_extra)->with('sd_partners',$sd_partners)
+            ->with('sd_achiev',$sd_achiev)->with('sd_commit',$sd_commit)->with('sd_alumni',$sd_alumni)->with('sd_student',$sd_student)
+            ->with('sd_headmas',$sd_headmas)->with('sd_profile',$sd_profile)->with('sd_edu',$sd_edu)->with('smp_extra',$smp_extra)->with('smp_partners',$smp_partners)
+            ->with('smp_achiev',$smp_achiev)->with('smp_commit',$smp_commit)->with('smp_alumni',$smp_alumni)->with('smp_student',$smp_student)
+            ->with('smp_headmas',$smp_headmas)->with('smp_profile',$smp_profile)->with('smp_edu',$smp_edu)->with('sma_extra',$sma_extra)->with('sma_partners',$sma_partners)
+            ->with('sma_achiev',$sma_achiev)->with('sma_commit',$sma_commit)->with('sma_alumni',$sma_alumni)->with('sma_student',$sma_student)
+            ->with('sma_headmas',$sma_headmas)->with('sma_profile',$sma_profile)->with('sma_edu',$sma_edu);    }
         else{
             $dt_blog_all_portal_sd = \DB::table('dt_blog')->where([
                                                                     ['dt_blog_type', '=', 'agenda'],
@@ -1494,27 +2333,64 @@ class Controller extends BaseController
             $yayasan_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'galery'] ])->get();
             $yayasan_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'profile'] ])->get();
 
-            $tk_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'visi-misi'] ])->get();
+                        $tk_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'visi-misi'] ])->get();
             $tk_kurkul = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'kurikulum'] ])->get();
             $tk_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'galery'] ])->get();
             $tk_fasilitas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'fasilitas'] ])->get();
+            $tk_extra = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'ekstracurricular'] ])->get();
+            $tk_partners = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'partnerships'] ])->get();
+            $tk_achiev = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'achievment'] ])->get();
+            $tk_commit = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'committe'] ])->get();
+            $tk_alumni = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'alumni'] ])->get();
+            $tk_student = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'student'] ])->get();
+            $tk_headmas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'headmaster'] ])->get();
+            $tk_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'profile'] ])->get();
+            $tk_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'education'] ])->get();
 
             $sd_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'visi-misi'] ])->get();
             $sd_kurkul = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'kurikulum'] ])->get();
             $sd_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'galery'] ])->get();
             $sd_fasilitas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'fasilitas'] ])->get();
+            $sd_extra = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'ekstracurricular'] ])->get();
+            $sd_partners = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'partnerships'] ])->get();
+            $sd_achiev = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'achievment'] ])->get();
+            $sd_commit = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'committe'] ])->get();
+            $sd_alumni = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'alumni'] ])->get();
+            $sd_student = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'student'] ])->get();
+            $sd_headmas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'headmaster'] ])->get();
+            $sd_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'profile'] ])->get();
+            $sd_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'education'] ])->get();
 
             $smp_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'visi-misi'] ])->get();
             $smp_kurkul = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'kurikulum'] ])->get();
             $smp_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'galery'] ])->get();
             $smp_fasilitas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'fasilitas'] ])->get();
+            $smp_extra = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'ekstracurricular'] ])->get();
+            $smp_partners = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'partnerships'] ])->get();
+            $smp_achiev = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'achievment'] ])->get();
+            $smp_commit = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'committe'] ])->get();
+            $smp_alumni = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'alumni'] ])->get();
+            $smp_student = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'student'] ])->get();
+            $smp_headmas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'headmaster'] ])->get();
+            $smp_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'profile'] ])->get();
+            $smp_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'education'] ])->get();
 
             $sma_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'visi-misi'] ])->get();
             $sma_kurkul = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'kurikulum'] ])->get();
             $sma_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'galery'] ])->get();
             $sma_fasilitas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'fasilitas'] ])->get();
+            $sma_extra = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'ekstracurricular'] ])->get();
+            $sma_partners = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'partnerships'] ])->get();
+            $sma_achiev = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'achievment'] ])->get();
+            $sma_commit = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'committe'] ])->get();
+            $sma_alumni = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'alumni'] ])->get();
+            $sma_student = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'student'] ])->get();
+            $sma_headmas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'headmaster'] ])->get();
+            $sma_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'profile'] ])->get();
+            $sma_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'education'] ])->get();
 
             $dkm_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'dkm'],['feature_for', '=', 'galery'] ])->get();
+            $teacher = \App\dt_teacher::where('dt_teacher_for', 'SD')->get();
             $dkm_fasilitas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'dkm'],['feature_for', '=', 'fasilitas'] ])->get(); 
 
             return \View::make('portal_sd')->with('dt_blog_all_portal_sd', $dt_blog_all_portal_sd)->with('news',$news)->with('article',$article)
@@ -1524,8 +2400,15 @@ class Controller extends BaseController
             ->with('sd_kurkul',$sd_kurkul)->with('sd_galery',$sd_galery)->with('sd_fasilitas',$sd_fasilitas)->with('smp_vimi',$smp_vimi)
             ->with('smp_kurkul',$smp_kurkul)->with('smp_galery',$smp_galery)->with('smp_fasilitas',$smp_fasilitas)->with('sma_vimi',$sma_vimi)
             ->with('sma_kurkul',$sma_kurkul)->with('sma_galery',$sma_galery)->with('sma_fasilitas',$sma_fasilitas)->with('dkm_galery',$dkm_galery)
-            ->with('dkm_fasilitas',$dkm_fasilitas);
-        }
+            ->with('dkm_fasilitas',$dkm_fasilitas)->with('teacher',$teacher)->with('tk_extra',$tk_extra)->with('tk_partners',$tk_partners)
+            ->with('tk_achiev',$tk_achiev)->with('tk_commit',$tk_commit)->with('tk_alumni',$tk_alumni)->with('tk_student',$tk_student)
+            ->with('tk_headmas',$tk_headmas)->with('tk_profile',$tk_profile)->with('tk_edu',$tk_edu)->with('sd_extra',$sd_extra)->with('sd_partners',$sd_partners)
+            ->with('sd_achiev',$sd_achiev)->with('sd_commit',$sd_commit)->with('sd_alumni',$sd_alumni)->with('sd_student',$sd_student)
+            ->with('sd_headmas',$sd_headmas)->with('sd_profile',$sd_profile)->with('sd_edu',$sd_edu)->with('smp_extra',$smp_extra)->with('smp_partners',$smp_partners)
+            ->with('smp_achiev',$smp_achiev)->with('smp_commit',$smp_commit)->with('smp_alumni',$smp_alumni)->with('smp_student',$smp_student)
+            ->with('smp_headmas',$smp_headmas)->with('smp_profile',$smp_profile)->with('smp_edu',$smp_edu)->with('sma_extra',$sma_extra)->with('sma_partners',$sma_partners)
+            ->with('sma_achiev',$sma_achiev)->with('sma_commit',$sma_commit)->with('sma_alumni',$sma_alumni)->with('sma_student',$sma_student)
+            ->with('sma_headmas',$sma_headmas)->with('sma_profile',$sma_profile)->with('sma_edu',$sma_edu);    }
     }
 
     public function portal_sd_announcement()
@@ -1550,27 +2433,64 @@ class Controller extends BaseController
             $yayasan_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'galery'] ])->get();
             $yayasan_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'profile'] ])->get();
 
-            $tk_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'visi-misi'] ])->get();
+                        $tk_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'visi-misi'] ])->get();
             $tk_kurkul = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'kurikulum'] ])->get();
             $tk_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'galery'] ])->get();
             $tk_fasilitas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'fasilitas'] ])->get();
+            $tk_extra = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'ekstracurricular'] ])->get();
+            $tk_partners = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'partnerships'] ])->get();
+            $tk_achiev = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'achievment'] ])->get();
+            $tk_commit = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'committe'] ])->get();
+            $tk_alumni = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'alumni'] ])->get();
+            $tk_student = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'student'] ])->get();
+            $tk_headmas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'headmaster'] ])->get();
+            $tk_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'profile'] ])->get();
+            $tk_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'education'] ])->get();
 
             $sd_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'visi-misi'] ])->get();
             $sd_kurkul = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'kurikulum'] ])->get();
             $sd_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'galery'] ])->get();
             $sd_fasilitas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'fasilitas'] ])->get();
+            $sd_extra = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'ekstracurricular'] ])->get();
+            $sd_partners = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'partnerships'] ])->get();
+            $sd_achiev = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'achievment'] ])->get();
+            $sd_commit = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'committe'] ])->get();
+            $sd_alumni = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'alumni'] ])->get();
+            $sd_student = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'student'] ])->get();
+            $sd_headmas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'headmaster'] ])->get();
+            $sd_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'profile'] ])->get();
+            $sd_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'education'] ])->get();
 
             $smp_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'visi-misi'] ])->get();
             $smp_kurkul = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'kurikulum'] ])->get();
             $smp_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'galery'] ])->get();
             $smp_fasilitas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'fasilitas'] ])->get();
+            $smp_extra = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'ekstracurricular'] ])->get();
+            $smp_partners = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'partnerships'] ])->get();
+            $smp_achiev = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'achievment'] ])->get();
+            $smp_commit = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'committe'] ])->get();
+            $smp_alumni = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'alumni'] ])->get();
+            $smp_student = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'student'] ])->get();
+            $smp_headmas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'headmaster'] ])->get();
+            $smp_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'profile'] ])->get();
+            $smp_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'education'] ])->get();
 
             $sma_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'visi-misi'] ])->get();
             $sma_kurkul = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'kurikulum'] ])->get();
             $sma_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'galery'] ])->get();
             $sma_fasilitas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'fasilitas'] ])->get();
+            $sma_extra = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'ekstracurricular'] ])->get();
+            $sma_partners = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'partnerships'] ])->get();
+            $sma_achiev = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'achievment'] ])->get();
+            $sma_commit = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'committe'] ])->get();
+            $sma_alumni = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'alumni'] ])->get();
+            $sma_student = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'student'] ])->get();
+            $sma_headmas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'headmaster'] ])->get();
+            $sma_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'profile'] ])->get();
+            $sma_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'education'] ])->get();
 
             $dkm_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'dkm'],['feature_for', '=', 'galery'] ])->get();
+            $teacher = \App\dt_teacher::where('dt_teacher_for', 'SD')->get();
             $dkm_fasilitas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'dkm'],['feature_for', '=', 'fasilitas'] ])->get(); 
 
             return \View::make('portal_sd')->with('dt_blog_all_portal_sd', $dt_blog_all_portal_sd)->with('news',$news)->with('article',$article)
@@ -1580,8 +2500,15 @@ class Controller extends BaseController
             ->with('sd_kurkul',$sd_kurkul)->with('sd_galery',$sd_galery)->with('sd_fasilitas',$sd_fasilitas)->with('smp_vimi',$smp_vimi)
             ->with('smp_kurkul',$smp_kurkul)->with('smp_galery',$smp_galery)->with('smp_fasilitas',$smp_fasilitas)->with('sma_vimi',$sma_vimi)
             ->with('sma_kurkul',$sma_kurkul)->with('sma_galery',$sma_galery)->with('sma_fasilitas',$sma_fasilitas)->with('dkm_galery',$dkm_galery)
-            ->with('dkm_fasilitas',$dkm_fasilitas);
-        }
+            ->with('dkm_fasilitas',$dkm_fasilitas)->with('teacher',$teacher)->with('tk_extra',$tk_extra)->with('tk_partners',$tk_partners)
+            ->with('tk_achiev',$tk_achiev)->with('tk_commit',$tk_commit)->with('tk_alumni',$tk_alumni)->with('tk_student',$tk_student)
+            ->with('tk_headmas',$tk_headmas)->with('tk_profile',$tk_profile)->with('tk_edu',$tk_edu)->with('sd_extra',$sd_extra)->with('sd_partners',$sd_partners)
+            ->with('sd_achiev',$sd_achiev)->with('sd_commit',$sd_commit)->with('sd_alumni',$sd_alumni)->with('sd_student',$sd_student)
+            ->with('sd_headmas',$sd_headmas)->with('sd_profile',$sd_profile)->with('sd_edu',$sd_edu)->with('smp_extra',$smp_extra)->with('smp_partners',$smp_partners)
+            ->with('smp_achiev',$smp_achiev)->with('smp_commit',$smp_commit)->with('smp_alumni',$smp_alumni)->with('smp_student',$smp_student)
+            ->with('smp_headmas',$smp_headmas)->with('smp_profile',$smp_profile)->with('smp_edu',$smp_edu)->with('sma_extra',$sma_extra)->with('sma_partners',$sma_partners)
+            ->with('sma_achiev',$sma_achiev)->with('sma_commit',$sma_commit)->with('sma_alumni',$sma_alumni)->with('sma_student',$sma_student)
+            ->with('sma_headmas',$sma_headmas)->with('sma_profile',$sma_profile)->with('sma_edu',$sma_edu);    }
         else{
             $dt_blog_all_portal_sd = \DB::table('dt_blog')->where([
                                                                     ['dt_blog_type', '=', 'announcement'],
@@ -1601,27 +2528,64 @@ class Controller extends BaseController
             $yayasan_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'galery'] ])->get();
             $yayasan_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'profile'] ])->get();
 
-            $tk_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'visi-misi'] ])->get();
+                        $tk_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'visi-misi'] ])->get();
             $tk_kurkul = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'kurikulum'] ])->get();
             $tk_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'galery'] ])->get();
             $tk_fasilitas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'fasilitas'] ])->get();
+            $tk_extra = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'ekstracurricular'] ])->get();
+            $tk_partners = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'partnerships'] ])->get();
+            $tk_achiev = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'achievment'] ])->get();
+            $tk_commit = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'committe'] ])->get();
+            $tk_alumni = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'alumni'] ])->get();
+            $tk_student = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'student'] ])->get();
+            $tk_headmas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'headmaster'] ])->get();
+            $tk_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'profile'] ])->get();
+            $tk_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'education'] ])->get();
 
             $sd_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'visi-misi'] ])->get();
             $sd_kurkul = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'kurikulum'] ])->get();
             $sd_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'galery'] ])->get();
             $sd_fasilitas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'fasilitas'] ])->get();
+            $sd_extra = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'ekstracurricular'] ])->get();
+            $sd_partners = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'partnerships'] ])->get();
+            $sd_achiev = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'achievment'] ])->get();
+            $sd_commit = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'committe'] ])->get();
+            $sd_alumni = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'alumni'] ])->get();
+            $sd_student = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'student'] ])->get();
+            $sd_headmas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'headmaster'] ])->get();
+            $sd_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'profile'] ])->get();
+            $sd_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'education'] ])->get();
 
             $smp_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'visi-misi'] ])->get();
             $smp_kurkul = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'kurikulum'] ])->get();
             $smp_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'galery'] ])->get();
             $smp_fasilitas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'fasilitas'] ])->get();
+            $smp_extra = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'ekstracurricular'] ])->get();
+            $smp_partners = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'partnerships'] ])->get();
+            $smp_achiev = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'achievment'] ])->get();
+            $smp_commit = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'committe'] ])->get();
+            $smp_alumni = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'alumni'] ])->get();
+            $smp_student = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'student'] ])->get();
+            $smp_headmas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'headmaster'] ])->get();
+            $smp_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'profile'] ])->get();
+            $smp_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'education'] ])->get();
 
             $sma_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'visi-misi'] ])->get();
             $sma_kurkul = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'kurikulum'] ])->get();
             $sma_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'galery'] ])->get();
             $sma_fasilitas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'fasilitas'] ])->get();
+            $sma_extra = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'ekstracurricular'] ])->get();
+            $sma_partners = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'partnerships'] ])->get();
+            $sma_achiev = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'achievment'] ])->get();
+            $sma_commit = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'committe'] ])->get();
+            $sma_alumni = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'alumni'] ])->get();
+            $sma_student = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'student'] ])->get();
+            $sma_headmas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'headmaster'] ])->get();
+            $sma_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'profile'] ])->get();
+            $sma_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'education'] ])->get();
 
             $dkm_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'dkm'],['feature_for', '=', 'galery'] ])->get();
+            $teacher = \App\dt_teacher::where('dt_teacher_for', 'SD')->get();
             $dkm_fasilitas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'dkm'],['feature_for', '=', 'fasilitas'] ])->get(); 
 
             return \View::make('portal_sd')->with('dt_blog_all_portal_sd', $dt_blog_all_portal_sd)->with('news',$news)->with('article',$article)
@@ -1631,8 +2595,15 @@ class Controller extends BaseController
             ->with('sd_kurkul',$sd_kurkul)->with('sd_galery',$sd_galery)->with('sd_fasilitas',$sd_fasilitas)->with('smp_vimi',$smp_vimi)
             ->with('smp_kurkul',$smp_kurkul)->with('smp_galery',$smp_galery)->with('smp_fasilitas',$smp_fasilitas)->with('sma_vimi',$sma_vimi)
             ->with('sma_kurkul',$sma_kurkul)->with('sma_galery',$sma_galery)->with('sma_fasilitas',$sma_fasilitas)->with('dkm_galery',$dkm_galery)
-            ->with('dkm_fasilitas',$dkm_fasilitas);
-        }
+            ->with('dkm_fasilitas',$dkm_fasilitas)->with('teacher',$teacher)->with('tk_extra',$tk_extra)->with('tk_partners',$tk_partners)
+            ->with('tk_achiev',$tk_achiev)->with('tk_commit',$tk_commit)->with('tk_alumni',$tk_alumni)->with('tk_student',$tk_student)
+            ->with('tk_headmas',$tk_headmas)->with('tk_profile',$tk_profile)->with('tk_edu',$tk_edu)->with('sd_extra',$sd_extra)->with('sd_partners',$sd_partners)
+            ->with('sd_achiev',$sd_achiev)->with('sd_commit',$sd_commit)->with('sd_alumni',$sd_alumni)->with('sd_student',$sd_student)
+            ->with('sd_headmas',$sd_headmas)->with('sd_profile',$sd_profile)->with('sd_edu',$sd_edu)->with('smp_extra',$smp_extra)->with('smp_partners',$smp_partners)
+            ->with('smp_achiev',$smp_achiev)->with('smp_commit',$smp_commit)->with('smp_alumni',$smp_alumni)->with('smp_student',$smp_student)
+            ->with('smp_headmas',$smp_headmas)->with('smp_profile',$smp_profile)->with('smp_edu',$smp_edu)->with('sma_extra',$sma_extra)->with('sma_partners',$sma_partners)
+            ->with('sma_achiev',$sma_achiev)->with('sma_commit',$sma_commit)->with('sma_alumni',$sma_alumni)->with('sma_student',$sma_student)
+            ->with('sma_headmas',$sma_headmas)->with('sma_profile',$sma_profile)->with('sma_edu',$sma_edu);    }
     }    
     
     public function portal_sd_article()
@@ -1657,27 +2628,64 @@ class Controller extends BaseController
             $yayasan_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'galery'] ])->get();
             $yayasan_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'profile'] ])->get();
 
-            $tk_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'visi-misi'] ])->get();
+                        $tk_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'visi-misi'] ])->get();
             $tk_kurkul = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'kurikulum'] ])->get();
             $tk_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'galery'] ])->get();
             $tk_fasilitas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'fasilitas'] ])->get();
+            $tk_extra = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'ekstracurricular'] ])->get();
+            $tk_partners = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'partnerships'] ])->get();
+            $tk_achiev = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'achievment'] ])->get();
+            $tk_commit = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'committe'] ])->get();
+            $tk_alumni = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'alumni'] ])->get();
+            $tk_student = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'student'] ])->get();
+            $tk_headmas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'headmaster'] ])->get();
+            $tk_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'profile'] ])->get();
+            $tk_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'education'] ])->get();
 
             $sd_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'visi-misi'] ])->get();
             $sd_kurkul = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'kurikulum'] ])->get();
             $sd_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'galery'] ])->get();
             $sd_fasilitas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'fasilitas'] ])->get();
+            $sd_extra = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'ekstracurricular'] ])->get();
+            $sd_partners = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'partnerships'] ])->get();
+            $sd_achiev = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'achievment'] ])->get();
+            $sd_commit = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'committe'] ])->get();
+            $sd_alumni = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'alumni'] ])->get();
+            $sd_student = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'student'] ])->get();
+            $sd_headmas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'headmaster'] ])->get();
+            $sd_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'profile'] ])->get();
+            $sd_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'education'] ])->get();
 
             $smp_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'visi-misi'] ])->get();
             $smp_kurkul = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'kurikulum'] ])->get();
             $smp_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'galery'] ])->get();
             $smp_fasilitas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'fasilitas'] ])->get();
+            $smp_extra = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'ekstracurricular'] ])->get();
+            $smp_partners = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'partnerships'] ])->get();
+            $smp_achiev = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'achievment'] ])->get();
+            $smp_commit = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'committe'] ])->get();
+            $smp_alumni = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'alumni'] ])->get();
+            $smp_student = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'student'] ])->get();
+            $smp_headmas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'headmaster'] ])->get();
+            $smp_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'profile'] ])->get();
+            $smp_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'education'] ])->get();
 
             $sma_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'visi-misi'] ])->get();
             $sma_kurkul = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'kurikulum'] ])->get();
             $sma_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'galery'] ])->get();
             $sma_fasilitas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'fasilitas'] ])->get();
+            $sma_extra = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'ekstracurricular'] ])->get();
+            $sma_partners = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'partnerships'] ])->get();
+            $sma_achiev = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'achievment'] ])->get();
+            $sma_commit = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'committe'] ])->get();
+            $sma_alumni = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'alumni'] ])->get();
+            $sma_student = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'student'] ])->get();
+            $sma_headmas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'headmaster'] ])->get();
+            $sma_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'profile'] ])->get();
+            $sma_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'education'] ])->get();
 
             $dkm_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'dkm'],['feature_for', '=', 'galery'] ])->get();
+            $teacher = \App\dt_teacher::where('dt_teacher_for', 'SD')->get();
             $dkm_fasilitas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'dkm'],['feature_for', '=', 'fasilitas'] ])->get(); 
 
             return \View::make('portal_sd')->with('dt_blog_all_portal_sd', $dt_blog_all_portal_sd)->with('news',$news)->with('article',$article)
@@ -1687,8 +2695,15 @@ class Controller extends BaseController
             ->with('sd_kurkul',$sd_kurkul)->with('sd_galery',$sd_galery)->with('sd_fasilitas',$sd_fasilitas)->with('smp_vimi',$smp_vimi)
             ->with('smp_kurkul',$smp_kurkul)->with('smp_galery',$smp_galery)->with('smp_fasilitas',$smp_fasilitas)->with('sma_vimi',$sma_vimi)
             ->with('sma_kurkul',$sma_kurkul)->with('sma_galery',$sma_galery)->with('sma_fasilitas',$sma_fasilitas)->with('dkm_galery',$dkm_galery)
-            ->with('dkm_fasilitas',$dkm_fasilitas);
-        }
+            ->with('dkm_fasilitas',$dkm_fasilitas)->with('teacher',$teacher)->with('tk_extra',$tk_extra)->with('tk_partners',$tk_partners)
+            ->with('tk_achiev',$tk_achiev)->with('tk_commit',$tk_commit)->with('tk_alumni',$tk_alumni)->with('tk_student',$tk_student)
+            ->with('tk_headmas',$tk_headmas)->with('tk_profile',$tk_profile)->with('tk_edu',$tk_edu)->with('sd_extra',$sd_extra)->with('sd_partners',$sd_partners)
+            ->with('sd_achiev',$sd_achiev)->with('sd_commit',$sd_commit)->with('sd_alumni',$sd_alumni)->with('sd_student',$sd_student)
+            ->with('sd_headmas',$sd_headmas)->with('sd_profile',$sd_profile)->with('sd_edu',$sd_edu)->with('smp_extra',$smp_extra)->with('smp_partners',$smp_partners)
+            ->with('smp_achiev',$smp_achiev)->with('smp_commit',$smp_commit)->with('smp_alumni',$smp_alumni)->with('smp_student',$smp_student)
+            ->with('smp_headmas',$smp_headmas)->with('smp_profile',$smp_profile)->with('smp_edu',$smp_edu)->with('sma_extra',$sma_extra)->with('sma_partners',$sma_partners)
+            ->with('sma_achiev',$sma_achiev)->with('sma_commit',$sma_commit)->with('sma_alumni',$sma_alumni)->with('sma_student',$sma_student)
+            ->with('sma_headmas',$sma_headmas)->with('sma_profile',$sma_profile)->with('sma_edu',$sma_edu);    }
         else{
             $dt_blog_all_portal_sd = \DB::table('dt_blog')->where([
                                                                     ['dt_blog_type', '=', 'article'],
@@ -1708,27 +2723,64 @@ class Controller extends BaseController
             $yayasan_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'galery'] ])->get();
             $yayasan_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'profile'] ])->get();
 
-            $tk_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'visi-misi'] ])->get();
+                        $tk_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'visi-misi'] ])->get();
             $tk_kurkul = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'kurikulum'] ])->get();
             $tk_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'galery'] ])->get();
             $tk_fasilitas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'fasilitas'] ])->get();
+            $tk_extra = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'ekstracurricular'] ])->get();
+            $tk_partners = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'partnerships'] ])->get();
+            $tk_achiev = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'achievment'] ])->get();
+            $tk_commit = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'committe'] ])->get();
+            $tk_alumni = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'alumni'] ])->get();
+            $tk_student = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'student'] ])->get();
+            $tk_headmas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'headmaster'] ])->get();
+            $tk_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'profile'] ])->get();
+            $tk_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'education'] ])->get();
 
             $sd_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'visi-misi'] ])->get();
             $sd_kurkul = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'kurikulum'] ])->get();
             $sd_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'galery'] ])->get();
             $sd_fasilitas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'fasilitas'] ])->get();
+            $sd_extra = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'ekstracurricular'] ])->get();
+            $sd_partners = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'partnerships'] ])->get();
+            $sd_achiev = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'achievment'] ])->get();
+            $sd_commit = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'committe'] ])->get();
+            $sd_alumni = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'alumni'] ])->get();
+            $sd_student = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'student'] ])->get();
+            $sd_headmas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'headmaster'] ])->get();
+            $sd_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'profile'] ])->get();
+            $sd_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'education'] ])->get();
 
             $smp_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'visi-misi'] ])->get();
             $smp_kurkul = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'kurikulum'] ])->get();
             $smp_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'galery'] ])->get();
             $smp_fasilitas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'fasilitas'] ])->get();
+            $smp_extra = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'ekstracurricular'] ])->get();
+            $smp_partners = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'partnerships'] ])->get();
+            $smp_achiev = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'achievment'] ])->get();
+            $smp_commit = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'committe'] ])->get();
+            $smp_alumni = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'alumni'] ])->get();
+            $smp_student = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'student'] ])->get();
+            $smp_headmas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'headmaster'] ])->get();
+            $smp_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'profile'] ])->get();
+            $smp_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'education'] ])->get();
 
             $sma_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'visi-misi'] ])->get();
             $sma_kurkul = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'kurikulum'] ])->get();
             $sma_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'galery'] ])->get();
             $sma_fasilitas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'fasilitas'] ])->get();
+            $sma_extra = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'ekstracurricular'] ])->get();
+            $sma_partners = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'partnerships'] ])->get();
+            $sma_achiev = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'achievment'] ])->get();
+            $sma_commit = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'committe'] ])->get();
+            $sma_alumni = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'alumni'] ])->get();
+            $sma_student = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'student'] ])->get();
+            $sma_headmas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'headmaster'] ])->get();
+            $sma_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'profile'] ])->get();
+            $sma_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'education'] ])->get();
 
             $dkm_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'dkm'],['feature_for', '=', 'galery'] ])->get();
+            $teacher = \App\dt_teacher::where('dt_teacher_for', 'SD')->get();
             $dkm_fasilitas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'dkm'],['feature_for', '=', 'fasilitas'] ])->get(); 
 
             return \View::make('portal_sd')->with('dt_blog_all_portal_sd', $dt_blog_all_portal_sd)->with('news',$news)->with('article',$article)
@@ -1738,8 +2790,15 @@ class Controller extends BaseController
             ->with('sd_kurkul',$sd_kurkul)->with('sd_galery',$sd_galery)->with('sd_fasilitas',$sd_fasilitas)->with('smp_vimi',$smp_vimi)
             ->with('smp_kurkul',$smp_kurkul)->with('smp_galery',$smp_galery)->with('smp_fasilitas',$smp_fasilitas)->with('sma_vimi',$sma_vimi)
             ->with('sma_kurkul',$sma_kurkul)->with('sma_galery',$sma_galery)->with('sma_fasilitas',$sma_fasilitas)->with('dkm_galery',$dkm_galery)
-            ->with('dkm_fasilitas',$dkm_fasilitas);
-        }
+            ->with('dkm_fasilitas',$dkm_fasilitas)->with('teacher',$teacher)->with('tk_extra',$tk_extra)->with('tk_partners',$tk_partners)
+            ->with('tk_achiev',$tk_achiev)->with('tk_commit',$tk_commit)->with('tk_alumni',$tk_alumni)->with('tk_student',$tk_student)
+            ->with('tk_headmas',$tk_headmas)->with('tk_profile',$tk_profile)->with('tk_edu',$tk_edu)->with('sd_extra',$sd_extra)->with('sd_partners',$sd_partners)
+            ->with('sd_achiev',$sd_achiev)->with('sd_commit',$sd_commit)->with('sd_alumni',$sd_alumni)->with('sd_student',$sd_student)
+            ->with('sd_headmas',$sd_headmas)->with('sd_profile',$sd_profile)->with('sd_edu',$sd_edu)->with('smp_extra',$smp_extra)->with('smp_partners',$smp_partners)
+            ->with('smp_achiev',$smp_achiev)->with('smp_commit',$smp_commit)->with('smp_alumni',$smp_alumni)->with('smp_student',$smp_student)
+            ->with('smp_headmas',$smp_headmas)->with('smp_profile',$smp_profile)->with('smp_edu',$smp_edu)->with('sma_extra',$sma_extra)->with('sma_partners',$sma_partners)
+            ->with('sma_achiev',$sma_achiev)->with('sma_commit',$sma_commit)->with('sma_alumni',$sma_alumni)->with('sma_student',$sma_student)
+            ->with('sma_headmas',$sma_headmas)->with('sma_profile',$sma_profile)->with('sma_edu',$sma_edu);    }
     }  
 
     public function portal_smp()
@@ -1761,27 +2820,64 @@ class Controller extends BaseController
             $yayasan_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'galery'] ])->get();
             $yayasan_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'profile'] ])->get();
 
-            $tk_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'visi-misi'] ])->get();
+                        $tk_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'visi-misi'] ])->get();
             $tk_kurkul = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'kurikulum'] ])->get();
             $tk_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'galery'] ])->get();
             $tk_fasilitas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'fasilitas'] ])->get();
+            $tk_extra = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'ekstracurricular'] ])->get();
+            $tk_partners = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'partnerships'] ])->get();
+            $tk_achiev = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'achievment'] ])->get();
+            $tk_commit = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'committe'] ])->get();
+            $tk_alumni = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'alumni'] ])->get();
+            $tk_student = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'student'] ])->get();
+            $tk_headmas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'headmaster'] ])->get();
+            $tk_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'profile'] ])->get();
+            $tk_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'education'] ])->get();
 
             $sd_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'visi-misi'] ])->get();
             $sd_kurkul = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'kurikulum'] ])->get();
             $sd_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'galery'] ])->get();
             $sd_fasilitas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'fasilitas'] ])->get();
+            $sd_extra = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'ekstracurricular'] ])->get();
+            $sd_partners = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'partnerships'] ])->get();
+            $sd_achiev = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'achievment'] ])->get();
+            $sd_commit = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'committe'] ])->get();
+            $sd_alumni = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'alumni'] ])->get();
+            $sd_student = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'student'] ])->get();
+            $sd_headmas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'headmaster'] ])->get();
+            $sd_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'profile'] ])->get();
+            $sd_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'education'] ])->get();
 
             $smp_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'visi-misi'] ])->get();
             $smp_kurkul = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'kurikulum'] ])->get();
             $smp_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'galery'] ])->get();
             $smp_fasilitas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'fasilitas'] ])->get();
+            $smp_extra = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'ekstracurricular'] ])->get();
+            $smp_partners = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'partnerships'] ])->get();
+            $smp_achiev = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'achievment'] ])->get();
+            $smp_commit = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'committe'] ])->get();
+            $smp_alumni = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'alumni'] ])->get();
+            $smp_student = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'student'] ])->get();
+            $smp_headmas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'headmaster'] ])->get();
+            $smp_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'profile'] ])->get();
+            $smp_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'education'] ])->get();
 
             $sma_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'visi-misi'] ])->get();
             $sma_kurkul = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'kurikulum'] ])->get();
             $sma_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'galery'] ])->get();
             $sma_fasilitas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'fasilitas'] ])->get();
+            $sma_extra = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'ekstracurricular'] ])->get();
+            $sma_partners = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'partnerships'] ])->get();
+            $sma_achiev = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'achievment'] ])->get();
+            $sma_commit = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'committe'] ])->get();
+            $sma_alumni = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'alumni'] ])->get();
+            $sma_student = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'student'] ])->get();
+            $sma_headmas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'headmaster'] ])->get();
+            $sma_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'profile'] ])->get();
+            $sma_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'education'] ])->get();
 
             $dkm_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'dkm'],['feature_for', '=', 'galery'] ])->get();
+            $teacher = \App\dt_teacher::where('dt_teacher_for', 'SMP')->get();
             $dkm_fasilitas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'dkm'],['feature_for', '=', 'fasilitas'] ])->get(); 
 
             return \View::make('portal_smp')->with('dt_blog_portal_smp', $dt_blog_portal_smp)->with('news',$news)->with('article',$article)
@@ -1791,8 +2887,15 @@ class Controller extends BaseController
             ->with('sd_kurkul',$sd_kurkul)->with('sd_galery',$sd_galery)->with('sd_fasilitas',$sd_fasilitas)->with('smp_vimi',$smp_vimi)
             ->with('smp_kurkul',$smp_kurkul)->with('smp_galery',$smp_galery)->with('smp_fasilitas',$smp_fasilitas)->with('sma_vimi',$sma_vimi)
             ->with('sma_kurkul',$sma_kurkul)->with('sma_galery',$sma_galery)->with('sma_fasilitas',$sma_fasilitas)->with('dkm_galery',$dkm_galery)
-            ->with('dkm_fasilitas',$dkm_fasilitas);
-        }
+            ->with('dkm_fasilitas',$dkm_fasilitas)->with('teacher',$teacher)->with('tk_extra',$tk_extra)->with('tk_partners',$tk_partners)
+            ->with('tk_achiev',$tk_achiev)->with('tk_commit',$tk_commit)->with('tk_alumni',$tk_alumni)->with('tk_student',$tk_student)
+            ->with('tk_headmas',$tk_headmas)->with('tk_profile',$tk_profile)->with('tk_edu',$tk_edu)->with('sd_extra',$sd_extra)->with('sd_partners',$sd_partners)
+            ->with('sd_achiev',$sd_achiev)->with('sd_commit',$sd_commit)->with('sd_alumni',$sd_alumni)->with('sd_student',$sd_student)
+            ->with('sd_headmas',$sd_headmas)->with('sd_profile',$sd_profile)->with('sd_edu',$sd_edu)->with('smp_extra',$smp_extra)->with('smp_partners',$smp_partners)
+            ->with('smp_achiev',$smp_achiev)->with('smp_commit',$smp_commit)->with('smp_alumni',$smp_alumni)->with('smp_student',$smp_student)
+            ->with('smp_headmas',$smp_headmas)->with('smp_profile',$smp_profile)->with('smp_edu',$smp_edu)->with('sma_extra',$sma_extra)->with('sma_partners',$sma_partners)
+            ->with('sma_achiev',$sma_achiev)->with('sma_commit',$sma_commit)->with('sma_alumni',$sma_alumni)->with('sma_student',$sma_student)
+            ->with('sma_headmas',$sma_headmas)->with('sma_profile',$sma_profile)->with('sma_edu',$sma_edu);    }
         else{
             $dt_blog_portal_smp = \DB::table('dt_blog')->where('dt_blog_for', '=', 'smp')->orderBy('id', 'desc')->paginate(6);
             $news = \DB::table('dt_blog')->where([
@@ -1809,27 +2912,64 @@ class Controller extends BaseController
             $yayasan_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'galery'] ])->get();
             $yayasan_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'profile'] ])->get();
 
-            $tk_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'visi-misi'] ])->get();
+                        $tk_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'visi-misi'] ])->get();
             $tk_kurkul = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'kurikulum'] ])->get();
             $tk_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'galery'] ])->get();
             $tk_fasilitas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'fasilitas'] ])->get();
+            $tk_extra = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'ekstracurricular'] ])->get();
+            $tk_partners = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'partnerships'] ])->get();
+            $tk_achiev = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'achievment'] ])->get();
+            $tk_commit = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'committe'] ])->get();
+            $tk_alumni = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'alumni'] ])->get();
+            $tk_student = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'student'] ])->get();
+            $tk_headmas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'headmaster'] ])->get();
+            $tk_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'profile'] ])->get();
+            $tk_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'education'] ])->get();
 
             $sd_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'visi-misi'] ])->get();
             $sd_kurkul = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'kurikulum'] ])->get();
             $sd_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'galery'] ])->get();
             $sd_fasilitas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'fasilitas'] ])->get();
+            $sd_extra = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'ekstracurricular'] ])->get();
+            $sd_partners = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'partnerships'] ])->get();
+            $sd_achiev = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'achievment'] ])->get();
+            $sd_commit = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'committe'] ])->get();
+            $sd_alumni = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'alumni'] ])->get();
+            $sd_student = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'student'] ])->get();
+            $sd_headmas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'headmaster'] ])->get();
+            $sd_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'profile'] ])->get();
+            $sd_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'education'] ])->get();
 
             $smp_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'visi-misi'] ])->get();
             $smp_kurkul = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'kurikulum'] ])->get();
             $smp_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'galery'] ])->get();
             $smp_fasilitas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'fasilitas'] ])->get();
+            $smp_extra = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'ekstracurricular'] ])->get();
+            $smp_partners = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'partnerships'] ])->get();
+            $smp_achiev = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'achievment'] ])->get();
+            $smp_commit = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'committe'] ])->get();
+            $smp_alumni = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'alumni'] ])->get();
+            $smp_student = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'student'] ])->get();
+            $smp_headmas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'headmaster'] ])->get();
+            $smp_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'profile'] ])->get();
+            $smp_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'education'] ])->get();
 
             $sma_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'visi-misi'] ])->get();
             $sma_kurkul = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'kurikulum'] ])->get();
             $sma_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'galery'] ])->get();
             $sma_fasilitas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'fasilitas'] ])->get();
+            $sma_extra = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'ekstracurricular'] ])->get();
+            $sma_partners = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'partnerships'] ])->get();
+            $sma_achiev = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'achievment'] ])->get();
+            $sma_commit = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'committe'] ])->get();
+            $sma_alumni = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'alumni'] ])->get();
+            $sma_student = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'student'] ])->get();
+            $sma_headmas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'headmaster'] ])->get();
+            $sma_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'profile'] ])->get();
+            $sma_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'education'] ])->get();
 
             $dkm_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'dkm'],['feature_for', '=', 'galery'] ])->get();
+            $teacher = \App\dt_teacher::where('dt_teacher_for', 'SMP')->get();
             $dkm_fasilitas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'dkm'],['feature_for', '=', 'fasilitas'] ])->get(); 
 
             return \View::make('portal_smp')->with('dt_blog_portal_smp', $dt_blog_portal_smp)->with('news',$news)->with('article',$article)
@@ -1839,8 +2979,15 @@ class Controller extends BaseController
             ->with('sd_kurkul',$sd_kurkul)->with('sd_galery',$sd_galery)->with('sd_fasilitas',$sd_fasilitas)->with('smp_vimi',$smp_vimi)
             ->with('smp_kurkul',$smp_kurkul)->with('smp_galery',$smp_galery)->with('smp_fasilitas',$smp_fasilitas)->with('sma_vimi',$sma_vimi)
             ->with('sma_kurkul',$sma_kurkul)->with('sma_galery',$sma_galery)->with('sma_fasilitas',$sma_fasilitas)->with('dkm_galery',$dkm_galery)
-            ->with('dkm_fasilitas',$dkm_fasilitas);
-        }
+            ->with('dkm_fasilitas',$dkm_fasilitas)->with('teacher',$teacher)->with('tk_extra',$tk_extra)->with('tk_partners',$tk_partners)
+            ->with('tk_achiev',$tk_achiev)->with('tk_commit',$tk_commit)->with('tk_alumni',$tk_alumni)->with('tk_student',$tk_student)
+            ->with('tk_headmas',$tk_headmas)->with('tk_profile',$tk_profile)->with('tk_edu',$tk_edu)->with('sd_extra',$sd_extra)->with('sd_partners',$sd_partners)
+            ->with('sd_achiev',$sd_achiev)->with('sd_commit',$sd_commit)->with('sd_alumni',$sd_alumni)->with('sd_student',$sd_student)
+            ->with('sd_headmas',$sd_headmas)->with('sd_profile',$sd_profile)->with('sd_edu',$sd_edu)->with('smp_extra',$smp_extra)->with('smp_partners',$smp_partners)
+            ->with('smp_achiev',$smp_achiev)->with('smp_commit',$smp_commit)->with('smp_alumni',$smp_alumni)->with('smp_student',$smp_student)
+            ->with('smp_headmas',$smp_headmas)->with('smp_profile',$smp_profile)->with('smp_edu',$smp_edu)->with('sma_extra',$sma_extra)->with('sma_partners',$sma_partners)
+            ->with('sma_achiev',$sma_achiev)->with('sma_commit',$sma_commit)->with('sma_alumni',$sma_alumni)->with('sma_student',$sma_student)
+            ->with('sma_headmas',$sma_headmas)->with('sma_profile',$sma_profile)->with('sma_edu',$sma_edu);    }
     }
 
         public function portal_smp_all()
@@ -1862,27 +3009,64 @@ class Controller extends BaseController
             $yayasan_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'galery'] ])->get();
             $yayasan_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'profile'] ])->get();
 
-            $tk_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'visi-misi'] ])->get();
+                        $tk_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'visi-misi'] ])->get();
             $tk_kurkul = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'kurikulum'] ])->get();
             $tk_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'galery'] ])->get();
             $tk_fasilitas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'fasilitas'] ])->get();
+            $tk_extra = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'ekstracurricular'] ])->get();
+            $tk_partners = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'partnerships'] ])->get();
+            $tk_achiev = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'achievment'] ])->get();
+            $tk_commit = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'committe'] ])->get();
+            $tk_alumni = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'alumni'] ])->get();
+            $tk_student = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'student'] ])->get();
+            $tk_headmas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'headmaster'] ])->get();
+            $tk_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'profile'] ])->get();
+            $tk_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'education'] ])->get();
 
             $sd_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'visi-misi'] ])->get();
             $sd_kurkul = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'kurikulum'] ])->get();
             $sd_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'galery'] ])->get();
             $sd_fasilitas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'fasilitas'] ])->get();
+            $sd_extra = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'ekstracurricular'] ])->get();
+            $sd_partners = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'partnerships'] ])->get();
+            $sd_achiev = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'achievment'] ])->get();
+            $sd_commit = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'committe'] ])->get();
+            $sd_alumni = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'alumni'] ])->get();
+            $sd_student = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'student'] ])->get();
+            $sd_headmas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'headmaster'] ])->get();
+            $sd_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'profile'] ])->get();
+            $sd_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'education'] ])->get();
 
             $smp_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'visi-misi'] ])->get();
             $smp_kurkul = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'kurikulum'] ])->get();
             $smp_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'galery'] ])->get();
             $smp_fasilitas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'fasilitas'] ])->get();
+            $smp_extra = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'ekstracurricular'] ])->get();
+            $smp_partners = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'partnerships'] ])->get();
+            $smp_achiev = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'achievment'] ])->get();
+            $smp_commit = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'committe'] ])->get();
+            $smp_alumni = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'alumni'] ])->get();
+            $smp_student = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'student'] ])->get();
+            $smp_headmas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'headmaster'] ])->get();
+            $smp_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'profile'] ])->get();
+            $smp_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'education'] ])->get();
 
             $sma_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'visi-misi'] ])->get();
             $sma_kurkul = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'kurikulum'] ])->get();
             $sma_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'galery'] ])->get();
             $sma_fasilitas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'fasilitas'] ])->get();
+            $sma_extra = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'ekstracurricular'] ])->get();
+            $sma_partners = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'partnerships'] ])->get();
+            $sma_achiev = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'achievment'] ])->get();
+            $sma_commit = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'committe'] ])->get();
+            $sma_alumni = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'alumni'] ])->get();
+            $sma_student = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'student'] ])->get();
+            $sma_headmas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'headmaster'] ])->get();
+            $sma_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'profile'] ])->get();
+            $sma_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'education'] ])->get();
 
             $dkm_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'dkm'],['feature_for', '=', 'galery'] ])->get();
+            $teacher = \App\dt_teacher::where('dt_teacher_for', 'SMP')->get();
             $dkm_fasilitas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'dkm'],['feature_for', '=', 'fasilitas'] ])->get(); 
 
             return \View::make('portal_smp')->with('dt_blog_all_portal_smp', $dt_blog_all_portal_smp)->with('news',$news)->with('article',$article)
@@ -1892,8 +3076,15 @@ class Controller extends BaseController
             ->with('sd_kurkul',$sd_kurkul)->with('sd_galery',$sd_galery)->with('sd_fasilitas',$sd_fasilitas)->with('smp_vimi',$smp_vimi)
             ->with('smp_kurkul',$smp_kurkul)->with('smp_galery',$smp_galery)->with('smp_fasilitas',$smp_fasilitas)->with('sma_vimi',$sma_vimi)
             ->with('sma_kurkul',$sma_kurkul)->with('sma_galery',$sma_galery)->with('sma_fasilitas',$sma_fasilitas)->with('dkm_galery',$dkm_galery)
-            ->with('dkm_fasilitas',$dkm_fasilitas);
-        }
+            ->with('dkm_fasilitas',$dkm_fasilitas)->with('teacher',$teacher)->with('tk_extra',$tk_extra)->with('tk_partners',$tk_partners)
+            ->with('tk_achiev',$tk_achiev)->with('tk_commit',$tk_commit)->with('tk_alumni',$tk_alumni)->with('tk_student',$tk_student)
+            ->with('tk_headmas',$tk_headmas)->with('tk_profile',$tk_profile)->with('tk_edu',$tk_edu)->with('sd_extra',$sd_extra)->with('sd_partners',$sd_partners)
+            ->with('sd_achiev',$sd_achiev)->with('sd_commit',$sd_commit)->with('sd_alumni',$sd_alumni)->with('sd_student',$sd_student)
+            ->with('sd_headmas',$sd_headmas)->with('sd_profile',$sd_profile)->with('sd_edu',$sd_edu)->with('smp_extra',$smp_extra)->with('smp_partners',$smp_partners)
+            ->with('smp_achiev',$smp_achiev)->with('smp_commit',$smp_commit)->with('smp_alumni',$smp_alumni)->with('smp_student',$smp_student)
+            ->with('smp_headmas',$smp_headmas)->with('smp_profile',$smp_profile)->with('smp_edu',$smp_edu)->with('sma_extra',$sma_extra)->with('sma_partners',$sma_partners)
+            ->with('sma_achiev',$sma_achiev)->with('sma_commit',$sma_commit)->with('sma_alumni',$sma_alumni)->with('sma_student',$sma_student)
+            ->with('sma_headmas',$sma_headmas)->with('sma_profile',$sma_profile)->with('sma_edu',$sma_edu);    }
         else{
             $dt_blog_all_portal_smp = \DB::table('dt_blog')->where('dt_blog_type', '=', 'all', 'AND', 'dt_blog_for', '=', 'smp')->orderBy('id', 'desc')->paginate(6);
             $news = \DB::table('dt_blog')->where([
@@ -1910,27 +3101,64 @@ class Controller extends BaseController
             $yayasan_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'galery'] ])->get();
             $yayasan_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'profile'] ])->get();
 
-            $tk_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'visi-misi'] ])->get();
+                        $tk_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'visi-misi'] ])->get();
             $tk_kurkul = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'kurikulum'] ])->get();
             $tk_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'galery'] ])->get();
             $tk_fasilitas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'fasilitas'] ])->get();
+            $tk_extra = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'ekstracurricular'] ])->get();
+            $tk_partners = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'partnerships'] ])->get();
+            $tk_achiev = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'achievment'] ])->get();
+            $tk_commit = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'committe'] ])->get();
+            $tk_alumni = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'alumni'] ])->get();
+            $tk_student = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'student'] ])->get();
+            $tk_headmas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'headmaster'] ])->get();
+            $tk_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'profile'] ])->get();
+            $tk_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'education'] ])->get();
 
             $sd_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'visi-misi'] ])->get();
             $sd_kurkul = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'kurikulum'] ])->get();
             $sd_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'galery'] ])->get();
             $sd_fasilitas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'fasilitas'] ])->get();
+            $sd_extra = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'ekstracurricular'] ])->get();
+            $sd_partners = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'partnerships'] ])->get();
+            $sd_achiev = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'achievment'] ])->get();
+            $sd_commit = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'committe'] ])->get();
+            $sd_alumni = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'alumni'] ])->get();
+            $sd_student = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'student'] ])->get();
+            $sd_headmas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'headmaster'] ])->get();
+            $sd_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'profile'] ])->get();
+            $sd_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'education'] ])->get();
 
             $smp_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'visi-misi'] ])->get();
             $smp_kurkul = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'kurikulum'] ])->get();
             $smp_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'galery'] ])->get();
             $smp_fasilitas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'fasilitas'] ])->get();
+            $smp_extra = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'ekstracurricular'] ])->get();
+            $smp_partners = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'partnerships'] ])->get();
+            $smp_achiev = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'achievment'] ])->get();
+            $smp_commit = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'committe'] ])->get();
+            $smp_alumni = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'alumni'] ])->get();
+            $smp_student = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'student'] ])->get();
+            $smp_headmas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'headmaster'] ])->get();
+            $smp_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'profile'] ])->get();
+            $smp_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'education'] ])->get();
 
             $sma_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'visi-misi'] ])->get();
             $sma_kurkul = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'kurikulum'] ])->get();
             $sma_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'galery'] ])->get();
             $sma_fasilitas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'fasilitas'] ])->get();
+            $sma_extra = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'ekstracurricular'] ])->get();
+            $sma_partners = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'partnerships'] ])->get();
+            $sma_achiev = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'achievment'] ])->get();
+            $sma_commit = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'committe'] ])->get();
+            $sma_alumni = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'alumni'] ])->get();
+            $sma_student = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'student'] ])->get();
+            $sma_headmas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'headmaster'] ])->get();
+            $sma_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'profile'] ])->get();
+            $sma_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'education'] ])->get();
 
             $dkm_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'dkm'],['feature_for', '=', 'galery'] ])->get();
+            $teacher = \App\dt_teacher::where('dt_teacher_for', 'SMP')->get();
             $dkm_fasilitas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'dkm'],['feature_for', '=', 'fasilitas'] ])->get(); 
 
             return \View::make('portal_smp')->with('dt_blog_all_portal_smp', $dt_blog_all_portal_smp)->with('news',$news)->with('article',$article)
@@ -1940,8 +3168,15 @@ class Controller extends BaseController
             ->with('sd_kurkul',$sd_kurkul)->with('sd_galery',$sd_galery)->with('sd_fasilitas',$sd_fasilitas)->with('smp_vimi',$smp_vimi)
             ->with('smp_kurkul',$smp_kurkul)->with('smp_galery',$smp_galery)->with('smp_fasilitas',$smp_fasilitas)->with('sma_vimi',$sma_vimi)
             ->with('sma_kurkul',$sma_kurkul)->with('sma_galery',$sma_galery)->with('sma_fasilitas',$sma_fasilitas)->with('dkm_galery',$dkm_galery)
-            ->with('dkm_fasilitas',$dkm_fasilitas);
-        }
+            ->with('dkm_fasilitas',$dkm_fasilitas)->with('teacher',$teacher)->with('tk_extra',$tk_extra)->with('tk_partners',$tk_partners)
+            ->with('tk_achiev',$tk_achiev)->with('tk_commit',$tk_commit)->with('tk_alumni',$tk_alumni)->with('tk_student',$tk_student)
+            ->with('tk_headmas',$tk_headmas)->with('tk_profile',$tk_profile)->with('tk_edu',$tk_edu)->with('sd_extra',$sd_extra)->with('sd_partners',$sd_partners)
+            ->with('sd_achiev',$sd_achiev)->with('sd_commit',$sd_commit)->with('sd_alumni',$sd_alumni)->with('sd_student',$sd_student)
+            ->with('sd_headmas',$sd_headmas)->with('sd_profile',$sd_profile)->with('sd_edu',$sd_edu)->with('smp_extra',$smp_extra)->with('smp_partners',$smp_partners)
+            ->with('smp_achiev',$smp_achiev)->with('smp_commit',$smp_commit)->with('smp_alumni',$smp_alumni)->with('smp_student',$smp_student)
+            ->with('smp_headmas',$smp_headmas)->with('smp_profile',$smp_profile)->with('smp_edu',$smp_edu)->with('sma_extra',$sma_extra)->with('sma_partners',$sma_partners)
+            ->with('sma_achiev',$sma_achiev)->with('sma_commit',$sma_commit)->with('sma_alumni',$sma_alumni)->with('sma_student',$sma_student)
+            ->with('sma_headmas',$sma_headmas)->with('sma_profile',$sma_profile)->with('sma_edu',$sma_edu);    }
     }    
 
     public function portal_smp_news()
@@ -1966,27 +3201,64 @@ class Controller extends BaseController
             $yayasan_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'galery'] ])->get();
             $yayasan_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'profile'] ])->get();
 
-            $tk_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'visi-misi'] ])->get();
+                        $tk_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'visi-misi'] ])->get();
             $tk_kurkul = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'kurikulum'] ])->get();
             $tk_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'galery'] ])->get();
             $tk_fasilitas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'fasilitas'] ])->get();
+            $tk_extra = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'ekstracurricular'] ])->get();
+            $tk_partners = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'partnerships'] ])->get();
+            $tk_achiev = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'achievment'] ])->get();
+            $tk_commit = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'committe'] ])->get();
+            $tk_alumni = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'alumni'] ])->get();
+            $tk_student = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'student'] ])->get();
+            $tk_headmas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'headmaster'] ])->get();
+            $tk_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'profile'] ])->get();
+            $tk_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'education'] ])->get();
 
             $sd_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'visi-misi'] ])->get();
             $sd_kurkul = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'kurikulum'] ])->get();
             $sd_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'galery'] ])->get();
             $sd_fasilitas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'fasilitas'] ])->get();
+            $sd_extra = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'ekstracurricular'] ])->get();
+            $sd_partners = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'partnerships'] ])->get();
+            $sd_achiev = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'achievment'] ])->get();
+            $sd_commit = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'committe'] ])->get();
+            $sd_alumni = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'alumni'] ])->get();
+            $sd_student = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'student'] ])->get();
+            $sd_headmas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'headmaster'] ])->get();
+            $sd_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'profile'] ])->get();
+            $sd_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'education'] ])->get();
 
             $smp_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'visi-misi'] ])->get();
             $smp_kurkul = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'kurikulum'] ])->get();
             $smp_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'galery'] ])->get();
             $smp_fasilitas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'fasilitas'] ])->get();
+            $smp_extra = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'ekstracurricular'] ])->get();
+            $smp_partners = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'partnerships'] ])->get();
+            $smp_achiev = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'achievment'] ])->get();
+            $smp_commit = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'committe'] ])->get();
+            $smp_alumni = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'alumni'] ])->get();
+            $smp_student = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'student'] ])->get();
+            $smp_headmas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'headmaster'] ])->get();
+            $smp_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'profile'] ])->get();
+            $smp_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'education'] ])->get();
 
             $sma_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'visi-misi'] ])->get();
             $sma_kurkul = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'kurikulum'] ])->get();
             $sma_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'galery'] ])->get();
             $sma_fasilitas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'fasilitas'] ])->get();
+            $sma_extra = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'ekstracurricular'] ])->get();
+            $sma_partners = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'partnerships'] ])->get();
+            $sma_achiev = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'achievment'] ])->get();
+            $sma_commit = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'committe'] ])->get();
+            $sma_alumni = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'alumni'] ])->get();
+            $sma_student = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'student'] ])->get();
+            $sma_headmas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'headmaster'] ])->get();
+            $sma_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'profile'] ])->get();
+            $sma_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'education'] ])->get();
 
             $dkm_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'dkm'],['feature_for', '=', 'galery'] ])->get();
+            $teacher = \App\dt_teacher::where('dt_teacher_for', 'SMP')->get();
             $dkm_fasilitas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'dkm'],['feature_for', '=', 'fasilitas'] ])->get(); 
 
             return \View::make('portal_smp')->with('dt_blog_all_portal_smp', $dt_blog_all_portal_smp)->with('news',$news)->with('article',$article)
@@ -1996,8 +3268,15 @@ class Controller extends BaseController
             ->with('sd_kurkul',$sd_kurkul)->with('sd_galery',$sd_galery)->with('sd_fasilitas',$sd_fasilitas)->with('smp_vimi',$smp_vimi)
             ->with('smp_kurkul',$smp_kurkul)->with('smp_galery',$smp_galery)->with('smp_fasilitas',$smp_fasilitas)->with('sma_vimi',$sma_vimi)
             ->with('sma_kurkul',$sma_kurkul)->with('sma_galery',$sma_galery)->with('sma_fasilitas',$sma_fasilitas)->with('dkm_galery',$dkm_galery)
-            ->with('dkm_fasilitas',$dkm_fasilitas);
-        }
+            ->with('dkm_fasilitas',$dkm_fasilitas)->with('teacher',$teacher)->with('tk_extra',$tk_extra)->with('tk_partners',$tk_partners)
+            ->with('tk_achiev',$tk_achiev)->with('tk_commit',$tk_commit)->with('tk_alumni',$tk_alumni)->with('tk_student',$tk_student)
+            ->with('tk_headmas',$tk_headmas)->with('tk_profile',$tk_profile)->with('tk_edu',$tk_edu)->with('sd_extra',$sd_extra)->with('sd_partners',$sd_partners)
+            ->with('sd_achiev',$sd_achiev)->with('sd_commit',$sd_commit)->with('sd_alumni',$sd_alumni)->with('sd_student',$sd_student)
+            ->with('sd_headmas',$sd_headmas)->with('sd_profile',$sd_profile)->with('sd_edu',$sd_edu)->with('smp_extra',$smp_extra)->with('smp_partners',$smp_partners)
+            ->with('smp_achiev',$smp_achiev)->with('smp_commit',$smp_commit)->with('smp_alumni',$smp_alumni)->with('smp_student',$smp_student)
+            ->with('smp_headmas',$smp_headmas)->with('smp_profile',$smp_profile)->with('smp_edu',$smp_edu)->with('sma_extra',$sma_extra)->with('sma_partners',$sma_partners)
+            ->with('sma_achiev',$sma_achiev)->with('sma_commit',$sma_commit)->with('sma_alumni',$sma_alumni)->with('sma_student',$sma_student)
+            ->with('sma_headmas',$sma_headmas)->with('sma_profile',$sma_profile)->with('sma_edu',$sma_edu);    }
         else{
             $dt_blog_all_portal_smp = \DB::table('dt_blog')->where([
                                                                     ['dt_blog_type', '=', 'news'],
@@ -2017,27 +3296,64 @@ class Controller extends BaseController
             $yayasan_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'galery'] ])->get();
             $yayasan_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'profile'] ])->get();
 
-            $tk_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'visi-misi'] ])->get();
+                        $tk_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'visi-misi'] ])->get();
             $tk_kurkul = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'kurikulum'] ])->get();
             $tk_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'galery'] ])->get();
             $tk_fasilitas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'fasilitas'] ])->get();
+            $tk_extra = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'ekstracurricular'] ])->get();
+            $tk_partners = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'partnerships'] ])->get();
+            $tk_achiev = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'achievment'] ])->get();
+            $tk_commit = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'committe'] ])->get();
+            $tk_alumni = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'alumni'] ])->get();
+            $tk_student = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'student'] ])->get();
+            $tk_headmas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'headmaster'] ])->get();
+            $tk_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'profile'] ])->get();
+            $tk_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'education'] ])->get();
 
             $sd_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'visi-misi'] ])->get();
             $sd_kurkul = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'kurikulum'] ])->get();
             $sd_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'galery'] ])->get();
             $sd_fasilitas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'fasilitas'] ])->get();
+            $sd_extra = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'ekstracurricular'] ])->get();
+            $sd_partners = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'partnerships'] ])->get();
+            $sd_achiev = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'achievment'] ])->get();
+            $sd_commit = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'committe'] ])->get();
+            $sd_alumni = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'alumni'] ])->get();
+            $sd_student = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'student'] ])->get();
+            $sd_headmas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'headmaster'] ])->get();
+            $sd_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'profile'] ])->get();
+            $sd_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'education'] ])->get();
 
             $smp_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'visi-misi'] ])->get();
             $smp_kurkul = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'kurikulum'] ])->get();
             $smp_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'galery'] ])->get();
             $smp_fasilitas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'fasilitas'] ])->get();
+            $smp_extra = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'ekstracurricular'] ])->get();
+            $smp_partners = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'partnerships'] ])->get();
+            $smp_achiev = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'achievment'] ])->get();
+            $smp_commit = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'committe'] ])->get();
+            $smp_alumni = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'alumni'] ])->get();
+            $smp_student = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'student'] ])->get();
+            $smp_headmas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'headmaster'] ])->get();
+            $smp_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'profile'] ])->get();
+            $smp_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'education'] ])->get();
 
             $sma_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'visi-misi'] ])->get();
             $sma_kurkul = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'kurikulum'] ])->get();
             $sma_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'galery'] ])->get();
             $sma_fasilitas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'fasilitas'] ])->get();
+            $sma_extra = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'ekstracurricular'] ])->get();
+            $sma_partners = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'partnerships'] ])->get();
+            $sma_achiev = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'achievment'] ])->get();
+            $sma_commit = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'committe'] ])->get();
+            $sma_alumni = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'alumni'] ])->get();
+            $sma_student = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'student'] ])->get();
+            $sma_headmas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'headmaster'] ])->get();
+            $sma_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'profile'] ])->get();
+            $sma_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'education'] ])->get();
 
             $dkm_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'dkm'],['feature_for', '=', 'galery'] ])->get();
+            $teacher = \App\dt_teacher::where('dt_teacher_for', 'SMP')->get();
             $dkm_fasilitas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'dkm'],['feature_for', '=', 'fasilitas'] ])->get(); 
 
             return \View::make('portal_smp')->with('dt_blog_all_portal_smp', $dt_blog_all_portal_smp)->with('news',$news)->with('article',$article)
@@ -2047,8 +3363,15 @@ class Controller extends BaseController
             ->with('sd_kurkul',$sd_kurkul)->with('sd_galery',$sd_galery)->with('sd_fasilitas',$sd_fasilitas)->with('smp_vimi',$smp_vimi)
             ->with('smp_kurkul',$smp_kurkul)->with('smp_galery',$smp_galery)->with('smp_fasilitas',$smp_fasilitas)->with('sma_vimi',$sma_vimi)
             ->with('sma_kurkul',$sma_kurkul)->with('sma_galery',$sma_galery)->with('sma_fasilitas',$sma_fasilitas)->with('dkm_galery',$dkm_galery)
-            ->with('dkm_fasilitas',$dkm_fasilitas);
-        }
+            ->with('dkm_fasilitas',$dkm_fasilitas)->with('teacher',$teacher)->with('tk_extra',$tk_extra)->with('tk_partners',$tk_partners)
+            ->with('tk_achiev',$tk_achiev)->with('tk_commit',$tk_commit)->with('tk_alumni',$tk_alumni)->with('tk_student',$tk_student)
+            ->with('tk_headmas',$tk_headmas)->with('tk_profile',$tk_profile)->with('tk_edu',$tk_edu)->with('sd_extra',$sd_extra)->with('sd_partners',$sd_partners)
+            ->with('sd_achiev',$sd_achiev)->with('sd_commit',$sd_commit)->with('sd_alumni',$sd_alumni)->with('sd_student',$sd_student)
+            ->with('sd_headmas',$sd_headmas)->with('sd_profile',$sd_profile)->with('sd_edu',$sd_edu)->with('smp_extra',$smp_extra)->with('smp_partners',$smp_partners)
+            ->with('smp_achiev',$smp_achiev)->with('smp_commit',$smp_commit)->with('smp_alumni',$smp_alumni)->with('smp_student',$smp_student)
+            ->with('smp_headmas',$smp_headmas)->with('smp_profile',$smp_profile)->with('smp_edu',$smp_edu)->with('sma_extra',$sma_extra)->with('sma_partners',$sma_partners)
+            ->with('sma_achiev',$sma_achiev)->with('sma_commit',$sma_commit)->with('sma_alumni',$sma_alumni)->with('sma_student',$sma_student)
+            ->with('sma_headmas',$sma_headmas)->with('sma_profile',$sma_profile)->with('sma_edu',$sma_edu);    }
     }    
 
     public function portal_smp_agenda()
@@ -2073,27 +3396,64 @@ class Controller extends BaseController
             $yayasan_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'galery'] ])->get();
             $yayasan_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'profile'] ])->get();
 
-            $tk_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'visi-misi'] ])->get();
+                        $tk_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'visi-misi'] ])->get();
             $tk_kurkul = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'kurikulum'] ])->get();
             $tk_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'galery'] ])->get();
             $tk_fasilitas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'fasilitas'] ])->get();
+            $tk_extra = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'ekstracurricular'] ])->get();
+            $tk_partners = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'partnerships'] ])->get();
+            $tk_achiev = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'achievment'] ])->get();
+            $tk_commit = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'committe'] ])->get();
+            $tk_alumni = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'alumni'] ])->get();
+            $tk_student = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'student'] ])->get();
+            $tk_headmas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'headmaster'] ])->get();
+            $tk_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'profile'] ])->get();
+            $tk_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'education'] ])->get();
 
             $sd_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'visi-misi'] ])->get();
             $sd_kurkul = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'kurikulum'] ])->get();
             $sd_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'galery'] ])->get();
             $sd_fasilitas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'fasilitas'] ])->get();
+            $sd_extra = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'ekstracurricular'] ])->get();
+            $sd_partners = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'partnerships'] ])->get();
+            $sd_achiev = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'achievment'] ])->get();
+            $sd_commit = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'committe'] ])->get();
+            $sd_alumni = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'alumni'] ])->get();
+            $sd_student = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'student'] ])->get();
+            $sd_headmas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'headmaster'] ])->get();
+            $sd_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'profile'] ])->get();
+            $sd_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'education'] ])->get();
 
             $smp_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'visi-misi'] ])->get();
             $smp_kurkul = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'kurikulum'] ])->get();
             $smp_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'galery'] ])->get();
             $smp_fasilitas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'fasilitas'] ])->get();
+            $smp_extra = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'ekstracurricular'] ])->get();
+            $smp_partners = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'partnerships'] ])->get();
+            $smp_achiev = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'achievment'] ])->get();
+            $smp_commit = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'committe'] ])->get();
+            $smp_alumni = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'alumni'] ])->get();
+            $smp_student = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'student'] ])->get();
+            $smp_headmas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'headmaster'] ])->get();
+            $smp_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'profile'] ])->get();
+            $smp_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'education'] ])->get();
 
             $sma_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'visi-misi'] ])->get();
             $sma_kurkul = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'kurikulum'] ])->get();
             $sma_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'galery'] ])->get();
             $sma_fasilitas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'fasilitas'] ])->get();
+            $sma_extra = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'ekstracurricular'] ])->get();
+            $sma_partners = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'partnerships'] ])->get();
+            $sma_achiev = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'achievment'] ])->get();
+            $sma_commit = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'committe'] ])->get();
+            $sma_alumni = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'alumni'] ])->get();
+            $sma_student = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'student'] ])->get();
+            $sma_headmas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'headmaster'] ])->get();
+            $sma_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'profile'] ])->get();
+            $sma_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'education'] ])->get();
 
             $dkm_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'dkm'],['feature_for', '=', 'galery'] ])->get();
+            $teacher = \App\dt_teacher::where('dt_teacher_for', 'SMP')->get();
             $dkm_fasilitas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'dkm'],['feature_for', '=', 'fasilitas'] ])->get(); 
 
             return \View::make('portal_smp')->with('dt_blog_all_portal_smp', $dt_blog_all_portal_smp)->with('news',$news)->with('article',$article)
@@ -2103,8 +3463,15 @@ class Controller extends BaseController
             ->with('sd_kurkul',$sd_kurkul)->with('sd_galery',$sd_galery)->with('sd_fasilitas',$sd_fasilitas)->with('smp_vimi',$smp_vimi)
             ->with('smp_kurkul',$smp_kurkul)->with('smp_galery',$smp_galery)->with('smp_fasilitas',$smp_fasilitas)->with('sma_vimi',$sma_vimi)
             ->with('sma_kurkul',$sma_kurkul)->with('sma_galery',$sma_galery)->with('sma_fasilitas',$sma_fasilitas)->with('dkm_galery',$dkm_galery)
-            ->with('dkm_fasilitas',$dkm_fasilitas);
-        }
+            ->with('dkm_fasilitas',$dkm_fasilitas)->with('teacher',$teacher)->with('tk_extra',$tk_extra)->with('tk_partners',$tk_partners)
+            ->with('tk_achiev',$tk_achiev)->with('tk_commit',$tk_commit)->with('tk_alumni',$tk_alumni)->with('tk_student',$tk_student)
+            ->with('tk_headmas',$tk_headmas)->with('tk_profile',$tk_profile)->with('tk_edu',$tk_edu)->with('sd_extra',$sd_extra)->with('sd_partners',$sd_partners)
+            ->with('sd_achiev',$sd_achiev)->with('sd_commit',$sd_commit)->with('sd_alumni',$sd_alumni)->with('sd_student',$sd_student)
+            ->with('sd_headmas',$sd_headmas)->with('sd_profile',$sd_profile)->with('sd_edu',$sd_edu)->with('smp_extra',$smp_extra)->with('smp_partners',$smp_partners)
+            ->with('smp_achiev',$smp_achiev)->with('smp_commit',$smp_commit)->with('smp_alumni',$smp_alumni)->with('smp_student',$smp_student)
+            ->with('smp_headmas',$smp_headmas)->with('smp_profile',$smp_profile)->with('smp_edu',$smp_edu)->with('sma_extra',$sma_extra)->with('sma_partners',$sma_partners)
+            ->with('sma_achiev',$sma_achiev)->with('sma_commit',$sma_commit)->with('sma_alumni',$sma_alumni)->with('sma_student',$sma_student)
+            ->with('sma_headmas',$sma_headmas)->with('sma_profile',$sma_profile)->with('sma_edu',$sma_edu);    }
         else{
             $dt_blog_all_portal_smp = \DB::table('dt_blog')->where([
                                                                     ['dt_blog_type', '=', 'agenda'],
@@ -2124,27 +3491,64 @@ class Controller extends BaseController
             $yayasan_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'galery'] ])->get();
             $yayasan_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'profile'] ])->get();
 
-            $tk_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'visi-misi'] ])->get();
+                        $tk_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'visi-misi'] ])->get();
             $tk_kurkul = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'kurikulum'] ])->get();
             $tk_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'galery'] ])->get();
             $tk_fasilitas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'fasilitas'] ])->get();
+            $tk_extra = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'ekstracurricular'] ])->get();
+            $tk_partners = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'partnerships'] ])->get();
+            $tk_achiev = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'achievment'] ])->get();
+            $tk_commit = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'committe'] ])->get();
+            $tk_alumni = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'alumni'] ])->get();
+            $tk_student = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'student'] ])->get();
+            $tk_headmas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'headmaster'] ])->get();
+            $tk_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'profile'] ])->get();
+            $tk_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'education'] ])->get();
 
             $sd_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'visi-misi'] ])->get();
             $sd_kurkul = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'kurikulum'] ])->get();
             $sd_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'galery'] ])->get();
             $sd_fasilitas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'fasilitas'] ])->get();
+            $sd_extra = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'ekstracurricular'] ])->get();
+            $sd_partners = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'partnerships'] ])->get();
+            $sd_achiev = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'achievment'] ])->get();
+            $sd_commit = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'committe'] ])->get();
+            $sd_alumni = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'alumni'] ])->get();
+            $sd_student = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'student'] ])->get();
+            $sd_headmas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'headmaster'] ])->get();
+            $sd_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'profile'] ])->get();
+            $sd_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'education'] ])->get();
 
             $smp_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'visi-misi'] ])->get();
             $smp_kurkul = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'kurikulum'] ])->get();
             $smp_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'galery'] ])->get();
             $smp_fasilitas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'fasilitas'] ])->get();
+            $smp_extra = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'ekstracurricular'] ])->get();
+            $smp_partners = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'partnerships'] ])->get();
+            $smp_achiev = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'achievment'] ])->get();
+            $smp_commit = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'committe'] ])->get();
+            $smp_alumni = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'alumni'] ])->get();
+            $smp_student = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'student'] ])->get();
+            $smp_headmas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'headmaster'] ])->get();
+            $smp_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'profile'] ])->get();
+            $smp_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'education'] ])->get();
 
             $sma_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'visi-misi'] ])->get();
             $sma_kurkul = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'kurikulum'] ])->get();
             $sma_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'galery'] ])->get();
             $sma_fasilitas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'fasilitas'] ])->get();
+            $sma_extra = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'ekstracurricular'] ])->get();
+            $sma_partners = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'partnerships'] ])->get();
+            $sma_achiev = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'achievment'] ])->get();
+            $sma_commit = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'committe'] ])->get();
+            $sma_alumni = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'alumni'] ])->get();
+            $sma_student = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'student'] ])->get();
+            $sma_headmas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'headmaster'] ])->get();
+            $sma_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'profile'] ])->get();
+            $sma_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'education'] ])->get();
 
             $dkm_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'dkm'],['feature_for', '=', 'galery'] ])->get();
+            $teacher = \App\dt_teacher::where('dt_teacher_for', 'SMP')->get();
             $dkm_fasilitas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'dkm'],['feature_for', '=', 'fasilitas'] ])->get(); 
 
             return \View::make('portal_smp')->with('dt_blog_all_portal_smp', $dt_blog_all_portal_smp)->with('news',$news)->with('article',$article)
@@ -2154,8 +3558,15 @@ class Controller extends BaseController
             ->with('sd_kurkul',$sd_kurkul)->with('sd_galery',$sd_galery)->with('sd_fasilitas',$sd_fasilitas)->with('smp_vimi',$smp_vimi)
             ->with('smp_kurkul',$smp_kurkul)->with('smp_galery',$smp_galery)->with('smp_fasilitas',$smp_fasilitas)->with('sma_vimi',$sma_vimi)
             ->with('sma_kurkul',$sma_kurkul)->with('sma_galery',$sma_galery)->with('sma_fasilitas',$sma_fasilitas)->with('dkm_galery',$dkm_galery)
-            ->with('dkm_fasilitas',$dkm_fasilitas);
-        }
+            ->with('dkm_fasilitas',$dkm_fasilitas)->with('teacher',$teacher)->with('tk_extra',$tk_extra)->with('tk_partners',$tk_partners)
+            ->with('tk_achiev',$tk_achiev)->with('tk_commit',$tk_commit)->with('tk_alumni',$tk_alumni)->with('tk_student',$tk_student)
+            ->with('tk_headmas',$tk_headmas)->with('tk_profile',$tk_profile)->with('tk_edu',$tk_edu)->with('sd_extra',$sd_extra)->with('sd_partners',$sd_partners)
+            ->with('sd_achiev',$sd_achiev)->with('sd_commit',$sd_commit)->with('sd_alumni',$sd_alumni)->with('sd_student',$sd_student)
+            ->with('sd_headmas',$sd_headmas)->with('sd_profile',$sd_profile)->with('sd_edu',$sd_edu)->with('smp_extra',$smp_extra)->with('smp_partners',$smp_partners)
+            ->with('smp_achiev',$smp_achiev)->with('smp_commit',$smp_commit)->with('smp_alumni',$smp_alumni)->with('smp_student',$smp_student)
+            ->with('smp_headmas',$smp_headmas)->with('smp_profile',$smp_profile)->with('smp_edu',$smp_edu)->with('sma_extra',$sma_extra)->with('sma_partners',$sma_partners)
+            ->with('sma_achiev',$sma_achiev)->with('sma_commit',$sma_commit)->with('sma_alumni',$sma_alumni)->with('sma_student',$sma_student)
+            ->with('sma_headmas',$sma_headmas)->with('sma_profile',$sma_profile)->with('sma_edu',$sma_edu);    }
     }
 
     public function portal_smp_announcement()
@@ -2180,27 +3591,64 @@ class Controller extends BaseController
             $yayasan_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'galery'] ])->get();
             $yayasan_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'profile'] ])->get();
 
-            $tk_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'visi-misi'] ])->get();
+                        $tk_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'visi-misi'] ])->get();
             $tk_kurkul = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'kurikulum'] ])->get();
             $tk_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'galery'] ])->get();
             $tk_fasilitas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'fasilitas'] ])->get();
+            $tk_extra = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'ekstracurricular'] ])->get();
+            $tk_partners = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'partnerships'] ])->get();
+            $tk_achiev = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'achievment'] ])->get();
+            $tk_commit = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'committe'] ])->get();
+            $tk_alumni = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'alumni'] ])->get();
+            $tk_student = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'student'] ])->get();
+            $tk_headmas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'headmaster'] ])->get();
+            $tk_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'profile'] ])->get();
+            $tk_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'education'] ])->get();
 
             $sd_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'visi-misi'] ])->get();
             $sd_kurkul = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'kurikulum'] ])->get();
             $sd_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'galery'] ])->get();
             $sd_fasilitas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'fasilitas'] ])->get();
+            $sd_extra = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'ekstracurricular'] ])->get();
+            $sd_partners = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'partnerships'] ])->get();
+            $sd_achiev = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'achievment'] ])->get();
+            $sd_commit = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'committe'] ])->get();
+            $sd_alumni = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'alumni'] ])->get();
+            $sd_student = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'student'] ])->get();
+            $sd_headmas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'headmaster'] ])->get();
+            $sd_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'profile'] ])->get();
+            $sd_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'education'] ])->get();
 
             $smp_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'visi-misi'] ])->get();
             $smp_kurkul = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'kurikulum'] ])->get();
             $smp_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'galery'] ])->get();
             $smp_fasilitas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'fasilitas'] ])->get();
+            $smp_extra = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'ekstracurricular'] ])->get();
+            $smp_partners = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'partnerships'] ])->get();
+            $smp_achiev = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'achievment'] ])->get();
+            $smp_commit = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'committe'] ])->get();
+            $smp_alumni = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'alumni'] ])->get();
+            $smp_student = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'student'] ])->get();
+            $smp_headmas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'headmaster'] ])->get();
+            $smp_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'profile'] ])->get();
+            $smp_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'education'] ])->get();
 
             $sma_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'visi-misi'] ])->get();
             $sma_kurkul = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'kurikulum'] ])->get();
             $sma_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'galery'] ])->get();
             $sma_fasilitas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'fasilitas'] ])->get();
+            $sma_extra = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'ekstracurricular'] ])->get();
+            $sma_partners = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'partnerships'] ])->get();
+            $sma_achiev = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'achievment'] ])->get();
+            $sma_commit = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'committe'] ])->get();
+            $sma_alumni = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'alumni'] ])->get();
+            $sma_student = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'student'] ])->get();
+            $sma_headmas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'headmaster'] ])->get();
+            $sma_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'profile'] ])->get();
+            $sma_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'education'] ])->get();
 
             $dkm_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'dkm'],['feature_for', '=', 'galery'] ])->get();
+            $teacher = \App\dt_teacher::where('dt_teacher_for', 'SMP')->get();
             $dkm_fasilitas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'dkm'],['feature_for', '=', 'fasilitas'] ])->get(); 
 
             return \View::make('portal_smp')->with('dt_blog_all_portal_smp', $dt_blog_all_portal_smp)->with('news',$news)->with('article',$article)
@@ -2210,8 +3658,15 @@ class Controller extends BaseController
             ->with('sd_kurkul',$sd_kurkul)->with('sd_galery',$sd_galery)->with('sd_fasilitas',$sd_fasilitas)->with('smp_vimi',$smp_vimi)
             ->with('smp_kurkul',$smp_kurkul)->with('smp_galery',$smp_galery)->with('smp_fasilitas',$smp_fasilitas)->with('sma_vimi',$sma_vimi)
             ->with('sma_kurkul',$sma_kurkul)->with('sma_galery',$sma_galery)->with('sma_fasilitas',$sma_fasilitas)->with('dkm_galery',$dkm_galery)
-            ->with('dkm_fasilitas',$dkm_fasilitas);
-        }
+            ->with('dkm_fasilitas',$dkm_fasilitas)->with('teacher',$teacher)->with('tk_extra',$tk_extra)->with('tk_partners',$tk_partners)
+            ->with('tk_achiev',$tk_achiev)->with('tk_commit',$tk_commit)->with('tk_alumni',$tk_alumni)->with('tk_student',$tk_student)
+            ->with('tk_headmas',$tk_headmas)->with('tk_profile',$tk_profile)->with('tk_edu',$tk_edu)->with('sd_extra',$sd_extra)->with('sd_partners',$sd_partners)
+            ->with('sd_achiev',$sd_achiev)->with('sd_commit',$sd_commit)->with('sd_alumni',$sd_alumni)->with('sd_student',$sd_student)
+            ->with('sd_headmas',$sd_headmas)->with('sd_profile',$sd_profile)->with('sd_edu',$sd_edu)->with('smp_extra',$smp_extra)->with('smp_partners',$smp_partners)
+            ->with('smp_achiev',$smp_achiev)->with('smp_commit',$smp_commit)->with('smp_alumni',$smp_alumni)->with('smp_student',$smp_student)
+            ->with('smp_headmas',$smp_headmas)->with('smp_profile',$smp_profile)->with('smp_edu',$smp_edu)->with('sma_extra',$sma_extra)->with('sma_partners',$sma_partners)
+            ->with('sma_achiev',$sma_achiev)->with('sma_commit',$sma_commit)->with('sma_alumni',$sma_alumni)->with('sma_student',$sma_student)
+            ->with('sma_headmas',$sma_headmas)->with('sma_profile',$sma_profile)->with('sma_edu',$sma_edu);    }
         else{
             $dt_blog_all_portal_smp = \DB::table('dt_blog')->where([
                                                                     ['dt_blog_type', '=', 'announcement'],
@@ -2231,27 +3686,64 @@ class Controller extends BaseController
             $yayasan_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'galery'] ])->get();
             $yayasan_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'profile'] ])->get();
 
-            $tk_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'visi-misi'] ])->get();
+                        $tk_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'visi-misi'] ])->get();
             $tk_kurkul = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'kurikulum'] ])->get();
             $tk_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'galery'] ])->get();
             $tk_fasilitas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'fasilitas'] ])->get();
+            $tk_extra = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'ekstracurricular'] ])->get();
+            $tk_partners = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'partnerships'] ])->get();
+            $tk_achiev = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'achievment'] ])->get();
+            $tk_commit = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'committe'] ])->get();
+            $tk_alumni = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'alumni'] ])->get();
+            $tk_student = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'student'] ])->get();
+            $tk_headmas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'headmaster'] ])->get();
+            $tk_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'profile'] ])->get();
+            $tk_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'education'] ])->get();
 
             $sd_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'visi-misi'] ])->get();
             $sd_kurkul = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'kurikulum'] ])->get();
             $sd_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'galery'] ])->get();
             $sd_fasilitas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'fasilitas'] ])->get();
+            $sd_extra = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'ekstracurricular'] ])->get();
+            $sd_partners = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'partnerships'] ])->get();
+            $sd_achiev = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'achievment'] ])->get();
+            $sd_commit = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'committe'] ])->get();
+            $sd_alumni = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'alumni'] ])->get();
+            $sd_student = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'student'] ])->get();
+            $sd_headmas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'headmaster'] ])->get();
+            $sd_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'profile'] ])->get();
+            $sd_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'education'] ])->get();
 
             $smp_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'visi-misi'] ])->get();
             $smp_kurkul = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'kurikulum'] ])->get();
             $smp_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'galery'] ])->get();
             $smp_fasilitas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'fasilitas'] ])->get();
+            $smp_extra = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'ekstracurricular'] ])->get();
+            $smp_partners = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'partnerships'] ])->get();
+            $smp_achiev = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'achievment'] ])->get();
+            $smp_commit = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'committe'] ])->get();
+            $smp_alumni = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'alumni'] ])->get();
+            $smp_student = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'student'] ])->get();
+            $smp_headmas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'headmaster'] ])->get();
+            $smp_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'profile'] ])->get();
+            $smp_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'education'] ])->get();
 
             $sma_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'visi-misi'] ])->get();
             $sma_kurkul = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'kurikulum'] ])->get();
             $sma_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'galery'] ])->get();
             $sma_fasilitas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'fasilitas'] ])->get();
+            $sma_extra = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'ekstracurricular'] ])->get();
+            $sma_partners = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'partnerships'] ])->get();
+            $sma_achiev = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'achievment'] ])->get();
+            $sma_commit = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'committe'] ])->get();
+            $sma_alumni = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'alumni'] ])->get();
+            $sma_student = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'student'] ])->get();
+            $sma_headmas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'headmaster'] ])->get();
+            $sma_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'profile'] ])->get();
+            $sma_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'education'] ])->get();
 
             $dkm_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'dkm'],['feature_for', '=', 'galery'] ])->get();
+            $teacher = \App\dt_teacher::where('dt_teacher_for', 'SMP')->get();
             $dkm_fasilitas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'dkm'],['feature_for', '=', 'fasilitas'] ])->get(); 
 
             return \View::make('portal_smp')->with('dt_blog_all_portal_smp', $dt_blog_all_portal_smp)->with('news',$news)->with('article',$article)
@@ -2261,8 +3753,15 @@ class Controller extends BaseController
             ->with('sd_kurkul',$sd_kurkul)->with('sd_galery',$sd_galery)->with('sd_fasilitas',$sd_fasilitas)->with('smp_vimi',$smp_vimi)
             ->with('smp_kurkul',$smp_kurkul)->with('smp_galery',$smp_galery)->with('smp_fasilitas',$smp_fasilitas)->with('sma_vimi',$sma_vimi)
             ->with('sma_kurkul',$sma_kurkul)->with('sma_galery',$sma_galery)->with('sma_fasilitas',$sma_fasilitas)->with('dkm_galery',$dkm_galery)
-            ->with('dkm_fasilitas',$dkm_fasilitas);
-        }
+            ->with('dkm_fasilitas',$dkm_fasilitas)->with('teacher',$teacher)->with('tk_extra',$tk_extra)->with('tk_partners',$tk_partners)
+            ->with('tk_achiev',$tk_achiev)->with('tk_commit',$tk_commit)->with('tk_alumni',$tk_alumni)->with('tk_student',$tk_student)
+            ->with('tk_headmas',$tk_headmas)->with('tk_profile',$tk_profile)->with('tk_edu',$tk_edu)->with('sd_extra',$sd_extra)->with('sd_partners',$sd_partners)
+            ->with('sd_achiev',$sd_achiev)->with('sd_commit',$sd_commit)->with('sd_alumni',$sd_alumni)->with('sd_student',$sd_student)
+            ->with('sd_headmas',$sd_headmas)->with('sd_profile',$sd_profile)->with('sd_edu',$sd_edu)->with('smp_extra',$smp_extra)->with('smp_partners',$smp_partners)
+            ->with('smp_achiev',$smp_achiev)->with('smp_commit',$smp_commit)->with('smp_alumni',$smp_alumni)->with('smp_student',$smp_student)
+            ->with('smp_headmas',$smp_headmas)->with('smp_profile',$smp_profile)->with('smp_edu',$smp_edu)->with('sma_extra',$sma_extra)->with('sma_partners',$sma_partners)
+            ->with('sma_achiev',$sma_achiev)->with('sma_commit',$sma_commit)->with('sma_alumni',$sma_alumni)->with('sma_student',$sma_student)
+            ->with('sma_headmas',$sma_headmas)->with('sma_profile',$sma_profile)->with('sma_edu',$sma_edu);    }
     }    
     
     public function portal_smp_article()
@@ -2287,27 +3786,64 @@ class Controller extends BaseController
             $yayasan_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'galery'] ])->get();
             $yayasan_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'profile'] ])->get();
 
-            $tk_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'visi-misi'] ])->get();
+                        $tk_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'visi-misi'] ])->get();
             $tk_kurkul = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'kurikulum'] ])->get();
             $tk_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'galery'] ])->get();
             $tk_fasilitas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'fasilitas'] ])->get();
+            $tk_extra = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'ekstracurricular'] ])->get();
+            $tk_partners = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'partnerships'] ])->get();
+            $tk_achiev = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'achievment'] ])->get();
+            $tk_commit = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'committe'] ])->get();
+            $tk_alumni = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'alumni'] ])->get();
+            $tk_student = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'student'] ])->get();
+            $tk_headmas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'headmaster'] ])->get();
+            $tk_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'profile'] ])->get();
+            $tk_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'education'] ])->get();
 
             $sd_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'visi-misi'] ])->get();
             $sd_kurkul = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'kurikulum'] ])->get();
             $sd_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'galery'] ])->get();
             $sd_fasilitas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'fasilitas'] ])->get();
+            $sd_extra = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'ekstracurricular'] ])->get();
+            $sd_partners = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'partnerships'] ])->get();
+            $sd_achiev = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'achievment'] ])->get();
+            $sd_commit = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'committe'] ])->get();
+            $sd_alumni = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'alumni'] ])->get();
+            $sd_student = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'student'] ])->get();
+            $sd_headmas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'headmaster'] ])->get();
+            $sd_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'profile'] ])->get();
+            $sd_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'education'] ])->get();
 
             $smp_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'visi-misi'] ])->get();
             $smp_kurkul = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'kurikulum'] ])->get();
             $smp_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'galery'] ])->get();
             $smp_fasilitas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'fasilitas'] ])->get();
+            $smp_extra = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'ekstracurricular'] ])->get();
+            $smp_partners = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'partnerships'] ])->get();
+            $smp_achiev = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'achievment'] ])->get();
+            $smp_commit = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'committe'] ])->get();
+            $smp_alumni = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'alumni'] ])->get();
+            $smp_student = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'student'] ])->get();
+            $smp_headmas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'headmaster'] ])->get();
+            $smp_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'profile'] ])->get();
+            $smp_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'education'] ])->get();
 
             $sma_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'visi-misi'] ])->get();
             $sma_kurkul = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'kurikulum'] ])->get();
             $sma_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'galery'] ])->get();
             $sma_fasilitas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'fasilitas'] ])->get();
+            $sma_extra = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'ekstracurricular'] ])->get();
+            $sma_partners = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'partnerships'] ])->get();
+            $sma_achiev = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'achievment'] ])->get();
+            $sma_commit = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'committe'] ])->get();
+            $sma_alumni = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'alumni'] ])->get();
+            $sma_student = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'student'] ])->get();
+            $sma_headmas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'headmaster'] ])->get();
+            $sma_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'profile'] ])->get();
+            $sma_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'education'] ])->get();
 
             $dkm_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'dkm'],['feature_for', '=', 'galery'] ])->get();
+            $teacher = \App\dt_teacher::where('dt_teacher_for', 'SMP')->get();
             $dkm_fasilitas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'dkm'],['feature_for', '=', 'fasilitas'] ])->get(); 
 
             return \View::make('portal_smp')->with('dt_blog_all_portal_smp', $dt_blog_all_portal_smp)->with('news',$news)->with('article',$article)
@@ -2317,8 +3853,15 @@ class Controller extends BaseController
             ->with('sd_kurkul',$sd_kurkul)->with('sd_galery',$sd_galery)->with('sd_fasilitas',$sd_fasilitas)->with('smp_vimi',$smp_vimi)
             ->with('smp_kurkul',$smp_kurkul)->with('smp_galery',$smp_galery)->with('smp_fasilitas',$smp_fasilitas)->with('sma_vimi',$sma_vimi)
             ->with('sma_kurkul',$sma_kurkul)->with('sma_galery',$sma_galery)->with('sma_fasilitas',$sma_fasilitas)->with('dkm_galery',$dkm_galery)
-            ->with('dkm_fasilitas',$dkm_fasilitas);
-        }
+            ->with('dkm_fasilitas',$dkm_fasilitas)->with('teacher',$teacher)->with('tk_extra',$tk_extra)->with('tk_partners',$tk_partners)
+            ->with('tk_achiev',$tk_achiev)->with('tk_commit',$tk_commit)->with('tk_alumni',$tk_alumni)->with('tk_student',$tk_student)
+            ->with('tk_headmas',$tk_headmas)->with('tk_profile',$tk_profile)->with('tk_edu',$tk_edu)->with('sd_extra',$sd_extra)->with('sd_partners',$sd_partners)
+            ->with('sd_achiev',$sd_achiev)->with('sd_commit',$sd_commit)->with('sd_alumni',$sd_alumni)->with('sd_student',$sd_student)
+            ->with('sd_headmas',$sd_headmas)->with('sd_profile',$sd_profile)->with('sd_edu',$sd_edu)->with('smp_extra',$smp_extra)->with('smp_partners',$smp_partners)
+            ->with('smp_achiev',$smp_achiev)->with('smp_commit',$smp_commit)->with('smp_alumni',$smp_alumni)->with('smp_student',$smp_student)
+            ->with('smp_headmas',$smp_headmas)->with('smp_profile',$smp_profile)->with('smp_edu',$smp_edu)->with('sma_extra',$sma_extra)->with('sma_partners',$sma_partners)
+            ->with('sma_achiev',$sma_achiev)->with('sma_commit',$sma_commit)->with('sma_alumni',$sma_alumni)->with('sma_student',$sma_student)
+            ->with('sma_headmas',$sma_headmas)->with('sma_profile',$sma_profile)->with('sma_edu',$sma_edu);    }
         else{
             $dt_blog_all_portal_smp = \DB::table('dt_blog')->where([
                                                                     ['dt_blog_type', '=', 'article'],
@@ -2338,27 +3881,64 @@ class Controller extends BaseController
             $yayasan_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'galery'] ])->get();
             $yayasan_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'profile'] ])->get();
 
-            $tk_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'visi-misi'] ])->get();
+                        $tk_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'visi-misi'] ])->get();
             $tk_kurkul = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'kurikulum'] ])->get();
             $tk_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'galery'] ])->get();
             $tk_fasilitas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'fasilitas'] ])->get();
+            $tk_extra = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'ekstracurricular'] ])->get();
+            $tk_partners = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'partnerships'] ])->get();
+            $tk_achiev = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'achievment'] ])->get();
+            $tk_commit = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'committe'] ])->get();
+            $tk_alumni = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'alumni'] ])->get();
+            $tk_student = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'student'] ])->get();
+            $tk_headmas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'headmaster'] ])->get();
+            $tk_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'profile'] ])->get();
+            $tk_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'education'] ])->get();
 
             $sd_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'visi-misi'] ])->get();
             $sd_kurkul = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'kurikulum'] ])->get();
             $sd_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'galery'] ])->get();
             $sd_fasilitas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'fasilitas'] ])->get();
+            $sd_extra = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'ekstracurricular'] ])->get();
+            $sd_partners = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'partnerships'] ])->get();
+            $sd_achiev = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'achievment'] ])->get();
+            $sd_commit = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'committe'] ])->get();
+            $sd_alumni = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'alumni'] ])->get();
+            $sd_student = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'student'] ])->get();
+            $sd_headmas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'headmaster'] ])->get();
+            $sd_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'profile'] ])->get();
+            $sd_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'education'] ])->get();
 
             $smp_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'visi-misi'] ])->get();
             $smp_kurkul = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'kurikulum'] ])->get();
             $smp_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'galery'] ])->get();
             $smp_fasilitas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'fasilitas'] ])->get();
+            $smp_extra = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'ekstracurricular'] ])->get();
+            $smp_partners = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'partnerships'] ])->get();
+            $smp_achiev = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'achievment'] ])->get();
+            $smp_commit = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'committe'] ])->get();
+            $smp_alumni = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'alumni'] ])->get();
+            $smp_student = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'student'] ])->get();
+            $smp_headmas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'headmaster'] ])->get();
+            $smp_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'profile'] ])->get();
+            $smp_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'education'] ])->get();
 
             $sma_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'visi-misi'] ])->get();
             $sma_kurkul = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'kurikulum'] ])->get();
             $sma_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'galery'] ])->get();
             $sma_fasilitas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'fasilitas'] ])->get();
+            $sma_extra = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'ekstracurricular'] ])->get();
+            $sma_partners = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'partnerships'] ])->get();
+            $sma_achiev = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'achievment'] ])->get();
+            $sma_commit = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'committe'] ])->get();
+            $sma_alumni = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'alumni'] ])->get();
+            $sma_student = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'student'] ])->get();
+            $sma_headmas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'headmaster'] ])->get();
+            $sma_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'profile'] ])->get();
+            $sma_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'education'] ])->get();
 
             $dkm_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'dkm'],['feature_for', '=', 'galery'] ])->get();
+            $teacher = \App\dt_teacher::where('dt_teacher_for', 'SMP')->get();
             $dkm_fasilitas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'dkm'],['feature_for', '=', 'fasilitas'] ])->get(); 
 
             return \View::make('portal_smp')->with('dt_blog_all_portal_smp', $dt_blog_all_portal_smp)->with('news',$news)->with('article',$article)
@@ -2368,8 +3948,15 @@ class Controller extends BaseController
             ->with('sd_kurkul',$sd_kurkul)->with('sd_galery',$sd_galery)->with('sd_fasilitas',$sd_fasilitas)->with('smp_vimi',$smp_vimi)
             ->with('smp_kurkul',$smp_kurkul)->with('smp_galery',$smp_galery)->with('smp_fasilitas',$smp_fasilitas)->with('sma_vimi',$sma_vimi)
             ->with('sma_kurkul',$sma_kurkul)->with('sma_galery',$sma_galery)->with('sma_fasilitas',$sma_fasilitas)->with('dkm_galery',$dkm_galery)
-            ->with('dkm_fasilitas',$dkm_fasilitas);
-        }
+            ->with('dkm_fasilitas',$dkm_fasilitas)->with('teacher',$teacher)->with('tk_extra',$tk_extra)->with('tk_partners',$tk_partners)
+            ->with('tk_achiev',$tk_achiev)->with('tk_commit',$tk_commit)->with('tk_alumni',$tk_alumni)->with('tk_student',$tk_student)
+            ->with('tk_headmas',$tk_headmas)->with('tk_profile',$tk_profile)->with('tk_edu',$tk_edu)->with('sd_extra',$sd_extra)->with('sd_partners',$sd_partners)
+            ->with('sd_achiev',$sd_achiev)->with('sd_commit',$sd_commit)->with('sd_alumni',$sd_alumni)->with('sd_student',$sd_student)
+            ->with('sd_headmas',$sd_headmas)->with('sd_profile',$sd_profile)->with('sd_edu',$sd_edu)->with('smp_extra',$smp_extra)->with('smp_partners',$smp_partners)
+            ->with('smp_achiev',$smp_achiev)->with('smp_commit',$smp_commit)->with('smp_alumni',$smp_alumni)->with('smp_student',$smp_student)
+            ->with('smp_headmas',$smp_headmas)->with('smp_profile',$smp_profile)->with('smp_edu',$smp_edu)->with('sma_extra',$sma_extra)->with('sma_partners',$sma_partners)
+            ->with('sma_achiev',$sma_achiev)->with('sma_commit',$sma_commit)->with('sma_alumni',$sma_alumni)->with('sma_student',$sma_student)
+            ->with('sma_headmas',$sma_headmas)->with('sma_profile',$sma_profile)->with('sma_edu',$sma_edu);    }
     }  
 
     public function portal_sma()
@@ -2391,27 +3978,64 @@ class Controller extends BaseController
             $yayasan_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'galery'] ])->get();
             $yayasan_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'profile'] ])->get();
 
-            $tk_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'visi-misi'] ])->get();
+                        $tk_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'visi-misi'] ])->get();
             $tk_kurkul = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'kurikulum'] ])->get();
             $tk_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'galery'] ])->get();
             $tk_fasilitas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'fasilitas'] ])->get();
+            $tk_extra = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'ekstracurricular'] ])->get();
+            $tk_partners = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'partnerships'] ])->get();
+            $tk_achiev = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'achievment'] ])->get();
+            $tk_commit = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'committe'] ])->get();
+            $tk_alumni = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'alumni'] ])->get();
+            $tk_student = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'student'] ])->get();
+            $tk_headmas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'headmaster'] ])->get();
+            $tk_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'profile'] ])->get();
+            $tk_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'education'] ])->get();
 
             $sd_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'visi-misi'] ])->get();
             $sd_kurkul = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'kurikulum'] ])->get();
             $sd_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'galery'] ])->get();
             $sd_fasilitas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'fasilitas'] ])->get();
+            $sd_extra = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'ekstracurricular'] ])->get();
+            $sd_partners = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'partnerships'] ])->get();
+            $sd_achiev = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'achievment'] ])->get();
+            $sd_commit = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'committe'] ])->get();
+            $sd_alumni = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'alumni'] ])->get();
+            $sd_student = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'student'] ])->get();
+            $sd_headmas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'headmaster'] ])->get();
+            $sd_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'profile'] ])->get();
+            $sd_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'education'] ])->get();
 
             $smp_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'visi-misi'] ])->get();
             $smp_kurkul = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'kurikulum'] ])->get();
             $smp_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'galery'] ])->get();
             $smp_fasilitas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'fasilitas'] ])->get();
+            $smp_extra = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'ekstracurricular'] ])->get();
+            $smp_partners = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'partnerships'] ])->get();
+            $smp_achiev = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'achievment'] ])->get();
+            $smp_commit = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'committe'] ])->get();
+            $smp_alumni = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'alumni'] ])->get();
+            $smp_student = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'student'] ])->get();
+            $smp_headmas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'headmaster'] ])->get();
+            $smp_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'profile'] ])->get();
+            $smp_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'education'] ])->get();
 
             $sma_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'visi-misi'] ])->get();
             $sma_kurkul = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'kurikulum'] ])->get();
             $sma_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'galery'] ])->get();
             $sma_fasilitas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'fasilitas'] ])->get();
+            $sma_extra = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'ekstracurricular'] ])->get();
+            $sma_partners = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'partnerships'] ])->get();
+            $sma_achiev = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'achievment'] ])->get();
+            $sma_commit = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'committe'] ])->get();
+            $sma_alumni = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'alumni'] ])->get();
+            $sma_student = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'student'] ])->get();
+            $sma_headmas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'headmaster'] ])->get();
+            $sma_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'profile'] ])->get();
+            $sma_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'education'] ])->get();
 
             $dkm_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'dkm'],['feature_for', '=', 'galery'] ])->get();
+            $teacher = \App\dt_teacher::where('dt_teacher_for', 'SMA')->get();
             $dkm_fasilitas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'dkm'],['feature_for', '=', 'fasilitas'] ])->get(); 
 
             return \View::make('portal_sma')->with('dt_blog_portal_sma', $dt_blog_portal_sma)->with('news',$news)->with('article',$article)
@@ -2421,8 +4045,15 @@ class Controller extends BaseController
             ->with('sd_kurkul',$sd_kurkul)->with('sd_galery',$sd_galery)->with('sd_fasilitas',$sd_fasilitas)->with('smp_vimi',$smp_vimi)
             ->with('smp_kurkul',$smp_kurkul)->with('smp_galery',$smp_galery)->with('smp_fasilitas',$smp_fasilitas)->with('sma_vimi',$sma_vimi)
             ->with('sma_kurkul',$sma_kurkul)->with('sma_galery',$sma_galery)->with('sma_fasilitas',$sma_fasilitas)->with('dkm_galery',$dkm_galery)
-            ->with('dkm_fasilitas',$dkm_fasilitas);
-        }
+            ->with('dkm_fasilitas',$dkm_fasilitas)->with('teacher',$teacher)->with('tk_extra',$tk_extra)->with('tk_partners',$tk_partners)
+            ->with('tk_achiev',$tk_achiev)->with('tk_commit',$tk_commit)->with('tk_alumni',$tk_alumni)->with('tk_student',$tk_student)
+            ->with('tk_headmas',$tk_headmas)->with('tk_profile',$tk_profile)->with('tk_edu',$tk_edu)->with('sd_extra',$sd_extra)->with('sd_partners',$sd_partners)
+            ->with('sd_achiev',$sd_achiev)->with('sd_commit',$sd_commit)->with('sd_alumni',$sd_alumni)->with('sd_student',$sd_student)
+            ->with('sd_headmas',$sd_headmas)->with('sd_profile',$sd_profile)->with('sd_edu',$sd_edu)->with('smp_extra',$smp_extra)->with('smp_partners',$smp_partners)
+            ->with('smp_achiev',$smp_achiev)->with('smp_commit',$smp_commit)->with('smp_alumni',$smp_alumni)->with('smp_student',$smp_student)
+            ->with('smp_headmas',$smp_headmas)->with('smp_profile',$smp_profile)->with('smp_edu',$smp_edu)->with('sma_extra',$sma_extra)->with('sma_partners',$sma_partners)
+            ->with('sma_achiev',$sma_achiev)->with('sma_commit',$sma_commit)->with('sma_alumni',$sma_alumni)->with('sma_student',$sma_student)
+            ->with('sma_headmas',$sma_headmas)->with('sma_profile',$sma_profile)->with('sma_edu',$sma_edu);    }
         else{
             $dt_blog_portal_sma = \DB::table('dt_blog')->where('dt_blog_for', '=', 'SMA')->orderBy('id', 'desc')->paginate(6);
             $news = \DB::table('dt_blog')->where([
@@ -2439,27 +4070,64 @@ class Controller extends BaseController
             $yayasan_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'galery'] ])->get();
             $yayasan_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'profile'] ])->get();
 
-            $tk_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'visi-misi'] ])->get();
+                        $tk_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'visi-misi'] ])->get();
             $tk_kurkul = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'kurikulum'] ])->get();
             $tk_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'galery'] ])->get();
             $tk_fasilitas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'fasilitas'] ])->get();
+            $tk_extra = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'ekstracurricular'] ])->get();
+            $tk_partners = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'partnerships'] ])->get();
+            $tk_achiev = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'achievment'] ])->get();
+            $tk_commit = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'committe'] ])->get();
+            $tk_alumni = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'alumni'] ])->get();
+            $tk_student = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'student'] ])->get();
+            $tk_headmas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'headmaster'] ])->get();
+            $tk_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'profile'] ])->get();
+            $tk_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'education'] ])->get();
 
             $sd_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'visi-misi'] ])->get();
             $sd_kurkul = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'kurikulum'] ])->get();
             $sd_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'galery'] ])->get();
             $sd_fasilitas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'fasilitas'] ])->get();
+            $sd_extra = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'ekstracurricular'] ])->get();
+            $sd_partners = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'partnerships'] ])->get();
+            $sd_achiev = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'achievment'] ])->get();
+            $sd_commit = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'committe'] ])->get();
+            $sd_alumni = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'alumni'] ])->get();
+            $sd_student = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'student'] ])->get();
+            $sd_headmas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'headmaster'] ])->get();
+            $sd_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'profile'] ])->get();
+            $sd_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'education'] ])->get();
 
             $smp_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'visi-misi'] ])->get();
             $smp_kurkul = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'kurikulum'] ])->get();
             $smp_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'galery'] ])->get();
             $smp_fasilitas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'fasilitas'] ])->get();
+            $smp_extra = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'ekstracurricular'] ])->get();
+            $smp_partners = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'partnerships'] ])->get();
+            $smp_achiev = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'achievment'] ])->get();
+            $smp_commit = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'committe'] ])->get();
+            $smp_alumni = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'alumni'] ])->get();
+            $smp_student = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'student'] ])->get();
+            $smp_headmas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'headmaster'] ])->get();
+            $smp_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'profile'] ])->get();
+            $smp_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'education'] ])->get();
 
             $sma_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'visi-misi'] ])->get();
             $sma_kurkul = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'kurikulum'] ])->get();
             $sma_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'galery'] ])->get();
             $sma_fasilitas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'fasilitas'] ])->get();
+            $sma_extra = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'ekstracurricular'] ])->get();
+            $sma_partners = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'partnerships'] ])->get();
+            $sma_achiev = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'achievment'] ])->get();
+            $sma_commit = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'committe'] ])->get();
+            $sma_alumni = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'alumni'] ])->get();
+            $sma_student = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'student'] ])->get();
+            $sma_headmas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'headmaster'] ])->get();
+            $sma_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'profile'] ])->get();
+            $sma_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'education'] ])->get();
 
             $dkm_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'dkm'],['feature_for', '=', 'galery'] ])->get();
+            $teacher = \App\dt_teacher::where('dt_teacher_for', 'SMA')->get();
             $dkm_fasilitas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'dkm'],['feature_for', '=', 'fasilitas'] ])->get(); 
 
             return \View::make('portal_sma')->with('dt_blog_portal_sma', $dt_blog_portal_sma)->with('news',$news)->with('article',$article)
@@ -2469,8 +4137,15 @@ class Controller extends BaseController
             ->with('sd_kurkul',$sd_kurkul)->with('sd_galery',$sd_galery)->with('sd_fasilitas',$sd_fasilitas)->with('smp_vimi',$smp_vimi)
             ->with('smp_kurkul',$smp_kurkul)->with('smp_galery',$smp_galery)->with('smp_fasilitas',$smp_fasilitas)->with('sma_vimi',$sma_vimi)
             ->with('sma_kurkul',$sma_kurkul)->with('sma_galery',$sma_galery)->with('sma_fasilitas',$sma_fasilitas)->with('dkm_galery',$dkm_galery)
-            ->with('dkm_fasilitas',$dkm_fasilitas);
-        }
+            ->with('dkm_fasilitas',$dkm_fasilitas)->with('teacher',$teacher)->with('tk_extra',$tk_extra)->with('tk_partners',$tk_partners)
+            ->with('tk_achiev',$tk_achiev)->with('tk_commit',$tk_commit)->with('tk_alumni',$tk_alumni)->with('tk_student',$tk_student)
+            ->with('tk_headmas',$tk_headmas)->with('tk_profile',$tk_profile)->with('tk_edu',$tk_edu)->with('sd_extra',$sd_extra)->with('sd_partners',$sd_partners)
+            ->with('sd_achiev',$sd_achiev)->with('sd_commit',$sd_commit)->with('sd_alumni',$sd_alumni)->with('sd_student',$sd_student)
+            ->with('sd_headmas',$sd_headmas)->with('sd_profile',$sd_profile)->with('sd_edu',$sd_edu)->with('smp_extra',$smp_extra)->with('smp_partners',$smp_partners)
+            ->with('smp_achiev',$smp_achiev)->with('smp_commit',$smp_commit)->with('smp_alumni',$smp_alumni)->with('smp_student',$smp_student)
+            ->with('smp_headmas',$smp_headmas)->with('smp_profile',$smp_profile)->with('smp_edu',$smp_edu)->with('sma_extra',$sma_extra)->with('sma_partners',$sma_partners)
+            ->with('sma_achiev',$sma_achiev)->with('sma_commit',$sma_commit)->with('sma_alumni',$sma_alumni)->with('sma_student',$sma_student)
+            ->with('sma_headmas',$sma_headmas)->with('sma_profile',$sma_profile)->with('sma_edu',$sma_edu);    }
     }
 
         public function portal_sma_all()
@@ -2492,27 +4167,64 @@ class Controller extends BaseController
             $yayasan_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'galery'] ])->get();
             $yayasan_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'profile'] ])->get();
 
-            $tk_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'visi-misi'] ])->get();
+                        $tk_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'visi-misi'] ])->get();
             $tk_kurkul = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'kurikulum'] ])->get();
             $tk_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'galery'] ])->get();
             $tk_fasilitas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'fasilitas'] ])->get();
+            $tk_extra = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'ekstracurricular'] ])->get();
+            $tk_partners = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'partnerships'] ])->get();
+            $tk_achiev = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'achievment'] ])->get();
+            $tk_commit = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'committe'] ])->get();
+            $tk_alumni = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'alumni'] ])->get();
+            $tk_student = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'student'] ])->get();
+            $tk_headmas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'headmaster'] ])->get();
+            $tk_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'profile'] ])->get();
+            $tk_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'education'] ])->get();
 
             $sd_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'visi-misi'] ])->get();
             $sd_kurkul = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'kurikulum'] ])->get();
             $sd_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'galery'] ])->get();
             $sd_fasilitas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'fasilitas'] ])->get();
+            $sd_extra = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'ekstracurricular'] ])->get();
+            $sd_partners = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'partnerships'] ])->get();
+            $sd_achiev = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'achievment'] ])->get();
+            $sd_commit = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'committe'] ])->get();
+            $sd_alumni = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'alumni'] ])->get();
+            $sd_student = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'student'] ])->get();
+            $sd_headmas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'headmaster'] ])->get();
+            $sd_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'profile'] ])->get();
+            $sd_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'education'] ])->get();
 
             $smp_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'visi-misi'] ])->get();
             $smp_kurkul = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'kurikulum'] ])->get();
             $smp_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'galery'] ])->get();
             $smp_fasilitas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'fasilitas'] ])->get();
+            $smp_extra = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'ekstracurricular'] ])->get();
+            $smp_partners = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'partnerships'] ])->get();
+            $smp_achiev = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'achievment'] ])->get();
+            $smp_commit = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'committe'] ])->get();
+            $smp_alumni = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'alumni'] ])->get();
+            $smp_student = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'student'] ])->get();
+            $smp_headmas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'headmaster'] ])->get();
+            $smp_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'profile'] ])->get();
+            $smp_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'education'] ])->get();
 
             $sma_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'visi-misi'] ])->get();
             $sma_kurkul = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'kurikulum'] ])->get();
             $sma_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'galery'] ])->get();
             $sma_fasilitas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'fasilitas'] ])->get();
+            $sma_extra = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'ekstracurricular'] ])->get();
+            $sma_partners = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'partnerships'] ])->get();
+            $sma_achiev = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'achievment'] ])->get();
+            $sma_commit = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'committe'] ])->get();
+            $sma_alumni = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'alumni'] ])->get();
+            $sma_student = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'student'] ])->get();
+            $sma_headmas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'headmaster'] ])->get();
+            $sma_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'profile'] ])->get();
+            $sma_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'education'] ])->get();
 
             $dkm_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'dkm'],['feature_for', '=', 'galery'] ])->get();
+            $teacher = \App\dt_teacher::where('dt_teacher_for', 'SMA')->get();
             $dkm_fasilitas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'dkm'],['feature_for', '=', 'fasilitas'] ])->get(); 
 
             return \View::make('portal_sma')->with('dt_blog_all_portal_sma', $dt_blog_all_portal_sma)->with('news',$news)->with('article',$article)
@@ -2522,8 +4234,15 @@ class Controller extends BaseController
             ->with('sd_kurkul',$sd_kurkul)->with('sd_galery',$sd_galery)->with('sd_fasilitas',$sd_fasilitas)->with('smp_vimi',$smp_vimi)
             ->with('smp_kurkul',$smp_kurkul)->with('smp_galery',$smp_galery)->with('smp_fasilitas',$smp_fasilitas)->with('sma_vimi',$sma_vimi)
             ->with('sma_kurkul',$sma_kurkul)->with('sma_galery',$sma_galery)->with('sma_fasilitas',$sma_fasilitas)->with('dkm_galery',$dkm_galery)
-            ->with('dkm_fasilitas',$dkm_fasilitas);
-        }
+            ->with('dkm_fasilitas',$dkm_fasilitas)->with('teacher',$teacher)->with('tk_extra',$tk_extra)->with('tk_partners',$tk_partners)
+            ->with('tk_achiev',$tk_achiev)->with('tk_commit',$tk_commit)->with('tk_alumni',$tk_alumni)->with('tk_student',$tk_student)
+            ->with('tk_headmas',$tk_headmas)->with('tk_profile',$tk_profile)->with('tk_edu',$tk_edu)->with('sd_extra',$sd_extra)->with('sd_partners',$sd_partners)
+            ->with('sd_achiev',$sd_achiev)->with('sd_commit',$sd_commit)->with('sd_alumni',$sd_alumni)->with('sd_student',$sd_student)
+            ->with('sd_headmas',$sd_headmas)->with('sd_profile',$sd_profile)->with('sd_edu',$sd_edu)->with('smp_extra',$smp_extra)->with('smp_partners',$smp_partners)
+            ->with('smp_achiev',$smp_achiev)->with('smp_commit',$smp_commit)->with('smp_alumni',$smp_alumni)->with('smp_student',$smp_student)
+            ->with('smp_headmas',$smp_headmas)->with('smp_profile',$smp_profile)->with('smp_edu',$smp_edu)->with('sma_extra',$sma_extra)->with('sma_partners',$sma_partners)
+            ->with('sma_achiev',$sma_achiev)->with('sma_commit',$sma_commit)->with('sma_alumni',$sma_alumni)->with('sma_student',$sma_student)
+            ->with('sma_headmas',$sma_headmas)->with('sma_profile',$sma_profile)->with('sma_edu',$sma_edu);    }
         else{
             $dt_blog_all_portal_sma = \DB::table('dt_blog')->where('dt_blog_type', '=', 'all', 'AND', 'dt_blog_for', '=', 'sma')->orderBy('id', 'desc')->paginate(6);
             $news = \DB::table('dt_blog')->where([
@@ -2540,27 +4259,64 @@ class Controller extends BaseController
             $yayasan_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'galery'] ])->get();
             $yayasan_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'profile'] ])->get();
 
-            $tk_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'visi-misi'] ])->get();
+                        $tk_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'visi-misi'] ])->get();
             $tk_kurkul = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'kurikulum'] ])->get();
             $tk_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'galery'] ])->get();
             $tk_fasilitas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'fasilitas'] ])->get();
+            $tk_extra = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'ekstracurricular'] ])->get();
+            $tk_partners = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'partnerships'] ])->get();
+            $tk_achiev = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'achievment'] ])->get();
+            $tk_commit = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'committe'] ])->get();
+            $tk_alumni = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'alumni'] ])->get();
+            $tk_student = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'student'] ])->get();
+            $tk_headmas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'headmaster'] ])->get();
+            $tk_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'profile'] ])->get();
+            $tk_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'education'] ])->get();
 
             $sd_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'visi-misi'] ])->get();
             $sd_kurkul = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'kurikulum'] ])->get();
             $sd_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'galery'] ])->get();
             $sd_fasilitas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'fasilitas'] ])->get();
+            $sd_extra = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'ekstracurricular'] ])->get();
+            $sd_partners = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'partnerships'] ])->get();
+            $sd_achiev = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'achievment'] ])->get();
+            $sd_commit = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'committe'] ])->get();
+            $sd_alumni = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'alumni'] ])->get();
+            $sd_student = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'student'] ])->get();
+            $sd_headmas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'headmaster'] ])->get();
+            $sd_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'profile'] ])->get();
+            $sd_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'education'] ])->get();
 
             $smp_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'visi-misi'] ])->get();
             $smp_kurkul = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'kurikulum'] ])->get();
             $smp_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'galery'] ])->get();
             $smp_fasilitas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'fasilitas'] ])->get();
+            $smp_extra = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'ekstracurricular'] ])->get();
+            $smp_partners = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'partnerships'] ])->get();
+            $smp_achiev = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'achievment'] ])->get();
+            $smp_commit = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'committe'] ])->get();
+            $smp_alumni = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'alumni'] ])->get();
+            $smp_student = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'student'] ])->get();
+            $smp_headmas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'headmaster'] ])->get();
+            $smp_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'profile'] ])->get();
+            $smp_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'education'] ])->get();
 
             $sma_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'visi-misi'] ])->get();
             $sma_kurkul = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'kurikulum'] ])->get();
             $sma_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'galery'] ])->get();
             $sma_fasilitas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'fasilitas'] ])->get();
+            $sma_extra = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'ekstracurricular'] ])->get();
+            $sma_partners = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'partnerships'] ])->get();
+            $sma_achiev = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'achievment'] ])->get();
+            $sma_commit = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'committe'] ])->get();
+            $sma_alumni = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'alumni'] ])->get();
+            $sma_student = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'student'] ])->get();
+            $sma_headmas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'headmaster'] ])->get();
+            $sma_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'profile'] ])->get();
+            $sma_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'education'] ])->get();
 
             $dkm_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'dkm'],['feature_for', '=', 'galery'] ])->get();
+            $teacher = \App\dt_teacher::where('dt_teacher_for', 'SMA')->get();
             $dkm_fasilitas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'dkm'],['feature_for', '=', 'fasilitas'] ])->get(); 
 
             return \View::make('portal_sma')->with('dt_blog_all_portal_sma', $dt_blog_all_portal_sma)->with('news',$news)->with('article',$article)
@@ -2570,8 +4326,15 @@ class Controller extends BaseController
             ->with('sd_kurkul',$sd_kurkul)->with('sd_galery',$sd_galery)->with('sd_fasilitas',$sd_fasilitas)->with('smp_vimi',$smp_vimi)
             ->with('smp_kurkul',$smp_kurkul)->with('smp_galery',$smp_galery)->with('smp_fasilitas',$smp_fasilitas)->with('sma_vimi',$sma_vimi)
             ->with('sma_kurkul',$sma_kurkul)->with('sma_galery',$sma_galery)->with('sma_fasilitas',$sma_fasilitas)->with('dkm_galery',$dkm_galery)
-            ->with('dkm_fasilitas',$dkm_fasilitas);
-        }
+            ->with('dkm_fasilitas',$dkm_fasilitas)->with('teacher',$teacher)->with('tk_extra',$tk_extra)->with('tk_partners',$tk_partners)
+            ->with('tk_achiev',$tk_achiev)->with('tk_commit',$tk_commit)->with('tk_alumni',$tk_alumni)->with('tk_student',$tk_student)
+            ->with('tk_headmas',$tk_headmas)->with('tk_profile',$tk_profile)->with('tk_edu',$tk_edu)->with('sd_extra',$sd_extra)->with('sd_partners',$sd_partners)
+            ->with('sd_achiev',$sd_achiev)->with('sd_commit',$sd_commit)->with('sd_alumni',$sd_alumni)->with('sd_student',$sd_student)
+            ->with('sd_headmas',$sd_headmas)->with('sd_profile',$sd_profile)->with('sd_edu',$sd_edu)->with('smp_extra',$smp_extra)->with('smp_partners',$smp_partners)
+            ->with('smp_achiev',$smp_achiev)->with('smp_commit',$smp_commit)->with('smp_alumni',$smp_alumni)->with('smp_student',$smp_student)
+            ->with('smp_headmas',$smp_headmas)->with('smp_profile',$smp_profile)->with('smp_edu',$smp_edu)->with('sma_extra',$sma_extra)->with('sma_partners',$sma_partners)
+            ->with('sma_achiev',$sma_achiev)->with('sma_commit',$sma_commit)->with('sma_alumni',$sma_alumni)->with('sma_student',$sma_student)
+            ->with('sma_headmas',$sma_headmas)->with('sma_profile',$sma_profile)->with('sma_edu',$sma_edu);    }
     }    
 
     public function portal_sma_news()
@@ -2596,27 +4359,64 @@ class Controller extends BaseController
             $yayasan_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'galery'] ])->get();
             $yayasan_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'profile'] ])->get();
 
-            $tk_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'visi-misi'] ])->get();
+                        $tk_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'visi-misi'] ])->get();
             $tk_kurkul = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'kurikulum'] ])->get();
             $tk_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'galery'] ])->get();
             $tk_fasilitas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'fasilitas'] ])->get();
+            $tk_extra = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'ekstracurricular'] ])->get();
+            $tk_partners = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'partnerships'] ])->get();
+            $tk_achiev = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'achievment'] ])->get();
+            $tk_commit = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'committe'] ])->get();
+            $tk_alumni = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'alumni'] ])->get();
+            $tk_student = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'student'] ])->get();
+            $tk_headmas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'headmaster'] ])->get();
+            $tk_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'profile'] ])->get();
+            $tk_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'education'] ])->get();
 
             $sd_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'visi-misi'] ])->get();
             $sd_kurkul = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'kurikulum'] ])->get();
             $sd_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'galery'] ])->get();
             $sd_fasilitas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'fasilitas'] ])->get();
+            $sd_extra = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'ekstracurricular'] ])->get();
+            $sd_partners = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'partnerships'] ])->get();
+            $sd_achiev = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'achievment'] ])->get();
+            $sd_commit = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'committe'] ])->get();
+            $sd_alumni = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'alumni'] ])->get();
+            $sd_student = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'student'] ])->get();
+            $sd_headmas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'headmaster'] ])->get();
+            $sd_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'profile'] ])->get();
+            $sd_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'education'] ])->get();
 
             $smp_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'visi-misi'] ])->get();
             $smp_kurkul = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'kurikulum'] ])->get();
             $smp_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'galery'] ])->get();
             $smp_fasilitas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'fasilitas'] ])->get();
+            $smp_extra = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'ekstracurricular'] ])->get();
+            $smp_partners = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'partnerships'] ])->get();
+            $smp_achiev = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'achievment'] ])->get();
+            $smp_commit = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'committe'] ])->get();
+            $smp_alumni = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'alumni'] ])->get();
+            $smp_student = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'student'] ])->get();
+            $smp_headmas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'headmaster'] ])->get();
+            $smp_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'profile'] ])->get();
+            $smp_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'education'] ])->get();
 
             $sma_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'visi-misi'] ])->get();
             $sma_kurkul = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'kurikulum'] ])->get();
             $sma_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'galery'] ])->get();
             $sma_fasilitas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'fasilitas'] ])->get();
+            $sma_extra = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'ekstracurricular'] ])->get();
+            $sma_partners = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'partnerships'] ])->get();
+            $sma_achiev = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'achievment'] ])->get();
+            $sma_commit = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'committe'] ])->get();
+            $sma_alumni = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'alumni'] ])->get();
+            $sma_student = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'student'] ])->get();
+            $sma_headmas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'headmaster'] ])->get();
+            $sma_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'profile'] ])->get();
+            $sma_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'education'] ])->get();
 
             $dkm_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'dkm'],['feature_for', '=', 'galery'] ])->get();
+            $teacher = \App\dt_teacher::where('dt_teacher_for', 'SMA')->get();
             $dkm_fasilitas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'dkm'],['feature_for', '=', 'fasilitas'] ])->get(); 
 
             return \View::make('portal_sma')->with('dt_blog_all_portal_sma', $dt_blog_all_portal_sma)->with('news',$news)->with('article',$article)
@@ -2626,8 +4426,15 @@ class Controller extends BaseController
             ->with('sd_kurkul',$sd_kurkul)->with('sd_galery',$sd_galery)->with('sd_fasilitas',$sd_fasilitas)->with('smp_vimi',$smp_vimi)
             ->with('smp_kurkul',$smp_kurkul)->with('smp_galery',$smp_galery)->with('smp_fasilitas',$smp_fasilitas)->with('sma_vimi',$sma_vimi)
             ->with('sma_kurkul',$sma_kurkul)->with('sma_galery',$sma_galery)->with('sma_fasilitas',$sma_fasilitas)->with('dkm_galery',$dkm_galery)
-            ->with('dkm_fasilitas',$dkm_fasilitas);
-        }
+            ->with('dkm_fasilitas',$dkm_fasilitas)->with('teacher',$teacher)->with('tk_extra',$tk_extra)->with('tk_partners',$tk_partners)
+            ->with('tk_achiev',$tk_achiev)->with('tk_commit',$tk_commit)->with('tk_alumni',$tk_alumni)->with('tk_student',$tk_student)
+            ->with('tk_headmas',$tk_headmas)->with('tk_profile',$tk_profile)->with('tk_edu',$tk_edu)->with('sd_extra',$sd_extra)->with('sd_partners',$sd_partners)
+            ->with('sd_achiev',$sd_achiev)->with('sd_commit',$sd_commit)->with('sd_alumni',$sd_alumni)->with('sd_student',$sd_student)
+            ->with('sd_headmas',$sd_headmas)->with('sd_profile',$sd_profile)->with('sd_edu',$sd_edu)->with('smp_extra',$smp_extra)->with('smp_partners',$smp_partners)
+            ->with('smp_achiev',$smp_achiev)->with('smp_commit',$smp_commit)->with('smp_alumni',$smp_alumni)->with('smp_student',$smp_student)
+            ->with('smp_headmas',$smp_headmas)->with('smp_profile',$smp_profile)->with('smp_edu',$smp_edu)->with('sma_extra',$sma_extra)->with('sma_partners',$sma_partners)
+            ->with('sma_achiev',$sma_achiev)->with('sma_commit',$sma_commit)->with('sma_alumni',$sma_alumni)->with('sma_student',$sma_student)
+            ->with('sma_headmas',$sma_headmas)->with('sma_profile',$sma_profile)->with('sma_edu',$sma_edu);    }
         else{
             $dt_blog_all_portal_sma = \DB::table('dt_blog')->where([
                                                                     ['dt_blog_type', '=', 'news'],
@@ -2647,27 +4454,64 @@ class Controller extends BaseController
             $yayasan_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'galery'] ])->get();
             $yayasan_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'profile'] ])->get();
 
-            $tk_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'visi-misi'] ])->get();
+                        $tk_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'visi-misi'] ])->get();
             $tk_kurkul = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'kurikulum'] ])->get();
             $tk_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'galery'] ])->get();
             $tk_fasilitas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'fasilitas'] ])->get();
+            $tk_extra = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'ekstracurricular'] ])->get();
+            $tk_partners = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'partnerships'] ])->get();
+            $tk_achiev = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'achievment'] ])->get();
+            $tk_commit = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'committe'] ])->get();
+            $tk_alumni = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'alumni'] ])->get();
+            $tk_student = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'student'] ])->get();
+            $tk_headmas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'headmaster'] ])->get();
+            $tk_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'profile'] ])->get();
+            $tk_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'education'] ])->get();
 
             $sd_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'visi-misi'] ])->get();
             $sd_kurkul = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'kurikulum'] ])->get();
             $sd_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'galery'] ])->get();
             $sd_fasilitas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'fasilitas'] ])->get();
+            $sd_extra = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'ekstracurricular'] ])->get();
+            $sd_partners = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'partnerships'] ])->get();
+            $sd_achiev = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'achievment'] ])->get();
+            $sd_commit = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'committe'] ])->get();
+            $sd_alumni = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'alumni'] ])->get();
+            $sd_student = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'student'] ])->get();
+            $sd_headmas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'headmaster'] ])->get();
+            $sd_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'profile'] ])->get();
+            $sd_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'education'] ])->get();
 
             $smp_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'visi-misi'] ])->get();
             $smp_kurkul = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'kurikulum'] ])->get();
             $smp_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'galery'] ])->get();
             $smp_fasilitas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'fasilitas'] ])->get();
+            $smp_extra = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'ekstracurricular'] ])->get();
+            $smp_partners = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'partnerships'] ])->get();
+            $smp_achiev = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'achievment'] ])->get();
+            $smp_commit = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'committe'] ])->get();
+            $smp_alumni = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'alumni'] ])->get();
+            $smp_student = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'student'] ])->get();
+            $smp_headmas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'headmaster'] ])->get();
+            $smp_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'profile'] ])->get();
+            $smp_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'education'] ])->get();
 
             $sma_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'visi-misi'] ])->get();
             $sma_kurkul = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'kurikulum'] ])->get();
             $sma_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'galery'] ])->get();
             $sma_fasilitas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'fasilitas'] ])->get();
+            $sma_extra = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'ekstracurricular'] ])->get();
+            $sma_partners = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'partnerships'] ])->get();
+            $sma_achiev = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'achievment'] ])->get();
+            $sma_commit = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'committe'] ])->get();
+            $sma_alumni = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'alumni'] ])->get();
+            $sma_student = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'student'] ])->get();
+            $sma_headmas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'headmaster'] ])->get();
+            $sma_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'profile'] ])->get();
+            $sma_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'education'] ])->get();
 
             $dkm_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'dkm'],['feature_for', '=', 'galery'] ])->get();
+            $teacher = \App\dt_teacher::where('dt_teacher_for', 'SMA')->get();
             $dkm_fasilitas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'dkm'],['feature_for', '=', 'fasilitas'] ])->get(); 
 
             return \View::make('portal_sma')->with('dt_blog_all_portal_sma', $dt_blog_all_portal_sma)->with('news',$news)->with('article',$article)
@@ -2677,8 +4521,15 @@ class Controller extends BaseController
             ->with('sd_kurkul',$sd_kurkul)->with('sd_galery',$sd_galery)->with('sd_fasilitas',$sd_fasilitas)->with('smp_vimi',$smp_vimi)
             ->with('smp_kurkul',$smp_kurkul)->with('smp_galery',$smp_galery)->with('smp_fasilitas',$smp_fasilitas)->with('sma_vimi',$sma_vimi)
             ->with('sma_kurkul',$sma_kurkul)->with('sma_galery',$sma_galery)->with('sma_fasilitas',$sma_fasilitas)->with('dkm_galery',$dkm_galery)
-            ->with('dkm_fasilitas',$dkm_fasilitas);
-        }
+            ->with('dkm_fasilitas',$dkm_fasilitas)->with('teacher',$teacher)->with('tk_extra',$tk_extra)->with('tk_partners',$tk_partners)
+            ->with('tk_achiev',$tk_achiev)->with('tk_commit',$tk_commit)->with('tk_alumni',$tk_alumni)->with('tk_student',$tk_student)
+            ->with('tk_headmas',$tk_headmas)->with('tk_profile',$tk_profile)->with('tk_edu',$tk_edu)->with('sd_extra',$sd_extra)->with('sd_partners',$sd_partners)
+            ->with('sd_achiev',$sd_achiev)->with('sd_commit',$sd_commit)->with('sd_alumni',$sd_alumni)->with('sd_student',$sd_student)
+            ->with('sd_headmas',$sd_headmas)->with('sd_profile',$sd_profile)->with('sd_edu',$sd_edu)->with('smp_extra',$smp_extra)->with('smp_partners',$smp_partners)
+            ->with('smp_achiev',$smp_achiev)->with('smp_commit',$smp_commit)->with('smp_alumni',$smp_alumni)->with('smp_student',$smp_student)
+            ->with('smp_headmas',$smp_headmas)->with('smp_profile',$smp_profile)->with('smp_edu',$smp_edu)->with('sma_extra',$sma_extra)->with('sma_partners',$sma_partners)
+            ->with('sma_achiev',$sma_achiev)->with('sma_commit',$sma_commit)->with('sma_alumni',$sma_alumni)->with('sma_student',$sma_student)
+            ->with('sma_headmas',$sma_headmas)->with('sma_profile',$sma_profile)->with('sma_edu',$sma_edu);    }
     }    
 
     public function portal_sma_agenda()
@@ -2703,27 +4554,64 @@ class Controller extends BaseController
             $yayasan_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'galery'] ])->get();
             $yayasan_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'profile'] ])->get();
 
-            $tk_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'visi-misi'] ])->get();
+                        $tk_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'visi-misi'] ])->get();
             $tk_kurkul = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'kurikulum'] ])->get();
             $tk_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'galery'] ])->get();
             $tk_fasilitas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'fasilitas'] ])->get();
+            $tk_extra = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'ekstracurricular'] ])->get();
+            $tk_partners = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'partnerships'] ])->get();
+            $tk_achiev = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'achievment'] ])->get();
+            $tk_commit = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'committe'] ])->get();
+            $tk_alumni = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'alumni'] ])->get();
+            $tk_student = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'student'] ])->get();
+            $tk_headmas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'headmaster'] ])->get();
+            $tk_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'profile'] ])->get();
+            $tk_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'education'] ])->get();
 
             $sd_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'visi-misi'] ])->get();
             $sd_kurkul = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'kurikulum'] ])->get();
             $sd_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'galery'] ])->get();
             $sd_fasilitas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'fasilitas'] ])->get();
+            $sd_extra = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'ekstracurricular'] ])->get();
+            $sd_partners = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'partnerships'] ])->get();
+            $sd_achiev = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'achievment'] ])->get();
+            $sd_commit = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'committe'] ])->get();
+            $sd_alumni = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'alumni'] ])->get();
+            $sd_student = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'student'] ])->get();
+            $sd_headmas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'headmaster'] ])->get();
+            $sd_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'profile'] ])->get();
+            $sd_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'education'] ])->get();
 
             $smp_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'visi-misi'] ])->get();
             $smp_kurkul = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'kurikulum'] ])->get();
             $smp_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'galery'] ])->get();
             $smp_fasilitas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'fasilitas'] ])->get();
+            $smp_extra = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'ekstracurricular'] ])->get();
+            $smp_partners = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'partnerships'] ])->get();
+            $smp_achiev = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'achievment'] ])->get();
+            $smp_commit = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'committe'] ])->get();
+            $smp_alumni = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'alumni'] ])->get();
+            $smp_student = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'student'] ])->get();
+            $smp_headmas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'headmaster'] ])->get();
+            $smp_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'profile'] ])->get();
+            $smp_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'education'] ])->get();
 
             $sma_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'visi-misi'] ])->get();
             $sma_kurkul = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'kurikulum'] ])->get();
             $sma_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'galery'] ])->get();
             $sma_fasilitas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'fasilitas'] ])->get();
+            $sma_extra = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'ekstracurricular'] ])->get();
+            $sma_partners = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'partnerships'] ])->get();
+            $sma_achiev = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'achievment'] ])->get();
+            $sma_commit = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'committe'] ])->get();
+            $sma_alumni = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'alumni'] ])->get();
+            $sma_student = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'student'] ])->get();
+            $sma_headmas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'headmaster'] ])->get();
+            $sma_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'profile'] ])->get();
+            $sma_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'education'] ])->get();
 
             $dkm_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'dkm'],['feature_for', '=', 'galery'] ])->get();
+            $teacher = \App\dt_teacher::where('dt_teacher_for', 'SMA')->get();
             $dkm_fasilitas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'dkm'],['feature_for', '=', 'fasilitas'] ])->get(); 
 
             return \View::make('portal_sma')->with('dt_blog_all_portal_sma', $dt_blog_all_portal_sma)->with('news',$news)->with('article',$article)
@@ -2733,8 +4621,15 @@ class Controller extends BaseController
             ->with('sd_kurkul',$sd_kurkul)->with('sd_galery',$sd_galery)->with('sd_fasilitas',$sd_fasilitas)->with('smp_vimi',$smp_vimi)
             ->with('smp_kurkul',$smp_kurkul)->with('smp_galery',$smp_galery)->with('smp_fasilitas',$smp_fasilitas)->with('sma_vimi',$sma_vimi)
             ->with('sma_kurkul',$sma_kurkul)->with('sma_galery',$sma_galery)->with('sma_fasilitas',$sma_fasilitas)->with('dkm_galery',$dkm_galery)
-            ->with('dkm_fasilitas',$dkm_fasilitas);
-        }
+            ->with('dkm_fasilitas',$dkm_fasilitas)->with('teacher',$teacher)->with('tk_extra',$tk_extra)->with('tk_partners',$tk_partners)
+            ->with('tk_achiev',$tk_achiev)->with('tk_commit',$tk_commit)->with('tk_alumni',$tk_alumni)->with('tk_student',$tk_student)
+            ->with('tk_headmas',$tk_headmas)->with('tk_profile',$tk_profile)->with('tk_edu',$tk_edu)->with('sd_extra',$sd_extra)->with('sd_partners',$sd_partners)
+            ->with('sd_achiev',$sd_achiev)->with('sd_commit',$sd_commit)->with('sd_alumni',$sd_alumni)->with('sd_student',$sd_student)
+            ->with('sd_headmas',$sd_headmas)->with('sd_profile',$sd_profile)->with('sd_edu',$sd_edu)->with('smp_extra',$smp_extra)->with('smp_partners',$smp_partners)
+            ->with('smp_achiev',$smp_achiev)->with('smp_commit',$smp_commit)->with('smp_alumni',$smp_alumni)->with('smp_student',$smp_student)
+            ->with('smp_headmas',$smp_headmas)->with('smp_profile',$smp_profile)->with('smp_edu',$smp_edu)->with('sma_extra',$sma_extra)->with('sma_partners',$sma_partners)
+            ->with('sma_achiev',$sma_achiev)->with('sma_commit',$sma_commit)->with('sma_alumni',$sma_alumni)->with('sma_student',$sma_student)
+            ->with('sma_headmas',$sma_headmas)->with('sma_profile',$sma_profile)->with('sma_edu',$sma_edu);    }
         else{
             $dt_blog_all_portal_sma = \DB::table('dt_blog')->where([
                                                                     ['dt_blog_type', '=', 'agenda'],
@@ -2754,27 +4649,64 @@ class Controller extends BaseController
             $yayasan_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'galery'] ])->get();
             $yayasan_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'profile'] ])->get();
 
-            $tk_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'visi-misi'] ])->get();
+                        $tk_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'visi-misi'] ])->get();
             $tk_kurkul = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'kurikulum'] ])->get();
             $tk_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'galery'] ])->get();
             $tk_fasilitas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'fasilitas'] ])->get();
+            $tk_extra = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'ekstracurricular'] ])->get();
+            $tk_partners = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'partnerships'] ])->get();
+            $tk_achiev = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'achievment'] ])->get();
+            $tk_commit = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'committe'] ])->get();
+            $tk_alumni = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'alumni'] ])->get();
+            $tk_student = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'student'] ])->get();
+            $tk_headmas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'headmaster'] ])->get();
+            $tk_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'profile'] ])->get();
+            $tk_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'education'] ])->get();
 
             $sd_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'visi-misi'] ])->get();
             $sd_kurkul = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'kurikulum'] ])->get();
             $sd_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'galery'] ])->get();
             $sd_fasilitas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'fasilitas'] ])->get();
+            $sd_extra = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'ekstracurricular'] ])->get();
+            $sd_partners = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'partnerships'] ])->get();
+            $sd_achiev = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'achievment'] ])->get();
+            $sd_commit = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'committe'] ])->get();
+            $sd_alumni = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'alumni'] ])->get();
+            $sd_student = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'student'] ])->get();
+            $sd_headmas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'headmaster'] ])->get();
+            $sd_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'profile'] ])->get();
+            $sd_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'education'] ])->get();
 
             $smp_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'visi-misi'] ])->get();
             $smp_kurkul = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'kurikulum'] ])->get();
             $smp_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'galery'] ])->get();
             $smp_fasilitas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'fasilitas'] ])->get();
+            $smp_extra = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'ekstracurricular'] ])->get();
+            $smp_partners = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'partnerships'] ])->get();
+            $smp_achiev = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'achievment'] ])->get();
+            $smp_commit = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'committe'] ])->get();
+            $smp_alumni = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'alumni'] ])->get();
+            $smp_student = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'student'] ])->get();
+            $smp_headmas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'headmaster'] ])->get();
+            $smp_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'profile'] ])->get();
+            $smp_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'education'] ])->get();
 
             $sma_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'visi-misi'] ])->get();
             $sma_kurkul = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'kurikulum'] ])->get();
             $sma_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'galery'] ])->get();
             $sma_fasilitas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'fasilitas'] ])->get();
+            $sma_extra = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'ekstracurricular'] ])->get();
+            $sma_partners = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'partnerships'] ])->get();
+            $sma_achiev = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'achievment'] ])->get();
+            $sma_commit = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'committe'] ])->get();
+            $sma_alumni = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'alumni'] ])->get();
+            $sma_student = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'student'] ])->get();
+            $sma_headmas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'headmaster'] ])->get();
+            $sma_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'profile'] ])->get();
+            $sma_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'education'] ])->get();
 
             $dkm_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'dkm'],['feature_for', '=', 'galery'] ])->get();
+            $teacher = \App\dt_teacher::where('dt_teacher_for', 'SMA')->get();
             $dkm_fasilitas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'dkm'],['feature_for', '=', 'fasilitas'] ])->get(); 
 
             return \View::make('portal_sma')->with('dt_blog_all_portal_sma', $dt_blog_all_portal_sma)->with('news',$news)->with('article',$article)
@@ -2784,8 +4716,15 @@ class Controller extends BaseController
             ->with('sd_kurkul',$sd_kurkul)->with('sd_galery',$sd_galery)->with('sd_fasilitas',$sd_fasilitas)->with('smp_vimi',$smp_vimi)
             ->with('smp_kurkul',$smp_kurkul)->with('smp_galery',$smp_galery)->with('smp_fasilitas',$smp_fasilitas)->with('sma_vimi',$sma_vimi)
             ->with('sma_kurkul',$sma_kurkul)->with('sma_galery',$sma_galery)->with('sma_fasilitas',$sma_fasilitas)->with('dkm_galery',$dkm_galery)
-            ->with('dkm_fasilitas',$dkm_fasilitas);
-        }
+            ->with('dkm_fasilitas',$dkm_fasilitas)->with('teacher',$teacher)->with('tk_extra',$tk_extra)->with('tk_partners',$tk_partners)
+            ->with('tk_achiev',$tk_achiev)->with('tk_commit',$tk_commit)->with('tk_alumni',$tk_alumni)->with('tk_student',$tk_student)
+            ->with('tk_headmas',$tk_headmas)->with('tk_profile',$tk_profile)->with('tk_edu',$tk_edu)->with('sd_extra',$sd_extra)->with('sd_partners',$sd_partners)
+            ->with('sd_achiev',$sd_achiev)->with('sd_commit',$sd_commit)->with('sd_alumni',$sd_alumni)->with('sd_student',$sd_student)
+            ->with('sd_headmas',$sd_headmas)->with('sd_profile',$sd_profile)->with('sd_edu',$sd_edu)->with('smp_extra',$smp_extra)->with('smp_partners',$smp_partners)
+            ->with('smp_achiev',$smp_achiev)->with('smp_commit',$smp_commit)->with('smp_alumni',$smp_alumni)->with('smp_student',$smp_student)
+            ->with('smp_headmas',$smp_headmas)->with('smp_profile',$smp_profile)->with('smp_edu',$smp_edu)->with('sma_extra',$sma_extra)->with('sma_partners',$sma_partners)
+            ->with('sma_achiev',$sma_achiev)->with('sma_commit',$sma_commit)->with('sma_alumni',$sma_alumni)->with('sma_student',$sma_student)
+            ->with('sma_headmas',$sma_headmas)->with('sma_profile',$sma_profile)->with('sma_edu',$sma_edu);    }
     }
 
     public function portal_sma_announcement()
@@ -2810,27 +4749,64 @@ class Controller extends BaseController
             $yayasan_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'galery'] ])->get();
             $yayasan_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'profile'] ])->get();
 
-            $tk_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'visi-misi'] ])->get();
+                        $tk_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'visi-misi'] ])->get();
             $tk_kurkul = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'kurikulum'] ])->get();
             $tk_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'galery'] ])->get();
             $tk_fasilitas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'fasilitas'] ])->get();
+            $tk_extra = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'ekstracurricular'] ])->get();
+            $tk_partners = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'partnerships'] ])->get();
+            $tk_achiev = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'achievment'] ])->get();
+            $tk_commit = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'committe'] ])->get();
+            $tk_alumni = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'alumni'] ])->get();
+            $tk_student = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'student'] ])->get();
+            $tk_headmas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'headmaster'] ])->get();
+            $tk_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'profile'] ])->get();
+            $tk_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'education'] ])->get();
 
             $sd_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'visi-misi'] ])->get();
             $sd_kurkul = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'kurikulum'] ])->get();
             $sd_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'galery'] ])->get();
             $sd_fasilitas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'fasilitas'] ])->get();
+            $sd_extra = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'ekstracurricular'] ])->get();
+            $sd_partners = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'partnerships'] ])->get();
+            $sd_achiev = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'achievment'] ])->get();
+            $sd_commit = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'committe'] ])->get();
+            $sd_alumni = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'alumni'] ])->get();
+            $sd_student = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'student'] ])->get();
+            $sd_headmas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'headmaster'] ])->get();
+            $sd_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'profile'] ])->get();
+            $sd_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'education'] ])->get();
 
             $smp_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'visi-misi'] ])->get();
             $smp_kurkul = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'kurikulum'] ])->get();
             $smp_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'galery'] ])->get();
             $smp_fasilitas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'fasilitas'] ])->get();
+            $smp_extra = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'ekstracurricular'] ])->get();
+            $smp_partners = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'partnerships'] ])->get();
+            $smp_achiev = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'achievment'] ])->get();
+            $smp_commit = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'committe'] ])->get();
+            $smp_alumni = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'alumni'] ])->get();
+            $smp_student = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'student'] ])->get();
+            $smp_headmas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'headmaster'] ])->get();
+            $smp_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'profile'] ])->get();
+            $smp_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'education'] ])->get();
 
             $sma_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'visi-misi'] ])->get();
             $sma_kurkul = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'kurikulum'] ])->get();
             $sma_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'galery'] ])->get();
             $sma_fasilitas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'fasilitas'] ])->get();
+            $sma_extra = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'ekstracurricular'] ])->get();
+            $sma_partners = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'partnerships'] ])->get();
+            $sma_achiev = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'achievment'] ])->get();
+            $sma_commit = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'committe'] ])->get();
+            $sma_alumni = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'alumni'] ])->get();
+            $sma_student = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'student'] ])->get();
+            $sma_headmas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'headmaster'] ])->get();
+            $sma_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'profile'] ])->get();
+            $sma_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'education'] ])->get();
 
             $dkm_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'dkm'],['feature_for', '=', 'galery'] ])->get();
+            $teacher = \App\dt_teacher::where('dt_teacher_for', 'SMA')->get();
             $dkm_fasilitas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'dkm'],['feature_for', '=', 'fasilitas'] ])->get(); 
 
             return \View::make('portal_sma')->with('dt_blog_all_portal_sma', $dt_blog_all_portal_sma)->with('news',$news)->with('article',$article)
@@ -2840,8 +4816,15 @@ class Controller extends BaseController
             ->with('sd_kurkul',$sd_kurkul)->with('sd_galery',$sd_galery)->with('sd_fasilitas',$sd_fasilitas)->with('smp_vimi',$smp_vimi)
             ->with('smp_kurkul',$smp_kurkul)->with('smp_galery',$smp_galery)->with('smp_fasilitas',$smp_fasilitas)->with('sma_vimi',$sma_vimi)
             ->with('sma_kurkul',$sma_kurkul)->with('sma_galery',$sma_galery)->with('sma_fasilitas',$sma_fasilitas)->with('dkm_galery',$dkm_galery)
-            ->with('dkm_fasilitas',$dkm_fasilitas);
-        }
+            ->with('dkm_fasilitas',$dkm_fasilitas)->with('teacher',$teacher)->with('tk_extra',$tk_extra)->with('tk_partners',$tk_partners)
+            ->with('tk_achiev',$tk_achiev)->with('tk_commit',$tk_commit)->with('tk_alumni',$tk_alumni)->with('tk_student',$tk_student)
+            ->with('tk_headmas',$tk_headmas)->with('tk_profile',$tk_profile)->with('tk_edu',$tk_edu)->with('sd_extra',$sd_extra)->with('sd_partners',$sd_partners)
+            ->with('sd_achiev',$sd_achiev)->with('sd_commit',$sd_commit)->with('sd_alumni',$sd_alumni)->with('sd_student',$sd_student)
+            ->with('sd_headmas',$sd_headmas)->with('sd_profile',$sd_profile)->with('sd_edu',$sd_edu)->with('smp_extra',$smp_extra)->with('smp_partners',$smp_partners)
+            ->with('smp_achiev',$smp_achiev)->with('smp_commit',$smp_commit)->with('smp_alumni',$smp_alumni)->with('smp_student',$smp_student)
+            ->with('smp_headmas',$smp_headmas)->with('smp_profile',$smp_profile)->with('smp_edu',$smp_edu)->with('sma_extra',$sma_extra)->with('sma_partners',$sma_partners)
+            ->with('sma_achiev',$sma_achiev)->with('sma_commit',$sma_commit)->with('sma_alumni',$sma_alumni)->with('sma_student',$sma_student)
+            ->with('sma_headmas',$sma_headmas)->with('sma_profile',$sma_profile)->with('sma_edu',$sma_edu);    }
         else{
             $dt_blog_all_portal_sma = \DB::table('dt_blog')->where([
                                                                     ['dt_blog_type', '=', 'announcement'],
@@ -2861,27 +4844,64 @@ class Controller extends BaseController
             $yayasan_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'galery'] ])->get();
             $yayasan_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'profile'] ])->get();
 
-            $tk_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'visi-misi'] ])->get();
+                        $tk_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'visi-misi'] ])->get();
             $tk_kurkul = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'kurikulum'] ])->get();
             $tk_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'galery'] ])->get();
             $tk_fasilitas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'fasilitas'] ])->get();
+            $tk_extra = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'ekstracurricular'] ])->get();
+            $tk_partners = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'partnerships'] ])->get();
+            $tk_achiev = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'achievment'] ])->get();
+            $tk_commit = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'committe'] ])->get();
+            $tk_alumni = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'alumni'] ])->get();
+            $tk_student = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'student'] ])->get();
+            $tk_headmas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'headmaster'] ])->get();
+            $tk_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'profile'] ])->get();
+            $tk_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'education'] ])->get();
 
             $sd_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'visi-misi'] ])->get();
             $sd_kurkul = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'kurikulum'] ])->get();
             $sd_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'galery'] ])->get();
             $sd_fasilitas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'fasilitas'] ])->get();
+            $sd_extra = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'ekstracurricular'] ])->get();
+            $sd_partners = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'partnerships'] ])->get();
+            $sd_achiev = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'achievment'] ])->get();
+            $sd_commit = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'committe'] ])->get();
+            $sd_alumni = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'alumni'] ])->get();
+            $sd_student = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'student'] ])->get();
+            $sd_headmas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'headmaster'] ])->get();
+            $sd_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'profile'] ])->get();
+            $sd_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'education'] ])->get();
 
             $smp_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'visi-misi'] ])->get();
             $smp_kurkul = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'kurikulum'] ])->get();
             $smp_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'galery'] ])->get();
             $smp_fasilitas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'fasilitas'] ])->get();
+            $smp_extra = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'ekstracurricular'] ])->get();
+            $smp_partners = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'partnerships'] ])->get();
+            $smp_achiev = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'achievment'] ])->get();
+            $smp_commit = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'committe'] ])->get();
+            $smp_alumni = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'alumni'] ])->get();
+            $smp_student = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'student'] ])->get();
+            $smp_headmas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'headmaster'] ])->get();
+            $smp_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'profile'] ])->get();
+            $smp_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'education'] ])->get();
 
             $sma_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'visi-misi'] ])->get();
             $sma_kurkul = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'kurikulum'] ])->get();
             $sma_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'galery'] ])->get();
             $sma_fasilitas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'fasilitas'] ])->get();
+            $sma_extra = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'ekstracurricular'] ])->get();
+            $sma_partners = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'partnerships'] ])->get();
+            $sma_achiev = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'achievment'] ])->get();
+            $sma_commit = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'committe'] ])->get();
+            $sma_alumni = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'alumni'] ])->get();
+            $sma_student = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'student'] ])->get();
+            $sma_headmas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'headmaster'] ])->get();
+            $sma_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'profile'] ])->get();
+            $sma_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'education'] ])->get();
 
             $dkm_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'dkm'],['feature_for', '=', 'galery'] ])->get();
+            $teacher = \App\dt_teacher::where('dt_teacher_for', 'SMA')->get();
             $dkm_fasilitas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'dkm'],['feature_for', '=', 'fasilitas'] ])->get(); 
 
             return \View::make('portal_sma')->with('dt_blog_all_portal_sma', $dt_blog_all_portal_sma)->with('news',$news)->with('article',$article)
@@ -2891,8 +4911,15 @@ class Controller extends BaseController
             ->with('sd_kurkul',$sd_kurkul)->with('sd_galery',$sd_galery)->with('sd_fasilitas',$sd_fasilitas)->with('smp_vimi',$smp_vimi)
             ->with('smp_kurkul',$smp_kurkul)->with('smp_galery',$smp_galery)->with('smp_fasilitas',$smp_fasilitas)->with('sma_vimi',$sma_vimi)
             ->with('sma_kurkul',$sma_kurkul)->with('sma_galery',$sma_galery)->with('sma_fasilitas',$sma_fasilitas)->with('dkm_galery',$dkm_galery)
-            ->with('dkm_fasilitas',$dkm_fasilitas);
-        }
+            ->with('dkm_fasilitas',$dkm_fasilitas)->with('teacher',$teacher)->with('tk_extra',$tk_extra)->with('tk_partners',$tk_partners)
+            ->with('tk_achiev',$tk_achiev)->with('tk_commit',$tk_commit)->with('tk_alumni',$tk_alumni)->with('tk_student',$tk_student)
+            ->with('tk_headmas',$tk_headmas)->with('tk_profile',$tk_profile)->with('tk_edu',$tk_edu)->with('sd_extra',$sd_extra)->with('sd_partners',$sd_partners)
+            ->with('sd_achiev',$sd_achiev)->with('sd_commit',$sd_commit)->with('sd_alumni',$sd_alumni)->with('sd_student',$sd_student)
+            ->with('sd_headmas',$sd_headmas)->with('sd_profile',$sd_profile)->with('sd_edu',$sd_edu)->with('smp_extra',$smp_extra)->with('smp_partners',$smp_partners)
+            ->with('smp_achiev',$smp_achiev)->with('smp_commit',$smp_commit)->with('smp_alumni',$smp_alumni)->with('smp_student',$smp_student)
+            ->with('smp_headmas',$smp_headmas)->with('smp_profile',$smp_profile)->with('smp_edu',$smp_edu)->with('sma_extra',$sma_extra)->with('sma_partners',$sma_partners)
+            ->with('sma_achiev',$sma_achiev)->with('sma_commit',$sma_commit)->with('sma_alumni',$sma_alumni)->with('sma_student',$sma_student)
+            ->with('sma_headmas',$sma_headmas)->with('sma_profile',$sma_profile)->with('sma_edu',$sma_edu);    }
     }    
     
     public function portal_sma_article()
@@ -2917,27 +4944,64 @@ class Controller extends BaseController
             $yayasan_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'galery'] ])->get();
             $yayasan_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'profile'] ])->get();
 
-            $tk_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'visi-misi'] ])->get();
+                        $tk_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'visi-misi'] ])->get();
             $tk_kurkul = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'kurikulum'] ])->get();
             $tk_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'galery'] ])->get();
             $tk_fasilitas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'fasilitas'] ])->get();
+            $tk_extra = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'ekstracurricular'] ])->get();
+            $tk_partners = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'partnerships'] ])->get();
+            $tk_achiev = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'achievment'] ])->get();
+            $tk_commit = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'committe'] ])->get();
+            $tk_alumni = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'alumni'] ])->get();
+            $tk_student = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'student'] ])->get();
+            $tk_headmas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'headmaster'] ])->get();
+            $tk_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'profile'] ])->get();
+            $tk_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'education'] ])->get();
 
             $sd_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'visi-misi'] ])->get();
             $sd_kurkul = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'kurikulum'] ])->get();
             $sd_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'galery'] ])->get();
             $sd_fasilitas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'fasilitas'] ])->get();
+            $sd_extra = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'ekstracurricular'] ])->get();
+            $sd_partners = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'partnerships'] ])->get();
+            $sd_achiev = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'achievment'] ])->get();
+            $sd_commit = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'committe'] ])->get();
+            $sd_alumni = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'alumni'] ])->get();
+            $sd_student = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'student'] ])->get();
+            $sd_headmas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'headmaster'] ])->get();
+            $sd_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'profile'] ])->get();
+            $sd_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'education'] ])->get();
 
             $smp_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'visi-misi'] ])->get();
             $smp_kurkul = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'kurikulum'] ])->get();
             $smp_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'galery'] ])->get();
             $smp_fasilitas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'fasilitas'] ])->get();
+            $smp_extra = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'ekstracurricular'] ])->get();
+            $smp_partners = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'partnerships'] ])->get();
+            $smp_achiev = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'achievment'] ])->get();
+            $smp_commit = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'committe'] ])->get();
+            $smp_alumni = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'alumni'] ])->get();
+            $smp_student = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'student'] ])->get();
+            $smp_headmas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'headmaster'] ])->get();
+            $smp_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'profile'] ])->get();
+            $smp_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'education'] ])->get();
 
             $sma_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'visi-misi'] ])->get();
             $sma_kurkul = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'kurikulum'] ])->get();
             $sma_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'galery'] ])->get();
             $sma_fasilitas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'fasilitas'] ])->get();
+            $sma_extra = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'ekstracurricular'] ])->get();
+            $sma_partners = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'partnerships'] ])->get();
+            $sma_achiev = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'achievment'] ])->get();
+            $sma_commit = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'committe'] ])->get();
+            $sma_alumni = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'alumni'] ])->get();
+            $sma_student = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'student'] ])->get();
+            $sma_headmas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'headmaster'] ])->get();
+            $sma_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'profile'] ])->get();
+            $sma_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'education'] ])->get();
 
             $dkm_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'dkm'],['feature_for', '=', 'galery'] ])->get();
+            $teacher = \App\dt_teacher::where('dt_teacher_for', 'SMA')->get();
             $dkm_fasilitas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'dkm'],['feature_for', '=', 'fasilitas'] ])->get(); 
 
             return \View::make('portal_sma')->with('dt_blog_all_portal_sma', $dt_blog_all_portal_sma)->with('news',$news)->with('article',$article)
@@ -2947,8 +5011,15 @@ class Controller extends BaseController
             ->with('sd_kurkul',$sd_kurkul)->with('sd_galery',$sd_galery)->with('sd_fasilitas',$sd_fasilitas)->with('smp_vimi',$smp_vimi)
             ->with('smp_kurkul',$smp_kurkul)->with('smp_galery',$smp_galery)->with('smp_fasilitas',$smp_fasilitas)->with('sma_vimi',$sma_vimi)
             ->with('sma_kurkul',$sma_kurkul)->with('sma_galery',$sma_galery)->with('sma_fasilitas',$sma_fasilitas)->with('dkm_galery',$dkm_galery)
-            ->with('dkm_fasilitas',$dkm_fasilitas);
-        }
+            ->with('dkm_fasilitas',$dkm_fasilitas)->with('teacher',$teacher)->with('tk_extra',$tk_extra)->with('tk_partners',$tk_partners)
+            ->with('tk_achiev',$tk_achiev)->with('tk_commit',$tk_commit)->with('tk_alumni',$tk_alumni)->with('tk_student',$tk_student)
+            ->with('tk_headmas',$tk_headmas)->with('tk_profile',$tk_profile)->with('tk_edu',$tk_edu)->with('sd_extra',$sd_extra)->with('sd_partners',$sd_partners)
+            ->with('sd_achiev',$sd_achiev)->with('sd_commit',$sd_commit)->with('sd_alumni',$sd_alumni)->with('sd_student',$sd_student)
+            ->with('sd_headmas',$sd_headmas)->with('sd_profile',$sd_profile)->with('sd_edu',$sd_edu)->with('smp_extra',$smp_extra)->with('smp_partners',$smp_partners)
+            ->with('smp_achiev',$smp_achiev)->with('smp_commit',$smp_commit)->with('smp_alumni',$smp_alumni)->with('smp_student',$smp_student)
+            ->with('smp_headmas',$smp_headmas)->with('smp_profile',$smp_profile)->with('smp_edu',$smp_edu)->with('sma_extra',$sma_extra)->with('sma_partners',$sma_partners)
+            ->with('sma_achiev',$sma_achiev)->with('sma_commit',$sma_commit)->with('sma_alumni',$sma_alumni)->with('sma_student',$sma_student)
+            ->with('sma_headmas',$sma_headmas)->with('sma_profile',$sma_profile)->with('sma_edu',$sma_edu);    }
         else{
             $dt_blog_all_portal_sma = \DB::table('dt_blog')->where([
                                                                     ['dt_blog_type', '=', 'article'],
@@ -2968,27 +5039,64 @@ class Controller extends BaseController
             $yayasan_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'galery'] ])->get();
             $yayasan_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'profile'] ])->get();
 
-            $tk_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'visi-misi'] ])->get();
+                        $tk_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'visi-misi'] ])->get();
             $tk_kurkul = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'kurikulum'] ])->get();
             $tk_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'galery'] ])->get();
             $tk_fasilitas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'fasilitas'] ])->get();
+            $tk_extra = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'ekstracurricular'] ])->get();
+            $tk_partners = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'partnerships'] ])->get();
+            $tk_achiev = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'achievment'] ])->get();
+            $tk_commit = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'committe'] ])->get();
+            $tk_alumni = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'alumni'] ])->get();
+            $tk_student = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'student'] ])->get();
+            $tk_headmas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'headmaster'] ])->get();
+            $tk_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'profile'] ])->get();
+            $tk_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'education'] ])->get();
 
             $sd_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'visi-misi'] ])->get();
             $sd_kurkul = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'kurikulum'] ])->get();
             $sd_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'galery'] ])->get();
             $sd_fasilitas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'fasilitas'] ])->get();
+            $sd_extra = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'ekstracurricular'] ])->get();
+            $sd_partners = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'partnerships'] ])->get();
+            $sd_achiev = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'achievment'] ])->get();
+            $sd_commit = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'committe'] ])->get();
+            $sd_alumni = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'alumni'] ])->get();
+            $sd_student = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'student'] ])->get();
+            $sd_headmas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'headmaster'] ])->get();
+            $sd_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'profile'] ])->get();
+            $sd_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sd'],['feature_for', '=', 'education'] ])->get();
 
             $smp_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'visi-misi'] ])->get();
             $smp_kurkul = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'kurikulum'] ])->get();
             $smp_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'galery'] ])->get();
             $smp_fasilitas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'fasilitas'] ])->get();
+            $smp_extra = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'ekstracurricular'] ])->get();
+            $smp_partners = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'partnerships'] ])->get();
+            $smp_achiev = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'achievment'] ])->get();
+            $smp_commit = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'committe'] ])->get();
+            $smp_alumni = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'alumni'] ])->get();
+            $smp_student = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'student'] ])->get();
+            $smp_headmas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'headmaster'] ])->get();
+            $smp_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'profile'] ])->get();
+            $smp_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'smp'],['feature_for', '=', 'education'] ])->get();
 
             $sma_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'visi-misi'] ])->get();
             $sma_kurkul = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'kurikulum'] ])->get();
             $sma_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'galery'] ])->get();
             $sma_fasilitas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'fasilitas'] ])->get();
+            $sma_extra = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'ekstracurricular'] ])->get();
+            $sma_partners = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'partnerships'] ])->get();
+            $sma_achiev = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'achievment'] ])->get();
+            $sma_commit = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'committe'] ])->get();
+            $sma_alumni = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'alumni'] ])->get();
+            $sma_student = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'student'] ])->get();
+            $sma_headmas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'headmaster'] ])->get();
+            $sma_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'profile'] ])->get();
+            $sma_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'education'] ])->get();
 
             $dkm_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'dkm'],['feature_for', '=', 'galery'] ])->get();
+            $teacher = \App\dt_teacher::where('dt_teacher_for', 'SMA')->get();
             $dkm_fasilitas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'dkm'],['feature_for', '=', 'fasilitas'] ])->get(); 
 
             return \View::make('portal_sma')->with('dt_blog_all_portal_sma', $dt_blog_all_portal_sma)->with('news',$news)->with('article',$article)
@@ -2998,8 +5106,15 @@ class Controller extends BaseController
             ->with('sd_kurkul',$sd_kurkul)->with('sd_galery',$sd_galery)->with('sd_fasilitas',$sd_fasilitas)->with('smp_vimi',$smp_vimi)
             ->with('smp_kurkul',$smp_kurkul)->with('smp_galery',$smp_galery)->with('smp_fasilitas',$smp_fasilitas)->with('sma_vimi',$sma_vimi)
             ->with('sma_kurkul',$sma_kurkul)->with('sma_galery',$sma_galery)->with('sma_fasilitas',$sma_fasilitas)->with('dkm_galery',$dkm_galery)
-            ->with('dkm_fasilitas',$dkm_fasilitas);
-        }
+            ->with('dkm_fasilitas',$dkm_fasilitas)->with('teacher',$teacher)->with('tk_extra',$tk_extra)->with('tk_partners',$tk_partners)
+            ->with('tk_achiev',$tk_achiev)->with('tk_commit',$tk_commit)->with('tk_alumni',$tk_alumni)->with('tk_student',$tk_student)
+            ->with('tk_headmas',$tk_headmas)->with('tk_profile',$tk_profile)->with('tk_edu',$tk_edu)->with('sd_extra',$sd_extra)->with('sd_partners',$sd_partners)
+            ->with('sd_achiev',$sd_achiev)->with('sd_commit',$sd_commit)->with('sd_alumni',$sd_alumni)->with('sd_student',$sd_student)
+            ->with('sd_headmas',$sd_headmas)->with('sd_profile',$sd_profile)->with('sd_edu',$sd_edu)->with('smp_extra',$smp_extra)->with('smp_partners',$smp_partners)
+            ->with('smp_achiev',$smp_achiev)->with('smp_commit',$smp_commit)->with('smp_alumni',$smp_alumni)->with('smp_student',$smp_student)
+            ->with('smp_headmas',$smp_headmas)->with('smp_profile',$smp_profile)->with('smp_edu',$smp_edu)->with('sma_extra',$sma_extra)->with('sma_partners',$sma_partners)
+            ->with('sma_achiev',$sma_achiev)->with('sma_commit',$sma_commit)->with('sma_alumni',$sma_alumni)->with('sma_student',$sma_student)
+            ->with('sma_headmas',$sma_headmas)->with('sma_profile',$sma_profile)->with('sma_edu',$sma_edu);    }
     }  
 
     public function view($id)
@@ -3039,6 +5154,7 @@ class Controller extends BaseController
             $sma_fasilitas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'fasilitas'] ])->get();
 
             $dkm_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'dkm'],['feature_for', '=', 'galery'] ])->get();
+            $teacher = \App\dt_teacher::where('dt_teacher_for', 'SMA')->get();
             $dkm_fasilitas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'dkm'],['feature_for', '=', 'fasilitas'] ])->get(); 
 
             return \View::make('view')->with('dt_blog_random',$dt_blog_random)->with('dt_blogs',$dt_blog)->with('dt_comments',$dt_comment)
@@ -3048,7 +5164,7 @@ class Controller extends BaseController
             ->with('sd_kurkul',$sd_kurkul)->with('sd_galery',$sd_galery)->with('sd_fasilitas',$sd_fasilitas)->with('smp_vimi',$smp_vimi)
             ->with('smp_kurkul',$smp_kurkul)->with('smp_galery',$smp_galery)->with('smp_fasilitas',$smp_fasilitas)->with('sma_vimi',$sma_vimi)
             ->with('sma_kurkul',$sma_kurkul)->with('sma_galery',$sma_galery)->with('sma_fasilitas',$sma_fasilitas)->with('dkm_galery',$dkm_galery)
-            ->with('dkm_fasilitas',$dkm_fasilitas);
+            ->with('dkm_fasilitas',$dkm_fasilitas)->with('teacher',$teacher);
         }
         else{
             $dt_blog = array('data'=>\App\dt_blog::find($id));
@@ -3084,6 +5200,7 @@ class Controller extends BaseController
             $sma_fasilitas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'sma'],['feature_for', '=', 'fasilitas'] ])->get();
 
             $dkm_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'dkm'],['feature_for', '=', 'galery'] ])->get();
+            $teacher = \App\dt_teacher::where('dt_teacher_for', 'SMA')->get();
             $dkm_fasilitas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'dkm'],['feature_for', '=', 'fasilitas'] ])->get(); 
 
             return \View::make('view')->with('dt_blog_random',$dt_blog_random)->with('dt_blogs',$dt_blog)->with('dt_comments',$dt_comment)
@@ -3093,7 +5210,7 @@ class Controller extends BaseController
             ->with('sd_kurkul',$sd_kurkul)->with('sd_galery',$sd_galery)->with('sd_fasilitas',$sd_fasilitas)->with('smp_vimi',$smp_vimi)
             ->with('smp_kurkul',$smp_kurkul)->with('smp_galery',$smp_galery)->with('smp_fasilitas',$smp_fasilitas)->with('sma_vimi',$sma_vimi)
             ->with('sma_kurkul',$sma_kurkul)->with('sma_galery',$sma_galery)->with('sma_fasilitas',$sma_fasilitas)->with('dkm_galery',$dkm_galery)
-            ->with('dkm_fasilitas',$dkm_fasilitas);
+            ->with('dkm_fasilitas',$dkm_fasilitas)->with('teacher',$teacher);
         }
     }
 
