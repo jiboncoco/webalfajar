@@ -21,6 +21,11 @@ class Controller extends BaseController
             $yayasan_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'galery'] ])->get();
             $yayasan_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'profile'] ])->get();
 
+            $yayasan_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'visi-misi'] ])->get();
+            $yayasan_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'pendidikan'] ])->get();
+            $yayasan_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'galery'] ])->get();
+            $yayasan_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'profile'] ])->get();
+
             $tk_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'visi-misi'] ])->get();
             $tk_kurkul = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'kurikulum'] ])->get();
             $tk_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'galery'] ])->get();
@@ -59,6 +64,11 @@ class Controller extends BaseController
             ->with('dkm_fasilitas',$dkm_fasilitas);
         }
         else{
+            $yayasan_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'visi-misi'] ])->get();
+            $yayasan_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'pendidikan'] ])->get();
+            $yayasan_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'galery'] ])->get();
+            $yayasan_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'profile'] ])->get();
+
             $yayasan_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'visi-misi'] ])->get();
             $yayasan_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'pendidikan'] ])->get();
             $yayasan_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'galery'] ])->get();
@@ -122,6 +132,11 @@ class Controller extends BaseController
             $announcement = \DB::table('dt_blog')->where('dt_blog_type','=','announcement')->take(3)->orderBy('id', 'desc')->get();
             $article = \DB::table('dt_blog')->where('dt_blog_type', '=', 'article')->take(3)->orderBy('id', 'desc')->get();
 
+            $yayasan_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'visi-misi'] ])->get();
+            $yayasan_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'pendidikan'] ])->get();
+            $yayasan_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'galery'] ])->get();
+            $yayasan_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'profile'] ])->get();
+
             $tk_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'visi-misi'] ])->get();
             $tk_kurkul = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'kurikulum'] ])->get();
             $tk_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'galery'] ])->get();
@@ -158,6 +173,11 @@ class Controller extends BaseController
             $dt_blog_all_news = \DB::table('dt_blog')->where('dt_blog_type', '=', 'news')->orderBy('id', 'desc')->paginate(6);
             $announcement = \DB::table('dt_blog')->where('dt_blog_type','=','announcement')->take(3)->orderBy('id', 'desc')->get();
             $article = \DB::table('dt_blog')->where('dt_blog_type', '=', 'article')->take(3)->orderBy('id', 'desc')->get();
+
+            $yayasan_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'visi-misi'] ])->get();
+            $yayasan_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'pendidikan'] ])->get();
+            $yayasan_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'galery'] ])->get();
+            $yayasan_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'profile'] ])->get();
 
             $tk_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'visi-misi'] ])->get();
             $tk_kurkul = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'kurikulum'] ])->get();
@@ -202,6 +222,11 @@ class Controller extends BaseController
             $article = \DB::table('dt_blog')->where('dt_blog_type', '=', 'article')->take(3)->orderBy('id', 'desc')->get();
             $announcement = \DB::table('dt_blog')->where('dt_blog_type','=','announcement')->take(3)->orderBy('id', 'desc')->get();
 
+            $yayasan_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'visi-misi'] ])->get();
+            $yayasan_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'pendidikan'] ])->get();
+            $yayasan_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'galery'] ])->get();
+            $yayasan_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'profile'] ])->get();
+
             $tk_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'visi-misi'] ])->get();
             $tk_kurkul = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'kurikulum'] ])->get();
             $tk_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'galery'] ])->get();
@@ -238,6 +263,11 @@ class Controller extends BaseController
             $dt_blog_all_agenda = \DB::table('dt_blog')->where('dt_blog_type', '=', 'agenda')->orderBy('id', 'desc')->paginate(6);
             $article = \DB::table('dt_blog')->where('dt_blog_type', '=', 'article')->take(3)->orderBy('id', 'desc')->get();
             $announcement = \DB::table('dt_blog')->where('dt_blog_type','=','announcement')->take(3)->orderBy('id', 'desc')->get();
+
+            $yayasan_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'visi-misi'] ])->get();
+            $yayasan_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'pendidikan'] ])->get();
+            $yayasan_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'galery'] ])->get();
+            $yayasan_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'profile'] ])->get();
 
             $tk_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'visi-misi'] ])->get();
             $tk_kurkul = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'kurikulum'] ])->get();
@@ -281,6 +311,11 @@ class Controller extends BaseController
             $article = \DB::table('dt_blog')->where('dt_blog_type', '=', 'article')->take(3)->orderBy('id', 'desc')->get();
             $agenda = \DB::table('dt_blog')->where('dt_blog_type', '=', 'agenda')->take(3)->orderBy('id', 'desc')->get();
 
+            $yayasan_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'visi-misi'] ])->get();
+            $yayasan_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'pendidikan'] ])->get();
+            $yayasan_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'galery'] ])->get();
+            $yayasan_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'profile'] ])->get();
+
             $tk_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'visi-misi'] ])->get();
             $tk_kurkul = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'kurikulum'] ])->get();
             $tk_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'galery'] ])->get();
@@ -317,6 +352,11 @@ class Controller extends BaseController
             $dt_blog_all_pengumuman = \DB::table('dt_blog')->where('dt_blog_type', '=', 'announcement')->orderBy('id', 'desc')->paginate(6);
             $article = \DB::table('dt_blog')->where('dt_blog_type', '=', 'article')->take(3)->orderBy('id', 'desc')->get();
             $agenda = \DB::table('dt_blog')->where('dt_blog_type', '=', 'agenda')->take(3)->orderBy('id', 'desc')->get();
+
+            $yayasan_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'visi-misi'] ])->get();
+            $yayasan_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'pendidikan'] ])->get();
+            $yayasan_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'galery'] ])->get();
+            $yayasan_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'profile'] ])->get();
 
             $tk_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'visi-misi'] ])->get();
             $tk_kurkul = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'kurikulum'] ])->get();
@@ -360,6 +400,11 @@ class Controller extends BaseController
             $announcement = \DB::table('dt_blog')->where('dt_blog_type','=','announcement')->take(3)->orderBy('id', 'desc')->get();
             $agenda = \DB::table('dt_blog')->where('dt_blog_type', '=', 'agenda')->take(3)->orderBy('id', 'desc')->get();
 
+            $yayasan_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'visi-misi'] ])->get();
+            $yayasan_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'pendidikan'] ])->get();
+            $yayasan_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'galery'] ])->get();
+            $yayasan_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'profile'] ])->get();
+
             $tk_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'visi-misi'] ])->get();
             $tk_kurkul = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'kurikulum'] ])->get();
             $tk_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'galery'] ])->get();
@@ -396,6 +441,11 @@ class Controller extends BaseController
             $dt_blog_all_artikel = \DB::table('dt_blog')->where('dt_blog_type', '=', 'article')->orderBy('id', 'desc')->paginate(6);
             $announcement = \DB::table('dt_blog')->where('dt_blog_type','=','announcement')->take(3)->orderBy('id', 'desc')->get();
             $agenda = \DB::table('dt_blog')->where('dt_blog_type', '=', 'agenda')->take(3)->orderBy('id', 'desc')->get();
+
+            $yayasan_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'visi-misi'] ])->get();
+            $yayasan_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'pendidikan'] ])->get();
+            $yayasan_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'galery'] ])->get();
+            $yayasan_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'profile'] ])->get();
 
             $tk_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'visi-misi'] ])->get();
             $tk_kurkul = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'kurikulum'] ])->get();
@@ -445,6 +495,11 @@ class Controller extends BaseController
                                                                     ['dt_blog_for', '=', 'TK']
                                                                     ])->orderBy('id', 'desc')->get();
 
+            $yayasan_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'visi-misi'] ])->get();
+            $yayasan_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'pendidikan'] ])->get();
+            $yayasan_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'galery'] ])->get();
+            $yayasan_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'profile'] ])->get();
+
             $tk_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'visi-misi'] ])->get();
             $tk_kurkul = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'kurikulum'] ])->get();
             $tk_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'galery'] ])->get();
@@ -487,6 +542,11 @@ class Controller extends BaseController
                                                                     ['dt_blog_type', '=', 'article'],
                                                                     ['dt_blog_for', '=', 'TK']
                                                                     ])->orderBy('id', 'desc')->get();
+
+            $yayasan_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'visi-misi'] ])->get();
+            $yayasan_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'pendidikan'] ])->get();
+            $yayasan_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'galery'] ])->get();
+            $yayasan_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'profile'] ])->get();
 
             $tk_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'visi-misi'] ])->get();
             $tk_kurkul = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'kurikulum'] ])->get();
@@ -536,6 +596,11 @@ class Controller extends BaseController
                                                                     ['dt_blog_for', '=', 'TK']
                                                                     ])->orderBy('id', 'desc')->get();
 
+            $yayasan_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'visi-misi'] ])->get();
+            $yayasan_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'pendidikan'] ])->get();
+            $yayasan_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'galery'] ])->get();
+            $yayasan_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'profile'] ])->get();
+
             $tk_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'visi-misi'] ])->get();
             $tk_kurkul = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'kurikulum'] ])->get();
             $tk_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'galery'] ])->get();
@@ -578,6 +643,11 @@ class Controller extends BaseController
                                                                     ['dt_blog_type', '=', 'article'],
                                                                     ['dt_blog_for', '=', 'TK']
                                                                     ])->orderBy('id', 'desc')->get();
+
+            $yayasan_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'visi-misi'] ])->get();
+            $yayasan_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'pendidikan'] ])->get();
+            $yayasan_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'galery'] ])->get();
+            $yayasan_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'profile'] ])->get();
 
             $tk_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'visi-misi'] ])->get();
             $tk_kurkul = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'kurikulum'] ])->get();
@@ -630,6 +700,11 @@ class Controller extends BaseController
                                                                     ['dt_blog_for', '=', 'TK']
                                                                     ])->orderBy('id', 'desc')->get();
 
+            $yayasan_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'visi-misi'] ])->get();
+            $yayasan_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'pendidikan'] ])->get();
+            $yayasan_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'galery'] ])->get();
+            $yayasan_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'profile'] ])->get();
+
             $tk_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'visi-misi'] ])->get();
             $tk_kurkul = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'kurikulum'] ])->get();
             $tk_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'galery'] ])->get();
@@ -675,6 +750,11 @@ class Controller extends BaseController
                                                                     ['dt_blog_type', '=', 'article'],
                                                                     ['dt_blog_for', '=', 'TK']
                                                                     ])->orderBy('id', 'desc')->get();
+
+            $yayasan_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'visi-misi'] ])->get();
+            $yayasan_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'pendidikan'] ])->get();
+            $yayasan_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'galery'] ])->get();
+            $yayasan_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'profile'] ])->get();
 
             $tk_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'visi-misi'] ])->get();
             $tk_kurkul = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'kurikulum'] ])->get();
@@ -727,6 +807,11 @@ class Controller extends BaseController
                                                                     ['dt_blog_for', '=', 'TK']
                                                                     ])->orderBy('id', 'desc')->get();
 
+            $yayasan_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'visi-misi'] ])->get();
+            $yayasan_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'pendidikan'] ])->get();
+            $yayasan_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'galery'] ])->get();
+            $yayasan_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'profile'] ])->get();
+
             $tk_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'visi-misi'] ])->get();
             $tk_kurkul = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'kurikulum'] ])->get();
             $tk_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'galery'] ])->get();
@@ -772,6 +857,11 @@ class Controller extends BaseController
                                                                     ['dt_blog_type', '=', 'article'],
                                                                     ['dt_blog_for', '=', 'TK']
                                                                     ])->orderBy('id', 'desc')->get();
+
+            $yayasan_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'visi-misi'] ])->get();
+            $yayasan_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'pendidikan'] ])->get();
+            $yayasan_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'galery'] ])->get();
+            $yayasan_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'profile'] ])->get();
 
             $tk_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'visi-misi'] ])->get();
             $tk_kurkul = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'kurikulum'] ])->get();
@@ -824,6 +914,11 @@ class Controller extends BaseController
                                                                     ['dt_blog_for', '=', 'TK']
                                                                     ])->orderBy('id', 'desc')->get();
 
+            $yayasan_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'visi-misi'] ])->get();
+            $yayasan_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'pendidikan'] ])->get();
+            $yayasan_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'galery'] ])->get();
+            $yayasan_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'profile'] ])->get();
+
             $tk_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'visi-misi'] ])->get();
             $tk_kurkul = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'kurikulum'] ])->get();
             $tk_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'galery'] ])->get();
@@ -869,6 +964,11 @@ class Controller extends BaseController
                                                                     ['dt_blog_type', '=', 'article'],
                                                                     ['dt_blog_for', '=', 'TK']
                                                                     ])->orderBy('id', 'desc')->get();
+
+            $yayasan_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'visi-misi'] ])->get();
+            $yayasan_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'pendidikan'] ])->get();
+            $yayasan_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'galery'] ])->get();
+            $yayasan_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'profile'] ])->get();
 
             $tk_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'visi-misi'] ])->get();
             $tk_kurkul = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'kurikulum'] ])->get();
@@ -921,6 +1021,11 @@ class Controller extends BaseController
                                                                     ['dt_blog_for', '=', 'TK']
                                                                     ])->orderBy('id', 'desc')->get();
 
+            $yayasan_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'visi-misi'] ])->get();
+            $yayasan_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'pendidikan'] ])->get();
+            $yayasan_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'galery'] ])->get();
+            $yayasan_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'profile'] ])->get();
+
             $tk_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'visi-misi'] ])->get();
             $tk_kurkul = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'kurikulum'] ])->get();
             $tk_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'galery'] ])->get();
@@ -966,6 +1071,11 @@ class Controller extends BaseController
                                                                     ['dt_blog_type', '=', 'article'],
                                                                     ['dt_blog_for', '=', 'TK']
                                                                     ])->orderBy('id', 'desc')->get();
+
+            $yayasan_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'visi-misi'] ])->get();
+            $yayasan_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'pendidikan'] ])->get();
+            $yayasan_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'galery'] ])->get();
+            $yayasan_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'profile'] ])->get();
 
             $tk_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'visi-misi'] ])->get();
             $tk_kurkul = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'kurikulum'] ])->get();
@@ -1016,6 +1126,11 @@ class Controller extends BaseController
                                                                     ['dt_blog_for', '=', 'SD']
                                                                     ])->orderBy('id', 'desc')->get();
 
+            $yayasan_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'visi-misi'] ])->get();
+            $yayasan_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'pendidikan'] ])->get();
+            $yayasan_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'galery'] ])->get();
+            $yayasan_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'profile'] ])->get();
+
             $tk_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'visi-misi'] ])->get();
             $tk_kurkul = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'kurikulum'] ])->get();
             $tk_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'galery'] ])->get();
@@ -1058,6 +1173,11 @@ class Controller extends BaseController
                                                                     ['dt_blog_type', '=', 'article'],
                                                                     ['dt_blog_for', '=', 'SD']
                                                                     ])->orderBy('id', 'desc')->get();
+
+            $yayasan_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'visi-misi'] ])->get();
+            $yayasan_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'pendidikan'] ])->get();
+            $yayasan_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'galery'] ])->get();
+            $yayasan_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'profile'] ])->get();
 
             $tk_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'visi-misi'] ])->get();
             $tk_kurkul = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'kurikulum'] ])->get();
@@ -1107,6 +1227,11 @@ class Controller extends BaseController
                                                                     ['dt_blog_for', '=', 'SD']
                                                                     ])->orderBy('id', 'desc')->get();
 
+            $yayasan_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'visi-misi'] ])->get();
+            $yayasan_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'pendidikan'] ])->get();
+            $yayasan_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'galery'] ])->get();
+            $yayasan_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'profile'] ])->get();
+
             $tk_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'visi-misi'] ])->get();
             $tk_kurkul = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'kurikulum'] ])->get();
             $tk_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'galery'] ])->get();
@@ -1149,6 +1274,11 @@ class Controller extends BaseController
                                                                     ['dt_blog_type', '=', 'article'],
                                                                     ['dt_blog_for', '=', 'SD']
                                                                     ])->orderBy('id', 'desc')->get();
+
+            $yayasan_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'visi-misi'] ])->get();
+            $yayasan_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'pendidikan'] ])->get();
+            $yayasan_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'galery'] ])->get();
+            $yayasan_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'profile'] ])->get();
 
             $tk_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'visi-misi'] ])->get();
             $tk_kurkul = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'kurikulum'] ])->get();
@@ -1201,6 +1331,11 @@ class Controller extends BaseController
                                                                     ['dt_blog_for', '=', 'SD']
                                                                     ])->orderBy('id', 'desc')->get();
 
+            $yayasan_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'visi-misi'] ])->get();
+            $yayasan_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'pendidikan'] ])->get();
+            $yayasan_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'galery'] ])->get();
+            $yayasan_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'profile'] ])->get();
+
             $tk_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'visi-misi'] ])->get();
             $tk_kurkul = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'kurikulum'] ])->get();
             $tk_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'galery'] ])->get();
@@ -1246,6 +1381,11 @@ class Controller extends BaseController
                                                                     ['dt_blog_type', '=', 'article'],
                                                                     ['dt_blog_for', '=', 'SD']
                                                                     ])->orderBy('id', 'desc')->get();
+
+            $yayasan_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'visi-misi'] ])->get();
+            $yayasan_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'pendidikan'] ])->get();
+            $yayasan_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'galery'] ])->get();
+            $yayasan_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'profile'] ])->get();
 
             $tk_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'visi-misi'] ])->get();
             $tk_kurkul = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'kurikulum'] ])->get();
@@ -1298,6 +1438,11 @@ class Controller extends BaseController
                                                                     ['dt_blog_for', '=', 'SD']
                                                                     ])->orderBy('id', 'desc')->get();
 
+            $yayasan_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'visi-misi'] ])->get();
+            $yayasan_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'pendidikan'] ])->get();
+            $yayasan_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'galery'] ])->get();
+            $yayasan_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'profile'] ])->get();
+
             $tk_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'visi-misi'] ])->get();
             $tk_kurkul = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'kurikulum'] ])->get();
             $tk_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'galery'] ])->get();
@@ -1343,6 +1488,11 @@ class Controller extends BaseController
                                                                     ['dt_blog_type', '=', 'article'],
                                                                     ['dt_blog_for', '=', 'SD']
                                                                     ])->orderBy('id', 'desc')->get();
+
+            $yayasan_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'visi-misi'] ])->get();
+            $yayasan_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'pendidikan'] ])->get();
+            $yayasan_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'galery'] ])->get();
+            $yayasan_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'profile'] ])->get();
 
             $tk_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'visi-misi'] ])->get();
             $tk_kurkul = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'kurikulum'] ])->get();
@@ -1395,6 +1545,11 @@ class Controller extends BaseController
                                                                     ['dt_blog_for', '=', 'SD']
                                                                     ])->orderBy('id', 'desc')->get();
 
+            $yayasan_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'visi-misi'] ])->get();
+            $yayasan_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'pendidikan'] ])->get();
+            $yayasan_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'galery'] ])->get();
+            $yayasan_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'profile'] ])->get();
+
             $tk_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'visi-misi'] ])->get();
             $tk_kurkul = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'kurikulum'] ])->get();
             $tk_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'galery'] ])->get();
@@ -1440,6 +1595,11 @@ class Controller extends BaseController
                                                                     ['dt_blog_type', '=', 'article'],
                                                                     ['dt_blog_for', '=', 'SD']
                                                                     ])->orderBy('id', 'desc')->get();
+
+            $yayasan_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'visi-misi'] ])->get();
+            $yayasan_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'pendidikan'] ])->get();
+            $yayasan_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'galery'] ])->get();
+            $yayasan_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'profile'] ])->get();
 
             $tk_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'visi-misi'] ])->get();
             $tk_kurkul = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'kurikulum'] ])->get();
@@ -1492,6 +1652,11 @@ class Controller extends BaseController
                                                                     ['dt_blog_for', '=', 'SD']
                                                                     ])->orderBy('id', 'desc')->get();
 
+            $yayasan_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'visi-misi'] ])->get();
+            $yayasan_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'pendidikan'] ])->get();
+            $yayasan_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'galery'] ])->get();
+            $yayasan_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'profile'] ])->get();
+
             $tk_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'visi-misi'] ])->get();
             $tk_kurkul = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'kurikulum'] ])->get();
             $tk_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'galery'] ])->get();
@@ -1537,6 +1702,11 @@ class Controller extends BaseController
                                                                     ['dt_blog_type', '=', 'article'],
                                                                     ['dt_blog_for', '=', 'SD']
                                                                     ])->orderBy('id', 'desc')->get();
+
+            $yayasan_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'visi-misi'] ])->get();
+            $yayasan_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'pendidikan'] ])->get();
+            $yayasan_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'galery'] ])->get();
+            $yayasan_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'profile'] ])->get();
 
             $tk_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'visi-misi'] ])->get();
             $tk_kurkul = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'kurikulum'] ])->get();
@@ -1586,6 +1756,11 @@ class Controller extends BaseController
                                                                     ['dt_blog_for', '=', 'SMP']
                                                                     ])->orderBy('id', 'desc')->get();
 
+            $yayasan_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'visi-misi'] ])->get();
+            $yayasan_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'pendidikan'] ])->get();
+            $yayasan_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'galery'] ])->get();
+            $yayasan_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'profile'] ])->get();
+
             $tk_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'visi-misi'] ])->get();
             $tk_kurkul = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'kurikulum'] ])->get();
             $tk_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'galery'] ])->get();
@@ -1628,6 +1803,11 @@ class Controller extends BaseController
                                                                     ['dt_blog_type', '=', 'article'],
                                                                     ['dt_blog_for', '=', 'SMP']
                                                                     ])->orderBy('id', 'desc')->get();
+
+            $yayasan_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'visi-misi'] ])->get();
+            $yayasan_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'pendidikan'] ])->get();
+            $yayasan_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'galery'] ])->get();
+            $yayasan_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'profile'] ])->get();
 
             $tk_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'visi-misi'] ])->get();
             $tk_kurkul = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'kurikulum'] ])->get();
@@ -1677,6 +1857,11 @@ class Controller extends BaseController
                                                                     ['dt_blog_for', '=', 'SMP']
                                                                     ])->orderBy('id', 'desc')->get();
 
+            $yayasan_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'visi-misi'] ])->get();
+            $yayasan_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'pendidikan'] ])->get();
+            $yayasan_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'galery'] ])->get();
+            $yayasan_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'profile'] ])->get();
+
             $tk_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'visi-misi'] ])->get();
             $tk_kurkul = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'kurikulum'] ])->get();
             $tk_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'galery'] ])->get();
@@ -1719,6 +1904,11 @@ class Controller extends BaseController
                                                                     ['dt_blog_type', '=', 'article'],
                                                                     ['dt_blog_for', '=', 'SMP']
                                                                     ])->orderBy('id', 'desc')->get();
+
+            $yayasan_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'visi-misi'] ])->get();
+            $yayasan_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'pendidikan'] ])->get();
+            $yayasan_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'galery'] ])->get();
+            $yayasan_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'profile'] ])->get();
 
             $tk_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'visi-misi'] ])->get();
             $tk_kurkul = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'kurikulum'] ])->get();
@@ -1771,6 +1961,11 @@ class Controller extends BaseController
                                                                     ['dt_blog_for', '=', 'SMP']
                                                                     ])->orderBy('id', 'desc')->get();
 
+            $yayasan_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'visi-misi'] ])->get();
+            $yayasan_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'pendidikan'] ])->get();
+            $yayasan_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'galery'] ])->get();
+            $yayasan_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'profile'] ])->get();
+
             $tk_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'visi-misi'] ])->get();
             $tk_kurkul = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'kurikulum'] ])->get();
             $tk_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'galery'] ])->get();
@@ -1816,6 +2011,11 @@ class Controller extends BaseController
                                                                     ['dt_blog_type', '=', 'article'],
                                                                     ['dt_blog_for', '=', 'SMP']
                                                                     ])->orderBy('id', 'desc')->get();
+
+            $yayasan_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'visi-misi'] ])->get();
+            $yayasan_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'pendidikan'] ])->get();
+            $yayasan_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'galery'] ])->get();
+            $yayasan_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'profile'] ])->get();
 
             $tk_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'visi-misi'] ])->get();
             $tk_kurkul = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'kurikulum'] ])->get();
@@ -1868,6 +2068,11 @@ class Controller extends BaseController
                                                                     ['dt_blog_for', '=', 'SMP']
                                                                     ])->orderBy('id', 'desc')->get();
 
+            $yayasan_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'visi-misi'] ])->get();
+            $yayasan_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'pendidikan'] ])->get();
+            $yayasan_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'galery'] ])->get();
+            $yayasan_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'profile'] ])->get();
+
             $tk_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'visi-misi'] ])->get();
             $tk_kurkul = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'kurikulum'] ])->get();
             $tk_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'galery'] ])->get();
@@ -1913,6 +2118,11 @@ class Controller extends BaseController
                                                                     ['dt_blog_type', '=', 'article'],
                                                                     ['dt_blog_for', '=', 'SMP']
                                                                     ])->orderBy('id', 'desc')->get();
+
+            $yayasan_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'visi-misi'] ])->get();
+            $yayasan_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'pendidikan'] ])->get();
+            $yayasan_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'galery'] ])->get();
+            $yayasan_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'profile'] ])->get();
 
             $tk_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'visi-misi'] ])->get();
             $tk_kurkul = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'kurikulum'] ])->get();
@@ -1965,6 +2175,11 @@ class Controller extends BaseController
                                                                     ['dt_blog_for', '=', 'SMP']
                                                                     ])->orderBy('id', 'desc')->get();
 
+            $yayasan_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'visi-misi'] ])->get();
+            $yayasan_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'pendidikan'] ])->get();
+            $yayasan_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'galery'] ])->get();
+            $yayasan_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'profile'] ])->get();
+
             $tk_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'visi-misi'] ])->get();
             $tk_kurkul = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'kurikulum'] ])->get();
             $tk_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'galery'] ])->get();
@@ -2010,6 +2225,11 @@ class Controller extends BaseController
                                                                     ['dt_blog_type', '=', 'article'],
                                                                     ['dt_blog_for', '=', 'SMP']
                                                                     ])->orderBy('id', 'desc')->get();
+
+            $yayasan_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'visi-misi'] ])->get();
+            $yayasan_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'pendidikan'] ])->get();
+            $yayasan_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'galery'] ])->get();
+            $yayasan_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'profile'] ])->get();
 
             $tk_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'visi-misi'] ])->get();
             $tk_kurkul = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'kurikulum'] ])->get();
@@ -2062,6 +2282,11 @@ class Controller extends BaseController
                                                                     ['dt_blog_for', '=', 'SMP']
                                                                     ])->orderBy('id', 'desc')->get();
 
+            $yayasan_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'visi-misi'] ])->get();
+            $yayasan_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'pendidikan'] ])->get();
+            $yayasan_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'galery'] ])->get();
+            $yayasan_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'profile'] ])->get();
+
             $tk_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'visi-misi'] ])->get();
             $tk_kurkul = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'kurikulum'] ])->get();
             $tk_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'galery'] ])->get();
@@ -2107,6 +2332,11 @@ class Controller extends BaseController
                                                                     ['dt_blog_type', '=', 'article'],
                                                                     ['dt_blog_for', '=', 'SMP']
                                                                     ])->orderBy('id', 'desc')->get();
+
+            $yayasan_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'visi-misi'] ])->get();
+            $yayasan_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'pendidikan'] ])->get();
+            $yayasan_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'galery'] ])->get();
+            $yayasan_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'profile'] ])->get();
 
             $tk_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'visi-misi'] ])->get();
             $tk_kurkul = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'kurikulum'] ])->get();
@@ -2156,6 +2386,11 @@ class Controller extends BaseController
                                                                     ['dt_blog_for', '=', 'SMA']
                                                                     ])->orderBy('id', 'desc')->get();
 
+            $yayasan_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'visi-misi'] ])->get();
+            $yayasan_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'pendidikan'] ])->get();
+            $yayasan_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'galery'] ])->get();
+            $yayasan_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'profile'] ])->get();
+
             $tk_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'visi-misi'] ])->get();
             $tk_kurkul = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'kurikulum'] ])->get();
             $tk_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'galery'] ])->get();
@@ -2198,6 +2433,11 @@ class Controller extends BaseController
                                                                     ['dt_blog_type', '=', 'article'],
                                                                     ['dt_blog_for', '=', 'SMA']
                                                                     ])->orderBy('id', 'desc')->get();
+
+            $yayasan_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'visi-misi'] ])->get();
+            $yayasan_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'pendidikan'] ])->get();
+            $yayasan_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'galery'] ])->get();
+            $yayasan_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'profile'] ])->get();
 
             $tk_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'visi-misi'] ])->get();
             $tk_kurkul = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'kurikulum'] ])->get();
@@ -2247,6 +2487,11 @@ class Controller extends BaseController
                                                                     ['dt_blog_for', '=', 'SMA']
                                                                     ])->orderBy('id', 'desc')->get();
 
+            $yayasan_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'visi-misi'] ])->get();
+            $yayasan_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'pendidikan'] ])->get();
+            $yayasan_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'galery'] ])->get();
+            $yayasan_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'profile'] ])->get();
+
             $tk_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'visi-misi'] ])->get();
             $tk_kurkul = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'kurikulum'] ])->get();
             $tk_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'galery'] ])->get();
@@ -2289,6 +2534,11 @@ class Controller extends BaseController
                                                                     ['dt_blog_type', '=', 'article'],
                                                                     ['dt_blog_for', '=', 'SMA']
                                                                     ])->orderBy('id', 'desc')->get();
+
+            $yayasan_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'visi-misi'] ])->get();
+            $yayasan_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'pendidikan'] ])->get();
+            $yayasan_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'galery'] ])->get();
+            $yayasan_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'profile'] ])->get();
 
             $tk_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'visi-misi'] ])->get();
             $tk_kurkul = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'kurikulum'] ])->get();
@@ -2341,6 +2591,11 @@ class Controller extends BaseController
                                                                     ['dt_blog_for', '=', 'SMA']
                                                                     ])->orderBy('id', 'desc')->get();
 
+            $yayasan_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'visi-misi'] ])->get();
+            $yayasan_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'pendidikan'] ])->get();
+            $yayasan_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'galery'] ])->get();
+            $yayasan_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'profile'] ])->get();
+
             $tk_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'visi-misi'] ])->get();
             $tk_kurkul = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'kurikulum'] ])->get();
             $tk_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'galery'] ])->get();
@@ -2386,6 +2641,11 @@ class Controller extends BaseController
                                                                     ['dt_blog_type', '=', 'article'],
                                                                     ['dt_blog_for', '=', 'SMA']
                                                                     ])->orderBy('id', 'desc')->get();
+
+            $yayasan_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'visi-misi'] ])->get();
+            $yayasan_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'pendidikan'] ])->get();
+            $yayasan_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'galery'] ])->get();
+            $yayasan_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'profile'] ])->get();
 
             $tk_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'visi-misi'] ])->get();
             $tk_kurkul = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'kurikulum'] ])->get();
@@ -2438,6 +2698,11 @@ class Controller extends BaseController
                                                                     ['dt_blog_for', '=', 'SMA']
                                                                     ])->orderBy('id', 'desc')->get();
 
+            $yayasan_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'visi-misi'] ])->get();
+            $yayasan_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'pendidikan'] ])->get();
+            $yayasan_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'galery'] ])->get();
+            $yayasan_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'profile'] ])->get();
+
             $tk_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'visi-misi'] ])->get();
             $tk_kurkul = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'kurikulum'] ])->get();
             $tk_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'galery'] ])->get();
@@ -2483,6 +2748,11 @@ class Controller extends BaseController
                                                                     ['dt_blog_type', '=', 'article'],
                                                                     ['dt_blog_for', '=', 'SMA']
                                                                     ])->orderBy('id', 'desc')->get();
+
+            $yayasan_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'visi-misi'] ])->get();
+            $yayasan_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'pendidikan'] ])->get();
+            $yayasan_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'galery'] ])->get();
+            $yayasan_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'profile'] ])->get();
 
             $tk_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'visi-misi'] ])->get();
             $tk_kurkul = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'kurikulum'] ])->get();
@@ -2535,6 +2805,11 @@ class Controller extends BaseController
                                                                     ['dt_blog_for', '=', 'SMA']
                                                                     ])->orderBy('id', 'desc')->get();
 
+            $yayasan_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'visi-misi'] ])->get();
+            $yayasan_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'pendidikan'] ])->get();
+            $yayasan_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'galery'] ])->get();
+            $yayasan_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'profile'] ])->get();
+
             $tk_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'visi-misi'] ])->get();
             $tk_kurkul = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'kurikulum'] ])->get();
             $tk_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'galery'] ])->get();
@@ -2580,6 +2855,11 @@ class Controller extends BaseController
                                                                     ['dt_blog_type', '=', 'article'],
                                                                     ['dt_blog_for', '=', 'SMA']
                                                                     ])->orderBy('id', 'desc')->get();
+
+            $yayasan_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'visi-misi'] ])->get();
+            $yayasan_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'pendidikan'] ])->get();
+            $yayasan_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'galery'] ])->get();
+            $yayasan_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'profile'] ])->get();
 
             $tk_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'visi-misi'] ])->get();
             $tk_kurkul = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'kurikulum'] ])->get();
@@ -2632,6 +2912,11 @@ class Controller extends BaseController
                                                                     ['dt_blog_for', '=', 'SMA']
                                                                     ])->orderBy('id', 'desc')->get();
 
+            $yayasan_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'visi-misi'] ])->get();
+            $yayasan_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'pendidikan'] ])->get();
+            $yayasan_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'galery'] ])->get();
+            $yayasan_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'profile'] ])->get();
+
             $tk_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'visi-misi'] ])->get();
             $tk_kurkul = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'kurikulum'] ])->get();
             $tk_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'galery'] ])->get();
@@ -2678,6 +2963,11 @@ class Controller extends BaseController
                                                                     ['dt_blog_for', '=', 'SMA']
                                                                     ])->orderBy('id', 'desc')->get();
 
+            $yayasan_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'visi-misi'] ])->get();
+            $yayasan_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'pendidikan'] ])->get();
+            $yayasan_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'galery'] ])->get();
+            $yayasan_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'profile'] ])->get();
+
             $tk_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'visi-misi'] ])->get();
             $tk_kurkul = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'kurikulum'] ])->get();
             $tk_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'galery'] ])->get();
@@ -2723,6 +3013,11 @@ class Controller extends BaseController
             $article = \DB::table('dt_blog')->where('dt_blog_type', '=', 'article')->take(3)->orderBy('id', 'desc')->get();
             $announcement = \DB::table('dt_blog')->where('dt_blog_type','=','announcement')->take(3)->orderBy('id', 'desc')->get();
 
+            $yayasan_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'visi-misi'] ])->get();
+            $yayasan_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'pendidikan'] ])->get();
+            $yayasan_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'galery'] ])->get();
+            $yayasan_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'profile'] ])->get();
+
             $tk_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'visi-misi'] ])->get();
             $tk_kurkul = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'kurikulum'] ])->get();
             $tk_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'galery'] ])->get();
@@ -2762,6 +3057,11 @@ class Controller extends BaseController
             $dt_comment_all = \DB::table('dt_comment')->where('dt_comment_blog_id', '=', $id)->orderBy('dt_comment_id', 'desc')->get();
             $announcement = \DB::table('dt_blog')->where('dt_blog_type','=','announcement')->take(3)->orderBy('id', 'desc')->get();
             $article = \DB::table('dt_blog')->where('dt_blog_type', '=', 'article')->take(3)->orderBy('id', 'desc')->get();
+
+            $yayasan_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'visi-misi'] ])->get();
+            $yayasan_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'pendidikan'] ])->get();
+            $yayasan_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'galery'] ])->get();
+            $yayasan_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'profile'] ])->get();
 
             $tk_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'visi-misi'] ])->get();
             $tk_kurkul = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'kurikulum'] ])->get();
