@@ -675,4 +675,14 @@ class PostController extends Controller
       return back();
     }
 
+    public function load_data_home()
+    {
+      $yayasan_vimi = \App\dt_feature::where('feature_to', 'YAYASAN', 'AND', 'feature_for', 'visi-misi');
+      $yayasan_edu = \App\dt_feature::where('feature_to', 'YAYASAN', 'AND', 'feature_for', 'pendidikan');
+      $yayasan_galery = \App\dt_feature::where('feature_to', 'YAYASAN', 'AND', 'feature_for', 'galery');
+      $yayasan_profile = \App\dt_feature::where('feature_to', 'YAYASAN', 'AND', 'feature_for', 'profile');
+
+      
+    }
+
 }         

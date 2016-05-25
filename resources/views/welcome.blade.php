@@ -145,22 +145,6 @@
       </div>
       </a>
       @endforeach
-     <!--  <a href="#">
-      <div id="info-boxx" class="col-md-4 col-xs-12">
-        <div class="info-img">
-        <img class="infoimg2 animated bounceInDown" src="img/img_home/img-2.png" ></div>
-        <h4>Great Ideas</h4>
-         <p class="animated flipInY">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et quam est. Mauris faucibus tellus ac auctor posuere. </p>
-      </div>
-      </a>
-      <a href="#">
-      <div id="info-boxx" class="col-md-4 col-xs-12">
-        <div class="info-img">
-        <img class="infoimg2 animated bounceInRight" src="img/img_home/img-3.png" ></div>
-        <h4>Browser  Compatibility</h4>
-         <p class="animated flipInY">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et quam est. Mauris faucibus tellus ac auctor posuere. </p>
-      </div>
-      </a> -->
     </div>
 </div>
 <a href="{{ url('news') }}" class="btn btn-large btn-primary animated rotateInUpLeft" id="btn-rm-s">ALL NEWS</a>
@@ -178,12 +162,9 @@
             <h4 class="modal-title" id="myModalLabel">TK : Vision & Mission</h4>
             </div>
                 <div class="modal-body-front">
-                   Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-
-                   Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-
-                   Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                </form>
+                   @foreach($tk_vimi as $tkvm)
+                   {!! $tkvm->feature_text !!}
+                   @endforeach
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
@@ -201,12 +182,9 @@
             <h4 class="modal-title" id="myModalLabel">TK : Curriculum</h4>
             </div>
                 <div class="modal-body-front">
-                   Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-
-                   Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-
-                   Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                </form>
+                   @foreach($tk_kurkul as $tkkurkul)
+                   {!! $tkkurkul->feature_text !!}
+                   @endforeach
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
@@ -224,12 +202,9 @@
             <h4 class="modal-title" id="myModalLabel">TK : Facilities</h4>
             </div>
                 <div class="modal-body-front">
-                   Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-
-                   Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-
-                   Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                </form>
+                   @foreach($tk_fasilitas as $tkfas)
+                   {!! $tkfas->feature_text !!}
+                   @endforeach
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
@@ -248,30 +223,17 @@
             </div>
                 <div class="modal-body-front">
                 <div class="modal-galeri">
-                  <div class="box-m-galeri">
-                    <img class="bm-galeri" src="{{url('img/img_galery/galery.jpg')}}">
-                    <label class="bm-desc">31 Desember 2016</label>
-                  </div>
-                  <div class="box-m-galeri">
-                    <img class="bm-galeri" src="{{url('img/img_galery/galery.jpg')}}">
-                    <label class="bm-desc">31 Desember 2016</label>
-                  </div>
-                  <div class="box-m-galeri">
-                    <img class="bm-galeri" src="{{url('img/img_galery/galery.jpg')}}">
-                    <label class="bm-desc">31 Desember 2016</label>
-                  </div>
-                  <div class="box-m-galeri">
-                    <img class="bm-galeri" src="{{url('img/img_galery/galery.jpg')}}">
-                    <label class="bm-desc">31 Desember 2016</label>
-                  </div>
-                  <div class="box-m-galeri">
-                    <img class="bm-galeri" src="{{url('img/img_galery/galery.jpg')}}">
-                    <label class="bm-desc">31 Desember 2016</label>
-                  </div>
-                  <div class="box-m-galeri">
-                    <img class="bm-galeri" src="{{url('img/img_galery/galery.jpg')}}">
-                    <label class="bm-desc">31 Desember 2016</label>
-                  </div>
+                  @foreach($tk_galery as $tkgalery)
+                  
+                    <!-- <img class="bm-galeri" src="{{url('img/img_galery/galery.jpg')}}"> -->
+                    {!! $tkgalery->feature_text !!}
+                    
+                    <label class="bm-desc">
+                      <blockquote>
+                    {{$tkgalery->created_at}} By : {{$tkgalery->feature_create_by}}
+                      </blockquote>
+                    </label>
+                  @endforeach
                 </div>
                 </form>
             </div>
@@ -291,12 +253,9 @@
             <h4 class="modal-title" id="myModalLabel">SD : Vision & Mission</h4>
             </div>
                 <div class="modal-body-front">
-                   Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-
-                   Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-
-                   Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                </form>
+                   @foreach($sd_vimi as $sdvm)
+                   {!! $sdvm->feature_text !!}
+                   @endforeach
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
@@ -314,12 +273,9 @@
             <h4 class="modal-title" id="myModalLabel">SD : Curriculum</h4>
             </div>
                 <div class="modal-body-front">
-                   Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-
-                   Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-
-                   Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                </form>
+                   @foreach($sd_kurkul as $sdkurkul)
+                   {!! $sdkurkul->feature_text !!}
+                   @endforeach
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
@@ -337,12 +293,9 @@
             <h4 class="modal-title" id="myModalLabel">SD : Facilities</h4>
             </div>
                 <div class="modal-body-front">
-                   Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-
-                   Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-
-                   Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                </form>
+                   @foreach($sd_fasilitas as $sdfas)
+                   {!! $sdfas->feature_text !!}
+                   @endforeach
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
@@ -361,30 +314,17 @@
             </div>
                 <div class="modal-body-front">
                   <div class="modal-galeri">
-                  <div class="box-m-galeri">
-                    <img class="bm-galeri" src="{{url('img/img_galery/galery.jpg')}}">
-                    <label class="bm-desc">31 Desember 2016</label>
-                  </div>
-                  <div class="box-m-galeri">
-                    <img class="bm-galeri" src="{{url('img/img_galery/galery.jpg')}}">
-                    <label class="bm-desc">31 Desember 2016</label>
-                  </div>
-                  <div class="box-m-galeri">
-                    <img class="bm-galeri" src="{{url('img/img_galery/galery.jpg')}}">
-                    <label class="bm-desc">31 Desember 2016</label>
-                  </div>
-                  <div class="box-m-galeri">
-                    <img class="bm-galeri" src="{{url('img/img_galery/galery.jpg')}}">
-                    <label class="bm-desc">31 Desember 2016</label>
-                  </div>
-                  <div class="box-m-galeri">
-                    <img class="bm-galeri" src="{{url('img/img_galery/galery.jpg')}}">
-                    <label class="bm-desc">31 Desember 2016</label>
-                  </div>
-                  <div class="box-m-galeri">
-                    <img class="bm-galeri" src="{{url('img/img_galery/galery.jpg')}}">
-                    <label class="bm-desc">31 Desember 2016</label>
-                  </div>
+                  @foreach($sd_galery as $sdgalery)
+                  
+                    <!-- <img class="bm-galeri" src="{{url('img/img_galery/galery.jpg')}}"> -->
+                    {!! $sdgalery->feature_text !!}
+                    
+                    <label class="bm-desc">
+                      <blockquote>
+                    {{$sdgalery->created_at}} By : {{$sdgalery->feature_create_by}}
+                      </blockquote>
+                    </label>
+                  @endforeach
                 </div>
                 </form>
             </div>
@@ -405,12 +345,9 @@
             <h4 class="modal-title" id="myModalLabel">SMP : Vision & Mission</h4>
             </div>
                 <div class="modal-body-front">
-                   Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-
-                   Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-
-                   Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                </form>
+                   @foreach($smp_vimi as $smpvm)
+                   {!! $smpvm->feature_text !!}
+                   @endforeach
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
@@ -428,12 +365,9 @@
             <h4 class="modal-title" id="myModalLabel">SMP : Curriculum</h4>
             </div>
                 <div class="modal-body-front">
-                   Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-
-                   Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-
-                   Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                </form>
+                   @foreach($smp_kurkul as $smpkurkul)
+                   {!! $smpkurkul->feature_text !!}
+                   @endforeach
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
@@ -451,12 +385,9 @@
             <h4 class="modal-title" id="myModalLabel">SMP : Facilities</h4>
             </div>
                 <div class="modal-body-front">
-                   Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-
-                   Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-
-                   Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                </form>
+                   @foreach($smp_fasilitas as $smpfas)
+                   {!! $smpfas->feature_text !!}
+                   @endforeach
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
@@ -475,30 +406,17 @@
             </div>
                 <div class="modal-body-front">
                    <div class="modal-galeri">
-                  <div class="box-m-galeri">
-                    <img class="bm-galeri" src="{{url('img/img_galery/galery.jpg')}}">
-                    <label class="bm-desc">31 Desember 2016</label>
-                  </div>
-                  <div class="box-m-galeri">
-                    <img class="bm-galeri" src="{{url('img/img_galery/galery.jpg')}}">
-                    <label class="bm-desc">31 Desember 2016</label>
-                  </div>
-                  <div class="box-m-galeri">
-                    <img class="bm-galeri" src="{{url('img/img_galery/galery.jpg')}}">
-                    <label class="bm-desc">31 Desember 2016</label>
-                  </div>
-                  <div class="box-m-galeri">
-                    <img class="bm-galeri" src="{{url('img/img_galery/galery.jpg')}}">
-                    <label class="bm-desc">31 Desember 2016</label>
-                  </div>
-                  <div class="box-m-galeri">
-                    <img class="bm-galeri" src="{{url('img/img_galery/galery.jpg')}}">
-                    <label class="bm-desc">31 Desember 2016</label>
-                  </div>
-                  <div class="box-m-galeri">
-                    <img class="bm-galeri" src="{{url('img/img_galery/galery.jpg')}}">
-                    <label class="bm-desc">31 Desember 2016</label>
-                  </div>
+                  @foreach($smp_galery as $smpgalery)
+                  
+                    <!-- <img class="bm-galeri" src="{{url('img/img_galery/galery.jpg')}}"> -->
+                    {!! $smpgalery->feature_text !!}
+                    
+                    <label class="bm-desc">
+                      <blockquote>
+                    {{$smpgalery->created_at}} By : {{$smpgalery->feature_create_by}}
+                      </blockquote>
+                    </label>
+                  @endforeach
                 </div></form>
             </div>
             <div class="modal-footer">
@@ -517,12 +435,9 @@
             <h4 class="modal-title" id="myModalLabel">SMA : Vision & Mission</h4>
             </div>
                 <div class="modal-body-front">
-                   Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-
-                   Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-
-                   Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                </form>
+                   @foreach($sma_vimi as $smavm)
+                   {!! $smavm->feature_text !!}
+                   @endforeach
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
@@ -540,12 +455,9 @@
             <h4 class="modal-title" id="myModalLabel">SMA : Curriculum</h4>
             </div>
                 <div class="modal-body-front">
-                   Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-
-                   Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-
-                   Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                </form>
+                   @foreach($sma_kurkul as $smakurkul)
+                   {!! $smakurkul->feature_text !!}
+                   @endforeach
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
@@ -563,12 +475,9 @@
             <h4 class="modal-title" id="myModalLabel">SMA : Facilities</h4>
             </div>
                 <div class="modal-body-front">
-                   Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-
-                   Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-
-                   Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                </form>
+                   @foreach($sma_fasilitas as $smafas)
+                   {!! $smafas->feature_text !!}
+                   @endforeach
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
@@ -586,31 +495,17 @@
             <h4 class="modal-title" id="myModalLabel">SMA : Galery</h4>
             </div>
                 <div class="modal-body-front">
-                   <div class="modal-galeri">
-                  <div class="box-m-galeri">
-                    <img class="bm-galeri" src="{{url('img/img_galery/galery.jpg')}}">
-                    <label class="bm-desc">31 Desember 2016</label>
-                  </div>
-                  <div class="box-m-galeri">
-                    <img class="bm-galeri" src="{{url('img/img_galery/galery.jpg')}}">
-                    <label class="bm-desc">31 Desember 2016</label>
-                  </div>
-                  <div class="box-m-galeri">
-                    <img class="bm-galeri" src="{{url('img/img_galery/galery.jpg')}}">
-                    <label class="bm-desc">31 Desember 2016</label>
-                  </div>
-                  <div class="box-m-galeri">
-                    <img class="bm-galeri" src="{{url('img/img_galery/galery.jpg')}}">
-                    <label class="bm-desc">31 Desember 2016</label>
-                  </div>
-                  <div class="box-m-galeri">
-                    <img class="bm-galeri" src="{{url('img/img_galery/galery.jpg')}}">
-                    <label class="bm-desc">31 Desember 2016</label>
-                  </div>
-                  <div class="box-m-galeri">
-                    <img class="bm-galeri" src="{{url('img/img_galery/galery.jpg')}}">
-                    <label class="bm-desc">31 Desember 2016</label>
-                  </div>
+                  @foreach($sma_galery as $smagalery)
+                  
+                    <!-- <img class="bm-galeri" src="{{url('img/img_galery/galery.jpg')}}"> -->
+                    {!! $smagalery->feature_text !!}
+                    
+                    <label class="bm-desc">
+                      <blockquote>
+                    {{$smagalery->created_at}} By : {{$smagalery->feature_create_by}}
+                      </blockquote>
+                    </label>
+                  @endforeach
                 </div></form>
             </div>
             <div class="modal-footer">
@@ -630,12 +525,9 @@
             <h4 class="modal-title" id="myModalLabel">Foundation : Vision & Mission </h4>
             </div>
                 <div class="modal-body-front">
-                   Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-
-                   Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-
-                   Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                </form>
+                  @foreach($yayasan_vimi as $ymv)
+                  {!! $ymv->feature_text !!}
+                  @endforeach
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
@@ -653,12 +545,9 @@
             <h4 class="modal-title" id="myModalLabel">Foundation : Education</h4>
             </div>
                 <div class="modal-body-front">
-                   Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-
-                   Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-
-                   Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                </form>
+                @foreach($yayasan_edu as $edu)
+                  {!! $edu->feature_text !!}
+                  @endforeach
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
@@ -676,12 +565,9 @@
             <h4 class="modal-title" id="myModalLabel">Foundation : Profile</h4>
             </div>
                 <div class="modal-body-front">
-                   Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-
-                   Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-
-                   Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                </form>
+                  @foreach($yayasan_profile as $yprof)
+                  {!! $yprof->feature_text !!}
+                  @endforeach
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
@@ -700,31 +586,18 @@
             </div>
                 <div class="modal-body-front">
                    <div class="modal-galeri">
-                  <div class="box-m-galeri">
-                    <img class="bm-galeri" src="{{url('img/img_galery/galery.jpg')}}">
-                    <label class="bm-desc">31 Desember 2016</label>
-                  </div>
-                  <div class="box-m-galeri">
-                    <img class="bm-galeri" src="{{url('img/img_galery/galery.jpg')}}">
-                    <label class="bm-desc">31 Desember 2016</label>
-                  </div>
-                  <div class="box-m-galeri">
-                    <img class="bm-galeri" src="{{url('img/img_galery/galery.jpg')}}">
-                    <label class="bm-desc">31 Desember 2016</label>
-                  </div>
-                  <div class="box-m-galeri">
-                    <img class="bm-galeri" src="{{url('img/img_galery/galery.jpg')}}">
-                    <label class="bm-desc">31 Desember 2016</label>
-                  </div>
-                  <div class="box-m-galeri">
-                    <img class="bm-galeri" src="{{url('img/img_galery/galery.jpg')}}">
-                    <label class="bm-desc">31 Desember 2016</label>
-                  </div>
-                  <div class="box-m-galeri">
-                    <img class="bm-galeri" src="{{url('img/img_galery/galery.jpg')}}">
-                    <label class="bm-desc">31 Desember 2016</label>
-                  </div>
-                </div></form>
+                  @foreach($yayasan_galery as $ygalery)
+                  
+                    <!-- <img class="bm-galeri" src="{{url('img/img_galery/galery.jpg')}}"> -->
+                    {!! $ygalery->feature_text !!}
+                    
+                    <label class="bm-desc">
+                      <blockquote>
+                    {{$ygalery->created_at}} By : {{$ygalery->feature_create_by}}
+                      </blockquote>
+                    </label>
+                  @endforeach
+                </div>
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
@@ -742,12 +615,9 @@
             <h4 class="modal-title" id="myModalLabel">DKM : Facilities</h4>
             </div>
                 <div class="modal-body-front">
-                   Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-
-                   Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-
-                   Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                </form>
+                   @foreach($dkm_fasilitas as $dfasilitas)
+                   {!! $dfasilitas->feature_text !!}
+                   @endforeach
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
@@ -766,31 +636,17 @@
             </div>
                 <div class="modal-body-front">
                    <div class="modal-galeri">
-                  <div class="box-m-galeri">
-                    <img class="bm-galeri" src="{{url('img/img_galery/galery.jpg')}}">
-                    <label class="bm-desc">31 Desember 2016</label>
-                  </div>
-                  <div class="box-m-galeri">
-                    <img class="bm-galeri" src="{{url('img/img_galery/galery.jpg')}}">
-                    <label class="bm-desc">31 Desember 2016</label>
-                  </div>
-                  <div class="box-m-galeri">
-                    <img class="bm-galeri" src="{{url('img/img_galery/galery.jpg')}}">
-                    <label class="bm-desc">31 Desember 2016</label>
-                  </div>
-                  <div class="box-m-galeri">
-                    <img class="bm-galeri" src="{{url('img/img_galery/galery.jpg')}}">
-                    <label class="bm-desc">31 Desember 2016</label>
-                  </div>
-                  <div class="box-m-galeri">
-                    <img class="bm-galeri" src="{{url('img/img_galery/galery.jpg')}}">
-                    <label class="bm-desc">31 Desember 2016</label>
-                  </div>
-                  <div class="box-m-galeri">
-                    <img class="bm-galeri" src="{{url('img/img_galery/galery.jpg')}}">
-                    <label class="bm-desc">31 Desember 2016</label>
-                  </div>
-                </div></form>
+                  @foreach($dkm_galery as $dkmgalery)
+                  
+                    <!-- <img class="bm-galeri" src="{{url('img/img_galery/galery.jpg')}}"> -->
+                    {!! $dkmgalery->feature_text !!}
+                    
+                    <label class="bm-desc">
+                      <blockquote>
+                    {{$dkmgalery->created_at}} By : {{$dkmgalery->feature_create_by}}
+                      </blockquote>
+                    </label>
+                  @endforeach
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>

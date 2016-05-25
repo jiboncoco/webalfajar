@@ -13,27 +13,7 @@
 Route::group(['middleware' => ['web']], function () {
 
 
-Route::get('/', function () {
-	session_start();
-        if(isset($_SESSION['logged_in'])){
-        	$dt_blog = \DB::table('dt_blog')->where([
-                ['dt_blog_type', '=', 'news'],
-                ])
-                ->orderBy('id', 'desc')
-                ->take(3)
-                ->get();
-            return \View::make('welcome')->with('dt_blogs',$dt_blog);
-        }
-        else{
-            $dt_blog = \DB::table('dt_blog')->where([
-                ['dt_blog_type', '=', 'news'],
-                ])
-                ->orderBy('id', 'desc')
-                ->take(3)
-                ->get();
-            return \View::make('welcome')->with('dt_blogs',$dt_blog);
-        }
-});
+Route::get('/', 'Controller@Home');
 
 Route::get('login', 'Controller@login');
 Route::get('news', 'Controller@news');
@@ -49,12 +29,15 @@ Route::get('search_announcement/{search_announcement?}', 'PostController@search_
 Route::get('article', 'Controller@artikel');
 Route::get('search_article/{search_article?}', 'PostController@search_article');
 
-Route::get('portal_tk', 'Controller@portal_tk');
-Route::get('portal_tk/all', 'Controller@portal_tk_all');
-Route::get('portal_tk/news', 'Controller@portal_tk_news');
-Route::get('portal_tk/agenda', 'Controller@portal_tk_agenda');
-Route::get('portal_tk/announcement', 'Controller@portal_tk_announcement');
-Route::get('portal_tk/article', 'Controller@portal_tk_article');
+Route::group(['prefix'=>'portal_tk'], function(){
+    Route::get('', 'Controller@portal_tk');
+    Route::get('all', 'Controller@portal_tk_all');
+    Route::get('news', 'Controller@portal_tk_news');
+    Route::get('agenda', 'Controller@portal_tk_agenda');
+    Route::get('announcement', 'Controller@portal_tk_announcement');
+    Route::get('article', 'Controller@portal_tk_article');
+});
+
 
 Route::get('portal_sd', 'Controller@portal_sd');
 Route::get('portal_sd/all', 'Controller@portal_sd_all');
