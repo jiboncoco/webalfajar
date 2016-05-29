@@ -39,26 +39,36 @@ Route::group(['prefix'=>'portal_tk'], function(){
 });
 
 Route::get('manage_message/message_staff', 'AksesController@message_staff');
+Route::get('manage_message/message_root', 'AksesController@message_staff');
+Route::get('manage_message/message_root+', 'AksesController@message_staff');
 Route::get('manage_message/message_student', 'AksesController@message_student');
 Route::get('manage_message/message_parent', 'AksesController@message_parent');
 Route::get('manage_message/message_teacher', 'AksesController@message_teacher');
 
 Route::get('manage_message/message_staff/compose', 'AksesController@compose_message_staff');
+Route::get('manage_message/message_root/compose', 'AksesController@compose_message_staff');
+Route::get('manage_message/message_root+/compose', 'AksesController@compose_message_staff');
 Route::get('manage_message/message_teacher/compose', 'AksesController@compose_message_teacher');
 Route::get('manage_message/message_student/compose', 'AksesController@compose_message_student');
 Route::get('manage_message/message_parent/compose', 'AksesController@compose_message_parent');
 
 Route::post('manage_message/message_staff/send', 'AksesController@save_message_staff');
+Route::post('manage_message/message_root/send', 'AksesController@save_message_staff');
+Route::post('manage_message/message_root+/send', 'AksesController@save_message_staff');
 Route::post('manage_message/message_teacher/send', 'AksesController@save_message_teacher');
 Route::post('manage_message/message_student/send', 'AksesController@save_message_student');
 Route::post('manage_message/message_parent/send', 'AksesController@save_message_parent');
 
 Route::get('manage_message/message_staff/sent', 'AksesController@sent_message_staff');
+Route::get('manage_message/message_root/sent', 'AksesController@sent_message_staff');
+Route::get('manage_message/message_root+/sent', 'AksesController@sent_message_staff');
 Route::get('manage_message/message_teacher/sent', 'AksesController@sent_message_teacher');
 Route::get('manage_message/message_student/sent', 'AksesController@sent_message_student');
 Route::get('manage_message/message_parent/sent', 'AksesController@sent_message_parent');
 
 Route::get('manage_message/message_staff/delete/{id}', 'AksesController@delete_message_staff');
+Route::get('manage_message/message_root/delete/{id}', 'AksesController@delete_message_staff');
+Route::get('manage_message/message_root+/delete/{id}', 'AksesController@delete_message_staff');
 Route::get('manage_message/message_teacher/delete/{id}', 'AksesController@delete_message_teacher');
 Route::get('manage_message/message_student/delete/{id}', 'AksesController@delete_message_student');
 Route::get('manage_message/message_parent/delete/{id}', 'AksesController@delete_message_parent');
@@ -69,11 +79,15 @@ Route::get('manage_message/message_teacher/read_message/inbox/{id}', 'AksesContr
 Route::get('manage_message/message_student/read_message/inbox/{id}', 'AksesController@student_read_message_inbox');
 Route::get('manage_message/message_parent/read_message/inbox/{id}', 'AksesController@parent_read_message_inbox');
 Route::get('manage_message/message_staff/read_message/inbox/{id}', 'AksesController@staff_read_message_inbox');
+Route::get('manage_message/message_root/read_message/inbox/{id}', 'AksesController@staff_read_message_inbox');
+Route::get('manage_message/message_root+/read_message/inbox/{id}', 'AksesController@staff_read_message_inbox');
 
 Route::get('manage_message/message_teacher/read_message/sent/{id}', 'AksesController@teacher_read_message_sent');
 Route::get('manage_message/message_student/read_message/sent/{id}', 'AksesController@student_read_message_sent');
 Route::get('manage_message/message_parent/read_message/sent/{id}', 'AksesController@parent_read_message_sent');
 Route::get('manage_message/message_staff/read_message/sent/{id}', 'AksesController@staff_read_message_sent');
+Route::get('manage_message/message_root/read_message/sent/{id}', 'AksesController@staff_read_message_sent');
+Route::get('manage_message/message_root+/read_message/sent/{id}', 'AksesController@staff_read_message_sent');
 
 Route::get('portal_sd', 'Controller@portal_sd');
 Route::get('portal_sd/all', 'Controller@portal_sd_all');

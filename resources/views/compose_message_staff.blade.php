@@ -53,7 +53,13 @@
         <section class="content">
           <div class="row">
             <div class="col-md-3">
-              <a href="{{ url('manage_message/message') }}" class="btn btn-primary btn-block margin-bottom">Back to Inbox</a>
+            @if(session('akses_type') == 'staff')
+              <a href="{{ url('manage_message/message_staff') }}" class="btn btn-primary btn-block margin-bottom">Back to Inbox</a>
+            @elseif(session('akses_type') == 'root')
+              <a href="{{ url('manage_message/message_root') }}" class="btn btn-primary btn-block margin-bottom">Back to Inbox</a>
+            @elseif(session('akses_type') == 'root+')
+              <a href="{{ url('manage_message/message_root+') }}" class="btn btn-primary btn-block margin-bottom">Back to Inbox</a>
+            @endif
               <div class="box box-solid">
                 <div class="box-header with-border">
                   <h3 class="box-title">Folders</h3>
@@ -86,15 +92,21 @@
             </div><!-- /.col -->
             <div class="col-md-9">
               <div class="box box-primary">
+            @if(session('akses_type') == 'staff')
             <form method="POST" action="{{ url('manage_message/message_staff/send') }}" enctype="multipart/form-data">
+            @elseif(session('akses_type') == 'root')
+            <form method="POST" action="{{ url('manage_message/message_root/send') }}" enctype="multipart/form-data">
+            @elseif(session('akses_type') == 'root+')
+            <form method="POST" action="{{ url('manage_message/message_root+/send') }}" enctype="multipart/form-data">
+            @endif
                 <div class="box-header with-border">
                   <h3 class="box-title">Compose New Message</h3>
                 </div><!-- /.box-header -->
                 <div class="box-body">
 
                 <div class="form-group">
-                @foreach($dt_staffs as $staff)
-                    <input class="form-control" name="dt_mail_from" placeholder="From:" value="{{ $staff->dt_staff_email }}" readonly/>
+                @foreach($from as $from)
+                    <input class="form-control" name="dt_mail_from" placeholder="From:" value="{{ $from->akses_email }}" readonly/>
                     @endforeach
                   </div>
                   <div class="form-group">
@@ -112,7 +124,13 @@
                 </div><!-- /.box-body -->
                 <div class="box-footer">
                   <div class="pull-right">
-                    <button class="btn btn-danger"><i class="fa fa-close"></i> Cancel</button>
+                    @if(session('akses_type') == 'staff')
+                    <a href="{{ url('manage_message/message_staff') }}"><button class="btn btn-danger"><i class="fa fa-close"></i> Cancel</button>
+                    @elseif(session('akses_type') == 'root')
+                    <a href="{{ url('manage_message/message_root') }}"><button class="btn btn-danger"><i class="fa fa-close"></i> Cancel</button>
+                    @elseif(session('akses_type') == 'root+')
+                    <a href="{{ url('manage_message/message_root+') }}"><button class="btn btn-danger"><i class="fa fa-close"></i> Cancel</button>
+                    @endif
                     <button type="submit" class="btn btn-primary"><i class="fa fa-envelope-o"></i> Send</button>
                   </div>
                 </div><!-- /.box-footer -->

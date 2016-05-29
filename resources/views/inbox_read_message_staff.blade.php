@@ -41,7 +41,13 @@
 <section class="content-header">
 <div class="row">
             <div class="col-md-3">
-              <a href="{{ url('manage_message/message_staff') }}" class="btn btn-primary btn-block margin-bottom">Compose</a>
+              @if(session('akses_type') == 'staff')
+              <a href="{{ url('manage_message/message_staff/compose') }}" class="btn btn-primary btn-block margin-bottom">Compose</a>
+            @elseif(session('akses_type') == 'root')
+              <a href="{{ url('manage_message/message_root/compose') }}" class="btn btn-primary btn-block margin-bottom">Compose</a>
+            @elseif(session('akses_type') == 'root+')
+              <a href="{{ url('manage_message/message_root+/compose') }}" class="btn btn-primary btn-block margin-bottom">Compose</a>
+            @endif
               <div class="box box-solid">
                 <div class="box-header with-border">
                   <h3 class="box-title">Folders</h3>
@@ -51,8 +57,21 @@
                 </div>
                 <div class="box-body no-padding">
                   <ul class="nav nav-pills nav-stacked">
-                   <li class="active"><a href="{{ url('manage_message/message_staff') }}"><i class="fa fa-inbox"></i> Inbox <span class="label label-primary pull-right">12</span></a></li>
-                    <li><a href="{{ url('manage_message/message_staff/sent') }}"><i class="fa fa-envelope-o"></i> Sent</a></li>
+                   @if(session('akses_type') == 'staff')
+                      <li><a href="{{ url('manage_message/message_staff') }}"><i class="fa fa-inbox"></i> Inbox</a></li>
+                    @elseif(session('akses_type') == 'root')
+                      <li><a href="{{ url('manage_message/message_root') }}"><i class="fa fa-inbox"></i> Inbox</a></li>
+                    @elseif(session('akses_type') == 'root+')
+                      <li><a href="{{ url('manage_message/message_root+') }}"><i class="fa fa-inbox"></i> Inbox</a></li>
+                    @endif
+
+                    @if(session('akses_type') == 'staff')
+                      <li><a href="{{ url('manage_message/message_staff/sent') }}"><i class="fa fa-envelope-o"></i> Sent</a></li>
+                    @elseif(session('akses_type') == 'root')
+                      <li><a href="{{ url('manage_message/message_root/sent') }}"><i class="fa fa-envelope-o"></i> Sent</a></li>
+                    @elseif(session('akses_type') == 'root+')
+                      <li><a href="{{ url('manage_message/message_root+/sent') }}"><i class="fa fa-envelope-o"></i> Sent</a></li>
+                    @endif
                   </ul>
                 </div><!-- /.box-body -->
               </div><!-- /. box -->
@@ -96,10 +115,22 @@
                 </div><!-- /.box-body -->
                 <div class="box-footer">
                   <div class="pull-right">
-                    <a href="{{ url('manage_message/message_staff/compose') }}"><button class="btn btn-default"><i class="fa fa-reply"></i> Reply</button></a>
+                    @if(session('akses_type') == 'staff')
+                      <a href="{{ url('manage_message/message_staff/compose') }}" <button class="btn btn-default"><i class="fa fa-reply"></i> Reply</button></a>
+                    @elseif(session('akses_type') == 'root')
+                      <a href="{{ url('manage_message/message_root/compose') }}" <button class="btn btn-default"><i class="fa fa-reply"></i> Reply</button></a>
+                    @elseif(session('akses_type') == 'root+')
+                      <a href="{{ url('manage_message/message_root+/compose') }}" <button class="btn btn-default"><i class="fa fa-reply"></i> Reply</button></a>
+                    @endif
                     <a href="{{ url('manage_message/message_staff') }}"><button class="btn btn-default"><i class="fa fa-close"></i> Cancel</button></a>
                   </div>
-                  <a href="{{ url('manage_message/message_staff/delete/'.$dt_mails->id) }}"><button class="btn btn-default"><i class="fa fa-trash-o"></i> Delete</button></a>
+                   @if(session('akses_type') == 'staff')
+                    <a href="{{ url('manage_message/message_staff') }}"><button class="btn btn-danger"><i class="fa fa-close"></i> Cancel</button>
+                    @elseif(session('akses_type') == 'root')
+                    <a href="{{ url('manage_message/message_root') }}"><button class="btn btn-danger"><i class="fa fa-close"></i> Cancel</button>
+                    @if(session('akses_type') == 'root+')
+                    <a href="{{ url('manage_message/message_root+') }}"><button class="btn btn-danger"><i class="fa fa-close"></i> Cancel</button>
+                    @endif
                   <button class="btn btn-default"><i class="fa fa-print"></i> Print</button>
                 </div><!-- /.box-footer -->
               </div><!-- /. box -->

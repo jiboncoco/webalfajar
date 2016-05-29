@@ -95,7 +95,7 @@
                   </div><!-- /.mailbox-read-message -->
                 </div><!-- /.box-body -->
                 <div class="box-footer">
-                  <a href="{{ url('manage_message/message_teacher/delete/'.$dt_mails->id) }}"><button class="btn btn-default"><i class="fa fa-trash-o"></i> Delete</button></a>
+                  <a href="{{ url('manage_message/message_teacher/delete/'.$dt_mails->id) }}"><button class="btn btn-danger"><i class="fa fa-trash-o"></i> Delete</button></a>
                   <button class="btn btn-default"><i class="fa fa-print"></i> Print</button>
                 </div><!-- /.box-footer -->
               </div><!-- /. box -->

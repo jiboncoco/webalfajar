@@ -131,8 +131,8 @@ class AksesController extends Controller
         session_start();
         if(isset($_SESSION['logged_in'])){
             $uname = \App\akses::where('akses_email', session('akses_email'))->get();
-            $dt_teacher = \App\dt_teacher::where('dt_teacher_nip', session('akses_code'))->get();
-            return \View::make('compose_message_teacher')->with('dt_teachers',$dt_teacher)->with('uname',$uname);
+            $from = \App\akses::where('akses_email', session('akses_email'))->get();
+            return \View::make('compose_message_teacher')->with('from',$from)->with('uname',$uname);
         }
         else{
             return redirect('login');
@@ -144,8 +144,8 @@ class AksesController extends Controller
         session_start();
         if(isset($_SESSION['logged_in'])){
             $uname = \App\akses::where('akses_email', session('akses_email'))->get();
-            $dt_staff = \App\dt_staff::where('dt_staff_username', session('akses_code'))->get();
-            return \View::make('compose_message_staff')->with('dt_staffs',$dt_staff)->with('uname',$uname);
+            $from = \App\akses::where('akses_email', session('akses_email'))->get();
+            return \View::make('compose_message_staff')->with('from',$from)->with('uname',$uname);
         }
         else{
             return redirect('login');
@@ -157,8 +157,8 @@ class AksesController extends Controller
         session_start();
         if(isset($_SESSION['logged_in'])){
             $uname = \App\akses::where('akses_email', session('akses_email'))->get();
-            $dt_student = \App\dt_student::where('dt_student_nisn', session('akses_code'))->get();
-            return \View::make('compose_message_student')->with('dt_students',$dt_student)->with('uname',$uname);
+            $from = \App\akses::where('akses_email', session('akses_email'))->get();
+            return \View::make('compose_message_student')->with('from',$from)->with('uname',$uname);
         }
         else{
             return redirect('login');
@@ -170,8 +170,8 @@ class AksesController extends Controller
         session_start();
         if(isset($_SESSION['logged_in'])){
             $uname = \App\akses::where('akses_email', session('akses_email'))->get();
-            $dt_parent = \App\dt_parent::where('dt_parent_nisn', session('akses_code'))->get();
-            return \View::make('compose_message_parent')->with('dt_parents',$dt_parent)->with('uname',$uname);
+            $from = \App\akses::where('akses_email', session('akses_email'))->get();
+            return \View::make('compose_message_parent')->with('from',$from)->with('uname',$uname);
         }
         else{
             return redirect('login');
@@ -183,8 +183,8 @@ class AksesController extends Controller
         session_start();
         if(isset($_SESSION['logged_in'])){
             $uname = \App\akses::where('akses_email', session('akses_email'))->get();
-            $dt_mail = \App\dt_mail::where('dt_mail_create_by', session('akses_email'))->paginate(10);
-            return \View::make('sent_message_teacher')->with('dt_mails',$dt_mail)->with('uname',$uname);
+            $from = \App\akses::where('from_create_by', session('akses_email'))->paginate(10);
+            return \View::make('sent_message_teacher')->with('from',$from)->with('uname',$uname);
         }
         else{
             return redirect('login');
