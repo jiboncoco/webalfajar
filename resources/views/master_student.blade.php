@@ -175,7 +175,7 @@
                   </div>
                   </div>
                   <br>
-
+                  <input id="tyclass" type="hidden" name="type_class" value="tk"> 
                   <div class="row">
                   <div class="col-xs-6 col-md-4">
                       <label for="exampleInputPassword1">Select Grade</label>
@@ -185,9 +185,10 @@
                         @endforeach
                       </select>
                     </div>
+                    
                   <div  id="selecttypeclasstk" class="col-xs-6 col-md-4">
                       <label for="exampleInputPassword1">Select Class</label>
-                      <select name="dt_student_kelas" class="form-control not-res">
+                      <select name="dt_student_kelas_tk" class="form-control not-res">
                         @foreach($data_kelas_tk as $class_tk)
                         <option value="{{$class_tk->dt_kelas_name}}">{{$class_tk->dt_kelas_name}}</option>
                         @endforeach
@@ -195,7 +196,7 @@
                     </div>
                   <div style="display:none" id="selecttypeclasssd" class="col-xs-6 col-md-4">
                       <label for="exampleInputPassword1">Select Class</label>
-                      <select name="dt_student_kelas" class="form-control not-res">
+                      <select name="dt_student_kelas_sd" class="form-control not-res">
                         @foreach($data_kelas_sd as $class_sd)
                         <option value="{{$class_sd->dt_kelas_name}}">{{$class_sd->dt_kelas_name}}</option>
                         @endforeach
@@ -203,7 +204,7 @@
                     </div>
                   <div  style="display:none" id="selecttypeclasssmp" class="col-xs-6 col-md-4">
                       <label for="exampleInputPassword1">Select Class</label>
-                      <select name="dt_student_kelas" class="form-control not-res">
+                      <select name="dt_student_kelas_smp" class="form-control not-res">
                         @foreach($data_kelas_smp as $class_smp)
                         <option value="{{$class_smp->dt_kelas_name}}">{{$class_smp->dt_kelas_name}}</option>
                         @endforeach
@@ -211,7 +212,7 @@
                     </div>
                   <div style="display:none" id="selecttypeclasssma" class="col-xs-6 col-md-4">
                       <label for="exampleInputPassword1">Select Class</label>
-                      <select name="dt_student_kelas" class="form-control not-res">
+                      <select name="dt_student_kelas_sma" class="form-control not-res">
                         @foreach($data_kelas_sma as $class_sma)
                         <option value="{{$class_sma->dt_kelas_name}}">{{$class_sma->dt_kelas_name}}</option>
                         @endforeach
@@ -390,23 +391,27 @@
         if($(this).val() == "TK"){
           $("#selecttypeclasstk").css("display","block");
           $('#selecttypeclasssd').hide();
+          $("#tyclass").val("tk");
           $('#selecttypeclasssmp').hide();
           $('#selecttypeclasssma').hide();
         }
         else if($(this).val() == "SD"){
           $("#selecttypeclasstk").hide();
+          $("#tyclass").val("sd");
           $('#selecttypeclasssd').css("display","block");
           $('#selecttypeclasssmp').hide();
           $('#selecttypeclasssma').hide();
         }
         else if($(this).val() == "SMP"){
           $("#selecttypeclasstk").hide();
+          $("#tyclass").val("smp");
           $('#selecttypeclasssd').hide();
           $('#selecttypeclasssmp').css("display","block");
           $('#selecttypeclasssma').hide();
         }
         else if($(this).val() == "SMA"){
           $("#selecttypeclasstk").hide();
+          $("#tyclass").val("sma");
           $('#selecttypeclasssd').hide();
           $('#selecttypeclasssmp').hide();
           $('#selecttypeclasssma').css("display","block");

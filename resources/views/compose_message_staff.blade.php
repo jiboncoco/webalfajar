@@ -69,8 +69,21 @@
                 </div>
                 <div class="box-body no-padding">
                   <ul class="nav nav-pills nav-stacked">
-                    <li><a href="mailbox.html"><i class="fa fa-inbox"></i> Inbox </a></li>
-                    <li><a href="#"><i class="fa fa-envelope-o"></i> Sent</a></li>
+                   @if(session('akses_type') == 'staff')
+                      <li><a href="{{ url('manage_message/message_staff') }}"><i class="fa fa-inbox"></i> Inbox</a></li>
+                    @elseif(session('akses_type') == 'root')
+                      <li><a href="{{ url('manage_message/message_root') }}"><i class="fa fa-inbox"></i> Inbox</a></li>
+                    @elseif(session('akses_type') == 'root+')
+                      <li><a href="{{ url('manage_message/message_root+') }}"><i class="fa fa-inbox"></i> Inbox</a></li>
+                    @endif
+
+                    @if(session('akses_type') == 'staff')
+                      <li><a href="{{ url('manage_message/message_staff/sent') }}"><i class="fa fa-envelope-o"></i> Sent</a></li>
+                    @elseif(session('akses_type') == 'root')
+                      <li><a href="{{ url('manage_message/message_root/sent') }}"><i class="fa fa-envelope-o"></i> Sent</a></li>
+                    @elseif(session('akses_type') == 'root+')
+                      <li><a href="{{ url('manage_message/message_root+/sent') }}"><i class="fa fa-envelope-o"></i> Sent</a></li>
+                    @endif
                   </ul>
                 </div><!-- /.box-body -->
               </div><!-- /. box -->

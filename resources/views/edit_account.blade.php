@@ -33,7 +33,6 @@
        
       <!-- Content Wrapper. Contains page content -->
       <div class="content-wrapper">
-
         <!-- Main content -->
         <section class="content">
         <div class="admin-seacrh" style="height:2px;">
@@ -48,7 +47,8 @@
                 <div class="box-body">
                   
                 <form method="POST"  action="{{ url('manage_account/update_account') }}" enctype="multipart/form-data">
-                  <div class="row">                  
+                  <div class="row">  
+                      <input id="tyco" type="hidden" name="type_code" value="nip">               
                   <div class="col-xs-6 col-md-4">
                       <label for="exampleInputPassword1">Select Type</label>
                       <select id="selecttype" name="akses_type" class="form-control not-res">
@@ -67,44 +67,87 @@
                         @endif
                       </select>
                     </div>
-                  <div  class="col-xs-6 col-md-4">
-                    <label for="exampleInputPassword1">Email</label>
-                    <input type="password" name="akses_email" value="{{ $akses_edit->akses_email }}" class="form-control not-res" placeholder="Email" required/>
-                  </div>
                   </div>
                   <br>
 
-                  <div class="row">
-                  <div  class="col-xs-6 col-md-4">
-                 <script type="text/javascript">
-                  function minmaxnip(value, min, max) 
-                  {
-                      if(parseInt(value) < min || isNaN(value)) 
-                          return value; 
-                      else if(parseInt(value) > max) 
-                          return value; 
-                      else return value;
-                  }
-                  </script>
-                  <script type="text/javascript">
+                  <div style="display:block;" id="teacher" class="row">                  
+                  <div class="col-xs-6 col-md-4">
+                      <label for="exampleInputPassword1">Select NIP Teacher</label>
+                      <select id="selectteacher" name="akses_code_nip" class="form-control not-res">
+                        @foreach($dt_teachers as $teacher)
+                        <option value="{{$teacher->dt_teacher_nip}}">{{$teacher->dt_teacher_nip}}</option>
+                        @endforeach
+                      </select>
+                    </div>
+                  </div>
+                  <br>
 
-                  </script>
-                    <label for="exampleInputPassword1">Akses Code</label>
-                    <input type="text" value="{{ $akses_edit->akses_code }}" name="akses_code" class="form-control not-res" maxlength="10" placeholder="NIP" onkeyup="this.value = minmaxnip(this.value, 0, 10)" />
-                    <input type="hidden" name="id" value="{{$akses_edit->id}}">
-                    <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                  <div style="display:none;margin-bottom:10px;margin-top:-10px;" id="parent" class="row">                  
+                  <div class="col-xs-6 col-md-4">
+                      <label for="exampleInputPassword1">Select NISN Student</label>
+                      <select id="selectparent" name="akses_code_parent" class="form-control not-res">
+                        @foreach($dt_parents as $parent)
+                        <option value="{{$parent->dt_parent_nisn}}">{{$parent->dt_parent_nisn}}</option>
+                        @endforeach
+                      </select>
+                    </div>
+                  </div>
+                  
+
+                  <div style="display:none;margin-bottom:10px;margin-top:-10px;" id="student" class="row">                  
+                  <div class="col-xs-6 col-md-4">
+                      <label for="exampleInputPassword1">Select NISN Students</label>
+                      <select id="selectstudent" name="akses_code_student" class="form-control not-res">
+                        @foreach($dt_students as $student)
+                        <option value="{{$student->dt_student_nisn}}">{{$student->dt_student_nisn}}</option>
+                        @endforeach
+                      </select>
+                    </div>
                   </div>
 
+                  <input id="tymail" type="hidden" name="type_email" value="teacher"> 
+                  <div id="mailteacher" class="row">                  
                   <div class="col-xs-6 col-md-4">
+                      <label for="exampleInputPassword1">Select Email Teacher</label>
+                      <select id="emailteacher" name="akses_email_teacher" class="form-control not-res">
+                        @foreach($dt_teachers as $teacher)
+                        <option value="{{$teacher->dt_teacher_email}}">{{$teacher->dt_teacher_email}}</option>
+                        @endforeach
+                      </select>
+                    </div>
+                  </div>
+                  <br>
+
+                  <div style="display:none;margin-bottom:10px;margin-top:-10px;" id="mailparent" class="row">                  
+                  <div class="col-xs-6 col-md-4">
+                      <label for="exampleInputPassword1">Select Email Parent</label>
+                      <select id="emailparent" name="akses_email_parent" class="form-control not-res">
+                        @foreach($dt_parents as $parent)
+                        <option value="{{$parent->dt_parent_email}}">{{$parent->dt_parent_email}}</option>
+                        @endforeach
+                      </select>
+                    </div>
+                  </div>
+                  
+
+                  <div style="display:none;margin-bottom:10px;margin-top:-10px;" id="mailstudent" class="row">                  
+                  <div class="col-xs-6 col-md-4">
+                      <label for="exampleInputPassword1">Select Email Students</label>
+                      <select id="emailstudent" name="akses_email_student" class="form-control not-res">
+                        @foreach($dt_students as $student)
+                        <option value="{{$student->dt_student_email}}">{{$student->dt_student_email}}</option>
+                        @endforeach
+                      </select>
+                    </div>
+                  </div>
+                  
+
+                  <div class="row"> 
+                  <div  class="col-xs-6 col-md-4">
                       <label for="exampleInputPassword1">Status Data</label>
                       <select id="selecttype" name="akses_status_data" class="form-control not-res" >
-                      @if( $akses_edit->akses_status_data == "active")
-                      <option value="active" selected>Active</option>
-                      <option value="disable">Disable</option>
-                      @else( $akses_edit->akses_status_data == "disable")
                       <option value="active">Active</option>
-                      <option value="disable" selected>Disable</option>
-                      @endif
+                      <option value="disable">Disable</option>
                       </select>
                     </div>
                   </div>
@@ -123,16 +166,19 @@
                   }
                   </script>
                     <label for="exampleInputPassword1">Username</label>
-                    <input value="{{ $akses_edit->akses_username }}" type="text" name="akses_username" class="form-control not-res" maxlength="20" placeholder="Username" onkeyup="this.value = minmaxname(this.value, 0, 50)" />
+                    <input type="text" value="{{ $akses_edit->akses_username }}" name="akses_username" class="form-control not-res" maxlength="20" placeholder="Username" onkeyup="this.value = minmaxname(this.value, 0, 20)" required/>
+                    <input type="hidden" name="id" value="{{$akses_edit->id}}">
+                    <input type="hidden" name="_token" value="{{ csrf_token() }}">
                   </div>
-                  <div class="col-xs-6 col-md-4">
+                  <div  class="col-xs-6 col-md-4">
                     <label for="exampleInputPassword1">Password</label>
-                    <input value="{{ $akses_edit->akses_password }}" type="password" name="akses_password" class="form-control not-res" maxlength="20" placeholder="Password" onkeyup="this.value = minmaxname(this.value, 0, 50)" />
+                    <input type="text" value="{{ $akses_edit->akses_password }}" name="akses_password" class="form-control not-res" maxlength="20" placeholder="Password" onkeyup="this.value = minmaxname(this.value, 0, 20)" required/>
                   </div>
                   </div>
 
                   <br><br>
-                    <button  type="submit" class="btn btn-primary">Save Data</button>
+                  <div id="b-save"></div>
+                    <button type="submit" class="btn btn-primary">Save</button>
                 </form>
                 </div><!-- /.box-body -->
               </div><!-- /.box -->
@@ -159,12 +205,12 @@
                         <th>Code</th>
                         <th>Status Data</th>
                         <th>Username</th>
-                        <th>Password</th>
+                        <th>Email</th>
                         <th>Action</th>
                       </tr>
                     </thead>
                     <tbody>
-                    <?php $i=$aksess->firstItem(); ?>
+                    <?php $i=1; ?>
                     @foreach($aksess as $akses)
                       <tr>
                         <td>{{$i++}}</td>
@@ -172,10 +218,10 @@
                         <td>{{ $akses->akses_code}}</td>
                         <td>{{ $akses->akses_status_data}}</td>
                         <td>{{ $akses->akses_username}}</td>
-                        <td>{{ $akses->akses_password}}</td>
-                        <td>
-                        <a href="{{ url('manage_account/edit_account/'.$akses->id)}}"><i class="fa fa-pencil-square-o"></i> </a>
-                        <a href="{{ url('manage_account/delete_account/'.$akses->id)}}"><i class="fa fa-trash"></i> </a>
+                        <td>{{ $akses->akses_email}}</td>
+                        <td style="text-align:center">
+                        <a href="{{ url('manage_account/edit_account/'.$akses->id)}}"><i style="font-size:20px;margin-right:50px" class="fa fa-pencil-square-o"></i> </a>
+                        <a href="{{ url('manage_account/delete_account/'.$akses->id)}}"><i style="font-size:20px;margin:0px " class="fa fa-trash"></i> </a>
                         </td>
                       </tr>
                     @endforeach
@@ -186,11 +232,7 @@
                   <a href="{{ url('manage_all_account/export_data/xlsx') }}"><button class="btn btn-info"><i class="fa fa-paper-plane-o"></i> xlsx</button></a>
                   <a href="{{ url('manage_all_account/export_data/csv') }}"><button class="btn btn-warning"><i class="fa fa-paper-plane-o"></i> csv</button></a>
                   </div>
-                   <ul class="pagination pull-right">
-                  
-                  {!! $aksess->render() !!}
-                  
-                  </ul>
+
                 </div><!-- /.box-body -->
               </div><!-- /.box -->
               </div>
@@ -199,14 +241,63 @@
       
 </div>
 </body>
+<script type="text/javascript">
+        $('#selecttype').change(function(){
+        if($(this).val() == "Teacher"){
+          $("#teacher").css("display","block");
+          $('#student').hide();
+          $('#teacher').show();
+          $("#tyco").val("nip");
+          $('#parent').hide();
+        }
+        else if($(this).val() == "Parent"){
+          $("#parent").css("display","block");
+          $('#teacher').hide();
+          $('#student').hide();
+          $("#tyco").val("parent");
+        }
+        else if($(this).val() == "Student"){
+          $("#student").css("display","block");
+          $('#teacher').hide();
+          $('#parent').hide();
+          $("#tyco").val("student");
+        }
+      });
+
+</script>
+
+<script type="text/javascript">
+        $('#selecttype').change(function(){
+        if($(this).val() == "teacher"){
+          $("#mailteacher").css("display","block");
+          $('#mailstudent').hide();
+          $("#tymail").val("teacher");
+          $('#mailparent').hide();
+        }
+        else if($(this).val() == "parent"){
+          $("#mailparent").css("display","block");
+          $('#mailteacher').hide();
+          $('#mailstudent').hide();
+          $("#tymail").val("parent");
+        }
+        else{
+          $("#mailstudent").css("display","block");
+          $('#mailteacher').hide();
+          $('#mailparent').hide();
+          $("#tymail").val("student");
+        }
+      });
+
+</script>
+
     <script type="text/javascript">
             $('#example2').DataTable({
               "paging": true,
-              "lengthChange": false,
-              "searching": false,
+              "lengthChange": true,
+              "searching": true,
               "ordering": true,
               "info": true,
-              "autoWidth": false
+              "autoWidth": true
             });
     $('.birth_date').datetimepicker({ format: 'YYYY-MM-DD' });
     </script>

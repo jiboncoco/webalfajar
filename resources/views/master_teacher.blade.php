@@ -349,11 +349,11 @@
     <script type="text/javascript">
             $('.for_datatable').DataTable({
               "paging": true,
-              "lengthChange": false,
-              "searching": false,
+              "lengthChange": true,
+              "searching": true,
               "ordering": true,
               "info": true,
-              "autoWidth": false
+              "autoWidth": true
             });
     $('.birth_date').datetimepicker({ format: 'YYYY-MM-DD' });
     </script>

@@ -63,7 +63,7 @@
                 </div>
                 <div class="box-body no-padding">
                   <ul class="nav nav-pills nav-stacked">
-                    <li class="active"><a href="{{ url('manage_message/message_student') }}"><i class="fa fa-inbox"></i> Inbox <span class="label label-primary pull-right">12</span></a></li>
+                    <li><a href="{{ url('manage_message/message_student') }}"><i class="fa fa-inbox"></i> Inbox </a></li>
                     <li><a href="{{ url('manage_message/message_student/sent') }}"><i class="fa fa-envelope-o"></i> Sent</a></li>
                   </ul>
                 </div><!-- /.box-body -->
