@@ -83,8 +83,8 @@
           </a>
           <div class="attr">
           <hr/>
-           By : {{ $dt_blog_admin2->dt_blog_create_by }} <br>
-           {{ $dt_blog_admin2->created_at }}
+            <label><a href="{{ url('manage_post/edit_post/'.$dt_blog_admin2->id) }}"> <i style="font-size:24px;margin-right:20px;" class="fa fa-pencil-square-o"></i> </a></label>
+            <label><a href="{{ url('manage_post/delete_post/'.$dt_blog_admin2->id) }}"> <i style="font-size:24px;color:rgb(202, 65, 65)" class="fa fa-trash"></i> </a></label>
           </div>
           </div>
           @endforeach

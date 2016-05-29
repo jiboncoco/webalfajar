@@ -13,20 +13,35 @@ class AdminController extends Controller
     {
     	session_start();
     	if(isset($_SESSION['logged_in'])){
-    		$dt_blog_admin = \DB::table('dt_blog')->where('dt_blog_create_by',session('akses_username'))->take(6)->orderBy('id', 'desc')->paginate(6);
-			return \View::make('admin')->with('request',$request)->with('dt_blog_admins',$dt_blog_admin);
+            $uname = \App\akses::where('akses_email', session('akses_email'))->get();
+    		$dt_blog_admin = \App\dt_blog::orderBy('id', 'desc')->paginate(6);
+			return \View::make('admin')->with('request',$request)->with('dt_blog_admins',$dt_blog_admin)->with('uname',$uname);
 		}
 		else{
 			return redirect('login')->with('request',$request);
 		}	
     }
 
+    public function my_post(Request $request)
+    {
+        session_start();
+        if(isset($_SESSION['logged_in'])){
+            $uname = \App\akses::where('akses_email', session('akses_email'))->get();
+            $dt_blog_admin = \DB::table('dt_blog')->where('dt_blog_create_by',session('akses_code'))->orderBy('id', 'desc')->paginate(6);
+            return \View::make('my_post')->with('request',$request)->with('dt_blog_admins',$dt_blog_admin)->with('uname',$uname);
+        }
+        else{
+            return redirect('login')->with('request',$request);
+        }   
+    }
+
             public function manage_all()
     {
        session_start();
         if(isset($_SESSION['logged_in'])){
+            $uname = \App\akses::where('akses_email', session('akses_email'))->get();
             $dt_blog_admin = \DB::table('dt_blog')->where('dt_blog_type', '=', 'all')->orderBy('id', 'desc')->paginate(6);
-            return \View::make('admin')->with('dt_blog_admins', $dt_blog_admin);
+            return \View::make('admin')->with('dt_blog_admins', $dt_blog_admin)->with('uname',$uname);
         }
         else{
             return redirect('login');
@@ -37,10 +52,11 @@ class AdminController extends Controller
     {
        session_start();
         if(isset($_SESSION['logged_in'])){
+            $uname = \App\akses::where('akses_email', session('akses_email'))->get();
             $dt_blog_admin = \DB::table('dt_blog')->where([
                                                                     ['dt_blog_type', '=', 'news']
                                                                     ])->orderBy('id', 'desc')->paginate(6);
-            return \View::make('admin')->with('dt_blog_admins', $dt_blog_admin);
+            return \View::make('admin')->with('dt_blog_admins', $dt_blog_admin)->with('uname',$uname);
         }
         else{
             return redirect('login');
@@ -51,10 +67,11 @@ class AdminController extends Controller
     {
        session_start();
         if(isset($_SESSION['logged_in'])){
+            $uname = \App\akses::where('akses_email', session('akses_email'))->get();
             $dt_blog_admin = \DB::table('dt_blog')->where([
                                                                     ['dt_blog_type', '=', 'agenda']
                                                                     ])->orderBy('id', 'desc')->paginate(6);
-            return \View::make('admin')->with('dt_blog_admins', $dt_blog_admin);
+            return \View::make('admin')->with('dt_blog_admins', $dt_blog_admin)->with('uname',$uname);
         }
         else{
             return redirect('login');
@@ -65,10 +82,11 @@ class AdminController extends Controller
     {
        session_start();
         if(isset($_SESSION['logged_in'])){
+            $uname = \App\akses::where('akses_email', session('akses_email'))->get();
             $dt_blog_admin = \DB::table('dt_blog')->where([
                                                                     ['dt_blog_type', '=', 'announcement']
                                                                     ])->orderBy('id', 'desc')->paginate(6);
-            return \View::make('admin')->with('dt_blog_admins', $dt_blog_admin);
+            return \View::make('admin')->with('dt_blog_admins', $dt_blog_admin)->with('uname',$uname);
         }
         else{
             return redirect('login');
@@ -79,10 +97,11 @@ class AdminController extends Controller
     {
        session_start();
         if(isset($_SESSION['logged_in'])){
+            $uname = \App\akses::where('akses_email', session('akses_email'))->get();
             $dt_blog_admin = \DB::table('dt_blog')->where([
                                                                     ['dt_blog_type', '=', 'article']
                                                                     ])->orderBy('id', 'desc')->paginate(6);
-            return \View::make('admin')->with('dt_blog_admins', $dt_blog_admin);
+            return \View::make('admin')->with('dt_blog_admins', $dt_blog_admin)->with('uname',$uname);
         }
         else{
             return redirect('login');
@@ -93,8 +112,9 @@ class AdminController extends Controller
     {
        session_start();
         if(isset($_SESSION['logged_in'])){
+            $uname = \App\akses::where('akses_email', session('akses_email'))->get();
             $data_teacher = \App\dt_teacher::paginate(10);
-            return view('master_teacher')->with('data_teacher',$data_teacher);
+            return view('master_teacher')->with('data_teacher',$data_teacher)->with('uname',$uname);
         }
         else{
             return redirect('login');
@@ -109,7 +129,7 @@ class AdminController extends Controller
         $post->dt_teacher_position = Input::get('dt_teacher_position');
         $post->dt_teacher_for = Input::get('dt_teacher_for');
         $post->dt_teacher_statuslog = Input::get('dt_teacher_statuslog');
-        $post->dt_teacher_create_by = session('akses_username');
+        $post->dt_teacher_create_by = session('akses_email');
         $post->dt_teacher_code_absen = Input::get('dt_teacher_nip')."".Input::get('dt_teacher_fname');
 
         $post->save();
@@ -121,6 +141,7 @@ class AdminController extends Controller
     {
        session_start();
         if(isset($_SESSION['logged_in'])){
+            $uname = \App\akses::where('akses_email', session('akses_email'))->get();
             $data_edit = \App\dt_teacher::find($id);
             $data_teacher = \App\dt_teacher::paginate(10);
             return view('edit_master_teacher')->with('data_teacher',$data_teacher)->with('data_edit',$data_edit);
@@ -133,14 +154,14 @@ class AdminController extends Controller
     public function save_edit_master_teacher()
     {
         session_start();
-        if(session('akses_type') == "staff") {
+        if(session('akses_type') == "staff" || session('akses_type') == "root" || session('akses_type') == "root+") {
         $post = \App\dt_teacher::find(Input::get('id'));
         $post->dt_teacher_nip = Input::get('dt_teacher_nip');
         $post->dt_teacher_name = Input::get('dt_teacher_fname')."|".Input::get('dt_teacher_lname');
         $post->dt_teacher_position = Input::get('dt_teacher_position');
         $post->dt_teacher_for = Input::get('dt_teacher_for');
         $post->dt_teacher_statuslog = Input::get('dt_teacher_statuslog');
-        $post->dt_teacher_update_by = session('akses_username');
+        $post->dt_teacher_update_by = session('akses_email');
         $post->dt_teacher_code_absen = Input::get('dt_teacher_nip')."".Input::get('dt_teacher_fname');
 
         $post->save();
@@ -162,7 +183,7 @@ class AdminController extends Controller
         $post->dt_teacher_position = Input::get('dt_teacher_position');
         $post->dt_teacher_for = Input::get('dt_teacher_for');
         $post->dt_teacher_statuslog = Input::get('dt_teacher_statuslog');
-        $post->dt_teacher_update_by = session('akses_username');
+        $post->dt_teacher_update_by = session('akses_email');
         $post->dt_teacher_code_absen = Input::get('dt_teacher_nip')."".Input::get('dt_teacher_fname');
          if(Input::hasFile('dt_teacher_name_img')){
             $dt_teacher_name_img = date("YmdHis")
@@ -194,11 +215,12 @@ class AdminController extends Controller
     {
        session_start();
         if(isset($_SESSION['logged_in'])){
+            $uname = \App\akses::where('akses_email', session('akses_email'))->get();
             $akses = \App\akses::all();
             $dt_teacher = \App\dt_teacher::all();
             $dt_parent = \App\dt_parent::all();
             $dt_student = \App\dt_student::all();
-            return \View::make('manage_all_account')->with('aksess', $akses)->with('dt_teachers', $dt_teacher)->with('dt_parents', $dt_parent)->with('dt_students', $dt_student);
+            return \View::make('manage_all_account')->with('aksess', $akses)->with('dt_teachers', $dt_teacher)->with('dt_parents', $dt_parent)->with('dt_students', $dt_student)->with('uname',$uname);
         }
         else{
             return redirect(url('login'));
@@ -210,10 +232,11 @@ class AdminController extends Controller
         $post = new \App\akses;
         $post->akses_type = Input::get('akses_type');
         $post->akses_code = Input::get('akses_code');
+        $post->akses_email = Input::get('akses_email');
         $post->akses_status_data = Input::get('akses_status_data');
         $post->akses_username = Input::get('akses_username');
         $post->akses_password = Input::get('akses_password');
-        $post->akses_create_by = session('akses_username');
+        $post->akses_create_by = session('akses_email');
 
         $post->save();
 
@@ -224,9 +247,23 @@ class AdminController extends Controller
     {
        session_start();
         if(isset($_SESSION['logged_in'])){
+            $uname = \App\akses::where('akses_email', session('akses_email'))->get();
         $akses_edit = \App\akses::find($id);
         $akses = \App\akses::paginate(5);
         return \View::make('edit_account')->with('aksess', $akses)->with('akses_edit', $akses_edit);
+        }
+        else{
+            return redirect(url('login'));
+        }
+    }
+
+    public function edit_profile()
+    {
+       session_start();
+        if(isset($_SESSION['logged_in'])){
+            $uname = \App\akses::where('akses_email', session('akses_email'))->get();
+        $akses_edit = \App\akses::where('akses_code', session('akses_code'))->get();
+        return \View::make('edit_profile')->with('akses_edit', $akses_edit)->with('uname',$uname);
         }
         else{
             return redirect(url('login'));
@@ -238,14 +275,29 @@ class AdminController extends Controller
         $post = \App\akses::find(Input::get('id'));
         $post->akses_type = Input::get('akses_type');
         $post->akses_code = Input::get('akses_code');
+        $post->akses_email = Input::get('akses_email');
         $post->akses_status_data = Input::get('akses_status_data');
         $post->akses_username = Input::get('akses_username');
         $post->akses_password = Input::get('akses_password');
-        $post->akses_update_by = session('akses_username');
+        $post->akses_update_by = session('akses_email');
+
+        if(Input::hasFile('akses_imguser')){
+            $akses_imguser = date("YmdHis")
+            .uniqid()
+            ."."
+            .Input::file('akses_imguser')->getClientOriginalExtension();
+        
+            Input::file('akses_imguser')->move(storage_path(),$akses_imguser);
+            $post->akses_imguser = $akses_imguser;
+        }
 
         $post->save();
 
+        if(session('akses_type') == "staff" || session('akses_type') == "root" || session('akses_type') == "root+"){
         return redirect(url('manage_account/all_account'));
+        } else {
+        return redirect(url('manage'));
+        }
     }
 
     public function delete_account($id)
@@ -264,9 +316,10 @@ class AdminController extends Controller
     {
        session_start();
         if(isset($_SESSION['logged_in'])){
+            $uname = \App\akses::where('akses_email', session('akses_email'))->get();
             $data_parent = \App\dt_parent::all();
             $data_student = \App\dt_student::all();
-            return \View::make('master_parent')->with('data_parent', $data_parent)->with('data_student', $data_student);
+            return \View::make('master_parent')->with('data_parent', $data_parent)->with('data_student', $data_student)->with('uname',$uname);
         }
         else{
             return redirect(url('login'));
@@ -284,14 +337,37 @@ class AdminController extends Controller
         return redirect(url('manage_parent/master_parent'));
     }
 
+    public function save_mailnews()
+    {
+        $post = new \App\dt_mailnews;
+        $post->dt_mailnews_email = Input::get('dt_mailnews_email');
+        $post->dt_mailnews_status = 'disable';
+        session_start();
+        if(isset($_SESSION['logged_in'])){
+            $uname = \App\akses::where('akses_email', session('akses_email'))->get();
+        $post->dt_mailnews_create_by = session('akses_email');
+        }else{
+        $post->dt_mailnews_create_by = Input::get('dt_mailnews_email');
+        }
+        $post->save();
+
+        return redirect()->back();
+    }
+
+    public function login_sadmin()
+    {
+        return view('login_sadmin');
+    }
+
     public function edit_parent($id)
     {
        session_start();
         if(isset($_SESSION['logged_in'])){
+            $uname = \App\akses::where('akses_email', session('akses_email'))->get();
         $data_parent = \App\dt_parent::all();
         $data_edit = \App\dt_parent::find($id);
         $data_student = \App\dt_student::all();
-        return \View::make('edit_parent')->with('data_parent', $data_parent)->with('data_student', $data_student)->with('data_edit', $data_edit);
+        return \View::make('edit_parent')->with('data_parent', $data_parent)->with('data_student', $data_student)->with('data_edit', $data_edit)->with('uname',$uname);
         }
         else{
             return redirect(url('login'));
@@ -301,7 +377,7 @@ class AdminController extends Controller
     public function update_parent()
     {   
        session_start();
-       if(session('akses_type') == "staff"){
+       if(session('akses_type') == "staff" || session('akses_type') == "root" || session('akses_type') == "root+"){
         $post = \App\dt_parent::find(Input::get('id'));
         $post->dt_parent_nisn = Input::get('dt_parent_nisn');
         $post->dt_parent_name = Input::get('dt_parent_fname')."|".Input::get('dt_parent_lname');
@@ -345,22 +421,11 @@ class AdminController extends Controller
         }
     }
 
-    public function my_post()
-    {
-        session_start();
-        if(isset($_SESSION['logged_in'])){
-            $dt_blog_admin = \DB::table('dt_blog')->where('dt_blog_create_by',session('akses_username'))->take(6)->orderBy('id', 'desc')->paginate(6);
-            return \View::make('admin')->with('dt_blog_admins',$dt_blog_admin);
-        }
-        else{
-            return redirect('login');
-        }   
-    }
-
     public function master_type_post()
     {
        session_start();
         if(isset($_SESSION['logged_in'])){
+            $uname = \App\akses::where('akses_email', session('akses_email'))->get();
         $m_blog = \App\m_blog::all();
         return \View::make('master_type_post')->with('m_blogs', $m_blog);
         }
@@ -384,6 +449,7 @@ class AdminController extends Controller
     {
        session_start();
         if(isset($_SESSION['logged_in'])){
+            $uname = \App\akses::where('akses_email', session('akses_email'))->get();
         $m_blog = \App\m_blog::find($id);
         $blog = \App\m_blog::all();
         return \View::make('edit_master_type_post')->with('m_blogs', $m_blog)->with('blog', $blog);
@@ -419,6 +485,7 @@ class AdminController extends Controller
     {
        session_start();
         if(isset($_SESSION['logged_in'])){
+            $uname = \App\akses::where('akses_email', session('akses_email'))->get();
         $m_kelas = \App\m_kelas::all();
         return \View::make('master_class_post')->with('m_kelass', $m_kelas);
         }
@@ -442,6 +509,7 @@ class AdminController extends Controller
     {
        session_start();
         if(isset($_SESSION['logged_in'])){
+            $uname = \App\akses::where('akses_email', session('akses_email'))->get();
         $m_kelas = \App\m_kelas::find($id);
         $kelas = \App\m_kelas::all();
         return \View::make('edit_master_class_post')->with('m_kelass', $m_kelas)->with('kelas', $kelas);
@@ -477,6 +545,7 @@ class AdminController extends Controller
     {
        session_start();
         if(isset($_SESSION['logged_in'])){
+            $uname = \App\akses::where('akses_email', session('akses_email'))->get();
             $teacher_sch = \App\dt_sch::all();
             $dt_teacher = \App\dt_teacher::all();
             return \View::make('teacher_sch')->with('teacher_sch',$teacher_sch)->with('dt_teachers',$dt_teacher);
@@ -495,7 +564,7 @@ class AdminController extends Controller
         $post->sch_year = Input::get('sch_year');
         $post->sch_time = Input::get('sch_time');
         $post->sch_task = Input::get('sch_task');
-        $post->sch_create_by = session('akses_username');
+        $post->sch_create_by = session('akses_email');
         $post->save();
 
         return redirect(url('manage_teacher/schedule_teacher'));
@@ -505,6 +574,7 @@ class AdminController extends Controller
     {
        session_start();
         if(isset($_SESSION['logged_in'])){
+            $uname = \App\akses::where('akses_email', session('akses_email'))->get();
             $teachersch = \App\dt_sch::all();
             $teacher_sch = \App\dt_sch::find($id);
             $dt_teacher = \App\dt_teacher::all();
@@ -524,7 +594,7 @@ class AdminController extends Controller
         $post->sch_year = Input::get('sch_year');
         $post->sch_time = Input::get('sch_time');
         $post->sch_task = Input::get('sch_task');
-        $post->sch_create_by = session('akses_username');
+        $post->sch_create_by = session('akses_email');
         $post->save();
 
         return redirect(url('manage_teacher/schedule_teacher'));
@@ -545,6 +615,7 @@ class AdminController extends Controller
     {
        session_start();
         if(isset($_SESSION['logged_in'])){
+            $uname = \App\akses::where('akses_email', session('akses_email'))->get();
             $feature = \App\dt_feature::all();
             return \View::make('master_feature')->with('feature',$feature);
         }
@@ -560,7 +631,7 @@ class AdminController extends Controller
         $post->feature_for = Input::get('feature_for');
         $post->feature_text = Input::get('feature_text');
         $post->feature_status = Input::get('feature_status');
-        $post->feature_create_by = session('akses_username');
+        $post->feature_create_by = session('akses_email');
         $post->save();
 
         return redirect(url('manage_feature/master_feature'));
@@ -570,9 +641,10 @@ class AdminController extends Controller
     {
        session_start();
         if(isset($_SESSION['logged_in'])){
+            $uname = \App\akses::where('akses_email', session('akses_email'))->get();
             $feature = \App\dt_feature::all();
             $feature_edit = \App\dt_feature::find($id);
-            return \View::make('edit_master_feature')->with('feature',$feature)->with('feature_edit',$feature_edit);
+            return \View::make('edit_master_feature')->with('feature',$feature)->with('feature_edit',$feature_edit)->with('uname',$uname);
         }
         else{
             return redirect(url('login'));
@@ -586,7 +658,7 @@ class AdminController extends Controller
         $post->feature_for = Input::get('feature_for');
         $post->feature_text = Input::get('feature_text');
         $post->feature_status = Input::get('feature_status');
-        $post->feature_update_by = session('akses_username');
+        $post->feature_update_by = session('akses_email');
         $post->save();
 
         return redirect(url('manage_feature/master_feature'));
@@ -608,6 +680,7 @@ class AdminController extends Controller
     {
        session_start();
         if(isset($_SESSION['logged_in'])){
+            $uname = \App\akses::where('akses_email', session('akses_email'))->get();
             $class = \App\dt_kelas::all();
             return \View::make('master_class')->with('class',$class);
         }
@@ -622,7 +695,7 @@ class AdminController extends Controller
         $post->dt_kelas_type = Input::get('dt_kelas_type');
         $post->dt_kelas_name = Input::get('dt_kelas_name');
         $post->dt_kelas_status = Input::get('dt_kelas_status');
-        $post->dt_kelas_create_by = session('akses_username');
+        $post->dt_kelas_create_by = session('akses_email');
         $post->save();
 
         return redirect(url('manage_class/master_class'));
@@ -632,9 +705,10 @@ class AdminController extends Controller
     {
        session_start();
         if(isset($_SESSION['logged_in'])){
+            $uname = \App\akses::where('akses_email', session('akses_email'))->get();
             $class = \App\dt_kelas::all();
             $class_edit = \App\dt_kelas::find($id);
-            return \View::make('edit_class')->with('class',$class)->with('class_edit',$class_edit);
+            return \View::make('edit_class')->with('class',$class)->with('class_edit',$class_edit)->with('uname',$uname);
         }
         else{
             return redirect(url('login'));
@@ -647,7 +721,7 @@ class AdminController extends Controller
         $post->dt_kelas_type = Input::get('dt_kelas_type');
         $post->dt_kelas_name = Input::get('dt_kelas_name');
         $post->dt_kelas_status = Input::get('dt_kelas_status');
-        $post->dt_kelas_create_by = session('akses_username');
+        $post->dt_kelas_create_by = session('akses_email');
         $post->save();
 
         return redirect(url('manage_class/master_class'));
@@ -669,6 +743,7 @@ class AdminController extends Controller
     {
        session_start();
         if(isset($_SESSION['logged_in'])){
+            $uname = \App\akses::where('akses_email', session('akses_email'))->get();
             $class_sch = \App\sch_class::all();
             $c_sch = \App\sch_class::all();
             $dt_class = \App\dt_kelas::all();
@@ -684,6 +759,7 @@ class AdminController extends Controller
     // {
     //    session_start();
     //     if(isset($_SESSION['logged_in'])){
+
     //         $c_sch = \App\sch_class::find($id);
     //         return \View::make('class_sch')->with('c_sch',$c_sch);
     //     }
@@ -702,7 +778,7 @@ class AdminController extends Controller
         $post->sch_class_time = Input::get('sch_class_time');
         $post->sch_class_teacher = Input::get('sch_class_teacher');
         $post->sch_class_schedule = Input::get('sch_class_schedule');
-        $post->sch_class_create_by = session('akses_username');
+        $post->sch_class_create_by = session('akses_email');
         $post->save();
 
         return redirect(url('manage_class/master_schedule_class'));
@@ -712,11 +788,12 @@ class AdminController extends Controller
     {
       session_start();
         if(isset($_SESSION['logged_in'])){
+            $uname = \App\akses::where('akses_email', session('akses_email'))->get();
             $class_sch = \App\sch_class::all();
             $class_sch_edit = \App\sch_class::find($id);
             $dt_class = \App\dt_kelas::all();
             $dt_teacher = \App\dt_teacher::all();
-            return \View::make('edit_class_sch')->with('class_sch',$class_sch)->with('dt_class',$dt_class)->with('dt_teachers',$dt_teacher)->with('class_sch_edit',$class_sch_edit);
+            return \View::make('edit_class_sch')->with('class_sch',$class_sch)->with('dt_class',$dt_class)->with('dt_teachers',$dt_teacher)->with('class_sch_edit',$class_sch_edit)->with('uname',$uname);
         }
         else{
             return redirect(url('login'));
@@ -733,7 +810,7 @@ class AdminController extends Controller
         $post->sch_class_time = Input::get('sch_class_time');
         $post->sch_class_teacher = Input::get('sch_class_teacher');
         $post->sch_class_schedule = Input::get('sch_class_schedule');
-        $post->sch_class_update_by = session('akses_username');
+        $post->sch_class_update_by = session('akses_email');
         $post->save();
 
         return redirect(url('manage_class/master_schedule_class'));
@@ -744,7 +821,8 @@ class AdminController extends Controller
        session_start();
         if(isset($_SESSION['logged_in'])){
             \App\sch_class::find($id)->delete();
-            return redirect(url('manage_class/master_schedule_class'));        }
+            return redirect(url('manage_class/master_schedule_class'));        
+        }
         else{
             return redirect(url('login'));
         }
@@ -754,13 +832,14 @@ class AdminController extends Controller
     {
        session_start();
         if(isset($_SESSION['logged_in'])){
+            $uname = \App\akses::where('akses_email', session('akses_email'))->get();
             $data_student = \App\dt_student::all();
             $data_kelas = \App\dt_kelas::all();
             $data_kelas_tk = \DB::table('dt_kelas')->where('dt_kelas_type', 'like', 'tk')->get();
             $data_kelas_sd = \DB::table('dt_kelas')->where('dt_kelas_type', 'like', 'sd')->get();
             $data_kelas_smp = \DB::table('dt_kelas')->where('dt_kelas_type', 'like', 'smp')->get();
             $data_kelas_sma = \DB::table('dt_kelas')->where('dt_kelas_type', 'like', 'sma')->get();
-            return view('master_student')->with('data_student',$data_student)->with('data_kelas',$data_kelas)->with('data_kelas_tk',$data_kelas_tk)->with('data_kelas_sd',$data_kelas_sd)->with('data_kelas_smp',$data_kelas_smp)->with('data_kelas_sma',$data_kelas_sma);
+            return view('master_student')->with('data_student',$data_student)->with('data_kelas',$data_kelas)->with('data_kelas_tk',$data_kelas_tk)->with('data_kelas_sd',$data_kelas_sd)->with('data_kelas_smp',$data_kelas_smp)->with('data_kelas_sma',$data_kelas_sma)->with('uname',$uname);
         }
         else{
             return redirect('login');
@@ -775,7 +854,7 @@ class AdminController extends Controller
         $post->dt_student_grade = Input::get('dt_student_grade');
         $post->dt_student_kelas = Input::get('dt_student_kelas');
         $post->dt_student_statuslog = Input::get('dt_student_statuslog');
-        $post->dt_student_create_by = session('akses_username');
+        $post->dt_student_create_by = session('akses_email');
         $post->dt_student_email = Input::get('dt_student_email');
 
         $post->save();
@@ -787,6 +866,7 @@ class AdminController extends Controller
     {
        session_start();
         if(isset($_SESSION['logged_in'])){
+            $uname = \App\akses::where('akses_email', session('akses_email'))->get();
             $data_student = \App\dt_student::all();
             $data_kelas = \App\dt_kelas::all();
             $data_kelas_tk = \DB::table('dt_kelas')->where('dt_kelas_type', 'like', 'tk')->get();
@@ -794,7 +874,7 @@ class AdminController extends Controller
             $data_kelas_smp = \DB::table('dt_kelas')->where('dt_kelas_type', 'like', 'smp')->get();
             $data_kelas_sma = \DB::table('dt_kelas')->where('dt_kelas_type', 'like', 'sma')->get();
             $data_edit = \App\dt_student::find($id);
-            return view('edit_master_student')->with('data_student',$data_student)->with('data_edit',$data_edit)->with('data_kelas',$data_kelas)->with('data_kelas_tk',$data_kelas_tk)->with('data_kelas_sd',$data_kelas_sd)->with('data_kelas_smp',$data_kelas_smp)->with('data_kelas_sma',$data_kelas_sma);
+            return view('edit_master_student')->with('data_student',$data_student)->with('data_edit',$data_edit)->with('data_kelas',$data_kelas)->with('data_kelas_tk',$data_kelas_tk)->with('data_kelas_sd',$data_kelas_sd)->with('data_kelas_smp',$data_kelas_smp)->with('data_kelas_sma',$data_kelas_sma)->with('uname',$uname);
         }
         else{
             return redirect('login');
@@ -804,14 +884,14 @@ class AdminController extends Controller
     public function update_master_student()
     {
         session_start();
-        if(session('akses_type') == "staff") {
+        if(session('akses_type') == "staff" || session('akses_type') == "root" || session('akses_type') == "root+") {
         $post = \App\dt_student::find(Input::get('id'));
         $post->dt_student_nisn = Input::get('dt_student_nip');
         $post->dt_student_name = Input::get('dt_student_fname')."|".Input::get('dt_student_lname');
         $post->dt_student_grade = Input::get('dt_student_grade');
         $post->dt_student_kelas = Input::get('dt_student_kelas');
         $post->dt_student_statuslog = Input::get('dt_student_statuslog');
-        $post->dt_student_update_by = session('akses_username');
+        $post->dt_student_update_by = session('akses_email');
         $post->dt_student_email = Input::get('dt_student_email');
 
         $post->save();
@@ -834,7 +914,7 @@ class AdminController extends Controller
         $post->dt_student_religion = Input::get('dt_student_religion');
         $post->dt_student_nameparent = Input::get('dt_student_nameparent');
         $post->dt_student_statuslog = Input::get('dt_student_statuslog');
-        $post->dt_student_update_by = session('akses_username');
+        $post->dt_student_update_by = session('akses_email');
         $post->dt_student_email = Input::get('dt_student_email');
 
         $post->save();

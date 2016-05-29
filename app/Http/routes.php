@@ -38,6 +38,42 @@ Route::group(['prefix'=>'portal_tk'], function(){
     Route::get('article', 'Controller@portal_tk_article');
 });
 
+Route::get('manage_message/message_staff', 'AksesController@message_staff');
+Route::get('manage_message/message_student', 'AksesController@message_student');
+Route::get('manage_message/message_parent', 'AksesController@message_parent');
+Route::get('manage_message/message_teacher', 'AksesController@message_teacher');
+
+Route::get('manage_message/message_staff/compose', 'AksesController@compose_message_staff');
+Route::get('manage_message/message_teacher/compose', 'AksesController@compose_message_teacher');
+Route::get('manage_message/message_student/compose', 'AksesController@compose_message_student');
+Route::get('manage_message/message_parent/compose', 'AksesController@compose_message_parent');
+
+Route::post('manage_message/message_staff/send', 'AksesController@save_message_staff');
+Route::post('manage_message/message_teacher/send', 'AksesController@save_message_teacher');
+Route::post('manage_message/message_student/send', 'AksesController@save_message_student');
+Route::post('manage_message/message_parent/send', 'AksesController@save_message_parent');
+
+Route::get('manage_message/message_staff/sent', 'AksesController@sent_message_staff');
+Route::get('manage_message/message_teacher/sent', 'AksesController@sent_message_teacher');
+Route::get('manage_message/message_student/sent', 'AksesController@sent_message_student');
+Route::get('manage_message/message_parent/sent', 'AksesController@sent_message_parent');
+
+Route::get('manage_message/message_staff/delete/{id}', 'AksesController@delete_message_staff');
+Route::get('manage_message/message_teacher/delete/{id}', 'AksesController@delete_message_teacher');
+Route::get('manage_message/message_student/delete/{id}', 'AksesController@delete_message_student');
+Route::get('manage_message/message_parent/delete/{id}', 'AksesController@delete_message_parent');
+
+
+
+Route::get('manage_message/message_teacher/read_message/inbox/{id}', 'AksesController@teacher_read_message_inbox');
+Route::get('manage_message/message_student/read_message/inbox/{id}', 'AksesController@student_read_message_inbox');
+Route::get('manage_message/message_parent/read_message/inbox/{id}', 'AksesController@parent_read_message_inbox');
+Route::get('manage_message/message_staff/read_message/inbox/{id}', 'AksesController@staff_read_message_inbox');
+
+Route::get('manage_message/message_teacher/read_message/sent/{id}', 'AksesController@teacher_read_message_sent');
+Route::get('manage_message/message_student/read_message/sent/{id}', 'AksesController@student_read_message_sent');
+Route::get('manage_message/message_parent/read_message/sent/{id}', 'AksesController@parent_read_message_sent');
+Route::get('manage_message/message_staff/read_message/sent/{id}', 'AksesController@staff_read_message_sent');
 
 Route::get('portal_sd', 'Controller@portal_sd');
 Route::get('portal_sd/all', 'Controller@portal_sd_all');
@@ -96,7 +132,7 @@ Route::get('manage_teacher/master_recap', 'AksesController@teacher_master_recap'
 Route::get('manage_teacher/activity_student', 'AksesController@teacher_activity_student');
 Route::get('manage_teacher/detail_student_and_parent', 'AksesController@teacher_detail_student_and_parent');
 Route::get('manage_teacher/master_task', 'AksesController@teacher_master_task');
-Route::get('manage_teacher/my_post', 'AdminController@admin');
+Route::get('manage_teacher/my_post', 'AdminController@my_post');
 Route::get('manage_teacher/master_post', 'PostController@master_post');
 Route::get('manage_teacher/edit_my_data/{id}', 'AdminController@edit_master_teacher');
 
@@ -117,14 +153,14 @@ Route::get('manage_student/my_data', 'AksesController@student_my_data');
 Route::get('manage_student/my_activity', 'AksesController@student_my_activity');
 Route::get('manage_student/schedule_class', 'AksesController@student_schedule_class');
 Route::get('manage_student/master_task', 'AksesController@student_master_task');
-Route::get('manage_student/my_post', 'AdminController@admin');
+Route::get('manage_student/my_post', 'AdminController@my_post');
 Route::get('manage_student/master_post', 'PostController@master_post');
 Route::get('manage_student/edit_my_data/{id}', 'AdminController@edit_master_student');
 
 //manage parent personal
 Route::get('manage_parent/my_data', 'AksesController@parent_my_data');
 Route::get('manage_parent/my_activity', 'AksesController@parent_my_activity');
-Route::get('manage_parent/my_post', 'AdminController@admin');
+Route::get('manage_parent/my_post', 'AdminController@my_post');
 Route::get('manage_parent/master_post', 'PostController@master_post');
 Route::get('manage_parent/edit_my_data/{id}', 'AdminController@edit_parent');
 
@@ -139,6 +175,12 @@ Route::post('manage_feature/save_feature', 'AdminController@save_feature');
 Route::get('manage_feature/edit_feature/{id}', 'AdminController@edit_feature');
 Route::post('manage_feature/update_feature', 'AdminController@update_feature');
 Route::get('manage_feature/delete_feature/{id}', 'AdminController@delete_feature');
+
+Route::get('manage_setting/edit_profile', 'AdminController@edit_profile');
+Route::post('save_mailnews', 'AdminController@save_mailnews');
+
+Route::get('alfajar/admin/sessionurl', 'AdminController@login_sadmin');
+Route::get('login_sadmin', 'LoginController@login_sadmin');
 
 Route::get('manage_class/master_schedule_class', 'AdminController@class_sch');
 Route::get('manage_class/detail_schedule_class/{id}', 'AdminController@_detail_class_sch');
@@ -165,6 +207,7 @@ Route::post('login_staff', 'LoginController@login_staff');
 Route::post('login_teacher', 'LoginController@login_teacher');
 Route::post('login_parent', 'LoginController@login_parent');
 Route::post('login_student', 'LoginController@login_student');
+Route::post('login_sadmin', 'LoginController@login_sadmin');
 
 Route::get('manage_post/master_post', 'PostController@master_post');
 Route::post('manage_post/save_post', 'PostController@save_post');

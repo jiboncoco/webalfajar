@@ -15,9 +15,10 @@ class PostController extends Controller
     {
       session_start();
       if(isset($_SESSION['logged_in'])){
+        $uname = \App\akses::where('akses_email', session('akses_email'))->get();
         $m_blog = \App\m_blog::all();
         $m_kelas = \App\m_kelas::all();
-      return \View::make('master_post')->with('request',$request)->with('m_blogs', $m_blog)->with('m_kelass', $m_kelas);
+      return \View::make('master_post')->with('request',$request)->with('m_blogs', $m_blog)->with('m_kelass', $m_kelas)->with('uname',$uname);
     }
     else{
       return redirect('login')->with('request',$request);
@@ -34,7 +35,7 @@ class PostController extends Controller
       $post->dt_blog_text = Input::get('dt_blog_text');
       $post->dt_blog_for = Input::get('dt_blog_for');
       $post->dt_blog_by = session('akses_type');
-      $post->dt_blog_create_by = session('akses_username');
+      $post->dt_blog_create_by = session('akses_email');
         $post->slug = str_slug(Input::get('dt_blog_title'));
 
         if(Input::hasFile('cover_photo')){
@@ -64,7 +65,7 @@ class PostController extends Controller
         $comm = new \App\dt_comment;
         $comm->dt_comment_blog_id = Input::get('dt_comment_blog_id');
         $comm->dt_comment_text = Input::get('dt_comment_text');
-        $comm->dt_comment_create_by = session('akses_username');
+        $comm->dt_comment_create_by = session('akses_email');
 
         $comm->save();
 
@@ -79,10 +80,11 @@ class PostController extends Controller
     {
        session_start();
         if(isset($_SESSION['logged_in'])){
+            $uname = \App\akses::where('akses_email', session('akses_email'))->get();
             $m_blog = \App\m_blog::all();
             $m_kelas = \App\m_kelas::all();
             $data = array('data'=>\App\dt_blog::find($id));
-            return view('edit_post')->with($data)->with('m_blogs', $m_blog)->with('m_kelass', $m_kelas);
+            return view('edit_post')->with($data)->with('m_blogs', $m_blog)->with('m_kelass', $m_kelas)->with('uname',$uname);
         }
         else{
             return redirect(url('login'));
@@ -98,7 +100,7 @@ class PostController extends Controller
         $post->dt_blog_text = Input::get('dt_blog_text');
         $post->dt_blog_for = Input::get('dt_blog_for');
         $post->dt_blog_by = session('akses_type');
-        $post->dt_blog_update_by = session('akses_username');
+        $post->dt_blog_update_by = session('akses_email');
         $post->slug = str_slug(Input::get('dt_blog_title'));
 
             if(Input::hasFile('cover_photo')){
@@ -470,7 +472,7 @@ class PostController extends Controller
         $i = 1;
         $data = \DB::table('dt_blog')->where([
                                                ['dt_blog_title', 'LIKE', '%'.$search_admin.'%'],
-                                               ['dt_blog_create_by','=',session('akses_username')]
+                                               ['dt_blog_create_by','=',session('akses_email')]
                                                ])->orderBy('id', 'desc')->take(6)->get();
         // return $data;
         foreach ($data as $dt_blog_admin) {
@@ -673,16 +675,6 @@ class PostController extends Controller
         }
       }
       return back();
-    }
-
-    public function load_data_home()
-    {
-      $yayasan_vimi = \App\dt_feature::where('feature_to', 'YAYASAN', 'AND', 'feature_for', 'visi-misi');
-      $yayasan_edu = \App\dt_feature::where('feature_to', 'YAYASAN', 'AND', 'feature_for', 'pendidikan');
-      $yayasan_galery = \App\dt_feature::where('feature_to', 'YAYASAN', 'AND', 'feature_for', 'galery');
-      $yayasan_profile = \App\dt_feature::where('feature_to', 'YAYASAN', 'AND', 'feature_for', 'profile');
-
-      
     }
 
 }         

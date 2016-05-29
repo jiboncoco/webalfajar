@@ -3,24 +3,32 @@
             <ul class="nav navbar-nav">
               <!-- Messages: style can be found in dropdown.less-->
               <li class="dropdown messages-menu">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+              @if(session('akses_type') == "staff")
+                <a href="{{ url('manage_message/message_staff') }}">
                   <i style="font-size:17px;" class="fa fa-envelope-o"></i>
                 </a>
-                <ul class="dropdown-menu">
-                  <li>
-                    <!-- inner menu: contains the actual data -->
-                    <ul class="menu">
-                      <li>
-                        <a href="#">
-                          <div class="pull-left">
-                            <img src="{{ url('adminlte/dist/img/user4-128x128.jpg') }}" class="img-circle" alt="User Image">
-                          </div>
-                          <h4>
-                        </a>
-                      </li>
-                    </ul>
-                  </li>
-                </ul>
+              @elseif(session('akses_type') == "teacher")
+                <a href="{{ url('manage_message/message_teacher') }}">
+                  <i style="font-size:17px;" class="fa fa-envelope-o"></i>
+                </a>
+              @elseif(session('akses_type') == "student")
+                <a href="{{ url('manage_message/message_student') }}">
+                  <i style="font-size:17px;" class="fa fa-envelope-o"></i>
+                </a>
+              </li>
+              @elseif(session('akses_type') == "parent")
+                <a href="{{ url('manage_message/message_parent') }}">
+                  <i style="font-size:17px;" class="fa fa-envelope-o"></i>
+                </a>
+              @elseif(session('akses_type') == "root")
+                <a href="{{ url('manage_message/message_root') }}">
+                  <i style="font-size:17px;" class="fa fa-envelope-o"></i>
+                </a>
+              @elseif(session('akses_type') == "root+")
+                <a href="{{ url('manage_message/message_root+') }}">
+                  <i style="font-size:17px;" class="fa fa-envelope-o"></i>
+                </a>
+              @endif
               </li>
               <!-- Notifications: style can be found in dropdown.less -->
               <li class="dropdown notifications-menu">
@@ -32,14 +40,15 @@
               <li class="dropdown user user-menu">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                   <img src="{{ url('adminlte/dist/img/user2-160x160.jpg') }}" class="user-image" alt="User Image">
-                  <span class="hidden-xs">{{ session('akses_username') }}</span>
+                  <!-- <span class="hidden-xs">{{ session('akses_username') }}</span> -->
+                  <span class="hidden-xs">@foreach($uname as $user) {{ $user->akses_username }} @endforeach</span>
                 </a>
                 <ul class="dropdown-menu">
                   <!-- User image -->
                   <li class="user-header">
                     <img src="{{ url('adminlte/dist/img/user2-160x160.jpg') }}" class="img-circle" alt="User Image">
                     <p>
-                      {{ session('akses_username') }} - {{ session('akses_type') }}
+                      @foreach($uname as $user) {{ $user->akses_username }} @endforeach - {{ session('akses_type') }}
                     </p>
                   </li>
                   <!-- Menu Footer-->

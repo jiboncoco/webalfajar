@@ -21,6 +21,9 @@
     <!-- AdminLTE Skins. Choose a skin from the css/skins
          folder instead of downloading all of them to reduce the load. -->
     <link rel="stylesheet" href="{{ url('adminlte/dist/css/skins/_all-skins.min.css') }}">
+    <link rel="stylesheet" href="{{ url('adminlte/plugins/iCheck/flat/blue.css') }}">
+    <!-- bootstrap wysihtml5 - text editor -->
+    <link rel="stylesheet" href="{{ url('adminlte/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ url('adminlte/select2/select2.min.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ url('adminlte/dtpicker/css/bootstrap-datetimepicker.min.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ url('adminlte/plugins/datatables/jquery.dataTables.css') }}">
@@ -37,6 +40,9 @@
     <script src="{{ url('adminlte/ckeditor/ckeditor.js') }}"></script>
     <script src="{{ url('adminlte/select2/select2.full.js') }}"></script>
     <script src="{{ url('adminlte/plugins/datatables/jquery.dataTables.js') }}"></script>
+    <script src="{{ url('adminlte/plugins/iCheck/icheck.min.js') }}"></script>
+    <!-- Bootstrap WYSIHTML5 -->
+    <script src="{{ url('adminlte/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js') }}"></script>
     <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css" />
     <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
     <!-- FastClick -->

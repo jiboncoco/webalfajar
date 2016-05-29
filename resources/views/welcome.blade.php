@@ -798,9 +798,10 @@
 <div class="title-news">
 </div>
 <div class="container">
-    <form class="form-letter">
+    <form method="POST" action="{{ url('save_mailnews') }}" class="form-letter">
       News Letter
-      <input class="input-letter" name="" type="email" placeholder="Your Email" required>
+      <input class="input-letter" name="dt_mailnews_email" type="email" placeholder="Your Email" required>
+      <input type="hidden" name="_token" value="{{ csrf_token() }}">
       <button class="button-letter" type="submit">Send</button>
     </form>
 </div>

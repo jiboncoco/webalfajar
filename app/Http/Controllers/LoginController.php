@@ -13,7 +13,7 @@ class LoginController extends Controller
 	{
 		session_start();
 		$akses_code     = $_POST['akses_code'];
-		$akses_username = $_POST['akses_username'];
+		$akses_email = $_POST['akses_email'];
 		$akses_password = $_POST['akses_password'];
 
 				$akses_codee = \DB::table('akses_log')->where('akses_log_code', 'like', $akses_code)->count();
@@ -31,7 +31,7 @@ class LoginController extends Controller
 						
 						if (!empty($akses_status_dataa)) {
 							
-							$akses_uname = \DB::table('akses')->where('akses_username', 'like', $akses_username)->count();
+							$akses_uname = \DB::table('akses')->where('akses_email', 'like', $akses_email)->count();
 
 							if (!empty($akses_uname)) {
 								$akses_pwd = \DB::table('akses')->where('akses_password', 'like', $akses_password)->count();
@@ -40,7 +40,7 @@ class LoginController extends Controller
 
 									$akses_typee = \DB::table('akses')->where([
 										['akses_code', 'like', $akses_code], 
-										['akses_username', 'like', $akses_username],
+										['akses_email', 'like', $akses_email],
 										['akses_password', 'like', $akses_password], 
 										['akses_type', 'like', 'staff']
 									])->count();
@@ -49,16 +49,16 @@ class LoginController extends Controller
 											$akses_statuss = \DB::table('akses')->where([
 											['akses_code', 'like', $akses_code],
 											['akses_type', 'like', 'staff'],
-											['akses_username', 'like', $akses_username],
+											['akses_email', 'like', $akses_email],
 											['akses_password', 'like', $akses_password], 
 											['akses_status_data', 'like', 'active']
 											])->count();
-							
+											
 										if (!empty($akses_statuss)) {
-										// \Session::put('akses_type', 'staff');
 										$request->session()->put('akses_type', 'staff');
+								
 										$request->session()->put('akses_code', $akses_code);
-										$request->session()->put('akses_username', $akses_username);
+										$request->session()->put('akses_email', $akses_email);
 										$request->session()->put('logged_in', 1);
 		
 										$_SESSION['akses_type'] = 'staff';
@@ -77,7 +77,7 @@ class LoginController extends Controller
 							return redirect('login');
 						}
 					} else {
-						$_SESSION['error_msg'] = "Username you’ve entered doesn’t match any account";
+						$_SESSION['error_msg'] = "Email you’ve entered doesn’t match any account";
 						return redirect('login');
 					}
 				} else {
@@ -98,14 +98,14 @@ class LoginController extends Controller
 	{
 		session_start();
 		$akses_code     = $_POST['akses_code'];
-		$akses_username = $_POST['akses_username'];
+		$akses_email = $_POST['akses_email'];
 		$akses_password = $_POST['akses_password'];
 
 				$akses_codee = \DB::table('dt_teacher')->where('dt_teacher_nip', 'like', $akses_code)->count(); //done
 				
 				if (!empty($akses_codee)) {
 
-					$akses_uname = \DB::table('akses')->where('akses_username', 'like', $akses_username)->count();
+					$akses_uname = \DB::table('akses')->where('akses_email', 'like', $akses_email)->count();
 
 					if (!empty($akses_uname)) {
 
@@ -122,7 +122,7 @@ class LoginController extends Controller
 
 								$akses_typee = \DB::table('akses')->where([
 								['akses_code', 'like', $akses_code], 
-								['akses_username', 'like', $akses_username],
+								['akses_email', 'like', $akses_email],
 								['akses_password', 'like', $akses_password], 
 								['akses_type', 'like', 'teacher']
 								])->count(); 
@@ -139,16 +139,17 @@ class LoginController extends Controller
 										$akses_statuss_person = \DB::table('akses')->where([
 										['akses_code', 'like', $akses_code],
 										['akses_type', 'like', 'teacher'],
-										['akses_username', 'like', $akses_username],
+										['akses_email', 'like', $akses_email],
 										['akses_password', 'like', $akses_password], 
 										['akses_status_data', 'like', 'active']
 										])->count();
-									
-										if (!empty($akses_statuss_person)) {
+											if (!empty($akses_statuss_person)) {
+
 											$request->session()->put('akses_type', 'teacher');
-											$request->session()->put('akses_username', $akses_username);
+									
 											$request->session()->put('logged_in', 1);
 											$request->session()->put('akses_code', $akses_code);
+											$request->session()->put('akses_email', $akses_email);
 			
 											$_SESSION['akses_type'] = 'teacher';
 											$_SESSION['logged_in'] = 1;
@@ -180,7 +181,7 @@ class LoginController extends Controller
 						}
 
 					} else {
-						$_SESSION['error_msg'] = "Username you’ve entered doesn’t any account";
+						$_SESSION['error_msg'] = "Email you’ve entered doesn’t any account";
 						return redirect('login');
 					}
 
@@ -195,7 +196,7 @@ class LoginController extends Controller
 	{
 		session_start();
 		$akses_code     = $_POST['akses_code'];
-		$akses_username = $_POST['akses_username'];
+		$akses_email = $_POST['akses_email'];
 		$akses_password = $_POST['akses_password'];
 		$dt_student_grade	= $_POST['dt_student_grade'];
 
@@ -203,7 +204,7 @@ class LoginController extends Controller
 				
 				if (!empty($akses_codee)) {
 
-					$akses_uname = \DB::table('akses')->where('akses_username', 'like', $akses_username)->count();
+					$akses_uname = \DB::table('akses')->where('akses_email', 'like', $akses_email)->count();
 
 					if (!empty($akses_uname)) {
 
@@ -219,7 +220,7 @@ class LoginController extends Controller
 							if (!empty($akses_status_dataa)) {
 
 								$akses_typee = \DB::table('akses')->where([
-								['akses_username', 'like', $akses_username],
+								['akses_email', 'like', $akses_email],
 								['akses_password', 'like', $akses_password], 
 								['akses_type', 'like', 'parent']
 								])->count();
@@ -235,7 +236,7 @@ class LoginController extends Controller
 
 										$akses_statuss_parent = \DB::table('akses')->where([
 										['akses_type', 'like', 'parent'],
-										['akses_username', 'like', $akses_username],
+										['akses_email', 'like', $akses_email],
 										['akses_password', 'like', $akses_password], 
 										['akses_status_data', 'like', 'active']
 										])->count();
@@ -254,12 +255,12 @@ class LoginController extends Controller
 												['dt_student_grade', 'like', $dt_student_grade],
 												['dt_student_statuslog', 'like', 'active']
 												])->count();
-
 												if (!empty($akses_statuss_student)) {
+		
 													$request->session()->put('akses_type', 'parent');
-													$request->session()->put('akses_username', $akses_username);
 													$request->session()->put('logged_in', 1);
 													$request->session()->put('akses_code', $akses_code);
+													$request->session()->put('akses_email', $akses_email);
 													$_SESSION['akses_type'] = 'parent';
 													$_SESSION['logged_in'] = 1;
 													return redirect('/');
@@ -299,7 +300,7 @@ class LoginController extends Controller
 						}
 					
 					} else {
-						$_SESSION['error_msg'] = "Username you’ve entered doesn’t any account";
+						$_SESSION['error_msg'] = "Email you’ve entered doesn’t any account";
 						return redirect('login');
 					}
 				
@@ -314,7 +315,7 @@ class LoginController extends Controller
 	{
 		session_start();
 		$akses_code     = $_POST['akses_code'];
-		$akses_username = $_POST['akses_username'];
+		$akses_email = $_POST['akses_email'];
 		$akses_password = $_POST['akses_password'];
 		$dt_student_grade	= $_POST['dt_student_grade'];
 
@@ -322,7 +323,7 @@ class LoginController extends Controller
 				
 				if (!empty($akses_codee)) {
 
-					$akses_uname = \DB::table('akses')->where('akses_username', 'like', $akses_username)->count();
+					$akses_uname = \DB::table('akses')->where('akses_email', 'like', $akses_email)->count();
 
 					if (!empty($akses_uname)) {
 
@@ -338,7 +339,7 @@ class LoginController extends Controller
 							if (!empty($akses_status_dataa)) {
 
 								$akses_typee = \DB::table('akses')->where([
-								['akses_username', 'like', $akses_username],
+								['akses_email', 'like', $akses_email],
 								['akses_password', 'like', $akses_password], 
 								['akses_type', 'like', 'student']
 								])->count();
@@ -354,7 +355,7 @@ class LoginController extends Controller
 
 										$akses_statuss1 = \DB::table('akses')->where([
 										['akses_type', 'like', 'student'],
-										['akses_username', 'like', $akses_username],
+										['akses_email', 'like', $akses_email],
 										['akses_password', 'like', $akses_password], 
 										['akses_status_data', 'like', 'active']
 										])->count();
@@ -373,12 +374,12 @@ class LoginController extends Controller
 												['dt_student_grade', 'like', $dt_student_grade],
 												['dt_student_statuslog', 'like', 'active']
 												])->count();
-
 												if (!empty($akses_statuss2)) {
+
 													$request->session()->put('akses_type', 'student');
-													$request->session()->put('akses_username', $akses_username);
 													$request->session()->put('logged_in', 1);
 													$request->session()->put('akses_code', $akses_code);
+													$request->session()->put('akses_email', $akses_email);
 													$request->session()->put('dt_student_grade', $dt_student_grade);
 													$_SESSION['akses_type'] = 'student';
 					
@@ -420,7 +421,7 @@ class LoginController extends Controller
 						}
 					
 					} else {
-						$_SESSION['error_msg'] = "Username you’ve entered doesn’t any account";
+						$_SESSION['error_msg'] = "Email you’ve entered doesn’t any account";
 						return redirect('login');
 					}
 				
@@ -430,11 +431,56 @@ class LoginController extends Controller
 				}
 	}
 
+	public function login_sadmin(Request $request)
+	{
+		session_start();
+		$akses_email = $_POST['akses_email'];
+		$akses_password = $_POST['akses_password'];
+		$akses_type = $_POST['akses_type'];
+		
+
+		$akses_status_dataa = \DB::table('akses')->where([
+		['akses.akses_email', '=', $akses_email],
+		['akses.akses_password', '=', $akses_password],
+		['akses.akses_type', '=', $akses_type]
+		])->count(); 
+
+			if (!empty($akses_status_dataa)) {
+
+			$akses_uname = \DB::table('akses')->where('akses_email', 'like', $akses_email)->count();
+
+				if (!empty($akses_uname)) {
+
+				$akses_pwd = \DB::table('akses')->where('akses_password', 'like', $akses_password)->count();
+
+					if (!empty($akses_pwd)) {
+					$request->session()->put('akses_email', $akses_email);
+					$request->session()->put('akses_type', $akses_type);
+					$_SESSION['akses_type'] = $akses_type;
+					$_SESSION['logged_in'] = 1;
+					return redirect('manage');
+					} else {
+					$_SESSION['error_msg'] = "Username you’ve entered doesn’t any account";
+					return redirect('alfajar/admin/sessionurl');
+					}
+
+			} else {
+			$_SESSION['error_msg'] = "Email you’ve entered doesn’t any account";
+			return redirect('alfajar/admin/sessionurl');
+			}
+
+		} else {
+		$_SESSION['error_msg'] = "Account not have Access Type";
+		return redirect('alfajar/admin/sessionurl');
+		}
+							
+	}
+
 	public function logout()
 	{
 		session_start();
 		session_destroy();
-		return redirect('login');
+		return redirect('/');
 		exit;
 	}
 	

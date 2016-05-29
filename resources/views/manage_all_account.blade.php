@@ -56,6 +56,10 @@
                         <option value="student">Student</option>
                       </select>
                     </div>
+                  <div  class="col-xs-6 col-md-4">
+                    <label for="exampleInputPassword1">Email</label>
+                    <input type="password" name="akses_email" class="form-control not-res" placeholder="Email" required/>
+                  </div>
                   </div>
                   <br>
 
@@ -157,7 +161,6 @@
                         <th>Code</th>
                         <th>Status Data</th>
                         <th>Username</th>
-                        <th>Password</th>
                         <th>Action</th>
                       </tr>
                     </thead>
@@ -170,7 +173,6 @@
                         <td>{{ $akses->akses_code}}</td>
                         <td>{{ $akses->akses_status_data}}</td>
                         <td>{{ $akses->akses_username}}</td>
-                        <td>{{ $akses->akses_password}}</td>
                         <td>
                         <a href="{{ url('manage_account/edit_account/'.$akses->id)}}"><i class="fa fa-pencil-square-o"></i> </a>
                         <a href="{{ url('manage_account/delete_account/'.$akses->id)}}"><i class="fa fa-trash"></i> </a>

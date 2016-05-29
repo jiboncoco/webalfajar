@@ -274,12 +274,12 @@
     $('.for_year').datetimepicker({ format: 'YYYY' });
     $('.for_time').datetimepicker({ format: 'HH:mm:ss' });
     </script>
-//     <script type="text/javascript">
+    <script type="text/javascript">
 
-//   $('#openBtn').click(function(){
-//     $('.modal-body').load('manage_class/detail_schedule_class/'.$class_sch->id,function(result){
-//       $('#myModaldetailteacher').modal({show:true});
-//   });
-// });
-//     </script>
+  $('#openBtn').click(function(){
+    $('.modal-body').load('manage_class/detail_schedule_class/'.$class_sch->id,function(result){
+      $('#myModaldetailteacher').modal({show:true});
+  });
+});
+     </script>
 @endsection

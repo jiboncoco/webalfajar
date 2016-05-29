@@ -67,6 +67,10 @@
                         @endif
                       </select>
                     </div>
+                  <div  class="col-xs-6 col-md-4">
+                    <label for="exampleInputPassword1">Email</label>
+                    <input type="password" name="akses_email" value="{{ $akses_edit->akses_email }}" class="form-control not-res" placeholder="Email" required/>
+                  </div>
                   </div>
                   <br>
 

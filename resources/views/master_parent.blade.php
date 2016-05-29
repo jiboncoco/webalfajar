@@ -100,7 +100,7 @@
                   </div>
                   <div class="col-xs-6 col-md-4">
                     <label for="exampleInputPassword1">Email</label>
-                    <input type="email" name="dt_parent_email" class="form-control not-res" placeholder="Email"/>
+                    <input type="email" name="dt_parent_email" class="form-control not-res" placeholder="Email" required/>
                   </div>
                   <div class="col-xs-2">
                       <label for="exampleInputPassword1">Age</label>
