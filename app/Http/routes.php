@@ -134,8 +134,7 @@ Route::get('manage_teacher/delete_master_teacher/{id}', 'AdminController@delete_
 Route::get('manage_teacher/export_data/xls', 'PostController@exportxls_data_master_teacher');
 Route::get('manage_teacher/export_data/xlsx', 'PostController@exportxlsx_data_master_teacher');
 Route::get('manage_teacher/export_data/csv', 'PostController@exportcsv_data_master_teacher');
-Route::get('manage_teacher/export_data/{$type}', 'PostController@export_data_master_teacher');
-Route::get('manage_teacher/import_data/', 'PostController@import_data_master_teacher');
+Route::post('manage_teacher/import_data_teacher', 'PostController@import_data_master_teacher');
 
 //manage teacher personal
 
@@ -183,6 +182,9 @@ Route::post('manage_teacher/save_schedule_teacher', 'AdminController@save_teache
 Route::get('manage_teacher/edit_schedule_teacher/{id}', 'AdminController@edit_teacher_sch');
 Route::post('manage_teacher/update_schedule_teacher', 'AdminController@update_teacher_sch');
 Route::get('manage_teacher/delete_schedule_teacher/{id}', 'AdminController@delete_teacher_sch');
+Route::get('manage_teacher_sch/export_data/xls', 'PostController@exportxls_data_master_teacher_sch');
+Route::get('manage_teacher_sch/export_data/xlsx', 'PostController@exportxlsx_data_master_teacher_sch');
+Route::get('manage_teacher_sch/export_data/csv', 'PostController@exportcsv_data_master_teacher_sch');
 
 Route::get('manage_feature/master_feature', 'AdminController@master_feature');
 Route::post('manage_feature/save_feature', 'AdminController@save_feature');
@@ -202,12 +204,18 @@ Route::post('manage_class/save_schedule_class', 'AdminController@save_class_sch'
 Route::get('manage_class/edit_schedule_class/{id}', 'AdminController@edit_class_sch');
 Route::post('manage_class/update_schedule_class', 'AdminController@update_class_sch');
 Route::get('manage_class/delete_schedule_class/{id}', 'AdminController@delete_class_sch');
+Route::get('manage_class_sch/export_data/xls', 'PostController@exportxls_data_master_class_sch');
+Route::get('manage_class_sch/export_data/xlsx', 'PostController@exportxlsx_data_master_class_sch');
+Route::get('manage_class_sch/export_data/csv', 'PostController@exportcsv_data_master_class_sch');
 
 Route::get('manage_class/master_class', 'AdminController@master_class');
 Route::post('manage_class/save_class', 'AdminController@save_class');
 Route::get('manage_class/edit_class/{id}', 'AdminController@edit_class');
 Route::post('manage_class/update_class', 'AdminController@update_class');
 Route::get('manage_class/delete_class/{id}', 'AdminController@delete_class');
+Route::get('manage_class/export_data/xls', 'PostController@exportxls_data_master_class');
+Route::get('manage_class/export_data/xlsx', 'PostController@exportxlsx_data_master_class');
+Route::get('manage_class/export_data/csv', 'PostController@exportcsv_data_master_class');
 
 Route::get('manage_all_account/export_data/xls', 'PostController@exportxls_data_master_all_account');
 Route::get('manage_all_account/export_data/xlsx', 'PostController@exportxlsx_data_master_all_account');

@@ -193,7 +193,7 @@
                         <th>Status Data</th>
                         <th>Username</th>
                         <th>Email</th>
-                        <th>Action</th>
+                        <th style="text-align:center">Action</th>
                       </tr>
                     </thead>
                     <tbody>

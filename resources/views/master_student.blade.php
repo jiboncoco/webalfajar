@@ -72,6 +72,7 @@
                         <td>{{ preg_replace('/\|/', ' ', $teachers->dt_student_name) }}</td>
                         <td>{{ $teachers->dt_student_gender}}</td>
                         <td>{{ $teachers->dt_student_dobplace}}</td>
+                        <td>{{ $teachers->dt_student_bplace}}</td>
                         <td>{{ $teachers->dt_student_religion}}</td>
                         <td>{{ $teachers->dt_student_position}}</td>
                         <td>{{ $teachers->dt_student_age}}</td>
@@ -110,7 +111,7 @@
             </div>
               <div style="width:95%;margin:auto;" class="box box-default collapsed-box box-solid">
                 <div class="box-header with-border">
-                  <h3 class="box-title">Edit Master Student</h3>
+                  <h3 class="box-title">Master Student</h3>
                   <div class="box-tools pull-right">
                     <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-plus"></i></button>
                   </div><!-- /.box-tools -->
@@ -224,7 +225,7 @@
                   <div class="row">
                   <div class="col-xs-6 col-md-4">
                     <label for="exampleInputPassword1">Birth Place</label>
-                    <input type="text" name="dt_student_dobplace" class="form-control not-res" placeholder="Birth Place"/>
+                    <input type="text" name="dt_student_bplace" class="form-control not-res" placeholder="Birth Place"/>
                   </div>
                   <div class="col-xs-6 col-md-4">
                     <label for="exampleInputPassword1">Birth Date</label>

@@ -76,6 +76,7 @@
 
                   <br><br>
                     <button type="submit" class="btn btn-primary">Save Data</button>
+                    
                 </form>                </div><!-- /.box-body -->
               </div><!-- /.box -->
               

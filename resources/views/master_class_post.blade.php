@@ -99,6 +99,7 @@
                         <th>No.</th>
                         <th>Class Name</th>
                         <th>Class Status</th>
+                        <th>Action</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -131,7 +132,6 @@
 </div>
 </body>
 <script type="text/javascript">
-    <script type="text/javascript">
             $('.for_datatable').DataTable({
               "paging": true,
               "lengthChange": true,

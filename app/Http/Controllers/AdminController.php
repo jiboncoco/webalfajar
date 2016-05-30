@@ -113,7 +113,7 @@ class AdminController extends Controller
        session_start();
         if(isset($_SESSION['logged_in'])){
             $uname = \App\akses::where('akses_email', session('akses_email'))->get();
-            $data_teacher = \App\dt_teacher::paginate(10);
+            $data_teacher = \App\dt_teacher::all();
             return view('master_teacher')->with('data_teacher',$data_teacher)->with('uname',$uname);
         }
         else{
@@ -143,7 +143,7 @@ class AdminController extends Controller
         if(isset($_SESSION['logged_in'])){
             $uname = \App\akses::where('akses_email', session('akses_email'))->get();
             $data_edit = \App\dt_teacher::find($id);
-            $data_teacher = \App\dt_teacher::paginate(10);
+            $data_teacher = \App\dt_teacher::all();
             return view('edit_master_teacher')->with('data_teacher',$data_teacher)->with('data_edit',$data_edit)->with('uname',$uname);
         }
         else{
@@ -434,7 +434,7 @@ class AdminController extends Controller
         if(isset($_SESSION['logged_in'])){
             $uname = \App\akses::where('akses_email', session('akses_email'))->get();
         $m_blog = \App\m_blog::all();
-        return \View::make('master_type_post')->with('m_blogs', $m_blog);
+        return \View::make('master_type_post')->with('m_blogs', $m_blog)->with('uname',$uname);
         }
         else{
             return redirect(url('login'));
@@ -624,7 +624,7 @@ class AdminController extends Controller
         if(isset($_SESSION['logged_in'])){
             $uname = \App\akses::where('akses_email', session('akses_email'))->get();
             $feature = \App\dt_feature::all();
-            return \View::make('master_feature')->with('feature',$feature);
+            return \View::make('master_feature')->with('feature',$feature)->with('uname',$uname);
         }
         else{
             return redirect(url('login'));
@@ -841,7 +841,12 @@ class AdminController extends Controller
         if(isset($_SESSION['logged_in'])){
             $uname = \App\akses::where('akses_email', session('akses_email'))->get();
             $data_student = \App\dt_student::all();
-            $data_kelas = \App\dt_kelas::all();
+            // $data_kelas = \App\dt_kelas::all();
+            $data_kelas = \DB::table('dt_kelas')
+                     ->select(\DB::raw('count(*) as class, dt_kelas_type'))
+                     ->where('dt_kelas_type', '<>', 1)
+                     ->groupBy('dt_kelas_type')
+                     ->get();
             $data_kelas_tk = \DB::table('dt_kelas')->where('dt_kelas_type', 'like', 'tk')->get();
             $data_kelas_sd = \DB::table('dt_kelas')->where('dt_kelas_type', 'like', 'sd')->get();
             $data_kelas_smp = \DB::table('dt_kelas')->where('dt_kelas_type', 'like', 'smp')->get();

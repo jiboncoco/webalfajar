@@ -64,7 +64,7 @@
                       </tr>
                     </thead>
                     <tbody>
-                    <?php $i=$data_teacher->firstItem(); ?>
+                    <?php $i=1; ?>
                     @foreach($data_teacher as $teachers)
                       <tr>
                         <td>{{$i++}}</td>
@@ -283,7 +283,8 @@
 
 <!--               <form method="POST" action="{{ url('manage_teacher/import_data_teacher') }}" enctype="multipart/form-data">
                 
-                <input type="file" name="import_file"/>
+                <input type="file" name="import_data_master_teacher"/>
+                <input type="hidden" name="_token" value="{{ csrf_token() }}">
                 <button type="submit">Import File</button>
 
               </form> -->
@@ -308,7 +309,7 @@
                       </tr>
                     </thead>
                     <tbody>
-                    <?php $i=$data_teacher->firstItem(); ?>
+                    <?php $i=1; ?>
                     @foreach($data_teacher as $teachers)
                       <tr>
                         <td>{{$i++}}</td>
@@ -332,11 +333,6 @@
                   <a href="{{ url('manage_teacher/export_data/xlsx') }}"><button class="btn btn-info"><i class="fa fa-paper-plane-o"></i> xlsx</button></a>
                   <a href="{{ url('manage_teacher/export_data/csv') }}"><button class="btn btn-warning"><i class="fa fa-paper-plane-o"></i> csv</button></a>
                   </div>
-                   <ul class="pagination pull-right">
-                  
-                  {!! $data_teacher->render() !!}
-                  
-                  </ul>
                 </div><!-- /.box-body -->
               </div><!-- /.box -->
               </div>

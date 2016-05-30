@@ -81,7 +81,8 @@
                   </div>                  
 
                   <br><br>
-                    <button type="submit" class="btn btn-primary">Save Data</button>
+                    <button type="submit" class="btn btn-primary">Save</button>
+                    <a href="{{ url('manage_post/master_class_post') }}"><button class="btn btn-danger">Cancel</button></a>
                 </form>                </div><!-- /.box-body -->
               </div><!-- /.box -->
               
@@ -105,6 +106,7 @@
                         <th>No.</th>
                         <th>Class Name</th>
                         <th>Class Status</th>
+                        <th>Action</th>
                       </tr>
                     </thead>
                     <tbody>

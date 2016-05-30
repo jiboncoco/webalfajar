@@ -179,6 +179,7 @@
                   <br><br>
                   <div id="b-save"></div>
                     <button type="submit" class="btn btn-primary">Save</button>
+                    <a href="{{ url('manage_account/all_account') }}"><button class="btn btn-danger">Cancel</button></a>
                 </form>
                 </div><!-- /.box-body -->
               </div><!-- /.box -->
@@ -206,7 +207,7 @@
                         <th>Status Data</th>
                         <th>Username</th>
                         <th>Email</th>
-                        <th>Action</th>
+                        <th style="text-align:center">Action</th>
                       </tr>
                     </thead>
                     <tbody>

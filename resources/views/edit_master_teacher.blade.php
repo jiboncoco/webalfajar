@@ -282,7 +282,8 @@
                   </div>                  
 
                   <br><br>
-                    <button type="submit" class="btn btn-primary">Save Data</button>
+                    <button type="submit" class="btn btn-primary">Save</button>
+                    <a href="{{ url('manage_teacher/master_teacher') }}"><button class="btn btn-danger">Cancel</button></a>
                 </form>
                 </div><!-- /.box-body -->
               </div><!-- /.box -->
@@ -307,7 +308,7 @@
                       </tr>
                     </thead>
                     <tbody>
-                    <?php $i=$data_teacher->firstItem(); ?>
+                    <?php $i=1; ?>
                     @foreach($data_teacher as $teachers)
                       <tr>
                         <td>{{$i++}}</td>
@@ -326,9 +327,6 @@
                     @endforeach
                     </tfoot>
                   </table>
-                   <ul class="pagination">
-                  {!! $data_teacher->render() !!}
-                  </ul>
                 </div><!-- /.box-body -->
               </div><!-- /.box -->
 @else

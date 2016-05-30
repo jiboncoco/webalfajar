@@ -513,7 +513,7 @@ class PostController extends Controller
     public function exportxls_data_master_teacher()
     {
 
-      $data_teacher = \App\dt_teacher::select('dt_teacher.dt_teacher_nip','dt_teacher.dt_teacher_name','dt_teacher.dt_teacher_gender','dt_teacher.dt_teacher_dobplace','dt_teacher.dt_teacher_religion','dt_teacher.dt_teacher_position','dt_teacher.dt_teacher_age','dt_teacher.dt_teacher_bloodtype','dt_teacher.dt_teacher_for','dt_teacher.dt_teacher_email','dt_teacher.dt_teacher_contact','dt_teacher.dt_teacher_address','dt_teacher.dt_teacher_code_absen','dt_teacher.dt_teacher_statuslog')->get()->toArray();
+      $data_teacher = \App\dt_teacher::select('dt_teacher.dt_teacher_nip','dt_teacher.dt_teacher_name','dt_teacher.dt_teacher_email','dt_teacher.dt_teacher_gender','dt_teacher.dt_teacher_dobplace','dt_teacher.dt_teacher_bplace','dt_teacher.dt_teacher_religion','dt_teacher.dt_teacher_position','dt_teacher.dt_teacher_age','dt_teacher.dt_teacher_bloodtype','dt_teacher.dt_teacher_for','dt_teacher.dt_teacher_email','dt_teacher.dt_teacher_contact','dt_teacher.dt_teacher_address','dt_teacher.dt_teacher_code_absen','dt_teacher.dt_teacher_statuslog')->get()->toArray();
       return \Excel::create('Master_Data_Teacher', function($excel) use ($data_teacher)
       {
           $excel->sheet('mySheet', function($sheet) use ($data_teacher)
@@ -527,7 +527,7 @@ class PostController extends Controller
         public function exportxlsx_data_master_teacher()
     {
 
-      $data_teacher = \App\dt_teacher::select('dt_teacher.dt_teacher_nip','dt_teacher.dt_teacher_name','dt_teacher.dt_teacher_gender','dt_teacher.dt_teacher_dobplace','dt_teacher.dt_teacher_religion','dt_teacher.dt_teacher_position','dt_teacher.dt_teacher_age','dt_teacher.dt_teacher_bloodtype','dt_teacher.dt_teacher_for','dt_teacher.dt_teacher_email','dt_teacher.dt_teacher_contact','dt_teacher.dt_teacher_address','dt_teacher.dt_teacher_code_absen','dt_teacher.dt_teacher_statuslog')->get()->toArray();
+      $data_teacher = \App\dt_teacher::select('dt_teacher.dt_teacher_nip','dt_teacher.dt_teacher_name','dt_teacher.dt_teacher_email','dt_teacher.dt_teacher_gender','dt_teacher.dt_teacher_dobplace','dt_teacher.dt_teacher_bplace','dt_teacher.dt_teacher_religion','dt_teacher.dt_teacher_position','dt_teacher.dt_teacher_age','dt_teacher.dt_teacher_bloodtype','dt_teacher.dt_teacher_for','dt_teacher.dt_teacher_email','dt_teacher.dt_teacher_contact','dt_teacher.dt_teacher_address','dt_teacher.dt_teacher_code_absen','dt_teacher.dt_teacher_statuslog')->get()->toArray();
       return \Excel::create('Master_Data_Teacher', function($excel) use ($data_teacher)
       {
           $excel->sheet('mySheet', function($sheet) use ($data_teacher)
@@ -541,7 +541,7 @@ class PostController extends Controller
         public function exportcsv_data_master_teacher()
     {
 
-      $data_teacher = \App\dt_teacher::select('dt_teacher.dt_teacher_nip','dt_teacher.dt_teacher_name','dt_teacher.dt_teacher_gender','dt_teacher.dt_teacher_dobplace','dt_teacher.dt_teacher_religion','dt_teacher.dt_teacher_position','dt_teacher.dt_teacher_age','dt_teacher.dt_teacher_bloodtype','dt_teacher.dt_teacher_for','dt_teacher.dt_teacher_email','dt_teacher.dt_teacher_contact','dt_teacher.dt_teacher_address','dt_teacher.dt_teacher_code_absen','dt_teacher.dt_teacher_statuslog')->get()->toArray();
+      $data_teacher = \App\dt_teacher::select('dt_teacher.dt_teacher_nip','dt_teacher.dt_teacher_name','dt_teacher.dt_teacher_email','dt_teacher.dt_teacher_gender','dt_teacher.dt_teacher_dobplace','dt_teacher.dt_teacher_bplace','dt_teacher.dt_teacher_religion','dt_teacher.dt_teacher_position','dt_teacher.dt_teacher_age','dt_teacher.dt_teacher_bloodtype','dt_teacher.dt_teacher_for','dt_teacher.dt_teacher_email','dt_teacher.dt_teacher_contact','dt_teacher.dt_teacher_address','dt_teacher.dt_teacher_code_absen','dt_teacher.dt_teacher_statuslog')->get()->toArray();
       return \Excel::create('Master_Data_Teacher', function($excel) use ($data_teacher)
       {
           $excel->sheet('mySheet', function($sheet) use ($data_teacher)
@@ -552,10 +552,178 @@ class PostController extends Controller
 
     }
 
+    public function exportxls_data_master_student()
+    {
+
+      $data_student = \App\dt_student::select('dt_student.dt_student_nisn','dt_student.dt_student_name','dt_student.dt_student_grade','dt_student.dt_student_kelas','dt_student.dt_student_email','dt_student.dt_student_gender','dt_student.dt_student_dobplace','dt_student.dt_student_bplace','dt_student.dt_student_religion','dt_student.dt_student_nameparent','dt_student.dt_student_bloodtype','dt_student.dt_student_email','dt_student.dt_student_contact','dt_student.dt_student_address','dt_student.dt_student_statuslog')->get()->toArray();
+      return \Excel::create('Master_Data_Student', function($excel) use ($data_student)
+      {
+          $excel->sheet('mySheet', function($sheet) use ($data_student)
+          {
+              $sheet->fromArray($data_student);
+          });
+      })->download('xls');
+
+    }
+
+        public function exportxlsx_data_master_student()
+    {
+
+      $data_student = \App\dt_student::select('dt_student.dt_student_nisn','dt_student.dt_student_name','dt_student.dt_student_grade','dt_student.dt_student_kelas','dt_student.dt_student_email','dt_student.dt_student_gender','dt_student.dt_student_dobplace','dt_student.dt_student_bplace','dt_student.dt_student_religion','dt_student.dt_student_nameparent','dt_student.dt_student_bloodtype','dt_student.dt_student_email','dt_student.dt_student_contact','dt_student.dt_student_address','dt_student.dt_student_statuslog')->get()->toArray();
+      return \Excel::create('Master_Data_Student', function($excel) use ($data_student)
+      {
+          $excel->sheet('mySheet', function($sheet) use ($data_student)
+          {
+              $sheet->fromArray($data_student);
+          });
+      })->download('xlsx');
+
+    }
+
+        public function exportcsv_data_master_student()
+    {
+
+      $data_student = \App\dt_student::select('dt_student.dt_student_nisn','dt_student.dt_student_name','dt_student.dt_student_grade','dt_student.dt_student_kelas','dt_student.dt_student_email','dt_student.dt_student_gender','dt_student.dt_student_dobplace','dt_student.dt_student_bplace','dt_student.dt_student_religion','dt_student.dt_student_nameparent','dt_student.dt_student_bloodtype','dt_student.dt_student_email','dt_student.dt_student_contact','dt_student.dt_student_address','dt_student.dt_student_statuslog')->get()->toArray();
+      return \Excel::create('Master_Data_Student', function($excel) use ($data_student)
+      {
+          $excel->sheet('mySheet', function($sheet) use ($data_student)
+          {
+              $sheet->fromArray($data_student);
+          });
+      })->download('csv');
+
+    }
+
+    public function exportxls_data_master_class()
+    {
+
+      $data_kelas = \App\dt_kelas::select('dt_kelas.dt_kelas_type','dt_kelas.dt_kelas_name','dt_kelas.dt_kelas_status')->get()->toArray();
+      return \Excel::create('Master_Data_Kelas', function($excel) use ($data_kelas)
+      {
+          $excel->sheet('mySheet', function($sheet) use ($data_kelas)
+          {
+              $sheet->fromArray($data_kelas);
+          });
+      })->download('xls');
+
+    }
+
+        public function exportxlsx_data_master_class()
+    {
+
+      $data_kelas = \App\dt_kelas::select('dt_kelas.dt_kelas_type','dt_kelas.dt_kelas_name','dt_kelas.dt_kelas_status')->get()->toArray();
+      return \Excel::create('Master_Data_Kelas', function($excel) use ($data_kelas)
+      {
+          $excel->sheet('mySheet', function($sheet) use ($data_kelas)
+          {
+              $sheet->fromArray($data_kelas);
+          });
+      })->download('xlsx');
+
+    }
+
+        public function exportcsv_data_master_class()
+    {
+
+      $data_kelas = \App\dt_kelas::select('dt_kelas.dt_kelas_type','dt_kelas.dt_kelas_name','dt_kelas.dt_kelas_status')->get()->toArray();
+      return \Excel::create('Master_Data_Kelas', function($excel) use ($data_kelas)
+      {
+          $excel->sheet('mySheet', function($sheet) use ($data_kelas)
+          {
+              $sheet->fromArray($data_kelas);
+          });
+      })->download('csv');
+
+    }
+
+    public function exportxls_data_master_class_sch()
+    {
+
+      $data_kelas_sch = \App\sch_class::select('sch_class.sch_class_forclass','sch_class.sch_class_day','sch_class.sch_class_month','sch_class.sch_class_year','sch_class.sch_class_time','sch_class.sch_class_teacher','sch_class.sch_class_schedule')->get()->toArray();
+      return \Excel::create('Master_Data_Kelas_Schedule', function($excel) use ($data_kelas_sch)
+      {
+          $excel->sheet('mySheet', function($sheet) use ($data_kelas_sch)
+          {
+              $sheet->fromArray($data_kelas_sch);
+          });
+      })->download('xls');
+
+    }
+
+        public function exportxlsx_data_master_class_sch()
+    {
+
+      $data_kelas_sch = \App\sch_class::select('sch_class.sch_class_forclass','sch_class.sch_class_day','sch_class.sch_class_month','sch_class.sch_class_year','sch_class.sch_class_time','sch_class.sch_class_teacher','sch_class.sch_class_schedule')->get()->toArray();
+      return \Excel::create('Master_Data_Kelas_Schedule', function($excel) use ($data_kelas_sch)
+      {
+          $excel->sheet('mySheet', function($sheet) use ($data_kelas_sch)
+          {
+              $sheet->fromArray($data_kelas_sch);
+          });
+      })->download('xlsx');
+
+    }
+
+        public function exportcsv_data_master_class_sch()
+    {
+
+      $data_kelas_sch = \App\sch_class::select('sch_class.sch_class_forclass','sch_class.sch_class_day','sch_class.sch_class_month','sch_class.sch_class_year','sch_class.sch_class_time','sch_class.sch_class_teacher','sch_class.sch_class_schedule')->get()->toArray();
+      return \Excel::create('Master_Data_Kelas_Schedule', function($excel) use ($data_kelas_sch)
+      {
+          $excel->sheet('mySheet', function($sheet) use ($data_kelas_sch)
+          {
+              $sheet->fromArray($data_kelas_sch);
+          });
+      })->download('csv');
+
+    }
+
+    public function exportxls_data_master_teacher_sch()
+    {
+
+      $data_teacher_sch = \App\dt_sch::select('dt_sch.sch_code','dt_sch.sch_days','dt_sch.sch_month','dt_sch.sch_year','dt_sch.sch_time','dt_sch.sch_task')->get()->toArray();
+      return \Excel::create('Master_Data_Teacher_Schedule', function($excel) use ($data_teacher_sch)
+      {
+          $excel->sheet('mySheet', function($sheet) use ($data_teacher_sch)
+          {
+              $sheet->fromArray($data_teacher_sch);
+          });
+      })->download('xls');
+
+    }
+
+        public function exportxlsx_data_master_teacher_sch()
+    {
+
+      $data_teacher_sch = \App\dt_sch::select('dt_sch.sch_code','dt_sch.sch_days','dt_sch.sch_month','dt_sch.sch_year','dt_sch.sch_time','dt_sch.sch_task')->get()->toArray();
+      return \Excel::create('Master_Data_Teacher_Schedule', function($excel) use ($data_teacher_sch)
+      {
+          $excel->sheet('mySheet', function($sheet) use ($data_teacher_sch)
+          {
+              $sheet->fromArray($data_teacher_sch);
+          });
+      })->download('xlsx');
+
+    }
+
+        public function exportcsv_data_master_teacher_sch()
+    {
+
+      $data_teacher_sch = \App\dt_sch::select('dt_sch.sch_code','dt_sch.sch_days','dt_sch.sch_month','dt_sch.sch_year','dt_sch.sch_time','dt_sch.sch_task')->get()->toArray();
+      return \Excel::create('Master_Data_Teacher_Schedule', function($excel) use ($data_teacher_sch)
+      {
+          $excel->sheet('mySheet', function($sheet) use ($data_teacher_sch)
+          {
+              $sheet->fromArray($data_teacher_sch);
+          });
+      })->download('csv');
+
+    }
+
     public function exportxls_data_master_all_account()
     {
 
-      $data_account = \App\akses::select('akses.akses_code','akses.akses_type','akses.akses_username','akses.akses_password','akses.akses_status_data')->get()->toArray();
+      $data_account = \App\akses::select('akses.akses_code','akses.akses_type','akses.akses_username','akses.akses_email','akses.akses_status_data')->get()->toArray();
       return \Excel::create('Master_Data_Account', function($excel) use ($data_account)
       {
           $excel->sheet('mySheet', function($sheet) use ($data_account)
@@ -569,7 +737,7 @@ class PostController extends Controller
         public function exportxlsx_data_master_all_account()
     {
 
-      $data_account = \App\akses::select('akses.akses_code','akses.akses_type','akses.akses_username','akses.akses_password','akses.akses_status_data')->get()->toArray();
+      $data_account = \App\akses::select('akses.akses_code','akses.akses_type','akses.akses_username','akses.akses_email','akses.akses_status_data')->get()->toArray();
       return \Excel::create('Master_Data_Account', function($excel) use ($data_account)
       {
           $excel->sheet('mySheet', function($sheet) use ($data_account)
@@ -583,7 +751,7 @@ class PostController extends Controller
         public function exportcsv_data_master_all_account()
     {
 
-      $data_parent = \App\akses::select('akses.akses_code','akses.akses_type','akses.akses_username','akses.akses_password','akses.akses_status_data')->get()->toArray();
+      $data_parent = \App\akses::select('akses.akses_code','akses.akses_type','akses.akses_username','akses.akses_email','akses.akses_status_data')->get()->toArray();
       return \Excel::create('Master_Data_Parent', function($excel) use ($data_parent)
       {
           $excel->sheet('mySheet', function($sheet) use ($data_parent)
@@ -597,7 +765,7 @@ class PostController extends Controller
     public function exportxls_data_parent()
     {
 
-      $data_parent = \App\dt_parent::select('dt_parent.dt_parent_nisn','dt_parent.dt_parent_name','dt_parent.dt_parent_contact','dt_parent.dt_parent_email','dt_parent.dt_parent_age','dt_parent.dt_parent_address','dt_parent.dt_parent_statuslog')->get()->toArray();
+      $data_parent = \App\dt_parent::select('dt_parent.dt_parent_nisn','dt_parent.dt_parent_name','dt_parent.dt_parent_email','dt_parent.dt_parent_contact','dt_parent.dt_parent_email','dt_parent.dt_parent_age','dt_parent.dt_parent_address','dt_parent.dt_parent_statuslog')->get()->toArray();
       return \Excel::create('Master_Data_Parent', function($excel) use ($data_parent)
       {
           $excel->sheet('mySheet', function($sheet) use ($data_parent)
@@ -611,7 +779,7 @@ class PostController extends Controller
         public function exportxlsx_data_parent()
     {
 
-      $data_parent = \App\dt_parent::select('dt_parent.dt_parent_nisn','dt_parent.dt_parent_name','dt_parent.dt_parent_contact','dt_parent.dt_parent_email','dt_parent.dt_parent_age','dt_parent.dt_parent_address','dt_parent.dt_parent_statuslog')->get()->toArray();
+      $data_parent = \App\dt_parent::select('dt_parent.dt_parent_nisn','dt_parent.dt_parent_name','dt_parent.dt_parent_email','dt_parent.dt_parent_contact','dt_parent.dt_parent_email','dt_parent.dt_parent_age','dt_parent.dt_parent_address','dt_parent.dt_parent_statuslog')->get()->toArray();
       return \Excel::create('Master_Data_Parent', function($excel) use ($data_parent)
       {
           $excel->sheet('mySheet', function($sheet) use ($data_parent)
@@ -625,7 +793,7 @@ class PostController extends Controller
         public function exportcsv_data_parent()
     {
 
-      $data_parent = \App\dt_parent::select('dt_parent.dt_parent_nisn','dt_parent.dt_parent_name','dt_parent.dt_parent_contact','dt_parent.dt_parent_email','dt_parent.dt_parent_age','dt_parent.dt_parent_address','dt_parent.dt_parent_statuslog')->get()->toArray();
+      $data_parent = \App\dt_parent::select('dt_parent.dt_parent_nisn','dt_parent.dt_parent_name','dt_parent.dt_parent_email','dt_parent.dt_parent_contact','dt_parent.dt_parent_email','dt_parent.dt_parent_age','dt_parent.dt_parent_address','dt_parent.dt_parent_statuslog')->get()->toArray();
       return \Excel::create('Master_Data_Parent', function($excel) use ($data_parent)
       {
           $excel->sheet('mySheet', function($sheet) use ($data_parent)
@@ -641,35 +809,35 @@ class PostController extends Controller
     public function import_data_master_teacher()
     {
 
-      if(\Input::hasFile('import_data_master_teacher'))
+      if(Input::hasFile('import_data_master_teacher'))
       {
-        $path = \Input::file('import_data_master_teacher')->getRealPath();
+        $path = Input::file('import_data_master_teacher')->getRealPath();
         $data = \Excel::load($path, function($reader){
         })->get();
         if(!empty($data) && $data->count())
         {
           foreach ($data as $key => $value)
           {
-            $insert[] = ['dt_teacher_nip' => $value->nip, 
-                        'dt_teacher_name' => $value->name,
-                        'dt_teacher_gender' => $value->gender,
-                        'dt_teacher_dobplace' => $value->dobplace,
-                        'dt_teacher_religion' => $value->religion,
-                        'dt_teacher_position' => $value->position,
-                        'dt_teacher_age' => $value->age,
-                        'dt_teacher_bloodtype' => $value->bloodtype,
-                        'dt_teacher_for' => $value->for,
-                        'dt_teacher_email' => $value->email,
-                        'dt_teacher_contact' => $value->contact,
-                        'dt_teacher_address' => $value->address,
-                        'dt_teacher_code_absen' => $value->code_absen,
-                        'dt_teacher_name_img' => $value->name_img,
-                        'dt_teacher_statuslog' => $value->statuslog,
+            $insert[] = ['dt_teacher_nip' => $value->dt_teacher_nip, 
+                        'dt_teacher_name' => $value->dt_teacher_name,
+                        'dt_teacher_gender' => $value->dt_teacher_gender,
+                        'dt_teacher_dobplace' => $value->dt_teacher_dobplace,
+                        'dt_teacher_bplace' => $value->dt_teacher_bplace,
+                        'dt_teacher_religion' => $value->dt_teacher_religion,
+                        'dt_teacher_position' => $value->dt_teacher_position,
+                        'dt_teacher_age' => $value->dt_teacher_age,
+                        'dt_teacher_bloodtype' => $value->dt_teacher_bloodtype,
+                        'dt_teacher_for' => $value->dt_teacher_for,
+                        'dt_teacher_email' => $value->dt_teacher_email,
+                        'dt_teacher_contact' => $value->dt_teacher_contact,
+                        'dt_teacher_address' => $value->dt_teacher_address,
+                        'dt_teacher_code_absen' => $value->dt_teacher_code_absen,
+                        'dt_teacher_statuslog' => $value->dt_teacher_statuslog,
                         ];
           }
           if(!empty($insert))
           {
-            \DB::table('dt_blog')->insert($insert);
+            \DB::table('dt_teacher')->insert($insert);
             dd('Insert Record Successfully!');
           }
         }

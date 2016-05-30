@@ -72,6 +72,7 @@
                         <td>{{ preg_replace('/\|/', ' ', $teachers->dt_student_name) }}</td>
                         <td>{{ $teachers->dt_student_gender}}</td>
                         <td>{{ $teachers->dt_student_dobplace}}</td>
+                        <td>{{ $teachers->dt_student_place}}</td>
                         <td>{{ $teachers->dt_student_religion}}</td>
                         <td>{{ $teachers->dt_student_position}}</td>
                         <td>{{ $teachers->dt_student_age}}</td>
@@ -315,7 +316,8 @@
                   </div>                  
 
                   <br><br>
-                    <button type="submit" class="btn btn-primary">Save Data</button>
+                    <button type="submit" class="btn btn-primary">Save</button>
+                    <a href="{{ url('manage_student/master_student') }}"><button class="btn btn-danger">Cancel</button></a>
                 </form>
                 </div><!-- /.box-body -->
               </div><!-- /.box -->
