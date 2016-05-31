@@ -137,17 +137,17 @@
                 </div><!-- /.box-body -->
                 <div class="box-footer">
                   <div class="pull-right">
-                    @if(session('akses_type') == 'staff')
-                    <a href="{{ url('manage_message/message_staff') }}"><button class="btn btn-danger"><i class="fa fa-close"></i> Cancel</button>
-                    @elseif(session('akses_type') == 'root')
-                    <a href="{{ url('manage_message/message_root') }}"><button class="btn btn-danger"><i class="fa fa-close"></i> Cancel</button>
-                    @elseif(session('akses_type') == 'root+')
-                    <a href="{{ url('manage_message/message_root+') }}"><button class="btn btn-danger"><i class="fa fa-close"></i> Cancel</button>
-                    @endif
                     <button type="submit" class="btn btn-primary"><i class="fa fa-envelope-o"></i> Send</button>
                   </div>
                 </div><!-- /.box-footer -->
               </form>
+              @if(session('akses_type') == 'staff')
+                    <a href="{{ url('manage_message/message_staff') }}"><button class="btn btn-danger"><i class="fa fa-close"></i> Cancel</button></a>
+                    @elseif(session('akses_type') == 'root')
+                    <a href="{{ url('manage_message/message_root') }}"><button class="btn btn-danger"><i class="fa fa-close"></i> Cancel</button></a>
+                    @elseif(session('akses_type') == 'root+')
+                    <a href="{{ url('manage_message/message_root+') }}"><button class="btn btn-danger"><i class="fa fa-close"></i> Cancel</button></a>
+                    @endif
               </div><!-- /. box -->
             </div><!-- /.col -->
           </div><!-- /.row -->
