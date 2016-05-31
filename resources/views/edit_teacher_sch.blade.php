@@ -158,7 +158,7 @@
                         <th>Year</th>
                         <th>Time</th>
                         <th>Task</th>
-                        <th>Action</th>
+                        <th style="text-align:center">Action</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -172,9 +172,9 @@
                         <td>{{ $teachers->sch_year}}</td>
                         <td>{{ $teachers->sch_time}}</td>
                         <td>{{ $teachers->sch_task}}</td>
-                        <td>
-                        <a href="{{ url('manage_teacher/edit_schedule_teacher/'.$teachers->id)}}"><i class="fa fa-pencil-square-o"></i> </a>
-                        <a href="{{ url('manage_teacher/delete_schedule_teacher/'.$teachers->id)}}"><i class="fa fa-trash"></i> </a>
+                        <td style="text-align:center">
+                        <a href="{{ url('manage_teacher/edit_schedule_teacher/'.$teachers->id)}}"><i style="font-size:20px;margin-right:50px" class="fa fa-pencil-square-o"></i> </a>
+                        <a href="{{ url('manage_teacher/delete_schedule_teacher/'.$teachers->id)}}"><i style="font-size:20px;margin:0px " class="fa fa-trash"></i> </a>
                         </td>
                       </tr>
                     @endforeach

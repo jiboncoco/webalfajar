@@ -304,7 +304,7 @@
                         <th>Position</th>
                         <th>Absen Code</th>
                         <th>Status Log</th>
-                        <th>Action</th>
+                        <th style="text-align:center">Action</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -318,9 +318,9 @@
                         <td>{{ $teachers->dt_teacher_position}}</td>
                         <td>{{ $teachers->dt_teacher_code_absen}}</td>
                         <td>{{ $teachers->dt_teacher_statuslog}}</td>
-                        <td>
-                        <a href="{{ url('manage_teacher/edit_master_teacher/'.$teachers->id)}}"><i class="fa fa-pencil-square-o"></i> </a>
-                        <a href="{{ url('manage_teacher/delete_master_teacher/'.$teachers->id)}}"><i class="fa fa-trash"></i> </a>
+                        <td style="text-align:center">
+                        <a href="{{ url('manage_teacher/edit_master_teacher/'.$teachers->id)}}"><i style="font-size:20px;margin-right:50px" class="fa fa-pencil-square-o"></i> </a>
+                        <a href="{{ url('manage_teacher/delete_master_teacher/'.$teachers->id)}}"><i style="font-size:20px;margin:0px " class="fa fa-trash"></i> </a>
                         <a href="{{ url('manage_teacher/detail_master_teacher/'.$teachers->id)}}"><i class="fa fa-eye"></i> </a>
                         </td>
                       </tr>

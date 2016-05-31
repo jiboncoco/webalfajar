@@ -99,7 +99,7 @@
                         <th>No.</th>
                         <th>Class Name</th>
                         <th>Class Status</th>
-                        <th>Action</th>
+                        <th style="text-align:center">Action</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -109,9 +109,9 @@
                         <td>{{$i++}}</td>
                         <td>{{ $post->m_kelas_name}}</td>
                         <td>{{ $post->m_kelas_status}}</td>
-                        <td>
-                        <a href="{{ url('manage_post/edit_master_class_post/'.$post->id)}}"><i class="fa fa-pencil-square-o"></i> </a>
-                        <a href="{{ url('manage_post/delete_master_class_post/'.$post->id)}}"><i class="fa fa-trash"></i> </a>
+                        <td style="text-align:center">
+                        <a href="{{ url('manage_post/edit_master_class_post/'.$post->id)}}"><i style="font-size:20px;margin-right:50px" class="fa fa-pencil-square-o"></i> </a>
+                        <a href="{{ url('manage_post/delete_master_class_post/'.$post->id)}}"><i style="font-size:20px;margin:0px " class="fa fa-trash"></i> </a>
                         </td>
                       </tr>
                     @endforeach

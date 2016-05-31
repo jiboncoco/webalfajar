@@ -38,6 +38,8 @@ Route::group(['prefix'=>'portal_tk'], function(){
     Route::get('article', 'Controller@portal_tk_article');
 });
 
+Route::get('manage_teacher/detail_teacher/{id}', 'AdminController@detail_teacher');
+
 Route::get('manage_message/message_staff', 'AksesController@message_staff');
 Route::get('manage_message/message_root', 'AksesController@message_staff');
 Route::get('manage_message/message_root+', 'AksesController@message_staff');
@@ -134,7 +136,15 @@ Route::get('manage_teacher/delete_master_teacher/{id}', 'AdminController@delete_
 Route::get('manage_teacher/export_data/xls', 'PostController@exportxls_data_master_teacher');
 Route::get('manage_teacher/export_data/xlsx', 'PostController@exportxlsx_data_master_teacher');
 Route::get('manage_teacher/export_data/csv', 'PostController@exportcsv_data_master_teacher');
+
+
 Route::post('manage_teacher/import_data_teacher', 'PostController@import_data_master_teacher');
+Route::post('manage_student/import_data_student', 'PostController@import_data_master_student');
+Route::post('manage_account/import_data_account', 'PostController@import_data_master_account');
+Route::post('manage_teacher_sch/import_data_teacher_sch', 'PostController@import_data_master_teacher_sch');
+Route::post('manage_parent/import_data_parent', 'PostController@import_data_master_parent');
+Route::post('manage_class/import_data_class', 'PostController@import_data_master_class');
+Route::post('manage_class_sch/import_data_class_sch', 'PostController@import_data_master_class_sch');
 
 //manage teacher personal
 
@@ -159,7 +169,7 @@ Route::get('manage_student/export_data/xls', 'PostController@exportxls_data_mast
 Route::get('manage_student/export_data/xlsx', 'PostController@exportxlsx_data_master_student');
 Route::get('manage_student/export_data/csv', 'PostController@exportcsv_data_master_student');
 Route::get('manage_student/export_data/{$type}', 'PostController@export_data_master_student');
-Route::get('manage_student/import_data/', 'PostController@import_data_master_student');
+
 
 //manage student personal
 Route::get('manage_student/my_data', 'AksesController@student_my_data');

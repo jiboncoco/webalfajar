@@ -946,5 +946,16 @@ class AdminController extends Controller
         }
     }
 
+    public function detail_teacher($id)
+    {
+       session_start();
+        if(isset($_SESSION['logged_in'])){
+            $detail_teacher = \App\dt_teacher::find($id);
+            echo json_encode($detail_teacher);
+        }
+        else{
+            return redirect('login');
+        }
+    }
 
 }

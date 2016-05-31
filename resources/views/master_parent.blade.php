@@ -30,6 +30,58 @@
       <!-- Left side column. contains the logo and sidebar -->
 
           @include('sidebar')
+
+        <div class="modal fade" id="myModaldetailteacher" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog-front">
+                <div class="modal-content">
+                    <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title" id="myModalLabel">Data Parent</h4>
+                    </div>
+                        <div class="modal-body-front" style="height:560px;overflow-y:auto;">
+                <div class="box-header">
+                </div><!-- /.box-header -->
+                <div class="box-body">
+                  <table id="for_datatable" class="table table-bordered table-hover">
+                    <thead>
+                      <tr>
+                        <th>No.</th>
+                        <th>NISN</th>
+                        <th>Name</th>
+                        <th>Age</th>
+                        <th>Email</th>
+                        <th>Contact</th>
+                        <th>Address</th>
+                        <th>Status Log</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                    <?php $i=1; ?>
+                    @foreach($data_parent as $parents)
+                      <tr>
+                        <td>{{$i++}}</td>
+                        <td>{{ $parents->dt_parent_nisn}}</td>
+                        <td>{{ preg_replace('/\|/', ' ', $parents->dt_parent_name) }}</td>
+                        <td>{{ $parents->dt_parent_age}}</td>
+                        <td>{{ $parents->dt_parent_email}}</td>
+                        <td>{{ $parents->dt_parent_contact}}</td>
+                        <td>{{ $parents->dt_parent_address}}</td>
+                        <td>{{ $parents->dt_parent_statuslog}}</td>
+                        
+                      </tr>
+                    @endforeach
+                    </tfoot>
+                  </table>
+                </div><!-- /.box-body -->
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
        
       <!-- Content Wrapper. Contains page content -->
       <div class="content-wrapper">
@@ -152,6 +204,7 @@
           <div style="width:95%;margin:auto" class="box">
                 <div class="box-header">
                   <h3 class="box-title">Data Parent</h3>
+                  <label style="float:right"><a data-toggle="modal" data-target="#myModaldetailteacher" href="#">View Detail</a></label>
                 </div><!-- /.box-header -->
                 <div class="box-body">
                   <table id="example2" class="table table-bordered table-hover">
@@ -160,8 +213,9 @@
                         <th>No.</th>
                         <th>Name</th>
                         <th>NISN</th>
+                        <th>Email</th>
                         <th>Status Log</th>
-                        <th>Action</th>
+                        <th style="text-align:center">Action</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -171,11 +225,11 @@
                         <td>{{$i++}}</td>
                         <td>{{ preg_replace('/\|/', ' ', $parents->dt_parent_name) }}</td>
                         <td>{{ $parents->dt_parent_nisn}}</td>
+                        <td>{{ $parents->dt_parent_email}}</td>
                         <td>{{ $parents->dt_parent_statuslog}}</td>
-                        <td>
-                        <a href="{{ url('manage_parent/edit_parent/'.$parents->id)}}"><i class="fa fa-pencil-square-o"></i> </a>
-                        <a href="{{ url('manage_parent/delete_parent/'.$parents->id)}}"><i class="fa fa-trash"></i> </a>
-                        <a data-toggle="modal" data-target="#myModaldetailteacher" href="#"><i class="fa fa-eye"></i> </a>
+                        <td style="text-align:center">
+                        <a href="{{ url('manage_parent/edit_parent/'.$parents->id)}}"><i style="font-size:20px;margin-right:50px" class="fa fa-pencil-square-o"></i> </a>
+                        <a href="{{ url('manage_parent/delete_parent/'.$parents->id)}}"><i style="font-size:20px;margin:0px " class="fa fa-trash"></i> </a>
                         </td>
                       </tr>
                     @endforeach
@@ -186,7 +240,15 @@
                   <a href="{{ url('manage_parent/export_data/xlsx') }}"><button class="btn btn-info"><i class="fa fa-paper-plane-o"></i> xlsx</button></a>
                   <a href="{{ url('manage_parent/export_data/csv') }}"><button class="btn btn-warning"><i class="fa fa-paper-plane-o"></i> csv</button></a>
                   </div>
-
+                  <div style="float:right;margin-top:40px;">
+                  <form method="POST" action="{{ url('manage_parent/import_data_parent') }}" enctype="multipart/form-data" class="form-inline">
+                    <div class="form-group">
+                      <input type="file" name="import_data_master_parent" class="form-control" placeholder="Email">
+                      <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                    </div>
+                    <button type="submit" class="btn btn-default">Import File</button>
+                  </form>
+                  </div>   
                 </div><!-- /.box-body -->
               </div><!-- /.box -->
               </div>

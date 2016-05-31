@@ -38,7 +38,7 @@
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                     <h4 class="modal-title" id="myModalLabel">Data Class Schedule</h4>
                     </div>
-                        <div class="modal-body-front">
+                        <div class="modal-body-front" style="height:560px;overflow-y:auto;">
                 <div class="box-header">
                 </div><!-- /.box-header -->
                 <div class="box-body">
@@ -54,7 +54,6 @@
                         <th>Schedule Make At</th>
                         <th>Teacher</th>
                         <th>Schedule</th>
-                        <th>Action</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -70,10 +69,7 @@
                         <td>{{ $schs->created_at}}</td>
                         <td>{{ preg_replace('/\|/', ' ', $schs->sch_class_teacher) }}</td>
                         <td>{{ $schs->sch_class_schedule}}</td>
-                        <td>
-                        <a href="{{ url('manage_class/edit_schedule_class/'.$schs->id)}}"><i class="fa fa-pencil-square-o"></i> </a>
-                        <a href="{{ url('manage_class/delete_schedule_class/'.$schs->id)}}"><i class="fa fa-trash"></i> </a>
-                        </td>
+                        
                       </tr>
                     @endforeach
                     </tfoot>
@@ -215,6 +211,7 @@
           <div style="width:95%;margin:auto" class="box">
                 <div class="box-header">
                   <h3 class="box-title">Data Class Schedule</h3>
+                  <label style="float:right"><a data-toggle="modal" data-target="#myModaldetailteacher" href="#">View Detail</a></label>
                 </div><!-- /.box-header -->
                 <div class="box-body">
                    <table class="for_datatable table table-bordered table-hover">
@@ -226,7 +223,7 @@
                         <th>Month</th>
                         <th>Year</th>
                         <th>Schedule</th>
-                        <th>Action</th>
+                        <th style="text-align:center">Action</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -239,10 +236,9 @@
                         <td>{{ $class_sch->sch_class_month}}</td>
                         <td>{{ $class_sch->sch_class_year}}</td>
                         <td>{{ $class_sch->sch_class_schedule}}</td>
-                        <td>
-                        <a href="{{ url('manage_class/edit_schedule_class/'.$class_sch->id)}}"><i class="fa fa-pencil-square-o"></i> </a>
-                        <a href="{{ url('manage_class/delete_schedule_class/'.$class_sch->id)}}"><i class="fa fa-trash"></i> </a>
-                        <a id="openBtn" data-toggle="modal" data-target="#myModaldetailteacher" href="#"><i class="fa fa-eye"></i> </a>
+                        <td style="text-align:center">
+                        <a href="{{ url('manage_class/edit_schedule_class/'.$class_sch->id)}}"><i style="font-size:20px;margin-right:50px" class="fa fa-pencil-square-o"></i> </a>
+                        <a href="{{ url('manage_class/delete_schedule_class/'.$class_sch->id)}}"><i style="font-size:20px;margin:0px " class="fa fa-trash"></i> </a>
                         </td>
                       </tr>
                     @endforeach
@@ -253,6 +249,15 @@
                   <a href="{{ url('manage_class_sch/export_data/xlsx') }}"><button class="btn btn-info"><i class="fa fa-paper-plane-o"></i> xlsx</button></a>
                   <a href="{{ url('manage_class_sch/export_data/csv') }}"><button class="btn btn-warning"><i class="fa fa-paper-plane-o"></i> csv</button></a>
                   </div>
+                  <div style="float:right;margin-top:40px;">
+                  <form method="POST" action="{{ url('manage_class_sch/import_data_class_sch') }}" enctype="multipart/form-data" class="form-inline">
+                    <div class="form-group">
+                      <input type="file" name="import_data_master_class_sch" class="form-control" placeholder="Email">
+                      <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                    </div>
+                    <button type="submit" class="btn btn-default">Import File</button>
+                  </form>
+                  </div>   
                 </div><!-- /.box-body -->
               </div><!-- /.box -->
               </div>

@@ -106,7 +106,7 @@
                         <th>No.</th>
                         <th>Type Post</th>
                         <th>Type Status</th>
-                        <th>Action</th>
+                        <th style="text-align:center">Action</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -116,9 +116,9 @@
                         <td>{{$i++}}</td>
                         <td>{{ $post->m_blog_name_type}}</td>
                         <td>{{ $post->m_blog_status}}</td>
-                        <td>
-                        <a href="{{ url('manage_post/edit_master_type_post/'.$post->id)}}"><i class="fa fa-pencil-square-o"></i> </a>
-                        <a href="{{ url('manage_post/delete_master_type_post/'.$post->id)}}"><i class="fa fa-trash"></i> </a>
+                        <td style="text-align:center">
+                        <a href="{{ url('manage_post/edit_master_type_post/'.$post->id)}}"><i style="font-size:20px;margin-right:50px" class="fa fa-pencil-square-o"></i> </a>
+                        <a href="{{ url('manage_post/delete_master_type_post/'.$post->id)}}"><i style="font-size:20px;margin:0px " class="fa fa-trash"></i> </a>
                         </td>
                       </tr>
                     @endforeach

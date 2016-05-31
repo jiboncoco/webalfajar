@@ -51,7 +51,7 @@ class Controller extends BaseController
                 ['dt_blog_type', '=', 'news'],
                 ])
                 ->orderBy('id', 'desc')
-                ->take(3)
+                ->limit(3)
                 ->get();
             return \View::make('welcome')->with('dt_blogs',$dt_blog)->with('yayasan_vimi',$yayasan_vimi)->with('yayasan_edu',$yayasan_edu)
             ->with('yayasan_profile',$yayasan_profile)->with('yayasan_galery')->with('yayasan_galery',$yayasan_galery)->with('tk_vimi',$tk_vimi)
@@ -5122,7 +5122,11 @@ class Controller extends BaseController
        session_start();
         if(isset($_SESSION['logged_in'])){
             $dt_blog = array('data'=>\App\dt_blog::find($id));
-            $dt_blog_random=\App\dt_blog::all()->random(3);
+            $dt_blog_random=\App\dt_blog::all();
+            if (sizeof($dt_blog_random) > 4)
+            {
+                $random = $dt_blog_random->random(3);
+            }
             $dt_comment = \DB::table('dt_comment')->where('dt_comment_blog_id', '=', $id)->take(2)->orderBy('dt_comment_id', 'desc')->get();
             $dt_comment_all = \DB::table('dt_comment')->where('dt_comment_blog_id', '=', $id)->orderBy('dt_comment_id', 'desc')->get();
             $article = \DB::table('dt_blog')->where('dt_blog_type', '=', 'article')->take(3)->orderBy('id', 'desc')->get();

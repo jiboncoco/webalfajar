@@ -169,7 +169,7 @@
                         <th>Name</th>
                         <th>NISN</th>
                         <th>Status Log</th>
-                        <th>Action</th>
+                        <th style="text-align:center">Action</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -180,9 +180,9 @@
                         <td>{{ preg_replace('/\|/', ' ', $parents->dt_parent_name) }}</td>
                         <td>{{ $parents->dt_parent_nisn}}</td>
                         <td>{{ $parents->dt_parent_statuslog}}</td>
-                        <td>
-                        <a href="{{ url('manage_parent/edit_parent/'.$parents->id)}}"><i class="fa fa-pencil-square-o"></i> </a>
-                        <a href="{{ url('manage_parent/delete_parent/'.$parents->id)}}"><i class="fa fa-trash"></i> </a>
+                        <td style="text-align:center">
+                        <a href="{{ url('manage_parent/edit_parent/'.$parents->id)}}"><i style="font-size:20px;margin-right:50px" class="fa fa-pencil-square-o"></i> </a>
+                        <a href="{{ url('manage_parent/delete_parent/'.$parents->id)}}"><i style="font-size:20px;margin:0px " class="fa fa-trash"></i> </a>
                         <a data-toggle="modal" data-target="#myModaldetailteacher" href="#"><i class="fa fa-eye"></i> </a>
                         </td>
                       </tr>

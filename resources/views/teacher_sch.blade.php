@@ -20,7 +20,7 @@
         <nav class="navbar navbar-static-top" role="navigation">
           <!-- Sidebar toggle button-->
           <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
-            <span class="sr-only">Toggle navigation</span>
+            <span class="sr-only">Toggle navigation style="text-align:center"</span>
           </a>
           
           @include('menu')
@@ -30,7 +30,7 @@
       <!-- Left side column. contains the logo and sidebar -->
 
           @include('sidebar')
-       
+        style="text-align:center"
       <!-- Content Wrapper. Contains page content -->
       <div class="content-wrapper">
         <!-- Main content -->
@@ -156,7 +156,7 @@
                         <th>Year</th>
                         <th>Time</th>
                         <th>Task</th>
-                        <th>Action</th>
+                        <th style="text-align:center">Action</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -170,9 +170,9 @@
                         <td>{{ $teachers->sch_year}}</td>
                         <td>{{ $teachers->sch_time}}</td>
                         <td>{{ $teachers->sch_task}}</td>
-                        <td>
-                        <a href="{{ url('manage_teacher/edit_schedule_teacher/'.$teachers->id)}}"><i class="fa fa-pencil-square-o"></i> </a>
-                        <a href="{{ url('manage_teacher/delete_schedule_teacher/'.$teachers->id)}}"><i class="fa fa-trash"></i> </a>
+                        <td style="text-align:center">
+                        <a href="{{ url('manage_teacher/edit_schedule_teacher/'.$teachers->id)}}"><i style="font-size:20px;margin-right:50px" class="fa fa-pencil-square-o"></i> </a>
+                        <a href="{{ url('manage_teacher/delete_schedule_teacher/'.$teachers->id)}}"><i style="font-size:20px;margin:0px " class="fa fa-trash"></i> </a>
                         </td>
                       </tr>
                     @endforeach
@@ -183,6 +183,15 @@
                   <a href="{{ url('manage_teacher_sch/export_data/xlsx') }}"><button class="btn btn-info"><i class="fa fa-paper-plane-o"></i> xlsx</button></a>
                   <a href="{{ url('manage_teacher_sch/export_data/csv') }}"><button class="btn btn-warning"><i class="fa fa-paper-plane-o"></i> csv</button></a>
                   </div>
+                  <div style="float:right;margin-top:40px;">
+                  <form method="POST" action="{{ url('manage_teacher_sch/import_data_teacher_sch') }}" enctype="multipart/form-data" class="form-inline">
+                    <div class="form-group">
+                      <input type="file" name="import_data_master_teacher_sch" class="form-control" placeholder="Email">
+                      <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                    </div>
+                    <button type="submit" class="btn btn-default">Import File</button>
+                  </form>
+                  </div>   
                 </div><!-- /.box-body -->
               </div><!-- /.box -->
               </div>

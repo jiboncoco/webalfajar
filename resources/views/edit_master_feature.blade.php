@@ -133,7 +133,7 @@
                         <th>For</th>
                         <th>Text</th>
                         <th>Status</th>
-                        <th>Action</th>
+                        <th style="text-align:center">Action</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -159,9 +159,9 @@
                         ?>
                         </td>
                         <td>{{ $feature->feature_status}}</td>
-                        <td>
-                        <a href="{{ url('manage_feature/edit_feature/'.$feature->id)}}"><i class="fa fa-pencil-square-o"></i> </a>
-                        <a href="{{ url('manage_feature/delete_feature/'.$feature->id)}}"><i class="fa fa-trash"></i> </a>
+                        <td style="text-align:center">
+                        <a href="{{ url('manage_feature/edit_feature/'.$feature->id)}}"><i style="font-size:20px;margin-right:50px" class="fa fa-pencil-square-o"></i> </a>
+                        <a href="{{ url('manage_feature/delete_feature/'.$feature->id)}}"><i style="font-size:20px;margin:0px " class="fa fa-trash"></i> </a>
                         </td>
                       </tr>
                     @endforeach

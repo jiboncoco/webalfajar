@@ -37,7 +37,7 @@
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                     <h4 class="modal-title" id="myModalLabel">Data Teachers</h4>
                     </div>
-                        <div class="modal-body-front">
+                        <div class="modal-body-front" style="height:560px;overflow-y:auto;">
                 <div class="box-header">
                 </div><!-- /.box-header -->
                 <div class="box-body">
@@ -58,9 +58,7 @@
                         <th>Contact</th>
                         <th>Address</th>
                         <th>Absen Code</th>
-                        <th>Photo</th>
-                        <th>Status Log</th>
-                        <th>Action</th>
+                        <th>Status Log</th> 
                       </tr>
                     </thead>
                     <tbody>
@@ -81,12 +79,8 @@
                         <td>{{ $teachers->dt_teacher_contact}}</td>
                         <td>{{ $teachers->dt_teacher_address}}</td>
                         <td>{{ $teachers->dt_teacher_code_absen}}</td>
-                        <td><img class="cover_photo_edit"></td>
                         <td>{{ $teachers->dt_teacher_statuslog}}</td>
-                        <td>
-                        <a href="{{ url('manage_teacher/edit_master_teacher/'.$teachers->id)}}"><i class="fa fa-pencil-square-o"></i> </a>
-                        <a href="{{ url('manage_teacher/delete_master_teacher/'.$teachers->id)}}"><i class="fa fa-trash"></i> </a>
-                        </td>
+                        
                       </tr>
                     @endforeach
                     </tfoot>
@@ -279,20 +273,12 @@
                 </form>
                 </div><!-- /.box-body -->
               </div><!-- /.box -->
-              
-
-<!--               <form method="POST" action="{{ url('manage_teacher/import_data_teacher') }}" enctype="multipart/form-data">
-                
-                <input type="file" name="import_data_master_teacher"/>
-                <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                <button type="submit">Import File</button>
-
-              </form> -->
 
               <br><br>
           <div style="width:95%;margin:auto" class="box">
                 <div class="box-header">
                   <h3 class="box-title">Data Teachers</h3>
+                  <label style="float:right"><a data-toggle="modal" data-target="#myModaldetailteacher" href="#">View Detail</a></label>
                 </div><!-- /.box-header -->
                 <div class="box-body">
                   <table class="for_datatable table table-bordered table-hover">
@@ -305,7 +291,7 @@
                         <th>Position</th>
                         <th>Absen Code</th>
                         <th>Status Log</th>
-                        <th>Action</th>
+                        <th style="text-align:center">Action</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -319,10 +305,9 @@
                         <td>{{ $teachers->dt_teacher_position}}</td>
                         <td>{{ $teachers->dt_teacher_code_absen}}</td>
                         <td>{{ $teachers->dt_teacher_statuslog}}</td>
-                        <td>
-                        <a href="{{ url('manage_teacher/edit_master_teacher/'.$teachers->id)}}"><i class="fa fa-pencil-square-o"></i> </a>
-                        <a href="{{ url('manage_teacher/delete_master_teacher/'.$teachers->id)}}"><i class="fa fa-trash"></i> </a>
-                        <a data-toggle="modal" data-target="#myModaldetailteacher" href="#"><i class="fa fa-eye"></i> </a>
+                        <td style="text-align:center">
+                        <a href="{{ url('manage_teacher/edit_master_teacher/'.$teachers->id)}}"><i style="font-size:20px;margin-right:50px" class="fa fa-pencil-square-o"></i> </a>
+                        <a href="{{ url('manage_teacher/delete_master_teacher/'.$teachers->id)}}"><i style="font-size:20px;margin:0px " class="fa fa-trash"></i> </a>
                         </td>
                       </tr>
                     @endforeach
@@ -333,6 +318,16 @@
                   <a href="{{ url('manage_teacher/export_data/xlsx') }}"><button class="btn btn-info"><i class="fa fa-paper-plane-o"></i> xlsx</button></a>
                   <a href="{{ url('manage_teacher/export_data/csv') }}"><button class="btn btn-warning"><i class="fa fa-paper-plane-o"></i> csv</button></a>
                   </div>
+
+                  <div style="float:right;margin-top:40px;">
+                  <form method="POST" action="{{ url('manage_teacher/import_data_teacher') }}" enctype="multipart/form-data" class="form-inline">
+                    <div class="form-group">
+                      <input type="file" name="import_data_master_teacher" class="form-control" placeholder="Email">
+                      <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                    </div>
+                    <button type="submit" class="btn btn-default">Import File</button>
+                  </form>
+                  </div>           
                 </div><!-- /.box-body -->
               </div><!-- /.box -->
               </div>

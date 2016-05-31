@@ -133,7 +133,6 @@ class PostController extends Controller
 
     public function search_news($search_news="")
     {
-        $i = 1;
         $data = \DB::table('dt_blog')->where([
                                               ['dt_blog_title', 'LIKE', '%'.$search_news.'%'],
                                               ['dt_blog_type', '=', 'news']
@@ -175,7 +174,6 @@ class PostController extends Controller
 
     public function search_agenda($search_agenda="")
     {
-        $i = 1;
         $data = \DB::table('dt_blog')->where([
                                               ['dt_blog_title', 'LIKE', '%'.$search_agenda.'%'],
                                               ['dt_blog_type', '=', 'agenda']
@@ -217,7 +215,6 @@ class PostController extends Controller
 
     public function search_article($search_article="")
     {
-        $i = 1;
         $data = \DB::table('dt_blog')->where([
                                               ['dt_blog_title', 'LIKE', '%'.$search_article.'%'],
                                               ['dt_blog_type', '=', 'article']
@@ -259,7 +256,6 @@ class PostController extends Controller
 
     public function search_announcement($search_announcement="")
     {
-        $i = 1;
         $data = \DB::table('dt_blog')->where([
                                               ['dt_blog_title', 'LIKE', '%'.$search_announcement.'%'],
                                               ['dt_blog_type', '=', 'announcement']
@@ -301,7 +297,6 @@ class PostController extends Controller
 
     public function search_post_tk($search_tk="")
     {
-        $i = 1;
         $data = \DB::table('dt_blog')->where([
                                                ['dt_blog_title', 'LIKE', '%'.$search_tk.'%'],
                                                ['dt_blog_for', '=', 'TK']
@@ -343,7 +338,6 @@ class PostController extends Controller
 
     public function search_post_sd($search_sd="")
     {
-        $i = 1;
         $data = \DB::table('dt_blog')->where([
                                                ['dt_blog_title', 'LIKE', '%'.$search_sd.'%'],
                                                ['dt_blog_for', '=', 'SD']
@@ -385,7 +379,6 @@ class PostController extends Controller
 
     public function search_post_smp($search_smp="")
     {
-        $i = 1;
         $data = \DB::table('dt_blog')->where([
                                                ['dt_blog_title', 'LIKE', '%'.$search_smp.'%'],
                                                ['dt_blog_for', '=', 'SMP']
@@ -427,7 +420,6 @@ class PostController extends Controller
 
     public function search_post_sma($search_sma="")
     {
-        $i = 1;
         $data = \DB::table('dt_blog')->where([
                                                ['dt_blog_title', 'LIKE', '%'.$search_sma.'%'],
                                                ['dt_blog_for', '=', 'SMA']
@@ -469,7 +461,6 @@ class PostController extends Controller
 
     public function search_post_admin($search_admin="")
     {
-        $i = 1;
         $data = \DB::table('dt_blog')->where([
                                                ['dt_blog_title', 'LIKE', '%'.$search_admin.'%'],
                                                ['dt_blog_create_by','=',session('akses_email')]
@@ -838,11 +829,199 @@ class PostController extends Controller
           if(!empty($insert))
           {
             \DB::table('dt_teacher')->insert($insert);
-            dd('Insert Record Successfully!');
+            
           }
         }
       }
-      return back();
+      return redirect()->back();
+    }
+
+    public function import_data_master_account()
+    {
+
+      if(Input::hasFile('import_data_master_account'))
+      {
+        $path = Input::file('import_data_master_account')->getRealPath();
+        $data = \Excel::load($path, function($reader){
+        })->get();
+        if(!empty($data) && $data->count())
+        {
+          foreach ($data as $key => $value)
+          {
+            $insert[] = ['akses_type' => $value->akses_type, 
+                        'akses_code' => $value->akses_code,
+                        'akses_status_data' => $value->akses_status_data,
+                        'akses_username' => $value->akses_username,
+                        'akses_password' => $value->akses_password,
+                        'akses_email' => $value->akses_email,
+                        ];
+          }
+          if(!empty($insert))
+          {
+            \DB::table('akses')->insert($insert);
+            
+          }
+        }
+      }
+      return redirect()->back();
+    }
+
+    public function import_data_master_teacher_sch()
+    {
+
+      if(Input::hasFile('import_data_master_teacher_sch'))
+      {
+        $path = Input::file('import_data_master_teacher_sch')->getRealPath();
+        $data = \Excel::load($path, function($reader){
+        })->get();
+        if(!empty($data) && $data->count())
+        {
+          foreach ($data as $key => $value)
+          {
+            $insert[] = ['sch_code' => $value->sch_code, 
+                        'sch_days' => $value->sch_days,
+                        'sch_month' => $value->sch_month,
+                        'sch_year' => $value->sch_year,
+                        'sch_time' => $value->sch_time,
+                        'sch_task' => $value->sch_task,
+                        ];
+          }
+          if(!empty($insert))
+          {
+            \DB::table('dt_sch')->insert($insert);
+            
+          }
+        }
+      }
+      return redirect()->back();
+    }
+
+    public function import_data_master_student()
+    {
+
+      if(Input::hasFile('import_data_master_student'))
+      {
+        $path = Input::file('import_data_master_student')->getRealPath();
+        $data = \Excel::load($path, function($reader){
+        })->get();
+        if(!empty($data) && $data->count())
+        {
+          foreach ($data as $key => $value)
+          {
+            $insert[] = ['dt_student_nisn' => $value->dt_student_nisn, 
+                        'dt_student_name' => $value->dt_student_name,
+                        'dt_student_gender' => $value->dt_student_gender,
+                        'dt_student_dobplace' => $value->dt_student_dobplace,
+                        'dt_student_bplace' => $value->dt_student_bplace,
+                        'dt_student_religion' => $value->dt_student_religion,
+                        'dt_student_grade' => $value->dt_student_grade,
+                        'dt_student_age' => $value->dt_student_age,
+                        'dt_student_bloodtype' => $value->dt_student_bloodtype,
+                        'dt_student_kelas' => $value->dt_student_kelas,
+                        'dt_student_email' => $value->dt_student_email,
+                        'dt_student_contact' => $value->dt_student_contact,
+                        'dt_student_address' => $value->dt_student_address,
+                        'dt_student_nameparent' => $value->dt_student_nameparent,
+                        'dt_student_statuslog' => $value->dt_student_statuslog,
+                        ];
+          }
+          if(!empty($insert))
+          {
+            \DB::table('dt_student')->insert($insert);
+            
+          }
+        }
+      }
+      return redirect()->back();
+    }
+
+    public function import_data_master_parent()
+    {
+
+      if(Input::hasFile('import_data_master_parent'))
+      {
+        $path = Input::file('import_data_master_parent')->getRealPath();
+        $data = \Excel::load($path, function($reader){
+        })->get();
+        if(!empty($data) && $data->count())
+        {
+          foreach ($data as $key => $value)
+          {
+            $insert[] = ['dt_parent_nisn' => $value->dt_parent_nisn, 
+                        'dt_parent_name' => $value->dt_parent_name,
+                        'dt_parent_age' => $value->dt_parent_age,
+                        'dt_parent_email' => $value->dt_parent_email,
+                        'dt_parent_contact' => $value->dt_parent_contact,
+                        'dt_parent_address' => $value->dt_parent_address,
+                        'dt_parent_statuslog' => $value->dt_parent_statuslog,
+                        ];
+          }
+          if(!empty($insert))
+          {
+            \DB::table('dt_parent')->insert($insert);
+            
+          }
+        }
+      }
+      return redirect()->back();
+    }
+
+    public function import_data_master_class()
+    {
+
+      if(Input::hasFile('import_data_master_class'))
+      {
+        $path = Input::file('import_data_master_class')->getRealPath();
+        $data = \Excel::load($path, function($reader){
+        })->get();
+        if(!empty($data) && $data->count())
+        {
+          foreach ($data as $key => $value)
+          {
+            $insert[] = ['dt_kelas_type' => $value->dt_kelas_type, 
+                        'dt_kelas_name' => $value->dt_kelas_name,
+                        'dt_kelas_status' => $value->dt_kelas_status,
+                        ];
+          }
+          if(!empty($insert))
+          {
+            \DB::table('dt_kelas')->insert($insert);
+            
+          }
+        }
+      }
+      return redirect()->back();
+    }
+
+    public function import_data_master_class_sch()
+    {
+
+      if(Input::hasFile('import_data_master_class_sch'))
+      {
+        $path = Input::file('import_data_master_class_sch')->getRealPath();
+        $data = \Excel::load($path, function($reader){
+        })->get();
+        if(!empty($data) && $data->count())
+        {
+          foreach ($data as $key => $value)
+          {
+            $insert[] = ['sch_class_forclass' => $value->sch_class_forclass, 
+                        'sch_class_day' => $value->sch_class_day,
+                        'sch_class_month' => $value->sch_class_month,
+                        'sch_class_year' => $value->sch_class_year,
+                        'sch_class_time' => $value->sch_class_time,
+                        'sch_class_teacher' => $value->sch_class_teacher,
+                        'sch_class_schedule' => $value->sch_class_schedule,
+                        ];
+          }
+          if(!empty($insert))
+          {
+            \DB::table('sch_class')->insert($insert);
+            
+          }
+        }
+      }
+      return redirect()->back();
     }
 
 }         

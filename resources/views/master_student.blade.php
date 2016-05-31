@@ -37,7 +37,7 @@
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                     <h4 class="modal-title" id="myModalLabel">Data Students</h4>
                     </div>
-                        <div class="modal-body-front">
+                        <div class="modal-body-front" style="height:560px;overflow-y:auto;">
                 <div class="box-header">
                 </div><!-- /.box-header -->
                 <div class="box-body">
@@ -45,22 +45,21 @@
                     <thead>
                       <tr>
                         <th>No.</th>
-                        <th>NIP</th>
+                        <th>NISN</th>
                         <th>Name</th>
                         <th>Gender</th>
-                        <th>Birth Place and Date</th>
+                        <th>Birth Place</th>
+                        <th>Birth Date</th>
                         <th>Religion</th>
-                        <th>Position</th>
+                        <th>Grade</th>
+                        <th>Class</th>
                         <th>Age</th>
                         <th>Bloodtype</th>
-                        <th>Teacher For</th>
+                        <th>Parent Name</th>
                         <th>Email</th>
                         <th>Contact</th>
                         <th>Address</th>
-                        <th>Absen Code</th>
-                        <th>Photo</th>
                         <th>Status Log</th>
-                        <th>Action</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -68,26 +67,22 @@
                     @foreach($data_student as $teachers)
                       <tr>
                         <td>{{$i++}}</td>
-                        <td>{{ $teachers->dt_student_nip}}</td>
+                        <td>{{ $teachers->dt_student_nisn}}</td>
                         <td>{{ preg_replace('/\|/', ' ', $teachers->dt_student_name) }}</td>
                         <td>{{ $teachers->dt_student_gender}}</td>
                         <td>{{ $teachers->dt_student_dobplace}}</td>
                         <td>{{ $teachers->dt_student_bplace}}</td>
                         <td>{{ $teachers->dt_student_religion}}</td>
-                        <td>{{ $teachers->dt_student_position}}</td>
+                        <td>{{ $teachers->dt_student_grade}}</td>
+                        <td>{{ $teachers->dt_student_kelas}}</td>
                         <td>{{ $teachers->dt_student_age}}</td>
                         <td>{{ $teachers->dt_student_bloodtype}}</td>
-                        <td>{{ $teachers->dt_student_for}}</td>
+                        <td>{{ $teachers->dt_student_nameparent}}</td>
                         <td>{{ $teachers->dt_student_email}}</td>
                         <td>{{ $teachers->dt_student_contact}}</td>
                         <td>{{ $teachers->dt_student_address}}</td>
-                        <td>{{ $teachers->dt_student_code_absen}}</td>
-                        <td><img class="cover_photo_edit"></td>
                         <td>{{ $teachers->dt_student_statuslog}}</td>
-                        <td>
-                        <a href="{{ url('manage_student/edit_master_student/'.$teachers->id)}}"><i class="fa fa-pencil-square-o"></i> </a>
-                        <a href="{{ url('manage_student/delete_master_student/'.$teachers->id)}}"><i class="fa fa-trash"></i> </a>
-                        </td>
+                        
                       </tr>
                     @endforeach
                     </tfoot>
@@ -326,6 +321,7 @@
           <div style="width:95%;margin:auto" class="box">
                 <div class="box-header">
                   <h3 class="box-title">Data Teachers</h3>
+                  <label style="float:right"><a data-toggle="modal" data-target="#myModaldetailteacher" href="#">View Detail</a></label>
                 </div><!-- /.box-header -->
                 <div class="box-body">
                   <table class="for_datatable table table-bordered table-hover">
@@ -336,9 +332,9 @@
                         <th>NISN</th>
                         <th>Grade</th>
                         <th>Class</th>
-                        <th>email</th>
+                        <th>Email</th>
                         <th>Status Log</th>
-                        <th>Action</th>
+                        <th style="text-align:center">Action</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -352,10 +348,9 @@
                         <td>{{ $teachers->dt_student_kelas}}</td>
                         <td>{{ $teachers->dt_student_email}}</td>
                         <td>{{ $teachers->dt_student_statuslog}}</td>
-                        <td>
-                        <a href="{{ url('manage_student/edit_master_student/'.$teachers->id)}}"><i class="fa fa-pencil-square-o"></i> </a>
-                        <a href="{{ url('manage_student/delete_master_student/'.$teachers->id)}}"><i class="fa fa-trash"></i> </a>
-                        <a data-toggle="modal" data-target="#myModaldetailteacher" href="#"><i class="fa fa-eye"></i> </a>
+                        <td style="text-align:center">
+                        <a href="{{ url('manage_student/edit_master_student/'.$teachers->id)}}"><i style="font-size:20px;margin-right:50px" class="fa fa-pencil-square-o"></i> </a>
+                        <a href="{{ url('manage_student/delete_master_student/'.$teachers->id)}}"><i style="font-size:20px;margin:0px " class="fa fa-trash"></i> </a>
                         </td>
                       </tr>
                     @endforeach
@@ -366,6 +361,15 @@
                   <a href="{{ url('manage_student/export_data/xlsx') }}"><button class="btn btn-info"><i class="fa fa-paper-plane-o"></i> xlsx</button></a>
                   <a href="{{ url('manage_student/export_data/csv') }}"><button class="btn btn-warning"><i class="fa fa-paper-plane-o"></i> csv</button></a>
                   </div>
+                  <div style="float:right;margin-top:40px;">
+                  <form method="POST" action="{{ url('manage_student/import_data_student') }}" enctype="multipart/form-data" class="form-inline">
+                    <div class="form-group">
+                      <input type="file" name="import_data_master_student" class="form-control" placeholder="Email">
+                      <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                    </div>
+                    <button type="submit" class="btn btn-default">Import File</button>
+                  </form>
+                  </div>   
                 </div><!-- /.box-body -->
               </div><!-- /.box -->
               </div>

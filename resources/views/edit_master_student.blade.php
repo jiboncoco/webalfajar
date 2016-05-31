@@ -85,8 +85,8 @@
                         <td><img class="cover_photo_edit"></td>
                         <td>{{ $teachers->dt_student_statuslog}}</td>
                         <td>
-                        <a href="{{ url('manage_student/edit_master_student/'.$teachers->id)}}"><i class="fa fa-pencil-square-o"></i> </a>
-                        <a href="{{ url('manage_student/delete_master_student/'.$teachers->id)}}"><i class="fa fa-trash"></i> </a>
+                        <a href="{{ url('manage_student/edit_master_student/'.$teachers->id)}}"><i style="font-size:20px;margin-right:50px" class="fa fa-pencil-square-o"></i> </a>
+                        <a href="{{ url('manage_student/delete_master_student/'.$teachers->id)}}"><i style="font-size:20px;margin:0px " class="fa fa-trash"></i> </a>
                         </td>
                       </tr>
                     @endforeach
@@ -346,7 +346,7 @@
                         <th>Class</th>
                         <th>email</th>
                         <th>Status Log</th>
-                        <th>Action</th>
+                        <th style="text-align:center">Action</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -360,9 +360,9 @@
                         <td>{{ $teachers->dt_student_kelas}}</td>
                         <td>{{ $teachers->dt_student_email}}</td>
                         <td>{{ $teachers->dt_student_statuslog}}</td>
-                        <td>
-                        <a href="{{ url('manage_student/edit_master_student/'.$teachers->id)}}"><i class="fa fa-pencil-square-o"></i> </a>
-                        <a href="{{ url('manage_student/delete_master_student/'.$teachers->id)}}"><i class="fa fa-trash"></i> </a>
+                        <td style="text-align:center">
+                        <a href="{{ url('manage_student/edit_master_student/'.$teachers->id)}}"><i style="font-size:20px;margin-right:50px" class="fa fa-pencil-square-o"></i> </a>
+                        <a href="{{ url('manage_student/delete_master_student/'.$teachers->id)}}"><i style="font-size:20px;margin:0px " class="fa fa-trash"></i> </a>
                         <a data-toggle="modal" data-target="#myModaldetailteacher" href="#"><i class="fa fa-eye"></i> </a>
                         </td>
                       </tr>

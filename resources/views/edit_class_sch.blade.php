@@ -70,8 +70,8 @@
                         <td>{{ preg_replace('/\|/', ' ', $schs->sch_class_teacher) }}</td>
                         <td>{{ $schs->sch_class_schedule}}</td>
                         <td>
-                        <a href="{{ url('manage_class/edit_schedule_class/'.$schs->id)}}"><i class="fa fa-pencil-square-o"></i> </a>
-                        <a href="{{ url('manage_class/delete_schedule_class/'.$schs->id)}}"><i class="fa fa-trash"></i> </a>
+                        <a href="{{ url('manage_class/edit_schedule_class/'.$schs->id)}}"><i style="font-size:20px;margin-right:50px" class="fa fa-pencil-square-o"></i> </a>
+                        <a href="{{ url('manage_class/delete_schedule_class/'.$schs->id)}}"><i style="font-size:20px;margin:0px " class="fa fa-trash"></i> </a>
                         </td>
                       </tr>
                     @endforeach
@@ -226,7 +226,7 @@
                         <th>Month</th>
                         <th>Year</th>
                         <th>Schedule</th>
-                        <th>Action</th>
+                        <th style="text-align:center">Action</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -239,9 +239,9 @@
                         <td>{{ $class_sch->sch_class_month}}</td>
                         <td>{{ $class_sch->sch_class_year}}</td>
                         <td>{{ $class_sch->sch_class_schedule}}</td>
-                        <td>
-                        <a href="{{ url('manage_class/edit_schedule_class/'.$class_sch->id)}}"><i class="fa fa-pencil-square-o"></i> </a>
-                        <a href="{{ url('manage_class/delete_schedule_class/'.$class_sch->id)}}"><i class="fa fa-trash"></i> </a>
+                        <td style="text-align:center">
+                        <a href="{{ url('manage_class/edit_schedule_class/'.$class_sch->id)}}"><i style="font-size:20px;margin-right:50px" class="fa fa-pencil-square-o"></i> </a>
+                        <a href="{{ url('manage_class/delete_schedule_class/'.$class_sch->id)}}"><i style="font-size:20px;margin:0px " class="fa fa-trash"></i> </a>
                         </td>
                       </tr>
                     @endforeach

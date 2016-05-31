@@ -220,6 +220,16 @@
                   <a href="{{ url('manage_all_account/export_data/csv') }}"><button class="btn btn-warning"><i class="fa fa-paper-plane-o"></i> csv</button></a>
                   </div>
 
+                  <div style="float:right;margin-top:40px;">
+                  <form method="POST" action="{{ url('manage_account/import_data_account') }}" enctype="multipart/form-data" class="form-inline">
+                    <div class="form-group">
+                      <input type="file" name="import_data_master_account" class="form-control" placeholder="Email">
+                      <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                    </div>
+                    <button type="submit" class="btn btn-default">Import File</button>
+                  </form>
+                  </div>   
+
                 </div><!-- /.box-body -->
               </div><!-- /.box -->
               </div>

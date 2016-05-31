@@ -137,7 +137,7 @@
                         <th>Class Type</th>
                         <th>Class Name</th>
                         <th>Class Status</th>
-                        <th>Action</th>
+                        <th style="text-align:center">Action</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -148,9 +148,9 @@
                         <td>{{ $post->dt_kelas_type }}</td>
                         <td>{{ $post->dt_kelas_name }}</td>
                         <td>{{ $post->dt_kelas_status }}</td>
-                        <td>
-                        <a href="{{ url('manage_class/edit_class/'.$post->id)}}"><i class="fa fa-pencil-square-o"></i> </a>
-                        <a href="{{ url('manage_class/delete_class/'.$post->id)}}"><i class="fa fa-trash"></i> </a>
+                        <td style="text-align:center">
+                        <a href="{{ url('manage_class/edit_class/'.$post->id)}}"><i style="font-size:20px;margin-right:50px" class="fa fa-pencil-square-o"></i> </a>
+                        <a href="{{ url('manage_class/delete_class/'.$post->id)}}"><i style="font-size:20px;margin:0px " class="fa fa-trash"></i> </a>
                         </td>
                       </tr>
                     @endforeach
