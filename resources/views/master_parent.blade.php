@@ -41,7 +41,7 @@
                         <div class="modal-body-front" style="height:560px;overflow-y:auto;">
                 <div class="box-header">
                 </div><!-- /.box-header -->
-                <div class="box-body">
+                <div style="width:1500px" class="box-body">
                   <table id="for_datatable" class="table table-bordered table-hover">
                     <thead>
                       <tr>
@@ -287,7 +287,8 @@ $('#selecttype').change(function(){
               "searching": true,
               "ordering": true,
               "info": true,
-              "autoWidth": true
+              "autoWidth": true,
+              "responsive": true
             });
     $('.birth_date').datetimepicker({ format: 'YYYY-MM-DD' });
     </script>

@@ -37,10 +37,10 @@
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                     <h4 class="modal-title" id="myModalLabel">Data Teachers</h4>
                     </div>
-                        <div class="modal-body-front" style="height:560px;overflow-y:auto;">
+                        <div class="modal-body-front" style="height:560px;overflow-y: auto;">
                 <div class="box-header">
                 </div><!-- /.box-header -->
-                <div class="box-body">
+                <div style="width:1700px;" class="box-body">
                   <table id="for_datatable" class="table table-bordered table-hover">
                     <thead>
                       <tr>
@@ -48,8 +48,7 @@
                         <th>NIP</th>
                         <th>Name</th>
                         <th>Gender</th>
-                        <th>Birth Place</th>
-                        <th>Birth Date</th>
+                        <th>Birth Place and Date</th>
                         <th>Religion</th>
                         <th>Position</th>
                         <th>Age</th>
@@ -70,7 +69,6 @@
                         <td>{{ $teachers->dt_teacher_nip}}</td>
                         <td>{{ preg_replace('/\|/', ' ', $teachers->dt_teacher_name) }}</td>
                         <td>{{ $teachers->dt_teacher_gender}}</td>
-                        <td>{{ $teachers->dt_teacher_bplace}}</td>
                         <td>{{ $teachers->dt_teacher_dobplace}}</td>
                         <td>{{ $teachers->dt_teacher_religion}}</td>
                         <td>{{ $teachers->dt_teacher_position}}</td>
@@ -310,7 +308,6 @@
                         <td style="text-align:center">
                         <a href="{{ url('manage_teacher/edit_master_teacher/'.$teachers->id)}}"><i style="font-size:20px;margin-right:50px" class="fa fa-pencil-square-o"></i> </a>
                         <a href="{{ url('manage_teacher/delete_master_teacher/'.$teachers->id)}}"><i style="font-size:20px;margin:0px " class="fa fa-trash"></i> </a>
-                        <a onclick="open_detail({{$teachers->id}})"><i class="fa fa-eye"></i></a>
                         </td>
                       </tr>
                     @endforeach
@@ -347,45 +344,9 @@
               "searching": true,
               "ordering": true,
               "info": true,
-              "autoWidth": true
+              "autoWidth": true,
+              "responsive": true
             });
     $('.birth_date').datetimepicker({ format: 'YYYY-MM-DD' });
     </script>
-
-
-<div id="modal"></div>
-<script>
-$("#modal").modal({autoOpen:false;});
-function open_detail(id){
-    $.ajax({    
-        type: "GET",
-        url: "{{ url('manage_teacher/detail_teacher/') }}/"+id,             
-        dataType: "json",   //<- kan response nya json say                
-        success: function(response){ 
-              var html = 
-              '<table><tr>'+
-              '<td>Name</td><td>'+preg_replace('/\|/', ' ', response.dt_teacher_name+'</td>'+
-              '<td>NIP</td><td>'+response.dt_teacher_nip+'</td>'+
-              '<td>Gender</td><td>'+response.dt_teacher_gender+'</td>'+
-              '<td>Birth Place</td><td>'+response.dt_teacher_bplace+'</td>'+
-              '<td>Birth Date</td><td>'+response.dt_teacher_dobplace+'</td>'+
-              '<td>Religion</td><td>'+response.dt_teacher_religion+'</td>'+
-              '<td>Position</td><td>'+response.dt_teacher_position+'</td>'+
-              '<td>Age</td><td>'+response.dt_teacher_age+'</td>'+
-              '<td>Bloodtype</td><td>'+response.dt_teacher_bloodtype+'</td>'+
-              '<td>Teacher For</td><td>'+response.dt_teacher_for+'</td>'+
-              '<td>Email</td><td>'+response.dt_teacher_email+'</td>'+
-              '<td>Contact</td><td>'+response.dt_teacher_contact+'</td>'+
-              '<td>Address</td><td>'+response.dt_teacher_address+'</td>'+
-              '<td>Absen Code</td><td>'+response.dt_teacher_code_absen+'</td>'+
-              '<td>Status Log</td><td>'+response.dt_teacher_statuslog+'</td>'+
-              '</tr></table>';
-              
-                $("#modal").modal('open');
-        }
-
-    });
-}
-</script>
-
 @endsection

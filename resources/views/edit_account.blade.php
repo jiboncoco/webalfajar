@@ -244,20 +244,19 @@
 </body>
 <script type="text/javascript">
         $('#selecttype').change(function(){
-        if($(this).val() == "Teacher"){
+        if($(this).val() == "teacher"){
           $("#teacher").css("display","block");
           $('#student').hide();
-          $('#teacher').show();
           $("#tyco").val("nip");
           $('#parent').hide();
         }
-        else if($(this).val() == "Parent"){
+        else if($(this).val() == "parent"){
           $("#parent").css("display","block");
           $('#teacher').hide();
           $('#student').hide();
           $("#tyco").val("parent");
         }
-        else if($(this).val() == "Student"){
+        else{
           $("#student").css("display","block");
           $('#teacher').hide();
           $('#parent').hide();

@@ -40,7 +40,7 @@
                         <div class="modal-body-front" style="height:560px;overflow-y:auto;">
                 <div class="box-header">
                 </div><!-- /.box-header -->
-                <div class="box-body">
+                <div style="width:2000px" class="box-body">
                   <table id="for_datatable" class="table table-bordered table-hover">
                     <thead>
                       <tr>
@@ -231,6 +231,14 @@
                         </span>
                     </div>
                   </div>
+                  <div class="col-xs-2">
+                      <label for="exampleInputPassword1">No Absen</label>
+                      <select id="selecttype" name="dt_student_noabsen" class="form-control not-res-s">
+                        @for($i=1;$i<101;$i++)
+                        <option value="{{$i}}">{{$i}}</option>
+                        @endfor
+                      </select>
+                    </div>
                   </div>
                   <br>
 
@@ -320,7 +328,7 @@
               <br><br>
           <div style="width:95%;margin:auto" class="box">
                 <div class="box-header">
-                  <h3 class="box-title">Data Teachers</h3>
+                  <h3 class="box-title">Data Students</h3>
                   <label style="float:right"><a data-toggle="modal" data-target="#myModaldetailteacher" href="#">View Detail</a></label>
                 </div><!-- /.box-header -->
                 <div class="box-body">
@@ -382,11 +390,12 @@
     <script type="text/javascript">
             $('.for_datatable').DataTable({
               "paging": true,
-              "lengthChange": false,
-              "searching": false,
+              "lengthChange": true,
+              "searching": true,
               "ordering": true,
               "info": true,
-              "autoWidth": false
+              "autoWidth": true,
+              "responsive": true
             });
     $('.birth_date').datetimepicker({ format: 'YYYY-MM-DD' });
     </script>

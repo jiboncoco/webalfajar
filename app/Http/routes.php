@@ -136,7 +136,7 @@ Route::get('manage_teacher/delete_master_teacher/{id}', 'AdminController@delete_
 Route::get('manage_teacher/export_data/xls', 'PostController@exportxls_data_master_teacher');
 Route::get('manage_teacher/export_data/xlsx', 'PostController@exportxlsx_data_master_teacher');
 Route::get('manage_teacher/export_data/csv', 'PostController@exportcsv_data_master_teacher');
-
+Route::get('manage_teacher/master_teacher_recap', 'AdminController@master_teacher_recap');
 
 Route::post('manage_teacher/import_data_teacher', 'PostController@import_data_master_teacher');
 Route::post('manage_student/import_data_student', 'PostController@import_data_master_student');
