@@ -60,10 +60,16 @@
                         <option value="teacher">Teacher</option>
                         <option value="parent" selected>Parent</option>
                         <option value="student">Student</option>
-                        @else
+                        @elseif($akses_edit->akses_type == "student")
                         <option value="teacher">Teacher</option>
                         <option value="parent">Parent</option>
                         <option value="student" selected>Student</option>
+                        @elseif($akses_edit->akses_type == "staff")
+                        <option value="student" selected>Staff</option>
+                        @elseif($akses_edit->akses_type == "root")
+                        <option value="student" selected>Root</option>
+                        @elseif($akses_edit->akses_type == "root+")
+                        <option value="student" selected>Root+</option>
                         @endif
                       </select>
                     </div>
@@ -229,10 +235,10 @@
                     </tfoot>
                   </table>
                   <div class="export">
-                  <a href="{{ url('manage_all_account/export_data/xls') }}"><button class="btn btn-success"><i class="fa fa-paper-plane-o"></i> xls</button></a>
+                 <!--  <a href="{{ url('manage_all_account/export_data/xls') }}"><button class="btn btn-success"><i class="fa fa-paper-plane-o"></i> xls</button></a>
                   <a href="{{ url('manage_all_account/export_data/xlsx') }}"><button class="btn btn-info"><i class="fa fa-paper-plane-o"></i> xlsx</button></a>
                   <a href="{{ url('manage_all_account/export_data/csv') }}"><button class="btn btn-warning"><i class="fa fa-paper-plane-o"></i> csv</button></a>
-                  </div>
+                   --></div>
 
                 </div><!-- /.box-body -->
               </div><!-- /.box -->

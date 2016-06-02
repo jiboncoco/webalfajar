@@ -37,7 +37,7 @@
         <!-- Main content -->
         <section class="content">
           <div class="admin-seacrh">
-            <div class="col-lg-12">
+<!--             <div class="col-lg-12">
               <div class="input-group">
                 <input type="text" class="form-control" name="search_admin" id="search_admin" placeholder="Search" required/>
                 <div class="input-group-btn">
@@ -49,9 +49,9 @@
                     <li><a href="{{ url('manage/article') }}">Article</a></li>
                     <li><a href="{{ url('manage/all') }}">All Information</a></li>
                   </ul>
-                </div><!-- /btn-group -->
-              </div><!-- /input-group -->
-            </div><!-- /.col-lg-6 -->
+                </div>
+              </div>
+            </div> -->
           </div>
 
         <div class="admin-news">

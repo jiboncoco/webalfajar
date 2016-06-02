@@ -321,7 +321,6 @@
                         <td style="text-align:center">
                         <a href="{{ url('manage_teacher/edit_master_teacher/'.$teachers->id)}}"><i style="font-size:20px;margin-right:50px" class="fa fa-pencil-square-o"></i> </a>
                         <a href="{{ url('manage_teacher/delete_master_teacher/'.$teachers->id)}}"><i style="font-size:20px;margin:0px " class="fa fa-trash"></i> </a>
-                        <a href="{{ url('manage_teacher/detail_master_teacher/'.$teachers->id)}}"><i class="fa fa-eye"></i> </a>
                         </td>
                       </tr>
                     @endforeach

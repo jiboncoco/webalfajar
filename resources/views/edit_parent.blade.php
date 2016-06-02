@@ -32,6 +32,7 @@
           @include('sidebar')
        
       <!-- Content Wrapper. Contains page content -->
+
       <div class="content-wrapper">
 
         <!-- Main content -->
@@ -160,6 +161,7 @@
           <div style="width:95%;margin:auto" class="box">
                 <div class="box-header">
                   <h3 class="box-title">Data Parent</h3>
+                   
                 </div><!-- /.box-header -->
                 <div class="box-body">
                   <table id="example2" class="table table-bordered table-hover">
@@ -183,17 +185,16 @@
                         <td style="text-align:center">
                         <a href="{{ url('manage_parent/edit_parent/'.$parents->id)}}"><i style="font-size:20px;margin-right:50px" class="fa fa-pencil-square-o"></i> </a>
                         <a href="{{ url('manage_parent/delete_parent/'.$parents->id)}}"><i style="font-size:20px;margin:0px " class="fa fa-trash"></i> </a>
-                        <a data-toggle="modal" data-target="#myModaldetailteacher" href="#"><i class="fa fa-eye"></i> </a>
                         </td>
                       </tr>
                     @endforeach
                     </tfoot>
                   </table>
                   <div class="export">
-                  <a href="{{ url('manage_all_account/export_data/xls') }}"><button class="btn btn-success"><i class="fa fa-paper-plane-o"></i> xls</button></a>
+                  <!-- <a href="{{ url('manage_all_account/export_data/xls') }}"><button class="btn btn-success"><i class="fa fa-paper-plane-o"></i> xls</button></a>
                   <a href="{{ url('manage_all_account/export_data/xlsx') }}"><button class="btn btn-info"><i class="fa fa-paper-plane-o"></i> xlsx</button></a>
                   <a href="{{ url('manage_all_account/export_data/csv') }}"><button class="btn btn-warning"><i class="fa fa-paper-plane-o"></i> csv</button></a>
-                  </div>
+                   --></div>
 
                 </div><!-- /.box-body -->
               </div><!-- /.box -->
