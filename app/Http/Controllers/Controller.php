@@ -116,7 +116,7 @@ class Controller extends BaseController
     {
       session_start();
         if(isset($_SESSION['logged_in'])){
-            return redirect('manage');
+            return redirect('manage_post/my_post');
         }
         else{
             return view('login');

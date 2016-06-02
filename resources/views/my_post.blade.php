@@ -37,93 +37,73 @@
         <!-- Main content -->
         <section class="content">
           <div class="admin-seacrh">
-            <div class="col-lg-12">
-              <div class="input-group">
-                <input type="text" class="form-control" name="search_admin" id="search_admin" placeholder="Search" required/>
-                <div class="input-group-btn">
-                  <button type="submit" class="btn btn-default dropdown-toggle" data-toggle="dropdown" style="margin-bottom:0px;" aria-haspopup="true" aria-expanded="false">All Information <span class="caret"></span></button>
-                  <ul class="dropdown-menu">
-                    <li><a href="{{ url('manage/news') }}">News</a></li>
-                    <li><a href="{{ url('manage/agenda') }}">Agenda</a></li>
-                    <li><a href="{{ url('manage/announcement') }}">Announcement </a></li>
-                    <li><a href="{{ url('manage/article') }}">Article</a></li>
-                    <li><a href="{{ url('manage/all') }}">All Information</a></li>
-                  </ul>
-                </div><!-- /btn-group -->
-              </div><!-- /input-group -->
-            </div><!-- /.col-lg-6 -->
           </div>
+          <div style="width:95%;margin:auto" class="box">
+                <div class="box-header">
+                  <h3 class="box-title">My Post</h3>
+                </div><!-- /.box-header -->
+                <div class="box-body">
+                  <table class="for_datatable table table-bordered table-hover">
+                    <thead>
+                      <tr>
+                        <th>No.</th>
+                        <th>Title</th>
+                        <th>Content</th>
+                        <th style="text-align:center">Action</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                    <?php $i=1; ?>
+                    @foreach($dt_blog_admins as $dt_blog_admin2)
+                      <tr>
+                        <td>{{$i++}}</td>
+                        <td><a href="{{ url('view/'.$dt_blog_admin2->id) }}">{{ $dt_blog_admin2->dt_blog_title }}</a></td>
+                        <td>
+                          <?php
+                          $string = strip_tags($dt_blog_admin2->dt_blog_text);
 
-        <div class="admin-news">
-        @foreach($dt_blog_admins as $dt_blog_admin2)
-        
-          <div class="detail-news">
-          <a href="{{ url('view/'.$dt_blog_admin2->id) }}">
-            <div class="img-detail-news">
-              <img class="img-dn" src="{{ url('images/'.$dt_blog_admin2 ->cover_photo) }}">
-            </div>
-            <div class="title-detail-news">
-              {{ $dt_blog_admin2->dt_blog_title }}
-            </div>
-            <div class="content-detail-news">
-              <?php
-            $string = strip_tags($dt_blog_admin2->dt_blog_text);
+                          if (strlen($string) > 70) {
 
-            if (strlen($string) > 300) {
+                              // truncate string
+                              $stringCut = substr($string, 0, 70);
 
-                // truncate string
-                $stringCut = substr($string, 0, 300);
+                              // make sure it ends in a word so assassinate doesn't become ass...
+                              $string = substr($stringCut, 0, strrpos($stringCut, ' ')).'...';
+                          }
+                              echo $string;
+                            ?>
+                        </td>
+                        <td style="text-align:center">
+                        <label><a href="{{ url('manage_post/edit_post/'.$dt_blog_admin2->id) }}"> <i style="font-size:24px;margin-right:20px;" class="fa fa-pencil-square-o"></i> </a></label>
+                        <label><a href="{{ url('manage_post/delete_post/'.$dt_blog_admin2->id) }}"> <i style="font-size:24px;color:rgb(202, 65, 65)" class="fa fa-trash"></i> </a></label>
+                        </td>
+                      </tr>
+                    @endforeach
+                    </tfoot>
+                  </table>
+<!--                   <div class="export">
+                  <a href="{{ url('manage_all_account/export_data/xls') }}"><button class="btn btn-success"><i class="fa fa-paper-plane-o"></i> xls</button></a>
+                  <a href="{{ url('manage_all_account/export_data/xlsx') }}"><button class="btn btn-info"><i class="fa fa-paper-plane-o"></i> xlsx</button></a>
+                  <a href="{{ url('manage_all_account/export_data/csv') }}"><button class="btn btn-warning"><i class="fa fa-paper-plane-o"></i> csv</button></a>
+                  </div> -->
 
-                // make sure it ends in a word so assassinate doesn't become ass...
-                $string = substr($stringCut, 0, strrpos($stringCut, ' ')).'...';
-            }
-                echo $string;
-              ?>
-            </div>
-          </a>
-          <div class="attr">
-          <hr/>
-            <label><a href="{{ url('manage_post/edit_post/'.$dt_blog_admin2->id) }}"> <i style="font-size:24px;margin-right:20px;" class="fa fa-pencil-square-o"></i> </a></label>
-            <label><a href="{{ url('manage_post/delete_post/'.$dt_blog_admin2->id) }}"> <i style="font-size:24px;color:rgb(202, 65, 65)" class="fa fa-trash"></i> </a></label>
-          </div>
-          </div>
-          @endforeach
-          </div>
-
-        </section><!-- /.content -->
-        <div class="button-admin">
-        <div class="content1-button">
-          <ul class="pagination">
-          {!! $dt_blog_admins->render() !!}
-          </ul>
+                </div><!-- /.box-body -->
+              </div><!-- /.box -->
+              </div>
+        </section>
       </div>
-        </div>
-      </div><!-- /.content-wrapper -->
-
-
-    </div><!-- ./wrapper -->
-
-    <script type="text/javascript">
-
-    $.ajaxSetup({
-   headers: {'X-CSRF-Token': $('meta[name=csrf_token]').attr('content')}
-});
-        $('input[name=search_admin]').keyup(function(e){
-            // alert('asdasd');
-            setTimeout(function(){
-                $('.admin-news').html('<div class="admin-news">Loading...</div>');
-                $.ajax({
-                    'type': 'GET',
-                    'url': '{{url("search_post_admin")}}/'+$('input[name=search_admin]').val(),
-                    'success': function(data){
-                    if (data) {
-                        $('.admin-news').html(data);
-                    }else{
-                        $('.admin-news').html('<div class="admin-news">Pencarian tidak ditemukan..</div>');
-                    }
-                    }
-                });
-            }, 500);
-        });
+      
+</div>
+</body>
+<script type="text/javascript">
+            $('.for_datatable').DataTable({
+              "paging": true,
+              "lengthChange": true,
+              "searching": true,
+              "ordering": true,
+              "info": true,
+              "autoWidth": true
+            });
+    $('.birth_date').datetimepicker({ format: 'YYYY-MM-DD' });
     </script>
 @endsection

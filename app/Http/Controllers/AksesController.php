@@ -371,7 +371,7 @@ class AksesController extends Controller
        session_start();
         if(isset($_SESSION['logged_in'])){
             \App\dt_mail::find($id)->delete();
-            return redirect( url('manage'));
+            return redirect( url('manage_post/my_post'));
         }
         else{
             return redirect(url('login'));
@@ -383,7 +383,7 @@ class AksesController extends Controller
        session_start();
         if(isset($_SESSION['logged_in'])){
             \App\dt_mail::find($id)->delete();
-            return redirect( url('manage'));
+            return redirect( url('manage_post/my_post'));
         }
         else{
             return redirect(url('login'));
@@ -395,7 +395,7 @@ class AksesController extends Controller
        session_start();
         if(isset($_SESSION['logged_in'])){
             \App\dt_mail::find($id)->delete();
-            return redirect( url('manage'));
+            return redirect( url('manage_post/my_post'));
         }
         else{
             return redirect(url('login'));
@@ -407,7 +407,7 @@ class AksesController extends Controller
        session_start();
         if(isset($_SESSION['logged_in'])){
             \App\dt_mail::find($id)->delete();
-            return redirect( url('manage'));
+            return redirect( url('manage_post/my_post'));
         }
         else{
             return redirect(url('login'));

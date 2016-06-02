@@ -50,7 +50,7 @@ class PostController extends Controller
 
       $post->save();
     if(session('akses_type') == "staff"){
-      return redirect(url('manage'));
+      return redirect(url('manage_post/my_post'));
     } 
     else{
       return redirect(url('manage_post/my_post'));
@@ -115,7 +115,7 @@ class PostController extends Controller
 
         $post->save();
 
-        return redirect(url('manage'));
+        return redirect(url('manage_post/my_post'));
     }
 
     public function delete_post($id)
@@ -123,7 +123,7 @@ class PostController extends Controller
        session_start();
         if(isset($_SESSION['logged_in'])){
             \App\dt_blog::find($id)->delete();
-            return redirect( url('manage'));
+            return redirect( url('manage_post/my_post'));
         }
         else{
             return redirect(url('login'));

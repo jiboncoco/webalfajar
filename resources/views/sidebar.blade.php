@@ -18,11 +18,11 @@
           @if($_SESSION['akses_type'] == 'staff')
           <ul class="sidebar-menu">
             <li class="header">NAVIGATION</li>
-            <li class="active treeview">
+<!--             <li class="active treeview">
               <a href="{{ url('manage') }}">
                 <i class="fa fa-dashboard"></i> <span>Dashboard</span>
               </a>
-            </li>
+            </li> -->
             <li class="treeview">
               <a href="#">
                 <i class="fa fa-users"></i>

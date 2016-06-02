@@ -385,7 +385,7 @@ class AdminController extends Controller
         if(session('akses_type') == "staff" || session('akses_type') == "root" || session('akses_type') == "root+"){
         return redirect(url('manage_account/all_account'));
         } else {
-        return redirect(url('manage'));
+        return redirect(url('manage_post/my_post'));
         }
     }
 
