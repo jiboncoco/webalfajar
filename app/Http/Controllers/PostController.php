@@ -168,7 +168,7 @@ class PostController extends Controller
                   </div>
                 </div>
                 </a>";
-        $i++;
+
         }
     }
 
@@ -209,7 +209,7 @@ class PostController extends Controller
                   </div>
                 </div>
                 </a>";
-        $i++;
+
         }
     }
 
@@ -250,7 +250,7 @@ class PostController extends Controller
                   </div>
                 </div>
                 </a>";
-        $i++;
+
         }
     }
 
@@ -291,7 +291,7 @@ class PostController extends Controller
                   </div>
                 </div>
                 </a>";
-        $i++;
+
         }
     }
 
@@ -332,7 +332,7 @@ class PostController extends Controller
                   </div>
                 </div>
                 </a>";
-        $i++;
+
         }
     }
 
@@ -373,7 +373,7 @@ class PostController extends Controller
                   </div>
                 </div>
                 </a>";
-        $i++;
+
         }
     }
 
@@ -414,7 +414,7 @@ class PostController extends Controller
                   </div>
                 </div>
                 </a>";
-        $i++;
+
         }
     }
 
@@ -455,7 +455,7 @@ class PostController extends Controller
                   </div>
                 </div>
                 </a>";
-        $i++;
+
         }
     } 
 
@@ -497,7 +497,7 @@ class PostController extends Controller
                   <label><a href=".url('manage_post/delete_post/'.$dt_blog_admin->id)."> <i style=\"font-size:24px;color:rgb(202, 65, 65)\" class=\"fa fa-trash\"></i> </a></label>
                 </div>
                 </div>";
-        $i++;
+
         }
     }
 
