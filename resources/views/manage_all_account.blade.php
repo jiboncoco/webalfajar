@@ -167,7 +167,7 @@
                   <div class="form-group">
                   <div  class="col-xs-6 col-md-4">
                     <label for="exampleInputPassword1">Image User</label>
-                    <input type="file" name="akses_imguser" class="form-control not-res" placeholder="Image User"/>
+                    <input type="file" name="akses_imguser" value="20160603232954575212f2970a3.png" class="form-control not-res" placeholder="Image User"/>
                   </div>
                   </div>
 

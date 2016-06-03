@@ -54,6 +54,8 @@
                         <option value="parent" selected>Parent</option>
                         @elseif($akses_edit->akses_type == "staff")
                         <option value="student" selected>Staff</option>
+                        @elseif($akses_edit->akses_type == "student")
+                        <option value="student" selected>Student</option>
                         @elseif($akses_edit->akses_type == "root")
                         <option value="student" selected>Root</option>
                         @elseif($akses_edit->akses_type == "root+")
