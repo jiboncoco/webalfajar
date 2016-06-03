@@ -203,6 +203,7 @@ Route::post('manage_feature/update_feature', 'AdminController@update_feature');
 Route::get('manage_feature/delete_feature/{id}', 'AdminController@delete_feature');
 
 Route::get('manage_setting/edit_profile', 'AdminController@edit_profile');
+Route::post('manage_setting/update_profile', 'AdminController@update_profile');
 Route::post('save_mailnews', 'AdminController@save_mailnews');
 
 Route::get('alfajar/admin/sessionurl', 'AdminController@login_sadmin');

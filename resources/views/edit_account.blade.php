@@ -183,10 +183,14 @@
                   </div>
 
                   <br><br>
-                  <div id="b-save"></div>
-                    <button type="submit" class="btn btn-primary">Save</button>
-                    <a href="{{ url('manage_account/all_account') }}"><button class="btn btn-danger">Cancel</button></a>
+                  <div id="b-save">
+                    <button type="submit" class="btn btn-primary">Update</button>
+                  </div>
+                  <br>
                 </form>
+                <div style="margin-top:-54px;margin-left:80px">
+                  <a href="{{ url('manage_account/all_account') }}"><button class="btn btn-danger">Cancel</button></a>
+                </div>
                 </div><!-- /.box-body -->
               </div><!-- /.box -->
               

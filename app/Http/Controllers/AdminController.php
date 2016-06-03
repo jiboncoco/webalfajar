@@ -382,11 +382,29 @@ class AdminController extends Controller
 
         $post->save();
 
-        if(session('akses_type') == "staff" || session('akses_type') == "root" || session('akses_type') == "root+"){
         return redirect(url('manage_account/all_account'));
-        } else {
-        return redirect(url('manage_post/my_post'));
+       
+    }
+
+    public function update_profile()
+    {
+        
+        $post = \App\akses::find(Input::get('id'));
+        $post->akses_username = Input::get('akses_username');
+        $post->akses_password = Input::get('akses_password');
+
+        if(Input::hasFile('akses_imguser')){
+            $akses_imguser = date("YmdHis")
+            .uniqid()
+            ."."
+            .Input::file('akses_imguser')->getClientOriginalExtension();
+        
+            Input::file('akses_imguser')->move(storage_path(),$akses_imguser);
+            $post->akses_imguser = $akses_imguser;
         }
+
+        $post->save();
+        return redirect(url('manage_setting/edit_profile'));
     }
 
     public function delete_account($id)

@@ -112,11 +112,13 @@
                 </div><!-- /.box-body -->
                 <div class="box-footer">
                   <div class="pull-right">
-                    <a href="{{ url('manage_message/message_parent') }}"><button class="btn btn-danger"><i class="fa fa-close"></i> Cancel</button></a>
-                    <button type="submit" class="btn btn-primary"><i class="fa fa-envelope-o"></i> Send</button>
+                  <button type="submit" class="btn btn-primary"><i class="fa fa-envelope-o"></i> Send</button>
                   </div>
                 </div><!-- /.box-footer -->
               </form>
+              <div style="float:left;margin-top:-45px;margin-left:10px">
+                <a href="{{ url('manage_message/message_student) }}"><button class="btn btn-danger"><i class="fa fa-close"></i> Cancel</button></a>
+              </div>
               </div><!-- /. box -->
             </div><!-- /.col -->
           </div><!-- /.row -->

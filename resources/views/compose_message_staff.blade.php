@@ -138,18 +138,21 @@
                 <div class="box-footer">
                   <div class="pull-right">
                     <button type="submit" class="btn btn-primary"><i class="fa fa-envelope-o"></i> Send</button>
-                    @if(session('akses_type') == 'staff')
+                   
+                  </div>
+                </div><!-- /.box-footer -->
+              </form>
+              </form>
+              </form>
+              <div style="float:left;margin-top:-45px;margin-left:10px">
+                 @if(session('akses_type') == 'staff')
                     <a href="{{ url('manage_message/message_staff') }}"><button class="btn btn-danger"><i class="fa fa-close"></i> Cancel</button></a>
                     @elseif(session('akses_type') == 'root')
                     <a href="{{ url('manage_message/message_root') }}"><button class="btn btn-danger"><i class="fa fa-close"></i> Cancel</button></a>
                     @elseif(session('akses_type') == 'root+')
                     <a href="{{ url('manage_message/message_root+') }}"><button class="btn btn-danger"><i class="fa fa-close"></i> Cancel</button></a>
                     @endif
-                  </div>
-                </div><!-- /.box-footer -->
-              </form>
-              </form>
-              </form>
+              </div>
               </div><!-- /. box -->
             </div><!-- /.col -->
           </div><!-- /.row -->

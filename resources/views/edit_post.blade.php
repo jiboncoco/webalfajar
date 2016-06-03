@@ -83,8 +83,12 @@
         </div>
     
       <br><br>
-        <button type="submit" class="btn btn-default">Save Post</button>
+        <button type="submit" class="btn btn-primary">Update</button>
       </form>
+    <br>
+                <div style="margin-top:-54px;margin-left:80px">
+                    <a href="{{ url('manage_post/my_post') }}"><button class="btn btn-danger">Cancel</button></a>
+                </div>
     </div>
 
 </div>

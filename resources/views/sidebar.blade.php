@@ -5,7 +5,9 @@
           <!-- Sidebar user panel -->
           <div class="user-panel">
             <div class="pull-left image">
-              <img src="{{ url('adminlte/dist/img/user2-160x160.jpg') }}" class="img-circle" alt="User Image">
+            @foreach($uname as $user)
+              <img src="{{ url('images/'.$user->akses_imguser) }}" class="img-circle" alt="User Image">
+            @endforeach
             </div>
             <div class="pull-left info">
             <p>@foreach($uname as $user) {{ $user->akses_username }} @endforeach</p>

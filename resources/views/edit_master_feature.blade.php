@@ -105,9 +105,13 @@
 
                   <br><br>
                   <div id="b-save"></div>
-                    <button type="submit" class="btn btn-primary">Save</button>
-                    <a href="{{ url('manage_feature/master_feature') }}"><button class="btn btn-danger">Cancel</button></a>
+                    <button type="submit" class="btn btn-primary">Update</button>
+                    
                 </form>
+                <br>
+                <div style="margin-top:-54px;margin-left:80px">
+                    <a href="{{ url('manage_feature/master_feature') }}"><button class="btn btn-danger">Cancel</button></a>
+                </div>
                 </div><!-- /.box-body -->
               </div><!-- /.box -->
               
