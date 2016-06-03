@@ -8,6 +8,7 @@
             @foreach($uname as $user)
               <img src="{{ url('images/'.$user->akses_imguser) }}" class="img-circle" alt="User Image">
             @endforeach
+              <!-- <img src="{{ url('adminlte/dist/img/user2-160x160.jpg') }}" class="img-circle" alt="User Image"> -->
             </div>
             <div class="pull-left info">
             <p>@foreach($uname as $user) {{ $user->akses_username }} @endforeach</p>
