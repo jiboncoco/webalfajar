@@ -162,6 +162,12 @@
                     <input type="password" name="akses_password" class="form-control not-res" maxlength="20" placeholder="Password" onkeyup="this.value = minmaxname(this.value, 0, 20)" required/>
                   </div>
                   </div>
+                  <br>
+
+                  <div class="form-group">
+                    <label for="exampleInputPassword1">Image User</label>
+                    <input type="file" name="akses_imguser" value="{{ $akses_edit->akses_imguser }}" class="form-control not-res" placeholder="Image User"/>
+                  </div>
 
                   <br><br>
                   <div id="b-save"></div>

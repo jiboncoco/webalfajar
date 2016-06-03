@@ -182,6 +182,13 @@
                   </div>
                   </div>
 
+                  <br>
+                  <div class="form-group">
+                    <img class="cover_photo_edit" src="{{ url('images/'.$akses_edit->akses_imguser) }}">
+                    <label for="exampleInputPassword1">Image User</label>
+                    <input type="file" name="akses_imguser" value="{{ $akses_edit->akses_imguser }}" class="form-control not-res" placeholder="Image User" />
+                  </div>
+
                   <br><br>
                   <div id="b-save">
                     <button type="submit" class="btn btn-primary">Update</button>
