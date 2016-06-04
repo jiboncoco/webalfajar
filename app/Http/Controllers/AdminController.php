@@ -321,6 +321,7 @@ class AdminController extends Controller
         $post->akses_username = Input::get('akses_username');
         $post->akses_password = Input::get('akses_password');
         $post->akses_create_by = session('akses_email');
+        $post->akses_imguser = '20160603232954575212f2970a3.png';
 
         $post->save();
 
