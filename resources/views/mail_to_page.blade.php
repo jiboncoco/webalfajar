@@ -38,10 +38,10 @@
         <section class="content">
         <div class="admin-seacrh" style="height:2px;">
             </div>
-        <section class="content-header">
+<section class="content-header">
           <h1>
             Mailbox
-            <!-- <small>13 new messages</small> -->
+            <small>13 new messages</small>
           </h1>
           <ol class="breadcrumb">
             <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
@@ -53,7 +53,7 @@
         <section class="content">
           <div class="row">
             <div class="col-md-3">
-              <a href="{{ url('manage_message/message_student/compose') }}" class="btn btn-primary btn-block margin-bottom">Compose</a>
+              <a href="{{ url('manage_message/compose_mail_to') }}" class="btn btn-primary btn-block margin-bottom">Compose</a>
               <div class="box box-solid">
                 <div class="box-header with-border">
                   <h3 class="box-title">Folders</h3>
@@ -63,12 +63,36 @@
                 </div>
                 <div class="box-body no-padding">
                   <ul class="nav nav-pills nav-stacked">
-                    <li><a href="{{ url('manage_message/message_student') }}"><i class="fa fa-inbox"></i> Inbox </a></li>
-                    <li><a href="{{ url('manage_message/message_student/sent') }}"><i class="fa fa-envelope-o"></i> Sent</a></li>
+                    @if(session('akses_type') == 'staff')
+                      <li><a href="{{ url('manage_message/message_staff') }}"><i class="fa fa-inbox"></i> Inbox</a></li>
+                    @elseif(session('akses_type') == 'root')
+                      <li><a href="{{ url('manage_message/message_root') }}"><i class="fa fa-inbox"></i> Inbox</a></li>
+                    @elseif(session('akses_type') == 'root+')
+                      <li><a href="{{ url('manage_message/message_root+') }}"><i class="fa fa-inbox"></i> Inbox</a></li>
+                    @endif
+
+                    @if(session('akses_type') == 'staff')
+                      <li><a href="{{ url('manage_message/message_staff/sent') }}"><i class="fa fa-envelope-o"></i> Sent</a></li>
+                    @elseif(session('akses_type') == 'root')
+                      <li><a href="{{ url('manage_message/message_root/sent') }}"><i class="fa fa-envelope-o"></i> Sent</a></li>
+                    @elseif(session('akses_type') == 'root+')
+                      <li><a href="{{ url('manage_message/message_root+/sent') }}"><i class="fa fa-envelope-o"></i> Sent</a></li>
+                    @endif
+
+                    @if(session('akses_type') == 'staff')
+                      <li><a href="{{ url('manage_message/message_staff') }}"><i class="fa fa-envelope-square"></i> Message</a></li>
+                    @elseif(session('akses_type') == 'root')
+                      <li><a href="{{ url('manage_message/message_root') }}"><i class="fa fa-envelope-square"></i> Message</a></li>
+                    @elseif(session('akses_type') == 'root+')
+                      <li><a href="{{ url('manage_message/message_root+') }}"><i class="fa fa-envelope-square"></i> Message</a></li>
+                    @endif
+
+                    
+                    <li><a href="{{ url('manage_message/email_blast') }}"><i class="fa fa-share-alt"></i> Email Blast</a></li>
                   </ul>
                 </div><!-- /.box-body -->
               </div><!-- /. box -->
-              <!-- <div class="box box-solid">
+              <div class="box box-solid">
                 <div class="box-header with-border">
                   <h3 class="box-title">Labels</h3>
                   <div class="box-tools">
@@ -81,8 +105,8 @@
                     <li><a href="#"><i class="fa fa-circle-o text-yellow"></i> Promotions</a></li>
                     <li><a href="#"><i class="fa fa-circle-o text-light-blue"></i> Social</a></li>
                   </ul>
-                </div>
-              </div> -->
+                </div><!-- /.box-body -->
+              </div><!-- /.box -->
             </div><!-- /.col -->
             <div class="col-md-9">
               <div class="box box-primary">
@@ -116,7 +140,13 @@
                         <tr>
                           <td><input type="checkbox"></td>
                           <td class="mailbox-star"><a href="#"><i class="fa fa-star text-yellow"></i></a></td>
-                          <td class="mailbox-name"><a href="{{ url('manage_message/message_student/read_message/sent/'.$mail->id) }}">{{ $mail->dt_mail_from }}</a></td>
+                          @if(session('akses_type') == 'staff')
+                          <td class="mailbox-name"><a href="{{ url('manage_message/message_staff/read_message/sent/'.$mail->id) }}">{{ $mail->dt_mail_from }}</a></td>
+                          @elseif(session('akses_type') == 'root')
+                          <td class="mailbox-name"><a href="{{ url('manage_message/message_root/read_message/sent/'.$mail->id) }}">{{ $mail->dt_mail_from }}</a></td>
+                          @elseif(session('akses_type') == 'root+')
+                          <td class="mailbox-name"><a href="{{ url('manage_message/message_root+/read_message/sent/'.$mail->id) }}">{{ $mail->dt_mail_from }}</a></td>
+                          @endif
                           <td class="mailbox-subject"><b>{{ $mail->dt_mail_subject }} - </b> 
                                 <?php
                                 $string = strip_tags($mail->dt_mail_text);

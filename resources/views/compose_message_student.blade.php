@@ -41,7 +41,7 @@
 <section class="content-header">
           <h1>
             Mailbox
-            <small>13 new messages</small>
+            <!-- <small>13 new messages</small> -->
           </h1>
           <ol class="breadcrumb">
             <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
@@ -68,21 +68,7 @@
                   </ul>
                 </div><!-- /.box-body -->
               </div><!-- /. box -->
-              <div class="box box-solid">
-                <div class="box-header with-border">
-                  <h3 class="box-title">Labels</h3>
-                  <div class="box-tools">
-                    <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
-                  </div>
-                </div><!-- /.box-header -->
-                <div class="box-body no-padding">
-                  <ul class="nav nav-pills nav-stacked">
-                    <li><a href="#"><i class="fa fa-circle-o text-red"></i> Important</a></li>
-                    <li><a href="#"><i class="fa fa-circle-o text-yellow"></i> Promotions</a></li>
-                    <li><a href="#"><i class="fa fa-circle-o text-light-blue"></i> Social</a></li>
-                  </ul>
-                </div><!-- /.box-body -->
-              </div><!-- /.box -->
+              
             </div><!-- /.col -->
             <div class="col-md-9">
               <div class="box box-primary">
@@ -105,19 +91,19 @@
                   </div>
                   <div class="form-group">
                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                    <textarea id="compose-textarea" name="dt_mail_text" class="form-control" style="height: 300px">
+                    <textarea class="form-control ckeditor" id="editor1" name="dt_mail_text" placeholder="Content" class="materialize-textarea" rows="6" required/></textarea>
                      
                     </textarea>
                   </div>
                 </div><!-- /.box-body -->
                 <div class="box-footer">
                   <div class="pull-right">
-                  <button type="submit" class="btn btn-primary"><i class="fa fa-envelope-o"></i> Send</button>
+                    <button type="submit" class="btn btn-primary"><i class="fa fa-envelope-o"></i> Send</button>
                   </div>
                 </div><!-- /.box-footer -->
               </form>
               <div style="float:left;margin-top:-45px;margin-left:10px">
-                <a href="{{ url('manage_message/message_student) }}"><button class="btn btn-danger"><i class="fa fa-close"></i> Cancel</button></a>
+                <a href="{{ url('manage_message/message_student') }}"><button class="btn btn-danger"><i class="fa fa-close"></i> Cancel</button></a>
               </div>
               </div><!-- /. box -->
             </div><!-- /.col -->

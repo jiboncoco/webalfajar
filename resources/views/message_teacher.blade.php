@@ -41,7 +41,7 @@
         <section class="content-header">
           <h1>
             Mailbox
-            <small>13 new messages</small>
+            <!-- <small>13 new messages</small> -->
           </h1>
           <ol class="breadcrumb">
             <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
@@ -65,24 +65,12 @@
                   <ul class="nav nav-pills nav-stacked">
                     <li class="active"><a href="{{ url('manage_message/message_teacher') }}"><i class="fa fa-inbox"></i> Inbox </a></li>
                     <li><a href="{{ url('manage_message/message_teacher/sent') }}"><i class="fa fa-envelope-o"></i> Sent</a></li>
+                    <li><a href="{{ url('manage_message/compose_mail_to') }}"><i class="fa fa-at"></i> Mail to</a></li>
+                    <li><a href="{{ url('manage_message/email_blast') }}"><i class="fa fa-share-alt"></i> Email Blast</a></li>
                   </ul>
                 </div><!-- /.box-body -->
               </div><!-- /. box -->
-              <div class="box box-solid">
-                <div class="box-header with-border">
-                  <h3 class="box-title">Labels</h3>
-                  <div class="box-tools">
-                    <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
-                  </div>
-                </div>
-                <div class="box-body no-padding">
-                  <ul class="nav nav-pills nav-stacked">
-                    <li><a href="#"><i class="fa fa-circle-o text-red"></i> Important</a></li>
-                    <li><a href="#"><i class="fa fa-circle-o text-yellow"></i> Promotions</a></li>
-                    <li><a href="#"><i class="fa fa-circle-o text-light-blue"></i> Social</a></li>
-                  </ul>
-                </div><!-- /.box-body -->
-              </div><!-- /.box -->
+              
             </div><!-- /.col -->
             <div class="col-md-9">
               <div class="box box-primary">

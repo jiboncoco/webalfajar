@@ -183,8 +183,8 @@ class AksesController extends Controller
         session_start();
         if(isset($_SESSION['logged_in'])){
             $uname = \App\akses::where('akses_email', session('akses_email'))->get();
-            $from = \App\akses::where('from_create_by', session('akses_email'))->paginate(10);
-            return \View::make('sent_message_teacher')->with('from',$from)->with('uname',$uname);
+            $dt_mail = \App\dt_mail::where('dt_mail_create_by', session('akses_email'))->paginate(10);
+            return \View::make('sent_message_teacher')->with('dt_mails',$dt_mail)->with('uname',$uname);
         }
         else{
             return redirect('login');
@@ -412,6 +412,61 @@ class AksesController extends Controller
         else{
             return redirect(url('login'));
         }
+    }
+
+    public function mail_to_page()
+    {
+        session_start();
+        if(isset($_SESSION['logged_in'])){
+            $uname = \App\akses::where('akses_email', session('akses_email'))->get();
+            $dt_mail = \App\dt_mail::where('dt_mail_to', session('akses_email'))->paginate(10);
+            return \View::make('mail_to_page')->with('dt_mails',$dt_mail)->with('uname',$uname);
+        }
+        else{
+            return redirect('login');
+        }
+    }
+
+    public function compose_mail_to()
+    {
+        session_start();
+        if(isset($_SESSION['logged_in'])){
+            $uname = \App\akses::where('akses_email', session('akses_email'))->get();
+            $from = \App\akses::where('akses_email', session('akses_email'))->get();
+            return \View::make('compose_mail_to')->with('from',$from)->with('uname',$uname);
+        }
+        else{
+            return redirect('login');
+        }
+    }
+
+
+    public function sendEmail()
+        {
+            $post = new \App\dt_mail;
+            $post->dt_mail_to = Input::get('dt_mail_to');
+            $post->dt_mail_from = Input::get('dt_mail_from');
+            $post->dt_mail_replyfrom = Input::get('dt_mail_to');
+            $post->dt_mail_create_by = session('akses_email');
+            $post->dt_mail_subject = Input::get('dt_mail_subject');
+            $post->dt_mail_text = Input::get('dt_mail_text');
+
+
+            $data = array(
+                        'content' => Input::get('dt_mail_text'),
+                        'by' => Input::get('dt_mail_from'),
+                    );
+
+                    \Mail::send('mail_to', $data, function ($message) {
+
+                        $message->from('alfajarbekasi@gmail.com');
+
+                        $message->to(Input::get('dt_mail_to'))->subject(Input::get('dt_mail_subject'), Input::get('dt_mail_from'));
+
+                    });
+
+            return redirect(url('manage_message/compose_mail_to'));
+
     }
 
 }

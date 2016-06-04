@@ -41,7 +41,7 @@
         <section class="content-header">
           <h1>
             Mailbox
-            <small>13 new messages</small>
+            <!-- <small>13 new messages</small> -->
           </h1>
           <ol class="breadcrumb">
             <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
@@ -68,7 +68,7 @@
                   </ul>
                 </div><!-- /.box-body -->
               </div><!-- /. box -->
-              <div class="box box-solid">
+              <!-- <div class="box box-solid">
                 <div class="box-header with-border">
                   <h3 class="box-title">Labels</h3>
                   <div class="box-tools">
@@ -81,8 +81,8 @@
                     <li><a href="#"><i class="fa fa-circle-o text-yellow"></i> Promotions</a></li>
                     <li><a href="#"><i class="fa fa-circle-o text-light-blue"></i> Social</a></li>
                   </ul>
-                </div><!-- /.box-body -->
-              </div><!-- /.box -->
+                </div>
+              </div> -->
             </div><!-- /.col -->
             <div class="col-md-9">
               <div class="box box-primary">

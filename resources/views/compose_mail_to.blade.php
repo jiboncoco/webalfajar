@@ -39,15 +39,27 @@
         <div class="admin-seacrh" style="height:2px;">
             </div>
 <section class="content-header">
-<div class="row">
+          <h1>
+            Mailbox
+           <!--  <small>13 new messages</small> -->
+          </h1>
+          <ol class="breadcrumb">
+            <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+            <li class="active">Mailbox</li>
+          </ol>
+        </section>
+
+        <!-- Main content -->
+        <section class="content">
+          <div class="row">
             <div class="col-md-3">
-              @if(session('akses_type') == 'staff')
-              <a href="{{ url('manage_message/message_staff/compose') }}" class="btn btn-primary btn-block margin-bottom">Compose</a>
+            <!-- @if(session('akses_type') == 'staff')
+              <a href="{{ url('manage_message/message_staff') }}" class="btn btn-primary btn-block margin-bottom">Back to Inbox</a>
             @elseif(session('akses_type') == 'root')
-              <a href="{{ url('manage_message/message_root/compose') }}" class="btn btn-primary btn-block margin-bottom">Compose</a>
+              <a href="{{ url('manage_message/message_root') }}" class="btn btn-primary btn-block margin-bottom">Back to Inbox</a>
             @elseif(session('akses_type') == 'root+')
-              <a href="{{ url('manage_message/message_root+/compose') }}" class="btn btn-primary btn-block margin-bottom">Compose</a>
-            @endif
+              <a href="{{ url('manage_message/message_root+') }}" class="btn btn-primary btn-block margin-bottom">Back to Inbox</a>
+            @endif -->
               <div class="box box-solid">
                 <div class="box-header with-border">
                   <h3 class="box-title">Folders</h3>
@@ -63,6 +75,8 @@
                       <li><a href="{{ url('manage_message/message_root') }}"><i class="fa fa-inbox"></i> Inbox</a></li>
                     @elseif(session('akses_type') == 'root+')
                       <li><a href="{{ url('manage_message/message_root+') }}"><i class="fa fa-inbox"></i> Inbox</a></li>
+                    @elseif(session('akses_type') == 'teacher')
+                      <li><a href="{{ url('manage_message/message_teacher') }}"><i class="fa fa-inbox"></i> Inbox</a></li>
                     @endif
 
                     @if(session('akses_type') == 'staff')
@@ -71,14 +85,27 @@
                       <li><a href="{{ url('manage_message/message_root/sent') }}"><i class="fa fa-envelope-o"></i> Sent</a></li>
                     @elseif(session('akses_type') == 'root+')
                       <li><a href="{{ url('manage_message/message_root+/sent') }}"><i class="fa fa-envelope-o"></i> Sent</a></li>
+                    @elseif(session('akses_type') == 'teacher')
+                      <li><a href="{{ url('manage_message/message_teacher/sent') }}"><i class="fa fa-envelope-o"></i> Sent</a></li>
                     @endif
 
-                    <li><a href="{{ url('manage_message/compose_mail_to') }}"><i class="fa fa-at"></i> Mail to</a></li>
+                    @if(session('akses_type') == 'staff')
+                      <li><a href="{{ url('manage_message/message_staff') }}"><i class="fa fa-envelope-square"></i> Message</a></li>
+                    @elseif(session('akses_type') == 'root')
+                      <li><a href="{{ url('manage_message/message_root') }}"><i class="fa fa-envelope-square"></i> Message</a></li>
+                    @elseif(session('akses_type') == 'root+')
+                      <li><a href="{{ url('manage_message/message_root+') }}"><i class="fa fa-envelope-square"></i> Message</a></li>
+                    @elseif(session('akses_type') == 'teacher')
+                      <li><a href="{{ url('manage_message/message_teacher') }}"><i class="fa fa-envelope-square"></i> Message</a></li>
+                    @endif
+
+                    
                     <li><a href="{{ url('manage_message/email_blast') }}"><i class="fa fa-share-alt"></i> Email Blast</a></li>
+
                   </ul>
                 </div><!-- /.box-body -->
-              </div><!-- /. box -->
-              <div class="box box-solid">
+              </div>
+              <!-- <div class="box box-solid">
                 <div class="box-header with-border">
                   <h3 class="box-title">Labels</h3>
                   <div class="box-tools">
@@ -91,51 +118,45 @@
                     <li><a href="#"><i class="fa fa-circle-o text-yellow"></i> Promotions</a></li>
                     <li><a href="#"><i class="fa fa-circle-o text-light-blue"></i> Social</a></li>
                   </ul>
-                </div><!-- /.box-body -->
-              </div><!-- /.box -->
+                </div>
+              </div> --><!-- /.box -->
             </div><!-- /.col -->
             <div class="col-md-9">
               <div class="box box-primary">
+            <form method="POST" action="{{ url('manage_message/mail_to/send') }}" enctype="multipart/form-data">
                 <div class="box-header with-border">
-                  <h3 class="box-title">Read Mail</h3>
-                  <div class="box-tools pull-right">
-                    <a href="#" class="btn btn-box-tool" data-toggle="tooltip" title="Previous"><i class="fa fa-chevron-left"></i></a>
-                    <a href="#" class="btn btn-box-tool" data-toggle="tooltip" title="Next"><i class="fa fa-chevron-right"></i></a>
-                  </div>
+                  <h3 class="box-title">Compose New Email</h3>
                 </div><!-- /.box-header -->
-                <div class="box-body no-padding">
-                  <div class="mailbox-read-info">
-                    <h3>{{ $dt_mails->dt_mail_subject }}</h3>
-                    <h5>From: {{ $dt_mails->dt_mail_from }}<span class="mailbox-read-time pull-right">{{ $dt_mails->created_at }}</span></h5>
-                  </div><!-- /.mailbox-read-info -->
-                  <div class="mailbox-controls with-border text-center">
-                    <div class="btn-group">
+                <div class="box-body">
 
-                  </div><!-- /.mailbox-controls -->
-                  <div class="mailbox-read-message">
-                    {!! {{ $dt_mails->dt_mail_text }} !!}
-                  </div><!-- /.mailbox-read-message -->
+                <div class="form-group">
+                @foreach($from as $from)
+                    <input class="form-control" name="dt_mail_from" placeholder="From:" value="{{ $from->akses_username }}" readonly/>
+                    @endforeach
+                  </div>
+                  <div class="form-group">
+                    <input class="form-control" type="email" name="dt_mail_to" placeholder="To:" required/>
+                  </div>
+                  <div class="form-group">
+                    <input class="form-control" name="dt_mail_subject" placeholder="Subject:" required/>
+                  </div>
+                  <div class="form-group">
+                    <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                    <textarea class="form-control ckeditor" id="editor1" name="dt_mail_text" placeholder="Content" class="materialize-textarea" rows="6" required/></textarea>
+                     
+                    </textarea>
+                  </div>
                 </div><!-- /.box-body -->
                 <div class="box-footer">
                   <div class="pull-right">
-                    @if(session('akses_type') == 'staff')
-                      <a href="{{ url('manage_message/message_staff/compose') }}" <button class="btn btn-default"><i class="fa fa-reply"></i> Reply</button></a>
-                    @elseif(session('akses_type') == 'root')
-                      <a href="{{ url('manage_message/message_root/compose') }}" <button class="btn btn-default"><i class="fa fa-reply"></i> Reply</button></a>
-                    @elseif(session('akses_type') == 'root+')
-                      <a href="{{ url('manage_message/message_root+/compose') }}" <button class="btn btn-default"><i class="fa fa-reply"></i> Reply</button></a>
-                    @endif
-                    <a href="{{ url('manage_message/message_staff') }}"><button class="btn btn-default"><i class="fa fa-close"></i> Cancel</button></a>
+                    <button type="submit" class="btn btn-primary"><i class="fa fa-envelope-o"></i> Send</button>
+                   
                   </div>
-                   @if(session('akses_type') == 'staff')
-                    <a href="{{ url('manage_message/message_staff') }}"><button class="btn btn-danger"><i class="fa fa-close"></i> Cancel</button>
-                    @elseif(session('akses_type') == 'root')
-                    <a href="{{ url('manage_message/message_root') }}"><button class="btn btn-danger"><i class="fa fa-close"></i> Cancel</button>
-                    @if(session('akses_type') == 'root+')
-                    <a href="{{ url('manage_message/message_root+') }}"><button class="btn btn-danger"><i class="fa fa-close"></i> Cancel</button>
-                    @endif
-                  <button class="btn btn-default"><i class="fa fa-print"></i> Print</button>
                 </div><!-- /.box-footer -->
+              </form>
+              </form>
+              </form>
+              
               </div><!-- /. box -->
             </div><!-- /.col -->
           </div><!-- /.row -->
@@ -147,5 +168,21 @@
       
 </div>
 </body>
-
+<script type="text/javascript">
+            $('.for_datatable').DataTable({
+              "paging": true,
+              "lengthChange": true,
+              "searching": true,
+              "ordering": true,
+              "info": true,
+              "autoWidth": true
+            });
+    $('.birth_date').datetimepicker({ format: 'YYYY-MM-DD' });
+    </script>
+       <script>
+      $(function () {
+        //Add text editor
+        $("#compose-textarea").wysihtml5();
+      });
+    </script>
 @endsection
