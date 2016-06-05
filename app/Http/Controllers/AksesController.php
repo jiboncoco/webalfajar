@@ -469,4 +469,61 @@ class AksesController extends Controller
 
     }
 
+
+    public function email_blast_page()
+    {
+        session_start();
+        if(isset($_SESSION['logged_in'])){
+            $data_student = \App\dt_student::all();
+            // $data_kelas = \App\dt_kelas::all();
+            $data_kelas = \DB::table('dt_kelas')
+                     ->select(\DB::raw('count(*) as class, dt_kelas_type'))
+                     ->where('dt_kelas_type', '<>', 1)
+                     ->groupBy('dt_kelas_type')
+                     ->get();
+            $from = \App\akses::where('akses_email', session('akses_email'))->get();
+            $data_kelas_tk = \DB::table('dt_kelas')->where('dt_kelas_type', 'like', 'tk')->get();
+            $data_kelas_sd = \DB::table('dt_kelas')->where('dt_kelas_type', 'like', 'sd')->get();
+            $data_kelas_smp = \DB::table('dt_kelas')->where('dt_kelas_type', 'like', 'smp')->get();
+            $data_kelas_sma = \DB::table('dt_kelas')->where('dt_kelas_type', 'like', 'sma')->get();
+            $uname = \App\akses::where('akses_email', session('akses_email'))->get();
+            $dt_mail = \App\dt_mail::where('dt_mail_to', session('akses_email'))->paginate(10);
+            return \View::make('email_blast')->with('from',$from)->with('dt_mails',$dt_mail)->with('uname',$uname)->with('data_student',$data_student)->with('data_kelas',$data_kelas)->with('data_kelas_tk',$data_kelas_tk)->with('data_kelas_sd',$data_kelas_sd)->with('data_kelas_smp',$data_kelas_smp)->with('data_kelas_sma',$data_kelas_sma);
+        }
+        else{
+            return redirect('login');
+        }
+    }
+
+    public function emailBlast()
+    {
+
+        $teacher = \App\dt_teacher::where('dt_teacher_for', Input::get('dt_student_grade'))->get()->toArray();
+        $parent = \App\dt_parent::where('dt_parent_student_grade', Input::get('dt_student_grade'))->get()->toArray();
+        $student = \App\dt_student::where('dt_student_kelas', Input::get('dt_student_kelas_'.Input::get("type_class")))->get()->toArray();
+        $user_teacher = array_column($teacher, 'dt_teacher_email');
+        $user_parent = array_column($parent, 'dt_parent_email');
+        $user_student = array_column($student, 'dt_student_email');
+        $user_send = array_merge($user_teacher, $user_student, $user_parent);
+
+        $data = array(
+                        'content' => Input::get('dt_mail_text'),
+                        'by' => Input::get('dt_mail_from'),
+                    );
+
+        \Mail::send('mail_to', $data, function ($message) use ($user_teacher,$user_student,$user_send) {
+
+                        $message->from('alfajarbekasi@gmail.com');
+
+                        $message->to($user_send)->subject(Input::get('dt_mail_subject'), Input::get('dt_mail_from'));
+
+                    });
+
+
+       
+
+        return redirect(url('manage_message/email_blast'));
+    }
+
+
 }

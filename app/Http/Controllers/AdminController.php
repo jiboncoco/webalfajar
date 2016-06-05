@@ -427,7 +427,16 @@ class AdminController extends Controller
             $uname = \App\akses::where('akses_email', session('akses_email'))->get();
             $data_parent = \App\dt_parent::all();
             $data_student = \App\dt_student::all();
-            return \View::make('master_parent')->with('data_parent', $data_parent)->with('data_student', $data_student)->with('uname',$uname);
+            $data_kelas = \DB::table('dt_kelas')
+                     ->select(\DB::raw('count(*) as class, dt_kelas_type'))
+                     ->where('dt_kelas_type', '<>', 1)
+                     ->groupBy('dt_kelas_type')
+                     ->get();
+            $data_nisn_tk = \DB::table('dt_student')->where('dt_student_grade', 'like', 'tk')->get();
+            $data_nisn_sd = \DB::table('dt_student')->where('dt_student_grade', 'like', 'sd')->get();
+            $data_nisn_smp = \DB::table('dt_student')->where('dt_student_grade', 'like', 'smp')->get();
+            $data_nisn_sma = \DB::table('dt_student')->where('dt_student_grade', 'like', 'sma')->get();
+            return \View::make('master_parent')->with('data_parent', $data_parent)->with('data_kelas',$data_kelas)->with('data_nisn_tk',$data_nisn_tk)->with('data_nisn_sd',$data_nisn_sd)->with('data_nisn_smp',$data_nisn_smp)->with('data_nisn_sma',$data_nisn_sma)->with('data_student', $data_student)->with('uname',$uname);
         }
         else{
             return redirect(url('login'));
@@ -437,12 +446,13 @@ class AdminController extends Controller
     public function save_parent()
     {
         $post = new \App\dt_parent;
-        $post->dt_parent_nisn = Input::get('dt_parent_nisn');
+        $post->dt_parent_student_grade = Input::get('dt_parent_student_grade');
         $post->dt_parent_name = Input::get('dt_parent_fname')."|".Input::get('dt_parent_lname');
         $post->dt_parent_contact = Input::get('dt_parent_contact');
         $post->dt_parent_email = Input::get('dt_parent_email');
         $post->dt_parent_address = Input::get('dt_parent_address');
         $post->dt_parent_age = Input::get('dt_parent_age');
+        $post->dt_parent_nisn = Input::get('dt_parent_nisn_'.Input::get("type_class"));
         $post->dt_parent_statuslog = Input::get('dt_parent_statuslog');
          if(Input::hasFile('dt_parent_name_img')){
             $dt_parent_name_img = date("YmdHis")
@@ -485,10 +495,20 @@ class AdminController extends Controller
        session_start();
         if(isset($_SESSION['logged_in'])){
             $uname = \App\akses::where('akses_email', session('akses_email'))->get();
-        $data_parent = \App\dt_parent::all();
-        $data_edit = \App\dt_parent::find($id);
-        $data_student = \App\dt_student::all();
-        return \View::make('edit_parent')->with('data_parent', $data_parent)->with('data_student', $data_student)->with('data_edit', $data_edit)->with('uname',$uname);
+            $data_parent = \App\dt_parent::all();
+            $data_student = \App\dt_student::all();
+            $data_edit = \App\dt_parent::find($id);
+            $data_kelas = \DB::table('dt_kelas')
+                     ->select(\DB::raw('count(*) as class, dt_kelas_type'))
+                     ->where('dt_kelas_type', '<>', 1)
+                     ->groupBy('dt_kelas_type')
+                     ->get();
+            $data_nisn_tk = \DB::table('dt_student')->where('dt_student_grade', 'like', 'tk')->get();
+            $data_nisn_sd = \DB::table('dt_student')->where('dt_student_grade', 'like', 'sd')->get();
+            $data_nisn_smp = \DB::table('dt_student')->where('dt_student_grade', 'like', 'smp')->get();
+            $data_nisn_sma = \DB::table('dt_student')->where('dt_student_grade', 'like', 'sma')->get();
+               
+        return \View::make('edit_parent')->with('data_parent', $data_parent)->with('data_kelas',$data_kelas)->with('data_nisn_tk',$data_nisn_tk)->with('data_nisn_sd',$data_nisn_sd)->with('data_nisn_smp',$data_nisn_smp)->with('data_nisn_sma',$data_nisn_sma)->with('data_student', $data_student)->with('data_edit', $data_edit)->with('uname',$uname);
         }
         else{
             return redirect(url('login'));
@@ -500,11 +520,12 @@ class AdminController extends Controller
        session_start();
        if(session('akses_type') == "staff" || session('akses_type') == "root" || session('akses_type') == "root+"){
         $post = \App\dt_parent::find(Input::get('id'));
-        $post->dt_parent_nisn = Input::get('dt_parent_nisn');
+        $post->dt_parent_student_grade = Input::get('dt_parent_student_grade');
         $post->dt_parent_name = Input::get('dt_parent_fname')."|".Input::get('dt_parent_lname');
         $post->dt_parent_contact = Input::get('dt_parent_contact');
         $post->dt_parent_email = Input::get('dt_parent_email');
         $post->dt_parent_address = Input::get('dt_parent_address');
+        $post->dt_parent_nisn = Input::get('dt_parent_nisn_'.Input::get("type_class"));
         $post->dt_parent_age = Input::get('dt_parent_age');
         $post->dt_parent_statuslog = Input::get('dt_parent_statuslog');
          if(Input::hasFile('dt_parent_name_img')){
@@ -991,7 +1012,7 @@ class AdminController extends Controller
         $post->dt_student_nisn = Input::get('dt_student_nisn');
         $post->dt_student_name = Input::get('dt_student_fname')."|".Input::get('dt_student_lname');
         $post->dt_student_grade = Input::get('dt_student_grade');
-        $post->dt_student_kelas = Input::get('dt_student_kelas');
+        $post->dt_student_kelas = Input::get('dt_student_kelas_'.Input::get("type_class"));
         $post->dt_student_bplace = Input::get('dt_student_bplace');
         $post->dt_student_dobplace = Input::get('dt_student_dobplace');
         $post->dt_student_bloodtype = Input::get('dt_student_bloodtype');
@@ -1041,7 +1062,7 @@ class AdminController extends Controller
         $post->dt_student_nisn = Input::get('dt_student_nisn');
         $post->dt_student_name = Input::get('dt_student_fname')."|".Input::get('dt_student_lname');
         $post->dt_student_grade = Input::get('dt_student_grade');
-        $post->dt_student_kelas = Input::get('dt_student_kelas');
+        $post->dt_student_kelas = Input::get('dt_student_kelas_'.Input::get("type_class"));
         $post->dt_student_bplace = Input::get('dt_student_bplace');
         $post->dt_student_dobplace = Input::get('dt_student_dobplace');
         $post->dt_student_bloodtype = Input::get('dt_student_bloodtype');

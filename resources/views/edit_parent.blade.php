@@ -32,6 +32,59 @@
           @include('sidebar')
        
       <!-- Content Wrapper. Contains page content -->
+      <div class="modal fade" id="myModaldetailteacher" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog-front">
+                <div class="modal-content">
+                    <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title" id="myModalLabel">Data Parent</h4>
+                    </div>
+                        <div class="modal-body-front" style="height:560px;overflow-y:auto;">
+                <div class="box-header">
+                </div><!-- /.box-header -->
+                <div style="width:1500px" class="box-body">
+                  <table id="for_datatable" class="table table-bordered table-hover">
+                    <thead>
+                      <tr>
+                        <th>No.</th>
+                        <th>NISN</th>
+                        <th>Student Grade</th>
+                        <th>Name</th>
+                        <th>Age</th>
+                        <th>Email</th>
+                        <th>Contact</th>
+                        <th>Address</th>
+                        <th>Status Log</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                    <?php $i=1; ?>
+                    @foreach($data_parent as $parents)
+                      <tr>
+                        <td>{{$i++}}</td>
+                        <td>{{ $parents->dt_parent_nisn}}</td>
+                        <td>{{ $parents->dt_parent_student_grade }}</td>
+                        <td>{{ preg_replace('/\|/', ' ', $parents->dt_parent_name) }}</td>
+                        <td>{{ $parents->dt_parent_age}}</td>
+                        <td>{{ $parents->dt_parent_email}}</td>
+                        <td>{{ $parents->dt_parent_contact}}</td>
+                        <td>{{ $parents->dt_parent_address}}</td>
+                        <td>{{ $parents->dt_parent_statuslog}}</td>
+                        
+                      </tr>
+                    @endforeach
+                    </tfoot>
+                  </table>
+                </div><!-- /.box-body -->
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
 
       <div class="content-wrapper">
 
@@ -50,12 +103,46 @@
                   
                 <form method="POST"  action="{{ url('manage_parent/update_parent') }}" enctype="multipart/form-data">
 
-                  <div class="row">                  
+                  <div class="row">
                   <div class="col-xs-6 col-md-4">
-                      <label for="exampleInputPassword1">Select NISN</label>
-                      <select id="selecttype" name="dt_parent_nisn" class="form-control not-res">
-                        @foreach($data_student as $student)
-                        <option value="{{$student->dt_student_nisn}}">{{$student->dt_student_nisn}}</option>
+                  <input id="tyclass" type="hidden" name="type_class" value="tk"> 
+                      <label for="exampleInputPassword1">Select Grade Student</label>
+                      <select id="selecttypegrade" name="dt_parent_student_grade" class="form-control not-res">
+                        @foreach($data_kelas as $grade)
+                        <option value="{{$grade->dt_kelas_type}}">{{$grade->dt_kelas_type}}</option>
+                        @endforeach
+                      </select>
+                    </div>
+                    
+                  <div  id="selecttypeclasstk" class="col-xs-6 col-md-4">
+                      <label for="exampleInputPassword1">Select NISN Student</label>
+                      <select name="dt_parent_nisn_tk" class="form-control not-res">
+                        @foreach($data_nisn_tk as $nisn_tk)
+                        <option value="{{$nisn_tk->dt_student_nisn}}">{{$nisn_tk->dt_student_nisn}}</option>
+                        @endforeach
+                      </select>
+                    </div>
+                  <div style="display:none" id="selecttypeclasssd" class="col-xs-6 col-md-4">
+                      <label for="exampleInputPassword1">Select NISN Student</label>
+                      <select name="dt_parent_nisn_sd" class="form-control not-res">
+                        @foreach($data_nisn_sd as $nisn_sd)
+                        <option value="{{$nisn_sd->dt_student_nisn}}">{{$nisn_sd->dt_student_nisn}}</option>
+                        @endforeach
+                      </select>
+                    </div>
+                  <div  style="display:none" id="selecttypeclasssmp" class="col-xs-6 col-md-4">
+                      <label for="exampleInputPassword1">Select NISN Student</label>
+                      <select name="dt_parent_nisn_smp" class="form-control not-res">
+                        @foreach($data_nisn_smp as $nisn_smp)
+                        <option value="{{$nisn_smp->dt_student_nisn}}">{{$nisn_smp->dt_student_nisn}}</option>
+                        @endforeach
+                      </select>
+                    </div>
+                  <div style="display:none" id="selecttypeclasssma" class="col-xs-6 col-md-4">
+                      <label for="exampleInputPassword1">Select NISN Student</label>
+                      <select name="dt_parent_nisn_sma" class="form-control not-res">
+                        @foreach($data_nisn_sma as $nisn_sma)
+                        <option value="{{$nisn_sma->dt_student_nisn}}">{{$nisn_sma->dt_student_nisn}}</option>
                         @endforeach
                       </select>
                     </div>
@@ -165,7 +252,7 @@
           <div style="width:95%;margin:auto" class="box">
                 <div class="box-header">
                   <h3 class="box-title">Data Parent</h3>
-                   
+                  <label style="float:right"><a data-toggle="modal" data-target="#myModaldetailteacher" href="#">View Detail</a></label>
                 </div><!-- /.box-header -->
                 <div class="box-body">
                   <table id="example2" class="table table-bordered table-hover">
@@ -174,6 +261,8 @@
                         <th>No.</th>
                         <th>Name</th>
                         <th>NISN</th>
+                        <th>Student Grade</th>
+                        <th>Email</th>
                         <th>Status Log</th>
                         <th style="text-align:center">Action</th>
                       </tr>
@@ -185,6 +274,8 @@
                         <td>{{$i++}}</td>
                         <td>{{ preg_replace('/\|/', ' ', $parents->dt_parent_name) }}</td>
                         <td>{{ $parents->dt_parent_nisn}}</td>
+                        <td>{{ $parents->dt_parent_student_grade }}</td>
+                        <td>{{ $parents->dt_parent_email}}</td>
                         <td>{{ $parents->dt_parent_statuslog}}</td>
                         <td style="text-align:center">
                         <a href="{{ url('manage_parent/edit_parent/'.$parents->id)}}"><i style="font-size:20px;margin-right:50px" class="fa fa-pencil-square-o"></i> </a>
@@ -195,11 +286,19 @@
                     </tfoot>
                   </table>
                   <div class="export">
-                  <!-- <a href="{{ url('manage_all_account/export_data/xls') }}"><button class="btn btn-success"><i class="fa fa-paper-plane-o"></i> xls</button></a>
-                  <a href="{{ url('manage_all_account/export_data/xlsx') }}"><button class="btn btn-info"><i class="fa fa-paper-plane-o"></i> xlsx</button></a>
-                  <a href="{{ url('manage_all_account/export_data/csv') }}"><button class="btn btn-warning"><i class="fa fa-paper-plane-o"></i> csv</button></a>
-                   --></div>
-
+                  <a href="{{ url('manage_parent/export_data/xls') }}"><button class="btn btn-success"><i class="fa fa-paper-plane-o"></i> xls</button></a>
+                  <a href="{{ url('manage_parent/export_data/xlsx') }}"><button class="btn btn-info"><i class="fa fa-paper-plane-o"></i> xlsx</button></a>
+                  <a href="{{ url('manage_parent/export_data/csv') }}"><button class="btn btn-warning"><i class="fa fa-paper-plane-o"></i> csv</button></a>
+                  </div>
+                  <div style="float:right;margin-top:40px;">
+                  <form method="POST" action="{{ url('manage_parent/import_data_parent') }}" enctype="multipart/form-data" class="form-inline">
+                    <div class="form-group">
+                      <input type="file" name="import_data_master_parent" class="form-control" placeholder="Email">
+                      <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                    </div>
+                    <button type="submit" class="btn btn-default">Import File</button>
+                  </form>
+                  </div>   
                 </div><!-- /.box-body -->
               </div><!-- /.box -->
 @else
@@ -221,4 +320,38 @@
             });
     $('.birth_date').datetimepicker({ format: 'YYYY-MM-DD' });
     </script>
+
+    <script type="text/javascript">
+        $('#selecttypegrade').change(function(){
+        if($(this).val() == "TK"){
+          $("#selecttypeclasstk").css("display","block");
+          $('#selecttypeclasssd').hide();
+          $("#tyclass").val("tk");
+          $('#selecttypeclasssmp').hide();
+          $('#selecttypeclasssma').hide();
+        }
+        else if($(this).val() == "SD"){
+          $("#selecttypeclasstk").hide();
+          $("#tyclass").val("sd");
+          $('#selecttypeclasssd').css("display","block");
+          $('#selecttypeclasssmp').hide();
+          $('#selecttypeclasssma').hide();
+        }
+        else if($(this).val() == "SMP"){
+          $("#selecttypeclasstk").hide();
+          $("#tyclass").val("smp");
+          $('#selecttypeclasssd').hide();
+          $('#selecttypeclasssmp').css("display","block");
+          $('#selecttypeclasssma').hide();
+        }
+        else if($(this).val() == "SMA"){
+          $("#selecttypeclasstk").hide();
+          $("#tyclass").val("sma");
+          $('#selecttypeclasssd').hide();
+          $('#selecttypeclasssmp').hide();
+          $('#selecttypeclasssma').css("display","block");
+        }
+      });
+
+</script>
 @endsection

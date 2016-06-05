@@ -43,6 +43,8 @@ Route::get('manage_teacher/detail_teacher/{id}', 'AdminController@detail_teacher
 Route::get('manage_message/mail_to', 'AksesController@mail_to_page');
 Route::get('manage_message/compose_mail_to', 'AksesController@compose_mail_to');
 Route::post('manage_message/mail_to/send', 'AksesController@sendEmail');
+Route::post('manage_message/email_blast/send', 'AksesController@emailBlast');
+Route::get('manage_message/email_blast', 'AksesController@email_blast_page');
 
 Route::get('manage_message/message_staff', 'AksesController@message_staff');
 Route::get('manage_message/message_root', 'AksesController@message_staff');

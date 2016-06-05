@@ -66,7 +66,7 @@
                   <div class="row">
                   <div class="col-xs-6 col-md-4">
                       <label for="exampleInputPassword1">Select Grade</label>
-                      <select id="selecttypegrade" name="dt_student_grade" class="form-control not-res">
+                      <select id="selecttypegrade" onclick="openclass()" name="dt_student_grade" class="form-control not-res">
                         @foreach($data_kelas as $grade)
                         <option value="{{$grade->dt_kelas_type}}">{{$grade->dt_kelas_type}}</option>
                         @endforeach
@@ -74,223 +74,23 @@
                     </div>
 
                   <input id="namestudent" type="hidden" name="name_student" value="tk1a">   
-                  <div  id="selecttypeclasstk" class="col-xs-6 col-md-4">
-                      <label for="exampleInputPassword1">Select Class</label>
-                      <select name="dt_student_kelas_tk" class="form-control not-res">
-                        @foreach($data_kelas_tk as $class_tk)
-                        <option value="{{$class_tk->dt_kelas_name}}">{{$class_tk->dt_kelas_name}}</option>
-                        @endforeach
-                      </select>
-                    </div>
-                  <div style="display:none" id="selecttypeclasssd" class="col-xs-6 col-md-4">
-                      <label for="exampleInputPassword1">Select Class</label>
-                      <select name="dt_student_kelas_sd" class="form-control not-res">
-                        @foreach($data_kelas_sd as $class_sd)
-                        <option value="{{$class_sd->dt_kelas_name}}">{{$class_sd->dt_kelas_name}}</option>
-                        @endforeach
-                      </select>
-                    </div>
-                  <div  style="display:none" id="selecttypeclasssmp" class="col-xs-6 col-md-4">
-                      <label for="exampleInputPassword1">Select Class</label>
-                      <select name="dt_student_kelas_smp" class="form-control not-res">
-                        @foreach($data_kelas_smp as $class_smp)
-                        <option value="{{$class_smp->dt_kelas_name}}">{{$class_smp->dt_kelas_name}}</option>
-                        @endforeach
-                      </select>
-                    </div>
-                  <div style="display:none" id="selecttypeclasssma" class="col-xs-6 col-md-4">
-                      <label for="exampleInputPassword1">Select Class</label>
-                      <select name="dt_student_kelas_sma" class="form-control not-res">
-                        @foreach($data_kelas_sma as $class_sma)
-                        <option value="{{$class_sma->dt_kelas_name}}">{{$class_sma->dt_kelas_name}}</option>
-                        @endforeach
+                    <div id="selecttypeclass" class="col-xs-6 col-md-4">
+                      <label for="dt_student_kelas">Select Class</label>
+                      <select name="dt_student_kelas" id="dt_student_kelas" class="form-control not-res">
+                        <option value="">--Select Grade First--</option>
                       </select>
                     </div>
                   </div>
                   <br>
                   
                   <div class="row">
-                    
-                  <div  id="selecttypeclasstk1a" class="col-xs-6 col-md-4">
-                      <label for="exampleInputPassword1">Select Student</label>
-                      <select name="dt_student_kelas_tk1a" class="form-control not-res">
-                        @foreach($data_student_tk1a as $s_tk1a)
-                        <option value="{{$s_tk1a->dt_student_name}}">{{preg_replace('/\|/', ' ', $s_tk1a->dt_student_name)}}</option>
-                        @endforeach
-                      </select>
-                    </div>
-                  <div style="display:none" id="selecttypeclasstk1b" class="col-xs-6 col-md-4">
-                      <label for="exampleInputPassword1">Select Student</label>
-                      <select name="dt_student_kelas_tk1b" class="form-control not-res">
-                        @foreach($data_student_tk1b as $s_tk1b)
-                        <option value="{{$s_tk1b->dt_student_name}}">{{preg_replace('/\|/', ' ', $s_tk1b->dt_student_name)}}</option>
-                        @endforeach
-                      </select>
-                    </div>
-                  <div style="display:none" id="selecttypeclasstk2a" class="col-xs-6 col-md-4">
-                      <label for="exampleInputPassword1">Select Student</label>
-                      <select name="dt_student_kelas_tk2a" class="form-control not-res">
-                        @foreach($data_student_tk2a as $s_tk2a)
-                        <option value="{{$s_tk2a->dt_student_name}}">{{preg_replace('/\|/', ' ', $s_tk2a->dt_student_name)}}</option>
-                        @endforeach
-                      </select>
-                    </div>
-                  <div style="display:none" id="selecttypeclasstk2b" class="col-xs-6 col-md-4">
-                      <label for="exampleInputPassword1">Select Student</label>
-                      <select name="dt_student_kelas_tk2b" class="form-control not-res">
-                        @foreach($data_student_tk2b as $s_tk2b)
-                        <option value="{{$s_tk2b->dt_student_name}}">{{preg_replace('/\|/', ' ', $s_tk2b->dt_student_name)}}</option>
-                        @endforeach
-                      </select>
-                    </div>
-                  
-                  <div style="display:none" id="selecttypeclasssd1a" class="col-xs-6 col-md-4">
-                      <label for="exampleInputPassword1">Select Student</label>
-                      <select name="dt_student_kelas_sd1a" class="form-control not-res">
-                        @foreach($data_student_sd1a as $s_sd1a)
-                        <option value="{{$s_sd1a->dt_student_name}}">{{preg_replace('/\|/', ' ', $s_sd1a->dt_student_name)}}</option>
-                        @endforeach
-                      </select>
-                    </div>
-                  <div style="display:none" id="selecttypeclasssd1b" class="col-xs-6 col-md-4">
-                      <label for="exampleInputPassword1">Select Student</label>
-                      <select name="dt_student_kelas_sd1b" class="form-control not-res">
-                        @foreach($data_student_sd1b as $s_sd1b)
-                        <option value="{{$s_sd1b->dt_student_name}}">{{preg_replace('/\|/', ' ', $s_sd1b->dt_student_name)}}</option>
-                        @endforeach
-                      </select> 
-                    </div>  
-                  <div style="display:none" id="selecttypeclasssd2a" class="col-xs-6 col-md-4">
-                      <label for="exampleInputPassword1">Select Student</label>
-                      <select name="dt_student_kelas_sd3a" class="form-control not-res">
-                        @foreach($data_student_sd2a as $s_sd2a)
-                        <option value="{{$s_sd2a->dt_student_name}}">{{preg_replace('/\|/', ' ', $s_sd2a->dt_student_name)}}</option>
-                        @endforeach
-                      </select>
-                    </div>
-                  <div style="display:none" id="selecttypeclasssd2b" class="col-xs-6 col-md-4">
-                      <label for="exampleInputPassword2">Select Student</label>
-                      <select name="dt_student_kelas_sd2b" class="form-control not-res">
-                        @foreach($data_student_sd2b as $s_sd2b)
-                        <option value="{{$s_sd2b->dt_student_name}}">{{preg_replace('/\|/', ' ', $s_sd2b->dt_student_name)}}</option>
-                        @endforeach
-                      </select> 
-                    </div>
-                  <div style="display:none" id="selecttypeclasssd3a" class="col-xs-6 col-md-4">
-                      <label for="exampleInputPassword1">Select Student</label>
-                      <select name="dt_student_kelas_sd4a" class="form-control not-res">
-                        @foreach($data_student_sd3a as $s_sd3a)
-                        <option value="{{$s_sd3a->dt_student_name}}">{{preg_replace('/\|/', ' ', $s_sd3a->dt_student_name)}}</option>
-                        @endforeach
-                      </select>
-                    </div>
-                  <div style="display:none" id="selecttypeclasssd3b" class="col-xs-6 col-md-4">
-                      <label for="exampleInputPassword4">Select Student</label>
-                      <select name="dt_student_kelas_sd4b" class="form-control not-res">
-                        @foreach($data_student_sd3b as $s_sd3b)
-                        <option value="{{$s_sd3b->dt_student_name}}">{{preg_replace('/\|/', ' ', $s_sd3b->dt_student_name)}}</option>
-                        @endforeach
-                      </select> 
-                    </div>
-                  <div style="display:none" id="selecttypeclasssd4a" class="col-xs-6 col-md-4">
-                      <label for="exampleInputPassword1">Select Student</label>
-                      <select name="dt_student_kelas_sd5a" class="form-control not-res">
-                        @foreach($data_student_sd4a as $s_sd4a)
-                        <option value="{{$s_sd4a->dt_student_name}}">{{preg_replace('/\|/', ' ', $s_sd4a->dt_student_name)}}</option>
-                        @endforeach
-                      </select>
-                    </div>
-                  <div style="display:none" id="selecttypeclasssd4b" class="col-xs-6 col-md-4">
-                      <label for="exampleInputPassword5">Select Student</label>
-                      <select name="dt_student_kelas_sd4b" class="form-control not-res">
-                        @foreach($data_student_sd4b as $s_sd4b)
-                        <option value="{{$s_sd4b->dt_student_name}}">{{preg_replace('/\|/', ' ', $s_sd4b->dt_student_name)}}</option>
-                        @endforeach
-                      </select> 
-                    </div>
-                  <div style="display:none" id="selecttypeclasssd5a" class="col-xs-6 col-md-4">
-                      <label for="exampleInputPassword1">Select Student</label>
-                      <select name="dt_student_kelas_sd6a" class="form-control not-res">
-                        @foreach($data_student_sd5a as $s_sd5a)
-                        <option value="{{$s_sd5a->dt_student_name}}">{{preg_replace('/\|/', ' ', $s_sd5a->dt_student_name)}}</option>
-                        @endforeach
-                      </select>
-                    </div>
-                  <div style="display:none" id="selecttypeclasssd5b" class="col-xs-6 col-md-4">
-                      <label for="exampleInputPassword6">Select Student</label>
-                      <select name="dt_student_kelas_sd5b" class="form-control not-res">
-                        @foreach($data_student_sd5b as $s_sd5b)
-                        <option value="{{$s_sd5b->dt_student_name}}">{{preg_replace('/\|/', ' ', $s_sd5b->dt_student_name)}}</option>
-                        @endforeach
-                      </select> 
-                    </div>
-                   <div style="display:none" id="selecttypeclasssd6a" class="col-xs-6 col-md-4">
-                      <label for="exampleInputPassword1">Select Student</label>
-                      <select name="dt_student_kelas_sd6a" class="form-control not-res">
-                        @foreach($data_student_sd6a as $s_sd6a)
-                        <option value="{{$s_sd6a->dt_student_name}}">{{preg_replace('/\|/', ' ', $s_sd6a->dt_student_name)}}</option>
-                        @endforeach
-                      </select>
-                    </div>
-                  <div style="display:none" id="selecttypeclasssd6b" class="col-xs-6 col-md-4">
-                      <label for="exampleInputPassword6">Select Student</label>
-                      <select name="dt_student_kelas_sd6b" class="form-control not-res">
-                        @foreach($data_student_sd6b as $s_sd6b)
-                        <option value="{{$s_sd6b->dt_student_name}}">{{preg_replace('/\|/', ' ', $s_sd6b->dt_student_name)}}</option>
-                        @endforeach
-                      </select> 
-                    </div>
 
-                  <div  style="display:none" id="selecttypeclasssmp1" class="col-xs-6 col-md-4">
-                      <label for="exampleInputPassword1">Select Student</label>
-                      <select name="dt_student_kelas_smp1" class="form-control not-res">
-                        @foreach($data_student_smp1 as $s_smp1)
-                        <option value="{{$s_smp1->dt_student_name}}">{{preg_replace('/\|/', ' ', $s_smp1->dt_student_name)}}</option>
-                        @endforeach
-                      </select>
-                    </div>
-                  <div  style="display:none" id="selecttypeclasssmp2" class="col-xs-6 col-md-4">
-                      <label for="exampleInputPassword1">Select Student</label>
-                      <select name="dt_student_kelas_smp1" class="form-control not-res">
-                        @foreach($data_student_smp2 as $s_smp2)
-                        <option value="{{$s_smp2->dt_student_name}}">{{preg_replace('/\|/', ' ', $s_smp2->dt_student_name)}}</option>
-                        @endforeach
-                      </select>
-                    </div>
-                  <div  style="display:none" id="selecttypeclasssmp3" class="col-xs-6 col-md-4">
-                      <label for="exampleInputPassword1">Select Student</label>
-                      <select name="dt_student_kelas_smp3" class="form-control not-res">
-                        @foreach($data_student_smp3 as $s_smp3)
-                        <option value="{{$s_smp3->dt_student_name}}">{{preg_replace('/\|/', ' ', $s_smp3->dt_student_name)}}</option>
-                        @endforeach
-                      </select>
-                    </div>
-
-                  <div style="display:none" id="selecttypeclasssma1" class="col-xs-6 col-md-4">
-                      <label for="exampleInputPassword1">Select Student</label>
-                      <select name="dt_student_kelas_sma1" class="form-control not-res">
-                        @foreach($data_student_sma1 as $s_sma1)
-                        <option value="{{$s_sma1->dt_student_name}}">{{preg_replace('/\|/', ' ', $s_sma1->dt_student_name)}}</option>
-                        @endforeach
-                      </select>
-                    </div>
-                  <div style="display:none" id="selecttypeclasssma2" class="col-xs-6 col-md-4">
-                      <label for="exampleInputPassword1">Select Student</label>
-                      <select name="dt_student_kelas_sma2" class="form-control not-res">
-                        @foreach($data_student_sma2 as $s_sma2)
-                        <option value="{{$s_sma2->dt_student_name}}">{{preg_replace('/\|/', ' ', $s_sma2->dt_student_name)}}</option>
-                        @endforeach
-                      </select>
-                    </div>
-                  <div style="display:none" id="selecttypeclasssma3" class="col-xs-6 col-md-4">
-                      <label for="exampleInputPassword1">Select Student</label>
-                      <select name="dt_student_kelas_sma3" class="form-control not-res">
-                        @foreach($data_student_sma3 as $s_sma3)
-                        <option value="{{$s_sma3->dt_student_name}}">{{preg_replace('/\|/', ' ', $s_sma3->dt_student_name)}}</option>
-                        @endforeach
-                      </select>
-                    </div>
-
+                  <div  id="selectstudent" class="col-xs-6 col-md-4">
+                  <label for="dt_student_kelas">Select Student</label>
+                  <select name="dt_student_kelas" id="dt_student_kelas" class="form-control not-res">
+                    <option value="">--Select Class First--</option>
+                  </select>
+                </div>
                   <div class="col-xs-6 col-md-4">
                     <label for="exampleInputPassword1">Student Point</label>
                     <input type="text" name="dt_recap_nilai" class="form-control not-res" placeholder="10-100"/>

@@ -143,10 +143,10 @@
                         <?php
                               $string = strip_tags($feature->feature_text);
 
-                              if (strlen($string) > 150) {
+                              if (strlen($string) > 70) {
 
                                   // truncate string
-                                  $stringCut = substr($string, 0, 150);
+                                  $stringCut = substr($string, 0, 70);
 
                                   // make sure it ends in a word so assassinate doesn't become ass...
                                   $string = substr($stringCut, 0, strrpos($stringCut, ' ')).'...';

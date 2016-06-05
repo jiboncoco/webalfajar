@@ -47,6 +47,7 @@
                       <tr>
                         <th>No.</th>
                         <th>NISN</th>
+                        <th>Student Grade</th>
                         <th>Name</th>
                         <th>Age</th>
                         <th>Email</th>
@@ -61,6 +62,7 @@
                       <tr>
                         <td>{{$i++}}</td>
                         <td>{{ $parents->dt_parent_nisn}}</td>
+                        <td>{{ $parents->dt_parent_student_grade }}</td>
                         <td>{{ preg_replace('/\|/', ' ', $parents->dt_parent_name) }}</td>
                         <td>{{ $parents->dt_parent_age}}</td>
                         <td>{{ $parents->dt_parent_email}}</td>
@@ -101,7 +103,53 @@
                   
                 <form method="POST"  action="{{ url('manage_parent/save_parent') }}" enctype="multipart/form-data">
 
-                  <div class="row">                  
+                  <div class="row">
+                  <div class="col-xs-6 col-md-4">
+                  <input id="tyclass" type="hidden" name="type_class" value="tk"> 
+                      <label for="exampleInputPassword1">Select Grade Student</label>
+                      <select id="selecttypegrade" name="dt_parent_student_grade" class="form-control not-res">
+                        @foreach($data_kelas as $grade)
+                        <option value="{{$grade->dt_kelas_type}}">{{$grade->dt_kelas_type}}</option>
+                        @endforeach
+                      </select>
+                    </div>
+                    
+                  <div  id="selecttypeclasstk" class="col-xs-6 col-md-4">
+                      <label for="exampleInputPassword1">Select NISN Student</label>
+                      <select name="dt_parent_nisn_tk" class="form-control not-res">
+                        @foreach($data_nisn_tk as $nisn_tk)
+                        <option value="{{$nisn_tk->dt_student_nisn}}">{{$nisn_tk->dt_student_nisn}}</option>
+                        @endforeach
+                      </select>
+                    </div>
+                  <div style="display:none" id="selecttypeclasssd" class="col-xs-6 col-md-4">
+                      <label for="exampleInputPassword1">Select NISN Student</label>
+                      <select name="dt_parent_nisn_sd" class="form-control not-res">
+                        @foreach($data_nisn_sd as $nisn_sd)
+                        <option value="{{$nisn_sd->dt_student_nisn}}">{{$nisn_sd->dt_student_nisn}}</option>
+                        @endforeach
+                      </select>
+                    </div>
+                  <div  style="display:none" id="selecttypeclasssmp" class="col-xs-6 col-md-4">
+                      <label for="exampleInputPassword1">Select NISN Student</label>
+                      <select name="dt_parent_nisn_smp" class="form-control not-res">
+                        @foreach($data_nisn_smp as $nisn_smp)
+                        <option value="{{$nisn_smp->dt_student_nisn}}">{{$nisn_smp->dt_student_nisn}}</option>
+                        @endforeach
+                      </select>
+                    </div>
+                  <div style="display:none" id="selecttypeclasssma" class="col-xs-6 col-md-4">
+                      <label for="exampleInputPassword1">Select NISN Student</label>
+                      <select name="dt_parent_nisn_sma" class="form-control not-res">
+                        @foreach($data_nisn_sma as $nisn_sma)
+                        <option value="{{$nisn_sma->dt_student_nisn}}">{{$nisn_sma->dt_student_nisn}}</option>
+                        @endforeach
+                      </select>
+                    </div>
+                  </div>
+                  <br>
+
+                  <!-- <div class="row">                  
                   <div class="col-xs-6 col-md-4">
                       <label for="exampleInputPassword1">Select NISN</label>
                       <select id="selecttype" name="dt_parent_nisn" class="form-control not-res">
@@ -110,7 +158,7 @@
                         @endforeach
                       </select>
                     </div>
-                  </div>
+                  </div> -->
                   <br>
                   <div class="row">
                   <div class="col-xs-6 col-md-4">
@@ -213,6 +261,7 @@
                         <th>No.</th>
                         <th>Name</th>
                         <th>NISN</th>
+                        <th>Student Grade</th>
                         <th>Email</th>
                         <th>Status Log</th>
                         <th style="text-align:center">Action</th>
@@ -225,6 +274,7 @@
                         <td>{{$i++}}</td>
                         <td>{{ preg_replace('/\|/', ' ', $parents->dt_parent_name) }}</td>
                         <td>{{ $parents->dt_parent_nisn}}</td>
+                        <td>{{ $parents->dt_parent_student_grade }}</td>
                         <td>{{ $parents->dt_parent_email}}</td>
                         <td>{{ $parents->dt_parent_statuslog}}</td>
                         <td style="text-align:center">
@@ -292,4 +342,39 @@ $('#selecttype').change(function(){
             });
     $('.birth_date').datetimepicker({ format: 'YYYY-MM-DD' });
     </script>
+
+
+    <script type="text/javascript">
+        $('#selecttypegrade').change(function(){
+        if($(this).val() == "TK"){
+          $("#selecttypeclasstk").css("display","block");
+          $('#selecttypeclasssd').hide();
+          $("#tyclass").val("tk");
+          $('#selecttypeclasssmp').hide();
+          $('#selecttypeclasssma').hide();
+        }
+        else if($(this).val() == "SD"){
+          $("#selecttypeclasstk").hide();
+          $("#tyclass").val("sd");
+          $('#selecttypeclasssd').css("display","block");
+          $('#selecttypeclasssmp').hide();
+          $('#selecttypeclasssma').hide();
+        }
+        else if($(this).val() == "SMP"){
+          $("#selecttypeclasstk").hide();
+          $("#tyclass").val("smp");
+          $('#selecttypeclasssd').hide();
+          $('#selecttypeclasssmp').css("display","block");
+          $('#selecttypeclasssma').hide();
+        }
+        else if($(this).val() == "SMA"){
+          $("#selecttypeclasstk").hide();
+          $("#tyclass").val("sma");
+          $('#selecttypeclasssd').hide();
+          $('#selecttypeclasssmp').hide();
+          $('#selecttypeclasssma').css("display","block");
+        }
+      });
+
+</script>
 @endsection
