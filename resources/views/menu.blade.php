@@ -2,6 +2,11 @@
           <div class="navbar-custom-menu">
             <ul class="nav navbar-nav">
               <!-- Messages: style can be found in dropdown.less-->
+              <li class="dropdown notifications-menu">
+                <a href="{{ url('absen') }}">
+                  <i style="font-size:20px;"  class="fa fa-signal"></i>
+                </a>
+              </li>
               <li class="dropdown messages-menu">
               @if(session('akses_type') == "staff")
                 <a href="{{ url('manage_message/message_staff') }}">
@@ -36,6 +41,8 @@
                   <i style="font-size:20px;" class="fa fa-home"></i>
                 </a>
               </li>
+              
+              
               <!-- User Account: style can be found in dropdown.less -->
               <li class="dropdown user user-menu">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
@@ -58,7 +65,7 @@
                   <!-- Menu Footer-->
                   <li class="user-footer">
                     <div class="pull-left">
-                      <a href="#" class="btn btn-default btn-flat">Profile</a>
+                      <a href="{{ url('manage_setting/edit_profile') }}" class="btn btn-default btn-flat">Edit Profile</a>
                     </div>
                     <div class="pull-right">
                       <a href="{{ url('logout') }}" class="btn btn-default btn-flat">Sign out</a>

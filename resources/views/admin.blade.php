@@ -9,7 +9,7 @@
       <header class="main-header">
 
         <!-- Logo -->
-        <a href="index2.html" class="logo">
+        <a href="{{ url('manage') }}" class="logo">
           <!-- mini logo for sidebar mini 50x50 pixels -->
           <span class="logo-mini"><b>A</b>FJ</span>
           <!-- logo for regular state and mobile devices -->
@@ -54,7 +54,7 @@
             </div> -->
           </div>
 
-        <div class="admin-news">
+<!--         <div class="admin-news">
         @foreach($dt_blog_admins as $dt_blog_admin2)
         
           <div class="detail-news">
@@ -71,10 +71,10 @@
 
             if (strlen($string) > 300) {
 
-                // truncate string
+               
                 $stringCut = substr($string, 0, 300);
 
-                // make sure it ends in a word so assassinate doesn't become ass...
+               
                 $string = substr($stringCut, 0, strrpos($stringCut, ' ')).'...';
             }
                 echo $string;
@@ -90,14 +90,14 @@
           @endforeach
           </div>
 
-        </section><!-- /.content -->
+        </section>
         <div class="button-admin">
         <div class="content1-button">
           <ul class="pagination">
           {!! $dt_blog_admins->render() !!}
           </ul>
       </div>
-        </div>
+        </div> -->
       </div><!-- /.content-wrapper -->
 
 
