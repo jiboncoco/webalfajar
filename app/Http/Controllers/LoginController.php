@@ -458,7 +458,7 @@ class LoginController extends Controller
 					$request->session()->put('akses_type', $akses_type);
 					$_SESSION['akses_type'] = $akses_type;
 					$_SESSION['logged_in'] = 1;
-					return redirect('manage_post/my_post');
+					return redirect('manage');
 					} else {
 					$_SESSION['error_msg'] = "Username you’ve entered doesn’t any account";
 					return redirect('alfajar/admin/sessionurl');

@@ -126,46 +126,103 @@ class AdminController extends Controller
        session_start();
         if(isset($_SESSION['logged_in'])){
             $uname = \App\akses::where('akses_email', session('akses_email'))->get();
-            $data_student = \App\dt_student::all();
-            $data_kelas = \App\dt_kelas::all();
             $data_rekap = \App\dt_rekap::all();
             $data_kelas = \DB::table('dt_kelas')
                      ->select(\DB::raw('count(*) as class, dt_kelas_type'))
                      ->where('dt_kelas_type', '<>', 1)
                      ->groupBy('dt_kelas_type')
                      ->get();
-            $data_kelas_tk = \DB::table('dt_kelas')->where('dt_kelas_type', 'like', 'tk')->get();
-            $data_kelas_sd = \DB::table('dt_kelas')->where('dt_kelas_type', 'like', 'sd')->get();
-            $data_kelas_smp = \DB::table('dt_kelas')->where('dt_kelas_type', 'like', 'smp')->get();
-            $data_kelas_sma = \DB::table('dt_kelas')->where('dt_kelas_type', 'like', 'sma')->get();
-            $data_student_tk1a = \DB::table('dt_student')->where('dt_student_kelas', '=', 'TK 1 A')->get();
-            $data_student_tk1b = \DB::table('dt_student')->where('dt_student_kelas', '=', 'TK 1 B')->get();
-            $data_student_tk2a = \DB::table('dt_student')->where('dt_student_kelas', '=', 'TK 2 A')->get();
-            $data_student_tk2b = \DB::table('dt_student')->where('dt_student_kelas', '=', 'TK 2 B')->get();
-            $data_student_sd1a = \DB::table('dt_student')->where('dt_student_kelas', '=', 'SD 1 A')->get();
-            $data_student_sd1b = \DB::table('dt_student')->where('dt_student_kelas', '=', 'SD 1 B')->get();
-            $data_student_sd2a = \DB::table('dt_student')->where('dt_student_kelas', '=', 'SD 2 A')->get();
-            $data_student_sd2b = \DB::table('dt_student')->where('dt_student_kelas', '=', 'SD 2 B')->get();
-            $data_student_sd3a = \DB::table('dt_student')->where('dt_student_kelas', '=', 'SD 3 A')->get();
-            $data_student_sd3b = \DB::table('dt_student')->where('dt_student_kelas', '=', 'SD 3 B')->get();
-            $data_student_sd4a = \DB::table('dt_student')->where('dt_student_kelas', '=', 'SD 4 A')->get();
-            $data_student_sd4b = \DB::table('dt_student')->where('dt_student_kelas', '=', 'SD 4 B')->get();
-            $data_student_sd5a = \DB::table('dt_student')->where('dt_student_kelas', '=', 'SD 5 A')->get();
-            $data_student_sd5b = \DB::table('dt_student')->where('dt_student_kelas', '=', 'SD 5 B')->get();
-            $data_student_sd6a = \DB::table('dt_student')->where('dt_student_kelas', '=', 'SD 6 A')->get();
-            $data_student_sd6b = \DB::table('dt_student')->where('dt_student_kelas', '=', 'SD 6 B')->get();
-            $data_student_smp1 = \DB::table('dt_student')->where('dt_student_kelas', '=', 'SMP 1')->get();
-            $data_student_smp2 = \DB::table('dt_student')->where('dt_student_kelas', '=', 'SMP 2')->get();
-            $data_student_smp3 = \DB::table('dt_student')->where('dt_student_kelas', '=', 'SMP 3')->get();
-            $data_student_sma1 = \DB::table('dt_student')->where('dt_student_kelas', '=', 'SMA 1')->get();
-            $data_student_sma2 = \DB::table('dt_student')->where('dt_student_kelas', '=', 'SMA 2')->get();
-            $data_student_sma3 = \DB::table('dt_student')->where('dt_student_kelas', '=', 'SMA 3')->get();
-            return view('master_recap')->with('data_student',$data_student)->with('data_kelas',$data_kelas)->with('data_student_tk1a',$data_student_tk1a)->with('data_student_tk1b',$data_student_tk1b)->with('data_student_tk2a',$data_student_tk2a)->with('data_student_tk2b',$data_student_tk2b)->with('data_student_sd1a',$data_student_sd1a)->with('data_student_sd1b',$data_student_sd1b)->with('data_student_sd2a',$data_student_sd2a)->with('data_student_sd2b',$data_student_sd2b)->with('data_student_sd3a',$data_student_sd3a)->with('data_student_sd3b',$data_student_sd3b)->with('data_student_sd4a',$data_student_sd4a)->with('data_student_sd4b',$data_student_sd4b)->with('data_student_sd5a',$data_student_sd5a)->with('data_student_sd5b',$data_student_sd5b)->with('data_student_sd6a',$data_student_sd6a)->with('data_student_sd6b',$data_student_sd6b)->with('data_student_smp1',$data_student_smp1)->with('data_student_smp2',$data_student_smp2)->with('data_student_smp3',$data_student_smp3)->with('data_student_sma1',$data_student_sma1)->with('data_student_sma2',$data_student_sma2)->with('data_student_sma3',$data_student_sma3)->with('data_kelas_tk',$data_kelas_tk)->with('data_kelas_sd',$data_kelas_sd)->with('data_kelas_smp',$data_kelas_smp)->with('data_kelas_sma',$data_kelas_sma)->with('uname',$uname)->with('data_rekap',$data_rekap);
+
+        return view('master_recap')
+            ->with('uname',$uname)
+            ->with('data_rekap',$data_rekap)
+            ->with('data_kelas',$data_kelas);
         }
         else{
             return redirect('login');
         }
     }
+    public function getClassByGrade()
+    {
+        $grade = Input::get('grade');
+        $kelas = \App\dt_kelas::where('dt_kelas_type',$grade)->get();
+        echo json_encode($kelas);
+    }
+
+    public function getStudentByClass()
+    {
+        $class = Input::get('class');
+        $student = \App\dt_student::where('dt_student_kelas',$class)->get();
+        echo json_encode($student);
+    }
+    // public function master_teacher_recap()
+    // {
+    //    session_start();
+    //     if(isset($_SESSION['logged_in'])){
+    //         $uname = \App\akses::where('akses_email', session('akses_email'))->get();
+    //         $data_student = \App\dt_student::all();
+    //         $data_kelas = \App\dt_kelas::all();
+    //         $data_rekap = \App\dt_rekap::all();
+    //         $data_kelas = \DB::table('dt_kelas')
+    //                  ->select(\DB::raw('count(*) as class, dt_kelas_type'))
+    //                  ->where('dt_kelas_type', '<>', 1)
+    //                  ->groupBy('dt_kelas_type')
+    //                  ->get();
+    //         $data_kelas_tk = \DB::table('dt_kelas')->where('dt_kelas_type', 'like', 'tk')->get();
+    //         $data_kelas_sd = \DB::table('dt_kelas')->where('dt_kelas_type', 'like', 'sd')->get();
+    //         $data_kelas_smp = \DB::table('dt_kelas')->where('dt_kelas_type', 'like', 'smp')->get();
+    //         $data_kelas_sma = \DB::table('dt_kelas')->where('dt_kelas_type', 'like', 'sma')->get();
+    //         $data_student_tk1a = \DB::table('dt_student')->where('dt_student_kelas', '=', 'TK 1 A')->get();
+    //         $data_student_tk1b = \DB::table('dt_student')->where('dt_student_kelas', '=', 'TK 1 B')->get();
+    //         $data_student_tk2a = \DB::table('dt_student')->where('dt_student_kelas', '=', 'TK 2 A')->get();
+    //         $data_student_tk2b = \DB::table('dt_student')->where('dt_student_kelas', '=', 'TK 2 B')->get();
+    //         $data_student_sd1a = \DB::table('dt_student')->where('dt_student_kelas', '=', 'SD 1 A')->get();
+    //         $data_student_sd1b = \DB::table('dt_student')->where('dt_student_kelas', '=', 'SD 1 B')->get();
+    //         $data_student_sd2a = \DB::table('dt_student')->where('dt_student_kelas', '=', 'SD 2 A')->get();
+    //         $data_student_sd2b = \DB::table('dt_student')->where('dt_student_kelas', '=', 'SD 2 B')->get();
+    //         $data_student_sd3a = \DB::table('dt_student')->where('dt_student_kelas', '=', 'SD 3 A')->get();
+    //         $data_student_sd3b = \DB::table('dt_student')->where('dt_student_kelas', '=', 'SD 3 B')->get();
+    //         $data_student_sd4a = \DB::table('dt_student')->where('dt_student_kelas', '=', 'SD 4 A')->get();
+    //         $data_student_sd4b = \DB::table('dt_student')->where('dt_student_kelas', '=', 'SD 4 B')->get();
+    //         $data_student_sd5a = \DB::table('dt_student')->where('dt_student_kelas', '=', 'SD 5 A')->get();
+    //         $data_student_sd5b = \DB::table('dt_student')->where('dt_student_kelas', '=', 'SD 5 B')->get();
+    //         $data_student_sd6a = \DB::table('dt_student')->where('dt_student_kelas', '=', 'SD 6 A')->get();
+    //         $data_student_sd6b = \DB::table('dt_student')->where('dt_student_kelas', '=', 'SD 6 B')->get();
+    //         $data_student_smp1 = \DB::table('dt_student')->where('dt_student_kelas', '=', 'SMP 1')->get();
+    //         $data_student_smp2 = \DB::table('dt_student')->where('dt_student_kelas', '=', 'SMP 2')->get();
+    //         $data_student_smp3 = \DB::table('dt_student')->where('dt_student_kelas', '=', 'SMP 3')->get();
+    //         $data_student_sma1 = \DB::table('dt_student')->where('dt_student_kelas', '=', 'SMA 1')->get();
+    //         $data_student_sma2 = \DB::table('dt_student')->where('dt_student_kelas', '=', 'SMA 2')->get();
+    //         $data_student_sma3 = \DB::table('dt_student')->where('dt_student_kelas', '=', 'SMA 3')->get();
+    //         return view('master_recap')->with('data_student',$data_student)->with('data_kelas',$data_kelas)->with('data_student_tk1a',$data_student_tk1a)->with('data_student_tk1b',$data_student_tk1b)->with('data_student_tk2a',$data_student_tk2a)->with('data_student_tk2b',$data_student_tk2b)->with('data_student_sd1a',$data_student_sd1a)->with('data_student_sd1b',$data_student_sd1b)->with('data_student_sd2a',$data_student_sd2a)->with('data_student_sd2b',$data_student_sd2b)->with('data_student_sd3a',$data_student_sd3a)->with('data_student_sd3b',$data_student_sd3b)->with('data_student_sd4a',$data_student_sd4a)->with('data_student_sd4b',$data_student_sd4b)->with('data_student_sd5a',$data_student_sd5a)->with('data_student_sd5b',$data_student_sd5b)->with('data_student_sd6a',$data_student_sd6a)->with('data_student_sd6b',$data_student_sd6b)->with('data_student_smp1',$data_student_smp1)->with('data_student_smp2',$data_student_smp2)->with('data_student_smp3',$data_student_smp3)->with('data_student_sma1',$data_student_sma1)->with('data_student_sma2',$data_student_sma2)->with('data_student_sma3',$data_student_sma3)->with('data_kelas_tk',$data_kelas_tk)->with('data_kelas_sd',$data_kelas_sd)->with('data_kelas_smp',$data_kelas_smp)->with('data_kelas_sma',$data_kelas_sma)->with('uname',$uname)->with('data_rekap',$data_rekap);
+    //         echo json_encode($data_kelas_sd,$data_kelas_smp,$data_kelas_sma,$data_kelas,
+    //             $data_student_tk1a,
+    //             $data_student_tk1b,
+    //             $data_student_tk2a,
+    //             $data_student_tk2b,
+    //             $data_student_sd1a,
+    //             $data_student_sd1b,
+    //             $data_student_sd2a,
+    //             $data_student_sd2b,
+    //             $data_student_sd3a,
+    //             $data_student_sd3b,
+    //             $data_student_sd4a,
+    //             $data_student_sd4b,
+    //             $data_student_sd5a,
+    //             $data_student_sd5b,
+    //             $data_student_sd6a,
+    //             $data_student_sd6b,
+    //             $data_student_smp1,
+    //             $data_student_smp2,
+    //             $data_student_smp3,
+    //             $data_student_sma1,
+    //             $data_student_sma2,
+    //             $data_student_sma3);
+    //     }
+    //     else{
+    //         return redirect('login');
+    //     }
+    // }
 
     public function save_master_teacher()
     {
@@ -1127,5 +1184,70 @@ class AdminController extends Controller
             return redirect('login');
         }
     }
+
+    public function master_absen()
+    {
+       session_start();
+        if(isset($_SESSION['logged_in'])){
+            $uname = \App\akses::where('akses_email', session('akses_email'))->get();
+            $data_absen = \App\m_absen::all();
+            return \View::make('master_absen')->with('data_absen',$data_absen)->with('uname',$uname);
+        }
+        else{
+            return redirect(url('login'));
+        }
+    }
+
+    public function save_absen()
+    {
+        $post = new \App\m_absen;
+        $post->m_absen_type = Input::get('m_absen_type');
+        $post->m_absen_come = Input::get('m_absen_come');
+        $post->m_absen_return = Input::get('m_absen_return');
+        $post->m_absen_status = Input::get('m_absen_status');
+        $post->m_absen_create_by = session('akses_email');
+        $post->save();
+
+        return redirect(url('manage_absen/master_absen'));
+    }
+
+    public function edit_absen($id)
+    {
+       session_start();
+        if(isset($_SESSION['logged_in'])){
+            $uname = \App\akses::where('akses_email', session('akses_email'))->get();
+            $absen = \App\m_absen::all();
+            $absen_edit = \App\m_absen::find($id);
+            return \View::make('edit_absen')->with('absen',$absen)->with('absen_edit',$absen_edit)->with('uname',$uname);
+        }
+        else{
+            return redirect(url('login'));
+        }
+    }
+
+    public function update_absen()
+    {
+        $post = new \App\m_absen;
+        $post->m_absen_type = Input::get('m_absen_type');
+        $post->m_absen_come = Input::get('m_absen_come');
+        $post->m_absen_return = Input::get('m_absen_return');
+        $post->m_absen_status = Input::get('m_absen_status');
+        $post->m_absen_create_by = session('akses_email');
+        $post->save();
+
+        return redirect(url('manage_absen/master_absen'));
+    }
+
+    public function delete_absen($id)
+    {
+       session_start();
+        if(isset($_SESSION['logged_in'])){
+            \App\m_absen::find($id)->delete();
+            return redirect(url('manage_absen/master_absen'));        
+        }
+        else{
+            return redirect(url('login'));
+        }
+    } 
 
 }

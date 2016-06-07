@@ -4,7 +4,7 @@
               <!-- Messages: style can be found in dropdown.less-->
               <li class="dropdown notifications-menu">
                 <a href="{{ url('absen') }}">
-                  <i style="font-size:20px;"  class="fa fa-signal"></i>
+                  <i style="font-size:20px;color:white" class="fa fa-user"></i>
                 </a>
               </li>
               <li class="dropdown messages-menu">

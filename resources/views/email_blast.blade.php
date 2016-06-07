@@ -128,12 +128,25 @@
                   <h3 class="box-title">Compose New Email</h3>
                 </div><!-- /.box-header -->
                 <div class="box-body">
-
+                
                 <div class="form-group">
                 @foreach($from as $from)
                     <input class="form-control" name="dt_mail_from" placeholder="From:" value="{{ $from->akses_username }}" readonly/>
                     @endforeach
                   </div>
+
+                  <div class="row">
+                <div class="col-xs-12">
+                      <label for="exampleInputPassword1">Select Type</label>
+                      <select name="mail_type" class="form-control not-res">
+                        <option value="teacher">Teacher</option>
+                        <option value="parent">Parent</option>
+                        <option value="student">Student</option>
+                        <option value="all">All</option>
+                      </select>
+                    </div>
+                </div>
+                <br>
                   <input id="tyclass" type="hidden" name="type_class" value="tk"> 
                   <div class="row">
                   <div class="col-xs-6">

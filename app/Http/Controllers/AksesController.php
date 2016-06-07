@@ -506,23 +506,50 @@ class AksesController extends Controller
         $user_student = array_column($student, 'dt_student_email');
         $user_send = array_merge($user_teacher, $user_student, $user_parent);
 
+
         $data = array(
                         'content' => Input::get('dt_mail_text'),
                         'by' => Input::get('dt_mail_from'),
                     );
 
-        \Mail::send('mail_to', $data, function ($message) use ($user_teacher,$user_student,$user_send) {
+        if(Input::get('mail_type') == "teacher") {
+        \Mail::send('mail_to', $data, function ($message) use ($user_teacher) {
+
+                        $message->from('alfajarbekasi@gmail.com');
+
+                        $message->to($user_teacher)->subject(Input::get('dt_mail_subject'), Input::get('dt_mail_from'));
+
+                    });
+
+        }else if(Input::get('mail_type') == "parent"){
+        \Mail::send('mail_to', $data, function ($message) use ($user_parent) {
+
+                        $message->from('alfajarbekasi@gmail.com');
+
+                        $message->to($user_parent)->subject(Input::get('dt_mail_subject'), Input::get('dt_mail_from'));
+
+                    });
+        }else if(Input::get('mail_type') == "student"){
+        \Mail::send('mail_to', $data, function ($message) use ($user_student) {
+
+                        $message->from('alfajarbekasi@gmail.com');
+
+                        $message->to($user_student)->subject(Input::get('dt_mail_subject'), Input::get('dt_mail_from'));
+
+                    });
+        }elseif(Input::get('mail_type') == "all"){
+        \Mail::send('mail_to', $data, function ($message) use ($user_send) {
 
                         $message->from('alfajarbekasi@gmail.com');
 
                         $message->to($user_send)->subject(Input::get('dt_mail_subject'), Input::get('dt_mail_from'));
 
                     });
-
-
+        }
        
 
         return redirect(url('manage_message/email_blast'));
+        // echo Input::get('mail_type');
     }
 
 

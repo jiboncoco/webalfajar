@@ -3,7 +3,7 @@
         <div class="slimScrollDiv" style="position: relative; overflow: hidden; width: auto; height: 343px;">
         <section class="sidebar">
           <!-- Sidebar user panel -->
-          <div class="user-panel">
+          <div style="height:70px" class="user-panel">
             <div class="pull-left image">
             @foreach($uname as $user)
               <img src="{{ url('images/'.$user->akses_imguser) }}" class="img-circle" alt="User Image">
@@ -226,6 +226,17 @@
                 <li><a href="{{ url('manage_registration/filter_new_student')}}"><i class="fa fa-check-square-o"></i> Filter New Student</a></li>
               </ul>
             </li>
+             <li class="treeview">
+              <a href="#">
+                <i class="fa fa-laptop"></i> 
+                <span>Manage Absen</span>
+                <i class="fa fa-angle-left pull-right"></i>
+              </a>
+              <ul class="treeview-menu">
+                <li><a href="{{ url('manage_absen/master_absen') }}"><i class="fa fa-rss"></i> Master Absen</a></li>
+                <li><a href="{{ url('manage_absen/all_data_absen') }}"><i class="fa fa-map-o"></i> All Data Absen</a></li>
+              </ul>
+            </li>
             <li class="treeview">
               <a href="#">
                 <i class="fa fa-cogs"></i>
@@ -335,6 +346,17 @@
               <ul class="treeview-menu">
                 <li><a href="{{ url('manage_registration/master_new_student')}}"><i class="fa fa-user-plus"></i> Master New Student</a></li>
                 <li><a href="{{ url('manage_registration/filter_new_student')}}"><i class="fa fa-check-square-o"></i> Filter New Student</a></li>
+              </ul>
+            </li>
+            <li class="treeview">
+              <a href="#">
+                <i class="fa fa-laptop"></i> 
+                <span>Manage Absen</span>
+                <i class="fa fa-angle-left pull-right"></i>
+              </a>
+              <ul class="treeview-menu">
+                <li><a href="{{ url('manage_absen/master_absen') }}"><i class="fa fa-rss"></i> Master Absen</a></li>
+                <li><a href="{{ url('manage_absen/all_data_absen') }}"><i class="fa fa-map-o"></i> All Data Absen</a></li>
               </ul>
             </li>
             <li class="treeview">

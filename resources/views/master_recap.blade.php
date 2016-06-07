@@ -66,7 +66,7 @@
                   <div class="row">
                   <div class="col-xs-6 col-md-4">
                       <label for="exampleInputPassword1">Select Grade</label>
-                      <select id="selecttypegrade" onclick="openclass()" name="dt_student_grade" class="form-control not-res">
+                      <select id="selecttypegrade" onclick="openClass()" name="dt_student_grade" class="form-control not-res">
                         @foreach($data_kelas as $grade)
                         <option value="{{$grade->dt_kelas_type}}">{{$grade->dt_kelas_type}}</option>
                         @endforeach
@@ -75,8 +75,8 @@
 
                   <input id="namestudent" type="hidden" name="name_student" value="tk1a">   
                     <div id="selecttypeclass" class="col-xs-6 col-md-4">
-                      <label for="dt_student_kelas">Select Class</label>
-                      <select name="dt_student_kelas" id="dt_student_kelas" class="form-control not-res">
+                      <label for="dt_kelas_name">Select Class</label>
+                      <select onclick="openStudent()" name="dt_kelas_name" id="dt_kelas_name" class="form-control not-res">
                         <option value="">--Select Grade First--</option>
                       </select>
                     </div>
@@ -86,8 +86,8 @@
                   <div class="row">
 
                   <div  id="selectstudent" class="col-xs-6 col-md-4">
-                  <label for="dt_student_kelas">Select Student</label>
-                  <select name="dt_student_kelas" id="dt_student_kelas" class="form-control not-res">
+                  <label for="dt_student">Select Student</label>
+                  <select name="dt_student_name" id="dt_student_name" class="form-control not-res">
                     <option value="">--Select Class First--</option>
                   </select>
                 </div>
@@ -184,144 +184,56 @@
     $('.birth_date').datetimepicker({ format: 'YYYY-MM-DD' });
     </script>
 
-    <script type="text/javascript">
-        $('#selecttypegrade').change(function(){
-        if($(this).val() == "TK"){
-          $("#selecttypeclasstk").css("display","block");
-          $('#selecttypeclasssd').hide();
-          $("#tyclass").val("tk");
-          $('#selecttypeclasssmp').hide();
-          $('#selecttypeclasssma').hide();
-        }
-        else if($(this).val() == "SD"){
-          $("#selecttypeclasstk").hide();
-          $("#tyclass").val("sd");
-          $('#selecttypeclasssd').css("display","block");
-          $('#selecttypeclasssmp').hide();
-          $('#selecttypeclasssma').hide();
-        }
-        else if($(this).val() == "SMP"){
-          $("#selecttypeclasstk").hide();
-          $("#tyclass").val("smp");
-          $('#selecttypeclasssd').hide();
-          $('#selecttypeclasssmp').css("display","block");
-          $('#selecttypeclasssma').hide();
-        }
-        else if($(this).val() == "SMA"){
-          $("#selecttypeclasstk").hide();
-          $("#tyclass").val("sma");
-          $('#selecttypeclasssd').hide();
-          $('#selecttypeclasssmp').hide();
-          $('#selecttypeclasssma').css("display","block");
-        }
-      });
+<script>
+  function openClass(){
+    var grade = $("#selecttypegrade").val();
+    $.ajax({
+      url:'{{url("manage_teacher_recap/get_class")}}',
+      dataType:'json',
+      type:'POST',
+      beforeSend: function (xhr) {
+            var token = $('meta[name="csrf_token"]').attr('content');
 
-    </script>
-
-    <script type="text/javascript">
-        $('#selecttypeclasstk').change(function(){
-        if($(this).val() == "TK 1 A"){
-          $("#namestudent").val("tk1a");
-          $("#selecttypeclasstk1a").css("display","block");
-          $('#selecttypeclasstk1b').hide();
-          $('#selecttypeclasstk2a').hide();
-          $('#selecttypeclasstk2b').hide();
-          $('#selecttypeclasssd1a').hide();
-          $('#selecttypeclasssd1b').hide();
-          $('#selecttypeclasssd2a').hide();
-          $('#selecttypeclasssd2b').hide();
-          $('#selecttypeclasssd3a').hide();
-          $('#selecttypeclasssd3b').hide();
-          $('#selecttypeclasssd4a').hide();
-          $('#selecttypeclasssd4b').hide();
-          $('#selecttypeclasssd5a').hide();
-          $('#selecttypeclasssd5b').hide();
-          $('#selecttypeclasssd6a').hide();
-          $('#selecttypeclasssd6b').hide();
-          $('#selecttypeclasssmp1').hide();
-          $('#selecttypeclasssmp2').hide();
-          $('#selecttypeclasssmp3').hide();
-          $('#selecttypeclasssma1').hide();
-          $('#selecttypeclasssma2').hide();
-          $('#selecttypeclasssma3').hide();
+            if (token) {
+                  return xhr.setRequestHeader('X-CSRF-TOKEN', token);
+            }
+        },
+      data:{grade:grade},
+      success:function(data){
+        var isikelas = '';
+        for(kelas in data){
+          isikelas+= '<option value="'+data[kelas].dt_kelas_name+'">'+data[kelas].dt_kelas_name+'</option>';
         }
-        else if($(this).val() == "TK 1 B"){
-          $("#namestudent").val("tk1b");
-          $("#selecttypeclasstk1a").hide();
-          $('#selecttypeclasstk1b').css("display","block");
-          $('#selecttypeclasstk2a').hide();
-          $('#selecttypeclasstk2b').hide();
-          $('#selecttypeclasssd1a').hide();
-          $('#selecttypeclasssd1b').hide();
-          $('#selecttypeclasssd2a').hide();
-          $('#selecttypeclasssd2b').hide();
-          $('#selecttypeclasssd3a').hide();
-          $('#selecttypeclasssd3b').hide();
-          $('#selecttypeclasssd4a').hide();
-          $('#selecttypeclasssd4b').hide();
-          $('#selecttypeclasssd5a').hide();
-          $('#selecttypeclasssd5b').hide();
-          $('#selecttypeclasssd6a').hide();
-          $('#selecttypeclasssd6b').hide();
-          $('#selecttypeclasssmp1').hide();
-          $('#selecttypeclasssmp2').hide();
-          $('#selecttypeclasssmp3').hide();
-          $('#selecttypeclasssma1').hide();
-          $('#selecttypeclasssma2').hide();
-          $('#selecttypeclasssma3').hide();
-        }
-        else if($(this).val() == "TK 2 A"){
-          $("#namestudent").val("tk2a");
-          $("#selecttypeclasstk1a").hide();
-          $('#selecttypeclasstk1b').hide();
-          $('#selecttypeclasstk2a').css("display","block");
-          $('#selecttypeclasstk2b').hide();
-          $('#selecttypeclasssd1a').hide();
-          $('#selecttypeclasssd1b').hide();
-          $('#selecttypeclasssd2a').hide();
-          $('#selecttypeclasssd2b').hide();
-          $('#selecttypeclasssd3a').hide();
-          $('#selecttypeclasssd3b').hide();
-          $('#selecttypeclasssd4a').hide();
-          $('#selecttypeclasssd4b').hide();
-          $('#selecttypeclasssd5a').hide();
-          $('#selecttypeclasssd5b').hide();
-          $('#selecttypeclasssd6a').hide();
-          $('#selecttypeclasssd6b').hide();
-          $('#selecttypeclasssmp1').hide();
-          $('#selecttypeclasssmp2').hide();
-          $('#selecttypeclasssmp3').hide();
-          $('#selecttypeclasssma1').hide();
-          $('#selecttypeclasssma2').hide();
-          $('#selecttypeclasssma3').hide();
-        }
-        else if($(this).val() == "TK 2 B"){
-          $("#namestudent").val("tk1b");
-          $("#selecttypeclasstk1a").hide();
-          $('#selecttypeclasstk1b').hide();
-          $('#selecttypeclasstk2a').hide();
-          $('#selecttypeclasstk2b').css("display","block");
-          $('#selecttypeclasssd1a').hide();
-          $('#selecttypeclasssd1b').hide();
-          $('#selecttypeclasssd2a').hide();
-          $('#selecttypeclasssd2b').hide();
-          $('#selecttypeclasssd3a').hide();
-          $('#selecttypeclasssd3b').hide();
-          $('#selecttypeclasssd4a').hide();
-          $('#selecttypeclasssd4b').hide();
-          $('#selecttypeclasssd5a').hide();
-          $('#selecttypeclasssd5b').hide();
-          $('#selecttypeclasssd6a').hide();
-          $('#selecttypeclasssd6b').hide();
-          $('#selecttypeclasssmp1').hide();
-          $('#selecttypeclasssmp2').hide();
-          $('#selecttypeclasssmp3').hide();
-          $('#selecttypeclasssma1').hide();
-          $('#selecttypeclasssma2').hide();
-          $('#selecttypeclasssma3').hide();
-        }
-      });
-
-    </script>
-@endsection
+        $("#dt_kelas_name").html(isikelas);
+        $("#dt_kelas_name").attr('onclick','openStudent()');
+      }
+    });
+  }
   
+  function openStudent(){
+    var kelas = $("#selecttypeclass").val();
+    $.ajax({
+      url:'{{url("manage_teacher_recap/get_student")}}',
+      dataType:'json',
+      type:'POST',
+      beforeSend: function (xhr) {
+            var token = $('meta[name="csrf_token"]').attr('content');
+
+            if (token) {
+                  return xhr.setRequestHeader('X-CSRF-TOKEN', token);
+            }
+        },
+      data:{class:kelas},
+      success:function(data){
+        var isikelas = '';
+        for(kelas in data){
+          isikelas+= '<option value="'+data[kelas].dt_student_name+'">'+data[kelas].dt_student_name+'</option>';
+        }
+        $("#dt_student_name").html(isikelas);
+      }
+    });
+  }
+
+</script>
+
+@endsection  

@@ -46,6 +46,15 @@ Route::post('manage_message/mail_to/send', 'AksesController@sendEmail');
 Route::post('manage_message/email_blast/send', 'AksesController@emailBlast');
 Route::get('manage_message/email_blast', 'AksesController@email_blast_page');
 
+Route::get('manage_absen/master_absen', 'AdminController@master_absen');
+Route::post('manage_absen/save_absen', 'AdminController@save_absen');
+Route::get('manage_absen/edit_absen/{id}', 'AdminController@edit_absen');
+Route::post('manage_absen/update_absen', 'AdminController@update_absen');
+Route::get('manage_absen/delete_absen/{id}', 'AdminController@delete_absen');
+
+Route::post('manage_teacher_recap/get_class', 'AdminController@getClassByGrade');
+Route::post('manage_teacher_recap/get_student', 'AdminController@getStudentByClass');
+
 Route::get('manage_message/message_staff', 'AksesController@message_staff');
 Route::get('manage_message/message_root', 'AksesController@message_staff');
 Route::get('manage_message/message_root+', 'AksesController@message_staff');
