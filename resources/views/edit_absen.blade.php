@@ -80,6 +80,8 @@
                   </div>
                   <br>
                   <input type="hidden" name="_token" value="{{ csrf_token() }}">
+
+                  <input type="hidden" name="id" value="{{ $absen_edit->id }}">
                   <!--  <div class="row">
                   <div  class="col-xs-8">
                     <label for="exampleInputPassword1">Absen Type</label>
@@ -160,7 +162,7 @@
                     </thead>
                     <tbody>
                     <?php $i=1; ?>
-                    @foreach($data_absen as $absen)
+                    @foreach($absen as $absen)
                       <tr>
                         <td>{{$i++}}</td>
                         <td>{{ $absen->m_absen_type }}</td>
