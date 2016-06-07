@@ -115,10 +115,10 @@
                      <div class="col-xs-8">
                       <label for="exampleInputPassword1">Status Log</label>
                       <select id="selecttype" name="m_absen_status" class="form-control not-res">
-                       @if($m_kelass->m_kelas_status == "active")
+                       @if($absen_edit->m_absen_status == "active")
                         <option value="active" selected>Active</option>
                         <option value="disable">Disable</option> 
-                        @elseif($m_kelass->m_kelas_status == "disable")
+                        @elseif($absen_edit->m_absen_status == "disable")
                         <option value="active">Active</option>
                         <option value="disable" selected>Disable</option>    
                         @endif                     
