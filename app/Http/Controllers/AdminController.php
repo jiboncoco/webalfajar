@@ -121,40 +121,6 @@ class AdminController extends Controller
         }
     }
 
-    public function master_teacher_recap()
-    {
-       session_start();
-        if(isset($_SESSION['logged_in'])){
-            $uname = \App\akses::where('akses_email', session('akses_email'))->get();
-            $data_rekap = \App\dt_rekap::all();
-            $data_kelas = \DB::table('dt_kelas')
-                     ->select(\DB::raw('count(*) as class, dt_kelas_type'))
-                     ->where('dt_kelas_type', '<>', 1)
-                     ->groupBy('dt_kelas_type')
-                     ->get();
-
-        return view('master_recap')
-            ->with('uname',$uname)
-            ->with('data_rekap',$data_rekap)
-            ->with('data_kelas',$data_kelas);
-        }
-        else{
-            return redirect('login');
-        }
-    }
-    public function getClassByGrade()
-    {
-        $grade = Input::get('grade');
-        $kelas = \App\dt_kelas::where('dt_kelas_type',$grade)->get();
-        echo json_encode($kelas);
-    }
-
-    public function getStudentByClass()
-    {
-        $class = Input::get('class');
-        $student = \App\dt_student::where('dt_student_kelas',$class)->get();
-        echo json_encode($student);
-    }
     // public function master_teacher_recap()
     // {
     //    session_start();
@@ -1227,7 +1193,7 @@ class AdminController extends Controller
 
     public function update_absen()
     {
-        $post = new \App\m_absen;
+        $post = \App\m_absen::find(Input::get('id'));
         $post->m_absen_type = Input::get('m_absen_type');
         $post->m_absen_come = Input::get('m_absen_come');
         $post->m_absen_return = Input::get('m_absen_return');
@@ -1244,6 +1210,106 @@ class AdminController extends Controller
         if(isset($_SESSION['logged_in'])){
             \App\m_absen::find($id)->delete();
             return redirect(url('manage_absen/master_absen'));        
+        }
+        else{
+            return redirect(url('login'));
+        }
+    } 
+
+    public function master_teacher_recap()
+    {
+       session_start();
+        if(isset($_SESSION['logged_in'])){
+            $uname = \App\akses::where('akses_email', session('akses_email'))->get();
+            $data_rekap = \App\dt_rekap::all();
+            $data_kelas = \DB::table('dt_kelas')
+                     ->select(\DB::raw('count(*) as class, dt_kelas_type'))
+                     ->where('dt_kelas_type', '<>', 1)
+                     ->groupBy('dt_kelas_type')
+                     ->get();
+
+        return view('master_recap')
+            ->with('uname',$uname)
+            ->with('data_rekap',$data_rekap)
+            ->with('data_kelas',$data_kelas);
+        }
+        else{
+            return redirect('login');
+        }
+    }
+    public function getClassByGrade()
+    {
+        $grade = Input::get('grade');
+        $kelas = \App\dt_kelas::where('dt_kelas_type',$grade)->get();
+        echo json_encode($kelas);
+    }
+
+    public function getStudentByClass()
+    {
+        $class = Input::get('class');
+        $student = \App\dt_student::where('dt_student_kelas',$class)->get();
+        echo json_encode($student);
+    }
+
+        public function save_recap()
+    {
+        $post = new \App\dt_rekap;
+        $post->dt_rekap_type = Input::get('dt_rekap_type');
+        $post->dt_rekap_for = Input::get('dt_rekap_for');
+        $post->dt_rekap_class = Input::get('dt_rekap_class');
+        $post->dt_rekap_name_student = Input::get('dt_rekap_name_student');
+        $post->dt_rekap_nilai = Input::get('dt_rekap_nilai');
+        $post->dt_rekap_create_by = session('akses_email');
+        $post->save();
+
+        return redirect(url('manage_teacher/master_teacher_recap'));
+    }
+
+    public function edit_recap($id)
+    {
+       session_start();
+        if(isset($_SESSION['logged_in'])){
+            $uname = \App\akses::where('akses_email', session('akses_email'))->get();
+            $data_rekap = \App\dt_rekap::all();
+            $rekap_edit = \App\dt_rekap::find($id);
+            $data_kelas = \DB::table('dt_kelas')
+                     ->select(\DB::raw('count(*) as class, dt_kelas_type'))
+                     ->where('dt_kelas_type', '<>', 1)
+                     ->groupBy('dt_kelas_type')
+                     ->get();
+
+        return view('edit_recap')
+            ->with('uname',$uname)
+            ->with('data_rekap',$data_rekap)
+            ->with('data_kelas',$data_kelas)
+            ->with('rekap_edit',$rekap_edit);
+        }
+        else{
+            return redirect('login');
+        }
+
+    }
+
+    public function update_recap()
+    {
+        $post = \App\dt_rekap::find(Input::get('id'));
+        $post->dt_rekap_type = Input::get('dt_rekap_type');
+        $post->dt_rekap_for = Input::get('dt_rekap_for');
+        $post->dt_rekap_class = Input::get('dt_rekap_class');
+        $post->dt_rekap_name_student = Input::get('dt_rekap_name_student');
+        $post->dt_rekap_nilai = Input::get('dt_rekap_nilai');
+        $post->dt_rekap_update_by = session('akses_email');
+        $post->save();
+
+        return redirect(url('manage_teacher/master_teacher_recap'));
+    }
+
+    public function delete_recap($id)
+    {
+       session_start();
+        if(isset($_SESSION['logged_in'])){
+            \App\dt_rekap::find($id)->delete();
+            return redirect(url('manage_teacher/master_teacher_recap'));        
         }
         else{
             return redirect(url('login'));

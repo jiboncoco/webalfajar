@@ -54,6 +54,11 @@ Route::get('manage_absen/delete_absen/{id}', 'AdminController@delete_absen');
 
 Route::post('manage_teacher_recap/get_class', 'AdminController@getClassByGrade');
 Route::post('manage_teacher_recap/get_student', 'AdminController@getStudentByClass');
+Route::get('manage_teacher/master_teacher_recap', 'AdminController@master_teacher_recap');
+Route::get('manage_teacher/delete_teacher_recap/{id}', 'AdminController@delete_recap');
+Route::get('manage_teacher/edit_teacher_recap/{id}', 'AdminController@edit_recap');
+Route::post('manage_teacher/update_teacher_recap', 'AdminController@update_recap');
+Route::post('manage_teacher/save_teacher_recap', 'AdminController@save_recap');
 
 Route::get('manage_message/message_staff', 'AksesController@message_staff');
 Route::get('manage_message/message_root', 'AksesController@message_staff');
@@ -151,7 +156,7 @@ Route::get('manage_teacher/delete_master_teacher/{id}', 'AdminController@delete_
 Route::get('manage_teacher/export_data/xls', 'PostController@exportxls_data_master_teacher');
 Route::get('manage_teacher/export_data/xlsx', 'PostController@exportxlsx_data_master_teacher');
 Route::get('manage_teacher/export_data/csv', 'PostController@exportcsv_data_master_teacher');
-Route::get('manage_teacher/master_teacher_recap', 'AdminController@master_teacher_recap');
+
 
 Route::post('manage_teacher/import_data_teacher', 'PostController@import_data_master_teacher');
 Route::post('manage_student/import_data_student', 'PostController@import_data_master_student');
@@ -166,7 +171,6 @@ Route::post('manage_class_sch/import_data_class_sch', 'PostController@import_dat
 Route::get('manage_teacher/my_data', 'AksesController@teacher_my_data');
 Route::get('manage_teacher/my_schedule', 'AksesController@teacher_my_schedule');
 Route::get('manage_teacher/my_absen', 'AksesController@teacher_my_absen');
-Route::get('manage_teacher/master_recap', 'AksesController@teacher_master_recap');
 Route::get('manage_teacher/activity_student', 'AksesController@teacher_activity_student');
 Route::get('manage_teacher/detail_student_and_parent', 'AksesController@teacher_detail_student_and_parent');
 Route::get('manage_teacher/master_task', 'AksesController@teacher_master_task');

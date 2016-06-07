@@ -40,13 +40,13 @@
             </div>
               <div style="width:95%;margin:auto;" class="box box-default collapsed-box box-solid">
                 <div class="box-header with-border">
-                  <h3 class="box-title">Master Recap</h3>
+                  <h3 class="box-title">Edit Master Recap</h3>
                   <div class="box-tools pull-right">
                     <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-plus"></i></button>
                   </div><!-- /.box-tools -->
                 </div><!-- /.box-header -->
                 <div class="box-body">             
-                <form method="POST"  action="{{ url('manage_teacher/save_teacher_recap') }}" enctype="multipart/form-data">
+                <form method="POST"  action="{{ url('manage_teacher/update_teacher_recap') }}" enctype="multipart/form-data">
                   <div class="row">
                     <div class="col-xs-8">
                       <label for="exampleInputPassword1">Select Type</label>
@@ -62,6 +62,7 @@
                   </div>
                   <br>
                   <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                  <input type="hidden" name="id" value="{{ $rekap_edit->id }}">
                   <input id="tyclass" type="hidden" name="type_class" value="tk"> 
                   <div class="row">
                   <div class="col-xs-6 col-md-4">
@@ -93,7 +94,7 @@
                 </div>
                   <div class="col-xs-6 col-md-4">
                     <label for="exampleInputPassword1">Student Point</label>
-                    <input type="text" name="dt_rekap_nilai" class="form-control not-res" placeholder="10-100"/>
+                    <input value="{{ $rekap_edit->dt_rekap_nilai }}" type="text" name="dt_rekap_nilai" class="form-control not-res" placeholder="10-100"/>
                   </div>
                   </div>
                   <br>
