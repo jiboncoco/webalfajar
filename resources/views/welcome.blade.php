@@ -68,17 +68,39 @@
         <div id="myCarousel" class="carousel slide">
 
             <div class="carousel-inner">
+
                 <div class="item active">
-                    <a class="cntr" href="#"><img class="img-slide" src="img/img_home/TK.png" alt=""></a>
+                    <a class="cntr" href="#"><img class="img-slide" style="border-radius:4px;box-shadow: 10px 10px 5px #888888;" src="{{ url('img/all_icon/default.jpg')}}" alt=""></a>
                     <div class="desc-img">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et quam est. Mauris faucibus tellus ac auctor posuere.
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et quam est. Mauris faucibus tellus ac auctor posuere.
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et quam est. Mauris faucibus tellus ac auctor posuere.
+                  <p style="font-size:35px;font-weight:bold;color:white">WELCOME TO WEBSITE AL-FAJAR BEKASI</p>
+                  <p style="font-style:italic;font-size:20px;font-weight:bold">" Optimalisasi potensi (fitrah, bakat) peserta didik menuju insan beriman, cendekia, trampil dan tangguh. "</p>
                 </div>
-                <a href="#" class="btn btn-large btn-primary" id="btn-rm-s">READ MORE</a>
+                <!-- <a href="#" class="btn btn-large btn-primary" id="btn-rm-s">READ MORE</a> -->
                 </div>
 
+                @foreach($dt_blog_all as $all_blog)
                 <div class="item">
+                    <a class="cntr" href="#"><img class="img-slide" style="border-radius:4px;" src="{{ url('images/'.$all_blog->cover_photo) }}" alt=""></a>
+                    <div class="desc-img">
+                    <?php
+                          $string = strip_tags($all_blog->dt_blog_text);
+
+                          if (strlen($string) > 300) {
+
+                              // truncate string
+                              $stringCut = substr($string, 0, 300);
+
+                              // make sure it ends in a word so assassinate doesn't become ass...
+                              $string = substr($stringCut, 0, strrpos($stringCut, ' ')).'...';
+                          }
+                          echo $string;
+                    ?>
+                  </div>
+                <a href="{{ url('view/'.$all_blog->id) }}" class="btn btn-large btn-primary" id="btn-rm-s">READ MORE</a>
+                </div>
+                @endforeach
+
+                <!-- <div class="item">
                     <a class="cntr" href="#"><img class="img-slide" src="img/img_home/SD.png" alt=""></a>
                     <div class="desc-img">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et quam est. Mauris faucibus tellus ac auctor posuere.
@@ -106,7 +128,7 @@
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et quam est. Mauris faucibus tellus ac auctor posuere.
                 </div>
                 <a href="#" class="btn btn-large btn-primary" id="btn-rm-s">READ MORE</a>
-                </div>
+                </div> -->
             </div>
             <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
             <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>

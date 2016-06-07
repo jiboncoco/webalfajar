@@ -156,7 +156,7 @@
                   <div style="float:right;margin-top:40px;">
                   <form method="POST" action="{{ url('manage_teacher/import_data_teacher_recap') }}" enctype="multipart/form-data" class="form-inline">
                     <div class="form-group">
-                      <input type="file" name="import_data_master_recap" class="form-control" placeholder="Email">
+                      <input type="file" name="import_data_master_teacher_recap" class="form-control" placeholder="Email">
                       <input type="hidden" name="_token" value="{{ csrf_token() }}">
                     </div>
                     <button type="submit" class="btn btn-default">Import File</button>

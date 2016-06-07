@@ -55,6 +55,7 @@
                         <option value="teacher">Teacher</option>
                         <option value="parent">Parent</option>
                         <option value="student">Student</option>
+                        <option value="staff">Staff</option>
                       </select>
                     </div>
                   </div>
@@ -94,6 +95,17 @@
                       </select>
                     </div>
                   </div>
+
+                  <div style="display:none;margin-bottom:10px;margin-top:-10px;" id="staff" class="row">                  
+                  <div class="col-xs-6 col-md-4">
+                      <label for="exampleInputPassword1">Select Access Code</label>
+                      <select id="selectstaff" name="akses_code_staff" class="form-control not-res">
+                        @foreach($dt_staffs as $staff)
+                        <option value="{{$staff->akses_log_code}}">{{$staff->akses_log_code}}</option>
+                        @endforeach
+                      </select>
+                    </div>
+                  </div>
                   <input id="tymail" type="hidden" name="type_email" value="teacher"> 
                   <div id="mailteacher" class="row">                  
                   <div class="col-xs-6 col-md-4">
@@ -109,7 +121,7 @@
 
                   <div style="display:none;margin-bottom:10px;margin-top:-10px;" id="mailparent" class="row">                  
                   <div class="col-xs-6 col-md-4">
-                      <label for="exampleInputPassword1">Select Email Student</label>
+                      <label for="exampleInputPassword1">Select Email Parents</label>
                       <select id="emailparent" name="akses_email_parent" class="form-control not-res">
                         @foreach($dt_parents as $parent)
                         <option value="{{$parent->dt_parent_email}}">{{$parent->dt_parent_email}}</option>
@@ -253,18 +265,28 @@
           $('#student').hide();
           $("#tyco").val("nip");
           $('#parent').hide();
+          $('#staff').hide();
         }
         else if($(this).val() == "parent"){
           $("#parent").css("display","block");
           $('#teacher').hide();
           $('#student').hide();
+          $('#staff').hide();
           $("#tyco").val("parent");
         }
-        else{
+        else if($(this).val() == "student"){
           $("#student").css("display","block");
           $('#teacher').hide();
           $('#parent').hide();
+          $('#staff').hide();
           $("#tyco").val("student");
+        }
+        else{
+          $("#student").hide();
+          $('#teacher').hide();
+          $('#parent').hide();
+          $('#staff').css("display","block");
+          $("#tyco").val("staff");
         }
       });
 
@@ -284,11 +306,17 @@
           $('#mailstudent').hide();
           $("#tymail").val("parent");
         }
-        else{
+        else if($(this).val() == "student"){
           $("#mailstudent").css("display","block");
           $('#mailteacher').hide();
           $('#mailparent').hide();
           $("#tymail").val("student");
+        }
+        else {
+          $("#mailteacher").css("display","block");
+          $('#mailstudent').hide();
+          $("#tymail").val("teacher");
+          $('#mailparent').hide();
         }
       });
 

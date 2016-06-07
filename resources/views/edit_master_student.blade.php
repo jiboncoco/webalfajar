@@ -232,7 +232,7 @@
                   <div class="col-xs-6 col-md-4">
                     <label for="exampleInputPassword1">Birth Date</label>
                     <div class='input-group date' id='datetimepicker1'>
-                        <input type='text' value="{{ $data_edit->dt_student_dobbplace }}" name="dt_student_dobplace" class="form-control not-res birth_date" />
+                        <input type='text' value="{{ $data_edit->dt_student_dobplace }}" name="dt_student_dobplace" class="form-control not-res birth_date" />
                         <span class="input-group-addon">
                         <span class="glyphicon glyphicon-calendar"></span>
                         </span>

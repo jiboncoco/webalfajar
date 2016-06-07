@@ -110,7 +110,7 @@
                     @elseif(session('akses_type') == 'root+')
                     <a href="{{ url('manage_message/message_root+/delete/'.$dt_mails->id) }}"><button class="btn btn-danger"><i class="fa fa-trash-o"></i> Delete</button>
                     @endif
-                  <button class="btn btn-default"><i class="fa fa-print"></i> Print</button>
+                  <!-- <button class="btn btn-default"><i class="fa fa-print"></i> Print</button> -->
                 </div><!-- /.box-footer -->
               </div><!-- /. box -->
             </div><!-- /.col -->

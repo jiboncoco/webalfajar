@@ -35,6 +35,19 @@ class AdminController extends Controller
         }   
     }
 
+    public function all_post(Request $request)
+    {
+        session_start();
+        if(isset($_SESSION['logged_in'])){
+            $uname = \App\akses::where('akses_email', session('akses_email'))->get();
+            $dt_blog = \App\dt_blog::all();
+            return \View::make('all_post')->with('request',$request)->with('dt_blogs',$dt_blog)->with('uname',$uname);
+        }
+        else{
+            return redirect('login')->with('request',$request);
+        }   
+    }
+
             public function manage_all()
     {
        session_start();
@@ -324,8 +337,9 @@ class AdminController extends Controller
             $akses = \App\akses::all();
             $dt_teacher = \App\dt_teacher::all();
             $dt_parent = \App\dt_parent::all();
+            $dt_staff = \App\akses_log::all();
             $dt_student = \App\dt_student::all();
-            return \View::make('manage_all_account')->with('aksess', $akses)->with('dt_teachers', $dt_teacher)->with('dt_parents', $dt_parent)->with('dt_students', $dt_student)->with('uname',$uname);
+            return \View::make('manage_all_account')->with('aksess', $akses)->with('dt_teachers', $dt_teacher)->with('dt_staffs', $dt_staff)->with('dt_parents', $dt_parent)->with('dt_students', $dt_student)->with('uname',$uname);
         }
         else{
             return redirect(url('login'));
@@ -358,10 +372,11 @@ class AdminController extends Controller
             $uname = \App\akses::where('akses_email', session('akses_email'))->get();
             $akses = \App\akses::all();
             $dt_teacher = \App\dt_teacher::all();
+            $dt_staff = \App\akses_log::all();
             $dt_parent = \App\dt_parent::all();
             $dt_student = \App\dt_student::all();
             $akses_edit = \App\akses::find($id);
-            return \View::make('edit_account')->with('aksess', $akses)->with('dt_teachers', $dt_teacher)->with('dt_parents', $dt_parent)->with('dt_students', $dt_student)->with('uname',$uname)->with('akses_edit', $akses_edit);
+            return \View::make('edit_account')->with('aksess', $akses)->with('dt_teachers', $dt_teacher)->with('dt_staffs', $dt_staff)->with('dt_parents', $dt_parent)->with('dt_students', $dt_student)->with('uname',$uname)->with('akses_edit', $akses_edit);
             
         }
         else{
@@ -1029,6 +1044,33 @@ class AdminController extends Controller
         }
     }
 
+    public function detail_student()
+    {
+       session_start();
+        if(isset($_SESSION['logged_in'])){
+            $uname = \App\akses::where('akses_email', session('akses_email'))->get();
+            $data_student = \App\dt_student::all();
+            return view('detail_student')->with('data_student',$data_student)->with('uname',$uname);
+        }
+        else{
+            return redirect('login');
+        }
+    }
+
+    public function detail_parent()
+    {
+       session_start();
+        if(isset($_SESSION['logged_in'])){
+            $uname = \App\akses::where('akses_email', session('akses_email'))->get();
+            $data_parent = \App\dt_parent::all();
+            return view('detail_parent')->with('data_parent',$data_parent)->with('uname',$uname);
+        }
+        else{
+            return redirect('login');
+        }
+    }
+
+
     public function save_master_student()
     {
         $post = new \App\dt_student;
@@ -1315,5 +1357,65 @@ class AdminController extends Controller
             return redirect(url('login'));
         }
     } 
+
+    public function master_access_code()
+    {
+       session_start();
+        if(isset($_SESSION['logged_in'])){
+        $uname = \App\akses::where('akses_email', session('akses_email'))->get();
+        $akses_log = \App\akses_log::all();
+        return \View::make('master_access_code')->with('akses_logs', $akses_log)->with('uname',$uname);
+        }
+        else{
+            return redirect(url('login'));
+        }
+    }
+
+
+    public function save_access_code()
+    {
+        $post = new \App\akses_log;
+        $post->akses_log_code = Input::get('akses_log_code');
+        $post->akses_log_datevalid = Input::get('akses_log_datevalid');
+        $post->save();
+
+        return redirect(url('manage_account/master_access_code'));
+    }
+
+    public function edit_access_code($id)
+    {
+       session_start();
+        if(isset($_SESSION['logged_in'])){
+        $uname = \App\akses::where('akses_email', session('akses_email'))->get();
+        $akses_log_edit = \App\akses_log::find($id);
+        $akses_log = \App\akses_log::all();
+        return \View::make('edit_access_code')->with('akses_logs', $akses_log)->with('akses_log_edit', $akses_log_edit)->with('uname',$uname);
+        }
+        else{
+            return redirect(url('login'));
+        }
+    }
+
+    public function update_access_code()
+    {
+        $post = \App\akses_log::find(Input::get('id'));
+        $post->akses_log_code = Input::get('akses_log_code');
+        $post->akses_log_datevalid = Input::get('akses_log_datevalid');
+        $post->save();
+
+        return redirect(url('manage_account/master_access_code'));
+    }
+
+    public function delete_access_code($id)
+    {
+       session_start();
+        if(isset($_SESSION['logged_in'])){
+            \App\akses_log::find($id)->delete();
+            return redirect( url('manage_account/master_access_code'));
+        }
+        else{
+            return redirect(url('login'));
+        }
+    }
 
 }

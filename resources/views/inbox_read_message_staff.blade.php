@@ -134,7 +134,7 @@
                     @if(session('akses_type') == 'root+')
                     <a href="{{ url('manage_message/message_root+') }}"><button class="btn btn-danger"><i class="fa fa-close"></i> Cancel</button>
                     @endif
-                  <button class="btn btn-default"><i class="fa fa-print"></i> Print</button>
+                  <!-- <button class="btn btn-default"><i class="fa fa-print"></i> Print</button> -->
                 </div><!-- /.box-footer -->
               </div><!-- /. box -->
             </div><!-- /.col -->

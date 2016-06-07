@@ -89,6 +89,7 @@
               </a>
               <ul class="treeview-menu">
                 <li><a href="{{ url('manage_post/my_post') }}"><i class="fa fa-list"></i> My Post</a></li>
+                <li><a href="{{ url('manage_post/all_post') }}"><i class="fa fa-list"></i> All Post</a></li>
                 <li><a href="{{ url('manage_post/master_post') }}"><i class="fa fa-th"></i> Master Post</a></li>
                 <li><a href="{{ url('manage_post/master_type_post') }}"><i class="fa fa-list"></i> Master Type Post</a></li>
                 <li><a href="{{ url('manage_post/master_class_post') }}"><i class="fa fa-columns"></i> Master Class Post</a></li>
@@ -131,12 +132,12 @@
           @elseif($_SESSION['akses_type'] == 'root')
           <ul class="sidebar-menu">
             <li class="header">NAVIGATION</li>
-            <li class="active treeview">
+<!--             <li class="active treeview">
               <a href="{{ url('manage') }}">
                 <i class="fa fa-dashboard"></i> <span>Dashboard</span>
               </a>
             </li>
-            <li class="treeview">
+ -->            <li class="treeview">
               <a href="#">
                 <i class="fa fa-users"></i>
                 <span>Manage Account</span>
@@ -144,6 +145,7 @@
               </a>
               <ul class="treeview-menu">
                 <li><a href="{{ url('manage_account/all_account') }}"><i class="fa fa-tag"></i> Manage All Account</a></li>
+                <li><a href="{{ url('manage_account/master_access_code') }}"><i class="fa fa-tag"></i> Manage Access Code</a></li>
               </ul>
             </li>
             <li class="treeview">
@@ -200,6 +202,7 @@
               </a>
               <ul class="treeview-menu">
                 <li><a href="{{ url('manage_post/my_post') }}"><i class="fa fa-list"></i> My Post</a></li>
+                <li><a href="{{ url('manage_post/all_post') }}"><i class="fa fa-list"></i> All Post</a></li>
                 <li><a href="{{ url('manage_post/master_post') }}"><i class="fa fa-th"></i> Master Post</a></li>
                 <li><a href="{{ url('manage_post/master_type_post') }}"><i class="fa fa-list"></i> Master Type Post</a></li>
                 <li><a href="{{ url('manage_post/master_class_post') }}"><i class="fa fa-columns"></i> Master Class Post</a></li>
@@ -253,12 +256,12 @@
           @elseif($_SESSION['akses_type'] == 'root+')
           <ul class="sidebar-menu">
             <li class="header">NAVIGATION</li>
-            <li class="active treeview">
+<!--             <li class="active treeview">
               <a href="{{ url('manage') }}">
                 <i class="fa fa-dashboard"></i> <span>Dashboard</span>
               </a>
             </li>
-            <li class="treeview">
+ -->            <li class="treeview">
               <a href="#">
                 <i class="fa fa-users"></i>
                 <span>Manage Account</span>
@@ -266,6 +269,7 @@
               </a>
               <ul class="treeview-menu">
                 <li><a href="{{ url('manage_account/all_account') }}"><i class="fa fa-tag"></i> Manage All Account</a></li>
+                <li><a href="{{ url('manage_account/master_access_code') }}"><i class="fa fa-tag"></i> Manage Access Code</a></li>
               </ul>
             </li>
             <li class="treeview">
@@ -322,6 +326,7 @@
               </a>
               <ul class="treeview-menu">
                 <li><a href="{{ url('manage_post/my_post') }}"><i class="fa fa-list"></i> My Post</a></li>
+                <li><a href="{{ url('manage_post/all_post') }}"><i class="fa fa-list"></i> All Post</a></li>
                 <li><a href="{{ url('manage_post/master_post') }}"><i class="fa fa-th"></i> Master Post</a></li>
                 <li><a href="{{ url('manage_post/master_type_post') }}"><i class="fa fa-list"></i> Master Type Post</a></li>
                 <li><a href="{{ url('manage_post/master_class_post') }}"><i class="fa fa-columns"></i> Master Class Post</a></li>
@@ -375,12 +380,12 @@
           @elseif($_SESSION['akses_type'] == 'teacher')
                     <ul class="sidebar-menu">
             <li class="header">NAVIGATION</li>
-            <li class="active treeview">
+<!--             <li class="active treeview">
               <a href="{{ url('manage') }}">
                 <i class="fa fa-dashboard"></i> <span>Dashboard</span>
               </a>
             </li>
-            <li class="treeview">
+ -->            <li class="treeview">
               <a href="#">
                 <i class="fa fa-laptop"></i>
                 <span>Manage Teacher</span>
@@ -390,7 +395,7 @@
                 <li><a href="{{ url('manage_teacher/my_data') }}"><i class="fa fa-puzzle-piece"></i> My Data</a></li>
                 <li><a href="{{ url('manage_teacher/my_schedule') }}"><i class="fa fa-calendar"></i> My Schedule</a></li>
                 <li><a href="{{ url('manage_teacher/my_absen') }}"><i class="fa fa-thumb-tack"></i> My Absen</a></li>
-                <li><a href="{{ url('manage_teacher/master_recap') }}"><i class="fa fa-envelope"></i> Master Recap</a></li>
+                <li><a href="{{ url('manage_teacher/master_teacher_recap') }}"><i class="fa fa-envelope"></i> Master Teacher Recap</a></li>
               </ul>
             </li>
             <li class="treeview">
@@ -400,11 +405,11 @@
                 <i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">
-              <li><a href="{{ url('manage_student/activity_student') }}"><i class="fa fa-puzzle-piece"></i> Activity Student</a></li>
-              <li><a href="{{ url('manage_student/detail_student_and_parent') }}"><i class="fa fa-file-text-o"></i> Detail Student & Parent</a></li>
+              <li><a href="{{ url('manage_student/detail_student') }}"><i class="fa fa-puzzle-piece"></i> Detail Student</a></li>
+              <li><a href="{{ url('manage_parent/detail_parent') }}"><i class="fa fa-file-text-o"></i> Detail Parent</a></li>
               </ul>
             </li>
-            <li class="treeview">
+            <!-- <li class="treeview">
               <a href="#">
                 <i class="fa fa-align-center"></i>
                 <span>Manage Task</span>
@@ -413,7 +418,7 @@
               <ul class="treeview-menu">
                 <li><a href="{{ url('manage_task/master_task') }}"><i class="fa fa-files-o"></i> Master Task</a></li>
               </ul>
-            </li>
+            </li> -->
             <li class="treeview">
               <a href="#">
                 <i class="fa fa-archive"></i>
@@ -422,6 +427,7 @@
               </a>
               <ul class="treeview-menu">
                 <li><a href="{{ url('manage_post/my_post') }}"><i class="fa fa-list"></i> My Post</a></li>
+                <li><a href="{{ url('manage_post/all_post') }}"><i class="fa fa-list"></i> All Post</a></li>
                 <li><a href="{{ url('manage_post/master_post') }}"><i class="fa fa-th"></i> Master Post</a></li>
               </ul>
             </li>
@@ -441,12 +447,12 @@
           @elseif($_SESSION['akses_type'] == 'student')
            <ul class="sidebar-menu">
             <li class="header">NAVIGATION</li>
-            <li class="active treeview">
+<!--             <li class="active treeview">
               <a href="{{ url('manage') }}">
                 <i class="fa fa-dashboard"></i> <span>Dashboard</span>
               </a>
             </li>
-            <li class="treeview">
+ -->            <li class="treeview">
               <a href="#">
                 <i class="fa fa-laptop"></i>
                 <span>Manage Student</span>
@@ -454,7 +460,7 @@
               </a>
               <ul class="treeview-menu">
               <li><a href="{{ url('manage_student/my_data') }}"><i class="fa fa-puzzle-piece"></i> My Data</a></li>
-              <li><a href="{{ url('manage_student/my_activity') }}"><i class="fa fa-file-text-o"></i> My Activity</a></li>
+              <!-- <li><a href="{{ url('manage_student/my_activity') }}"><i class="fa fa-file-text-o"></i> My Activity</a></li> -->
               <li><a href="{{ url('manage_student/schedule_class') }}"><i class="fa fa-calendar"></i> Schedule Class</a></li>
               </ul>
             </li>
@@ -485,12 +491,12 @@
           @elseif($_SESSION['akses_type'] == 'parent')
            <ul class="sidebar-menu">
             <li class="header">NAVIGATION</li>
-            <li class="active treeview">
+<!--             <li class="active treeview">
               <a href="{{ url('manage') }}">
                 <i class="fa fa-dashboard"></i> <span>Dashboard</span>
               </a>
             </li>
-            <li class="treeview">
+ -->            <li class="treeview">
               <a href="#">
                 <i class="fa fa-laptop"></i>
                 <span>Manage Parent</span>
@@ -498,7 +504,7 @@
               </a>
               <ul class="treeview-menu">
               <li><a href="{{ url('manage_parent/my_data') }}"><i class="fa fa-puzzle-piece"></i> My Data</a></li>
-                <li><a href="{{ url('manage_parent/student_activity') }}"><i class="fa fa-puzzle-piece"></i> Student Activity</a></li>
+                <!-- <li><a href="{{ url('manage_parent/student_activity') }}"><i class="fa fa-puzzle-piece"></i> Student Activity</a></li> -->
               </ul>
             </li>
             <li class="treeview">
@@ -509,6 +515,7 @@
               </a>
               <ul class="treeview-menu">
                 <li><a href="{{ url('manage_post/my_post') }}"><i class="fa fa-list"></i> My Post</a></li>
+                <li><a href="{{ url('manage_post/all_post') }}"><i class="fa fa-list"></i> All Post</a></li>
                 <li><a href="{{ url('manage_post/master_post') }}"><i class="fa fa-th"></i> Master Post</a></li>
               </ul>
             </li>

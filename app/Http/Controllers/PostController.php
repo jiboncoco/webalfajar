@@ -795,7 +795,47 @@ class PostController extends Controller
 
     }
 
+    public function exportxls_data_master_teacher_recap()
+    {
 
+      $data_teacher_recap = \App\dt_rekap::select('dt_rekap.dt_rekap_type','dt_rekap.dt_rekap_for','dt_rekap.dt_rekap_class','dt_rekap.dt_rekap_name_student','dt_rekap.dt_rekap_nilai')->get()->toArray();
+      return \Excel::create('Master_Data_Teacher_Recap', function($excel) use ($data_teacher_recap)
+      {
+          $excel->sheet('mySheet', function($sheet) use ($data_teacher_recap)
+          {
+              $sheet->fromArray($data_teacher_recap);
+          });
+      })->download('xls');
+
+    }
+
+        public function exportxlsx_data_master_teacher_recap()
+    {
+
+      $data_teacher_recap = \App\dt_rekap::select('dt_rekap.dt_rekap_type','dt_rekap.dt_rekap_for','dt_rekap.dt_rekap_class','dt_rekap.dt_rekap_name_student','dt_rekap.dt_rekap_nilai')->get()->toArray();
+      return \Excel::create('Master_Data_Teacher_Recap', function($excel) use ($data_teacher_recap)
+      {
+          $excel->sheet('mySheet', function($sheet) use ($data_teacher_recap)
+          {
+              $sheet->fromArray($data_teacher_recap);
+          });
+      })->download('xlsx');
+
+    }
+
+        public function exportcsv_data_master_teacher_recap()
+    {
+
+      $data_teacher_recap = \App\dt_rekap::select('dt_rekap.dt_rekap_type','dt_rekap.dt_rekap_for','dt_rekap.dt_rekap_class','dt_rekap.dt_rekap_name_student','dt_rekap.dt_rekap_nilai')->get()->toArray();
+      return \Excel::create('Master_Data_Teacher_Recap', function($excel) use ($data_teacher_recap)
+      {
+          $excel->sheet('mySheet', function($sheet) use ($data_teacher_recap)
+          {
+              $sheet->fromArray($data_teacher_recap);
+          });
+      })->download('csv');
+
+    }
 
     public function import_data_master_teacher()
     {
@@ -859,6 +899,35 @@ class PostController extends Controller
           if(!empty($insert))
           {
             \DB::table('akses')->insert($insert);
+            
+          }
+        }
+      }
+      return redirect()->back();
+    }
+
+    public function import_data_master_teacher_recap()
+    {
+
+      if(Input::hasFile('import_data_master_teacher_recap'))
+      {
+        $path = Input::file('import_data_master_teacher_recap')->getRealPath();
+        $data = \Excel::load($path, function($reader){
+        })->get();
+        if(!empty($data) && $data->count())
+        {
+          foreach ($data as $key => $value)
+          {
+            $insert[] = ['dt_rekap_type' => $value->dt_rekap_type, 
+                        'dt_rekap_name_student' => $value->dt_rekap_name_student,
+                        'dt_rekap_nilai' => $value->dt_rekap_nilai,
+                        'dt_rekap_for' => $value->dt_rekap_for,
+                        'dt_rekap_class' => $value->dt_rekap_class,
+                        ];
+          }
+          if(!empty($insert))
+          {
+            \DB::table('dt_rekap')->insert($insert);
             
           }
         }

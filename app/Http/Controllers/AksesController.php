@@ -14,7 +14,7 @@ class AksesController extends Controller
        session_start();
         if(isset($_SESSION['logged_in'])){
             $uname = \App\akses::where('akses_email', session('akses_email'))->get();
-            $data_teacher = \App\dt_teacher::where('dt_teacher_nip', session('akses_code'))->get();
+            $data_teacher = \App\dt_teacher::where('dt_teacher_email', session('akses_email'))->get();
             return \View::make('teacher_my_data')->with('request', $request)->with('data_teacher',$data_teacher)->with('uname',$uname);
         }
         else{
@@ -40,7 +40,7 @@ class AksesController extends Controller
        session_start();
         if(isset($_SESSION['logged_in'])){
             $uname = \App\akses::where('akses_email', session('akses_email'))->get();
-            $data_student = \App\dt_student::where('dt_student_nisn', session('akses_code'))->get();
+            $data_student = \App\dt_student::where('dt_student_email', session('akses_email'))->get();
             return \View::make('student_my_data')->with('request', $request)->with('data_student',$data_student)->with('uname',$uname);
         }
         else{
@@ -66,7 +66,7 @@ class AksesController extends Controller
        session_start();
         if(isset($_SESSION['logged_in'])){
             $uname = \App\akses::where('akses_email', session('akses_email'))->get();
-            $data_parent = \App\dt_parent::where('dt_parent_nisn', session('akses_code'))->get();
+            $data_parent = \App\dt_parent::where('dt_parent_email', session('akses_email'))->get();
             return \View::make('parent_my_data')->with('request', $request)->with('data_parent',$data_parent)->with('uname',$uname);
         }
         else{
@@ -79,7 +79,7 @@ class AksesController extends Controller
         session_start();
         if(isset($_SESSION['logged_in'])){
             $uname = \App\akses::where('akses_email', session('akses_email'))->get();
-            $dt_mail = \App\dt_mail::where('dt_mail_to', session('akses_email'))->paginate(10);
+            $dt_mail = \App\dt_mail::where('dt_mail_to', session('akses_email'))->orderBy('id', 'desc')->paginate(10);
             return \View::make('message_staff')->with('dt_mails',$dt_mail)->with('uname',$uname);
         }
         else{
@@ -92,7 +92,7 @@ class AksesController extends Controller
         session_start();
         if(isset($_SESSION['logged_in'])){
             $uname = \App\akses::where('akses_email', session('akses_email'))->get();
-            $dt_mail = \App\dt_mail::where('dt_mail_to', session('akses_email'))->paginate(10);
+            $dt_mail = \App\dt_mail::where('dt_mail_to', session('akses_email'))->orderBy('id', 'desc')->paginate(10);
             return \View::make('message_student')->with('dt_mails',$dt_mail)->with('uname',$uname);
         }
         else{
@@ -105,7 +105,7 @@ class AksesController extends Controller
         session_start();
         if(isset($_SESSION['logged_in'])){
             $uname = \App\akses::where('akses_email', session('akses_email'))->get();
-            $dt_mail = \App\dt_mail::where('dt_mail_to', session('akses_email'))->paginate(10);
+            $dt_mail = \App\dt_mail::where('dt_mail_to', session('akses_email'))->orderBy('id', 'desc')->paginate(10);
             return \View::make('message_teacher')->with('dt_mails',$dt_mail)->with('uname',$uname);
         }
         else{
@@ -118,7 +118,7 @@ class AksesController extends Controller
         session_start();
         if(isset($_SESSION['logged_in'])){
             $uname = \App\akses::where('akses_email', session('akses_email'))->get();
-            $dt_mail = \App\dt_mail::where('dt_mail_to', session('akses_email'))->paginate(10);
+            $dt_mail = \App\dt_mail::where('dt_mail_to', session('akses_email'))->orderBy('id', 'desc')->paginate(10);
             return \View::make('message_parent')->with('dt_mails',$dt_mail)->with('uname',$uname);
         }
         else{
@@ -183,7 +183,7 @@ class AksesController extends Controller
         session_start();
         if(isset($_SESSION['logged_in'])){
             $uname = \App\akses::where('akses_email', session('akses_email'))->get();
-            $dt_mail = \App\dt_mail::where('dt_mail_create_by', session('akses_email'))->paginate(10);
+            $dt_mail = \App\dt_mail::where('dt_mail_create_by', session('akses_email'))->orderBy('id', 'desc')->paginate(10);
             return \View::make('sent_message_teacher')->with('dt_mails',$dt_mail)->with('uname',$uname);
         }
         else{
@@ -196,7 +196,7 @@ class AksesController extends Controller
         session_start();
         if(isset($_SESSION['logged_in'])){
             $uname = \App\akses::where('akses_email', session('akses_email'))->get();
-            $dt_mail = \App\dt_mail::where('dt_mail_create_by', session('akses_email'))->paginate(10);
+            $dt_mail = \App\dt_mail::where('dt_mail_create_by', session('akses_email'))->orderBy('id', 'desc')->paginate(10);
             return \View::make('sent_message_parent')->with('dt_mails',$dt_mail)->with('uname',$uname);
         }
         else{
@@ -209,7 +209,7 @@ class AksesController extends Controller
         session_start();
         if(isset($_SESSION['logged_in'])){
             $uname = \App\akses::where('akses_email', session('akses_email'))->get();
-            $dt_mail = \App\dt_mail::where('dt_mail_create_by', session('akses_email'))->paginate(10);
+            $dt_mail = \App\dt_mail::where('dt_mail_create_by', session('akses_email'))->orderBy('id', 'desc')->paginate(10);
             return \View::make('sent_message_staff')->with('dt_mails',$dt_mail)->with('uname',$uname);
         }
         else{
@@ -222,7 +222,7 @@ class AksesController extends Controller
         session_start();
         if(isset($_SESSION['logged_in'])){
             $uname = \App\akses::where('akses_email', session('akses_email'))->get();
-            $dt_mail = \App\dt_mail::where('dt_mail_create_by', session('akses_email'))->paginate(10);
+            $dt_mail = \App\dt_mail::where('dt_mail_create_by', session('akses_email'))->orderBy('id', 'desc')->paginate(10);
             return \View::make('sent_message_student')->with('dt_mails',$dt_mail)->with('uname',$uname);
         }
         else{
@@ -371,7 +371,7 @@ class AksesController extends Controller
        session_start();
         if(isset($_SESSION['logged_in'])){
             \App\dt_mail::find($id)->delete();
-            return redirect( url('manage_post/my_post'));
+            return redirect( url('manage'));
         }
         else{
             return redirect(url('login'));
@@ -383,7 +383,7 @@ class AksesController extends Controller
        session_start();
         if(isset($_SESSION['logged_in'])){
             \App\dt_mail::find($id)->delete();
-            return redirect( url('manage_post/my_post'));
+            return redirect( url('manage_message/message_student'));
         }
         else{
             return redirect(url('login'));
@@ -395,7 +395,7 @@ class AksesController extends Controller
        session_start();
         if(isset($_SESSION['logged_in'])){
             \App\dt_mail::find($id)->delete();
-            return redirect( url('manage_post/my_post'));
+            return redirect( url('manage_message/message_teacher'));
         }
         else{
             return redirect(url('login'));
@@ -407,7 +407,7 @@ class AksesController extends Controller
        session_start();
         if(isset($_SESSION['logged_in'])){
             \App\dt_mail::find($id)->delete();
-            return redirect( url('manage_post/my_post'));
+            return redirect( url('manage_message/message_parent'));
         }
         else{
             return redirect(url('login'));
@@ -419,7 +419,7 @@ class AksesController extends Controller
         session_start();
         if(isset($_SESSION['logged_in'])){
             $uname = \App\akses::where('akses_email', session('akses_email'))->get();
-            $dt_mail = \App\dt_mail::where('dt_mail_to', session('akses_email'))->paginate(10);
+            $dt_mail = \App\dt_mail::where('dt_mail_to', session('akses_email'))->orderBy('id', 'desc')->paginate(10);
             return \View::make('mail_to_page')->with('dt_mails',$dt_mail)->with('uname',$uname);
         }
         else{
@@ -487,7 +487,7 @@ class AksesController extends Controller
             $data_kelas_smp = \DB::table('dt_kelas')->where('dt_kelas_type', 'like', 'smp')->get();
             $data_kelas_sma = \DB::table('dt_kelas')->where('dt_kelas_type', 'like', 'sma')->get();
             $uname = \App\akses::where('akses_email', session('akses_email'))->get();
-            $dt_mail = \App\dt_mail::where('dt_mail_to', session('akses_email'))->paginate(10);
+            $dt_mail = \App\dt_mail::where('dt_mail_to', session('akses_email'))->orderBy('id', 'desc')->paginate(10);
             return \View::make('email_blast')->with('from',$from)->with('dt_mails',$dt_mail)->with('uname',$uname)->with('data_student',$data_student)->with('data_kelas',$data_kelas)->with('data_kelas_tk',$data_kelas_tk)->with('data_kelas_sd',$data_kelas_sd)->with('data_kelas_smp',$data_kelas_smp)->with('data_kelas_sma',$data_kelas_sma);
         }
         else{

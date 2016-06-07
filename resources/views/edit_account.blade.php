@@ -65,11 +65,14 @@
                         <option value="parent">Parent</option>
                         <option value="student" selected>Student</option>
                         @elseif($akses_edit->akses_type == "staff")
-                        <option value="student" selected>Staff</option>
+                        <option value="staff" selected>Staff</option>
+                        option value="teacher">Teacher</option>
+                        <option value="parent">Parent</option>
+                        <option value="student">Student</option>
                         @elseif($akses_edit->akses_type == "root")
-                        <option value="student" selected>Root</option>
+                        <option value="root" selected>Root</option>
                         @elseif($akses_edit->akses_type == "root+")
-                        <option value="student" selected>Root+</option>
+                        <option value="root+" selected>Root+</option>
                         @endif
                       </select>
                     </div>
@@ -106,6 +109,17 @@
                       <select id="selectstudent" name="akses_code_student" class="form-control not-res">
                         @foreach($dt_students as $student)
                         <option value="{{$student->dt_student_nisn}}">{{$student->dt_student_nisn}}</option>
+                        @endforeach
+                      </select>
+                    </div>
+                  </div>
+
+                  <div style="display:none;margin-bottom:10px;margin-top:-10px;" id="staff" class="row">                  
+                  <div class="col-xs-6 col-md-4">
+                      <label for="exampleInputPassword1">Select Access Code</label>
+                      <select id="selectstaff" name="akses_code_staff" class="form-control not-res">
+                        @foreach($dt_staffs as $staff)
+                        <option value="{{$staff->akses_log_code}}">{{$staff->akses_log_code}}</option>
                         @endforeach
                       </select>
                     </div>
@@ -266,18 +280,28 @@
           $('#student').hide();
           $("#tyco").val("nip");
           $('#parent').hide();
+          $('#staff').hide();
         }
         else if($(this).val() == "parent"){
           $("#parent").css("display","block");
           $('#teacher').hide();
           $('#student').hide();
+          $('#staff').hide();
           $("#tyco").val("parent");
         }
-        else{
+        else if($(this).val() == "student"){
           $("#student").css("display","block");
           $('#teacher').hide();
           $('#parent').hide();
+          $('#staff').hide();
           $("#tyco").val("student");
+        }
+        else{
+          $("#student").hide();
+          $('#teacher').hide();
+          $('#parent').hide();
+          $('#staff').css("display","block");
+          $("#tyco").val("staff");
         }
       });
 
@@ -297,11 +321,17 @@
           $('#mailstudent').hide();
           $("#tymail").val("parent");
         }
-        else{
+        else if($(this).val() == "student"){
           $("#mailstudent").css("display","block");
           $('#mailteacher').hide();
           $('#mailparent').hide();
           $("#tymail").val("student");
+        }
+        else {
+          $("#mailteacher").css("display","block");
+          $('#mailstudent').hide();
+          $("#tymail").val("teacher");
+          $('#mailparent').hide();
         }
       });
 

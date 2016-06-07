@@ -59,7 +59,7 @@
                 <td class="con">: {{ $student->dt_student_grade }}</td>
               </tr>
               <tr class="dt-con">
-                <td class="dt">Kelas</td>
+                <td class="dt">Class</td>
                 <td class="con">: {{ $student->dt_student_kelas }}</td>
               </tr>
               <tr class="dt-con">
@@ -69,6 +69,10 @@
               <tr class="dt-con">
                 <td class="dt">Birthday Place</td>
                 <td class="con">: {{ $student->dt_student_bplace }}</td>
+              </tr>
+              <tr class="dt-con">
+                <td class="dt">Birthday Date</td>
+                <td class="con">: {{ $student->dt_student_dobplace }}</td>
               </tr>
               <tr class="dt-con">
                 <td class="dt">Religion</td>

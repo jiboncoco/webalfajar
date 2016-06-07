@@ -46,33 +46,16 @@
                 </div><!-- /.box-header -->
                 <div class="box-body">
                   
-                <form method="POST"  action="{{ url('manage_absen/update_absen') }}" enctype="multipart/form-data">
+                <form method="POST"  action="{{ url('manage_absen/save_absen') }}" enctype="multipart/form-data">
 
                   <div class="row">
                      <div class="col-xs-8">
                       <label for="exampleInputPassword1">Absen Type</label>
                       <select id="selecttype" name="m_absen_type" class="form-control not-res">
-                        @if($absen_edit->m_absen_type == "Morning")
-                        <option value="Morning" selected>Morning</option>
+                        <option value="Morning">Morning</option>
                         <option value="Middle">Middle</option>  
                         <option value="Night">Night</option>  
-                        <option value="Over Night">Over Night</option>    
-                        @elseif($absen_edit->m_absen_type == "Middle")
-                        <option value="Morning">Morning</option>
-                        <option value="Middle" selected>Middle</option>  
-                        <option value="Night">Night</option>  
-                        <option value="Over Night">Over Night</option>  
-                        @elseif($absen_edit->m_absen_type == "Night")
-                        <option value="Morning">Morning</option>
-                        <option value="Middle" >Middle</option>  
-                        <option value="Night" selected>Night</option>  
-                        <option value="Over Night">Over Night</option> 
-                        @else
-                        <option value="Morning">Morning</option>
-                        <option value="Middle" >Middle</option>  
-                        <option value="Night">Night</option>  
-                        <option value="Over Night" selected>Over Night</option>    
-                        @endif              
+                        <option value="Over Night">Over Night</option>                      
                       </select>
                     </div> 
                   </div>
@@ -91,7 +74,7 @@
                   <div  class="col-xs-6 col-md-4">
                   <label for="exampleInputPassword1">Come</label>
                   <div class='input-group date' id='datetimepicker1'>
-                    <input value="{{ $absen_edit->m_absen_come }}" type='text' name="m_absen_come" class="form-control for_time" />
+                    <input type='text' name="m_absen_come" class="form-control for_time" />
                       <span class="input-group-addon">
                       <span class="glyphicon glyphicon-calendar"></span>
                       </span>
@@ -100,7 +83,7 @@
                   <div  class="col-xs-6 col-md-4">
                   <label for="exampleInputPassword1">Return</label>
                   <div class='input-group date' id='datetimepicker1'>
-                    <input value="{{ $absen_edit->m_absen_return }}" type='text' name="m_absen_return" class="form-control for_time" />
+                    <input type='text' name="m_absen_return" class="form-control for_time" />
                       <span class="input-group-addon">
                       <span class="glyphicon glyphicon-calendar"></span>
                       </span>
@@ -113,13 +96,8 @@
                      <div class="col-xs-8">
                       <label for="exampleInputPassword1">Status Log</label>
                       <select id="selecttype" name="m_absen_status" class="form-control not-res">
-                       @if($m_kelass->m_kelas_status == "active")
-                        <option value="active" selected>Active</option>
-                        <option value="disable">Disable</option> 
-                        @elseif($m_kelass->m_kelas_status == "disable")
                         <option value="active">Active</option>
-                        <option value="disable" selected>Disable</option>    
-                        @endif                     
+                        <option value="disable">Disable</option>                      
                       </select>
                     </div> 
                   </div>
@@ -175,7 +153,7 @@
                     @endforeach
                     </tfoot>
                   </table>
-                  <div class="export">
+                  <!-- <div class="export">
                   <a href="{{ url('manage_absen/export_data/xls') }}"><button class="btn btn-success"><i class="fa fa-paper-plane-o"></i> xls</button></a>
                   <a href="{{ url('manage_absen/export_data/xlsx') }}"><button class="btn btn-info"><i class="fa fa-paper-plane-o"></i> xlsx</button></a>
                   <a href="{{ url('manage_absen/export_data/csv') }}"><button class="btn btn-warning"><i class="fa fa-paper-plane-o"></i> csv</button></a>
@@ -188,7 +166,7 @@
                     </div>
                     <button type="submit" class="btn btn-default">Import File</button>
                   </form>
-                  </div>   
+                  </div>    -->
                 </div><!-- /.box-body -->
               </div><!-- /.box -->
               </div>

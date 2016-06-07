@@ -53,13 +53,14 @@ class Controller extends BaseController
                 ->orderBy('id', 'desc')
                 ->limit(3)
                 ->get();
+            $dt_blog_all = \App\dt_blog::orderBy('id', 'desc')->paginate(5);
             return \View::make('welcome')->with('dt_blogs',$dt_blog)->with('yayasan_vimi',$yayasan_vimi)->with('yayasan_edu',$yayasan_edu)
             ->with('yayasan_profile',$yayasan_profile)->with('yayasan_galery')->with('yayasan_galery',$yayasan_galery)->with('tk_vimi',$tk_vimi)
             ->with('tk_kurkul',$tk_kurkul)->with('tk_galery',$tk_galery)->with('tk_fasilitas',$tk_fasilitas)->with('sd_vimi',$sd_vimi)
             ->with('sd_kurkul',$sd_kurkul)->with('sd_galery',$sd_galery)->with('sd_fasilitas',$sd_fasilitas)->with('smp_vimi',$smp_vimi)
             ->with('smp_kurkul',$smp_kurkul)->with('smp_galery',$smp_galery)->with('smp_fasilitas',$smp_fasilitas)->with('sma_vimi',$sma_vimi)
             ->with('sma_kurkul',$sma_kurkul)->with('sma_galery',$sma_galery)->with('sma_fasilitas',$sma_fasilitas)->with('dkm_galery',$dkm_galery)
-            ->with('dkm_fasilitas',$dkm_fasilitas);
+            ->with('dkm_fasilitas',$dkm_fasilitas)->with('dt_blog_all',$dt_blog_all);
         }
         else{
             $yayasan_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'visi-misi'] ])->get();
@@ -102,13 +103,14 @@ class Controller extends BaseController
                 ->orderBy('id', 'desc')
                 ->take(3)
                 ->get();
+            $dt_blog_all = \App\dt_blog::orderBy('id', 'desc')->paginate(5);
             return \View::make('welcome')->with('dt_blogs',$dt_blog)->with('yayasan_vimi',$yayasan_vimi)->with('yayasan_edu',$yayasan_edu)
             ->with('yayasan_profile',$yayasan_profile)->with('yayasan_galery')->with('yayasan_galery',$yayasan_galery)->with('tk_vimi',$tk_vimi)
             ->with('tk_kurkul',$tk_kurkul)->with('tk_galery',$tk_galery)->with('tk_fasilitas',$tk_fasilitas)->with('sd_vimi',$sd_vimi)
             ->with('sd_kurkul',$sd_kurkul)->with('sd_galery',$sd_galery)->with('sd_fasilitas',$sd_fasilitas)->with('smp_vimi',$smp_vimi)
             ->with('smp_kurkul',$smp_kurkul)->with('smp_galery',$smp_galery)->with('smp_fasilitas',$smp_fasilitas)->with('sma_vimi',$sma_vimi)
             ->with('sma_kurkul',$sma_kurkul)->with('sma_galery',$sma_galery)->with('sma_fasilitas',$sma_fasilitas)->with('dkm_galery',$dkm_galery)
-            ->with('dkm_fasilitas',$dkm_fasilitas);
+            ->with('dkm_fasilitas',$dkm_fasilitas)->with('dt_blog_all',$dt_blog_all);
         }
     }
 
@@ -130,6 +132,7 @@ class Controller extends BaseController
             $dt_blog_all_news = \DB::table('dt_blog')->where('dt_blog_type', '=', 'news')->orderBy('id', 'desc')->paginate(6);
             $announcement = \DB::table('dt_blog')->where('dt_blog_type','=','announcement')->take(3)->orderBy('id', 'desc')->get();
             $article = \DB::table('dt_blog')->where('dt_blog_type', '=', 'article')->take(3)->orderBy('id', 'desc')->get();
+            $dt_blog_all = \DB::table('dt_blog')->where('dt_blog_type', '=', 'news')->orderBy('id', 'desc')->paginate(5);
 
             $yayasan_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'visi-misi'] ])->get();
             $yayasan_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'pendidikan'] ])->get();
@@ -166,13 +169,14 @@ class Controller extends BaseController
             ->with('sd_kurkul',$sd_kurkul)->with('sd_galery',$sd_galery)->with('sd_fasilitas',$sd_fasilitas)->with('smp_vimi',$smp_vimi)
             ->with('smp_kurkul',$smp_kurkul)->with('smp_galery',$smp_galery)->with('smp_fasilitas',$smp_fasilitas)->with('sma_vimi',$sma_vimi)
             ->with('sma_kurkul',$sma_kurkul)->with('sma_galery',$sma_galery)->with('sma_fasilitas',$sma_fasilitas)->with('dkm_galery',$dkm_galery)
-            ->with('dkm_fasilitas',$dkm_fasilitas);
+            ->with('dkm_fasilitas',$dkm_fasilitas)->with('dt_blog_all',$dt_blog_all);
             
         }
         else{
-            $dt_blog_all_news = \DB::table('dt_blog')->where('dt_blog_type', '=', 'news')->orderBy('id', 'desc')->paginate(6);
+                        $dt_blog_all_news = \DB::table('dt_blog')->where('dt_blog_type', '=', 'news')->orderBy('id', 'desc')->paginate(6);
             $announcement = \DB::table('dt_blog')->where('dt_blog_type','=','announcement')->take(3)->orderBy('id', 'desc')->get();
             $article = \DB::table('dt_blog')->where('dt_blog_type', '=', 'article')->take(3)->orderBy('id', 'desc')->get();
+            $dt_blog_all = \DB::table('dt_blog')->where('dt_blog_type', '=', 'news')->orderBy('id', 'desc')->paginate(5);
 
             $yayasan_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'visi-misi'] ])->get();
             $yayasan_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'pendidikan'] ])->get();
@@ -202,7 +206,6 @@ class Controller extends BaseController
             $dkm_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'dkm'],['feature_for', '=', 'galery'] ])->get();
 
             $dkm_fasilitas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'dkm'],['feature_for', '=', 'fasilitas'] ])->get(); 
-
             return \View::make('news')->with('dt_blog_all_news', $dt_blog_all_news)->with('announcement',$announcement)->with('article',$article)
             ->with('yayasan_vimi',$yayasan_vimi)->with('yayasan_edu',$yayasan_edu)
             ->with('yayasan_profile',$yayasan_profile)->with('yayasan_galery')->with('yayasan_galery',$yayasan_galery)->with('tk_vimi',$tk_vimi)
@@ -210,7 +213,7 @@ class Controller extends BaseController
             ->with('sd_kurkul',$sd_kurkul)->with('sd_galery',$sd_galery)->with('sd_fasilitas',$sd_fasilitas)->with('smp_vimi',$smp_vimi)
             ->with('smp_kurkul',$smp_kurkul)->with('smp_galery',$smp_galery)->with('smp_fasilitas',$smp_fasilitas)->with('sma_vimi',$sma_vimi)
             ->with('sma_kurkul',$sma_kurkul)->with('sma_galery',$sma_galery)->with('sma_fasilitas',$sma_fasilitas)->with('dkm_galery',$dkm_galery)
-            ->with('dkm_fasilitas',$dkm_fasilitas);
+            ->with('dkm_fasilitas',$dkm_fasilitas)->with('dt_blog_all',$dt_blog_all);
             
         }
     }
@@ -222,6 +225,7 @@ class Controller extends BaseController
             $dt_blog_all_agenda = \DB::table('dt_blog')->where('dt_blog_type', '=', 'agenda')->orderBy('id', 'desc')->paginate(6);
             $article = \DB::table('dt_blog')->where('dt_blog_type', '=', 'article')->take(3)->orderBy('id', 'desc')->get();
             $announcement = \DB::table('dt_blog')->where('dt_blog_type','=','announcement')->take(3)->orderBy('id', 'desc')->get();
+            $dt_blog_all = \DB::table('dt_blog')->where('dt_blog_type', '=', 'agenda')->orderBy('id', 'desc')->paginate(5);
 
             $yayasan_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'visi-misi'] ])->get();
             $yayasan_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'pendidikan'] ])->get();
@@ -258,12 +262,13 @@ class Controller extends BaseController
             ->with('sd_kurkul',$sd_kurkul)->with('sd_galery',$sd_galery)->with('sd_fasilitas',$sd_fasilitas)->with('smp_vimi',$smp_vimi)
             ->with('smp_kurkul',$smp_kurkul)->with('smp_galery',$smp_galery)->with('smp_fasilitas',$smp_fasilitas)->with('sma_vimi',$sma_vimi)
             ->with('sma_kurkul',$sma_kurkul)->with('sma_galery',$sma_galery)->with('sma_fasilitas',$sma_fasilitas)->with('dkm_galery',$dkm_galery)
-            ->with('dkm_fasilitas',$dkm_fasilitas);
+            ->with('dkm_fasilitas',$dkm_fasilitas)->with('dt_blog_all',$dt_blog_all);
         }
         else{
             $dt_blog_all_agenda = \DB::table('dt_blog')->where('dt_blog_type', '=', 'agenda')->orderBy('id', 'desc')->paginate(6);
             $article = \DB::table('dt_blog')->where('dt_blog_type', '=', 'article')->take(3)->orderBy('id', 'desc')->get();
             $announcement = \DB::table('dt_blog')->where('dt_blog_type','=','announcement')->take(3)->orderBy('id', 'desc')->get();
+            $dt_blog_all = \DB::table('dt_blog')->where('dt_blog_type', '=', 'agenda')->orderBy('id', 'desc')->paginate(5);
 
             $yayasan_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'visi-misi'] ])->get();
             $yayasan_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'pendidikan'] ])->get();
@@ -300,7 +305,7 @@ class Controller extends BaseController
             ->with('sd_kurkul',$sd_kurkul)->with('sd_galery',$sd_galery)->with('sd_fasilitas',$sd_fasilitas)->with('smp_vimi',$smp_vimi)
             ->with('smp_kurkul',$smp_kurkul)->with('smp_galery',$smp_galery)->with('smp_fasilitas',$smp_fasilitas)->with('sma_vimi',$sma_vimi)
             ->with('sma_kurkul',$sma_kurkul)->with('sma_galery',$sma_galery)->with('sma_fasilitas',$sma_fasilitas)->with('dkm_galery',$dkm_galery)
-            ->with('dkm_fasilitas',$dkm_fasilitas);
+            ->with('dkm_fasilitas',$dkm_fasilitas)->with('dt_blog_all',$dt_blog_all);
         }
     }
 
@@ -311,6 +316,7 @@ class Controller extends BaseController
             $dt_blog_all_pengumuman = \DB::table('dt_blog')->where('dt_blog_type', '=', 'announcement')->orderBy('id', 'desc')->paginate(6);
             $article = \DB::table('dt_blog')->where('dt_blog_type', '=', 'article')->take(3)->orderBy('id', 'desc')->get();
             $agenda = \DB::table('dt_blog')->where('dt_blog_type', '=', 'agenda')->take(3)->orderBy('id', 'desc')->get();
+            $dt_blog_all = \DB::table('dt_blog')->where('dt_blog_type', '=', 'announcement')->orderBy('id', 'desc')->paginate(5);
 
             $yayasan_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'visi-misi'] ])->get();
             $yayasan_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'pendidikan'] ])->get();
@@ -347,12 +353,13 @@ class Controller extends BaseController
             ->with('sd_kurkul',$sd_kurkul)->with('sd_galery',$sd_galery)->with('sd_fasilitas',$sd_fasilitas)->with('smp_vimi',$smp_vimi)
             ->with('smp_kurkul',$smp_kurkul)->with('smp_galery',$smp_galery)->with('smp_fasilitas',$smp_fasilitas)->with('sma_vimi',$sma_vimi)
             ->with('sma_kurkul',$sma_kurkul)->with('sma_galery',$sma_galery)->with('sma_fasilitas',$sma_fasilitas)->with('dkm_galery',$dkm_galery)
-            ->with('dkm_fasilitas',$dkm_fasilitas);
+            ->with('dkm_fasilitas',$dkm_fasilitas)->with('dt_blog_all',$dt_blog_all);
         }
         else{
             $dt_blog_all_pengumuman = \DB::table('dt_blog')->where('dt_blog_type', '=', 'announcement')->orderBy('id', 'desc')->paginate(6);
             $article = \DB::table('dt_blog')->where('dt_blog_type', '=', 'article')->take(3)->orderBy('id', 'desc')->get();
             $agenda = \DB::table('dt_blog')->where('dt_blog_type', '=', 'agenda')->take(3)->orderBy('id', 'desc')->get();
+            $dt_blog_all = \DB::table('dt_blog')->where('dt_blog_type', '=', 'announcement')->orderBy('id', 'desc')->paginate(5);
 
             $yayasan_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'visi-misi'] ])->get();
             $yayasan_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'pendidikan'] ])->get();
@@ -389,7 +396,7 @@ class Controller extends BaseController
             ->with('sd_kurkul',$sd_kurkul)->with('sd_galery',$sd_galery)->with('sd_fasilitas',$sd_fasilitas)->with('smp_vimi',$smp_vimi)
             ->with('smp_kurkul',$smp_kurkul)->with('smp_galery',$smp_galery)->with('smp_fasilitas',$smp_fasilitas)->with('sma_vimi',$sma_vimi)
             ->with('sma_kurkul',$sma_kurkul)->with('sma_galery',$sma_galery)->with('sma_fasilitas',$sma_fasilitas)->with('dkm_galery',$dkm_galery)
-            ->with('dkm_fasilitas',$dkm_fasilitas);
+            ->with('dkm_fasilitas',$dkm_fasilitas)->with('dt_blog_all',$dt_blog_all);
         }
     }
 
@@ -400,6 +407,7 @@ class Controller extends BaseController
             $dt_blog_all_artikel = \DB::table('dt_blog')->where('dt_blog_type', '=', 'article')->orderBy('id', 'desc')->paginate(6);
             $announcement = \DB::table('dt_blog')->where('dt_blog_type','=','announcement')->take(3)->orderBy('id', 'desc')->get();
             $agenda = \DB::table('dt_blog')->where('dt_blog_type', '=', 'agenda')->take(3)->orderBy('id', 'desc')->get();
+            $dt_blog_all = \DB::table('dt_blog')->where('dt_blog_type', '=', 'article')->orderBy('id', 'desc')->paginate(5);
 
             $yayasan_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'visi-misi'] ])->get();
             $yayasan_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'pendidikan'] ])->get();
@@ -436,12 +444,13 @@ class Controller extends BaseController
             ->with('sd_kurkul',$sd_kurkul)->with('sd_galery',$sd_galery)->with('sd_fasilitas',$sd_fasilitas)->with('smp_vimi',$smp_vimi)
             ->with('smp_kurkul',$smp_kurkul)->with('smp_galery',$smp_galery)->with('smp_fasilitas',$smp_fasilitas)->with('sma_vimi',$sma_vimi)
             ->with('sma_kurkul',$sma_kurkul)->with('sma_galery',$sma_galery)->with('sma_fasilitas',$sma_fasilitas)->with('dkm_galery',$dkm_galery)
-            ->with('dkm_fasilitas',$dkm_fasilitas);
+            ->with('dkm_fasilitas',$dkm_fasilitas)->with('dt_blog_all',$dt_blog_all);
         }
         else{
             $dt_blog_all_artikel = \DB::table('dt_blog')->where('dt_blog_type', '=', 'article')->orderBy('id', 'desc')->paginate(6);
             $announcement = \DB::table('dt_blog')->where('dt_blog_type','=','announcement')->take(3)->orderBy('id', 'desc')->get();
             $agenda = \DB::table('dt_blog')->where('dt_blog_type', '=', 'agenda')->take(3)->orderBy('id', 'desc')->get();
+            $dt_blog_all = \DB::table('dt_blog')->where('dt_blog_type', '=', 'article')->orderBy('id', 'desc')->paginate(5);
 
             $yayasan_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'visi-misi'] ])->get();
             $yayasan_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'pendidikan'] ])->get();
@@ -478,7 +487,7 @@ class Controller extends BaseController
             ->with('sd_kurkul',$sd_kurkul)->with('sd_galery',$sd_galery)->with('sd_fasilitas',$sd_fasilitas)->with('smp_vimi',$smp_vimi)
             ->with('smp_kurkul',$smp_kurkul)->with('smp_galery',$smp_galery)->with('smp_fasilitas',$smp_fasilitas)->with('sma_vimi',$sma_vimi)
             ->with('sma_kurkul',$sma_kurkul)->with('sma_galery',$sma_galery)->with('sma_fasilitas',$sma_fasilitas)->with('dkm_galery',$dkm_galery)
-            ->with('dkm_fasilitas',$dkm_fasilitas);
+            ->with('dkm_fasilitas',$dkm_fasilitas)->with('dt_blog_all',$dt_blog_all);
         }
     }
 
@@ -487,6 +496,7 @@ class Controller extends BaseController
        session_start();
         if(isset($_SESSION['logged_in'])){
             $dt_blog_all_portal_tk = \DB::table('dt_blog')->where('dt_blog_for', '=', 'TK')->orderBy('id', 'desc')->paginate(6);
+            $dt_blog_all = \DB::table('dt_blog')->where('dt_blog_for', '=', 'TK')->orderBy('id', 'desc')->paginate(6);
             $news = \DB::table('dt_blog')->where([
                                                                     ['dt_blog_type', '=', 'news'],
                                                                     ['dt_blog_for', '=', 'TK']
@@ -576,10 +586,11 @@ class Controller extends BaseController
             ->with('smp_achiev',$smp_achiev)->with('smp_commit',$smp_commit)->with('smp_alumni',$smp_alumni)->with('smp_student',$smp_student)
             ->with('smp_headmas',$smp_headmas)->with('smp_profile',$smp_profile)->with('smp_edu',$smp_edu)->with('sma_extra',$sma_extra)->with('sma_partners',$sma_partners)
             ->with('sma_achiev',$sma_achiev)->with('sma_commit',$sma_commit)->with('sma_alumni',$sma_alumni)->with('sma_student',$sma_student)
-            ->with('sma_headmas',$sma_headmas)->with('sma_profile',$sma_profile)->with('sma_edu',$sma_edu);
+            ->with('sma_headmas',$sma_headmas)->with('sma_profile',$sma_profile)->with('sma_edu',$sma_edu)->with('dt_blog_all',$dt_blog_all);
         }
         else{
             $dt_blog_all_portal_tk = \DB::table('dt_blog')->where('dt_blog_for', '=', 'TK')->orderBy('id', 'desc')->paginate(6);
+            $dt_blog_all = \DB::table('dt_blog')->where('dt_blog_for', '=', 'TK')->orderBy('id', 'desc')->paginate(6);
             $news = \DB::table('dt_blog')->where([
                                                                     ['dt_blog_type', '=', 'news'],
                                                                     ['dt_blog_for', '=', 'TK']
@@ -594,7 +605,7 @@ class Controller extends BaseController
             $yayasan_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'galery'] ])->get();
             $yayasan_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'profile'] ])->get();
 
-                        $tk_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'visi-misi'] ])->get();
+            $tk_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'visi-misi'] ])->get();
             $tk_kurkul = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'kurikulum'] ])->get();
             $tk_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'galery'] ])->get();
             $tk_fasilitas = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'fasilitas'] ])->get();
@@ -669,7 +680,7 @@ class Controller extends BaseController
             ->with('smp_achiev',$smp_achiev)->with('smp_commit',$smp_commit)->with('smp_alumni',$smp_alumni)->with('smp_student',$smp_student)
             ->with('smp_headmas',$smp_headmas)->with('smp_profile',$smp_profile)->with('smp_edu',$smp_edu)->with('sma_extra',$sma_extra)->with('sma_partners',$sma_partners)
             ->with('sma_achiev',$sma_achiev)->with('sma_commit',$sma_commit)->with('sma_alumni',$sma_alumni)->with('sma_student',$sma_student)
-            ->with('sma_headmas',$sma_headmas)->with('sma_profile',$sma_profile)->with('sma_edu',$sma_edu);    
+            ->with('sma_headmas',$sma_headmas)->with('sma_profile',$sma_profile)->with('sma_edu',$sma_edu)->with('dt_blog_all',$dt_blog_all);   
         }
     }
 
@@ -678,6 +689,7 @@ class Controller extends BaseController
        session_start();
         if(isset($_SESSION['logged_in'])){
             $dt_blog_all_portal_tk = \DB::table('dt_blog')->where('dt_blog_type', '=', 'all', 'AND', 'dt_blog_for', '=', 'TK')->orderBy('id', 'desc')->paginate(6);
+            $dt_blog_all = \DB::table('dt_blog')->where('dt_blog_type', '=', 'all', 'AND', 'dt_blog_for', '=', 'TK')->orderBy('id', 'desc')->paginate(5);
             $news = \DB::table('dt_blog')->where([
                                                                     ['dt_blog_type', '=', 'news'],
                                                                     ['dt_blog_for', '=', 'TK']
@@ -767,9 +779,11 @@ class Controller extends BaseController
             ->with('smp_achiev',$smp_achiev)->with('smp_commit',$smp_commit)->with('smp_alumni',$smp_alumni)->with('smp_student',$smp_student)
             ->with('smp_headmas',$smp_headmas)->with('smp_profile',$smp_profile)->with('smp_edu',$smp_edu)->with('sma_extra',$sma_extra)->with('sma_partners',$sma_partners)
             ->with('sma_achiev',$sma_achiev)->with('sma_commit',$sma_commit)->with('sma_alumni',$sma_alumni)->with('sma_student',$sma_student)
-            ->with('sma_headmas',$sma_headmas)->with('sma_profile',$sma_profile)->with('sma_edu',$sma_edu);    }
+            ->with('sma_headmas',$sma_headmas)->with('sma_profile',$sma_profile)->with('sma_edu',$sma_edu)->with('dt_blog_all',$dt_blog_all);    
+        }
         else{
             $dt_blog_all_portal_tk = \DB::table('dt_blog')->where('dt_blog_type', '=', 'all', 'AND', 'dt_blog_for', '=', 'TK')->orderBy('id', 'desc')->paginate(6);
+            $dt_blog_all = \DB::table('dt_blog')->where('dt_blog_type', '=', 'all', 'AND', 'dt_blog_for', '=', 'TK')->orderBy('id', 'desc')->paginate(5);
             $news = \DB::table('dt_blog')->where([
                                                                     ['dt_blog_type', '=', 'news'],
                                                                     ['dt_blog_for', '=', 'TK']
@@ -859,13 +873,15 @@ class Controller extends BaseController
             ->with('smp_achiev',$smp_achiev)->with('smp_commit',$smp_commit)->with('smp_alumni',$smp_alumni)->with('smp_student',$smp_student)
             ->with('smp_headmas',$smp_headmas)->with('smp_profile',$smp_profile)->with('smp_edu',$smp_edu)->with('sma_extra',$sma_extra)->with('sma_partners',$sma_partners)
             ->with('sma_achiev',$sma_achiev)->with('sma_commit',$sma_commit)->with('sma_alumni',$sma_alumni)->with('sma_student',$sma_student)
-            ->with('sma_headmas',$sma_headmas)->with('sma_profile',$sma_profile)->with('sma_edu',$sma_edu);    }
+            ->with('sma_headmas',$sma_headmas)->with('sma_profile',$sma_profile)->with('sma_edu',$sma_edu)->with('dt_blog_all',$dt_blog_all);    
+        }
     }    
 
     public function portal_tk_news()
     {
        session_start();
         if(isset($_SESSION['logged_in'])){
+            $dt_blog_all = \DB::table('dt_blog')->where('dt_blog_type', '=', 'all', 'AND', 'dt_blog_for', '=', 'TK')->orderBy('id', 'desc')->paginate(5);
             $dt_blog_all_portal_tk = \DB::table('dt_blog')->where([
                                                                     ['dt_blog_type', '=', 'news'],
                                                                     ['dt_blog_for', '=', 'TK']
@@ -959,8 +975,10 @@ class Controller extends BaseController
             ->with('smp_achiev',$smp_achiev)->with('smp_commit',$smp_commit)->with('smp_alumni',$smp_alumni)->with('smp_student',$smp_student)
             ->with('smp_headmas',$smp_headmas)->with('smp_profile',$smp_profile)->with('smp_edu',$smp_edu)->with('sma_extra',$sma_extra)->with('sma_partners',$sma_partners)
             ->with('sma_achiev',$sma_achiev)->with('sma_commit',$sma_commit)->with('sma_alumni',$sma_alumni)->with('sma_student',$sma_student)
-            ->with('sma_headmas',$sma_headmas)->with('sma_profile',$sma_profile)->with('sma_edu',$sma_edu);    }
+            ->with('sma_headmas',$sma_headmas)->with('sma_profile',$sma_profile)->with('sma_edu',$sma_edu)->with('dt_blog_all',$dt_blog_all);    
+        }
         else{
+            $dt_blog_all = \DB::table('dt_blog')->where('dt_blog_type', '=', 'all', 'AND', 'dt_blog_for', '=', 'TK')->orderBy('id', 'desc')->paginate(5);
             $dt_blog_all_portal_tk = \DB::table('dt_blog')->where([
                                                                     ['dt_blog_type', '=', 'news'],
                                                                     ['dt_blog_for', '=', 'TK']
@@ -1054,13 +1072,15 @@ class Controller extends BaseController
             ->with('smp_achiev',$smp_achiev)->with('smp_commit',$smp_commit)->with('smp_alumni',$smp_alumni)->with('smp_student',$smp_student)
             ->with('smp_headmas',$smp_headmas)->with('smp_profile',$smp_profile)->with('smp_edu',$smp_edu)->with('sma_extra',$sma_extra)->with('sma_partners',$sma_partners)
             ->with('sma_achiev',$sma_achiev)->with('sma_commit',$sma_commit)->with('sma_alumni',$sma_alumni)->with('sma_student',$sma_student)
-            ->with('sma_headmas',$sma_headmas)->with('sma_profile',$sma_profile)->with('sma_edu',$sma_edu);    }
+            ->with('sma_headmas',$sma_headmas)->with('sma_profile',$sma_profile)->with('sma_edu',$sma_edu)->with('dt_blog_all',$dt_blog_all);  
+        }
     }    
 
     public function portal_tk_agenda()
     {
        session_start();
         if(isset($_SESSION['logged_in'])){
+            $dt_blog_all = \DB::table('dt_blog')->where('dt_blog_type', '=', 'all', 'AND', 'dt_blog_for', '=', 'TK')->orderBy('id', 'desc')->paginate(5);
             $dt_blog_all_portal_tk = \DB::table('dt_blog')->where([
                                                                     ['dt_blog_type', '=', 'agenda'],
                                                                     ['dt_blog_for', '=', 'TK']
@@ -1154,8 +1174,10 @@ class Controller extends BaseController
             ->with('smp_achiev',$smp_achiev)->with('smp_commit',$smp_commit)->with('smp_alumni',$smp_alumni)->with('smp_student',$smp_student)
             ->with('smp_headmas',$smp_headmas)->with('smp_profile',$smp_profile)->with('smp_edu',$smp_edu)->with('sma_extra',$sma_extra)->with('sma_partners',$sma_partners)
             ->with('sma_achiev',$sma_achiev)->with('sma_commit',$sma_commit)->with('sma_alumni',$sma_alumni)->with('sma_student',$sma_student)
-            ->with('sma_headmas',$sma_headmas)->with('sma_profile',$sma_profile)->with('sma_edu',$sma_edu);    }
+            ->with('sma_headmas',$sma_headmas)->with('sma_profile',$sma_profile)->with('sma_edu',$sma_edu)->with('dt_blog_all',$dt_blog_all);    
+        }
         else{
+            $dt_blog_all = \DB::table('dt_blog')->where('dt_blog_type', '=', 'all', 'AND', 'dt_blog_for', '=', 'TK')->orderBy('id', 'desc')->paginate(5);
             $dt_blog_all_portal_tk = \DB::table('dt_blog')->where([
                                                                     ['dt_blog_type', '=', 'agenda'],
                                                                     ['dt_blog_for', '=', 'TK']
@@ -1249,13 +1271,15 @@ class Controller extends BaseController
             ->with('smp_achiev',$smp_achiev)->with('smp_commit',$smp_commit)->with('smp_alumni',$smp_alumni)->with('smp_student',$smp_student)
             ->with('smp_headmas',$smp_headmas)->with('smp_profile',$smp_profile)->with('smp_edu',$smp_edu)->with('sma_extra',$sma_extra)->with('sma_partners',$sma_partners)
             ->with('sma_achiev',$sma_achiev)->with('sma_commit',$sma_commit)->with('sma_alumni',$sma_alumni)->with('sma_student',$sma_student)
-            ->with('sma_headmas',$sma_headmas)->with('sma_profile',$sma_profile)->with('sma_edu',$sma_edu);    }
+            ->with('sma_headmas',$sma_headmas)->with('sma_profile',$sma_profile)->with('sma_edu',$sma_edu)->with('dt_blog_all',$dt_blog_all);    
+        }
     }
 
     public function portal_tk_announcement()
     {
        session_start();
         if(isset($_SESSION['logged_in'])){
+            $dt_blog_all = \DB::table('dt_blog')->where('dt_blog_type', '=', 'all', 'AND', 'dt_blog_for', '=', 'TK')->orderBy('id', 'desc')->paginate(5);
             $dt_blog_all_portal_tk = \DB::table('dt_blog')->where([
                                                                     ['dt_blog_type', '=', 'announcement'],
                                                                     ['dt_blog_for', '=', 'TK']
@@ -1349,8 +1373,9 @@ class Controller extends BaseController
             ->with('smp_achiev',$smp_achiev)->with('smp_commit',$smp_commit)->with('smp_alumni',$smp_alumni)->with('smp_student',$smp_student)
             ->with('smp_headmas',$smp_headmas)->with('smp_profile',$smp_profile)->with('smp_edu',$smp_edu)->with('sma_extra',$sma_extra)->with('sma_partners',$sma_partners)
             ->with('sma_achiev',$sma_achiev)->with('sma_commit',$sma_commit)->with('sma_alumni',$sma_alumni)->with('sma_student',$sma_student)
-            ->with('sma_headmas',$sma_headmas)->with('sma_profile',$sma_profile)->with('sma_edu',$sma_edu);    }
+            ->with('sma_headmas',$sma_headmas)->with('sma_profile',$sma_profile)->with('sma_edu',$sma_edu)->with('dt_blog_all',$dt_blog_all);    }
         else{
+            $dt_blog_all = \DB::table('dt_blog')->where('dt_blog_type', '=', 'all', 'AND', 'dt_blog_for', '=', 'TK')->orderBy('id', 'desc')->paginate(5);
             $dt_blog_all_portal_tk = \DB::table('dt_blog')->where([
                                                                     ['dt_blog_type', '=', 'announcement'],
                                                                     ['dt_blog_for', '=', 'TK']
@@ -1444,13 +1469,14 @@ class Controller extends BaseController
             ->with('smp_achiev',$smp_achiev)->with('smp_commit',$smp_commit)->with('smp_alumni',$smp_alumni)->with('smp_student',$smp_student)
             ->with('smp_headmas',$smp_headmas)->with('smp_profile',$smp_profile)->with('smp_edu',$smp_edu)->with('sma_extra',$sma_extra)->with('sma_partners',$sma_partners)
             ->with('sma_achiev',$sma_achiev)->with('sma_commit',$sma_commit)->with('sma_alumni',$sma_alumni)->with('sma_student',$sma_student)
-            ->with('sma_headmas',$sma_headmas)->with('sma_profile',$sma_profile)->with('sma_edu',$sma_edu);    }
+            ->with('sma_headmas',$sma_headmas)->with('sma_profile',$sma_profile)->with('sma_edu',$sma_edu)->with('dt_blog_all',$dt_blog_all);    }
     }    
     
     public function portal_tk_article()
     {
        session_start();
         if(isset($_SESSION['logged_in'])){
+            $dt_blog_all = \DB::table('dt_blog')->where('dt_blog_type', '=', 'all', 'AND', 'dt_blog_for', '=', 'TK')->orderBy('id', 'desc')->paginate(5);
             $dt_blog_all_portal_tk = \DB::table('dt_blog')->where([
                                                                     ['dt_blog_type', '=', 'article'],
                                                                     ['dt_blog_for', '=', 'TK']
@@ -1544,8 +1570,9 @@ class Controller extends BaseController
             ->with('smp_achiev',$smp_achiev)->with('smp_commit',$smp_commit)->with('smp_alumni',$smp_alumni)->with('smp_student',$smp_student)
             ->with('smp_headmas',$smp_headmas)->with('smp_profile',$smp_profile)->with('smp_edu',$smp_edu)->with('sma_extra',$sma_extra)->with('sma_partners',$sma_partners)
             ->with('sma_achiev',$sma_achiev)->with('sma_commit',$sma_commit)->with('sma_alumni',$sma_alumni)->with('sma_student',$sma_student)
-            ->with('sma_headmas',$sma_headmas)->with('sma_profile',$sma_profile)->with('sma_edu',$sma_edu);    }
+            ->with('sma_headmas',$sma_headmas)->with('sma_profile',$sma_profile)->with('sma_edu',$sma_edu)->with('dt_blog_all',$dt_blog_all);    }
         else{
+            $dt_blog_all = \DB::table('dt_blog')->where('dt_blog_type', '=', 'all', 'AND', 'dt_blog_for', '=', 'TK')->orderBy('id', 'desc')->paginate(5);
             $dt_blog_all_portal_tk = \DB::table('dt_blog')->where([
                                                                     ['dt_blog_type', '=', 'article'],
                                                                     ['dt_blog_for', '=', 'TK']
@@ -1639,7 +1666,7 @@ class Controller extends BaseController
             ->with('smp_achiev',$smp_achiev)->with('smp_commit',$smp_commit)->with('smp_alumni',$smp_alumni)->with('smp_student',$smp_student)
             ->with('smp_headmas',$smp_headmas)->with('smp_profile',$smp_profile)->with('smp_edu',$smp_edu)->with('sma_extra',$sma_extra)->with('sma_partners',$sma_partners)
             ->with('sma_achiev',$sma_achiev)->with('sma_commit',$sma_commit)->with('sma_alumni',$sma_alumni)->with('sma_student',$sma_student)
-            ->with('sma_headmas',$sma_headmas)->with('sma_profile',$sma_profile)->with('sma_edu',$sma_edu);    }
+            ->with('sma_headmas',$sma_headmas)->with('sma_profile',$sma_profile)->with('sma_edu',$sma_edu)->with('dt_blog_all',$dt_blog_all);    }
     }    
 
 
@@ -1647,6 +1674,7 @@ class Controller extends BaseController
     {
        session_start();
         if(isset($_SESSION['logged_in'])){
+            $dt_blog_all = \DB::table('dt_blog')->where('dt_blog_for', '=', 'SD')->orderBy('id', 'desc')->paginate(5);
             $dt_blog_all_portal_sd = \DB::table('dt_blog')->where('dt_blog_for', '=', 'SD')->orderBy('id', 'desc')->paginate(6);
             $news = \DB::table('dt_blog')->where([
                                                                     ['dt_blog_type', '=', 'news'],
@@ -1737,8 +1765,10 @@ class Controller extends BaseController
             ->with('smp_achiev',$smp_achiev)->with('smp_commit',$smp_commit)->with('smp_alumni',$smp_alumni)->with('smp_student',$smp_student)
             ->with('smp_headmas',$smp_headmas)->with('smp_profile',$smp_profile)->with('smp_edu',$smp_edu)->with('sma_extra',$sma_extra)->with('sma_partners',$sma_partners)
             ->with('sma_achiev',$sma_achiev)->with('sma_commit',$sma_commit)->with('sma_alumni',$sma_alumni)->with('sma_student',$sma_student)
-            ->with('sma_headmas',$sma_headmas)->with('sma_profile',$sma_profile)->with('sma_edu',$sma_edu);    }
+            ->with('sma_headmas',$sma_headmas)->with('sma_profile',$sma_profile)->with('sma_edu',$sma_edu)->with('dt_blog_all',$dt_blog_all);    
+        }
         else{
+            $dt_blog_all = \DB::table('dt_blog')->where('dt_blog_for', '=', 'SD')->orderBy('id', 'desc')->paginate(5);
             $dt_blog_all_portal_sd = \DB::table('dt_blog')->where('dt_blog_for', '=', 'SD')->orderBy('id', 'desc')->paginate(6);
             $news = \DB::table('dt_blog')->where([
                                                                     ['dt_blog_type', '=', 'news'],
@@ -1829,13 +1859,15 @@ class Controller extends BaseController
             ->with('smp_achiev',$smp_achiev)->with('smp_commit',$smp_commit)->with('smp_alumni',$smp_alumni)->with('smp_student',$smp_student)
             ->with('smp_headmas',$smp_headmas)->with('smp_profile',$smp_profile)->with('smp_edu',$smp_edu)->with('sma_extra',$sma_extra)->with('sma_partners',$sma_partners)
             ->with('sma_achiev',$sma_achiev)->with('sma_commit',$sma_commit)->with('sma_alumni',$sma_alumni)->with('sma_student',$sma_student)
-            ->with('sma_headmas',$sma_headmas)->with('sma_profile',$sma_profile)->with('sma_edu',$sma_edu);    }
+            ->with('sma_headmas',$sma_headmas)->with('sma_profile',$sma_profile)->with('sma_edu',$sma_edu)->with('dt_blog_all',$dt_blog_all);    
+        }
     }
 
         public function portal_sd_all()
     {
        session_start();
         if(isset($_SESSION['logged_in'])){
+            $dt_blog_all = \DB::table('dt_blog')->where('dt_blog_for', '=', 'SD')->orderBy('id', 'desc')->paginate(5);
             $dt_blog_all_portal_sd = \DB::table('dt_blog')->where('dt_blog_type', '=', 'all', 'AND', 'dt_blog_for', '=', 'sd')->orderBy('id', 'desc')->paginate(6);
             $news = \DB::table('dt_blog')->where([
                                                                     ['dt_blog_type', '=', 'news'],
@@ -1926,8 +1958,10 @@ class Controller extends BaseController
             ->with('smp_achiev',$smp_achiev)->with('smp_commit',$smp_commit)->with('smp_alumni',$smp_alumni)->with('smp_student',$smp_student)
             ->with('smp_headmas',$smp_headmas)->with('smp_profile',$smp_profile)->with('smp_edu',$smp_edu)->with('sma_extra',$sma_extra)->with('sma_partners',$sma_partners)
             ->with('sma_achiev',$sma_achiev)->with('sma_commit',$sma_commit)->with('sma_alumni',$sma_alumni)->with('sma_student',$sma_student)
-            ->with('sma_headmas',$sma_headmas)->with('sma_profile',$sma_profile)->with('sma_edu',$sma_edu);    }
+            ->with('sma_headmas',$sma_headmas)->with('sma_profile',$sma_profile)->with('sma_edu',$sma_edu)->with('dt_blog_all',$dt_blog_all);    
+        }
         else{
+            $dt_blog_all = \DB::table('dt_blog')->where('dt_blog_for', '=', 'SD')->orderBy('id', 'desc')->paginate(5);
             $dt_blog_all_portal_sd = \DB::table('dt_blog')->where('dt_blog_type', '=', 'all', 'AND', 'dt_blog_for', '=', 'sd')->orderBy('id', 'desc')->paginate(6);
             $news = \DB::table('dt_blog')->where([
                                                                     ['dt_blog_type', '=', 'news'],
@@ -2018,13 +2052,15 @@ class Controller extends BaseController
             ->with('smp_achiev',$smp_achiev)->with('smp_commit',$smp_commit)->with('smp_alumni',$smp_alumni)->with('smp_student',$smp_student)
             ->with('smp_headmas',$smp_headmas)->with('smp_profile',$smp_profile)->with('smp_edu',$smp_edu)->with('sma_extra',$sma_extra)->with('sma_partners',$sma_partners)
             ->with('sma_achiev',$sma_achiev)->with('sma_commit',$sma_commit)->with('sma_alumni',$sma_alumni)->with('sma_student',$sma_student)
-            ->with('sma_headmas',$sma_headmas)->with('sma_profile',$sma_profile)->with('sma_edu',$sma_edu);    }
+            ->with('sma_headmas',$sma_headmas)->with('sma_profile',$sma_profile)->with('sma_edu',$sma_edu)->with('dt_blog_all',$dt_blog_all);    
+        }
     }    
 
     public function portal_sd_news()
     {
        session_start();
         if(isset($_SESSION['logged_in'])){
+            $dt_blog_all = \DB::table('dt_blog')->where('dt_blog_for', '=', 'SD')->orderBy('id', 'desc')->paginate(5);
             $dt_blog_all_portal_sd = \DB::table('dt_blog')->where([
                                                                     ['dt_blog_type', '=', 'news'],
                                                                     ['dt_blog_for', '=', 'sd']
@@ -2118,8 +2154,10 @@ class Controller extends BaseController
             ->with('smp_achiev',$smp_achiev)->with('smp_commit',$smp_commit)->with('smp_alumni',$smp_alumni)->with('smp_student',$smp_student)
             ->with('smp_headmas',$smp_headmas)->with('smp_profile',$smp_profile)->with('smp_edu',$smp_edu)->with('sma_extra',$sma_extra)->with('sma_partners',$sma_partners)
             ->with('sma_achiev',$sma_achiev)->with('sma_commit',$sma_commit)->with('sma_alumni',$sma_alumni)->with('sma_student',$sma_student)
-            ->with('sma_headmas',$sma_headmas)->with('sma_profile',$sma_profile)->with('sma_edu',$sma_edu);    }
+            ->with('sma_headmas',$sma_headmas)->with('sma_profile',$sma_profile)->with('sma_edu',$sma_edu)->with('dt_blog_all',$dt_blog_all);    
+        }
         else{
+            $dt_blog_all = \DB::table('dt_blog')->where('dt_blog_for', '=', 'SD')->orderBy('id', 'desc')->paginate(5);
             $dt_blog_all_portal_sd = \DB::table('dt_blog')->where([
                                                                     ['dt_blog_type', '=', 'news'],
                                                                     ['dt_blog_for', '=', 'sd']
@@ -2213,13 +2251,15 @@ class Controller extends BaseController
             ->with('smp_achiev',$smp_achiev)->with('smp_commit',$smp_commit)->with('smp_alumni',$smp_alumni)->with('smp_student',$smp_student)
             ->with('smp_headmas',$smp_headmas)->with('smp_profile',$smp_profile)->with('smp_edu',$smp_edu)->with('sma_extra',$sma_extra)->with('sma_partners',$sma_partners)
             ->with('sma_achiev',$sma_achiev)->with('sma_commit',$sma_commit)->with('sma_alumni',$sma_alumni)->with('sma_student',$sma_student)
-            ->with('sma_headmas',$sma_headmas)->with('sma_profile',$sma_profile)->with('sma_edu',$sma_edu);    }
+            ->with('sma_headmas',$sma_headmas)->with('sma_profile',$sma_profile)->with('sma_edu',$sma_edu)->with('dt_blog_all',$dt_blog_all);    
+        }
     }    
 
     public function portal_sd_agenda()
     {
        session_start();
         if(isset($_SESSION['logged_in'])){
+            $dt_blog_all = \DB::table('dt_blog')->where('dt_blog_for', '=', 'SD')->orderBy('id', 'desc')->paginate(5);
             $dt_blog_all_portal_sd = \DB::table('dt_blog')->where([
                                                                     ['dt_blog_type', '=', 'agenda'],
                                                                     ['dt_blog_for', '=', 'sd']
@@ -2313,8 +2353,10 @@ class Controller extends BaseController
             ->with('smp_achiev',$smp_achiev)->with('smp_commit',$smp_commit)->with('smp_alumni',$smp_alumni)->with('smp_student',$smp_student)
             ->with('smp_headmas',$smp_headmas)->with('smp_profile',$smp_profile)->with('smp_edu',$smp_edu)->with('sma_extra',$sma_extra)->with('sma_partners',$sma_partners)
             ->with('sma_achiev',$sma_achiev)->with('sma_commit',$sma_commit)->with('sma_alumni',$sma_alumni)->with('sma_student',$sma_student)
-            ->with('sma_headmas',$sma_headmas)->with('sma_profile',$sma_profile)->with('sma_edu',$sma_edu);    }
+            ->with('sma_headmas',$sma_headmas)->with('sma_profile',$sma_profile)->with('sma_edu',$sma_edu)->with('dt_blog_all',$dt_blog_all);    
+        }
         else{
+            $dt_blog_all = \DB::table('dt_blog')->where('dt_blog_for', '=', 'SD')->orderBy('id', 'desc')->paginate(5);
             $dt_blog_all_portal_sd = \DB::table('dt_blog')->where([
                                                                     ['dt_blog_type', '=', 'agenda'],
                                                                     ['dt_blog_for', '=', 'sd']
@@ -2408,13 +2450,15 @@ class Controller extends BaseController
             ->with('smp_achiev',$smp_achiev)->with('smp_commit',$smp_commit)->with('smp_alumni',$smp_alumni)->with('smp_student',$smp_student)
             ->with('smp_headmas',$smp_headmas)->with('smp_profile',$smp_profile)->with('smp_edu',$smp_edu)->with('sma_extra',$sma_extra)->with('sma_partners',$sma_partners)
             ->with('sma_achiev',$sma_achiev)->with('sma_commit',$sma_commit)->with('sma_alumni',$sma_alumni)->with('sma_student',$sma_student)
-            ->with('sma_headmas',$sma_headmas)->with('sma_profile',$sma_profile)->with('sma_edu',$sma_edu);    }
+            ->with('sma_headmas',$sma_headmas)->with('sma_profile',$sma_profile)->with('sma_edu',$sma_edu)->with('dt_blog_all',$dt_blog_all);    
+        }
     }
 
     public function portal_sd_announcement()
     {
        session_start();
         if(isset($_SESSION['logged_in'])){
+            $dt_blog_all = \DB::table('dt_blog')->where('dt_blog_for', '=', 'SD')->orderBy('id', 'desc')->paginate(5);
             $dt_blog_all_portal_sd = \DB::table('dt_blog')->where([
                                                                     ['dt_blog_type', '=', 'announcement'],
                                                                     ['dt_blog_for', '=', 'sd']
@@ -2508,8 +2552,10 @@ class Controller extends BaseController
             ->with('smp_achiev',$smp_achiev)->with('smp_commit',$smp_commit)->with('smp_alumni',$smp_alumni)->with('smp_student',$smp_student)
             ->with('smp_headmas',$smp_headmas)->with('smp_profile',$smp_profile)->with('smp_edu',$smp_edu)->with('sma_extra',$sma_extra)->with('sma_partners',$sma_partners)
             ->with('sma_achiev',$sma_achiev)->with('sma_commit',$sma_commit)->with('sma_alumni',$sma_alumni)->with('sma_student',$sma_student)
-            ->with('sma_headmas',$sma_headmas)->with('sma_profile',$sma_profile)->with('sma_edu',$sma_edu);    }
+            ->with('sma_headmas',$sma_headmas)->with('sma_profile',$sma_profile)->with('sma_edu',$sma_edu)->with('dt_blog_all',$dt_blog_all);    
+        }
         else{
+            $dt_blog_all = \DB::table('dt_blog')->where('dt_blog_for', '=', 'SD')->orderBy('id', 'desc')->paginate(5);
             $dt_blog_all_portal_sd = \DB::table('dt_blog')->where([
                                                                     ['dt_blog_type', '=', 'announcement'],
                                                                     ['dt_blog_for', '=', 'sd']
@@ -2603,13 +2649,15 @@ class Controller extends BaseController
             ->with('smp_achiev',$smp_achiev)->with('smp_commit',$smp_commit)->with('smp_alumni',$smp_alumni)->with('smp_student',$smp_student)
             ->with('smp_headmas',$smp_headmas)->with('smp_profile',$smp_profile)->with('smp_edu',$smp_edu)->with('sma_extra',$sma_extra)->with('sma_partners',$sma_partners)
             ->with('sma_achiev',$sma_achiev)->with('sma_commit',$sma_commit)->with('sma_alumni',$sma_alumni)->with('sma_student',$sma_student)
-            ->with('sma_headmas',$sma_headmas)->with('sma_profile',$sma_profile)->with('sma_edu',$sma_edu);    }
+            ->with('sma_headmas',$sma_headmas)->with('sma_profile',$sma_profile)->with('sma_edu',$sma_edu)->with('dt_blog_all',$dt_blog_all);    
+        }
     }    
     
     public function portal_sd_article()
     {
        session_start();
         if(isset($_SESSION['logged_in'])){
+            $dt_blog_all = \DB::table('dt_blog')->where('dt_blog_for', '=', 'SD')->orderBy('id', 'desc')->paginate(5);
             $dt_blog_all_portal_sd = \DB::table('dt_blog')->where([
                                                                     ['dt_blog_type', '=', 'article'],
                                                                     ['dt_blog_for', '=', 'sd']
@@ -2703,8 +2751,10 @@ class Controller extends BaseController
             ->with('smp_achiev',$smp_achiev)->with('smp_commit',$smp_commit)->with('smp_alumni',$smp_alumni)->with('smp_student',$smp_student)
             ->with('smp_headmas',$smp_headmas)->with('smp_profile',$smp_profile)->with('smp_edu',$smp_edu)->with('sma_extra',$sma_extra)->with('sma_partners',$sma_partners)
             ->with('sma_achiev',$sma_achiev)->with('sma_commit',$sma_commit)->with('sma_alumni',$sma_alumni)->with('sma_student',$sma_student)
-            ->with('sma_headmas',$sma_headmas)->with('sma_profile',$sma_profile)->with('sma_edu',$sma_edu);    }
+            ->with('sma_headmas',$sma_headmas)->with('sma_profile',$sma_profile)->with('sma_edu',$sma_edu)->with('dt_blog_all',$dt_blog_all);    
+        }
         else{
+            $dt_blog_all = \DB::table('dt_blog')->where('dt_blog_for', '=', 'SD')->orderBy('id', 'desc')->paginate(5);
             $dt_blog_all_portal_sd = \DB::table('dt_blog')->where([
                                                                     ['dt_blog_type', '=', 'article'],
                                                                     ['dt_blog_for', '=', 'sd']
@@ -2798,13 +2848,15 @@ class Controller extends BaseController
             ->with('smp_achiev',$smp_achiev)->with('smp_commit',$smp_commit)->with('smp_alumni',$smp_alumni)->with('smp_student',$smp_student)
             ->with('smp_headmas',$smp_headmas)->with('smp_profile',$smp_profile)->with('smp_edu',$smp_edu)->with('sma_extra',$sma_extra)->with('sma_partners',$sma_partners)
             ->with('sma_achiev',$sma_achiev)->with('sma_commit',$sma_commit)->with('sma_alumni',$sma_alumni)->with('sma_student',$sma_student)
-            ->with('sma_headmas',$sma_headmas)->with('sma_profile',$sma_profile)->with('sma_edu',$sma_edu);    }
+            ->with('sma_headmas',$sma_headmas)->with('sma_profile',$sma_profile)->with('sma_edu',$sma_edu)->with('dt_blog_all',$dt_blog_all);    
+        }
     }  
 
     public function portal_smp()
     {
        session_start();
         if(isset($_SESSION['logged_in'])){
+            $dt_blog_all = \DB::table('dt_blog')->where('dt_blog_for', '=', 'SMP')->orderBy('id', 'desc')->paginate(5);
             $dt_blog_portal_smp = \DB::table('dt_blog')->where('dt_blog_for', '=', 'SMP')->orderBy('id', 'desc')->paginate(6);
             $news = \DB::table('dt_blog')->where([
                                                                     ['dt_blog_type', '=', 'news'],
@@ -2895,8 +2947,10 @@ class Controller extends BaseController
             ->with('smp_achiev',$smp_achiev)->with('smp_commit',$smp_commit)->with('smp_alumni',$smp_alumni)->with('smp_student',$smp_student)
             ->with('smp_headmas',$smp_headmas)->with('smp_profile',$smp_profile)->with('smp_edu',$smp_edu)->with('sma_extra',$sma_extra)->with('sma_partners',$sma_partners)
             ->with('sma_achiev',$sma_achiev)->with('sma_commit',$sma_commit)->with('sma_alumni',$sma_alumni)->with('sma_student',$sma_student)
-            ->with('sma_headmas',$sma_headmas)->with('sma_profile',$sma_profile)->with('sma_edu',$sma_edu);    }
+            ->with('sma_headmas',$sma_headmas)->with('sma_profile',$sma_profile)->with('sma_edu',$sma_edu)->with('dt_blog_all',$dt_blog_all);    
+        }
         else{
+            $dt_blog_all = \DB::table('dt_blog')->where('dt_blog_for', '=', 'SMP')->orderBy('id', 'desc')->paginate(5);
             $dt_blog_portal_smp = \DB::table('dt_blog')->where('dt_blog_for', '=', 'smp')->orderBy('id', 'desc')->paginate(6);
             $news = \DB::table('dt_blog')->where([
                                                                     ['dt_blog_type', '=', 'news'],
@@ -2987,13 +3041,15 @@ class Controller extends BaseController
             ->with('smp_achiev',$smp_achiev)->with('smp_commit',$smp_commit)->with('smp_alumni',$smp_alumni)->with('smp_student',$smp_student)
             ->with('smp_headmas',$smp_headmas)->with('smp_profile',$smp_profile)->with('smp_edu',$smp_edu)->with('sma_extra',$sma_extra)->with('sma_partners',$sma_partners)
             ->with('sma_achiev',$sma_achiev)->with('sma_commit',$sma_commit)->with('sma_alumni',$sma_alumni)->with('sma_student',$sma_student)
-            ->with('sma_headmas',$sma_headmas)->with('sma_profile',$sma_profile)->with('sma_edu',$sma_edu);    }
+            ->with('sma_headmas',$sma_headmas)->with('sma_profile',$sma_profile)->with('sma_edu',$sma_edu)->with('dt_blog_all',$dt_blog_all);    
+        }
     }
 
         public function portal_smp_all()
     {
        session_start();
         if(isset($_SESSION['logged_in'])){
+            $dt_blog_all = \DB::table('dt_blog')->where('dt_blog_for', '=', 'SMP')->orderBy('id', 'desc')->paginate(5);
             $dt_blog_all_portal_smp = \DB::table('dt_blog')->where('dt_blog_type', '=', 'all', 'AND', 'dt_blog_for', '=', 'smp')->orderBy('id', 'desc')->paginate(6);
             $news = \DB::table('dt_blog')->where([
                                                                     ['dt_blog_type', '=', 'news'],
@@ -3084,8 +3140,10 @@ class Controller extends BaseController
             ->with('smp_achiev',$smp_achiev)->with('smp_commit',$smp_commit)->with('smp_alumni',$smp_alumni)->with('smp_student',$smp_student)
             ->with('smp_headmas',$smp_headmas)->with('smp_profile',$smp_profile)->with('smp_edu',$smp_edu)->with('sma_extra',$sma_extra)->with('sma_partners',$sma_partners)
             ->with('sma_achiev',$sma_achiev)->with('sma_commit',$sma_commit)->with('sma_alumni',$sma_alumni)->with('sma_student',$sma_student)
-            ->with('sma_headmas',$sma_headmas)->with('sma_profile',$sma_profile)->with('sma_edu',$sma_edu);    }
+            ->with('sma_headmas',$sma_headmas)->with('sma_profile',$sma_profile)->with('sma_edu',$sma_edu)->with('dt_blog_all',$dt_blog_all);    
+        }
         else{
+            $dt_blog_all = \DB::table('dt_blog')->where('dt_blog_for', '=', 'SMP')->orderBy('id', 'desc')->paginate(5);
             $dt_blog_all_portal_smp = \DB::table('dt_blog')->where('dt_blog_type', '=', 'all', 'AND', 'dt_blog_for', '=', 'smp')->orderBy('id', 'desc')->paginate(6);
             $news = \DB::table('dt_blog')->where([
                                                                     ['dt_blog_type', '=', 'news'],
@@ -3176,13 +3234,15 @@ class Controller extends BaseController
             ->with('smp_achiev',$smp_achiev)->with('smp_commit',$smp_commit)->with('smp_alumni',$smp_alumni)->with('smp_student',$smp_student)
             ->with('smp_headmas',$smp_headmas)->with('smp_profile',$smp_profile)->with('smp_edu',$smp_edu)->with('sma_extra',$sma_extra)->with('sma_partners',$sma_partners)
             ->with('sma_achiev',$sma_achiev)->with('sma_commit',$sma_commit)->with('sma_alumni',$sma_alumni)->with('sma_student',$sma_student)
-            ->with('sma_headmas',$sma_headmas)->with('sma_profile',$sma_profile)->with('sma_edu',$sma_edu);    }
+            ->with('sma_headmas',$sma_headmas)->with('sma_profile',$sma_profile)->with('sma_edu',$sma_edu)->with('dt_blog_all',$dt_blog_all);    
+        }
     }    
 
     public function portal_smp_news()
     {
        session_start();
         if(isset($_SESSION['logged_in'])){
+            $dt_blog_all = \DB::table('dt_blog')->where('dt_blog_for', '=', 'SMP')->orderBy('id', 'desc')->paginate(5);
             $dt_blog_all_portal_smp = \DB::table('dt_blog')->where([
                                                                     ['dt_blog_type', '=', 'news'],
                                                                     ['dt_blog_for', '=', 'smp']
@@ -3276,8 +3336,10 @@ class Controller extends BaseController
             ->with('smp_achiev',$smp_achiev)->with('smp_commit',$smp_commit)->with('smp_alumni',$smp_alumni)->with('smp_student',$smp_student)
             ->with('smp_headmas',$smp_headmas)->with('smp_profile',$smp_profile)->with('smp_edu',$smp_edu)->with('sma_extra',$sma_extra)->with('sma_partners',$sma_partners)
             ->with('sma_achiev',$sma_achiev)->with('sma_commit',$sma_commit)->with('sma_alumni',$sma_alumni)->with('sma_student',$sma_student)
-            ->with('sma_headmas',$sma_headmas)->with('sma_profile',$sma_profile)->with('sma_edu',$sma_edu);    }
+            ->with('sma_headmas',$sma_headmas)->with('sma_profile',$sma_profile)->with('sma_edu',$sma_edu)->with('dt_blog_all',$dt_blog_all);    
+        }
         else{
+            $dt_blog_all = \DB::table('dt_blog')->where('dt_blog_for', '=', 'SMP')->orderBy('id', 'desc')->paginate(5);
             $dt_blog_all_portal_smp = \DB::table('dt_blog')->where([
                                                                     ['dt_blog_type', '=', 'news'],
                                                                     ['dt_blog_for', '=', 'smp']
@@ -3371,13 +3433,15 @@ class Controller extends BaseController
             ->with('smp_achiev',$smp_achiev)->with('smp_commit',$smp_commit)->with('smp_alumni',$smp_alumni)->with('smp_student',$smp_student)
             ->with('smp_headmas',$smp_headmas)->with('smp_profile',$smp_profile)->with('smp_edu',$smp_edu)->with('sma_extra',$sma_extra)->with('sma_partners',$sma_partners)
             ->with('sma_achiev',$sma_achiev)->with('sma_commit',$sma_commit)->with('sma_alumni',$sma_alumni)->with('sma_student',$sma_student)
-            ->with('sma_headmas',$sma_headmas)->with('sma_profile',$sma_profile)->with('sma_edu',$sma_edu);    }
+            ->with('sma_headmas',$sma_headmas)->with('sma_profile',$sma_profile)->with('sma_edu',$sma_edu)->with('dt_blog_all',$dt_blog_all);    
+        }
     }    
 
     public function portal_smp_agenda()
     {
        session_start();
         if(isset($_SESSION['logged_in'])){
+            $dt_blog_all = \DB::table('dt_blog')->where('dt_blog_for', '=', 'SMP')->orderBy('id', 'desc')->paginate(5);
             $dt_blog_all_portal_smp = \DB::table('dt_blog')->where([
                                                                     ['dt_blog_type', '=', 'agenda'],
                                                                     ['dt_blog_for', '=', 'smp']
@@ -3471,8 +3535,10 @@ class Controller extends BaseController
             ->with('smp_achiev',$smp_achiev)->with('smp_commit',$smp_commit)->with('smp_alumni',$smp_alumni)->with('smp_student',$smp_student)
             ->with('smp_headmas',$smp_headmas)->with('smp_profile',$smp_profile)->with('smp_edu',$smp_edu)->with('sma_extra',$sma_extra)->with('sma_partners',$sma_partners)
             ->with('sma_achiev',$sma_achiev)->with('sma_commit',$sma_commit)->with('sma_alumni',$sma_alumni)->with('sma_student',$sma_student)
-            ->with('sma_headmas',$sma_headmas)->with('sma_profile',$sma_profile)->with('sma_edu',$sma_edu);    }
+            ->with('sma_headmas',$sma_headmas)->with('sma_profile',$sma_profile)->with('sma_edu',$sma_edu)->with('dt_blog_all',$dt_blog_all);    
+        }
         else{
+            $dt_blog_all = \DB::table('dt_blog')->where('dt_blog_for', '=', 'SMP')->orderBy('id', 'desc')->paginate(5);
             $dt_blog_all_portal_smp = \DB::table('dt_blog')->where([
                                                                     ['dt_blog_type', '=', 'agenda'],
                                                                     ['dt_blog_for', '=', 'smp']
@@ -3566,13 +3632,15 @@ class Controller extends BaseController
             ->with('smp_achiev',$smp_achiev)->with('smp_commit',$smp_commit)->with('smp_alumni',$smp_alumni)->with('smp_student',$smp_student)
             ->with('smp_headmas',$smp_headmas)->with('smp_profile',$smp_profile)->with('smp_edu',$smp_edu)->with('sma_extra',$sma_extra)->with('sma_partners',$sma_partners)
             ->with('sma_achiev',$sma_achiev)->with('sma_commit',$sma_commit)->with('sma_alumni',$sma_alumni)->with('sma_student',$sma_student)
-            ->with('sma_headmas',$sma_headmas)->with('sma_profile',$sma_profile)->with('sma_edu',$sma_edu);    }
+            ->with('sma_headmas',$sma_headmas)->with('sma_profile',$sma_profile)->with('sma_edu',$sma_edu)->with('dt_blog_all',$dt_blog_all);    
+        }
     }
 
     public function portal_smp_announcement()
     {
        session_start();
         if(isset($_SESSION['logged_in'])){
+            $dt_blog_all = \DB::table('dt_blog')->where('dt_blog_for', '=', 'SMP')->orderBy('id', 'desc')->paginate(5);
             $dt_blog_all_portal_smp = \DB::table('dt_blog')->where([
                                                                     ['dt_blog_type', '=', 'announcement'],
                                                                     ['dt_blog_for', '=', 'smp']
@@ -3666,8 +3734,10 @@ class Controller extends BaseController
             ->with('smp_achiev',$smp_achiev)->with('smp_commit',$smp_commit)->with('smp_alumni',$smp_alumni)->with('smp_student',$smp_student)
             ->with('smp_headmas',$smp_headmas)->with('smp_profile',$smp_profile)->with('smp_edu',$smp_edu)->with('sma_extra',$sma_extra)->with('sma_partners',$sma_partners)
             ->with('sma_achiev',$sma_achiev)->with('sma_commit',$sma_commit)->with('sma_alumni',$sma_alumni)->with('sma_student',$sma_student)
-            ->with('sma_headmas',$sma_headmas)->with('sma_profile',$sma_profile)->with('sma_edu',$sma_edu);    }
+            ->with('sma_headmas',$sma_headmas)->with('sma_profile',$sma_profile)->with('sma_edu',$sma_edu)->with('dt_blog_all',$dt_blog_all);    
+        }
         else{
+            $dt_blog_all = \DB::table('dt_blog')->where('dt_blog_for', '=', 'SMP')->orderBy('id', 'desc')->paginate(5);
             $dt_blog_all_portal_smp = \DB::table('dt_blog')->where([
                                                                     ['dt_blog_type', '=', 'announcement'],
                                                                     ['dt_blog_for', '=', 'smp']
@@ -3761,13 +3831,15 @@ class Controller extends BaseController
             ->with('smp_achiev',$smp_achiev)->with('smp_commit',$smp_commit)->with('smp_alumni',$smp_alumni)->with('smp_student',$smp_student)
             ->with('smp_headmas',$smp_headmas)->with('smp_profile',$smp_profile)->with('smp_edu',$smp_edu)->with('sma_extra',$sma_extra)->with('sma_partners',$sma_partners)
             ->with('sma_achiev',$sma_achiev)->with('sma_commit',$sma_commit)->with('sma_alumni',$sma_alumni)->with('sma_student',$sma_student)
-            ->with('sma_headmas',$sma_headmas)->with('sma_profile',$sma_profile)->with('sma_edu',$sma_edu);    }
+            ->with('sma_headmas',$sma_headmas)->with('sma_profile',$sma_profile)->with('sma_edu',$sma_edu)->with('dt_blog_all',$dt_blog_all);    
+        }
     }    
     
     public function portal_smp_article()
     {
        session_start();
         if(isset($_SESSION['logged_in'])){
+            $dt_blog_all = \DB::table('dt_blog')->where('dt_blog_for', '=', 'SMP')->orderBy('id', 'desc')->paginate(5);
             $dt_blog_all_portal_smp = \DB::table('dt_blog')->where([
                                                                     ['dt_blog_type', '=', 'article'],
                                                                     ['dt_blog_for', '=', 'smp']
@@ -3861,8 +3933,10 @@ class Controller extends BaseController
             ->with('smp_achiev',$smp_achiev)->with('smp_commit',$smp_commit)->with('smp_alumni',$smp_alumni)->with('smp_student',$smp_student)
             ->with('smp_headmas',$smp_headmas)->with('smp_profile',$smp_profile)->with('smp_edu',$smp_edu)->with('sma_extra',$sma_extra)->with('sma_partners',$sma_partners)
             ->with('sma_achiev',$sma_achiev)->with('sma_commit',$sma_commit)->with('sma_alumni',$sma_alumni)->with('sma_student',$sma_student)
-            ->with('sma_headmas',$sma_headmas)->with('sma_profile',$sma_profile)->with('sma_edu',$sma_edu);    }
+            ->with('sma_headmas',$sma_headmas)->with('sma_profile',$sma_profile)->with('sma_edu',$sma_edu)->with('dt_blog_all',$dt_blog_all);    
+        }
         else{
+            $dt_blog_all = \DB::table('dt_blog')->where('dt_blog_for', '=', 'SMP')->orderBy('id', 'desc')->paginate(5);
             $dt_blog_all_portal_smp = \DB::table('dt_blog')->where([
                                                                     ['dt_blog_type', '=', 'article'],
                                                                     ['dt_blog_for', '=', 'smp']
@@ -3956,13 +4030,15 @@ class Controller extends BaseController
             ->with('smp_achiev',$smp_achiev)->with('smp_commit',$smp_commit)->with('smp_alumni',$smp_alumni)->with('smp_student',$smp_student)
             ->with('smp_headmas',$smp_headmas)->with('smp_profile',$smp_profile)->with('smp_edu',$smp_edu)->with('sma_extra',$sma_extra)->with('sma_partners',$sma_partners)
             ->with('sma_achiev',$sma_achiev)->with('sma_commit',$sma_commit)->with('sma_alumni',$sma_alumni)->with('sma_student',$sma_student)
-            ->with('sma_headmas',$sma_headmas)->with('sma_profile',$sma_profile)->with('sma_edu',$sma_edu);    }
+            ->with('sma_headmas',$sma_headmas)->with('sma_profile',$sma_profile)->with('sma_edu',$sma_edu)->with('dt_blog_all',$dt_blog_all);    
+        }
     }  
 
     public function portal_sma()
     {
        session_start();
         if(isset($_SESSION['logged_in'])){
+            $dt_blog_all = \DB::table('dt_blog')->where('dt_blog_for', '=', 'SMA')->orderBy('id', 'desc')->paginate(5);
             $dt_blog_portal_sma = \DB::table('dt_blog')->where('dt_blog_for', '=', 'SMA')->orderBy('id', 'desc')->paginate(6);
             $news = \DB::table('dt_blog')->where([
                                                                     ['dt_blog_type', '=', 'news'],
@@ -4053,8 +4129,10 @@ class Controller extends BaseController
             ->with('smp_achiev',$smp_achiev)->with('smp_commit',$smp_commit)->with('smp_alumni',$smp_alumni)->with('smp_student',$smp_student)
             ->with('smp_headmas',$smp_headmas)->with('smp_profile',$smp_profile)->with('smp_edu',$smp_edu)->with('sma_extra',$sma_extra)->with('sma_partners',$sma_partners)
             ->with('sma_achiev',$sma_achiev)->with('sma_commit',$sma_commit)->with('sma_alumni',$sma_alumni)->with('sma_student',$sma_student)
-            ->with('sma_headmas',$sma_headmas)->with('sma_profile',$sma_profile)->with('sma_edu',$sma_edu);    }
+            ->with('sma_headmas',$sma_headmas)->with('sma_profile',$sma_profile)->with('sma_edu',$sma_edu)->with('dt_blog_all',$dt_blog_all);    
+        }
         else{
+            $dt_blog_all = \DB::table('dt_blog')->where('dt_blog_for', '=', 'SMA')->orderBy('id', 'desc')->paginate(5);
             $dt_blog_portal_sma = \DB::table('dt_blog')->where('dt_blog_for', '=', 'SMA')->orderBy('id', 'desc')->paginate(6);
             $news = \DB::table('dt_blog')->where([
                                                                     ['dt_blog_type', '=', 'news'],
@@ -4145,13 +4223,15 @@ class Controller extends BaseController
             ->with('smp_achiev',$smp_achiev)->with('smp_commit',$smp_commit)->with('smp_alumni',$smp_alumni)->with('smp_student',$smp_student)
             ->with('smp_headmas',$smp_headmas)->with('smp_profile',$smp_profile)->with('smp_edu',$smp_edu)->with('sma_extra',$sma_extra)->with('sma_partners',$sma_partners)
             ->with('sma_achiev',$sma_achiev)->with('sma_commit',$sma_commit)->with('sma_alumni',$sma_alumni)->with('sma_student',$sma_student)
-            ->with('sma_headmas',$sma_headmas)->with('sma_profile',$sma_profile)->with('sma_edu',$sma_edu);    }
+            ->with('sma_headmas',$sma_headmas)->with('sma_profile',$sma_profile)->with('sma_edu',$sma_edu)->with('dt_blog_all',$dt_blog_all);    
+        }
     }
 
         public function portal_sma_all()
     {
        session_start();
         if(isset($_SESSION['logged_in'])){
+            $dt_blog_all = \DB::table('dt_blog')->where('dt_blog_for', '=', 'SMA')->orderBy('id', 'desc')->paginate(5);
             $dt_blog_all_portal_sma = \DB::table('dt_blog')->where('dt_blog_type', '=', 'all', 'AND', 'dt_blog_for', '=', 'sma')->orderBy('id', 'desc')->paginate(6);
             $news = \DB::table('dt_blog')->where([
                                                                     ['dt_blog_type', '=', 'news'],
@@ -4242,8 +4322,10 @@ class Controller extends BaseController
             ->with('smp_achiev',$smp_achiev)->with('smp_commit',$smp_commit)->with('smp_alumni',$smp_alumni)->with('smp_student',$smp_student)
             ->with('smp_headmas',$smp_headmas)->with('smp_profile',$smp_profile)->with('smp_edu',$smp_edu)->with('sma_extra',$sma_extra)->with('sma_partners',$sma_partners)
             ->with('sma_achiev',$sma_achiev)->with('sma_commit',$sma_commit)->with('sma_alumni',$sma_alumni)->with('sma_student',$sma_student)
-            ->with('sma_headmas',$sma_headmas)->with('sma_profile',$sma_profile)->with('sma_edu',$sma_edu);    }
+            ->with('sma_headmas',$sma_headmas)->with('sma_profile',$sma_profile)->with('sma_edu',$sma_edu)->with('dt_blog_all',$dt_blog_all);    
+        }
         else{
+            $dt_blog_all = \DB::table('dt_blog')->where('dt_blog_for', '=', 'SMA')->orderBy('id', 'desc')->paginate(5);
             $dt_blog_all_portal_sma = \DB::table('dt_blog')->where('dt_blog_type', '=', 'all', 'AND', 'dt_blog_for', '=', 'sma')->orderBy('id', 'desc')->paginate(6);
             $news = \DB::table('dt_blog')->where([
                                                                     ['dt_blog_type', '=', 'news'],
@@ -4334,13 +4416,15 @@ class Controller extends BaseController
             ->with('smp_achiev',$smp_achiev)->with('smp_commit',$smp_commit)->with('smp_alumni',$smp_alumni)->with('smp_student',$smp_student)
             ->with('smp_headmas',$smp_headmas)->with('smp_profile',$smp_profile)->with('smp_edu',$smp_edu)->with('sma_extra',$sma_extra)->with('sma_partners',$sma_partners)
             ->with('sma_achiev',$sma_achiev)->with('sma_commit',$sma_commit)->with('sma_alumni',$sma_alumni)->with('sma_student',$sma_student)
-            ->with('sma_headmas',$sma_headmas)->with('sma_profile',$sma_profile)->with('sma_edu',$sma_edu);    }
+            ->with('sma_headmas',$sma_headmas)->with('sma_profile',$sma_profile)->with('sma_edu',$sma_edu)->with('dt_blog_all',$dt_blog_all);    
+        }
     }    
 
     public function portal_sma_news()
     {
        session_start();
         if(isset($_SESSION['logged_in'])){
+            $dt_blog_all = \DB::table('dt_blog')->where('dt_blog_for', '=', 'SMA')->orderBy('id', 'desc')->paginate(5);
             $dt_blog_all_portal_sma = \DB::table('dt_blog')->where([
                                                                     ['dt_blog_type', '=', 'news'],
                                                                     ['dt_blog_for', '=', 'sma']
@@ -4434,8 +4518,10 @@ class Controller extends BaseController
             ->with('smp_achiev',$smp_achiev)->with('smp_commit',$smp_commit)->with('smp_alumni',$smp_alumni)->with('smp_student',$smp_student)
             ->with('smp_headmas',$smp_headmas)->with('smp_profile',$smp_profile)->with('smp_edu',$smp_edu)->with('sma_extra',$sma_extra)->with('sma_partners',$sma_partners)
             ->with('sma_achiev',$sma_achiev)->with('sma_commit',$sma_commit)->with('sma_alumni',$sma_alumni)->with('sma_student',$sma_student)
-            ->with('sma_headmas',$sma_headmas)->with('sma_profile',$sma_profile)->with('sma_edu',$sma_edu);    }
+            ->with('sma_headmas',$sma_headmas)->with('sma_profile',$sma_profile)->with('sma_edu',$sma_edu)->with('dt_blog_all',$dt_blog_all);    
+        }
         else{
+            $dt_blog_all = \DB::table('dt_blog')->where('dt_blog_for', '=', 'SMA')->orderBy('id', 'desc')->paginate(5);
             $dt_blog_all_portal_sma = \DB::table('dt_blog')->where([
                                                                     ['dt_blog_type', '=', 'news'],
                                                                     ['dt_blog_for', '=', 'sma']
@@ -4529,13 +4615,15 @@ class Controller extends BaseController
             ->with('smp_achiev',$smp_achiev)->with('smp_commit',$smp_commit)->with('smp_alumni',$smp_alumni)->with('smp_student',$smp_student)
             ->with('smp_headmas',$smp_headmas)->with('smp_profile',$smp_profile)->with('smp_edu',$smp_edu)->with('sma_extra',$sma_extra)->with('sma_partners',$sma_partners)
             ->with('sma_achiev',$sma_achiev)->with('sma_commit',$sma_commit)->with('sma_alumni',$sma_alumni)->with('sma_student',$sma_student)
-            ->with('sma_headmas',$sma_headmas)->with('sma_profile',$sma_profile)->with('sma_edu',$sma_edu);    }
+            ->with('sma_headmas',$sma_headmas)->with('sma_profile',$sma_profile)->with('sma_edu',$sma_edu)->with('dt_blog_all',$dt_blog_all);    
+        }
     }    
 
     public function portal_sma_agenda()
     {
        session_start();
         if(isset($_SESSION['logged_in'])){
+            $dt_blog_all = \DB::table('dt_blog')->where('dt_blog_for', '=', 'SMA')->orderBy('id', 'desc')->paginate(5);
             $dt_blog_all_portal_sma = \DB::table('dt_blog')->where([
                                                                     ['dt_blog_type', '=', 'agenda'],
                                                                     ['dt_blog_for', '=', 'sma']
@@ -4629,8 +4717,10 @@ class Controller extends BaseController
             ->with('smp_achiev',$smp_achiev)->with('smp_commit',$smp_commit)->with('smp_alumni',$smp_alumni)->with('smp_student',$smp_student)
             ->with('smp_headmas',$smp_headmas)->with('smp_profile',$smp_profile)->with('smp_edu',$smp_edu)->with('sma_extra',$sma_extra)->with('sma_partners',$sma_partners)
             ->with('sma_achiev',$sma_achiev)->with('sma_commit',$sma_commit)->with('sma_alumni',$sma_alumni)->with('sma_student',$sma_student)
-            ->with('sma_headmas',$sma_headmas)->with('sma_profile',$sma_profile)->with('sma_edu',$sma_edu);    }
+            ->with('sma_headmas',$sma_headmas)->with('sma_profile',$sma_profile)->with('sma_edu',$sma_edu)->with('dt_blog_all',$dt_blog_all);    
+        }
         else{
+            $dt_blog_all = \DB::table('dt_blog')->where('dt_blog_for', '=', 'SMA')->orderBy('id', 'desc')->paginate(5);
             $dt_blog_all_portal_sma = \DB::table('dt_blog')->where([
                                                                     ['dt_blog_type', '=', 'agenda'],
                                                                     ['dt_blog_for', '=', 'sma']
@@ -4724,13 +4814,15 @@ class Controller extends BaseController
             ->with('smp_achiev',$smp_achiev)->with('smp_commit',$smp_commit)->with('smp_alumni',$smp_alumni)->with('smp_student',$smp_student)
             ->with('smp_headmas',$smp_headmas)->with('smp_profile',$smp_profile)->with('smp_edu',$smp_edu)->with('sma_extra',$sma_extra)->with('sma_partners',$sma_partners)
             ->with('sma_achiev',$sma_achiev)->with('sma_commit',$sma_commit)->with('sma_alumni',$sma_alumni)->with('sma_student',$sma_student)
-            ->with('sma_headmas',$sma_headmas)->with('sma_profile',$sma_profile)->with('sma_edu',$sma_edu);    }
+            ->with('sma_headmas',$sma_headmas)->with('sma_profile',$sma_profile)->with('sma_edu',$sma_edu)->with('dt_blog_all',$dt_blog_all);    
+        }
     }
 
     public function portal_sma_announcement()
     {
        session_start();
         if(isset($_SESSION['logged_in'])){
+            $dt_blog_all = \DB::table('dt_blog')->where('dt_blog_for', '=', 'SMA')->orderBy('id', 'desc')->paginate(5);
             $dt_blog_all_portal_sma = \DB::table('dt_blog')->where([
                                                                     ['dt_blog_type', '=', 'announcement'],
                                                                     ['dt_blog_for', '=', 'sma']
@@ -4824,8 +4916,10 @@ class Controller extends BaseController
             ->with('smp_achiev',$smp_achiev)->with('smp_commit',$smp_commit)->with('smp_alumni',$smp_alumni)->with('smp_student',$smp_student)
             ->with('smp_headmas',$smp_headmas)->with('smp_profile',$smp_profile)->with('smp_edu',$smp_edu)->with('sma_extra',$sma_extra)->with('sma_partners',$sma_partners)
             ->with('sma_achiev',$sma_achiev)->with('sma_commit',$sma_commit)->with('sma_alumni',$sma_alumni)->with('sma_student',$sma_student)
-            ->with('sma_headmas',$sma_headmas)->with('sma_profile',$sma_profile)->with('sma_edu',$sma_edu);    }
+            ->with('sma_headmas',$sma_headmas)->with('sma_profile',$sma_profile)->with('sma_edu',$sma_edu)->with('dt_blog_all',$dt_blog_all);    
+        }
         else{
+            $dt_blog_all = \DB::table('dt_blog')->where('dt_blog_for', '=', 'SMA')->orderBy('id', 'desc')->paginate(5);
             $dt_blog_all_portal_sma = \DB::table('dt_blog')->where([
                                                                     ['dt_blog_type', '=', 'announcement'],
                                                                     ['dt_blog_for', '=', 'sma']
@@ -4919,13 +5013,15 @@ class Controller extends BaseController
             ->with('smp_achiev',$smp_achiev)->with('smp_commit',$smp_commit)->with('smp_alumni',$smp_alumni)->with('smp_student',$smp_student)
             ->with('smp_headmas',$smp_headmas)->with('smp_profile',$smp_profile)->with('smp_edu',$smp_edu)->with('sma_extra',$sma_extra)->with('sma_partners',$sma_partners)
             ->with('sma_achiev',$sma_achiev)->with('sma_commit',$sma_commit)->with('sma_alumni',$sma_alumni)->with('sma_student',$sma_student)
-            ->with('sma_headmas',$sma_headmas)->with('sma_profile',$sma_profile)->with('sma_edu',$sma_edu);    }
+            ->with('sma_headmas',$sma_headmas)->with('sma_profile',$sma_profile)->with('sma_edu',$sma_edu)->with('dt_blog_all',$dt_blog_all);    
+        }
     }    
     
     public function portal_sma_article()
     {
        session_start();
         if(isset($_SESSION['logged_in'])){
+            $dt_blog_all = \DB::table('dt_blog')->where('dt_blog_for', '=', 'SMA')->orderBy('id', 'desc')->paginate(5);
             $dt_blog_all_portal_sma = \DB::table('dt_blog')->where([
                                                                     ['dt_blog_type', '=', 'article'],
                                                                     ['dt_blog_for', '=', 'sma']
@@ -5019,8 +5115,10 @@ class Controller extends BaseController
             ->with('smp_achiev',$smp_achiev)->with('smp_commit',$smp_commit)->with('smp_alumni',$smp_alumni)->with('smp_student',$smp_student)
             ->with('smp_headmas',$smp_headmas)->with('smp_profile',$smp_profile)->with('smp_edu',$smp_edu)->with('sma_extra',$sma_extra)->with('sma_partners',$sma_partners)
             ->with('sma_achiev',$sma_achiev)->with('sma_commit',$sma_commit)->with('sma_alumni',$sma_alumni)->with('sma_student',$sma_student)
-            ->with('sma_headmas',$sma_headmas)->with('sma_profile',$sma_profile)->with('sma_edu',$sma_edu);    }
+            ->with('sma_headmas',$sma_headmas)->with('sma_profile',$sma_profile)->with('sma_edu',$sma_edu)->with('dt_blog_all',$dt_blog_all);    
+        }
         else{
+            $dt_blog_all = \DB::table('dt_blog')->where('dt_blog_for', '=', 'SMA')->orderBy('id', 'desc')->paginate(5);
             $dt_blog_all_portal_sma = \DB::table('dt_blog')->where([
                                                                     ['dt_blog_type', '=', 'article'],
                                                                     ['dt_blog_for', '=', 'sma']
@@ -5114,7 +5212,8 @@ class Controller extends BaseController
             ->with('smp_achiev',$smp_achiev)->with('smp_commit',$smp_commit)->with('smp_alumni',$smp_alumni)->with('smp_student',$smp_student)
             ->with('smp_headmas',$smp_headmas)->with('smp_profile',$smp_profile)->with('smp_edu',$smp_edu)->with('sma_extra',$sma_extra)->with('sma_partners',$sma_partners)
             ->with('sma_achiev',$sma_achiev)->with('sma_commit',$sma_commit)->with('sma_alumni',$sma_alumni)->with('sma_student',$sma_student)
-            ->with('sma_headmas',$sma_headmas)->with('sma_profile',$sma_profile)->with('sma_edu',$sma_edu);    }
+            ->with('sma_headmas',$sma_headmas)->with('sma_profile',$sma_profile)->with('sma_edu',$sma_edu)->with('dt_blog_all',$dt_blog_all);    
+        }
     }  
 
     public function view($id)

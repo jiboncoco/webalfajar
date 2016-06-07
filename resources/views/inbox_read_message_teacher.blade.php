@@ -103,7 +103,7 @@
                     <a href="{{ url('manage_message/message_teacher') }}"><button class="btn btn-default"><i class="fa fa-close"></i> Cancel</button></a>
                   </div>
                   <a href="{{ url('manage_message/message_teacher/delete/'.$dt_mails->id) }}"><button class="btn btn-default"><i class="fa fa-trash-o"></i> Delete</button></a>
-                  <button class="btn btn-default"><i class="fa fa-print"></i> Print</button>
+                  <!-- <button class="btn btn-default"><i class="fa fa-print"></i> Print</button> -->
                 </div><!-- /.box-footer -->
               </div><!-- /. box -->
             </div><!-- /.col -->
