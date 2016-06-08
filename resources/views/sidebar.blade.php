@@ -89,7 +89,7 @@
               </a>
               <ul class="treeview-menu">
                 <li><a href="{{ url('manage_post/my_post') }}"><i class="fa fa-list"></i> My Post</a></li>
-                <li><a href="{{ url('manage_post/all_post') }}"><i class="fa fa-list"></i> All Post</a></li>
+                <!-- <li><a href="{{ url('manage_post/all_post') }}"><i class="fa fa-list"></i> All Post</a></li> -->
                 <li><a href="{{ url('manage_post/master_post') }}"><i class="fa fa-th"></i> Master Post</a></li>
                 <li><a href="{{ url('manage_post/master_type_post') }}"><i class="fa fa-list"></i> Master Type Post</a></li>
                 <li><a href="{{ url('manage_post/master_class_post') }}"><i class="fa fa-columns"></i> Master Class Post</a></li>
@@ -427,7 +427,7 @@
               </a>
               <ul class="treeview-menu">
                 <li><a href="{{ url('manage_post/my_post') }}"><i class="fa fa-list"></i> My Post</a></li>
-                <li><a href="{{ url('manage_post/all_post') }}"><i class="fa fa-list"></i> All Post</a></li>
+                <!-- <li><a href="{{ url('manage_post/all_post') }}"><i class="fa fa-list"></i> All Post</a></li> -->
                 <li><a href="{{ url('manage_post/master_post') }}"><i class="fa fa-th"></i> Master Post</a></li>
               </ul>
             </li>
@@ -515,7 +515,7 @@
               </a>
               <ul class="treeview-menu">
                 <li><a href="{{ url('manage_post/my_post') }}"><i class="fa fa-list"></i> My Post</a></li>
-                <li><a href="{{ url('manage_post/all_post') }}"><i class="fa fa-list"></i> All Post</a></li>
+                <!-- <li><a href="{{ url('manage_post/all_post') }}"><i class="fa fa-list"></i> All Post</a></li> -->
                 <li><a href="{{ url('manage_post/master_post') }}"><i class="fa fa-th"></i> Master Post</a></li>
               </ul>
             </li>

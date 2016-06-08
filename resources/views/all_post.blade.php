@@ -50,7 +50,7 @@
                         <th>Title</th>
                         <th>Content</th>
                         <th>Post By</th>
-                        <!-- <th style="text-align:center">Action</th> -->
+                        <th style="text-align:center">Action</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -75,10 +75,10 @@
                             ?>
                         </td>
                         <td>{{ $dt_blog->dt_blog_create_by }}</td>
-                        <!-- <td style="text-align:center">
+                        <td style="text-align:center">
                         <label><a href="{{ url('manage_post/edit_post/'.$dt_blog->id) }}"> <i style="font-size:24px;margin-right:20px;" class="fa fa-pencil-square-o"></i> </a></label>
                         <label><a href="{{ url('manage_post/delete_post/'.$dt_blog->id) }}"> <i style="font-size:24px;color:rgb(202, 65, 65)" class="fa fa-trash"></i> </a></label>
-                        </td> -->
+                        </td>
                       </tr>
                     @endforeach
                     </tfoot>
