@@ -48,6 +48,19 @@ class AdminController extends Controller
         }   
     }
 
+    public function underc()
+    {
+        session_start();
+        if(isset($_SESSION['logged_in'])){
+            $uname = \App\akses::where('akses_email', session('akses_email'))->get();
+            
+            return \View::make('underc')->with('uname',$uname);
+        }
+        else{
+            return redirect('login');
+        }   
+    }
+
             public function manage_all()
     {
        session_start();

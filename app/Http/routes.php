@@ -46,6 +46,15 @@ Route::post('manage_message/mail_to/send', 'AksesController@sendEmail');
 Route::post('manage_message/email_blast/send', 'AksesController@emailBlast');
 Route::get('manage_message/email_blast', 'AksesController@email_blast_page');
 
+Route::get('absen', 'AdminController@underc');
+Route::get('manage_teacher/absen_teacher', 'AdminController@underc');
+Route::get('manage_student/absen_student', 'AdminController@underc');
+Route::get('manage_student/update_grade_student', 'AdminController@underc');
+Route::get('manage_registration/master_new_student', 'AdminController@underc');
+Route::get('manage_registration/filter_new_student', 'AdminController@underc');
+Route::get('manage_setting/alfajar_help', 'AdminController@underc');
+Route::get('manage_teacher/my_absen', 'AdminController@underc');
+
 Route::get('manage_absen/master_absen', 'AdminController@master_absen');
 Route::post('manage_absen/save_absen', 'AdminController@save_absen');
 Route::get('manage_absen/edit_absen/{id}', 'AdminController@edit_absen');
@@ -175,7 +184,7 @@ Route::post('manage_class_sch/import_data_class_sch', 'PostController@import_dat
 
 Route::get('manage_teacher/my_data', 'AksesController@teacher_my_data');
 Route::get('manage_teacher/my_schedule', 'AksesController@teacher_my_schedule');
-Route::get('manage_teacher/my_absen', 'AksesController@teacher_my_absen');
+// Route::get('manage_teacher/my_absen', 'AksesController@teacher_my_absen');
 Route::get('manage_teacher/activity_student', 'AksesController@teacher_activity_student');
 Route::get('manage_teacher/detail_student_and_parent', 'AksesController@teacher_detail_student_and_parent');
 Route::get('manage_teacher/master_task', 'AksesController@teacher_master_task');
