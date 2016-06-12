@@ -3,8 +3,19 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    
-    <title>Manage</title>
+    @if(session('akses_type') == "staff")
+    <title>Manage for Staff</title>
+    @elseif(session('akses_type') == "root")
+    <title>Manage for Admin</title>
+    @elseif(session('akses_type') == "root+")
+    <title>Manage for Admin</title>
+    @elseif(session('akses_type') == "teacher")
+    <title>Manage for Teacher</title>
+    @elseif(session('akses_type') == "student")
+    <title>Manage for Student</title>
+    @elseif(session('akses_type') == "parent")
+    <title>Manage for Parent</title>
+    @endif
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <meta name="csrf_token" content="{{ csrf_token() }}" />
