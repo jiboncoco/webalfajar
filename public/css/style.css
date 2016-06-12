@@ -627,6 +627,8 @@ border-bottom: 0;
 	display: inline-table;
 	height: 95%;
 	width: 95%;
+	border-radius: 20px;
+    box-shadow: 10px 10px 5px rgba(0,0,0,.075);
 }
 .class-lab{
 	margin-top: 8%;
@@ -1059,8 +1061,11 @@ border-bottom: 0;
 	margin-bottom: 26px;
 	border: 1px solid #EEEEEE;
 	padding: 10px;
-	font-size: 13px;
+	font-size: 15px;
 	text-align: justify;
+	color: #B30909;
+    /* font-weight: bold; */
+    font-style: italic;
 }
 .content2-notif{
 	margin: auto;

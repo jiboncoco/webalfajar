@@ -2,7 +2,7 @@
 <html lang="en" style="padding:0px;">
 <head>
     <meta charset="utf-8">
-    <title>Website Sekolah</title>
+    <title>Perguruan Tinggi AL – FAJAR BEKASI</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -699,7 +699,7 @@
 <div id="portfolioSection" class="animatedParent">
 <div class="content-port">
 <div class="class-img  animated fadeInDown">
-    <img class="img-c" src="{{ url('img/img_home/TK.png') }}">
+    <img class="img-c" src="img/all_icon/tk.jpg">
 </div>
 <div class="class-lab">
     <a class="a-lab-port" href="{{ url('portal_tk') }}"><label class="lab-c-port animated fadeInLeft">Portal TK</label></a>
@@ -716,7 +716,7 @@
 <div id="meetourteamSection" class="animatedParent">
 <div class="content-port">
 <div class="class-img  animated fadeInDown">
-    <img class="img-c" src="{{ url('img/img_home/SD.png') }}">
+    <img class="img-c" src="img/all_icon/sd.jpg">
 </div>
 <div class="class-lab ">
     <a class="a-lab-meet" href="{{ url('portal_sd') }}"><label class="lab-c-meet animated fadeInLeft">Portal SD</label></a>
@@ -734,7 +734,7 @@
 <div id="recentpostSection" class="animatedParent">
 <div class="content-port">
 <div class="class-img  animated fadeInDown">
-    <img class="img-c" src="{{ url('img/img_home/SMP.png') }}">
+    <img class="img-c" src="img/all_icon/smp.jpg">
 </div>
 <div class="class-lab ">
     <a class="a-lab-rec" href="{{ url('portal_smp') }}"><label class="lab-c-rec animated fadeInLeft">Portal SMP</label></a>
@@ -751,7 +751,7 @@
 <div id="contactSection" class="animatedParent">
 <div class="content-port">
 <div class="class-img  animated fadeInDown">
-    <img class="img-c" src="{{ url('img/img_home/SMA.png') }}">
+    <img class="img-c" src="img/all_icon/sma.jpg">
 </div>
 <div class="class-lab ">
     <a class="a-lab-cont" href="{{ url('portal_sma') }}"><label class="lab-c-cont animated fadeInLeft">Portal SMA</label></a>

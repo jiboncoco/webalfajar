@@ -41,6 +41,7 @@
     <script src="{{ url('adminlte/ckeditor/ckeditor.js') }}"></script>
     <script src="{{ url('adminlte/select2/select2.full.js') }}"></script>
     <script src="{{ url('adminlte/plugins/datatables/jquery.dataTables.js') }}"></script>
+    <script src="{{ url('adminlte/plugins/datatables/jquery.dataTables.min.css') }}"></script>
     <script src="{{ url('adminlte/plugins/iCheck/icheck.min.js') }}"></script>
     <!-- Bootstrap WYSIHTML5 -->
     <script src="{{ url('adminlte/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js') }}"></script>

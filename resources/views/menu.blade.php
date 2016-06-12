@@ -2,11 +2,39 @@
           <div class="navbar-custom-menu">
             <ul class="nav navbar-nav">
               <!-- Messages: style can be found in dropdown.less-->
+
+              <li class="dropdown notifications-menu">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                  <i style="font-size:20px;color:white" class="fa fa-user"></i>
+                </a>
+                <ul style="height: 125px !important;" class="dropdown-menu">
+                  <li>
+                    <ul class="menu">
+                      <li>
+                        <a href="#">
+                          <i class="fa fa-circle-o"></i> Check
+                        </a>
+                      </li>
+                      <li>
+                        <a href="{{ url('absen') }}">
+                          <i class="fa fa-bell-o"></i> Absen
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#">
+                          <i class="fa fa-male"></i> Absen By Admin
+                        </a>
+                      </li>
+                    </ul>
+                    </li>
+                </ul>
+              </li>
+<!-- 
               <li class="dropdown notifications-menu">
                 <a href="{{ url('absen') }}">
                   <i style="font-size:20px;color:white" class="fa fa-user"></i>
                 </a>
-              </li>
+              </li> -->
               <li class="dropdown messages-menu">
               @if(session('akses_type') == "staff")
                 <a href="{{ url('manage_message/message_staff') }}">

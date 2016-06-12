@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Website Sekolah</title>
+    <title>Perguruan Tinggi AL – FAJAR BEKASI | Login</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -19,7 +19,7 @@
                 <div class="modal-content-login">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                        <h4 class="modal-title" id="myModalLabel">Login Teacher</h4>
+                        <h4 class="modal-title" id="myModalLabel">Login Teacher & Employee</h4>
                     </div>
                     <div class="modal-body">
                     <div class="login-form">
@@ -157,7 +157,7 @@
         <div data-toggle="modal" data-target="#myModal1" class="login-box" style="margin-right:20px;">
             <img class="login-img" src="{{ url('img/img_login/teacher_login.png') }}">
             <div class="div-lab">
-            <lable class="login-lable">Login Teacher</lable>
+            <lable class="login-lable">Login Teacher & Employee</lable>
             </div>
         </div>
 

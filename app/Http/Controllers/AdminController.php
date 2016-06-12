@@ -225,6 +225,7 @@ class AdminController extends Controller
         $post->dt_teacher_bplace = Input::get('dt_teacher_bplace');
         $post->dt_teacher_dobplace = Input::get('dt_teacher_dobplace');
         $post->dt_teacher_age = Input::get('dt_teacher_age');
+        $post->dt_teacher_type = Input::get('dt_teacher_type');
         $post->dt_teacher_bloodtype = Input::get('dt_teacher_bloodtype');
         $post->dt_teacher_religion = Input::get('dt_teacher_religion');
         $post->dt_teacher_email = Input::get('dt_teacher_email');
@@ -273,6 +274,7 @@ class AdminController extends Controller
         $post->dt_teacher_name = Input::get('dt_teacher_fname')."|".Input::get('dt_teacher_lname');
         $post->dt_teacher_gender = Input::get('dt_teacher_gender');
         $post->dt_teacher_bplace = Input::get('dt_teacher_bplace');
+        $post->dt_teacher_type = Input::get('dt_teacher_type');
         $post->dt_teacher_dobplace = Input::get('dt_teacher_dobplace');
         $post->dt_teacher_age = Input::get('dt_teacher_age');
         $post->dt_teacher_bloodtype = Input::get('dt_teacher_bloodtype');
@@ -347,7 +349,23 @@ class AdminController extends Controller
        session_start();
         if(isset($_SESSION['logged_in'])){
             $uname = \App\akses::where('akses_email', session('akses_email'))->get();
+            if(session('akses_type') == "staff")
+            {
+            $akses = \DB::table('akses')->where([
+                ['akses_type', '!=', 'staff'],
+                ['akses_type', '!=', 'root'],
+                ['akses_type', '!=', 'root+']
+                ])->get();
+            }else if(session('akses_type') == "root")
+            {
+            $akses = \DB::table('akses')->where([
+                ['akses_type', '!=', 'root'],
+                ['akses_type', '!=', 'root+']
+                ])->get();
+            }else
+            {
             $akses = \App\akses::all();
+            }
             $dt_teacher = \App\dt_teacher::all();
             $dt_parent = \App\dt_parent::all();
             $dt_staff = \App\akses_log::all();
@@ -383,7 +401,23 @@ class AdminController extends Controller
        session_start();
         if(isset($_SESSION['logged_in'])){
             $uname = \App\akses::where('akses_email', session('akses_email'))->get();
+            if(session('akses_type') == "staff")
+            {
+            $akses = \DB::table('akses')->where([
+                ['akses_type', '!=', 'staff'],
+                ['akses_type', '!=', 'root'],
+                ['akses_type', '!=', 'root+']
+                ])->get();
+            }else if(session('akses_type') == "root")
+            {
+            $akses = \DB::table('akses')->where([
+                ['akses_type', '!=', 'root'],
+                ['akses_type', '!=', 'root+']
+                ])->get();
+            }else
+            {
             $akses = \App\akses::all();
+            }
             $dt_teacher = \App\dt_teacher::all();
             $dt_staff = \App\akses_log::all();
             $dt_parent = \App\dt_parent::all();

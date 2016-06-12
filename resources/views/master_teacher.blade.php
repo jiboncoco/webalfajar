@@ -129,10 +129,10 @@
                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
                   </div>
                   <div class="col-xs-6 col-md-4">
-                      <label for="exampleInputPassword1">Gender</label>
-                      <select id="selecttype" name="dt_teacher_gender" class="form-control not-res">
-                        <option value="male">Male</option>
-                        <option value="female">Female</option>
+                      <label for="exampleInputPassword1">Type</label>
+                      <select id="selecttype" name="dt_teacher_type" class="form-control not-res">
+                        <option value="Employee">Employee</option>
+                        <option value="Teacher">Teacher</option>
                       </select>
                     </div>
                   </div>
@@ -167,6 +167,13 @@
                     <label for="exampleInputPassword1">Last Name</label>
                     <input type="text" name="dt_teacher_lname" class="form-control not-res" maxlength="50" placeholder="Last Name" onkeyup="this.value = minmaxname(this.value, 0, 50)" required/>
                   </div>
+                  <div class="col-xs-4">
+                      <label for="exampleInputPassword1">Gender</label>
+                      <select id="selecttype" name="dt_teacher_gender" class="form-control not-res">
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                      </select>
+                    </div>
                   </div>
                   <br>
 
@@ -184,7 +191,7 @@
                         </span>
                     </div>
                   </div>
-                  <div class="col-xs-4">
+                  <div class="col-xs-6 col-md-4">
                       <label for="exampleInputPassword1">Age</label>
                       <select id="selecttype" name="dt_teacher_age" class="form-control not-res-s">
                         @for($i=1;$i<101;$i++)
@@ -213,7 +220,7 @@
                         <option value="kontrak">Kontrak</option>
                       </select>
                     </div>
-                    <div class="col-xs-4">
+                    <div class="col-xs-6 col-md-4">
                       <label for="exampleInputPassword1">Bloodtype</label>
                       <select id="selecttype" name="dt_teacher_bloodtype" class="form-control not-res-s">
                         <option value="A">A</option>
@@ -247,7 +254,7 @@
                   <br>
 
                   <div class="row">
-                      <div class="col-xs-10">
+                      <div class="col-xs-12">
                         <label for="exampleInputPassword1">Address</label>
                         <input type="text" name="dt_teacher_address" class="form-control not-res" placeholder="Address"/>
                       </div>
@@ -287,7 +294,8 @@
                         <th>No.</th>
                         <th>Name</th>
                         <th>NIP</th>
-                        <th>Teacher For</th>
+                        <th>Type</th>
+                        <th>For</th>
                         <th>Position</th>
                         <th>Absen Code</th>
                         <th>Status Log</th>
@@ -301,6 +309,7 @@
                         <td>{{$i++}}</td>
                         <td>{{ preg_replace('/\|/', ' ', $teachers->dt_teacher_name) }}</td>
                         <td>{{ $teachers->dt_teacher_nip}}</td>
+                        <td>{{ $teachers->dt_teacher_type}}</td>
                         <td>{{ $teachers->dt_teacher_for}}</td>
                         <td>{{ $teachers->dt_teacher_position}}</td>
                         <td>{{ $teachers->dt_teacher_code_absen}}</td>

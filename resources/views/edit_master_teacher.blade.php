@@ -66,14 +66,14 @@
                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
                   </div>
                   <div class="col-xs-6 col-md-4">
-                      <label for="exampleInputPassword1">Gender</label>
-                      <select id="selecttype" name="dt_teacher_gender" class="form-control">
-                        @if($data_edit->dt_teacher_gender == "male")
-                        <option value="male" selected>Male</option>
-                        <option value="female">Female</option>
+                      <label for="exampleInputPassword1">Type</label>
+                      <select id="selecttype" name="dt_teacher_type" class="form-control">
+                        @if($data_edit->dt_teacher_type == "Employee")
+                        <option value="Employee" selected>Employee</option>
+                        <option value="Teacher">Teacher</option>
                         @else
-                        <option value="male">Male</option>
-                        <option value="female" selected>Female</option>
+                        <option value="Employee">Employee</option>
+                        <option value="Teacher" selected>Teacher</option>
                         @endif
                       </select>
                     </div>
@@ -109,6 +109,18 @@
                     <label for="exampleInputPassword1">Last Name</label>
                     <input type="text" value="{{ preg_replace('/.+\|/', '', $data_edit->dt_teacher_name) }}" name="dt_teacher_lname" class="form-control" maxlength="50" placeholder="Last Name" onkeyup="this.value = minmaxname(this.value, 0, 50)" required/>
                   </div>
+                  <div class="col-xs-6 col-md-4">
+                      <label for="exampleInputPassword1">Gender</label>
+                      <select id="selecttype" name="dt_teacher_gender" class="form-control">
+                        @if($data_edit->dt_teacher_gender == "male")
+                        <option value="male" selected>Male</option>
+                        <option value="female">Female</option>
+                        @else
+                        <option value="male">Male</option>
+                        <option value="female" selected>Female</option>
+                        @endif
+                      </select>
+                    </div>
                   </div>
                   <br>
 
@@ -303,6 +315,7 @@
                         <th>No.</th>
                         <th>Name</th>
                         <th>NIP</th>
+                        <th>Type</th>
                         <th>Teacher For</th>
                         <th>Position</th>
                         <th>Absen Code</th>
@@ -317,6 +330,7 @@
                         <td>{{$i++}}</td>
                         <td>{{ preg_replace('/\|/', ' ', $teachers->dt_teacher_name) }}</td>
                         <td>{{ $teachers->dt_teacher_nip}}</td>
+                        <td>{{ $teachers->dt_teacher_type}}</td>
                         <td>{{ $teachers->dt_teacher_for}}</td>
                         <td>{{ $teachers->dt_teacher_position}}</td>
                         <td>{{ $teachers->dt_teacher_code_absen}}</td>

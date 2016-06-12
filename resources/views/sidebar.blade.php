@@ -36,16 +36,16 @@
               </ul>
             </li>
             <li class="treeview">
-              <a href="#">
+              <a href="#" style="font-size:11.8px;">
                 <i class="fa fa-laptop"></i>
-                <span>Manage Teacher</span>
+                <span>Manage Teacher & Employee</span>
                 <i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">
-                <li><a href="{{ url('manage_teacher/master_teacher') }}"><i class="fa fa-user-secret"></i> Master Teacher</a></li>
-                <li><a href="{{ url('manage_teacher/schedule_teacher') }}"><i class="fa fa-calendar"></i> Schedule Teacher</a></li>
-                <li><a href="{{ url('manage_teacher/absen_teacher') }}"><i class="fa fa-thumb-tack"></i> Absen Teacher</a></li>
-                <li><a href="{{ url('manage_teacher/master_teacher_recap') }}"><i class="fa fa-envelope"></i> Master Teacher Recap</a></li>
+                <li><a style="font-size:13px;" href="{{ url('manage_teacher/master_teacher') }}"><i class="fa fa-user-secret"></i> Master Teacher & Employee</a></li>
+                <li><a style="font-size:12px;" href="{{ url('manage_teacher/schedule_teacher') }}"><i class="fa fa-calendar"></i> Schedule Teacher & Employee</a></li>
+                <li><a style="font-size:13px;" href="{{ url('manage_teacher/absen_teacher') }}"><i class="fa fa-thumb-tack"></i> Absen Teacher & Employee</a></li>
+                <li><a style="font-size:13px;" href="{{ url('manage_teacher/master_teacher_recap') }}"><i class="fa fa-envelope"></i> Master Teacher Recap</a></li>
               </ul>
             </li>
             <li class="treeview">
@@ -114,6 +114,7 @@
               <ul class="treeview-menu">
                 <li><a href="{{ url('manage_registration/master_new_student')}}"><i class="fa fa-user-plus"></i> Master New Student</a></li>
                 <li><a href="{{ url('manage_registration/filter_new_student')}}"><i class="fa fa-check-square-o"></i> Filter New Student</a></li>
+                <li><a href="{{ url('manage_registration/manage_code')}}"><i class="fa fa-puzzle-piece"></i> Manage Code Registration</a></li>
               </ul>
             </li>
             <li class="treeview">
@@ -155,10 +156,10 @@
                 <i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">
-                <li><a href="{{ url('manage_teacher/master_teacher') }}"><i class="fa fa-user-secret"></i> Master Teacher</a></li>
-                <li><a href="{{ url('manage_teacher/schedule_teacher') }}"><i class="fa fa-calendar"></i> Schedule Teacher</a></li>
-                <li><a href="{{ url('manage_teacher/absen_teacher') }}"><i class="fa fa-thumb-tack"></i> Absen Teacher</a></li>
-                <li><a href="{{ url('manage_teacher/master_teacher_recap') }}"><i class="fa fa-envelope"></i> Master Teacher Recap</a></li>
+                <li><a style="font-size:13px;" href="{{ url('manage_teacher/master_teacher') }}"><i class="fa fa-user-secret"></i> Master Teacher & Employee</a></li>
+                <li><a style="font-size:12px;" href="{{ url('manage_teacher/schedule_teacher') }}"><i class="fa fa-calendar"></i> Schedule Teacher & Employee</a></li>
+                <li><a style="font-size:13px;" href="{{ url('manage_teacher/absen_teacher') }}"><i class="fa fa-thumb-tack"></i> Absen Teacher & Employee</a></li>
+                <li><a style="font-size:13px;" href="{{ url('manage_teacher/master_teacher_recap') }}"><i class="fa fa-envelope"></i> Master Teacher Recap</a></li>
               </ul>
             </li>
             <li class="treeview">
@@ -227,6 +228,7 @@
               <ul class="treeview-menu">
                 <li><a href="{{ url('manage_registration/master_new_student')}}"><i class="fa fa-user-plus"></i> Master New Student</a></li>
                 <li><a href="{{ url('manage_registration/filter_new_student')}}"><i class="fa fa-check-square-o"></i> Filter New Student</a></li>
+                <li><a href="{{ url('manage_registration/manage_code')}}"><i class="fa fa-puzzle-piece"></i> Manage Code Registration</a></li>
               </ul>
             </li>
              <li class="treeview">
@@ -279,10 +281,10 @@
                 <i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">
-                <li><a href="{{ url('manage_teacher/master_teacher') }}"><i class="fa fa-user-secret"></i> Master Teacher</a></li>
-                <li><a href="{{ url('manage_teacher/schedule_teacher') }}"><i class="fa fa-calendar"></i> Schedule Teacher</a></li>
-                <li><a href="{{ url('manage_teacher/absen_teacher') }}"><i class="fa fa-thumb-tack"></i> Absen Teacher</a></li>
-                <li><a href="{{ url('manage_teacher/master_teacher_recap') }}"><i class="fa fa-envelope"></i> Master Teacher Recap</a></li>
+                <li><a style="font-size:13px;" href="{{ url('manage_teacher/master_teacher') }}"><i class="fa fa-user-secret"></i> Master Teacher & Employee</a></li>
+                <li><a style="font-size:12px;" href="{{ url('manage_teacher/schedule_teacher') }}"><i class="fa fa-calendar"></i> Schedule Teacher & Employee</a></li>
+                <li><a style="font-size:13px;" href="{{ url('manage_teacher/absen_teacher') }}"><i class="fa fa-thumb-tack"></i> Absen Teacher & Employee</a></li>
+                <li><a style="font-size:13px;" href="{{ url('manage_teacher/master_teacher_recap') }}"><i class="fa fa-envelope"></i> Master Teacher Recap</a></li>
               </ul>
             </li>
             <li class="treeview">
@@ -351,6 +353,7 @@
               <ul class="treeview-menu">
                 <li><a href="{{ url('manage_registration/master_new_student')}}"><i class="fa fa-user-plus"></i> Master New Student</a></li>
                 <li><a href="{{ url('manage_registration/filter_new_student')}}"><i class="fa fa-check-square-o"></i> Filter New Student</a></li>
+                <li><a href="{{ url('manage_registration/manage_code')}}"><i class="fa fa-puzzle-piece"></i> Manage Code Registration</a></li>
               </ul>
             </li>
             <li class="treeview">
@@ -386,16 +389,16 @@
               </a>
             </li>
  -->            <li class="treeview">
-              <a href="#">
+              <a href="#" style="font-size:11.8px;">
                 <i class="fa fa-laptop"></i>
-                <span>Manage Teacher</span>
+                <span>Manage Teacher & Employee</span>
                 <i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">
                 <li><a href="{{ url('manage_teacher/my_data') }}"><i class="fa fa-puzzle-piece"></i> My Data</a></li>
                 <li><a href="{{ url('manage_teacher/my_schedule') }}"><i class="fa fa-calendar"></i> My Schedule</a></li>
                 <li><a href="{{ url('manage_teacher/my_absen') }}"><i class="fa fa-thumb-tack"></i> My Absen</a></li>
-                <li><a href="{{ url('manage_teacher/master_teacher_recap') }}"><i class="fa fa-envelope"></i> Master Teacher Recap</a></li>
+                <li><a style="font-size:13px;" href="{{ url('manage_teacher/master_teacher_recap') }}"><i class="fa fa-envelope"></i> Master Teacher Recap</a></li>
               </ul>
             </li>
             <li class="treeview">

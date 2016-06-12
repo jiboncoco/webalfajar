@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Website Sekolah</title>
+    <title>Perguruan Tinggi AL – FAJAR BEKASI | Portal SMA</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
@@ -111,9 +111,7 @@
                       <tr>
                         <th>No.</th>
                         <th>Name</th>
-                        <th>NIP</th>
-                        <th>Teacher For</th>
-                        <th>Position</th>
+                        <th>Type</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -122,9 +120,7 @@
                       <tr>
                         <td>{{$i++}}</td>
                         <td>{{ preg_replace('/\|/', ' ', $teachers->dt_teacher_name) }}</td>
-                        <td>{{ $teachers->dt_teacher_nip}}</td>
-                        <td>{{ $teachers->dt_teacher_for}}</td>
-                        <td>{{ $teachers->dt_teacher_position}}</td>
+                        <td>{{ $teachers->dt_teacher_type }}</td>
                       </tr>
                     @endforeach
                     </tfoot>
@@ -479,8 +475,7 @@
     </div>
     <div class="content2-all">
       <div class="content2-text">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+        Check on here, for everything. Search by your NISN.
       </div>
         <div class="content2-notif">
          <p class="notif-p">NEWS</p>
@@ -572,6 +567,7 @@
 <script src="{{ url('js/jquery.scrollTo-1.4.3.1-min.js') }}" type="text/javascript"></script>
 <script src="{{ url('js/jquery.easing-1.3.min.js') }}"></script>
 <script src="{{ url('js/default.js') }}"></script>
+<script src="{{ url('adminlte/plugins/datatables/jquery.dataTables.js') }}"></script>
 
 
 <script type="text/javascript">
@@ -627,6 +623,16 @@ $.ajaxSetup({
                 });
             }, 500);
         });
+    </script>
+    <script type="text/javascript">
+            $('.for_datatable').DataTable({
+              "paging": false,
+              "lengthChange": false,
+              "searching": true,
+              "ordering": false,
+              "info": false,
+              "autoWidth": false
+            });
     </script>
 
 </body>
