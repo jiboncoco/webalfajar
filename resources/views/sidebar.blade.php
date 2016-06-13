@@ -380,7 +380,74 @@
             </li>
           </ul>
 
-          @elseif($_SESSION['akses_type'] == 'teacher')
+          @elseif($_SESSION['akses_type'] == 'Teacher')
+                    <ul class="sidebar-menu">
+            <li class="header">NAVIGATION</li>
+<!--             <li class="active treeview">
+              <a href="{{ url('manage') }}">
+                <i class="fa fa-dashboard"></i> <span>Dashboard</span>
+              </a>
+            </li>
+ -->            <li class="treeview">
+              <a href="#" style="font-size:11.8px;">
+                <i class="fa fa-laptop"></i>
+                <span>Manage Teacher & Employee</span>
+                <i class="fa fa-angle-left pull-right"></i>
+              </a>
+              <ul class="treeview-menu">
+                <li><a href="{{ url('manage_teacher/my_data') }}"><i class="fa fa-puzzle-piece"></i> My Data</a></li>
+                <li><a href="{{ url('manage_teacher/my_schedule') }}"><i class="fa fa-calendar"></i> My Schedule</a></li>
+                <li><a href="{{ url('manage_teacher/my_absen') }}"><i class="fa fa-thumb-tack"></i> My Absen</a></li>
+                <li><a style="font-size:13px;" href="{{ url('manage_teacher/master_teacher_recap') }}"><i class="fa fa-envelope"></i> Master Teacher Recap</a></li>
+              </ul>
+            </li>
+            <li class="treeview">
+              <a href="#">
+                <i class="fa fa-laptop"></i>
+                <span style="font-size:13.5px">Manage Student & Parent</span>
+                <i class="fa fa-angle-left pull-right"></i>
+              </a>
+              <ul class="treeview-menu">
+              <li><a href="{{ url('manage_student/detail_student') }}"><i class="fa fa-puzzle-piece"></i> Detail Student</a></li>
+              <li><a href="{{ url('manage_parent/detail_parent') }}"><i class="fa fa-file-text-o"></i> Detail Parent</a></li>
+              </ul>
+            </li>
+            <!-- <li class="treeview">
+              <a href="#">
+                <i class="fa fa-align-center"></i>
+                <span>Manage Task</span>
+                <i class="fa fa-angle-left pull-right"></i>
+              </a>
+              <ul class="treeview-menu">
+                <li><a href="{{ url('manage_task/master_task') }}"><i class="fa fa-files-o"></i> Master Task</a></li>
+              </ul>
+            </li> -->
+            <li class="treeview">
+              <a href="#">
+                <i class="fa fa-archive"></i>
+                <span>Manage Post</span>
+                <i class="fa fa-angle-left pull-right"></i>
+              </a>
+              <ul class="treeview-menu">
+                <li><a href="{{ url('manage_post/my_post') }}"><i class="fa fa-list"></i> My Post</a></li>
+                <!-- <li><a href="{{ url('manage_post/all_post') }}"><i class="fa fa-list"></i> All Post</a></li> -->
+                <li><a href="{{ url('manage_post/master_post') }}"><i class="fa fa-th"></i> Master Post</a></li>
+              </ul>
+            </li>
+            <li class="treeview">
+              <a href="#">
+                <i class="fa fa-cogs"></i>
+                <span>Manage Setting</span>
+                <i class="fa fa-angle-left pull-right"></i>
+              </a>
+              <ul class="treeview-menu">
+                <li><a href="{{ url('manage_setting/edit_profile') }}"><i class="fa fa-cog"></i> Edit Profile</a></li>
+                <li><a href="{{ url('manage_setting/alfajar_help') }}"><i class="fa fa-bookmark-o"></i> Al - Fajar Help</a></li>
+              </ul>
+            </li>
+          </ul>
+
+          @elseif($_SESSION['akses_type'] == 'Employee')
                     <ul class="sidebar-menu">
             <li class="header">NAVIGATION</li>
 <!--             <li class="active treeview">
