@@ -35,7 +35,7 @@
                 <div class="modal-content">
                     <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                    <h4 class="modal-title" id="myModalLabel">Data Teachers</h4>
+                    <h4 class="modal-title" id="myModalLabel">Data Teacher And Employee</h4>
                     </div>
                         <div class="modal-body-front" style="height:560px;overflow-y: auto;">
                 <div class="box-header">
@@ -47,6 +47,7 @@
                         <th>No.</th>
                         <th>NIP</th>
                         <th>Name</th>
+                        <th>Type</th>
                         <th>Gender</th>
                         <th>Birth Place and Date</th>
                         <th>Religion</th>
@@ -68,6 +69,7 @@
                         <td>{{$i++}}</td>
                         <td>{{ $teachers->dt_teacher_nip}}</td>
                         <td>{{ preg_replace('/\|/', ' ', $teachers->dt_teacher_name) }}</td>
+                        <td>{{ $teachers->dt_teacher_type}}</td>
                         <td>{{ $teachers->dt_teacher_gender}}</td>
                         <td>{{ $teachers->dt_teacher_dobplace}}</td>
                         <td>{{ $teachers->dt_teacher_religion}}</td>
@@ -104,7 +106,7 @@
             </div>
               <div style="width:95%;margin:auto;" class="box box-default collapsed-box box-solid">
                 <div class="box-header with-border">
-                  <h3 class="box-title">Master Teacher</h3>
+                  <h3 class="box-title">Master Teacher And Employee</h3>
                   <div class="box-tools pull-right">
                     <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-plus"></i></button>
                   </div><!-- /.box-tools -->
@@ -284,7 +286,7 @@
               <br><br>
           <div style="width:95%;margin:auto" class="box">
                 <div class="box-header">
-                  <h3 class="box-title">Data Teachers</h3>
+                  <h3 class="box-title">Data Teacher And Employee</h3>
                   <label style="float:right"><a data-toggle="modal" data-target="#myModaldetailteacher" href="#">View Detail</a></label>
                 </div><!-- /.box-header -->
                 <div class="box-body">

@@ -504,7 +504,7 @@ class PostController extends Controller
     public function exportxls_data_master_teacher()
     {
 
-      $data_teacher = \App\dt_teacher::select('dt_teacher.dt_teacher_nip','dt_teacher.dt_teacher_name','dt_teacher.dt_teacher_email','dt_teacher.dt_teacher_gender','dt_teacher.dt_teacher_dobplace','dt_teacher.dt_teacher_bplace','dt_teacher.dt_teacher_religion','dt_teacher.dt_teacher_position','dt_teacher.dt_teacher_age','dt_teacher.dt_teacher_bloodtype','dt_teacher.dt_teacher_for','dt_teacher.dt_teacher_email','dt_teacher.dt_teacher_contact','dt_teacher.dt_teacher_address','dt_teacher.dt_teacher_code_absen','dt_teacher.dt_teacher_statuslog')->get()->toArray();
+      $data_teacher = \App\dt_teacher::select('dt_teacher.dt_teacher_nip','dt_teacher.dt_teacher_type','dt_teacher.dt_teacher_name','dt_teacher.dt_teacher_email','dt_teacher.dt_teacher_gender','dt_teacher.dt_teacher_dobplace','dt_teacher.dt_teacher_bplace','dt_teacher.dt_teacher_religion','dt_teacher.dt_teacher_position','dt_teacher.dt_teacher_age','dt_teacher.dt_teacher_bloodtype','dt_teacher.dt_teacher_for','dt_teacher.dt_teacher_email','dt_teacher.dt_teacher_contact','dt_teacher.dt_teacher_address','dt_teacher.dt_teacher_code_absen','dt_teacher.dt_teacher_statuslog')->get()->toArray();
       return \Excel::create('Master_Data_Teacher', function($excel) use ($data_teacher)
       {
           $excel->sheet('mySheet', function($sheet) use ($data_teacher)
@@ -518,7 +518,7 @@ class PostController extends Controller
         public function exportxlsx_data_master_teacher()
     {
 
-      $data_teacher = \App\dt_teacher::select('dt_teacher.dt_teacher_nip','dt_teacher.dt_teacher_name','dt_teacher.dt_teacher_email','dt_teacher.dt_teacher_gender','dt_teacher.dt_teacher_dobplace','dt_teacher.dt_teacher_bplace','dt_teacher.dt_teacher_religion','dt_teacher.dt_teacher_position','dt_teacher.dt_teacher_age','dt_teacher.dt_teacher_bloodtype','dt_teacher.dt_teacher_for','dt_teacher.dt_teacher_email','dt_teacher.dt_teacher_contact','dt_teacher.dt_teacher_address','dt_teacher.dt_teacher_code_absen','dt_teacher.dt_teacher_statuslog')->get()->toArray();
+      $data_teacher = \App\dt_teacher::select('dt_teacher.dt_teacher_nip','dt_teacher.dt_teacher_type','dt_teacher.dt_teacher_name','dt_teacher.dt_teacher_email','dt_teacher.dt_teacher_gender','dt_teacher.dt_teacher_dobplace','dt_teacher.dt_teacher_bplace','dt_teacher.dt_teacher_religion','dt_teacher.dt_teacher_position','dt_teacher.dt_teacher_age','dt_teacher.dt_teacher_bloodtype','dt_teacher.dt_teacher_for','dt_teacher.dt_teacher_email','dt_teacher.dt_teacher_contact','dt_teacher.dt_teacher_address','dt_teacher.dt_teacher_code_absen','dt_teacher.dt_teacher_statuslog')->get()->toArray();
       return \Excel::create('Master_Data_Teacher', function($excel) use ($data_teacher)
       {
           $excel->sheet('mySheet', function($sheet) use ($data_teacher)
@@ -532,7 +532,7 @@ class PostController extends Controller
         public function exportcsv_data_master_teacher()
     {
 
-      $data_teacher = \App\dt_teacher::select('dt_teacher.dt_teacher_nip','dt_teacher.dt_teacher_name','dt_teacher.dt_teacher_email','dt_teacher.dt_teacher_gender','dt_teacher.dt_teacher_dobplace','dt_teacher.dt_teacher_bplace','dt_teacher.dt_teacher_religion','dt_teacher.dt_teacher_position','dt_teacher.dt_teacher_age','dt_teacher.dt_teacher_bloodtype','dt_teacher.dt_teacher_for','dt_teacher.dt_teacher_email','dt_teacher.dt_teacher_contact','dt_teacher.dt_teacher_address','dt_teacher.dt_teacher_code_absen','dt_teacher.dt_teacher_statuslog')->get()->toArray();
+      $data_teacher = \App\dt_teacher::select('dt_teacher.dt_teacher_nip','dt_teacher.dt_teacher_type','dt_teacher.dt_teacher_name','dt_teacher.dt_teacher_email','dt_teacher.dt_teacher_gender','dt_teacher.dt_teacher_dobplace','dt_teacher.dt_teacher_bplace','dt_teacher.dt_teacher_religion','dt_teacher.dt_teacher_position','dt_teacher.dt_teacher_age','dt_teacher.dt_teacher_bloodtype','dt_teacher.dt_teacher_for','dt_teacher.dt_teacher_email','dt_teacher.dt_teacher_contact','dt_teacher.dt_teacher_address','dt_teacher.dt_teacher_code_absen','dt_teacher.dt_teacher_statuslog')->get()->toArray();
       return \Excel::create('Master_Data_Teacher', function($excel) use ($data_teacher)
       {
           $excel->sheet('mySheet', function($sheet) use ($data_teacher)
@@ -851,6 +851,7 @@ class PostController extends Controller
           {
             $insert[] = ['dt_teacher_nip' => $value->dt_teacher_nip, 
                         'dt_teacher_name' => $value->dt_teacher_name,
+                        'dt_teacher_type' => $value->dt_teacher_type,
                         'dt_teacher_gender' => $value->dt_teacher_gender,
                         'dt_teacher_dobplace' => $value->dt_teacher_dobplace,
                         'dt_teacher_bplace' => $value->dt_teacher_bplace,
