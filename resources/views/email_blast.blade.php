@@ -75,7 +75,9 @@
                       <li><a href="{{ url('manage_message/message_root') }}"><i class="fa fa-inbox"></i> Inbox</a></li>
                     @elseif(session('akses_type') == 'root+')
                       <li><a href="{{ url('manage_message/message_root+') }}"><i class="fa fa-inbox"></i> Inbox</a></li>
-                    @elseif(session('akses_type') == 'teacher')
+                    @elseif(session('akses_type') == 'Teacher')
+                      <li><a href="{{ url('manage_message/message_teacher') }}"><i class="fa fa-inbox"></i> Inbox</a></li>
+                      @elseif(session('akses_type') == 'Employee')
                       <li><a href="{{ url('manage_message/message_teacher') }}"><i class="fa fa-inbox"></i> Inbox</a></li>
                     @endif
 
@@ -85,7 +87,9 @@
                       <li><a href="{{ url('manage_message/message_root/sent') }}"><i class="fa fa-envelope-o"></i> Sent</a></li>
                     @elseif(session('akses_type') == 'root+')
                       <li><a href="{{ url('manage_message/message_root+/sent') }}"><i class="fa fa-envelope-o"></i> Sent</a></li>
-                    @elseif(session('akses_type') == 'teacher')
+                    @elseif(session('akses_type') == 'Teacher')
+                      <li><a href="{{ url('manage_message/message_teacher/sent') }}"><i class="fa fa-envelope-o"></i> Sent</a></li>
+                     @elseif(session('akses_type') == 'Employee')
                       <li><a href="{{ url('manage_message/message_teacher/sent') }}"><i class="fa fa-envelope-o"></i> Sent</a></li>
                     @endif
 
@@ -95,7 +99,9 @@
                       <li><a href="{{ url('manage_message/message_root') }}"><i class="fa fa-envelope-square"></i> Message</a></li>
                     @elseif(session('akses_type') == 'root+')
                       <li><a href="{{ url('manage_message/message_root+') }}"><i class="fa fa-envelope-square"></i> Message</a></li>
-                    @elseif(session('akses_type') == 'teacher')
+                    @elseif(session('akses_type') == 'Teacher')
+                      <li><a href="{{ url('manage_message/message_teacher') }}"><i class="fa fa-envelope-square"></i> Message</a></li>
+                      @elseif(session('akses_type') == 'Employee')
                       <li><a href="{{ url('manage_message/message_teacher') }}"><i class="fa fa-envelope-square"></i> Message</a></li>
                     @endif
 
