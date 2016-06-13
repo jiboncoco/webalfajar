@@ -139,10 +139,33 @@
                 <div class="col-xs-12">
                       <label for="exampleInputPassword1">Select Type</label>
                       <select name="mail_type" class="form-control not-res">
+                      @if(session('akses_type') == "staff")
+                        <option value="teacher">Teacher</option>
+                        <option value="parent">Parent</option>
+                        <option value="student">Student</option>
+                        <option value="employee">Employee</option>
+                        <option value="mailnews">Mail News</option>
+                        <option value="all">All</option>
+                      @elseif(session('akses_type') == "root")
+                        <option value="teacher">Teacher</option>
+                        <option value="parent">Parent</option>
+                        <option value="student">Student</option>
+                        <option value="employee">Employee</option>
+                        <option value="mailnews">Mail News</option>
+                        <option value="all">All</option>
+                      @elseif(session('akses_type') == "root+")
+                        <option value="teacher">Teacher</option>
+                        <option value="parent">Parent</option>
+                        <option value="student">Student</option>
+                        <option value="employee">Employee</option>
+                        <option value="mailnews">Mail News</option>
+                        <option value="all">All</option>
+                      @else
                         <option value="teacher">Teacher</option>
                         <option value="parent">Parent</option>
                         <option value="student">Student</option>
                         <option value="all">All</option>
+                      @endif
                       </select>
                     </div>
                 </div>

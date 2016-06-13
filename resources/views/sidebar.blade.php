@@ -150,7 +150,7 @@
               </ul>
             </li>
             <li class="treeview">
-              <a href="#">
+              <a href="#" style="font-size:11.8px;">
                 <i class="fa fa-laptop"></i>
                 <span>Manage Teacher & Employee</span>
                 <i class="fa fa-angle-left pull-right"></i>
@@ -275,7 +275,7 @@
               </ul>
             </li>
             <li class="treeview">
-              <a href="#">
+              <a href="#" style="font-size:11.8px;">
                 <i class="fa fa-laptop"></i>
                 <span>Manage Teacher & Employee</span>
                 <i class="fa fa-angle-left pull-right"></i>

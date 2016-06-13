@@ -73,7 +73,7 @@
                     <a class="cntr" href="#"><img class="img-slide" style="border-radius:4px;box-shadow: 10px 10px 5px #888888;" src="{{ url('img/all_icon/default.jpg')}}" alt=""></a>
                     <div class="desc-img">
                   <p style="font-size:35px;font-weight:bold;color:white">WELCOME TO WEBSITE AL-FAJAR BEKASI</p>
-                  <p style="font-style:italic;font-size:20px;font-weight:bold">" Optimalisasi potensi (fitrah, bakat) peserta didik menuju insan beriman, cendekia, trampil dan tangguh. "</p>
+                  <p style="font-style:italic;font-size:20px;font-weight:bold">"Optimalisasi potensi (fitrah, bakat) peserta didik menuju insan beriman, cendekia, trampil dan tangguh."</p>
                 </div>
                 <!-- <a href="#" class="btn btn-large btn-primary" id="btn-rm-s">READ MORE</a> -->
                 </div>

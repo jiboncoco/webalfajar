@@ -15,6 +15,8 @@
     <title>Manage for Student</title>
     @elseif(session('akses_type') == "parent")
     <title>Manage for Parent</title>
+    @elseif(session('akses_type') == "employee")
+    <title>Manage for Employee</title>
     @endif
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">

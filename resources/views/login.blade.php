@@ -26,6 +26,12 @@
                     <form action="{{ url('login_teacher') }}" method="POST">
                     {{ csrf_field() }}
                     <input class="login-input" name="akses_code" id="log-inp" placeholder="NIP Al-Fajar" required></input>
+                    
+                      <select name="akses_type" class="form-control" id="sg">
+                        <option value="Teacher">Teacher</option>
+                        <option value="Employee">Employee</option>
+                      </select>
+                   
                     <input class="login-input" name="akses_email" id="log-inp" placeholder="Email" required></input>
                     <input class="login-input" name="akses_password" type="password" placeholder="Password" required></input><br>
                     <div id="cb-log" class="checkbox">

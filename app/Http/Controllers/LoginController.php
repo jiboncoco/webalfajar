@@ -99,6 +99,7 @@ class LoginController extends Controller
 		session_start();
 		$akses_code     = $_POST['akses_code'];
 		$akses_email = $_POST['akses_email'];
+		$akses_type = $_POST['akses_type'];
 		$akses_password = $_POST['akses_password'];
 
 				$akses_codee = \DB::table('dt_teacher')->where('dt_teacher_nip', 'like', $akses_code)->count(); //done
@@ -114,7 +115,7 @@ class LoginController extends Controller
 						if (!empty($akses_pwd)) {
 
 							$akses_status_dataa = \DB::table('akses_type')->where([
-							['akses_type.akses_type_name', 'like', 'teacher'],
+							['akses_type.akses_type_name', 'like', $akses_type],
 							['akses_type.akses_type_status', 'like', 'true']
 							])->count(); 
 						
@@ -124,7 +125,7 @@ class LoginController extends Controller
 								['akses_code', 'like', $akses_code], 
 								['akses_email', 'like', $akses_email],
 								['akses_password', 'like', $akses_password], 
-								['akses_type', 'like', 'teacher']
+								['akses_type', 'like', $akses_type]
 								])->count(); 
 								
 								if (!empty($akses_typee)) {
@@ -138,7 +139,7 @@ class LoginController extends Controller
 
 										$akses_statuss_person = \DB::table('akses')->where([
 										['akses_code', 'like', $akses_code],
-										['akses_type', 'like', 'teacher'],
+										['akses_type', 'like', $akses_type],
 										['akses_email', 'like', $akses_email],
 										['akses_password', 'like', $akses_password], 
 										['akses_status_data', 'like', 'active']
@@ -149,9 +150,10 @@ class LoginController extends Controller
 									
 											$request->session()->put('logged_in', 1);
 											$request->session()->put('akses_code', $akses_code);
+											$request->session()->put('akses_type', $akses_type);
 											$request->session()->put('akses_email', $akses_email);
 			
-											$_SESSION['akses_type'] = 'teacher';
+											$_SESSION['akses_type'] = $akses_type;
 											$_SESSION['logged_in'] = 1;
 											return redirect('/');
 										

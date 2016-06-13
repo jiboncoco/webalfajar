@@ -501,6 +501,10 @@ class AksesController extends Controller
         $teacher = \App\dt_teacher::where('dt_teacher_for', Input::get('dt_student_grade'))->get()->toArray();
         $parent = \App\dt_parent::where('dt_parent_student_grade', Input::get('dt_student_grade'))->get()->toArray();
         $student = \App\dt_student::where('dt_student_kelas', Input::get('dt_student_kelas_'.Input::get("type_class")))->get()->toArray();
+        $employee = \App\dt_teacher::where('dt_teacher_type', 'Employee');
+        $employ = array_column($employee, 'dt_teacher_email');
+        $mail_news = \App\dt_mailnews::all();
+        $mailnews = array_column($mail_news, 'dt_mailnews_email');
         $user_teacher = array_column($teacher, 'dt_teacher_email');
         $user_parent = array_column($parent, 'dt_parent_email');
         $user_student = array_column($student, 'dt_student_email');
@@ -545,9 +549,24 @@ class AksesController extends Controller
                         $message->to($user_send)->subject(Input::get('dt_mail_subject'), Input::get('dt_mail_from'));
 
                     });
-        }
-       
+        }elseif(Input::get('mail_type') == "mailnews"){
+        \Mail::send('mail_to', $data, function ($message) use ($mailnews) {
 
+                        $message->from('alfajarbekasi@gmail.com');
+
+                        $message->to($mailnews)->subject(Input::get('dt_mail_subject'), Input::get('dt_mail_from'));
+
+                    });
+       
+        }elseif(Input::get('mail_type') == "employee"){
+        \Mail::send('mail_to', $data, function ($message) use ($employ) {
+
+                        $message->from('alfajarbekasi@gmail.com');
+
+                        $message->to($mailnews)->subject(Input::get('dt_mail_subject'), Input::get('dt_mail_from'));
+
+                    });
+        }
         return redirect(url('manage_message/email_blast'));
         // echo Input::get('mail_type');
     }
