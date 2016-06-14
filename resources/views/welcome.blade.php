@@ -149,21 +149,19 @@
       <div class="info-img">
         <img class="infoimg2 animated bounceInLeft" src="{{ url('images/'.$dt_blog->cover_photo) }}" ></div>
         <h4>{{ $dt_blog->dt_blog_title }}</h4>
-        <p class="animated flipInY">
+<!--         <p class="animated flipInY">
                 <?php
             $string = strip_tags($dt_blog->dt_blog_text);
 
             if (strlen($string) > 300) {
 
-                // truncate string
                 $stringCut = substr($string, 0, 150);
 
-                // make sure it ends in a word so assassinate doesn't become ass...
                 $string = substr($stringCut, 0, strrpos($stringCut, ' ')).'...';
             }
             echo $string;
       ?>
-        </p>
+        </p> -->
       </div>
       </a>
       @endforeach

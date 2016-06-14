@@ -3,6 +3,7 @@
             <ul class="nav navbar-nav">
               <!-- Messages: style can be found in dropdown.less-->
 
+              @if(session('akses_type') == "student")
               <li class="dropdown notifications-menu">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                   <i style="font-size:20px;color:white" class="fa fa-user"></i>
@@ -21,6 +22,16 @@
                         </a>
                       </li>
                       <li>
+                        <a href="{{ url('absen') }}">
+                          <i class="fa fa-bell-o"></i> Absen
+                        </a>
+                      </li>
+                      <li>
+                        <a href="{{ url('absen') }}">
+                          <i class="fa fa-bell-o"></i> Absen
+                        </a>
+                      </li>
+                      <li>
                         <a href="#">
                           <i class="fa fa-male"></i> Absen By Admin
                         </a>
@@ -29,6 +40,83 @@
                     </li>
                 </ul>
               </li>
+
+              @elseif(session('akses_type') == "Teacher")
+              <li class="dropdown notifications-menu">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                  <i style="font-size:20px;color:white" class="fa fa-user"></i>
+                </a>
+                <ul style="height: 125px !important;" class="dropdown-menu">
+                  <li>
+                    <ul class="menu">
+                      <li>
+                        <a href="#">
+                          <i class="fa fa-circle-o"></i> Check
+                        </a>
+                      </li>
+                      <li>
+                        <a href="{{ url('absen') }}">
+                          <i class="fa fa-bell-o"></i> Absen
+                        </a>
+                      </li>
+                      <li>
+                        <a href="{{ url('absen') }}">
+                          <i class="fa fa-bell-o"></i> Absen
+                        </a>
+                      </li>
+                      <li>
+                        <a href="{{ url('absen') }}">
+                          <i class="fa fa-bell-o"></i> Absen
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#">
+                          <i class="fa fa-male"></i> Absen By Admin
+                        </a>
+                      </li>
+                    </ul>
+                    </li>
+                </ul>
+              </li>
+
+              @elseif(session('akses_type') == "Employee")
+              <li class="dropdown notifications-menu">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                  <i style="font-size:20px;color:white" class="fa fa-user"></i>
+                </a>
+                <ul style="height: 125px !important;" class="dropdown-menu">
+                  <li>
+                    <ul class="menu">
+                      <li>
+                        <a href="#">
+                          <i class="fa fa-circle-o"></i> Check
+                        </a>
+                      </li>
+                      <li>
+                        <a href="{{ url('absen') }}">
+                          <i class="fa fa-bell-o"></i> Absen
+                        </a>
+                      </li>
+                      <li>
+                        <a href="{{ url('absen') }}">
+                          <i class="fa fa-bell-o"></i> Absen
+                        </a>
+                      </li>
+                      <li>
+                        <a href="{{ url('absen') }}">
+                          <i class="fa fa-bell-o"></i> Absen
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#">
+                          <i class="fa fa-male"></i> Absen By Admin
+                        </a>
+                      </li>
+                    </ul>
+                    </li>
+                </ul>
+              </li>
+              @endif
 <!-- 
               <li class="dropdown notifications-menu">
                 <a href="{{ url('absen') }}">

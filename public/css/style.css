@@ -79,8 +79,7 @@ h1.brand {
 }
 .img-slide{
 	/*width: 35%;*/
-	width: 50%;
-    height: 430px !Important;
+	width: 32%;
 }
 .mynav li a:hover{
 	background:#0275d8;
@@ -92,9 +91,12 @@ h1.brand {
 .animatedParent{
 	overflow: hidden;
 }
- #portfolioSection, #ourServices, #newsServices,
+ #portfolioSection, #ourServices,
 #informasiServices, #blogSection{padding:170px 0 ; }
 .txtR{text-align:right}
+#newsServices{
+	padding:90px 0 ; 
+}
 
 #newsServices{background: #fff;text-align: center;border-top: 1px solid #ddd;}
 #newsServices h4 {
@@ -530,8 +532,8 @@ height: 2px;
 }
 .infoimg2{
 	padding: 20px;
-	width: 270px;
-    height: 250px;
+	width: 320px;
+    height: 230px;
 }
 
 @media (max-width: 1200px){
@@ -1628,9 +1630,12 @@ border-bottom: 0;
 
 
 @media only screen and (max-width : 992px) {
+.carousel-inner {
+	height: 670px;
+}
 .img-cv{
 	width: 100%;
-	height: 430px;
+	height: 440px;
 }
 .on-img{
 	width: 100%;
