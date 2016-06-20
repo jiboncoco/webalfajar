@@ -15,7 +15,8 @@ class AdminController extends Controller
     	if(isset($_SESSION['logged_in'])){
             $uname = \App\akses::where('akses_email', session('akses_email'))->get();
     		$dt_blog_admin = \App\dt_blog::orderBy('id', 'desc')->paginate(6);
-			return \View::make('admin')->with('request',$request)->with('dt_blog_admins',$dt_blog_admin)->with('uname',$uname);
+            $maps = \DB::table('dt_maps')->get();
+			return \View::make('admin')->with('request',$request)->with('dt_blog_admins',$dt_blog_admin)->with('uname',$uname)->with('maps',$maps);
 		}
 		else{
 			return redirect('login')->with('request',$request);

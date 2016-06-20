@@ -12,12 +12,67 @@
     <div id="map"></div>
     <script type="text/javascript">
 
-var map;  
+// var map;  
+// function initMap() {
+//   map = new google.maps.Map(document.getElementById('map'), {
+//     center: {lat: -6.255714, lng: 106.869773},
+//     zoom: 106.869773
+//   });
+// }
 function initMap() {
-  map = new google.maps.Map(document.getElementById('map'), {
-    center: {lat: -6.255714, lng: 106.869773},
-    zoom: 106.869773
+  var map = new google.maps.Map(document.getElementById('map'), {
+    center: {lat: -6.204831, lng: 106.840848},
+    zoom: 10
   });
+  var infoWindow = new google.maps.InfoWindow({map: map});
+
+  // Try HTML5 geolocation.
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(function(position) {
+      var pos = {
+        lat: position.coords.latitude,
+        lng: position.coords.longitude
+      };
+      console.log(pos);
+      infoWindow.setPosition(pos);
+      infoWindow.setContent('Location found.');
+      map.setCenter(pos);
+      var origin = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+      <?php
+      $maps[0]->dt_maps_lat $matches;
+      ?>
+      <?php
+      $maps[0]->dt_maps_long $matches;
+      ?>
+      var destination = new google.maps.LatLng(<?php echo $matches[0]; ?>, <?php echo $matches[1]; ?>);
+
+      var service = new google.maps.DistanceMatrixService();
+      service.getDistanceMatrix(
+        {
+          origins: [origin],
+          destinations: [destination],
+          travelMode: google.maps.TravelMode.DRIVING,
+        }, callback);
+
+      function callback(response, status) {
+        console.log(response);
+        // See Parsing the Results for
+        // the basics of a callback function.
+      }
+    }, function() {
+      handleLocationError(true, infoWindow, map.getCenter());
+    });
+  } else {
+    // Browser doesn't support Geolocation
+    handleLocationError(false, infoWindow, map.getCenter());
+  }
+}
+
+function handleLocationError(browserHasGeolocation, infoWindow, pos) {
+  infoWindow.setPosition(pos);
+  infoWindow.setContent(browserHasGeolocation ?
+                        'Error: The Geolocation service failed.' :
+                        'Error: Your browser doesn\'t support geolocation.');
 }
 
     </script>
