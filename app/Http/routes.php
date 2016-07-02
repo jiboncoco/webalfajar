@@ -61,6 +61,13 @@ Route::get('manage_absen/edit_absen/{id}', 'AdminController@edit_absen');
 Route::post('manage_absen/update_absen', 'AdminController@update_absen');
 Route::get('manage_absen/delete_absen/{id}', 'AdminController@delete_absen');
 
+Route::post('manage_absen/save_absen_p', 'AksesController@save_absen_p');
+
+Route::get('manage_absen/all_data_absen', 'AdminController@all_absen');
+Route::get('manage_absen/edit_all_absen/{id}', 'AdminController@edit_all_absen');
+Route::post('manage_absen/update_all_absen', 'AdminController@update_all_absen');
+Route::get('manage_absen/delete_all_absen/{id}', 'AdminController@delete_all_absen');
+
 Route::post('manage_teacher_recap/get_class', 'AdminController@getClassByGrade');
 Route::post('manage_teacher_recap/get_student', 'AdminController@getStudentByClass');
 Route::get('manage_teacher/master_teacher_recap', 'AdminController@master_teacher_recap');
@@ -104,7 +111,7 @@ Route::get('manage_message/message_teacher/delete/{id}', 'AksesController@delete
 Route::get('manage_message/message_student/delete/{id}', 'AksesController@delete_message_student');
 Route::get('manage_message/message_parent/delete/{id}', 'AksesController@delete_message_parent');
 
-
+Route::post('registration_student', 'AdminController@registration_student');
 
 Route::get('manage_message/message_teacher/read_message/inbox/{id}', 'AksesController@teacher_read_message_inbox');
 Route::get('manage_message/message_student/read_message/inbox/{id}', 'AksesController@student_read_message_inbox');
@@ -298,6 +305,8 @@ Route::post('manage_post/save_edit_post', 'PostController@save_edit_post');
 Route::get('manage_post/delete_post/{id}', 'PostController@delete_post');
 Route::post('save_comment', 'PostController@save_comment');
 Route::get('logout', 'LoginController@logout');
+
+Route::post('search_print', 'AksesController@search_print');
 
 Route::get('search_post_tk/{search_tk?}', 'PostController@search_post_tk');
 Route::get('search_post_sd/{search_sd?}', 'PostController@search_post_sd');

@@ -296,7 +296,7 @@ class AksesController extends Controller
         
         $post->save();
 
-        return redirect(url('manage_message/message_staff'));
+        return redirect(url('manage_message/message_staff'))->with('status', 'Message Success Sent !');
         }
         else{
             return redirect(url('login'));
@@ -317,7 +317,7 @@ class AksesController extends Controller
         
         $post->save();
 
-        return redirect(url('manage_message/message_teacher'));
+        return redirect(url('manage_message/message_teacher'))->with('status', 'Message Success Sent !');
         }
         else{
             return redirect(url('login'));
@@ -338,7 +338,7 @@ class AksesController extends Controller
         
         $post->save();
 
-        return redirect(url('manage_message/message_student'));
+        return redirect(url('manage_message/message_student'))->with('status', 'Message Success Sent !');
         }
         else{
             return redirect(url('login'));
@@ -359,7 +359,7 @@ class AksesController extends Controller
         
         $post->save();
 
-        return redirect(url('manage_message/message_parent'));
+        return redirect(url('manage_message/message_parent'))->with('status', 'Message Success Sent !');
         }
         else{
             return redirect(url('login'));
@@ -465,7 +465,7 @@ class AksesController extends Controller
 
                     });
 
-            return redirect(url('manage_message/compose_mail_to'));
+            return redirect(url('manage_message/compose_mail_to'))->with('status', 'Email Success Sent !');
 
     }
 
@@ -567,9 +567,72 @@ class AksesController extends Controller
 
                     });
         }
-        return redirect(url('manage_message/email_blast'));
+        return redirect(url('manage_message/email_blast'))->with('status', 'Email Success Sent !');
         // echo Input::get('mail_type');
     }
 
+    // public function absen_p()
+    // {
+    //     $check = \App\dt_absen::where()
+    // }
+
+    public function save_absen_p()
+    {
+        date_default_timezone_set("Asia/Jakarta");
+        $post = new \App\dt_absen;
+        $post->dt_absen_type = session('akses_type');
+        $post->dt_absen_code = session('akses_code');
+        $post->dt_absen_ket = "sudah";
+        $post->dt_absen_time = date("Y-m-d H:i:s");
+        $post->dt_absen_create_by = session('akses_email');
+        $post->save();
+
+        return redirect()->back();
+    }
+
+    public function search_print()
+    {
+        session_start();
+        $dt_codereg_code     = $_POST['dt_codereg_code'];
+        $dt_codereg_type = $_POST['dt_codereg_type'];
+
+        $check_data = \DB::table('dt_codereg')->where([
+                                        ['dt_codereg_code', 'like', $dt_codereg_code], 
+                                        ['dt_codereg_type', 'like', $dt_codereg_type]
+                                    ])->count();
+
+                                    if (!empty($check_data)) {
+
+                                        $check_stat = \DB::table('dt_codereg')->where([
+                                                                        ['dt_codereg_code', 'like', $dt_codereg_code], 
+                                                                        ['dt_codereg_type', 'like', $dt_codereg_type],
+                                                                        ['dt_codereg_status', 'like', 'active']
+                                                                        ])->count();
+                                        if (!empty($check_stat)) {
+
+                                            if ($dt_codereg_type == "TK") {
+                                            return redirect('registration/TK-PDF');
+                                            }
+                                            else if ($dt_codereg_type == "SD") {
+                                            return redirect('registration/SD-PDF');
+                                            }
+                                            else if ($dt_codereg_type == "SMP") {
+                                            return redirect('registration/SMP-PDF');
+                                            }
+                                            else if ($dt_codereg_type == "SMA") {
+                                            return redirect('registration/SMA-PDF');
+                                            }
+                                        } else {
+                                            $_SESSION['error_msg'] = "Your Code Disable ! Please Payment or Call Admin Alfajar";
+                                            return redirect('registration');
+                                        }
+
+                                            
+                                    } else {
+                                        $_SESSION['error_msg'] = "Your Code or Type Grade Doesn't Exist ! Please Register First";
+                                        return redirect('registration');
+                                    }
+                                            
+    }
 
 }

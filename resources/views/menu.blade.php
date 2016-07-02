@@ -22,16 +22,6 @@
                         </a>
                       </li>
                       <li>
-                        <a href="{{ url('absen') }}">
-                          <i class="fa fa-bell-o"></i> Absen
-                        </a>
-                      </li>
-                      <li>
-                        <a href="{{ url('absen') }}">
-                          <i class="fa fa-bell-o"></i> Absen
-                        </a>
-                      </li>
-                      <li>
                         <a href="#">
                           <i class="fa fa-male"></i> Absen By Admin
                         </a>
@@ -55,17 +45,7 @@
                         </a>
                       </li>
                       <li>
-                        <a href="{{ url('absen') }}">
-                          <i class="fa fa-bell-o"></i> Absen
-                        </a>
-                      </li>
-                      <li>
-                        <a href="{{ url('absen') }}">
-                          <i class="fa fa-bell-o"></i> Absen
-                        </a>
-                      </li>
-                      <li>
-                        <a href="{{ url('absen') }}">
+                        <a href="#" data-toggle="modal" data-target="#myModalabsen">
                           <i class="fa fa-bell-o"></i> Absen
                         </a>
                       </li>
@@ -90,16 +70,6 @@
                       <li>
                         <a href="#">
                           <i class="fa fa-circle-o"></i> Check
-                        </a>
-                      </li>
-                      <li>
-                        <a href="{{ url('absen') }}">
-                          <i class="fa fa-bell-o"></i> Absen
-                        </a>
-                      </li>
-                      <li>
-                        <a href="{{ url('absen') }}">
-                          <i class="fa fa-bell-o"></i> Absen
                         </a>
                       </li>
                       <li>

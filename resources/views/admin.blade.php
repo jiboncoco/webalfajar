@@ -38,13 +38,8 @@ function initMap() {
       infoWindow.setContent('Location found.');
       map.setCenter(pos);
       var origin = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
-      <?php
-      $maps[0]->dt_maps_lat $matches;
-      ?>
-      <?php
-      $maps[0]->dt_maps_long $matches;
-      ?>
-      var destination = new google.maps.LatLng(<?php echo $matches[0]; ?>, <?php echo $matches[1]; ?>);
+      
+      var destination = new google.maps.LatLng({{\App\dt_maps::first()['dt_maps_lat']}}, {{\App\dt_maps::first()['dt_maps_long']}});
 
       var service = new google.maps.DistanceMatrixService();
       service.getDistanceMatrix(
@@ -74,6 +69,16 @@ function handleLocationError(browserHasGeolocation, infoWindow, pos) {
                         'Error: The Geolocation service failed.' :
                         'Error: Your browser doesn\'t support geolocation.');
 }
+
+function check()
+        {
+          var km = rows[0].elements[0].distance.text;
+            if (km <= '1 m') {
+
+            }
+        }
+
+var km = rows[0].elements[0].distance.text;
 
     </script>
     <script async defer
@@ -114,6 +119,27 @@ function handleLocationError(browserHasGeolocation, infoWindow, pos) {
 
         <!-- Main content -->
         <section class="content">
+
+                        <div class="modal fade" id="myModalabsen" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog-front">
+        <div class="modal-content">
+            <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h4 class="modal-title" id="myModalLabel">Foundation : Profile</h4>
+            </div>
+                <div class="modal-body-front">
+                  <form method="POST"  action="{{ url('manage_absen/save_absen_p')}}" enctype="multipart/form-data">
+                  <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                   <button type="submit" class="btn btn-default">Absen</button>
+                  </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
           <div class="admin-seacrh">
 <!--             <div class="col-lg-12">
               <div class="input-group">
@@ -203,5 +229,16 @@ function handleLocationError(browserHasGeolocation, infoWindow, pos) {
                 });
             }, 500);
         });
+    </script>
+
+    <script type="text/javascript">
+    if({{!$absen}}){
+      $.ajax({
+      url:'{{url("manage_absen/save_absen_p")}}',
+      type:'POST',
+      sucess:function(data){
+      }
+      });
+    }
     </script>
 @endsection

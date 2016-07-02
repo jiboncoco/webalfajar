@@ -106,14 +106,13 @@
                   </div>
 
                   <div  class="col-xs-6 col-md-4">
-                  <label for="exampleInputPassword1">Time</label>
-                  <div class='input-group date' id='datetimepicker1'>
-                    <input type='text' name="sch_time" class="form-control for_time" />
-                      <span class="input-group-addon">
-                      <span class="glyphicon glyphicon-calendar"></span>
-                      </span>
-                  </div>
-                  </div>
+                      <label for="exampleInputPassword1">Time </label>
+                      <select id="selecttype" name="sch_time" class="form-control not-res" >
+                      @foreach($absen_type as $time)
+                      <option value="{{ $time->m_absen_type }}">{{ $time->m_absen_type }}</option>
+                      @endforeach
+                      </select>
+                    </div>
                   </div>
                   <br>
 

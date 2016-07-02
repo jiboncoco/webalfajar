@@ -16,6 +16,7 @@
 <body class="body-view">
 
 
+
 <!-- modal more comment -->
     <div class="modal fade" id="myModalmorecomment" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog-comment">
@@ -25,15 +26,18 @@
             <h4 class="modal-title" id="myModalLabel">More Comment</h4>
             </div>
                 <div class="modal-body-front">
+        <div class="view-comment">
+        @foreach($dt_comment_all as $all_comments)
           <div class="line-comment">
-          @foreach($dt_comment_all as $all_comments)
-        <div class="lc-img">
-          <img class="img-lc" src="{{url('img/img_user/user_male.png')}}">
+        <div style="float:left" class="lc-img">
+          <img class="img-lc" src="{{ url('images/'.preg_replace('/[^\da-z.]/i', '', $all_comments->dt_comment_img)) }}">
         </div>
-        <div class="lc-text">
-          {{ $all_comments->dt_comment_text }}
+        <div>
+        <div class="ln-text">{{ preg_replace('/[^\da-z]/i', '', $all_comments->dt_comment_username) }}</div>
+        <div style="width:90px;padding:0px" class="lc-text">{{ $all_comments->dt_comment_text }}</div>
         </div>
-          @endforeach
+      </div>
+      @endforeach
       </div>
                 </form>
             </div>
@@ -684,7 +688,11 @@
 
 <!-- allcontentview -->
 
-<div class="allcontentview">
+
+
+    @if(isset($_SESSION['logged_in']))
+      @if(!empty($_SESSION['akses_type']))
+  <div class="allcontentview">
   <div class="contentview1">
   <div class="fillcv1">
 
@@ -721,11 +729,12 @@
     <div class="cv-text-news">
       {!! $detail_view->dt_blog_text !!}
     </div>
-
-    
+    @endforeach
     <div class="cv-comments">
       <div class="img-user-com">
-        <img class="img-uc" src="{{url('img/img_user/user_male.png')}}">
+      @foreach($uname as $user)
+        <img class="img-uc" src="{{ url('images/'.$user->akses_imguser) }}">
+      @endforeach
       </div>
       <div class="inp-com">
       <form method="POST" action="{{ url('save_comment') }}">
@@ -748,26 +757,28 @@
       </form>
       </div>
     </div>
-@endforeach
 
     <div class="view-comment">
       <p class="title-vc">Comment</p>
-      <div class="line-comment">
       @foreach($dt_comments as $comments)
-        <div class="lc-img">
-          <img class="img-lc" src="{{url('img/img_user/user_male.png')}}">
+      <div class="line-comment">
+        <div style="float:left" class="lc-img">
+        
+          <img class="img-lc" src="{{ url('images/'.preg_replace('/[^\da-z.]/i', '', $comments->dt_comment_img)) }}">
         </div>
+        <div>
+        <div class="ln-text">{{ preg_replace('/[^\da-z]/i', '', $comments->dt_comment_username) }}</div>
         <div class="lc-text" id="komentar">
-          {{ $comments->dt_comment_text }}
+        {{ $comments->dt_comment_text }}
+        </div>       
         </div>
-      @endforeach        
       </div>
+      @endforeach 
     </div>
 
     <div class="but-more-comment">
       <a href="#" data-toggle="modal" data-target="#myModalmorecomment"><button class="button-mc">More Comment</button></a>
     </div>
-
     <div class="other-news">
       <p class="title-on">More Post</p>
       @foreach($dt_blog_random as $dt_blog_random)
@@ -888,3 +899,188 @@
 
 </body>
 </html>
+@endif
+@else
+
+<div class="allcontentview">
+  <div class="contentview1">
+  <div class="fillcv1">
+
+  @foreach ($dt_blogs as $detail_view)
+    <div class="cv-title">
+      {{ $detail_view->dt_blog_title }}
+    </div>
+
+    <div class="cv-property">
+    <a href="#"><div class="cv-comment">
+        <i id="fa-com" class="fa fa-comments"></i>
+         <label class="lab-jml-com"> 1</label>
+    </div></a>
+    <a href="#"><div class="cv-fb">
+        <i id="fa-fb" class="fa fa-facebook-square"></i>
+         <label class="lab-fb"> Facebook</label>
+    </div></a>
+    <a href="#"><div class="cv-tweet">
+        <i id="fa-tweet" class="fa fa-twitter-square"></i>
+         <label class="lab-tweet"> Twitter</label>
+    </div></a>
+    </div>
+
+    <div class="cv-img">
+      <img height="385" width="570" class="img-cv" src="{{ url('images/'.$detail_view->cover_photo) }}">
+    </div>
+
+    <div class="cv-auth">
+      <i id="fa-usr" class="fa fa-user"></i>
+      <label class="lab-cv-auth"> Authors : {{ $detail_view->dt_blog_create_by }} as ({{ $detail_view->dt_blog_by }})</label>
+      <p class="cv-date">{{ $detail_view->created_at }}</p>
+    </div>
+
+    <div class="cv-text-news">
+      {!! $detail_view->dt_blog_text !!}
+    </div>
+  @endforeach
+
+<div class="view-comment">
+      <p class="title-vc">Comment</p>
+      @foreach($dt_comments as $comments)
+      <div class="line-comment">
+        <div style="float:left" class="lc-img">
+        
+          <img class="img-lc" src="{{ url('images/'.preg_replace('/[^\da-z.]/i', '', $comments->dt_comment_img)) }}">
+        </div>
+        <div>
+        <div class="ln-text">{{ preg_replace('/[^\da-z]/i', '', $comments->dt_comment_username) }}</div>
+        <div class="lc-text" id="komentar">
+        {{ $comments->dt_comment_text }}
+        </div>       
+        </div>
+      </div>
+      @endforeach 
+    </div>
+
+    <div class="but-more-comment">
+      <a href="#" data-toggle="modal" data-target="#myModalmorecomment"><button class="button-mc">More Comment</button></a>
+    </div>
+
+<div class="other-news">
+      <p class="title-on">More Post</p>
+      @foreach($dt_blog_random as $dt_blog_random)
+      <a href="{{ url('view/'.$dt_blog_random->id) }}"><div class="on-box">
+        <img class="on-img" src="{{ url('images/'.$dt_blog_random->cover_photo) }}">
+        <div class="on-title">{{ $dt_blog_random->dt_blog_title }}</div>
+      </div>
+      </a>
+      @endforeach
+    </div>
+
+  </div>
+  </div>
+
+  <div class="contentview2">
+      <div class="content2">
+    <div class="content2-s">
+      <form>
+        <span class="input-group-btn">
+      <input Not Like "*[!a-z]*" class="fnip" placeholder="NIP" required/>
+      </span>
+      </form>
+    </div>
+    <div class="content2-all">
+      <div class="content2-text">
+        Check on here, for everything. Search by your NIP.
+      </div>
+        <div class="content2-notif">
+        <p class="notif-p">ANNOUNCEMENT</p>
+        <?php $i=1; ?>
+        @foreach($announcement as $announcement)
+        <div class="notif">
+          <a href="{{ url('view/'.$announcement->id) }}">
+          <label class="no-notif">{{ $i++ }}.</label>
+          <label class="title-notif">{{ $announcement->dt_blog_title }}</label>
+          </a>
+          <p class="date-notif">{{ $announcement->created_at }}</p>
+        </div>
+        @endforeach
+        <div class="notif-button">
+          <a href="{{ url('announcement') }}">
+          <button class="notif-b">More</button>
+          </a>
+        </div>
+        </div>
+          <div class="content2-notif">
+            <p class="notif-p">ARTICLE</p>
+          <?php $z=1; ?>
+         @foreach($article as $article)
+        <div class="notif">
+          <a href="{{ url('view/'.$article->id) }}">
+          <label class="no-notif">{{ $z++ }}.</label>
+          <label class="title-notif">{{ $article->dt_blog_title }}</label>
+          </a>
+          <p class="date-notif">{{ $article->dt_blog_title }}</p>
+        </div>
+        @endforeach
+        <div class="notif-button">
+          <a href="{{ url('article') }}">
+          <button class="notif-b">More</button>
+          </a>
+        </div>
+          </div>
+            <div class="content2-fb">
+              <p class="title-fb">FACEBOOK PAGES</p>
+            </div>
+              <div class="content2-maps">
+              <p class="title-maps">MAPS</p>
+              </div>
+    </div>
+  </div>
+  </div>
+
+</div>
+
+<!-- allcontentview end-->
+
+<!-- footer -->
+     <div class="footerSection container">
+
+</div>
+<div class="footer-wel">
+    <div class="footer-content">
+        <div class="footer-lable">
+            <label><a class="footer-a1" href="#">Facebook</a></label>
+            <label><a class="footer-a1" href="#">Twitter</a></label>
+            <label><a class="footer-a1" href="#">Meet The Team</a></label>
+        </div>
+        <div class="footer-lable2">
+            <label style="color : rgb(20, 210, 210)">© 2016 JICOS, All rights reserved. <a class="footer-a" href="#"> Achmad Fauzi </a> and <a <a class="footer-a" href=""> Rizda Annisa .</a> Perguruan Islam Al - Fajar <a class="footer-a" href=""> Contact , </a> and JICOS <a class="footer-a" href=""> About. </a>.</label>
+        </div>
+    </div>
+</div>
+
+<!-- Sectionone block ends======================================== -->
+
+<a href="#" class="go-top" ><i class="glyphicon glyphicon-arrow-up"></i></a>
+
+
+<script src="{{ url('js/jquery-1.9.1.min.js') }}"></script>
+<script src="{{ url('js/bootstrap.min.js') }}" type="text/javascript"></script>
+<script src="{{ url('js/jquery.scrollTo-1.4.3.1-min.js') }}" type="text/javascript"></script>
+<script src="{{ url('js/jquery.easing-1.3.min.js') }}"></script>
+<script src="{{ url('js/default.js') }}"></script>
+
+
+<script type="text/javascript">
+
+    $(document).ready(function() {
+    $('#myCarousel').carousel({
+      interval: 3000
+    });
+
+    });
+
+
+</script>
+
+</body>
+</html>
+@endif

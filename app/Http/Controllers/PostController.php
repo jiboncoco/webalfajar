@@ -62,10 +62,18 @@ class PostController extends Controller
     {
         session_start();
         if(isset($_SESSION['logged_in'])){
+        $uname = \App\akses::where('akses_email', session('akses_email'))->get()->toArray();
+        $image = \App\akses::where('akses_email', session('akses_email'))->get()->toArray();
+        $img = array_column($image, 'akses_imguser');
+        $user= array_column($uname, 'akses_username');
+        $userr = serialize($user);
         $comm = new \App\dt_comment;
         $comm->dt_comment_blog_id = Input::get('dt_comment_blog_id');
         $comm->dt_comment_text = Input::get('dt_comment_text');
         $comm->dt_comment_create_by = session('akses_email');
+        $comm->dt_comment_username = json_encode($user);
+        $comm->dt_comment_img = json_encode($img);
+
 
         $comm->save();
 

@@ -36,6 +36,11 @@
 
         <!-- Main content -->
         <section class="content">
+        @if (session('status'))
+            <div class="alert alert-success">
+                {{ session('status') }}
+            </div>
+        @endif
         <div class="admin-seacrh" style="height:2px;">
             </div>
         <section class="content-header">

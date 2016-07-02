@@ -1388,6 +1388,7 @@ border-bottom: 0;
 .line-comment{
 	width: 100%;
 	display: inline-table;
+	border-bottom: 1px solid #eee;
 }
 .lc-img{
 	display: inline-table;
@@ -1401,6 +1402,14 @@ border-bottom: 0;
 .lc-text{
 	display: inline-table;
     font-size: 13px;
+    text-align: justify;
+    width: 94%;
+}
+.ln-text{
+	padding-top: 15px;
+	font-weight: bold;
+	display: inline-table;
+    font-size: 15px;
     text-align: justify;
     width: 94%;
 }

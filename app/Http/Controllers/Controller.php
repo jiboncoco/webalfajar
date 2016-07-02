@@ -5226,7 +5226,10 @@ class Controller extends BaseController
             {
                 $random = $dt_blog_random->random(3);
             }
+            $uname = \App\akses::where('akses_email', session('akses_email'))->get();
             $dt_comment = \DB::table('dt_comment')->where('dt_comment_blog_id', '=', $id)->orderBy('dt_comment_id', 'desc')->paginate(2);
+            $user_comment = \DB::table('akses')->join('dt_comment', 'akses.akses_email', '=', 'dt_comment.dt_comment_create_by')->select('akses.akses_username as uname_com', 'akses.akses_imguser as img_com')
+            ->orderBy('dt_comment_id', 'desc')->paginate(2);
             $dt_comment_all = \DB::table('dt_comment')->where('dt_comment_blog_id', '=', $id)->orderBy('dt_comment_id', 'desc')->get();
             $article = \DB::table('dt_blog')->where('dt_blog_type', '=', 'article')->orderBy('id', 'desc')->paginate(3);
             $announcement = \DB::table('dt_blog')->where('dt_blog_type','=','announcement')->orderBy('id', 'desc')->paginate(3);
@@ -5267,7 +5270,7 @@ class Controller extends BaseController
             ->with('sd_kurkul',$sd_kurkul)->with('sd_galery',$sd_galery)->with('sd_fasilitas',$sd_fasilitas)->with('smp_vimi',$smp_vimi)
             ->with('smp_kurkul',$smp_kurkul)->with('smp_galery',$smp_galery)->with('smp_fasilitas',$smp_fasilitas)->with('sma_vimi',$sma_vimi)
             ->with('sma_kurkul',$sma_kurkul)->with('sma_galery',$sma_galery)->with('sma_fasilitas',$sma_fasilitas)->with('dkm_galery',$dkm_galery)
-            ->with('dkm_fasilitas',$dkm_fasilitas)->with('teacher',$teacher);
+            ->with('dkm_fasilitas',$dkm_fasilitas)->with('teacher',$teacher)->with('user_comment',$user_comment)->with('uname',$uname) ;
         }
         else{
             $dt_blog = array('data'=>\App\dt_blog::find($id));
@@ -5277,6 +5280,8 @@ class Controller extends BaseController
                 $random = $dt_blog_random->random(3);
             }
             $dt_comment = \DB::table('dt_comment')->where('dt_comment_blog_id', '=', $id)->orderBy('dt_comment_id', 'desc')->paginate(2);
+            $user_comment = \DB::table('akses')->join('dt_comment', 'akses.akses_email', '=', 'dt_comment.dt_comment_create_by')->select('akses.akses_username as uname_com', 'akses.akses_imguser as img_com')
+            ->orderBy('dt_comment_id', 'desc')->paginate(2);
             $dt_comment_all = \DB::table('dt_comment')->where('dt_comment_blog_id', '=', $id)->orderBy('dt_comment_id', 'desc')->get();
             $article = \DB::table('dt_blog')->where('dt_blog_type', '=', 'article')->orderBy('id', 'desc')->paginate(3);
             $announcement = \DB::table('dt_blog')->where('dt_blog_type','=','announcement')->orderBy('id', 'desc')->paginate(3);
@@ -5317,7 +5322,7 @@ class Controller extends BaseController
             ->with('sd_kurkul',$sd_kurkul)->with('sd_galery',$sd_galery)->with('sd_fasilitas',$sd_fasilitas)->with('smp_vimi',$smp_vimi)
             ->with('smp_kurkul',$smp_kurkul)->with('smp_galery',$smp_galery)->with('smp_fasilitas',$smp_fasilitas)->with('sma_vimi',$sma_vimi)
             ->with('sma_kurkul',$sma_kurkul)->with('sma_galery',$sma_galery)->with('sma_fasilitas',$sma_fasilitas)->with('dkm_galery',$dkm_galery)
-            ->with('dkm_fasilitas',$dkm_fasilitas)->with('teacher',$teacher);
+            ->with('dkm_fasilitas',$dkm_fasilitas)->with('teacher',$teacher)->with('user_comment',$user_comment);
         }
     }
 
@@ -5325,10 +5330,28 @@ class Controller extends BaseController
     {
        session_start();
         if(isset($_SESSION['logged_in'])){
-            return view('pendaftaran');
+            $data_kelas = \DB::table('dt_kelas')
+                     ->select(\DB::raw('count(*) as class, dt_kelas_type'))
+                     ->where('dt_kelas_type', '<>', 1)
+                     ->groupBy('dt_kelas_type')
+                     ->get();
+            $data_kelas_tk = \DB::table('dt_kelas')->where('dt_kelas_type', 'like', 'tk')->get();
+            $data_kelas_sd = \DB::table('dt_kelas')->where('dt_kelas_type', 'like', 'sd')->get();
+            $data_kelas_smp = \DB::table('dt_kelas')->where('dt_kelas_type', 'like', 'smp')->get();
+            $data_kelas_sma = \DB::table('dt_kelas')->where('dt_kelas_type', 'like', 'sma')->get();
+            return view('pendaftaran')->with('data_kelas',$data_kelas)->with('data_kelas_tk',$data_kelas_tk)->with('data_kelas_sd',$data_kelas_sd)->with('data_kelas_smp',$data_kelas_smp)->with('data_kelas_sma',$data_kelas_sma);
         }
         else{
-            return view('pendaftaran');
+            $data_kelas = \DB::table('dt_kelas')
+                     ->select(\DB::raw('count(*) as class, dt_kelas_type'))
+                     ->where('dt_kelas_type', '<>', 1)
+                     ->groupBy('dt_kelas_type')
+                     ->get();
+            $data_kelas_tk = \DB::table('dt_kelas')->where('dt_kelas_type', 'like', 'tk')->get();
+            $data_kelas_sd = \DB::table('dt_kelas')->where('dt_kelas_type', 'like', 'sd')->get();
+            $data_kelas_smp = \DB::table('dt_kelas')->where('dt_kelas_type', 'like', 'smp')->get();
+            $data_kelas_sma = \DB::table('dt_kelas')->where('dt_kelas_type', 'like', 'sma')->get();
+            return view('pendaftaran')->with('data_kelas',$data_kelas)->with('data_kelas_tk',$data_kelas_tk)->with('data_kelas_sd',$data_kelas_sd)->with('data_kelas_smp',$data_kelas_smp)->with('data_kelas_sma',$data_kelas_sma);
         }
     }
 

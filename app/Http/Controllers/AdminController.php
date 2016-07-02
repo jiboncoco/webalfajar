@@ -9,20 +9,34 @@ use Illuminate\Support\Facades\Input;
 
 class AdminController extends Controller
 {
-    public function admin(Request $request)
-    {
-    	session_start();
-    	if(isset($_SESSION['logged_in'])){
-            $uname = \App\akses::where('akses_email', session('akses_email'))->get();
-    		$dt_blog_admin = \App\dt_blog::orderBy('id', 'desc')->paginate(6);
-            $maps = \DB::table('dt_maps')->get();
-			return \View::make('admin')->with('request',$request)->with('dt_blog_admins',$dt_blog_admin)->with('uname',$uname)->with('maps',$maps);
-		}
-		else{
-			return redirect('login')->with('request',$request);
-		}	
+public function cekabsen(){
+    if(sizeof(\App\dt_absen::where('dt_absen_create_by',session('akses_email'))->whereRaw('date(dt_absen_time)="'.date("Y-m-d").'"')->get())==0){
+        return false;
+    }else{
+        return true;
     }
-
+}
+public function admin(Request $request)
+{
+    session_start();
+    if(isset($_SESSION['logged_in'])){
+        $uname = \App\akses::where('akses_email', session('akses_email'))->get();
+        $dt_blog_admin = \App\dt_blog::orderBy('id', 'desc')->paginate(6);
+        $dt_absen = \App\dt_absen::all();
+        $maps = \DB::table('dt_maps')->get();
+        $cek = $this->cekabsen();       
+        return \View::make('admin')
+            ->with('request',$request)  
+            ->with('dt_absens',$dt_absen)           
+            ->with('dt_blog_admins',$dt_blog_admin)         
+            ->with('uname',$uname)              
+            ->with('absen',$cek)            
+            ->with('maps',$maps);
+    }
+    else{
+        return redirect('login')->with('request',$request);
+    }   
+}
     public function my_post(Request $request)
     {
         session_start();
@@ -390,7 +404,7 @@ class AdminController extends Controller
         $post->akses_username = Input::get('akses_username');
         $post->akses_password = Input::get('akses_password');
         $post->akses_create_by = session('akses_email');
-        $post->akses_imguser = '20160603232954575212f2970a3.png';
+        $post->akses_imguser = '201606300652525774c1c4bf10a.png';
 
         $post->save();
 
@@ -788,8 +802,9 @@ class AdminController extends Controller
         if(isset($_SESSION['logged_in'])){
             $uname = \App\akses::where('akses_email', session('akses_email'))->get();
             $teacher_sch = \App\dt_sch::all();
+            $absen_type = \App\m_absen::ALL();
             $dt_teacher = \App\dt_teacher::all();
-            return \View::make('teacher_sch')->with('teacher_sch',$teacher_sch)->with('dt_teachers',$dt_teacher)->with('uname',$uname);
+            return \View::make('teacher_sch')->with('teacher_sch',$teacher_sch)->with('absen_type',$absen_type)->with('dt_teachers',$dt_teacher)->with('uname',$uname);
         }
         else{
             return redirect(url('login'));
@@ -1464,6 +1479,100 @@ class AdminController extends Controller
         else{
             return redirect(url('login'));
         }
+    }
+
+    public function all_absen()
+    {
+       session_start();
+        if(isset($_SESSION['logged_in'])){
+        $uname = \App\akses::where('akses_email', session('akses_email'))->get();
+        $dt_absen = \App\dt_absen::all();
+        return \View::make('all_absen')->with('dt_absens', $dt_absen)->with('uname',$uname);
+        }
+        else{
+            return redirect(url('login'));
+        }
+    }
+
+
+    public function edit_all_absen($id)
+    {
+       session_start();
+        if(isset($_SESSION['logged_in'])){
+        $uname = \App\akses::where('akses_email', session('akses_email'))->get();
+        $dt_absen_edit = \App\dt_absen::find($id);
+        $dt_absen = \App\dt_absen::all();
+        return \View::make('edit_absen')->with('dt_absens', $dt_absen)->with('dt_absen_edit', $dt_absen_edit)->with('uname',$uname);
+        }
+        else{
+            return redirect(url('login'));
+        }
+    }
+
+    public function update_all_absen()
+    {
+        $post = \App\dt_absen::find(Input::get('id'));
+        $post->dt_absen_code = Input::get('dt_absen_code');
+        $post->dt_absen_datevalid = Input::get('dt_absen_datevalid');
+        $post->save();
+
+        return redirect(url('manage_absen/all_data_absen'));
+    }
+
+    public function delete_all_absen($id)
+    {
+       session_start();
+        if(isset($_SESSION['logged_in'])){
+            \App\dt_absen::find($id)->delete();
+            return redirect( url('manage_absen/all_data_absen'));
+        }
+        else{
+            return redirect(url('login'));
+        }
+    }
+
+    public function generateRandomString($length = 20) 
+    {
+        $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+        $charactersLength = strlen($characters);
+        $randomString = '';
+        for ($i = 0; $i < $length; $i++) {
+            $randomString .= $characters[rand(0, $charactersLength - 1)];
+        }
+        return $randomString;
+    }
+
+    public function registration_student()
+    {
+        $code = $this->generateRandomString($length = 20);
+        $post = new \App\dt_reg;
+        $post->dt_reg_year = Input::get('dt_reg_year');
+        $post->dt_reg_name_student = Input::get('dt_reg_name_student');
+        $post->dt_reg_type = Input::get('dt_student_grade');
+        $post->dt_reg_class= Input::get('dt_student_kelas_'.Input::get("type_class"));
+        $post->dt_reg_gender = Input::get('dt_reg_gender');
+        $post->dt_reg_place = Input::get('dt_reg_place');
+        $post->dt_reg_dob = Input::get('dt_reg_dob');
+        $post->dt_reg_religion = Input::get('dt_reg_religion');
+        $post->dt_reg_before = Input::get('dt_reg_before');
+        $post->dt_reg_address = Input::get('dt_reg_address');
+        $post->dt_reg_namefather = Input::get('dt_reg_namefather');
+        $post->dt_reg_namemother = Input::get('dt_reg_namemother');
+        $post->dt_reg_contact = Input::get('dt_reg_contact');
+        $post->dt_reg_emailparent = Input::get('dt_reg_emailparent');
+        $post->dt_reg_create_by = Input::get('dt_reg_emailparent');
+        $post->dt_reg_codereg = $code;
+        $post->save();
+        
+        $post2 = new \App\dt_codereg;
+        $post2->dt_codereg_code = $code;
+        $post2->dt_codereg_type = Input::get('dt_student_grade');
+        $post2->dt_codereg_status = "disable";
+
+
+        $post2->save();
+
+        return redirect()->back();
     }
 
 }

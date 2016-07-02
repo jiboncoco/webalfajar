@@ -239,7 +239,7 @@
               </a>
               <ul class="treeview-menu">
                 <li><a href="{{ url('manage_absen/master_absen') }}"><i class="fa fa-rss"></i> Master Absen</a></li>
-                <!-- <li><a href="{{ url('manage_absen/all_data_absen') }}"><i class="fa fa-map-o"></i> All Data Absen</a></li> -->
+                <li><a href="{{ url('manage_absen/all_data_absen') }}"><i class="fa fa-map-o"></i> All Data Absen</a></li>
               </ul>
             </li>
             <li class="treeview">
@@ -364,7 +364,7 @@
               </a>
               <ul class="treeview-menu">
                 <li><a href="{{ url('manage_absen/master_absen') }}"><i class="fa fa-rss"></i> Master Absen</a></li>
-                <!-- <li><a href="{{ url('manage_absen/all_data_absen') }}"><i class="fa fa-map-o"></i> All Data Absen</a></li> -->
+                <li><a href="{{ url('manage_absen/all_data_absen') }}"><i class="fa fa-map-o"></i> All Data Absen</a></li>
               </ul>
             </li>
             <li class="treeview">
