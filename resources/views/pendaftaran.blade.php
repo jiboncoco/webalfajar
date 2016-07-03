@@ -3214,9 +3214,9 @@
 
   <div id="pendaftarantk"></div>
   <a data-toggle="modal" data-target="#myModalinfodaftar" href="#">
-  <div style="background:#00bfa5" class="box-pendaftaran" >
+  <div style="background:#4FC2F8" class="box-pendaftaran" >
     <div class="img-pendaftaran">
-      <img class="img-daftar" src="{{ url('img/img_home/TK.png') }}">
+      <img class="img-daftar" src="{{ url('img/img_home/daftaronline.jpg') }}">
     </div>
     <div class="titlebox">
       
@@ -3228,9 +3228,9 @@
   </a>
 
   <a data-toggle="modal" data-target="#myModalprint" href="#">
-  <div id="pendaftaransd" style="background:#e57373" class="box-pendaftaran">
+  <div id="pendaftaransd" style="background:#E6E6E6" class="box-pendaftaran">
     <div class="img-pendaftaran">
-      <img class="img-daftar" src="{{ url('img/img_home/SD.png') }}">
+      <img class="img-daftar" src="{{ url('img/img_home/print.jpg') }}">
     </div>
     <div class="titlebox">
     </div>

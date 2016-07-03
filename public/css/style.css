@@ -1519,36 +1519,36 @@ border-bottom: 0;
 }
 .titlefullboxtk{
 	background-color: white;
-	color: #00bfa5 !important;
-	border-top: 1px solid #00bfa5;
+	color: #4FC2F8 !important;
+	border-top: 1px solid #4FC2F8;
 	width: 100%;
 	padding: 10px;
 	font-size: 18px;
 	font-weight: bold;
 }
 .titlefullboxtk:hover{
-	border-top: 1px solid #00bfa5;
+	border-top: 1px solid #4FC2F8;
 	width: 100%;
 	padding: 10px;
-	background-color: #00bfa5;
+	background-color: #4FC2F8;
 	color: white !important;
 	font-size: 18px;
 }
 .titlefullboxsd{
-	border-top: 1px solid #e57373;
+	border-top: 1px solid #E6E6E6;
 	width: 100%;
 	padding: 10px;
 	background-color: white;
-	color: #e57373 !important;
+	color: #949090 !important;
 	font-size: 18px;
 	font-weight: bold;
 }
 .titlefullboxsd:hover{
-	border-top: 1px solid #e57373;
+	border-top: 1px solid #E6E6E6;
 	width: 100%;
 	padding: 10px;
-	background-color: #e57373;
-	color: white !important;
+	background-color: #E6E6E6;
+	color: #949090 !important;
 	font-size: 18px;
 }
 .titlefullboxsmp{
