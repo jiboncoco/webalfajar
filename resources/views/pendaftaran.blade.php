@@ -42,6 +42,27 @@
 </div>
 </div>
 
+<div class="modal fade" id="myModalinfodaftar" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog-front">
+        <div class="modal-content">
+            <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+            <h4 class="modal-title" id="myModalLabel">Registration Rules</h4>
+            </div>
+                <div class="modal-body-front">
+                   @foreach($rules_register as $info)
+                   {!! $info->feature_text !!}
+                   @endforeach
+                </form>
+            </div>
+            <div class="modal-footer">
+              <a href="#" data-toggle="modal" data-target="#myModaldaftartk"><button type="button" class="btn btn-success" data-dismiss="modal">Next</button></a>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
 <div class="modal fade" id="myModalyay2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog-front">
         <div class="modal-content">
@@ -3192,7 +3213,7 @@
 <div class="full-pendaftaran">
 
   <div id="pendaftarantk"></div>
-  <a data-toggle="modal" data-target="#myModaldaftartk" href="#">
+  <a data-toggle="modal" data-target="#myModalinfodaftar" href="#">
   <div style="background:#00bfa5" class="box-pendaftaran" >
     <div class="img-pendaftaran">
       <img class="img-daftar" src="{{ url('img/img_home/TK.png') }}">

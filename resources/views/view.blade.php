@@ -34,7 +34,7 @@
         </div>
         <div>
         <div class="ln-text">{{ preg_replace('/[^\da-z]/i', '', $all_comments->dt_comment_username) }}</div>
-        <div style="width:90px;padding:0px" class="lc-text">{{ $all_comments->dt_comment_text }}</div>
+        <div style="width:94%;padding:0px" class="lc-text">{{ $all_comments->dt_comment_text }}</div>
         </div>
       </div>
       @endforeach

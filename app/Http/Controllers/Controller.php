@@ -5336,10 +5336,12 @@ class Controller extends BaseController
                      ->groupBy('dt_kelas_type')
                      ->get();
             $data_kelas_tk = \DB::table('dt_kelas')->where('dt_kelas_type', 'like', 'tk')->get();
+            $rules_register = \DB::table('dt_feature')->where([ ['feature_to', '=', 'OTHER'],['feature_for', '=', 'pendaftaran'] ])->get();
             $data_kelas_sd = \DB::table('dt_kelas')->where('dt_kelas_type', 'like', 'sd')->get();
             $data_kelas_smp = \DB::table('dt_kelas')->where('dt_kelas_type', 'like', 'smp')->get();
             $data_kelas_sma = \DB::table('dt_kelas')->where('dt_kelas_type', 'like', 'sma')->get();
-            return view('pendaftaran')->with('data_kelas',$data_kelas)->with('data_kelas_tk',$data_kelas_tk)->with('data_kelas_sd',$data_kelas_sd)->with('data_kelas_smp',$data_kelas_smp)->with('data_kelas_sma',$data_kelas_sma);
+            return view('pendaftaran')->with('data_kelas',$data_kelas)->with('data_kelas_tk',$data_kelas_tk)->with('data_kelas_sd',$data_kelas_sd)
+            ->with('data_kelas_smp',$data_kelas_smp)->with('data_kelas_sma',$data_kelas_sma)->with('rules_register',$rules_register);
         }
         else{
             $data_kelas = \DB::table('dt_kelas')
@@ -5348,10 +5350,12 @@ class Controller extends BaseController
                      ->groupBy('dt_kelas_type')
                      ->get();
             $data_kelas_tk = \DB::table('dt_kelas')->where('dt_kelas_type', 'like', 'tk')->get();
+            $rules_register = \DB::table('dt_feature')->where([ ['feature_to', '=', 'OTHER'],['feature_for', '=', 'pendaftaran'] ])->get();
             $data_kelas_sd = \DB::table('dt_kelas')->where('dt_kelas_type', 'like', 'sd')->get();
             $data_kelas_smp = \DB::table('dt_kelas')->where('dt_kelas_type', 'like', 'smp')->get();
             $data_kelas_sma = \DB::table('dt_kelas')->where('dt_kelas_type', 'like', 'sma')->get();
-            return view('pendaftaran')->with('data_kelas',$data_kelas)->with('data_kelas_tk',$data_kelas_tk)->with('data_kelas_sd',$data_kelas_sd)->with('data_kelas_smp',$data_kelas_smp)->with('data_kelas_sma',$data_kelas_sma);
+            return view('pendaftaran')->with('data_kelas',$data_kelas)->with('data_kelas_tk',$data_kelas_tk)->with('data_kelas_sd',$data_kelas_sd)
+            ->with('data_kelas_smp',$data_kelas_smp)->with('data_kelas_sma',$data_kelas_sma)->with('rules_register',$rules_register);
         }
     }
 
