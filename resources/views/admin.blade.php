@@ -19,7 +19,7 @@
 //     zoom: 106.869773
 //   });
 // }
-function initMap() {
+function setMap() {
   var map = new google.maps.Map(document.getElementById('map'), {
     center: {lat: -6.204831, lng: 106.840848},
     zoom: 10

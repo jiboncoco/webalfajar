@@ -55,7 +55,7 @@
 
         <label for="exampleInputPassword1">Cover Photo</label><br>
       <img class="cover_photo_edit" src="{{ url('images/'.$data->cover_photo) }}">
-      <input type="file" name="cover_photo" required/>
+      <input type="file" name="cover_photo" value="{{ $data->cover_photo }}" />
       <br>
     <div id="inputdate">
     

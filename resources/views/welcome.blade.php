@@ -148,20 +148,19 @@
       <div id="info-boxx" class="col-md-4 col-xs-12">
       <div class="info-img">
         <img class="infoimg2 animated bounceInLeft" src="{{ url('images/'.$dt_blog->cover_photo) }}" ></div>
-        <h4>{{ $dt_blog->dt_blog_title }}</h4>
-<!--         <p class="animated flipInY">
+        <h4>
                 <?php
-            $string = strip_tags($dt_blog->dt_blog_text);
+            $string = strip_tags($dt_blog->dt_blog_title);
 
-            if (strlen($string) > 300) {
+            if (strlen($string) > 30) {
 
-                $stringCut = substr($string, 0, 150);
+                $stringCut = substr($string, 0, 30);
 
                 $string = substr($stringCut, 0, strrpos($stringCut, ' ')).'...';
             }
             echo $string;
       ?>
-        </p> -->
+      </h4>
       </div>
       </a>
       @endforeach

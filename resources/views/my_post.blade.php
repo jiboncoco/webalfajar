@@ -57,15 +57,29 @@
                     @foreach($dt_blog_admins as $dt_blog_admin2)
                       <tr>
                         <td>{{$i++}}</td>
-                        <td><a href="{{ url('view/'.$dt_blog_admin2->id) }}">{{ $dt_blog_admin2->dt_blog_title }}</a></td>
+                        <td><a href="{{ url('view/'.$dt_blog_admin2->id) }}">
+                          <?php
+                          $string = strip_tags($dt_blog_admin2->dt_blog_title);
+
+                          if (strlen($string) > 50) {
+
+                              // truncate string
+                              $stringCut = substr($string, 0, 50);
+
+                              // make sure it ends in a word so assassinate doesn't become ass...
+                              $string = substr($stringCut, 0, strrpos($stringCut, ' ')).'...';
+                          }
+                              echo $string;
+                            ?>
+                        </a></td>
                         <td>
                           <?php
                           $string = strip_tags($dt_blog_admin2->dt_blog_text);
 
-                          if (strlen($string) > 70) {
+                          if (strlen($string) > 60) {
 
                               // truncate string
-                              $stringCut = substr($string, 0, 70);
+                              $stringCut = substr($string, 0, 60);
 
                               // make sure it ends in a word so assassinate doesn't become ass...
                               $string = substr($stringCut, 0, strrpos($stringCut, ' ')).'...';

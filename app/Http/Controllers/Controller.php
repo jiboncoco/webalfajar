@@ -5222,9 +5222,9 @@ class Controller extends BaseController
         if(isset($_SESSION['logged_in'])){
             $dt_blog = array('data'=>\App\dt_blog::find($id));
             $dt_blog_random=\App\dt_blog::all();
-            if (sizeof($dt_blog_random) > 4)
+            if (sizeof($dt_blog_random) >= 3)
             {
-                $random = $dt_blog_random->random(3);
+                $dt_blog_random = $dt_blog_random->random(3);
             }
             $uname = \App\akses::where('akses_email', session('akses_email'))->get();
             $dt_comment = \DB::table('dt_comment')->where('dt_comment_blog_id', '=', $id)->orderBy('dt_comment_id', 'desc')->paginate(2);
