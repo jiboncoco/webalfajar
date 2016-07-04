@@ -1572,7 +1572,7 @@ public function admin(Request $request)
 
         $post2->save();
 
-        return redirect()->back();
+        return redirect()->back()->with('status', 'Registration Succes !');
     }
 
 }

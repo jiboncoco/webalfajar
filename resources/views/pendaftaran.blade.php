@@ -829,7 +829,12 @@
   <div class="form-group row">
     <label for="inputPassword3" class="col-sm-2 form-control-label">Tanggal Lahir <label class="requireddaftar">*</label></label>
     <div class="col-sm-3">
-      <input name="dt_reg_dob" style="height: 34px;width:200px" value="01/07/2004" class="datepicker" id="inputPassword3" required/>
+    <div class='input-group date' id='datetimepicker1'>
+        <input type='text' name="dt_reg_dob" class="form-control not-res birth_date" />
+        <span class="input-group-addon">
+        <span class="glyphicon glyphicon-calendar"></span>
+        </span>
+    </div>
     </div>
   </div>
 
@@ -3209,6 +3214,11 @@
                     unset($_SESSION['error_msg']);
                     }
                     ?>
+@if (session('status'))
+            <div class="alert alert-success">
+                {{ session('status') }}
+            </div>
+        @endif
 
 <div class="full-pendaftaran">
 
@@ -3313,6 +3323,7 @@
     });
   $('.for_year').datetimepicker({ format: 'YYYY' });
     $('.for_time').datetimepicker({ format: 'HH:mm:ss' });
+    $('.birth_date').datetimepicker({ format: 'YYYY-MM-DD' });
         $('#selecttypegrade').change(function(){
         if($(this).val() == "TK"){
           $("#selecttypeclasstk").css("display","block");
