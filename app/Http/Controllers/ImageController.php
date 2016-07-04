@@ -28,12 +28,12 @@ class ImageController extends Controller
         $destinationPath = '/upload';
         $extension = $request->file('upload')->getClientOriginalExtension();
         $fileName = uniqid().'.'.$extension;
-        $request->file('upload')->move(base_path() . "/public/".$destinationPath, $fileName);
+        $request->file('upload')->move(base_path() . "{{ url('/public/') }}".$destinationPath, $fileName);
         return response()->json(
           [
             'uploaded' => 1,
             'fileName' => $fileName,
-            'url' => "/upload/".$fileName,
+            'url' => "{{ url('/upload/') }}".$fileName,
           ]
         );
       }
@@ -59,17 +59,17 @@ class ImageController extends Controller
     $langCode = $_GET['langCode'] ;
     $token = $_POST['ckCsrfToken'] ;
     if ($validator->fails()) {
-      $url = '/path/to/uploaded/file.ext';
+      $url = "{{ url('/path/to/uploaded/file.ext') }}";
       $message = 'File Tidak Valid';
       return "<script type='text/javascript'>window.parent.CKEDITOR.tools.callFunction($funcNum, '', '$message');</script>";
     }
     else {
       if ($request->file('upload')->isValid()) {
-        $destinationPath = '/upload';
+        $destinationPath = "{{ url('/upload') }}";
         $extension = $request->file('upload')->getClientOriginalExtension();
         $fileName = uniqid().'.'.$extension;
-        $request->file('upload')->move(base_path() . "/public/".$destinationPath, $fileName);
-        $url = "/upload//".$fileName;
+        $request->file('upload')->move(base_path() . "{{ url('/public/') }}".$destinationPath, $fileName);
+        $url = "{{ url('/upload//') }}".$fileName;
         return "<script type='text/javascript'>window.parent.CKEDITOR.tools.callFunction($funcNum, '$url', '');</script>";
       }
       else {

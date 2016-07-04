@@ -5361,10 +5361,15 @@ class Controller extends BaseController
 
     public function registration_tk_pdf()
     {
+        session_start();
+        if(isset($_SESSION['available_print'])){
         $view = \View::make('registration_tk_pdf');
         $pdf = \App::make('dompdf.wrapper');
         $pdf->loadHTML($view)->setPaper('a4')->setOrientation('potrait');
         return $pdf->stream();
+        } else {
+            return redirect('registration');
+        }
     }
 
     public function registration_sd_pdf()

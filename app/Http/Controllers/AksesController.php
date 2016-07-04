@@ -611,15 +611,19 @@ class AksesController extends Controller
                                         if (!empty($check_stat)) {
 
                                             if ($dt_codereg_type == "TK") {
+                                                $_SESSION['available_print'] = 1;
                                             return redirect('registration/TK-PDF');
                                             }
                                             else if ($dt_codereg_type == "SD") {
+                                                $_SESSION['available_print'] = 1;
                                             return redirect('registration/SD-PDF');
                                             }
                                             else if ($dt_codereg_type == "SMP") {
+                                                $_SESSION['available_print'] = 1;
                                             return redirect('registration/SMP-PDF');
                                             }
                                             else if ($dt_codereg_type == "SMA") {
+                                                $_SESSION['available_print'] = 1;
                                             return redirect('registration/SMA-PDF');
                                             }
                                         } else {
