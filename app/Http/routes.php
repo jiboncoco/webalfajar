@@ -306,6 +306,8 @@ Route::get('manage_post/delete_post/{id}', 'PostController@delete_post');
 Route::post('save_comment', 'PostController@save_comment');
 Route::get('logout', 'LoginController@logout');
 
+Route::get('absen_page', 'AdminController@absen_page');
+
 Route::post('search_print', 'AksesController@search_print');
 
 Route::get('search_post_tk/{search_tk?}', 'PostController@search_post_tk');

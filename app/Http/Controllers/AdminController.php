@@ -9,13 +9,6 @@ use Illuminate\Support\Facades\Input;
 
 class AdminController extends Controller
 {
-public function cekabsen(){
-    if(sizeof(\App\dt_absen::where('dt_absen_create_by',session('akses_email'))->whereRaw('date(dt_absen_time)="'.date("Y-m-d").'"')->get())==0){
-        return false;
-    }else{
-        return true;
-    }
-}
 public function admin(Request $request)
 {
     session_start();
@@ -1573,6 +1566,37 @@ public function admin(Request $request)
         $post2->save();
 
         return redirect()->back()->with('status', 'Registration Succes !');
+    }
+
+    public function cekabsen()
+    {
+        if(sizeof(\App\dt_absen::where('dt_absen_create_by',session('akses_email'))->whereRaw('date(dt_absen_time)="'.date("Y-m-d").'"')->get())==0){
+            return false;
+        }else{
+            return true;
+        }
+    }
+
+    public function absen_page(Request $request)
+    {
+        session_start();
+        if(isset($_SESSION['logged_in'])){
+            $uname = \App\akses::where('akses_email', session('akses_email'))->get();
+            $dt_blog_admin = \App\dt_blog::orderBy('id', 'desc')->paginate(6);
+            $dt_absen = \App\dt_absen::all();
+            $maps = \DB::table('dt_maps')->get();
+            $cek = $this->cekabsen();       
+            return \View::make('absen_page')
+                ->with('request',$request)  
+                ->with('dt_absens',$dt_absen)           
+                ->with('dt_blog_admins',$dt_blog_admin)         
+                ->with('uname',$uname)              
+                ->with('absen',$cek)            
+                ->with('maps',$maps);
+        }
+        else{
+            return redirect('login')->with('request',$request);
+        }    
     }
 
 }
