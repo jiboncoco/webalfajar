@@ -786,18 +786,18 @@
         <img class="on-img" src="{{ url('images/'.$dt_blog_random->cover_photo) }}">
         <div class="on-title">
           <?php
-                          $string = strip_tags($dt_blog_random->dt_blog_title);
+              $string = strip_tags($dt_blog_random->dt_blog_title);
 
-                          if (strlen($string) > 25) {
+              if (strlen($string) > 30) {
 
-                              // truncate string
-                              $stringCut = substr($string, 0, 25);
+                  // truncate string
+                  $stringCut = substr($string, 0, 30);
 
-                              // make sure it ends in a word so assassinate doesn't become ass...
-                              $string = substr($stringCut, 0, strrpos($stringCut, ' ')).'...';
-                          }
-                              echo $string;
-                            ?>
+                  // make sure it ends in a word so assassinate doesn't become ass...
+                  $string = substr($stringCut, 0, strrpos($stringCut, ' ')).'...';
+              }
+              echo $string;
+        ?>
       </div>
       </div>
       </a>
@@ -982,7 +982,21 @@
       @foreach($dt_blog_random as $dt_blog_random)
       <a href="{{ url('view/'.$dt_blog_random->id) }}"><div class="on-box">
         <img class="on-img" src="{{ url('images/'.$dt_blog_random->cover_photo) }}">
-        <div class="on-title">{{ $dt_blog_random->dt_blog_title }}</div>
+        <div class="on-title">
+        <?php
+              $string = strip_tags($dt_blog_random->dt_blog_title);
+
+              if (strlen($string) > 30) {
+
+                  // truncate string
+                  $stringCut = substr($string, 0, 30);
+
+                  // make sure it ends in a word so assassinate doesn't become ass...
+                  $string = substr($stringCut, 0, strrpos($stringCut, ' ')).'...';
+              }
+              echo $string;
+        ?>
+        </div>
       </div>
       </a>
       @endforeach
