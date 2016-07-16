@@ -15,7 +15,7 @@
 </head>
 <body>
 
- 
+
 
 <!-- modal yayasan -->
 <div class="modal fade" id="myModalyay1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -88,10 +88,10 @@
                 <div class="modal-body-front">
                    <div class="modal-galeri">
                   @foreach($yayasan_galery as $ygalery)
-                  
+
                     <!-- <img class="bm-galeri" src="{{url('img/img_galery/galery.jpg')}}"> -->
                     {!! $ygalery->feature_text !!}
-                    
+
                     <label class="bm-desc">
                       <blockquote>
                     {{$ygalery->created_at}} By : {{$ygalery->feature_create_by}}
@@ -181,10 +181,10 @@
                 <div class="modal-body-front">
                    <div class="modal-galeri">
                   @foreach($tk_galery as $tkgalery)
-                  
+
                     <!-- <img class="bm-galeri" src="{{url('img/img_galery/galery.jpg')}}"> -->
                     {!! $tkgalery->feature_text !!}
-                    
+
                     <label class="bm-desc">
                       <blockquote>
                     {{$tkgalery->created_at}} By : {{$tkgalery->feature_create_by}}
@@ -275,10 +275,10 @@
                 <div class="modal-body-front">
                    <div class="modal-galeri">
                   @foreach($sd_galery as $sdgalery)
-                  
+
                     <!-- <img class="bm-galeri" src="{{url('img/img_galery/galery.jpg')}}"> -->
                     {!! $sdgalery->feature_text !!}
-                    
+
                     <label class="bm-desc">
                       <blockquote>
                     {{$sdgalery->created_at}} By : {{$sdgalery->feature_create_by}}
@@ -370,10 +370,10 @@
                 <div class="modal-body-front">
                    <div class="modal-galeri">
                   @foreach($smp_galery as $smpgalery)
-                  
+
                     <!-- <img class="bm-galeri" src="{{url('img/img_galery/galery.jpg')}}"> -->
                     {!! $smpgalery->feature_text !!}
-                    
+
                     <label class="bm-desc">
                       <blockquote>
                     {{$smpgalery->created_at}} By : {{$smpgalery->feature_create_by}}
@@ -464,10 +464,10 @@
                 <div class="modal-body-front">
                    <div class="modal-galeri">
                   @foreach($sma_galery as $smagalery)
-                  
+
                     <!-- <img class="bm-galeri" src="{{url('img/img_galery/galery.jpg')}}"> -->
                     {!! $smagalery->feature_text !!}
-                    
+
                     <label class="bm-desc">
                       <blockquote>
                     {{$smagalery->created_at}} By : {{$smagalery->feature_create_by}}
@@ -518,10 +518,10 @@
                 <div class="modal-body-front">
                    <div class="modal-galeri">
                   @foreach($dkm_galery as $dkmgalery)
-                  
+
                     <!-- <img class="bm-galeri" src="{{url('img/img_galery/galery.jpg')}}"> -->
                     {!! $dkmgalery->feature_text !!}
-                    
+
                     <label class="bm-desc">
                       <blockquote>
                     {{$dkmgalery->created_at}} By : {{$dkmgalery->feature_create_by}}
@@ -713,17 +713,30 @@
     <div class="content1-box">
       <img class="cb-img" src="{{ url('images/'.$dt_blog_all_news2->cover_photo) }}" />
       <div class="cb-title">
-        {{ $dt_blog_all_news2->dt_blog_title }}
+        <?php
+              $string = strip_tags($dt_blog_all_news2->dt_blog_title);
+
+              if (strlen($string) > 30) {
+
+                  // truncate string
+                  $stringCut = substr($string, 0, 30);
+
+                  // make sure it ends in a word so assassinate doesn't become ass...
+                  $string = substr($stringCut, 0, strrpos($stringCut, ' ')).'...';
+              }
+              echo $string;
+        ?>
+        <!-- {{ $dt_blog_all_news2->dt_blog_title }} -->
       </div>
       <div class="cb-desc">
       <!-- {!! substr(preg_replace("/<img\s[^>]*?src\s*=\s*['\"]([^'\"]*?)['\"][^>]*?>/",'',$dt_blog_all_news2->dt_blog_text),0,400) !!}...... -->
       <?php
             $string = strip_tags($dt_blog_all_news2->dt_blog_text);
 
-            if (strlen($string) > 300) {
+            if (strlen($string) > 40) {
 
                 // truncate string
-                $stringCut = substr($string, 0, 300);
+                $stringCut = substr($string, 0, 40);
 
                 // make sure it ends in a word so assassinate doesn't become ass...
                 $string = substr($stringCut, 0, strrpos($stringCut, ' ')).'...';
@@ -872,7 +885,7 @@ $.ajaxSetup({
    headers: {'X-CSRF-Token': $('meta[name=csrf_token]').attr('content')}
       });
         $('input[name=search_news]').keyup(function(e){
-            
+
             setTimeout(function(){
                 $('.content1-box-all').html('<div class="content1-box-all">Loading...</div>');
                 $.ajax({

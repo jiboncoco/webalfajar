@@ -12,7 +12,7 @@
     <div id="map"></div>
     <script type="text/javascript">
 
-// var map;  
+// var map;
 // function initMap() {
 //   map = new google.maps.Map(document.getElementById('map'), {
 //     center: {lat: -6.255714, lng: 106.869773},
@@ -38,7 +38,7 @@ function initMap() {
       infoWindow.setContent('Location found.');
       map.setCenter(pos);
       var origin = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
-      
+
       var destination = new google.maps.LatLng({{\App\dt_maps::first()['dt_maps_lat']}}, {{\App\dt_maps::first()['dt_maps_long']}});
 
       var service = new google.maps.DistanceMatrixService();
@@ -81,8 +81,8 @@ function check()
 var km = rows[0].elements[0].distance.text;
 
     </script>
-    
-    <script async defer
+
+    <script
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBtWRJbOEz0pAZsMpT3I5QQQtBENTxMKHg&callback=initMap">
     </script>
   </body>
@@ -106,7 +106,7 @@ var km = rows[0].elements[0].distance.text;
           <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
             <span class="sr-only">Toggle navigation</span>
           </a>
-          
+
           @include('menu')
 
         </nav>
@@ -138,6 +138,7 @@ var km = rows[0].elements[0].distance.text;
               <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
             </div>
         </div>
+      </div>
     </div>
       </section>
       </div><!-- /.content-wrapper -->
