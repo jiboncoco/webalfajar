@@ -374,11 +374,12 @@ public function admin(Request $request)
             {
             $akses = \App\akses::all();
             }
-            $dt_teacher = \App\dt_teacher::all();
+            $dt_teacher = \App\dt_teacher::where('dt_teacher_type', 'Teacher')->get();
+            $dt_employee = \App\dt_teacher::where('dt_teacher_type', 'Employee')->get();
             $dt_parent = \App\dt_parent::all();
             $dt_staff = \App\akses_log::all();
             $dt_student = \App\dt_student::all();
-            return \View::make('manage_all_account')->with('aksess', $akses)->with('dt_teachers', $dt_teacher)->with('dt_staffs', $dt_staff)->with('dt_parents', $dt_parent)->with('dt_students', $dt_student)->with('uname',$uname);
+            return \View::make('manage_all_account')->with('aksess', $akses)->with('dt_teachers', $dt_teacher)->with('dt_employees', $dt_employee)->with('dt_staffs', $dt_staff)->with('dt_parents', $dt_parent)->with('dt_students', $dt_student)->with('uname',$uname);
         }
         else{
             return redirect(url('login'));
@@ -387,7 +388,22 @@ public function admin(Request $request)
 
     public function save_account()
     {
+        session_start();
+        $akses_code     = Input::get("akses_code_".Input::get("type_code"));
+        $akses_type     = $_POST['akses_type'];
+        $akses_email    = Input::get("akses_email_".Input::get("type_email"));
 
+        $akses_status = \DB::table('akses')->where([
+                                        ['akses_code', 'like', $akses_code], 
+                                        ['akses_email', 'like', $akses_email],
+                                        ['akses_type', 'like', $akses_type]
+                                    ])->count();
+                        if (!empty($akses_status)) {
+                            $_SESSION['error_msg'] = "Accounts Already Exists!";
+                            return redirect('manage_account/all_account');
+                        }
+        else
+        {
         $post = new \App\akses;
         $post->akses_code = Input::get("akses_code_".Input::get("type_code"));
         $post->akses_type = Input::get('akses_type');
@@ -401,7 +417,8 @@ public function admin(Request $request)
 
         $post->save();
 
-        return redirect(url('manage_account/all_account'));
+        return redirect(url('manage_account/all_account'))->with('status', 'Successfully added account !');
+        }
     }
 
     public function edit_account($id)
@@ -426,12 +443,13 @@ public function admin(Request $request)
             {
             $akses = \App\akses::all();
             }
-            $dt_teacher = \App\dt_teacher::all();
+            $dt_teacher = \App\dt_teacher::where('dt_teacher_type', 'Teacher')->get();
+            $dt_employee = \App\dt_teacher::where('dt_teacher_type', 'Employee')->get();
             $dt_staff = \App\akses_log::all();
             $dt_parent = \App\dt_parent::all();
             $dt_student = \App\dt_student::all();
             $akses_edit = \App\akses::find($id);
-            return \View::make('edit_account')->with('aksess', $akses)->with('dt_teachers', $dt_teacher)->with('dt_staffs', $dt_staff)->with('dt_parents', $dt_parent)->with('dt_students', $dt_student)->with('uname',$uname)->with('akses_edit', $akses_edit);
+            return \View::make('edit_account')->with('aksess', $akses)->with('dt_teachers', $dt_teacher)->with('dt_employees', $dt_employee)->with('dt_staffs', $dt_staff)->with('dt_parents', $dt_parent)->with('dt_students', $dt_student)->with('uname',$uname)->with('akses_edit', $akses_edit);
             
         }
         else{
@@ -454,6 +472,22 @@ public function admin(Request $request)
 
     public function update_account()
     {
+        session_start();
+        $akses_code     = Input::get("akses_code_".Input::get("type_code"));
+        $akses_type     = $_POST['akses_type'];
+        $akses_email    = Input::get("akses_email_".Input::get("type_email"));
+
+        $akses_status = \DB::table('akses')->where([
+                                        ['akses_code', 'like', $akses_code], 
+                                        ['akses_email', 'like', $akses_email],
+                                        ['akses_type', 'like', $akses_type]
+                                    ])->count();
+                        if (!empty($akses_status)) {
+                            $_SESSION['error_msg'] = "You are wrong edit data account!";
+                            return redirect('manage_account/all_account');
+                        }
+        else
+        {
         $post = \App\akses::find(Input::get('id'));
         $post->akses_code = Input::get("akses_code_".Input::get("type_code"));
         $post->akses_type = Input::get('akses_type');
@@ -477,6 +511,7 @@ public function admin(Request $request)
         $post->save();
 
         return redirect(url('manage_account/all_account'));
+    }
        
     }
 

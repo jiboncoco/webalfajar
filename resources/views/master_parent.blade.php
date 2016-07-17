@@ -118,7 +118,7 @@
                       <label for="exampleInputPassword1">Select NISN Student</label>
                       <select name="dt_parent_nisn_tk" class="form-control not-res">
                         @foreach($data_nisn_tk as $nisn_tk)
-                        <option value="{{$nisn_tk->dt_student_nisn}}">{{$nisn_tk->dt_student_nisn}}</option>
+                        <option value="{{$nisn_tk->dt_student_nisn}}">{{$nisn_tk->dt_student_nisn}} ({{preg_replace('/\|/', ' ', $nisn_tk->dt_student_name)}})</option>
                         @endforeach
                       </select>
                     </div>
@@ -126,7 +126,7 @@
                       <label for="exampleInputPassword1">Select NISN Student</label>
                       <select name="dt_parent_nisn_sd" class="form-control not-res">
                         @foreach($data_nisn_sd as $nisn_sd)
-                        <option value="{{$nisn_sd->dt_student_nisn}}">{{$nisn_sd->dt_student_nisn}}</option>
+                        <option value="{{$nisn_sd->dt_student_nisn}}">{{$nisn_sd->dt_student_nisn}} ({{preg_replace('/\|/', ' ', $nisn_sd->dt_student_name)}})</option>
                         @endforeach
                       </select>
                     </div>
@@ -134,7 +134,7 @@
                       <label for="exampleInputPassword1">Select NISN Student</label>
                       <select name="dt_parent_nisn_smp" class="form-control not-res">
                         @foreach($data_nisn_smp as $nisn_smp)
-                        <option value="{{$nisn_smp->dt_student_nisn}}">{{$nisn_smp->dt_student_nisn}}</option>
+                        <option value="{{$nisn_smp->dt_student_nisn}}">{{$nisn_smp->dt_student_nisn}} ({{preg_replace('/\|/', ' ', $nisn_smp->dt_student_name)}})</option>
                         @endforeach
                       </select>
                     </div>
@@ -142,7 +142,7 @@
                       <label for="exampleInputPassword1">Select NISN Student</label>
                       <select name="dt_parent_nisn_sma" class="form-control not-res">
                         @foreach($data_nisn_sma as $nisn_sma)
-                        <option value="{{$nisn_sma->dt_student_nisn}}">{{$nisn_sma->dt_student_nisn}}</option>
+                        <option value="{{$nisn_sma->dt_student_nisn}}">{{$nisn_sma->dt_student_nisn}} ({{preg_replace('/\|/', ' ', $nisn_sma->dt_student_name)}})</option>
                         @endforeach
                       </select>
                     </div>

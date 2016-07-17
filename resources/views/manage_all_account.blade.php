@@ -37,6 +37,22 @@
         <section class="content">
         <div class="admin-seacrh" style="height:2px;">
             </div>
+
+            <?php
+                    
+                    if(isset($_SESSION['error_msg']))
+                    {
+                    echo "<div class='alert alert-warning'>
+                      <strong>".$_SESSION['error_msg']."</strong>
+                    </div>";
+                    unset($_SESSION['error_msg']);
+                    }
+                    ?>
+              @if (session('status'))
+            <div class="alert alert-success">
+                {{ session('status') }}
+            </div>
+        @endif
               <div style="width:95%;margin:auto;" class="box box-default collapsed-box box-solid">
                 <div class="box-header with-border">
                   <h3 class="box-title">Master All Account</h3>
@@ -56,6 +72,7 @@
                         <option value="parent">Parent</option>
                         <option value="student">Student</option>
                         <option value="staff">Staff</option>
+                        <option value="employee">Employee</option>
                       </select>
                     </div>
                   </div>
@@ -66,7 +83,7 @@
                       <label for="exampleInputPassword1">Select NIP Teacher</label>
                       <select id="selectteacher" name="akses_code_nip" class="form-control not-res">
                         @foreach($dt_teachers as $teacher)
-                        <option value="{{$teacher->dt_teacher_nip}}">{{$teacher->dt_teacher_nip}}</option>
+                        <option value="{{$teacher->dt_teacher_nip}}">{{$teacher->dt_teacher_nip}} ({{ preg_replace('/\|/', ' ', $teacher->dt_teacher_name) }})</option>
                         @endforeach
                       </select>
                     </div>
@@ -78,7 +95,18 @@
                       <label for="exampleInputPassword1">Select NISN Student</label>
                       <select id="selectparent" name="akses_code_parent" class="form-control not-res">
                         @foreach($dt_parents as $parent)
-                        <option value="{{$parent->dt_parent_nisn}}">{{$parent->dt_parent_nisn}}</option>
+                        <option value="{{$parent->dt_parent_nisn}}">{{$parent->dt_parent_nisn}} ({{preg_replace('/\|/', ' ', $parent->dt_parent_name)}})</option>
+                        @endforeach
+                      </select>
+                    </div>
+                  </div>
+
+                  <div style="display:none;margin-bottom:10px;margin-top:-10px;" id="employee" class="row">                  
+                  <div class="col-xs-6 col-md-4">
+                      <label for="exampleInputPassword1">Select NIP Employee</label>
+                      <select id="selectparent" name="akses_code_employee" class="form-control not-res">
+                        @foreach($dt_employees as $employee)
+                        <option value="{{$employee->dt_teacher_nip}}">{{$employee->dt_teacher_nip}} ({{ preg_replace('/\|/', ' ', $teacher->dt_teacher_name) }})</option>
                         @endforeach
                       </select>
                     </div>
@@ -90,7 +118,7 @@
                       <label for="exampleInputPassword1">Select NISN Students</label>
                       <select id="selectstudent" name="akses_code_student" class="form-control not-res">
                         @foreach($dt_students as $student)
-                        <option value="{{$student->dt_student_nisn}}">{{$student->dt_student_nisn}}</option>
+                        <option value="{{$student->dt_student_nisn}}">{{$student->dt_student_nisn}} ({{preg_replace('/\|/', ' ', $student->dt_student_name)}})</option>
                         @endforeach
                       </select>
                     </div>
@@ -112,19 +140,30 @@
                       <label for="exampleInputPassword1">Select Email Teacher</label>
                       <select id="emailteacher" name="akses_email_teacher" class="form-control not-res">
                         @foreach($dt_teachers as $teacher)
-                        <option value="{{$teacher->dt_teacher_email}}">{{$teacher->dt_teacher_email}}</option>
+                        <option value="{{$teacher->dt_teacher_email}}">{{$teacher->dt_teacher_email}} ({{ preg_replace('/\|/', ' ', $teacher->dt_teacher_name) }})</option>
                         @endforeach
                       </select>
                     </div>
                   </div>
                   <br>
 
+                  <div style="display:none;margin-bottom:10px;margin-top:-10px;" id="mailemployee" class="row">                  
+                  <div class="col-xs-6 col-md-4">
+                      <label for="exampleInputPassword1">Select Email Employee</label>
+                      <select id="emailemployee" name="akses_email_employee" class="form-control not-res">
+                        @foreach($dt_employees as $employee)
+                        <option value="{{$employee->dt_teacher_email}}">{{$employee->dt_teacher_email}} ({{ preg_replace('/\|/', ' ', $teacher->dt_teacher_name) }})</option>
+                        @endforeach
+                      </select>
+                    </div>
+                  </div>
+
                   <div style="display:none;margin-bottom:10px;margin-top:-10px;" id="mailparent" class="row">                  
                   <div class="col-xs-6 col-md-4">
                       <label for="exampleInputPassword1">Select Email Parents</label>
                       <select id="emailparent" name="akses_email_parent" class="form-control not-res">
                         @foreach($dt_parents as $parent)
-                        <option value="{{$parent->dt_parent_email}}">{{$parent->dt_parent_email}}</option>
+                        <option value="{{$parent->dt_parent_email}}">{{$parent->dt_parent_email}} ({{preg_replace('/\|/', ' ', $parent->dt_parent_name)}})</option>
                         @endforeach
                       </select>
                     </div>
@@ -136,7 +175,7 @@
                       <label for="exampleInputPassword1">Select Email Students</label>
                       <select id="emailstudent" name="akses_email_student" class="form-control not-res">
                         @foreach($dt_students as $student)
-                        <option value="{{$student->dt_student_email}}">{{$student->dt_student_email}}</option>
+                        <option value="{{$student->dt_student_email}}">{{$student->dt_student_email}} ({{preg_replace('/\|/', ' ', $student->dt_student_name)}})</option>
                         @endforeach
                       </select>
                     </div>
@@ -263,6 +302,7 @@
         if($(this).val() == "teacher"){
           $("#teacher").css("display","block");
           $('#student').hide();
+          $('#employee').hide();
           $("#tyco").val("nip");
           $('#parent').hide();
           $('#staff').hide();
@@ -270,13 +310,23 @@
         else if($(this).val() == "parent"){
           $("#parent").css("display","block");
           $('#teacher').hide();
+          $('#employee').hide();
           $('#student').hide();
           $('#staff').hide();
           $("#tyco").val("parent");
         }
+        else if($(this).val() == "employee"){
+          $("#employee").css("display","block");
+          $('#teacher').hide();
+          $('#parent').hide();
+          $('#student').hide();
+          $('#staff').hide();
+          $("#tyco").val("employee");
+        }
         else if($(this).val() == "student"){
           $("#student").css("display","block");
           $('#teacher').hide();
+          $('#employee').hide();
           $('#parent').hide();
           $('#staff').hide();
           $("#tyco").val("student");
@@ -284,6 +334,7 @@
         else{
           $("#student").hide();
           $('#teacher').hide();
+          $('#employee').hide();
           $('#parent').hide();
           $('#staff').css("display","block");
           $("#tyco").val("staff");
@@ -297,24 +348,35 @@
         if($(this).val() == "teacher"){
           $("#mailteacher").css("display","block");
           $('#mailstudent').hide();
+          $('#mailemployee').hide();
           $("#tymail").val("teacher");
           $('#mailparent').hide();
         }
         else if($(this).val() == "parent"){
           $("#mailparent").css("display","block");
           $('#mailteacher').hide();
+          $('#mailemployee').hide();
           $('#mailstudent').hide();
           $("#tymail").val("parent");
+        }
+        else if($(this).val() == "employee"){
+          $("#mailemployee").css("display","block");
+          $('#mailteacher').hide();
+          $('#mailstudent').hide();
+          $('#mailparent').hide();
+          $("#tymail").val("employee");
         }
         else if($(this).val() == "student"){
           $("#mailstudent").css("display","block");
           $('#mailteacher').hide();
+          $('#mailemployee').hide();
           $('#mailparent').hide();
           $("#tymail").val("student");
         }
         else {
           $("#mailteacher").css("display","block");
           $('#mailstudent').hide();
+          $('#mailemployee').hide();
           $("#tymail").val("teacher");
           $('#mailparent').hide();
         }
