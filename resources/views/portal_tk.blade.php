@@ -428,17 +428,30 @@
     <div class="content1-box">
       <img class="cb-img" src="{{ url('images/'.$dt_blog_all_portal_tk2->cover_photo) }}" />
       <div class="cb-title">
-        {!! $dt_blog_all_portal_tk2->dt_blog_title !!}
+      <?php
+              $string = strip_tags($dt_blog_all_portal_tk2->dt_blog_title);
+
+              if (strlen($string) > 30) {
+
+                  // truncate string
+                  $stringCut = substr($string, 0, 30);
+
+                  // make sure it ends in a word so assassinate doesn't become ass...
+                  $string = substr($stringCut, 0, strrpos($stringCut, ' ')).'...';
+              }
+              echo $string;
+        ?>
+        
       </div>
       <div class="cb-desc">
       <!-- {!! substr(preg_replace("/<img\s[^>]*?src\s*=\s*['\"]([^'\"]*?)['\"][^>]*?>/",'',$dt_blog_all_portal_tk2->dt_blog_text),0,400) !!}...... -->
       <?php
             $string = strip_tags($dt_blog_all_portal_tk2->dt_blog_text);
 
-            if (strlen($string) > 300) {
+            if (strlen($string) > 40) {
 
                 // truncate string
-                $stringCut = substr($string, 0, 300);
+                $stringCut = substr($string, 0, 40);
 
                 // make sure it ends in a word so assassinate doesn't become ass...
                 $string = substr($stringCut, 0, strrpos($stringCut, ' ')).'...';
@@ -484,7 +497,22 @@
         <div class="notif">
           <a href="{{ url('view/'.$news->id) }}">
           <label class="no-notif">{{ $i++ }}.</label>
-          <label class="title-notif">{{ $news->dt_blog_title }}</label>
+          <label class="title-notif">
+          <?php
+              $string = strip_tags($news->dt_blog_title);
+
+              if (strlen($string) > 25) {
+
+                  // truncate string
+                  $stringCut = substr($string, 0, 25);
+
+                  // make sure it ends in a word so assassinate doesn't become ass...
+                  $string = substr($stringCut, 0, strrpos($stringCut, ' ')).'...';
+              }
+              echo $string;
+        ?>
+          
+          </label>
           </a>
           <p class="date-notif">{{ $news->created_at }}</p>
         </div>
@@ -502,7 +530,21 @@
         <div class="notif">
           <a href="{{ url('view/'.$article->id) }}">
           <label class="no-notif">{{ $z++ }}.</label>
-          <label class="title-notif">{{ $article->dt_blog_title }}</label>
+          <label class="title-notif">
+          <?php
+              $string = strip_tags($article->dt_blog_title);
+
+              if (strlen($string) > 25) {
+
+                  // truncate string
+                  $stringCut = substr($string, 0, 25);
+
+                  // make sure it ends in a word so assassinate doesn't become ass...
+                  $string = substr($stringCut, 0, strrpos($stringCut, ' ')).'...';
+              }
+              echo $string;
+        ?>
+          </label>
           </a>
           <p class="date-notif">{{ $article->created_at }}</p>
         </div>
