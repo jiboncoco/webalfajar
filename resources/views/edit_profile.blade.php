@@ -60,6 +60,8 @@
                         <option value="student" selected>Root</option>
                         @elseif($akses_edit->akses_type == "root+")
                         <option value="student" selected>Root+</option>
+                        @elseif($akses_edit->akses_type == "employee")
+                        <option value="student" selected>Employee</option>
                         @endif
                       </select>
                     </div>
