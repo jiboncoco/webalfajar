@@ -1025,7 +1025,21 @@
         <div class="notif">
           <a href="{{ url('view/'.$announcement->id) }}">
           <label class="no-notif">{{ $i++ }}.</label>
-          <label class="title-notif">{{ $announcement->dt_blog_title }}</label>
+          <label class="title-notif">
+          <?php
+            $string = strip_tags($announcement->dt_blog_title);
+
+            if (strlen($string) > 25) {
+
+                // truncate string
+                $stringCut = substr($string, 0, 25);
+
+                // make sure it ends in a word so assassinate doesn't become ass...
+                $string = substr($stringCut, 0, strrpos($stringCut, ' ')).'...';
+            }
+            echo $string;
+          ?>
+      </label>
           </a>
           <p class="date-notif">{{ $announcement->created_at }}</p>
         </div>
@@ -1043,9 +1057,22 @@
         <div class="notif">
           <a href="{{ url('view/'.$article->id) }}">
           <label class="no-notif">{{ $z++ }}.</label>
-          <label class="title-notif">{{ $article->dt_blog_title }}</label>
+          <label class="title-notif"><?php
+            $string = strip_tags($article->dt_blog_title);
+
+            if (strlen($string) > 25) {
+
+                // truncate string
+                $stringCut = substr($string, 0, 25);
+
+                // make sure it ends in a word so assassinate doesn't become ass...
+                $string = substr($stringCut, 0, strrpos($stringCut, ' ')).'...';
+            }
+            echo $string;
+      ?>
+          </label>
           </a>
-          <p class="date-notif">{{ $article->dt_blog_title }}</p>
+          <p class="date-notif">{{ $article->created_at }}</p>
         </div>
         @endforeach
         <div class="notif-button">
