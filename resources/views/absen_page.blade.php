@@ -72,9 +72,9 @@ function handleLocationError(browserHasGeolocation, infoWindow, pos) {
 
 function check()
         {
-          var km = rows[0].elements[0].distance.text;
-            if (km <= '1 m') {
-
+          var km = rows[0].elements[0].distance.value;
+            if (km <= '100') {
+              
             }
         }
 
@@ -82,8 +82,8 @@ var km = rows[0].elements[0].distance.text;
 
     </script>
 
-    <script
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBtWRJbOEz0pAZsMpT3I5QQQtBENTxMKHg&callback=initMap">
+    <script async defer
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCf2ruhSBcZncsbcxuBGV5VEji2JAqkITs&callback=initMap">
     </script>
   </body>
 
