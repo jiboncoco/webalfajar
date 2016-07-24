@@ -142,7 +142,7 @@
                 
                 <div class="form-group">
                 @foreach($from as $from)
-                    <input class="form-control" name="dt_mail_from" placeholder="From:" value="{{ $from->akses_username }}" readonly/>
+                    <input class="form-control" name="dt_mail_from" placeholder="From:" value="{{ $from->akses_email }}" readonly/>
                     @endforeach
                   </div>
 
