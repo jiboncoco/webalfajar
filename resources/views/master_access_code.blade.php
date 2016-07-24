@@ -65,7 +65,7 @@
                     <input type="text" name="akses_log_code" class="form-control not-res" maxlength="40" placeholder="Access Code" onkeyup="this.value = minmaxname(this.value, 0, 40)" required/>
                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
                   </div>
-                  <div class="col-xs-6 col-md-4">
+                  
                  <script type="text/javascript">
                   function minmaxdate(value, min, max) 
                   {
@@ -76,11 +76,31 @@
                       else return value;
                   }
                   </script>
-                    <label for="exampleInputPassword1">Date Valid</label>
-                    <input type="text" name="akses_log_datevalid" class="form-control not-res" maxlength="2" placeholder="Date Only" onkeyup="this.value = minmaxdate(this.value, 0, 2)" required/>
-                  </div>
-                  </div>                  
 
+                  <div  class="col-xs-6 col-md-4">
+                  <label for="exampleInputPassword1">Date Valid</label>
+                  <div class='input-group date' id='datetimepicker1'>
+                    <input maxlength="2" placeholder="Date Only" onkeyup="this.value = minmaxdate(this.value, 0, 2)" required type='text' name="akses_log_datevalid" class="form-control for_date" required/>
+                      <span class="input-group-addon">
+                      <span class="glyphicon glyphicon-calendar"></span>
+                      </span>
+                  </div>
+                  </div>
+
+                  <div  class="col-xs-6 col-md-4">
+                      <label for="exampleInputPassword1">Access Type</label>
+                      <select id="selecttype" name="akses_log_type" class="form-control not-res" >
+                      <option value="FINANCE">FINANCE</option>
+                      <option value="MASTER">MASTER</option>
+                      <option value="SEKETARIAT">SEKETARIAT</option>
+                      <option value="TK">TK</option>
+                      <option value="SD">SD</option>
+                      <option value="SMP">SMP</option>
+                      <option value="SMA">SMA</option>
+                      </select>
+                    </div>
+
+                  </div>
                   <br><br>
                     <button type="submit" class="btn btn-primary">Save Data</button>
                     
@@ -107,6 +127,7 @@
                         <th>No.</th>
                         <th>Access Code</th>
                         <th>Date Valid</th>
+                        <th>Access Type</th>
                         <th style="text-align:center">Action</th>
                       </tr>
                     </thead>
@@ -117,6 +138,7 @@
                         <td>{{$i++}}</td>
                         <td>{{ $post->akses_log_code}}</td>
                         <td>{{ $post->akses_log_datevalid}}</td>
+                        <td>{{ $post->akses_log_type}}</td>
                         <td style="text-align:center">
                         <a href="{{ url('manage_account/edit_access_code/'.$post->id)}}"><i style="font-size:20px;margin-right:50px" class="fa fa-pencil-square-o"></i> </a>
                         <a href="{{ url('manage_account/delete_access_code/'.$post->id)}}"><i style="font-size:20px;margin:0px " class="fa fa-trash"></i> </a>
@@ -149,5 +171,6 @@
               "autoWidth": true
             });
     $('.birth_date').datetimepicker({ format: 'YYYY-MM-DD' });
+    $('.for_date').datetimepicker({ format: 'DD' });
     </script>
 @endsection

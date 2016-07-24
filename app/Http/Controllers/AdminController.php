@@ -1467,6 +1467,7 @@ public function admin(Request $request)
     {
         $post = new \App\akses_log;
         $post->akses_log_code = Input::get('akses_log_code');
+        $post->akses_log_type = Input::get('akses_log_type');
         $post->akses_log_datevalid = Input::get('akses_log_datevalid');
         $post->save();
 
@@ -1491,6 +1492,7 @@ public function admin(Request $request)
     {
         $post = \App\akses_log::find(Input::get('id'));
         $post->akses_log_code = Input::get('akses_log_code');
+        $post->akses_log_type = Input::get('akses_log_type');
         $post->akses_log_datevalid = Input::get('akses_log_datevalid');
         $post->save();
 

@@ -244,8 +244,10 @@
                     <input type="email" name="dt_teacher_email" class="form-control not-res" placeholder="Email" required/>
                   </div>
                   <div class="col-xs-4">
-                      <label for="exampleInputPassword1">Teacher For</label>
+                      <label for="exampleInputPassword1">Task For</label>
                       <select id="selecttype" name="dt_teacher_for" class="form-control not-res-s">
+                        <option value="MASTER">MASTER</option>
+                        <option value="SEKETARIAT">SEKETARIAT</option>
                         <option value="TK">TK</option>
                         <option value="SD">SD</option>
                         <option value="SMP">SMP</option>

@@ -74,6 +74,8 @@ function check()
         {
           var km = rows[0].elements[0].distance.value;
             if (km <= '100') {
+              modal absen
+            } else{
               
             }
         }
