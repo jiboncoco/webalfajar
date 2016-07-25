@@ -237,28 +237,50 @@
                     <input type="text"value="{{ $data_edit->dt_teacher_email }}" name="dt_teacher_email" class="form-control" placeholder="Email"/>
                   </div>
                   <div class="col-xs-2">
-                      <label for="exampleInputPassword1">Teacher For</label>
+                      <label for="exampleInputPassword1">Task For</label>
                       <select id="selecttype" name="dt_teacher_for" class="form-control">
                         @if($data_edit->dt_teacher_for == "TK")
                         <option value="TK" selected>TK</option>
                         <option value="SD">SD</option>
                         <option value="SMP">SMP</option>
                         <option value="SMA">SMA</option>
+                        <option value="MASTER">MASTER</option>
+                        <option value="SEKETARIAT">SEKETARIAT</option>
                         @elseif($data_edit->dt_teacher_for == "SD")
                         <option value="TK">TK</option>
                         <option value="SD" selected>SD</option>
                         <option value="SMP">SMP</option>
                         <option value="SMA">SMA</option>
+                        <option value="MASTER">MASTER</option>
+                        <option value="SEKETARIAT">SEKETARIAT</option>
                         @elseif($data_edit->dt_teacher_for == "SMP")
                         <option value="TK">TK</option>
                         <option value="SD">SD</option>
                         <option value="SMP" selected>SMP</option>
                         <option value="SMA">SMA</option>
-                        @else
+                        <option value="MASTER">MASTER</option>
+                        <option value="SEKETARIAT">SEKETARIAT</option>
+                        @elseif($data_edit->dt_teacher_for == "SMA")
                         <option value="TK">TK</option>
                         <option value="SD">SD</option>
                         <option value="SMP">SMP</option>
                         <option value="SMA" selected>SMA</option>
+                        <option value="MASTER">MASTER</option>
+                        <option value="SEKETARIAT">SEKETARIAT</option>
+                        @elseif($data_edit->dt_teacher_for == "MASTER")
+                        <option value="TK">TK</option>
+                        <option value="SD">SD</option>
+                        <option value="SMP">SMP</option>
+                        <option value="SMA" >SMA</option>
+                        <option value="MASTER" selected>MASTER</option>
+                        <option value="SEKETARIAT">SEKETARIAT</option>
+                        @else
+                        <option value="TK">TK</option>
+                        <option value="SD">SD</option>
+                        <option value="SMP">SMP</option>
+                        <option value="SMA" >SMA</option>
+                        <option value="MASTER">MASTER</option>
+                        <option value="SEKETARIAT" selected>SEKETARIAT</option>
                         @endif
                       </select>
                     </div>
