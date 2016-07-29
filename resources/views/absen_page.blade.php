@@ -4,8 +4,8 @@
 
 <head>
     <style type="text/css">
-      html, body { height: 100%; margin: 0; padding: 0; }
-      #map { height: 100%; }
+      html, body { height: 11%; margin: 0; padding: 0; }
+      #map { height: 1%; }
     </style>
   </head>
   <body>
@@ -19,7 +19,9 @@
 //     zoom: 106.869773
 //   });
 // }
+var km;
 function initMap() {
+
   var map = new google.maps.Map(document.getElementById('map'), {
     center: {lat: -6.204831, lng: 106.840848},
     zoom: 10
@@ -51,6 +53,8 @@ function initMap() {
 
       function callback(response, status) {
         console.log(response);
+           km = response.rows[0].elements[0].distance.value;
+           console.log(km);
         // See Parsing the Results for
         // the basics of a callback function.
       }
@@ -70,17 +74,19 @@ function handleLocationError(browserHasGeolocation, infoWindow, pos) {
                         'Error: Your browser doesn\'t support geolocation.');
 }
 
-function check()
+function cekjarak()
         {
-          var km = rows[0].elements[0].distance.value;
-            if (km <= '100') {
-              modal absen
+       $('#myModalcekjarak').modal('hide');
+            if (km < 100) {
+              $('#myModalabsen').modal();
+              console.log(km);
             } else{
-              
+              $('#myModalreject').modal();
+              console.log(km);
             }
         }
 
-var km = rows[0].elements[0].distance.text;
+
 
     </script>
 
@@ -90,7 +96,7 @@ var km = rows[0].elements[0].distance.text;
   </body>
 
   <body style="font-family: 'Raleway', sans-serif;" class="hold-transition skin-blue sidebar-mini">
-    <div class="wrapper">
+    <div style="min-height:0" class="wrapper">
 
       <header class="main-header">
 
@@ -118,17 +124,36 @@ var km = rows[0].elements[0].distance.text;
           @include('sidebar')
 
       <!-- Content Wrapper. Contains page content -->
-      <div class="content-wrapper" style="min-height: 355px;">
+      <div style="text-align:center;min-height: 685px !important;" class="content-wrapper">
 
         <!-- Main content -->
-        <section class="content">
+        <section  class="content">
 
-                        <div class="modal fade" id="myModalabsen" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div id="myModalcekabsen" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog-front">
-        <div class="modal-content">
+        <div class="modal-content" style="width:60%;height:200px;margin-left:auto;margin-right:auto;margin-top:200px">
+            <div class="modal-header">
+            <!-- <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button> -->
+            <h4 class="modal-title" id="myModalLabel">Cek Absen</h4>
+            </div>
+                <div style="text-align:center;margin-top:50px;" class="modal-body-front">
+                  <!-- <form method="POST"  action="{{ url('manage_absen/save_absen_p')}}" enctype="multipart/form-data">
+                  <input type="hidden" name="_token" value="{{ csrf_token() }}"> -->
+                   <button onclick="cekabsen()" type="submit" class="btn btn-default">Cek Absen</button>
+                  <!-- </form> -->
+            </div>
+            <!-- <div class="modal-footer">
+              <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+            </div> -->
+        </div>
+      </div>
+
+  <div class="modal fade" id="myModalabsen" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog-front">
+        <div class="modal-content" style="width:60%;height:200px">
             <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-            <h4 class="modal-title" id="myModalLabel">Foundation : Profile</h4>
+            <h4 class="modal-title" id="myModalLabel">CLick button to Absen</h4>
             </div>
                 <div class="modal-body-front">
                   <form method="POST"  action="{{ url('manage_absen/save_absen_p')}}" enctype="multipart/form-data">
@@ -141,34 +166,85 @@ var km = rows[0].elements[0].distance.text;
             </div>
         </div>
       </div>
+  </div>
+
+  <div class="modal fade" id="myModalwarn" tabindex="-1" role="dialog" aria-labelledby="rejectModalLabel">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" style="color:red">Peringatan</h4>
+      </div>
+    <div class="modal-body">
+      <p>Anda sudah Absen</p>
+    </div>
+      <!-- <div class="modal-footer">
+        <a href="{{url('pengaturan/nomor')}}" type="button" class="btn btn-primary">Klik disini untuk setting</a>
+      </div> -->
+    </div>
+  </div>
+</div>
+
+  <div class="modal fade" id="myModalreject" tabindex="-1" role="dialog" aria-labelledby="rejectModalLabel">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" style="color:red">Peringatan</h4>
+      </div>
+    <div class="modal-body">
+      <p>Jarak Anda dengan sekolah terlalu jauh</p>
+    </div>
+      <!-- <div class="modal-footer">
+        <a href="{{url('pengaturan/nomor')}}" type="button" class="btn btn-primary">Klik disini untuk setting</a>
+      </div> -->
+    </div>
+  </div>
+</div>
+
+  <div class="modal fade" id="myModalcekjarak" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog-front">
+        <div class="modal-content" style="width:60%;height:200px;margin-left:auto;margin-right:auto;margin-top:200px">
+            <div class="modal-header">
+            <!-- <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button> -->
+            <h4 class="modal-title" id="myModalLabel">Cek Jarak</h4>
+            </div>
+                <div style="text-align:center;margin-top:50px;" class="modal-body-front">
+                  <!-- <form method="POST"  action="{{ url('manage_absen/save_absen_p')}}" enctype="multipart/form-data">
+                  <input type="hidden" name="_token" value="{{ csrf_token() }}"> -->
+                   <button onclick="cekjarak()" type="submit" class="btn btn-default">Cek Jarak</button>
+                  <!-- </form> -->
+            </div>
+            <!-- <div class="modal-footer">
+              <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+            </div> -->
+        </div>
+      </div>
+
     </div>
       </section>
       </div><!-- /.content-wrapper -->
-
     </div><!-- ./wrapper -->
 
     <script type="text/javascript">
 
-    $.ajaxSetup({
-   headers: {'X-CSRF-Token': $('meta[name=csrf_token]').attr('content')}
-});
-        $('input[name=search_admin]').keyup(function(e){
-            // alert('asdasd');
-            setTimeout(function(){
-                $('.admin-news').html('<div class="admin-news">Loading...</div>');
-                $.ajax({
-                    'type': 'GET',
-                    'url': '{{url("search_post_admin")}}/'+$('input[name=search_admin]').val(),
-                    'success': function(data){
-                    if (data) {
-                        $('.admin-news').html(data);
-                    }else{
-                        $('.admin-news').html('<div class="admin-news">Pencarian tidak ditemukan..</div>');
-                    }
-                    }
-                });
-            }, 500);
+    function cekabsen(){
+        $.ajax({
+            url: "{!! url('cekabsen') !!}",
+            data: {},
+            dataType: "json",
+            type: "get",
+            success:function(data)
+            {
+                if (data[0]["stat"] == "kosong") {
+                    $('#myModalcekjarak').modal();
+                }else{
+                    $('#myModalwarn').modal();
+                }
+            }
+
         });
+    }
     </script>
 
 @endsection

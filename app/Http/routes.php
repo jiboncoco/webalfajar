@@ -307,6 +307,7 @@ Route::post('save_comment', 'PostController@save_comment');
 Route::get('logout', 'LoginController@logout');
 
 Route::get('absen_page', 'AdminController@absen_page');
+Route::get('cekabsen', 'AdminController@cekabsen');
 
 Route::post('search_print', 'AksesController@search_print');
 

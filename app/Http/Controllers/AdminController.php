@@ -1607,11 +1607,18 @@ public function admin(Request $request)
 
     public function cekabsen()
     {
-        if(sizeof(\App\dt_absen::where('dt_absen_create_by',session('akses_email'))->whereRaw('date(dt_absen_time)="'.date("Y-m-d").'"')->get())==0){
-            return false;
+        $cekabsen = \App\dt_absen::where('dt_absen_create_by',session('akses_email'))->whereRaw('date(dt_absen_time)="'.date("Y-m-d").'"')->first();
+        
+        if($cekabsen == null) {
+            $stat = "kosong";
         }else{
-            return true;
+            $stat = "ada";
         }
+        $data[] = array(
+             'stat' => $stat
+         );
+
+         return json_encode($data);
     }
 
     public function absen_page(Request $request)
