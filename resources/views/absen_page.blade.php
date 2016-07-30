@@ -4,8 +4,8 @@
 
 <head>
     <style type="text/css">
-      html, body { height: 100%; margin: 0; padding: 0; }
-      #map { height: 100%; }
+      html, body { height: 11%; margin: 0; padding: 0; }
+      #map { height: 1%; }
     </style>
   </head>
   <body>
