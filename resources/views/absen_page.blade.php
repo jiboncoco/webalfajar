@@ -4,8 +4,8 @@
 
 <head>
     <style type="text/css">
-      html, body { height: 11%; margin: 0; padding: 0; }
-      #map { height: 1%; }
+      html, body { height: 100%; margin: 0; padding: 0; }
+      #map { height: 100%; }
     </style>
   </head>
   <body>
@@ -55,6 +55,7 @@ function initMap() {
         console.log(response);
            km = response.rows[0].elements[0].distance.value;
            console.log(km);
+           alert(km);
         // See Parsing the Results for
         // the basics of a callback function.
       }
@@ -128,7 +129,11 @@ function cekjarak()
 
         <!-- Main content -->
         <section  class="content">
-
+@if (session('status'))
+            <div style="margin-top:200px" class="alert alert-success">
+                {{ session('status') }}
+            </div>
+@endif
   <div id="myModalcekabsen" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog-front">
         <div class="modal-content" style="width:60%;height:200px;margin-left:auto;margin-right:auto;margin-top:200px">

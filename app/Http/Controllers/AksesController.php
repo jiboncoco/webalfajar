@@ -587,7 +587,7 @@ class AksesController extends Controller
         $post->dt_absen_create_by = session('akses_email');
         $post->save();
 
-        return redirect()->back();
+        return redirect()->back()->with('status', 'Absen Success !');
     }
 
     public function search_print()
