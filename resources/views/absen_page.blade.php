@@ -80,9 +80,11 @@ function cekjarak()
        $('#myModalcekjarak').modal('hide');
             if (km < 100) {
               $('#myModalabsen').modal();
+              // swal({title : "Here's a message!", text: "It's pretty, isn't it?"},function(){ window.location.href = "{{ url('manage_absen/save_absen_p')}}"; });
               console.log(km);
             } else{
               $('#myModalreject').modal();
+              // swal("Sorry!", "Jarak Anda dengan Sekolah terlalu Jauh!", "error");
               console.log(km);
             }
         }
@@ -130,7 +132,7 @@ function cekjarak()
         <!-- Main content -->
         <section  class="content">
 @if (session('status'))
-            <div style="margin-top:200px" class="alert alert-success">
+            <div style="margin-top:50px" class="alert alert-success">
                 {{ session('status') }}
             </div>
 @endif
@@ -242,9 +244,11 @@ function cekjarak()
             success:function(data)
             {
                 if (data[0]["stat"] == "kosong") {
-                    $('#myModalcekjarak').modal();
+                    // $('#myModalcekjarak').modal();
+                    swal({title: "Cek Jarak",   text: "Cek Jarak Anda dengan Sekolah", confirmButtonColor: "#4476cc", confirmButtonText: "Cek Jarak",   closeOnConfirm: true }, function(){ cekjarak(); });
                 }else{
-                    $('#myModalwarn').modal();
+                    // $('#myModalwarn').modal();
+                    swal("Thank You!", "You've been absent!", "success");
                 }
             }
 

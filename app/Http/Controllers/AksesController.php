@@ -578,8 +578,18 @@ class AksesController extends Controller
 
     public function save_absen_p()
     {
+        session_start();
+        if(session('akses_type') == "student"){
+            $s = \App\dt_student::where('dt_student_email', session('akses_email'))->first();
+            $name = $s->dt_student_name;
+        } else if(session('akses_type') == "teacher") {
+            $s = \App\dt_teacher::where('dt_teacher_email', session('akses_email'))->first();
+            $name = $s->dt_teacher_name;
+        }
+        
         date_default_timezone_set("Asia/Jakarta");
         $post = new \App\dt_absen;
+        $post->dt_absen_name = $name;
         $post->dt_absen_type = session('akses_type');
         $post->dt_absen_code = session('akses_code');
         $post->dt_absen_ket = "sudah";

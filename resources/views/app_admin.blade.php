@@ -33,6 +33,8 @@
     <link rel="stylesheet" href="{{ url('adminlte/plugins/jvectormap/jquery-jvectormap-1.2.2.css') }}">
     <!-- Theme style -->
     <link rel="stylesheet" href="{{ url('adminlte/dist/css/AdminLTE.min.css') }}">
+    <script src="{{('css/sweetalert-master/dist/sweetalert.min.js')}}"></script>
+    <link rel="stylesheet" type="text/css" href="{{('css/sweetalert-master/dist/sweetalert.css')}}">
     <!-- AdminLTE Skins. Choose a skin from the css/skins
          folder instead of downloading all of them to reduce the load. -->
     <link rel="stylesheet" href="{{ url('adminlte/dist/css/skins/_all-skins.min.css') }}">
