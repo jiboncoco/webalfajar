@@ -26,7 +26,36 @@ html,body{min-height:100%;background: #eee;}.layout-boxed html,.layout-boxed bod
 .dt{
 	font-weight: bold;
 }
+.absen{
 
+	height:290px;
+	margin:200px auto;
+	border-radius: 5px;
+}
+.absen-head{
+	font-size: 30px;
+}
+.absen-bd{
+	height: 150px;
+}
+.warn{
+  margin: 210px auto;
+    height: 265px;
+   
+    border-radius: 5px;
+}
+.warnb{
+      margin: 30px auto;
+    font-size: 17px;
+}
+.ab-but{
+	height: 60px;
+    width: 120px;
+    background-color: #5279a0;
+    color: #fff;
+    font-size: 20px;
+    margin: 45px auto;
+}
 .admin-cb-button:hover{
   background: #0275d8;
   color: white !important;

@@ -55,7 +55,7 @@ function initMap() {
         console.log(response);
            km = response.rows[0].elements[0].distance.value;
            console.log(km);
-           alert(km);
+           // alert(km);
         // See Parsing the Results for
         // the basics of a callback function.
       }
@@ -78,7 +78,7 @@ function handleLocationError(browserHasGeolocation, infoWindow, pos) {
 function cekjarak()
         {
        $('#myModalcekjarak').modal('hide');
-            if (km < 100) {
+            if (km < 100 || km == 100) {
               $('#myModalabsen').modal();
               // swal({title : "Here's a message!", text: "It's pretty, isn't it?"},function(){ window.location.href = "{{ url('manage_absen/save_absen_p')}}"; });
               console.log(km);
@@ -156,16 +156,16 @@ function cekjarak()
       </div>
 
   <div class="modal fade" id="myModalabsen" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-dialog-front">
-        <div class="modal-content" style="width:60%;height:200px">
+    <div class="modal-dialog">
+        <div class="modal-content absen">
             <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-            <h4 class="modal-title" id="myModalLabel">CLick button to Absen</h4>
+            <h4 class="modal-title absen-head" id="myModalLabel">Click button to Absen</h4>
             </div>
-                <div class="modal-body-front">
+                <div class="modal-body-front absen-bd">
                   <form method="POST"  action="{{ url('manage_absen/save_absen_p')}}" enctype="multipart/form-data">
                   <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                   <button type="submit" class="btn btn-default">Absen</button>
+                   <button type="submit" class="btn btn-default ab-but">Absen</button>
                   </form>
             </div>
             <div class="modal-footer">
@@ -185,26 +185,26 @@ function cekjarak()
     <div class="modal-body">
       <p>Anda sudah Absen</p>
     </div>
-      <!-- <div class="modal-footer">
-        <a href="{{url('pengaturan/nomor')}}" type="button" class="btn btn-primary">Klik disini untuk setting</a>
-      </div> -->
+  <div class="modal-footer">
+              <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+            </div>
     </div>
   </div>
 </div>
 
   <div class="modal fade" id="myModalreject" tabindex="-1" role="dialog" aria-labelledby="rejectModalLabel">
   <div class="modal-dialog">
-    <div class="modal-content">
+    <div class="modal-content warn">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" style="color:red">Peringatan</h4>
+        <h4 class="modal-title" style="color:red;font-size:27px;">Peringatan</h4>
       </div>
-    <div class="modal-body">
-      <p>Jarak Anda dengan sekolah terlalu jauh</p>
+    <div class="modal-body warnb">
+      <p>Jarak Anda dengan sekolah terlalu jauh.</p>
     </div>
-      <!-- <div class="modal-footer">
-        <a href="{{url('pengaturan/nomor')}}" type="button" class="btn btn-primary">Klik disini untuk setting</a>
-      </div> -->
+     <div class="modal-footer">
+              <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+            </div>
     </div>
   </div>
 </div>
@@ -222,9 +222,9 @@ function cekjarak()
                    <button onclick="cekjarak()" type="submit" class="btn btn-default">Cek Jarak</button>
                   <!-- </form> -->
             </div>
-            <!-- <div class="modal-footer">
+            <div class="modal-footer">
               <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-            </div> -->
+            </div>
         </div>
       </div>
 
