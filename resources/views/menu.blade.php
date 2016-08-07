@@ -8,7 +8,7 @@
                 <a href="{{ url('absen_page') }}" class="dropdown-toggle" data-toggle="dropdown">
                   <i style="font-size:20px;color:white" class="fa fa-user"></i>
                 </a>
-                <ul style="height: 125px !important;" class="dropdown-menu">
+                <!-- <ul style="height: 125px !important;" class="dropdown-menu">
                   <li>
                     <ul class="menu">
                       <li>
@@ -28,7 +28,7 @@
                       </li>
                     </ul>
                     </li>
-                </ul>
+                </ul> -->
               </li>
 
               @elseif(session('akses_type') == "Teacher")
@@ -64,7 +64,7 @@
                 <a href="{{ url('absen_page') }}" class="dropdown-toggle" data-toggle="dropdown">
                   <i style="font-size:20px;color:white" class="fa fa-user"></i>
                 </a>
-                <ul style="height: 125px !important;" class="dropdown-menu">
+                <!-- <ul style="height: 125px !important;" class="dropdown-menu">
                   <li>
                     <ul class="menu">
                       <li>
@@ -84,7 +84,7 @@
                       </li>
                     </ul>
                     </li>
-                </ul>
+                </ul> -->
               </li>
               @endif
 <!-- 
