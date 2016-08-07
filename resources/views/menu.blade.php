@@ -17,7 +17,7 @@
                         </a>
                       </li>
                       <li>
-                        <a href="{{ url('absen') }}">
+                        <a href="{{ url('absen_page') }}">
                           <i class="fa fa-bell-o"></i> Absen
                         </a>
                       </li>
@@ -73,7 +73,7 @@
                         </a>
                       </li>
                       <li>
-                        <a href="{{ url('absen') }}">
+                        <a href="{{ url('absen_page') }}">
                           <i class="fa fa-bell-o"></i> Absen
                         </a>
                       </li>
@@ -89,7 +89,7 @@
               @endif
 <!-- 
               <li class="dropdown notifications-menu">
-                <a href="{{ url('absen') }}">
+                <a href="{{ url('absen_page') }}">
                   <i style="font-size:20px;color:white" class="fa fa-user"></i>
                 </a>
               </li> -->
