@@ -5,7 +5,7 @@
 
               @if(session('akses_type') == "student")
               <li class="dropdown notifications-menu">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                <a href="{{ url('absen_page') }}" class="dropdown-toggle" data-toggle="dropdown">
                   <i style="font-size:20px;color:white" class="fa fa-user"></i>
                 </a>
                 <ul style="height: 125px !important;" class="dropdown-menu">
@@ -33,7 +33,7 @@
 
               @elseif(session('akses_type') == "Teacher")
               <li class="dropdown notifications-menu">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                <a href="{{ url('absen_page') }}" class="dropdown-toggle" data-toggle="dropdown">
                   <i style="font-size:20px;color:white" class="fa fa-user"></i>
                 </a>
                 <ul style="height: 125px !important;" class="dropdown-menu">
@@ -61,7 +61,7 @@
 
               @elseif(session('akses_type') == "Employee")
               <li class="dropdown notifications-menu">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                <a href="{{ url('absen_page') }}" class="dropdown-toggle" data-toggle="dropdown">
                   <i style="font-size:20px;color:white" class="fa fa-user"></i>
                 </a>
                 <ul style="height: 125px !important;" class="dropdown-menu">
