@@ -3166,7 +3166,7 @@
       </button>
 
       <a class="navbar-brand" id="nb-logo" href="#">
-      <img class="navbar-brand" style="height:80px;width:80px;margin-top:-31px" src="{{ url('http://alfajarbekasi.or.id/ppdb/images/logo.png') }}">
+      <img class="navbar-brand" style="height:80px;width:80px;margin-top:-31px" src="img/all_icon/logo.png">
       Al - Fajar</a>
 
     </div>
