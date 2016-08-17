@@ -5366,6 +5366,7 @@ class Controller extends BaseController
         $view = \View::make('registration_tk_pdf');
         $pdf = \App::make('dompdf.wrapper');
         $pdf->loadHTML($view)->setPaper('a4')->setOrientation('potrait');
+        \Session::forget('available_print');
         return $pdf->stream();
         } else {
             return redirect('registration');

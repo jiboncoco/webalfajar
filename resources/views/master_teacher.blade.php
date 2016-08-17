@@ -248,6 +248,11 @@
                       <select id="selecttype" name="dt_teacher_for" class="form-control not-res-s">
                         <option value="MASTER">MASTER</option>
                         <option value="SEKETARIAT">SEKETARIAT</option>
+                        <option value="PRINCIPAL">PRINCIPAL</option>
+                        <option value="VICE PRINCIPAL">VICE PRINCIPAL</option>
+                        <option value="LEADER">LEADER</option>
+                        <option value="CLEANING SERVICE">CLEANING SERVICE</option>
+                        <option value="SECURITY">SECURITY</option>
                         <option value="TK">TK</option>
                         <option value="SD">SD</option>
                         <option value="SMP">SMP</option>

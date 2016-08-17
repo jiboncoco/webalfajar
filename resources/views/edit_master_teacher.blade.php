@@ -246,6 +246,11 @@
                         <option value="SMA">SMA</option>
                         <option value="MASTER">MASTER</option>
                         <option value="SEKETARIAT">SEKETARIAT</option>
+                        <option value="PRINCIPAL">PRINCIPAL</option>
+                        <option value="VICE PRINCIPAL">VICE PRINCIPAL</option>
+                        <option value="LEADER">LEADER</option>
+                        <option value="CLEANING SERVICE">CLEANING SERVICE</option>
+                        <option value="SECURITY">SECURITY</option>
                         @elseif($data_edit->dt_teacher_for == "SD")
                         <option value="TK">TK</option>
                         <option value="SD" selected>SD</option>
@@ -253,6 +258,11 @@
                         <option value="SMA">SMA</option>
                         <option value="MASTER">MASTER</option>
                         <option value="SEKETARIAT">SEKETARIAT</option>
+                        <option value="PRINCIPAL">PRINCIPAL</option>
+                        <option value="VICE PRINCIPAL">VICE PRINCIPAL</option>
+                        <option value="LEADER">LEADER</option>
+                        <option value="CLEANING SERVICE">CLEANING SERVICE</option>
+                        <option value="SECURITY">SECURITY</option>
                         @elseif($data_edit->dt_teacher_for == "SMP")
                         <option value="TK">TK</option>
                         <option value="SD">SD</option>
@@ -260,6 +270,11 @@
                         <option value="SMA">SMA</option>
                         <option value="MASTER">MASTER</option>
                         <option value="SEKETARIAT">SEKETARIAT</option>
+                        <option value="PRINCIPAL">PRINCIPAL</option>
+                        <option value="VICE PRINCIPAL">VICE PRINCIPAL</option>
+                        <option value="LEADER">LEADER</option>
+                        <option value="CLEANING SERVICE">CLEANING SERVICE</option>
+                        <option value="SECURITY">SECURITY</option>
                         @elseif($data_edit->dt_teacher_for == "SMA")
                         <option value="TK">TK</option>
                         <option value="SD">SD</option>
@@ -267,20 +282,36 @@
                         <option value="SMA" selected>SMA</option>
                         <option value="MASTER">MASTER</option>
                         <option value="SEKETARIAT">SEKETARIAT</option>
+                        <option value="PRINCIPAL">PRINCIPAL</option>
+                        <option value="VICE PRINCIPAL">VICE PRINCIPAL</option>
+                        <option value="LEADER">LEADER</option>
+                        <option value="CLEANING SERVICE">CLEANING SERVICE</option>
+                        <option value="SECURITY">SECURITY</option>
                         @elseif($data_edit->dt_teacher_for == "MASTER")
                         <option value="TK">TK</option>
                         <option value="SD">SD</option>
                         <option value="SMP">SMP</option>
                         <option value="SMA" >SMA</option>
                         <option value="MASTER" selected>MASTER</option>
+                        <option value="PRINCIPAL">PRINCIPAL</option>
+                        <option value="VICE PRINCIPAL">VICE PRINCIPAL</option>
+                        <option value="LEADER">LEADER</option>
+                        <option value="CLEANING SERVICE">CLEANING SERVICE</option>
+                        <option value="SECURITY">SECURITY</option>
                         <option value="SEKETARIAT">SEKETARIAT</option>
                         @else
+                        <option value="" selected>--- Select ---</option>
                         <option value="TK">TK</option>
                         <option value="SD">SD</option>
                         <option value="SMP">SMP</option>
                         <option value="SMA" >SMA</option>
                         <option value="MASTER">MASTER</option>
-                        <option value="SEKETARIAT" selected>SEKETARIAT</option>
+                        <option value="SEKETARIAT">SEKETARIAT</option>
+                        <option value="PRINCIPAL">PRINCIPAL</option>
+                        <option value="VICE PRINCIPAL">VICE PRINCIPAL</option>
+                        <option value="LEADER">LEADER</option>
+                        <option value="CLEANING SERVICE">CLEANING SERVICE</option>
+                        <option value="SECURITY">SECURITY</option>
                         @endif
                       </select>
                     </div>

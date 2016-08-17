@@ -98,7 +98,7 @@
                 <a href="{{ url('manage_message/message_staff') }}">
                   <i style="font-size:17px;" class="fa fa-envelope-o"></i>
                 </a>
-              @elseif(session('akses_type') == "teacher")
+              @elseif(session('akses_type') == "Teacher")
                 <a href="{{ url('manage_message/message_teacher') }}">
                   <i style="font-size:17px;" class="fa fa-envelope-o"></i>
                 </a>
@@ -109,6 +109,10 @@
               </li>
               @elseif(session('akses_type') == "parent")
                 <a href="{{ url('manage_message/message_parent') }}">
+                  <i style="font-size:17px;" class="fa fa-envelope-o"></i>
+                </a>
+              @elseif(session('akses_type') == "employee")
+                <a href="{{ url('manage_message/message_teacher') }}">
                   <i style="font-size:17px;" class="fa fa-envelope-o"></i>
                 </a>
               @elseif(session('akses_type') == "root")
