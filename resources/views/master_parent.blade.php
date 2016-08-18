@@ -42,7 +42,7 @@
                 <div class="box-header">
                 </div><!-- /.box-header -->
                 <div style="width:1500px" class="box-body">
-                  <table id="for_datatable" class="table table-bordered table-hover">
+                  <table class="for_datatable table table-bordered table-hover">
                     <thead>
                       <tr>
                         <th>No.</th>
