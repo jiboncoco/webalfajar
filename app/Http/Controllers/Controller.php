@@ -495,10 +495,11 @@ class Controller extends BaseController
     {
        session_start();
         if(isset($_SESSION['logged_in'])){
-            $dt_blog_all_portal_tk = \DB::table('dt_blog')->where('dt_blog_for', '=', 'TK')->orderBy('id', 'desc')->paginate(6);
+            $dt_blog_all_portal_tk  = \DB::table('dt_blog')->where('dt_blog_for', '=', 'TK')->orwhere('dt_blog_for', '=', 'ALL')->orderBy('id', 'desc')->paginate(6);
             $dt_blog_all = \DB::table('dt_blog')->where('dt_blog_for', '=', 'TK')->orderBy('id', 'desc')->paginate(6);
             $news = \DB::table('dt_blog')->where([
                                                                     ['dt_blog_type', '=', 'news'],
+                                                                    ['dt_blog_for', '=', 'ALL'],
                                                                     ['dt_blog_for', '=', 'TK']
                                                                     ])->orderBy('id', 'desc')->get();
             $article = \DB::table('dt_blog')->where([
@@ -589,10 +590,11 @@ class Controller extends BaseController
             ->with('sma_headmas',$sma_headmas)->with('sma_profile',$sma_profile)->with('sma_edu',$sma_edu)->with('dt_blog_all',$dt_blog_all);
         }
         else{
-            $dt_blog_all_portal_tk = \DB::table('dt_blog')->where('dt_blog_for', '=', 'TK')->orderBy('id', 'desc')->paginate(6);
+            $dt_blog_all_portal_tk  = \DB::table('dt_blog')->where('dt_blog_for', '=', 'TK')->orwhere('dt_blog_for', '=', 'ALL')->orderBy('id', 'desc')->paginate(6);
             $dt_blog_all = \DB::table('dt_blog')->where('dt_blog_for', '=', 'TK')->orderBy('id', 'desc')->paginate(6);
             $news = \DB::table('dt_blog')->where([
                                                                     ['dt_blog_type', '=', 'news'],
+                                                                    ['dt_blog_for', '=', 'ALL'],
                                                                     ['dt_blog_for', '=', 'TK']
                                                                     ])->orderBy('id', 'desc')->get();
             $article = \DB::table('dt_blog')->where([
@@ -692,6 +694,7 @@ class Controller extends BaseController
             $dt_blog_all = \DB::table('dt_blog')->where('dt_blog_type', '=', 'all', 'AND', 'dt_blog_for', '=', 'TK')->orderBy('id', 'desc')->paginate(5);
             $news = \DB::table('dt_blog')->where([
                                                                     ['dt_blog_type', '=', 'news'],
+                                                                    ['dt_blog_for', '=', 'ALL'],
                                                                     ['dt_blog_for', '=', 'TK']
                                                                     ])->orderBy('id', 'desc')->get();
             $article = \DB::table('dt_blog')->where([
@@ -786,6 +789,7 @@ class Controller extends BaseController
             $dt_blog_all = \DB::table('dt_blog')->where('dt_blog_type', '=', 'all', 'AND', 'dt_blog_for', '=', 'TK')->orderBy('id', 'desc')->paginate(5);
             $news = \DB::table('dt_blog')->where([
                                                                     ['dt_blog_type', '=', 'news'],
+                                                                    ['dt_blog_for', '=', 'ALL'],
                                                                     ['dt_blog_for', '=', 'TK']
                                                                     ])->orderBy('id', 'desc')->get();
             $article = \DB::table('dt_blog')->where([
@@ -888,6 +892,7 @@ class Controller extends BaseController
                                                                     ])->orderBy('id', 'desc')->paginate(6);
             $news = \DB::table('dt_blog')->where([
                                                                     ['dt_blog_type', '=', 'news'],
+                                                                    ['dt_blog_for', '=', 'ALL'],
                                                                     ['dt_blog_for', '=', 'TK']
                                                                     ])->orderBy('id', 'desc')->get();
             $article = \DB::table('dt_blog')->where([
@@ -985,6 +990,7 @@ class Controller extends BaseController
                                                                     ])->orderBy('id', 'desc')->paginate(6);
             $news = \DB::table('dt_blog')->where([
                                                                     ['dt_blog_type', '=', 'news'],
+                                                                    ['dt_blog_for', '=', 'ALL'],
                                                                     ['dt_blog_for', '=', 'TK']
                                                                     ])->orderBy('id', 'desc')->get();
             $article = \DB::table('dt_blog')->where([
@@ -1087,6 +1093,7 @@ class Controller extends BaseController
                                                                     ])->orderBy('id', 'desc')->paginate(6);
             $news = \DB::table('dt_blog')->where([
                                                                     ['dt_blog_type', '=', 'news'],
+                                                                    ['dt_blog_for', '=', 'ALL'],
                                                                     ['dt_blog_for', '=', 'TK']
                                                                     ])->orderBy('id', 'desc')->get();
             $article = \DB::table('dt_blog')->where([
@@ -1184,6 +1191,7 @@ class Controller extends BaseController
                                                                     ])->orderBy('id', 'desc')->paginate(6);
             $news = \DB::table('dt_blog')->where([
                                                                     ['dt_blog_type', '=', 'news'],
+                                                                    ['dt_blog_for', '=', 'ALL'],
                                                                     ['dt_blog_for', '=', 'TK']
                                                                     ])->orderBy('id', 'desc')->get();
             $article = \DB::table('dt_blog')->where([
@@ -1286,6 +1294,7 @@ class Controller extends BaseController
                                                                     ])->orderBy('id', 'desc')->paginate(6);
             $news = \DB::table('dt_blog')->where([
                                                                     ['dt_blog_type', '=', 'news'],
+                                                                    ['dt_blog_for', '=', 'ALL'],
                                                                     ['dt_blog_for', '=', 'TK']
                                                                     ])->orderBy('id', 'desc')->get();
             $article = \DB::table('dt_blog')->where([
@@ -1382,6 +1391,7 @@ class Controller extends BaseController
                                                                     ])->orderBy('id', 'desc')->paginate(6);
             $news = \DB::table('dt_blog')->where([
                                                                     ['dt_blog_type', '=', 'news'],
+                                                                    ['dt_blog_for', '=', 'ALL'],
                                                                     ['dt_blog_for', '=', 'TK']
                                                                     ])->orderBy('id', 'desc')->get();
             $article = \DB::table('dt_blog')->where([
@@ -1483,6 +1493,7 @@ class Controller extends BaseController
                                                                     ])->orderBy('id', 'desc')->paginate(6);
             $news = \DB::table('dt_blog')->where([
                                                                     ['dt_blog_type', '=', 'news'],
+                                                                    ['dt_blog_for', '=', 'ALL'],
                                                                     ['dt_blog_for', '=', 'TK']
                                                                     ])->orderBy('id', 'desc')->get();
             $article = \DB::table('dt_blog')->where([
@@ -1579,6 +1590,7 @@ class Controller extends BaseController
                                                                     ])->orderBy('id', 'desc')->paginate(6);
             $news = \DB::table('dt_blog')->where([
                                                                     ['dt_blog_type', '=', 'news'],
+                                                                    ['dt_blog_for', '=', 'ALL'],
                                                                     ['dt_blog_for', '=', 'TK']
                                                                     ])->orderBy('id', 'desc')->get();
             $article = \DB::table('dt_blog')->where([
@@ -1675,9 +1687,10 @@ class Controller extends BaseController
        session_start();
         if(isset($_SESSION['logged_in'])){
             $dt_blog_all = \DB::table('dt_blog')->where('dt_blog_for', '=', 'SD')->orderBy('id', 'desc')->paginate(5);
-            $dt_blog_all_portal_sd = \DB::table('dt_blog')->where('dt_blog_for', '=', 'SD')->orderBy('id', 'desc')->paginate(6);
+            $dt_blog_all_portal_sd  = \DB::table('dt_blog')->where('dt_blog_for', '=', 'SD')->orwhere('dt_blog_for', '=', 'ALL')->orderBy('id', 'desc')->paginate(6);
             $news = \DB::table('dt_blog')->where([
                                                                     ['dt_blog_type', '=', 'news'],
+                                                                    ['dt_blog_for', '=', 'ALL'],
                                                                     ['dt_blog_for', '=', 'SD']
                                                                     ])->orderBy('id', 'desc')->get();
             $article = \DB::table('dt_blog')->where([
@@ -1769,9 +1782,10 @@ class Controller extends BaseController
         }
         else{
             $dt_blog_all = \DB::table('dt_blog')->where('dt_blog_for', '=', 'SD')->orderBy('id', 'desc')->paginate(5);
-            $dt_blog_all_portal_sd = \DB::table('dt_blog')->where('dt_blog_for', '=', 'SD')->orderBy('id', 'desc')->paginate(6);
+            $dt_blog_all_portal_sd  = \DB::table('dt_blog')->where('dt_blog_for', '=', 'SD')->orwhere('dt_blog_for', '=', 'ALL')->orderBy('id', 'desc')->paginate(6);
             $news = \DB::table('dt_blog')->where([
                                                                     ['dt_blog_type', '=', 'news'],
+                                                                    ['dt_blog_for', '=', 'ALL'],
                                                                     ['dt_blog_for', '=', 'SD']
                                                                     ])->orderBy('id', 'desc')->get();
             $article = \DB::table('dt_blog')->where([
@@ -1871,6 +1885,7 @@ class Controller extends BaseController
             $dt_blog_all_portal_sd = \DB::table('dt_blog')->where('dt_blog_type', '=', 'all', 'AND', 'dt_blog_for', '=', 'sd')->orderBy('id', 'desc')->paginate(6);
             $news = \DB::table('dt_blog')->where([
                                                                     ['dt_blog_type', '=', 'news'],
+                                                                    ['dt_blog_for', '=', 'ALL'],
                                                                     ['dt_blog_for', '=', 'SD']
                                                                     ])->orderBy('id', 'desc')->get();
             $article = \DB::table('dt_blog')->where([
@@ -1965,6 +1980,7 @@ class Controller extends BaseController
             $dt_blog_all_portal_sd = \DB::table('dt_blog')->where('dt_blog_type', '=', 'all', 'AND', 'dt_blog_for', '=', 'sd')->orderBy('id', 'desc')->paginate(6);
             $news = \DB::table('dt_blog')->where([
                                                                     ['dt_blog_type', '=', 'news'],
+                                                                    ['dt_blog_for', '=', 'ALL'],
                                                                     ['dt_blog_for', '=', 'SD']
                                                                     ])->orderBy('id', 'desc')->get();
             $article = \DB::table('dt_blog')->where([
@@ -2067,6 +2083,7 @@ class Controller extends BaseController
                                                                     ])->orderBy('id', 'desc')->paginate(6);
             $news = \DB::table('dt_blog')->where([
                                                                     ['dt_blog_type', '=', 'news'],
+                                                                    ['dt_blog_for', '=', 'ALL'],
                                                                     ['dt_blog_for', '=', 'SD']
                                                                     ])->orderBy('id', 'desc')->get();
             $article = \DB::table('dt_blog')->where([
@@ -2164,6 +2181,7 @@ class Controller extends BaseController
                                                                     ])->orderBy('id', 'desc')->paginate(6);
             $news = \DB::table('dt_blog')->where([
                                                                     ['dt_blog_type', '=', 'news'],
+                                                                    ['dt_blog_for', '=', 'ALL'],
                                                                     ['dt_blog_for', '=', 'SD']
                                                                     ])->orderBy('id', 'desc')->get();
             $article = \DB::table('dt_blog')->where([
@@ -2266,6 +2284,7 @@ class Controller extends BaseController
                                                                     ])->orderBy('id', 'desc')->paginate(6);
             $news = \DB::table('dt_blog')->where([
                                                                     ['dt_blog_type', '=', 'news'],
+                                                                    ['dt_blog_for', '=', 'ALL'],
                                                                     ['dt_blog_for', '=', 'SD']
                                                                     ])->orderBy('id', 'desc')->get();
             $article = \DB::table('dt_blog')->where([
@@ -2363,6 +2382,7 @@ class Controller extends BaseController
                                                                     ])->orderBy('id', 'desc')->paginate(6);
             $news = \DB::table('dt_blog')->where([
                                                                     ['dt_blog_type', '=', 'news'],
+                                                                    ['dt_blog_for', '=', 'ALL'],
                                                                     ['dt_blog_for', '=', 'SD']
                                                                     ])->orderBy('id', 'desc')->get();
             $article = \DB::table('dt_blog')->where([
@@ -2465,6 +2485,7 @@ class Controller extends BaseController
                                                                     ])->orderBy('id', 'desc')->paginate(6);
             $news = \DB::table('dt_blog')->where([
                                                                     ['dt_blog_type', '=', 'news'],
+                                                                    ['dt_blog_for', '=', 'ALL'],
                                                                     ['dt_blog_for', '=', 'SD']
                                                                     ])->orderBy('id', 'desc')->get();
             $article = \DB::table('dt_blog')->where([
@@ -2562,6 +2583,7 @@ class Controller extends BaseController
                                                                     ])->orderBy('id', 'desc')->paginate(6);
             $news = \DB::table('dt_blog')->where([
                                                                     ['dt_blog_type', '=', 'news'],
+                                                                    ['dt_blog_for', '=', 'ALL'],
                                                                     ['dt_blog_for', '=', 'SD']
                                                                     ])->orderBy('id', 'desc')->get();
             $article = \DB::table('dt_blog')->where([
@@ -2664,6 +2686,7 @@ class Controller extends BaseController
                                                                     ])->orderBy('id', 'desc')->paginate(6);
             $news = \DB::table('dt_blog')->where([
                                                                     ['dt_blog_type', '=', 'news'],
+                                                                    ['dt_blog_for', '=', 'ALL'],
                                                                     ['dt_blog_for', '=', 'SD']
                                                                     ])->orderBy('id', 'desc')->get();
             $article = \DB::table('dt_blog')->where([
@@ -2761,6 +2784,7 @@ class Controller extends BaseController
                                                                     ])->orderBy('id', 'desc')->paginate(6);
             $news = \DB::table('dt_blog')->where([
                                                                     ['dt_blog_type', '=', 'news'],
+                                                                    ['dt_blog_for', '=', 'ALL'],
                                                                     ['dt_blog_for', '=', 'SD']
                                                                     ])->orderBy('id', 'desc')->get();
             $article = \DB::table('dt_blog')->where([
@@ -2857,9 +2881,10 @@ class Controller extends BaseController
        session_start();
         if(isset($_SESSION['logged_in'])){
             $dt_blog_all = \DB::table('dt_blog')->where('dt_blog_for', '=', 'SMP')->orderBy('id', 'desc')->paginate(5);
-            $dt_blog_portal_smp = \DB::table('dt_blog')->where('dt_blog_for', '=', 'SMP')->orderBy('id', 'desc')->paginate(6);
+            $dt_blog_portal_smp  = \DB::table('dt_blog')->where('dt_blog_for', '=', 'SMP')->orwhere('dt_blog_for', '=', 'ALL')->orderBy('id', 'desc')->paginate(6);
             $news = \DB::table('dt_blog')->where([
                                                                     ['dt_blog_type', '=', 'news'],
+                                                                    ['dt_blog_for', '=', 'ALL'],
                                                                     ['dt_blog_for', '=', 'SMP']
                                                                     ])->orderBy('id', 'desc')->get();
             $article = \DB::table('dt_blog')->where([
@@ -2951,9 +2976,11 @@ class Controller extends BaseController
         }
         else{
             $dt_blog_all = \DB::table('dt_blog')->where('dt_blog_for', '=', 'SMP')->orderBy('id', 'desc')->paginate(5);
-            $dt_blog_portal_smp = \DB::table('dt_blog')->where('dt_blog_for', '=', 'smp')->orderBy('id', 'desc')->paginate(6);
+            
+            $dt_blog_portal_smp  = \DB::table('dt_blog')->where('dt_blog_for', '=', 'SMP')->orwhere('dt_blog_for', '=', 'ALL')->orderBy('id', 'desc')->paginate(6);
             $news = \DB::table('dt_blog')->where([
                                                                     ['dt_blog_type', '=', 'news'],
+                                                                    ['dt_blog_for', '=', 'ALL'],
                                                                     ['dt_blog_for', '=', 'SMP']
                                                                     ])->orderBy('id', 'desc')->get();
             $article = \DB::table('dt_blog')->where([
@@ -3053,6 +3080,7 @@ class Controller extends BaseController
             $dt_blog_all_portal_smp = \DB::table('dt_blog')->where('dt_blog_type', '=', 'all', 'AND', 'dt_blog_for', '=', 'smp')->orderBy('id', 'desc')->paginate(6);
             $news = \DB::table('dt_blog')->where([
                                                                     ['dt_blog_type', '=', 'news'],
+                                                                    ['dt_blog_for', '=', 'ALL'],
                                                                     ['dt_blog_for', '=', 'SMP']
                                                                     ])->orderBy('id', 'desc')->get();
             $article = \DB::table('dt_blog')->where([
@@ -3147,6 +3175,7 @@ class Controller extends BaseController
             $dt_blog_all_portal_smp = \DB::table('dt_blog')->where('dt_blog_type', '=', 'all', 'AND', 'dt_blog_for', '=', 'smp')->orderBy('id', 'desc')->paginate(6);
             $news = \DB::table('dt_blog')->where([
                                                                     ['dt_blog_type', '=', 'news'],
+                                                                    ['dt_blog_for', '=', 'ALL'],
                                                                     ['dt_blog_for', '=', 'SMP']
                                                                     ])->orderBy('id', 'desc')->get();
             $article = \DB::table('dt_blog')->where([
@@ -3249,6 +3278,7 @@ class Controller extends BaseController
                                                                     ])->orderBy('id', 'desc')->paginate(6);
             $news = \DB::table('dt_blog')->where([
                                                                     ['dt_blog_type', '=', 'news'],
+                                                                    ['dt_blog_for', '=', 'ALL'],
                                                                     ['dt_blog_for', '=', 'SMP']
                                                                     ])->orderBy('id', 'desc')->get();
             $article = \DB::table('dt_blog')->where([
@@ -3346,6 +3376,7 @@ class Controller extends BaseController
                                                                     ])->orderBy('id', 'desc')->paginate(6);
             $news = \DB::table('dt_blog')->where([
                                                                     ['dt_blog_type', '=', 'news'],
+                                                                    ['dt_blog_for', '=', 'ALL'],
                                                                     ['dt_blog_for', '=', 'SMP']
                                                                     ])->orderBy('id', 'desc')->get();
             $article = \DB::table('dt_blog')->where([
@@ -3448,6 +3479,7 @@ class Controller extends BaseController
                                                                     ])->orderBy('id', 'desc')->paginate(6);
             $news = \DB::table('dt_blog')->where([
                                                                     ['dt_blog_type', '=', 'news'],
+                                                                    ['dt_blog_for', '=', 'ALL'],
                                                                     ['dt_blog_for', '=', 'SMP']
                                                                     ])->orderBy('id', 'desc')->get();
             $article = \DB::table('dt_blog')->where([
@@ -3545,6 +3577,7 @@ class Controller extends BaseController
                                                                     ])->orderBy('id', 'desc')->paginate(6);
             $news = \DB::table('dt_blog')->where([
                                                                     ['dt_blog_type', '=', 'news'],
+                                                                    ['dt_blog_for', '=', 'ALL'],
                                                                     ['dt_blog_for', '=', 'SMP']
                                                                     ])->orderBy('id', 'desc')->get();
             $article = \DB::table('dt_blog')->where([
@@ -3647,6 +3680,7 @@ class Controller extends BaseController
                                                                     ])->orderBy('id', 'desc')->paginate(6);
             $news = \DB::table('dt_blog')->where([
                                                                     ['dt_blog_type', '=', 'news'],
+                                                                    ['dt_blog_for', '=', 'ALL'],
                                                                     ['dt_blog_for', '=', 'SMP']
                                                                     ])->orderBy('id', 'desc')->get();
             $article = \DB::table('dt_blog')->where([
@@ -3744,6 +3778,7 @@ class Controller extends BaseController
                                                                     ])->orderBy('id', 'desc')->paginate(6);
             $news = \DB::table('dt_blog')->where([
                                                                     ['dt_blog_type', '=', 'news'],
+                                                                    ['dt_blog_for', '=', 'ALL'],
                                                                     ['dt_blog_for', '=', 'SMP']
                                                                     ])->orderBy('id', 'desc')->get();
             $article = \DB::table('dt_blog')->where([
@@ -3846,6 +3881,7 @@ class Controller extends BaseController
                                                                     ])->orderBy('id', 'desc')->paginate(6);
             $news = \DB::table('dt_blog')->where([
                                                                     ['dt_blog_type', '=', 'news'],
+                                                                    ['dt_blog_for', '=', 'ALL'],
                                                                     ['dt_blog_for', '=', 'SMP']
                                                                     ])->orderBy('id', 'desc')->get();
             $article = \DB::table('dt_blog')->where([
@@ -3943,6 +3979,7 @@ class Controller extends BaseController
                                                                     ])->orderBy('id', 'desc')->paginate(6);
             $news = \DB::table('dt_blog')->where([
                                                                     ['dt_blog_type', '=', 'news'],
+                                                                    ['dt_blog_for', '=', 'ALL'],
                                                                     ['dt_blog_for', '=', 'SMP']
                                                                     ])->orderBy('id', 'desc')->get();
             $article = \DB::table('dt_blog')->where([
@@ -4039,9 +4076,10 @@ class Controller extends BaseController
        session_start();
         if(isset($_SESSION['logged_in'])){
             $dt_blog_all = \DB::table('dt_blog')->where('dt_blog_for', '=', 'SMA')->orderBy('id', 'desc')->paginate(5);
-            $dt_blog_portal_sma = \DB::table('dt_blog')->where('dt_blog_for', '=', 'SMA')->orderBy('id', 'desc')->paginate(6);
+            $dt_blog_portal_sma  = \DB::table('dt_blog')->where('dt_blog_for', '=', 'SMA')->orwhere('dt_blog_for', '=', 'ALL')->orderBy('id', 'desc')->paginate(6);
             $news = \DB::table('dt_blog')->where([
                                                                     ['dt_blog_type', '=', 'news'],
+                                                                    ['dt_blog_for', '=', 'ALL'],
                                                                     ['dt_blog_for', '=', 'SMA']
                                                                     ])->orderBy('id', 'desc')->get();
             $article = \DB::table('dt_blog')->where([
@@ -4133,9 +4171,10 @@ class Controller extends BaseController
         }
         else{
             $dt_blog_all = \DB::table('dt_blog')->where('dt_blog_for', '=', 'SMA')->orderBy('id', 'desc')->paginate(5);
-            $dt_blog_portal_sma = \DB::table('dt_blog')->where('dt_blog_for', '=', 'SMA')->orderBy('id', 'desc')->paginate(6);
+            $dt_blog_portal_sma  = \DB::table('dt_blog')->where('dt_blog_for', '=', 'SMA')->orwhere('dt_blog_for', '=', 'ALL')->orderBy('id', 'desc')->paginate(6);
             $news = \DB::table('dt_blog')->where([
                                                                     ['dt_blog_type', '=', 'news'],
+                                                                    ['dt_blog_for', '=', 'ALL'],
                                                                     ['dt_blog_for', '=', 'SMA']
                                                                     ])->orderBy('id', 'desc')->get();
             $article = \DB::table('dt_blog')->where([
@@ -4235,6 +4274,7 @@ class Controller extends BaseController
             $dt_blog_all_portal_sma = \DB::table('dt_blog')->where('dt_blog_type', '=', 'all', 'AND', 'dt_blog_for', '=', 'sma')->orderBy('id', 'desc')->paginate(6);
             $news = \DB::table('dt_blog')->where([
                                                                     ['dt_blog_type', '=', 'news'],
+                                                                    ['dt_blog_for', '=', 'ALL'],
                                                                     ['dt_blog_for', '=', 'SMA']
                                                                     ])->orderBy('id', 'desc')->get();
             $article = \DB::table('dt_blog')->where([
@@ -4329,6 +4369,7 @@ class Controller extends BaseController
             $dt_blog_all_portal_sma = \DB::table('dt_blog')->where('dt_blog_type', '=', 'all', 'AND', 'dt_blog_for', '=', 'sma')->orderBy('id', 'desc')->paginate(6);
             $news = \DB::table('dt_blog')->where([
                                                                     ['dt_blog_type', '=', 'news'],
+                                                                    ['dt_blog_for', '=', 'ALL'],
                                                                     ['dt_blog_for', '=', 'SMA']
                                                                     ])->orderBy('id', 'desc')->get();
             $article = \DB::table('dt_blog')->where([
@@ -4431,6 +4472,7 @@ class Controller extends BaseController
                                                                     ])->orderBy('id', 'desc')->paginate(6);
             $news = \DB::table('dt_blog')->where([
                                                                     ['dt_blog_type', '=', 'news'],
+                                                                    ['dt_blog_for', '=', 'ALL'],
                                                                     ['dt_blog_for', '=', 'SMA']
                                                                     ])->orderBy('id', 'desc')->get();
             $article = \DB::table('dt_blog')->where([
@@ -4528,6 +4570,7 @@ class Controller extends BaseController
                                                                     ])->orderBy('id', 'desc')->paginate(6);
             $news = \DB::table('dt_blog')->where([
                                                                     ['dt_blog_type', '=', 'news'],
+                                                                    ['dt_blog_for', '=', 'ALL'],
                                                                     ['dt_blog_for', '=', 'SMA']
                                                                     ])->orderBy('id', 'desc')->get();
             $article = \DB::table('dt_blog')->where([
@@ -4630,6 +4673,7 @@ class Controller extends BaseController
                                                                     ])->orderBy('id', 'desc')->paginate(6);
             $news = \DB::table('dt_blog')->where([
                                                                     ['dt_blog_type', '=', 'news'],
+                                                                    ['dt_blog_for', '=', 'ALL'],
                                                                     ['dt_blog_for', '=', 'SMA']
                                                                     ])->orderBy('id', 'desc')->get();
             $article = \DB::table('dt_blog')->where([
@@ -4727,6 +4771,7 @@ class Controller extends BaseController
                                                                     ])->orderBy('id', 'desc')->paginate(6);
             $news = \DB::table('dt_blog')->where([
                                                                     ['dt_blog_type', '=', 'news'],
+                                                                    ['dt_blog_for', '=', 'ALL'],
                                                                     ['dt_blog_for', '=', 'SMA']
                                                                     ])->orderBy('id', 'desc')->get();
             $article = \DB::table('dt_blog')->where([
@@ -4829,6 +4874,7 @@ class Controller extends BaseController
                                                                     ])->orderBy('id', 'desc')->paginate(6);
             $news = \DB::table('dt_blog')->where([
                                                                     ['dt_blog_type', '=', 'news'],
+                                                                    ['dt_blog_for', '=', 'ALL'],
                                                                     ['dt_blog_for', '=', 'SMA']
                                                                     ])->orderBy('id', 'desc')->get();
             $article = \DB::table('dt_blog')->where([
@@ -4926,6 +4972,7 @@ class Controller extends BaseController
                                                                     ])->orderBy('id', 'desc')->paginate(6);
             $news = \DB::table('dt_blog')->where([
                                                                     ['dt_blog_type', '=', 'news'],
+                                                                    ['dt_blog_for', '=', 'ALL'],
                                                                     ['dt_blog_for', '=', 'SMA']
                                                                     ])->orderBy('id', 'desc')->get();
             $article = \DB::table('dt_blog')->where([
@@ -5028,6 +5075,7 @@ class Controller extends BaseController
                                                                     ])->orderBy('id', 'desc')->paginate(6);
             $news = \DB::table('dt_blog')->where([
                                                                     ['dt_blog_type', '=', 'news'],
+                                                                    ['dt_blog_for', '=', 'ALL'],
                                                                     ['dt_blog_for', '=', 'SMA']
                                                                     ])->orderBy('id', 'desc')->get();
             $article = \DB::table('dt_blog')->where([
@@ -5125,6 +5173,7 @@ class Controller extends BaseController
                                                                     ])->orderBy('id', 'desc')->paginate(6);
             $news = \DB::table('dt_blog')->where([
                                                                     ['dt_blog_type', '=', 'news'],
+                                                                    ['dt_blog_for', '=', 'ALL'],
                                                                     ['dt_blog_for', '=', 'SMA']
                                                                     ])->orderBy('id', 'desc')->get();
             $article = \DB::table('dt_blog')->where([

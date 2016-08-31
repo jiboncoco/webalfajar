@@ -47,6 +47,7 @@
       <br>
       <label for="exampleInputPassword1">This Text For</label>
       <select style="margin-bottom:15px"  name="dt_blog_for" class="form-control col-lg-6">
+      <option value="ALL">ALL</option>
       @foreach($m_kelass as $m_kelas)
         <option value="{{ $m_kelas -> m_kelas_name }}">{{ $m_kelas -> m_kelas_name }}</option>
       @endforeach
