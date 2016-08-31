@@ -6,8 +6,8 @@
   config.skin = "office2013";
   config.extraPlugins = 'uploadimage,image2';
 
-  config.imageUploadUrl = 'http://www.alfajarbekasi.sch.id/uploadimagedrag';
-  config.filebrowserImageUploadUrl = 'http://www.alfajarbekasi.sch.id/uploadimagefilebrowser';
+  config.imageUploadUrl = 'https://www.alfajarbekasi.sch.id/uploadimagedrag';
+  config.filebrowserImageUploadUrl = 'https://www.alfajarbekasi.sch.id/uploadimagefilebrowser';
 
   config.image2_alignClasses = [ 'image-align-left', 'image-align-center', 'image-align-right' ];
   config.toolbar = [
