@@ -23,4 +23,3 @@
 		{ name: 'colors', items: [ 'TextColor', 'BGColor' ] },
 	];
  };
-

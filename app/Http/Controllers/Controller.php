@@ -5287,7 +5287,7 @@ class Controller extends BaseController
             $yayasan_edu = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'pendidikan'] ])->get();
             $yayasan_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'galery'] ])->get();
             $yayasan_profile = \DB::table('dt_feature')->where([ ['feature_to', '=', 'YAYASAN'],['feature_for', '=', 'profile'] ])->get();
-
+            $logo = \App\logo::all();
             $tk_vimi = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'visi-misi'] ])->get();
             $tk_kurkul = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'kurikulum'] ])->get();
             $tk_galery = \DB::table('dt_feature')->where([ ['feature_to', '=', 'tk'],['feature_for', '=', 'galery'] ])->get();
@@ -5319,7 +5319,7 @@ class Controller extends BaseController
             ->with('sd_kurkul',$sd_kurkul)->with('sd_galery',$sd_galery)->with('sd_fasilitas',$sd_fasilitas)->with('smp_vimi',$smp_vimi)
             ->with('smp_kurkul',$smp_kurkul)->with('smp_galery',$smp_galery)->with('smp_fasilitas',$smp_fasilitas)->with('sma_vimi',$sma_vimi)
             ->with('sma_kurkul',$sma_kurkul)->with('sma_galery',$sma_galery)->with('sma_fasilitas',$sma_fasilitas)->with('dkm_galery',$dkm_galery)
-            ->with('dkm_fasilitas',$dkm_fasilitas)->with('teacher',$teacher)->with('user_comment',$user_comment)->with('uname',$uname) ;
+            ->with('dkm_fasilitas',$dkm_fasilitas)->with('teacher',$teacher)->with('user_comment',$user_comment)->with('uname',$uname)->with('logo', $logo);
         }
         else{
             $dt_blog = array('data'=>\App\dt_blog::find($id));
@@ -5328,6 +5328,7 @@ class Controller extends BaseController
             {
                 $dt_blog_random=\App\dt_blog::paginate(3);
             }
+            $logo = \App\logo::all();
             $dt_comment = \DB::table('dt_comment')->where('dt_comment_blog_id', '=', $id)->orderBy('dt_comment_id', 'desc')->paginate(2);
             $user_comment = \DB::table('akses')->join('dt_comment', 'akses.akses_email', '=', 'dt_comment.dt_comment_create_by')->select('akses.akses_username as uname_com', 'akses.akses_imguser as img_com')
             ->orderBy('dt_comment_id', 'desc')->paginate(2);
@@ -5371,7 +5372,7 @@ class Controller extends BaseController
             ->with('sd_kurkul',$sd_kurkul)->with('sd_galery',$sd_galery)->with('sd_fasilitas',$sd_fasilitas)->with('smp_vimi',$smp_vimi)
             ->with('smp_kurkul',$smp_kurkul)->with('smp_galery',$smp_galery)->with('smp_fasilitas',$smp_fasilitas)->with('sma_vimi',$sma_vimi)
             ->with('sma_kurkul',$sma_kurkul)->with('sma_galery',$sma_galery)->with('sma_fasilitas',$sma_fasilitas)->with('dkm_galery',$dkm_galery)
-            ->with('dkm_fasilitas',$dkm_fasilitas)->with('teacher',$teacher)->with('user_comment',$user_comment);
+            ->with('dkm_fasilitas',$dkm_fasilitas)->with('teacher',$teacher)->with('user_comment',$user_comment)->with('logo', $logo);
         }
     }
 

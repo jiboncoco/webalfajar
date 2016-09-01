@@ -588,7 +588,7 @@
       </button>
 
       <a class="navbar-brand" id="nb-logo" href="#">
-      <img class="navbar-brand" style="height:80px;width:80px;margin-top:-31px" src="img/all_icon/logo.png">
+      <img class="navbar-brand" style="height:80px;width:80px;margin-top:-31px" src="{{ url('images/'.$logo->logo) }}">
       Al - Fajar</a>
 
     </div>
