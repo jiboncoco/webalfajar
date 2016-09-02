@@ -104,7 +104,7 @@
                   <div style="display:none;margin-bottom:10px;margin-top:-10px;" id="employee" class="row">                  
                   <div class="col-xs-6 col-md-4">
                       <label for="exampleInputPassword1">Select NIP Employee</label>
-                      <select id="selectparent" name="akses_code_employee" class="form-control not-res">
+                      <select id="selectemployee" name="akses_code_employee" class="form-control not-res">
                         @foreach($dt_employees as $employee)
                         <option value="{{$employee->dt_teacher_nip}}">{{$employee->dt_teacher_nip}} ({{ preg_replace('/\|/', ' ', $teacher->dt_teacher_name) }})</option>
                         @endforeach
