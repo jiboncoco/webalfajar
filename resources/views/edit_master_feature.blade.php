@@ -66,6 +66,7 @@
                       <label for="exampleInputPassword1">Feature For </label>
                       <select id="selecttype" name="feature_for" class="form-control not-res" >
                       <option value="$feature_edit->feature_for">{{$feature_edit->feature_for}}</option>
+                      <option value="pendaftaran">pendaftaran</option>
                       <option value="ekstracurricular">ekstracurricular</option>
                       <option value="achievment">achievment</option>
                       <option value="partnerships">partnerships</option>
