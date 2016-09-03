@@ -38,16 +38,7 @@
         <div class="admin-seacrh" style="height:2px;">
             </div>
 
-            <?php
-                    
-                    if(isset($_SESSION['error_msg']))
-                    {
-                    echo "<div class='alert alert-warning'>
-                      <strong>".$_SESSION['error_msg']."</strong>
-                    </div>";
-                    unset($_SESSION['error_msg']);
-                    }
-                    ?>
+            
               @if (session('status'))
             <div class="alert alert-success">
                 {{ session('status') }}
