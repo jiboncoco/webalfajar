@@ -399,8 +399,7 @@ public function admin(Request $request)
                                         ['akses_type', 'like', $akses_type]
                                     ])->count();
                         if (!empty($akses_status)) {
-                            $_SESSION['error_msg'] = "Accounts Already Exists!";
-                            return redirect('manage_account/all_account');
+                        return redirect(url('manage_account/all_account'))->with('status', 'Accounts Already Exists!');
                         }
         else
         {
