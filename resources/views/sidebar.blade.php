@@ -58,6 +58,7 @@
                 <li><a href="{{ url('manage_student/master_student') }}"><i class="fa fa-user"></i> Master Student</a></li>
                 <li><a href="{{ url('manage_student/absen_student') }}"><i class="fa fa-thumb-tack"></i> Absen Student</a></li>
                 <li><a href="{{ url('manage_student/update_grade_student') }}"><i class="fa fa-envelope"></i> Update Grade Student</a></li>
+                <li><a href="{{ url('manage_student/post_activity') }}"><i class="fa fa-exchange"></i> Post Activity </a></li>
               </ul>
             </li>
             <li class="treeview">
@@ -172,6 +173,7 @@
                 <li><a href="{{ url('manage_student/master_student') }}"><i class="fa fa-user"></i> Master Student</a></li>
                 <li><a href="{{ url('manage_student/absen_student') }}"><i class="fa fa-thumb-tack"></i> Absen Student</a></li>
                 <li><a href="{{ url('manage_student/update_grade_student') }}"><i class="fa fa-envelope"></i> Update Grade Student</a></li>
+                <li><a href="{{ url('manage_student/post_activity') }}"><i class="fa fa-exchange"></i> Post Activity </a></li>
               </ul>
             </li>
             <li class="treeview">
@@ -297,6 +299,7 @@
                 <li><a href="{{ url('manage_student/master_student') }}"><i class="fa fa-user"></i> Master Student</a></li>
                 <li><a href="{{ url('manage_student/absen_student') }}"><i class="fa fa-thumb-tack"></i> Absen Student</a></li>
                 <li><a href="{{ url('manage_student/update_grade_student') }}"><i class="fa fa-envelope"></i> Update Grade Student</a></li>
+                <li><a href="{{ url('manage_student/post_activity') }}"><i class="fa fa-exchange"></i> Post Activity </a></li>
               </ul>
             </li>
             <li class="treeview">
@@ -410,6 +413,7 @@
               <ul class="treeview-menu">
               <li><a href="{{ url('manage_student/detail_student') }}"><i class="fa fa-puzzle-piece"></i> Detail Student</a></li>
               <li><a href="{{ url('manage_parent/detail_parent') }}"><i class="fa fa-file-text-o"></i> Detail Parent</a></li>
+              <li><a href="{{ url('manage_student/post_activity') }}"><i class="fa fa-exchange"></i> Post Activity Student </a></li>
               </ul>
             </li>
             <!-- <li class="treeview">
@@ -532,6 +536,7 @@
               <li><a href="{{ url('manage_student/my_data') }}"><i class="fa fa-puzzle-piece"></i> My Data</a></li>
               <!-- <li><a href="{{ url('manage_student/my_activity') }}"><i class="fa fa-file-text-o"></i> My Activity</a></li> -->
               <li><a href="{{ url('manage_student/schedule_class') }}"><i class="fa fa-calendar"></i> Schedule Class</a></li>
+              <li><a href="{{ url('manage_student/post_activity') }}"><i class="fa fa-exchange"></i> Post Activity </a></li>
               </ul>
             </li>
             <li class="treeview">

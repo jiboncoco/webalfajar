@@ -155,74 +155,7 @@ public function admin(Request $request)
         }
     }
 
-    // public function master_teacher_recap()
-    // {
-    //    session_start();
-    //     if(isset($_SESSION['logged_in'])){
-    //         $uname = \App\akses::where('akses_email', session('akses_email'))->get();
-    //         $data_student = \App\dt_student::all();
-    //         $data_kelas = \App\dt_kelas::all();
-    //         $data_rekap = \App\dt_rekap::all();
-    //         $data_kelas = \DB::table('dt_kelas')
-    //                  ->select(\DB::raw('count(*) as class, dt_kelas_type'))
-    //                  ->where('dt_kelas_type', '<>', 1)
-    //                  ->groupBy('dt_kelas_type')
-    //                  ->get();
-    //         $data_kelas_tk = \DB::table('dt_kelas')->where('dt_kelas_type', 'like', 'tk')->get();
-    //         $data_kelas_sd = \DB::table('dt_kelas')->where('dt_kelas_type', 'like', 'sd')->get();
-    //         $data_kelas_smp = \DB::table('dt_kelas')->where('dt_kelas_type', 'like', 'smp')->get();
-    //         $data_kelas_sma = \DB::table('dt_kelas')->where('dt_kelas_type', 'like', 'sma')->get();
-    //         $data_student_tk1a = \DB::table('dt_student')->where('dt_student_kelas', '=', 'TK 1 A')->get();
-    //         $data_student_tk1b = \DB::table('dt_student')->where('dt_student_kelas', '=', 'TK 1 B')->get();
-    //         $data_student_tk2a = \DB::table('dt_student')->where('dt_student_kelas', '=', 'TK 2 A')->get();
-    //         $data_student_tk2b = \DB::table('dt_student')->where('dt_student_kelas', '=', 'TK 2 B')->get();
-    //         $data_student_sd1a = \DB::table('dt_student')->where('dt_student_kelas', '=', 'SD 1 A')->get();
-    //         $data_student_sd1b = \DB::table('dt_student')->where('dt_student_kelas', '=', 'SD 1 B')->get();
-    //         $data_student_sd2a = \DB::table('dt_student')->where('dt_student_kelas', '=', 'SD 2 A')->get();
-    //         $data_student_sd2b = \DB::table('dt_student')->where('dt_student_kelas', '=', 'SD 2 B')->get();
-    //         $data_student_sd3a = \DB::table('dt_student')->where('dt_student_kelas', '=', 'SD 3 A')->get();
-    //         $data_student_sd3b = \DB::table('dt_student')->where('dt_student_kelas', '=', 'SD 3 B')->get();
-    //         $data_student_sd4a = \DB::table('dt_student')->where('dt_student_kelas', '=', 'SD 4 A')->get();
-    //         $data_student_sd4b = \DB::table('dt_student')->where('dt_student_kelas', '=', 'SD 4 B')->get();
-    //         $data_student_sd5a = \DB::table('dt_student')->where('dt_student_kelas', '=', 'SD 5 A')->get();
-    //         $data_student_sd5b = \DB::table('dt_student')->where('dt_student_kelas', '=', 'SD 5 B')->get();
-    //         $data_student_sd6a = \DB::table('dt_student')->where('dt_student_kelas', '=', 'SD 6 A')->get();
-    //         $data_student_sd6b = \DB::table('dt_student')->where('dt_student_kelas', '=', 'SD 6 B')->get();
-    //         $data_student_smp1 = \DB::table('dt_student')->where('dt_student_kelas', '=', 'SMP 1')->get();
-    //         $data_student_smp2 = \DB::table('dt_student')->where('dt_student_kelas', '=', 'SMP 2')->get();
-    //         $data_student_smp3 = \DB::table('dt_student')->where('dt_student_kelas', '=', 'SMP 3')->get();
-    //         $data_student_sma1 = \DB::table('dt_student')->where('dt_student_kelas', '=', 'SMA 1')->get();
-    //         $data_student_sma2 = \DB::table('dt_student')->where('dt_student_kelas', '=', 'SMA 2')->get();
-    //         $data_student_sma3 = \DB::table('dt_student')->where('dt_student_kelas', '=', 'SMA 3')->get();
-    //         return view('master_recap')->with('data_student',$data_student)->with('data_kelas',$data_kelas)->with('data_student_tk1a',$data_student_tk1a)->with('data_student_tk1b',$data_student_tk1b)->with('data_student_tk2a',$data_student_tk2a)->with('data_student_tk2b',$data_student_tk2b)->with('data_student_sd1a',$data_student_sd1a)->with('data_student_sd1b',$data_student_sd1b)->with('data_student_sd2a',$data_student_sd2a)->with('data_student_sd2b',$data_student_sd2b)->with('data_student_sd3a',$data_student_sd3a)->with('data_student_sd3b',$data_student_sd3b)->with('data_student_sd4a',$data_student_sd4a)->with('data_student_sd4b',$data_student_sd4b)->with('data_student_sd5a',$data_student_sd5a)->with('data_student_sd5b',$data_student_sd5b)->with('data_student_sd6a',$data_student_sd6a)->with('data_student_sd6b',$data_student_sd6b)->with('data_student_smp1',$data_student_smp1)->with('data_student_smp2',$data_student_smp2)->with('data_student_smp3',$data_student_smp3)->with('data_student_sma1',$data_student_sma1)->with('data_student_sma2',$data_student_sma2)->with('data_student_sma3',$data_student_sma3)->with('data_kelas_tk',$data_kelas_tk)->with('data_kelas_sd',$data_kelas_sd)->with('data_kelas_smp',$data_kelas_smp)->with('data_kelas_sma',$data_kelas_sma)->with('uname',$uname)->with('data_rekap',$data_rekap);
-    //         echo json_encode($data_kelas_sd,$data_kelas_smp,$data_kelas_sma,$data_kelas,
-    //             $data_student_tk1a,
-    //             $data_student_tk1b,
-    //             $data_student_tk2a,
-    //             $data_student_tk2b,
-    //             $data_student_sd1a,
-    //             $data_student_sd1b,
-    //             $data_student_sd2a,
-    //             $data_student_sd2b,
-    //             $data_student_sd3a,
-    //             $data_student_sd3b,
-    //             $data_student_sd4a,
-    //             $data_student_sd4b,
-    //             $data_student_sd5a,
-    //             $data_student_sd5b,
-    //             $data_student_sd6a,
-    //             $data_student_sd6b,
-    //             $data_student_smp1,
-    //             $data_student_smp2,
-    //             $data_student_smp3,
-    //             $data_student_sma1,
-    //             $data_student_sma2,
-    //             $data_student_sma3);
-    //     }
-    //     else{
-    //         return redirect('login');
-    //     }
-    // }
+
 
     public function save_master_teacher()
     {
@@ -889,6 +822,67 @@ public function admin(Request $request)
         if(isset($_SESSION['logged_in'])){
             \App\dt_sch::find($id)->delete();
             return redirect(url('manage_teacher/schedule_teacher'));        }
+        else{
+            return redirect(url('login'));
+        }
+    }
+
+    public function save_student_activity()
+    {
+        $post = new \App\dt_aktivitas;
+        $post->dt_aktivitas_grade = Input::get('dt_aktivitas_grade');
+        $post->dt_aktivitas_class = Input::get('dt_aktivitas_class');
+        $post->dt_aktivitas_name = Input::get('dt_aktivitas_name');
+        $post->dt_aktivitas_nisn = Input::get('dt_aktivitas_nisn');
+        $post->dt_aktivitas_date = Input::get('dt_aktivitas_date');
+        $post->dt_aktivitas_reason = Input::get('dt_aktivitas_reason');
+        $post->dt_aktivitas_permission = Input::get('dt_aktivitas_permission');
+        $post->dt_aktivitas_createby = session('akses_email');
+        $post->save();
+
+        return redirect(url('manage_student/post_activity'));
+    }
+
+    public function edit_student_activity($id)
+    {
+       session_start();
+        if(isset($_SESSION['logged_in'])){
+            $uname = \App\akses::where('akses_email', session('akses_email'))->get();
+            $student = \App\dt_aktivitas::find($id);
+            if(session('akses_type') == "student"){
+            $data_aktivitas = \App\dt_aktivitas::where('dt_aktivitas_createby', session('akses_email'))->get();
+            }else{
+                $data_aktivitas = \App\dt_aktivitas::all();
+            }
+            return \View::make('edit_post_activity')->with('data_aktivitas',$data_aktivitas)->with('student',$student)->with('uname',$uname);
+        }
+        else{
+            return redirect(url('login'));
+        }
+    }
+
+    public function update_student_activity()
+    {
+        $post = \App\dt_aktivitas::find(Input::get('id'));
+        $post->dt_aktivitas_grade = Input::get('dt_aktivitas_grade');
+        $post->dt_aktivitas_class = Input::get('dt_aktivitas_class');
+        $post->dt_aktivitas_name = Input::get('dt_aktivitas_name');
+        $post->dt_aktivitas_nisn = Input::get('dt_aktivitas_nisn');
+        $post->dt_aktivitas_date = Input::get('dt_aktivitas_date');
+        $post->dt_aktivitas_reason = Input::get('dt_aktivitas_reason');
+        $post->dt_aktivitas_permission = Input::get('dt_aktivitas_permission');
+        $post->dt_aktivitas_createby = session('akses_email');
+        $post->save();
+
+        return redirect(url('manage_student/post_activity'));
+    }
+
+    public function delete_student_activity($id)
+    {
+       session_start();
+        if(isset($_SESSION['logged_in'])){
+            \App\dt_aktivitas::find($id)->delete();
+            return redirect(url('manage_student/post_activity'));        }
         else{
             return redirect(url('login'));
         }

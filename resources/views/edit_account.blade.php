@@ -169,7 +169,7 @@
                       <label for="exampleInputPassword1">Select NIP Employee</label>
                       <select id="selectparent" name="akses_code_employee" class="form-control not-res">
                         @foreach($dt_employees as $employee)
-                        <option value="{{$employee->dt_teacher_nip}}">{{$employee->dt_teacher_nip}} ({{ preg_replace('/\|/', ' ', $teacher->dt_teacher_name) }})</option>
+                        <option value="{{$employee->dt_teacher_nip}}">{{$employee->dt_teacher_nip}} ({{ preg_replace('/\|/', ' ', $employee->dt_teacher_name) }})</option>
                         @endforeach
                       </select>
                     </div>
@@ -215,7 +215,7 @@
                       <label for="exampleInputPassword1">Select Email Employee</label>
                       <select id="emailemployee" name="akses_email_employee" class="form-control not-res">
                         @foreach($dt_employees as $employee)
-                        <option value="{{$employee->dt_teacher_email}}">{{$employee->dt_teacher_email}} ({{ preg_replace('/\|/', ' ', $teacher->dt_teacher_name) }})</option>
+                        <option value="{{$employee->dt_teacher_email}}">{{$employee->dt_teacher_email}} ({{ preg_replace('/\|/', ' ', $employee->dt_teacher_name) }})</option>
                         @endforeach
                       </select>
                     </div>

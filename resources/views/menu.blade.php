@@ -4,10 +4,10 @@
               <!-- Messages: style can be found in dropdown.less-->
 
               @if(session('akses_type') == "student")
-              <li class="dropdown notifications-menu">
+              <!-- <li class="dropdown notifications-menu">
                 <a href="{{ url('absen_page') }}">
                   <i style="font-size:20px;color:white" class="fa fa-user"></i>
-                </a>
+                </a> -->
                 <!-- <ul style="height: 125px !important;" class="dropdown-menu">
                   <li>
                     <ul class="menu">
@@ -29,7 +29,7 @@
                     </ul>
                     </li>
                 </ul> -->
-              </li>
+              <!-- </li> -->
 
               @elseif(session('akses_type') == "Teacher")
               <li class="dropdown notifications-menu">

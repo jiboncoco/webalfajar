@@ -48,6 +48,25 @@ class AksesController extends Controller
         }
     }
 
+    public function student_post_activity(Request $request)
+    {
+       session_start();
+        if(isset($_SESSION['logged_in'])){
+            $uname = \App\akses::where('akses_email', session('akses_email'))->get();
+            $data_student = \App\dt_student::where('dt_student_email', session('akses_email'))->get();
+            if(session('akses_type') == "student"){
+            $data_aktivitas = \App\dt_aktivitas::where('dt_aktivitas_createby', session('akses_email'))->get();
+        }else{
+            $data_aktivitas = \App\dt_aktivitas::all();
+        }
+
+            return \View::make('post_activity')->with('request', $request)->with('data_student',$data_student)->with('data_aktivitas',$data_aktivitas)->with('uname',$uname);
+        }
+        else{
+            return redirect('login');
+        }
+    }
+
     public function student_schedule_class(Request $request)
     {
        session_start();

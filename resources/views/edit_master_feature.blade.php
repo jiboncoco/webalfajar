@@ -52,7 +52,8 @@
                   <div  class="col-xs-6 col-md-4">
                       <label for="exampleInputPassword1">Feature To </label>
                       <select id="selecttype" name="feature_to" class="form-control not-res" >
-                      <option value="$feature_edit->feature_to">{{$feature_edit->feature_to}}</option>
+                      <option value="{{$feature_edit->feature_to}}">{{$feature_edit->feature_to}}</option>
+                      <option value="OTHER">OTHER</option>
                       <option value="YAYASAN">YAYASAN</option>
                       <option value="DKM">DKM</option>
                       <option value="SMA">SMA</option>
@@ -65,10 +66,10 @@
                   <div  class="col-xs-6 col-md-4">
                       <label for="exampleInputPassword1">Feature For </label>
                       <select id="selecttype" name="feature_for" class="form-control not-res" >
-                      <option value="$feature_edit->feature_for">{{$feature_edit->feature_for}}</option>
+                      <option value="{{$feature_edit->feature_for}}">{{$feature_edit->feature_for}}</option>
                       <option value="pendaftaran">pendaftaran</option>
                       <option value="ekstracurricular">ekstracurricular</option>
-                      <option value="achievment">achievment</option>
+                      <option value="achievement">achievement</option>
                       <option value="partnerships">partnerships</option>
                       <option value="committee">committee</option>
                       <option value="alumni">alumni</option>

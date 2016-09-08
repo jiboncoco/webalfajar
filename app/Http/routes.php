@@ -214,6 +214,13 @@ Route::get('manage_student/export_data/{$type}', 'PostController@export_data_mas
 
 //manage student personal
 Route::get('manage_student/my_data', 'AksesController@student_my_data');
+
+Route::get('manage_student/post_activity', 'AksesController@student_post_activity');
+Route::post('manage_student/save_student_activity', 'AdminController@save_student_activity');
+Route::get('manage_student/edit_student_activity/{id}', 'AdminController@edit_student_activity');
+Route::post('manage_student/update_student_activity', 'AdminController@update_student_activity');
+Route::get('manage_student/delete_student_activity/{id}', 'AdminController@delete_student_activity');
+
 Route::get('manage_student/my_activity', 'AksesController@student_my_activity');
 Route::get('manage_student/schedule_class', 'AksesController@student_schedule_class');
 Route::get('manage_student/master_task', 'AksesController@student_master_task');

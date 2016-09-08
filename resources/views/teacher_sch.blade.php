@@ -53,7 +53,7 @@
                       <label for="exampleInputPassword1">Select NIP Teacher</label>
                       <select id="selecttype" name="sch_code" class="form-control not-res">
                         @foreach($dt_teachers as $teacher)
-                        <option value="{{$teacher->dt_teacher_nip}}">{{$teacher->dt_teacher_nip}}</option>
+                        <option value="{{$teacher->dt_teacher_nip}}">{{$teacher->dt_teacher_nip}} ({{$teacher->dt_teacher_name}})</option>
                         @endforeach
                       </select>
                     </div>
