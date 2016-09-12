@@ -55,7 +55,7 @@ Route::get('manage_registration/filter_new_student', 'AdminController@underc');
 Route::get('manage_setting/alfajar_help', 'AdminController@underc');
 Route::get('manage_teacher/my_absen', 'AdminController@teacher_absen');
 
-Route::get('manage_teacher/delete_asben_teacher/{id}', 'AdminController@delete_absen_teacher');
+Route::get('manage_teacher/delete_absen/{id}', 'AdminController@delete_absen_teacher');
 Route::get('manage_teacher/absen_teacher_and_employee', 'AdminController@teacher_absen');
 
 Route::get('manage_teacher/absen/export_data/xls', 'PostController@exportxls_data_absen_teacher');
