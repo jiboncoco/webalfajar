@@ -211,8 +211,12 @@
                         <td>{{ $aktivitass->dt_aktivitas_permission }}</td>
                         <td>{{ $aktivitass->dt_aktivitas_reason }}</td>
                         <td style="text-align:center">
+                        @if(session('akses_type') == "student")
+                        <a href="{{ url('manage_student/edit_student_activity/'.$aktivitass->id)}}"><i style="font-size:20px;margin-right:50px" class="fa fa-pencil-square-o"></i> </a>
+                        @else
                         <a href="{{ url('manage_student/edit_student_activity/'.$aktivitass->id)}}"><i style="font-size:20px;margin-right:50px" class="fa fa-pencil-square-o"></i> </a>
                         <a href="{{ url('manage_student/delete_student_activity/'.$aktivitass->id)}}"><i style="font-size:20px;margin:0px " class="fa fa-trash"></i> </a>
+                        @endif
                         </td>
                       </tr>
                     @endforeach

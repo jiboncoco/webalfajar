@@ -413,7 +413,7 @@
               <ul class="treeview-menu">
               <li><a href="{{ url('manage_student/detail_student') }}"><i class="fa fa-puzzle-piece"></i> Detail Student</a></li>
               <li><a href="{{ url('manage_parent/detail_parent') }}"><i class="fa fa-file-text-o"></i> Detail Parent</a></li>
-              <li><a href="{{ url('manage_student/post_activity') }}"><i class="fa fa-exchange"></i> Post Activity Student </a></li>
+              <li><a href="{{ url('manage_student/post_activity') }}"><i class="fa fa-exchange"></i>Activity Student </a></li>
               </ul>
             </li>
             <!-- <li class="treeview">
