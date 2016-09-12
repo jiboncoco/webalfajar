@@ -177,7 +177,7 @@
                   <a href="{{ url('manage_student/activity/export_data/xlsx') }}"><button class="btn btn-info"><i class="fa fa-paper-plane-o"></i> xlsx</button></a>
                   <a href="{{ url('manage_student/activity/export_data/csv') }}"><button class="btn btn-warning"><i class="fa fa-paper-plane-o"></i> csv</button></a>
                   </div>
-                  <div style="float:right;margin-top:40px;">
+                  <!-- <div style="float:right;margin-top:40px;">
                   <form method="POST" action="{{ url('manage_student/import_data_activity_student') }}" enctype="multipart/form-data" class="form-inline">
                     <div class="form-group">
                       <input type="file" name="import_data_activity_student" class="form-control" placeholder="File">
@@ -185,7 +185,7 @@
                     </div>
                     <button type="submit" class="btn btn-default">Import File</button>
                   </form>
-                  </div>   
+                  </div>    -->
                 </div><!-- /.box-body -->
               </div><!-- /.box -->
               </div>

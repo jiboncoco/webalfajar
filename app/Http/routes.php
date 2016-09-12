@@ -53,7 +53,14 @@ Route::get('manage_student/update_grade_student', 'AdminController@underc');
 Route::get('manage_registration/master_new_student', 'AdminController@underc');
 Route::get('manage_registration/filter_new_student', 'AdminController@underc');
 Route::get('manage_setting/alfajar_help', 'AdminController@underc');
-Route::get('manage_teacher/my_absen', 'AdminController@underc');
+Route::get('manage_teacher/my_absen', 'AdminController@teacher_absen');
+
+Route::get('manage_teacher/delete_asben_teacher/{id}', 'AdminController@delete_absen_teacher');
+Route::get('manage_teacher/absen_teacher_and_employee', 'AdminController@teacher_absen');
+
+Route::get('manage_teacher/absen/export_data/xls', 'PostController@exportxls_data_absen_teacher');
+Route::get('manage_teacher/absen/export_data/xlsx', 'PostController@exportxlsx_data_absen_teacher');
+Route::get('manage_teacher/absen/export_data/csv', 'PostController@exportcsv_data_absen_teacher');
 
 Route::get('manage_absen/master_absen', 'AdminController@master_absen');
 Route::post('manage_absen/save_absen', 'AdminController@save_absen');
@@ -70,6 +77,7 @@ Route::get('manage_absen/delete_all_absen/{id}', 'AdminController@delete_all_abs
 
 Route::post('manage_teacher_recap/get_class', 'AdminController@getClassByGrade');
 Route::post('manage_teacher_recap/get_student', 'AdminController@getStudentByClass');
+Route::post('manage_student/get_student_nisn', 'AdminController@getNISNByStudent');
 Route::get('manage_teacher/master_teacher_recap', 'AdminController@master_teacher_recap');
 Route::get('manage_teacher/delete_teacher_recap/{id}', 'AdminController@delete_recap');
 Route::get('manage_teacher/edit_teacher_recap/{id}', 'AdminController@edit_recap');
@@ -191,7 +199,6 @@ Route::post('manage_class_sch/import_data_class_sch', 'PostController@import_dat
 
 Route::get('manage_teacher/my_data', 'AksesController@teacher_my_data');
 Route::get('manage_teacher/my_schedule', 'AksesController@teacher_my_schedule');
-// Route::get('manage_teacher/my_absen', 'AksesController@teacher_my_absen');
 Route::get('manage_teacher/activity_student', 'AksesController@teacher_activity_student');
 Route::get('manage_teacher/detail_student_and_parent', 'AksesController@teacher_detail_student_and_parent');
 Route::get('manage_teacher/master_task', 'AksesController@teacher_master_task');
@@ -220,6 +227,10 @@ Route::post('manage_student/save_student_activity', 'AdminController@save_studen
 Route::get('manage_student/edit_student_activity/{id}', 'AdminController@edit_student_activity');
 Route::post('manage_student/update_student_activity', 'AdminController@update_student_activity');
 Route::get('manage_student/delete_student_activity/{id}', 'AdminController@delete_student_activity');
+
+Route::get('manage_student/activity/export_data/xls', 'PostController@exportxls_data_activity_student');
+Route::get('manage_student/activity/export_data/xlsx', 'PostController@exportxlsx_data_activity_student');
+Route::get('manage_student/activity/export_data/csv', 'PostController@exportcsv_data_activity_student');
 
 Route::get('manage_student/my_activity', 'AksesController@student_my_activity');
 Route::get('manage_student/schedule_class', 'AksesController@student_schedule_class');

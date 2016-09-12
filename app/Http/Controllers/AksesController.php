@@ -55,12 +55,22 @@ class AksesController extends Controller
             $uname = \App\akses::where('akses_email', session('akses_email'))->get();
             $data_student = \App\dt_student::where('dt_student_email', session('akses_email'))->get();
             if(session('akses_type') == "student"){
-            $data_aktivitas = \App\dt_aktivitas::where('dt_aktivitas_createby', session('akses_email'))->get();
+            $data_aktivitas = \App\dt_aktivitas::where('dt_aktivitas_nisn', session('akses_code'))->get();
+            $data_kelas = \DB::table('dt_kelas')
+                     ->select(\DB::raw('count(*) as class, dt_kelas_type'))
+                     ->where('dt_kelas_type', '<>', 1)
+                     ->groupBy('dt_kelas_type')
+                     ->get();
         }else{
+            $data_kelas = \DB::table('dt_kelas')
+                     ->select(\DB::raw('count(*) as class, dt_kelas_type'))
+                     ->where('dt_kelas_type', '<>', 1)
+                     ->groupBy('dt_kelas_type')
+                     ->get();
             $data_aktivitas = \App\dt_aktivitas::all();
         }
 
-            return \View::make('post_activity')->with('request', $request)->with('data_student',$data_student)->with('data_aktivitas',$data_aktivitas)->with('uname',$uname);
+            return \View::make('post_activity')->with('request', $request)->with('data_student',$data_student)->with('data_aktivitas',$data_aktivitas)->with('uname',$uname)->with('data_kelas', $data_kelas);
         }
         else{
             return redirect('login');

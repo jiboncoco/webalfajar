@@ -38,7 +38,7 @@
         <section class="content">
         <div class="admin-seacrh" style="height:2px;">
             </div>
-            @if(session('akses_type') == "student")
+
               <div style="width:95%;margin:auto;" class="box box-default collapsed-box box-solid">
                 <div class="box-header with-border">
                   <h3 class="box-title">Post Activity</h3>
@@ -49,12 +49,24 @@
                 <div class="box-body">             
                 <form method="POST"  action="{{ url('manage_student/save_student_activity') }}" enctype="multipart/form-data">
                   <div class="row">
+                  @if(session('akses_type') == "student")
                     <div class="col-xs-6 col-md-4">
                     <label for="exampleInputPassword1">Student Grade</label>
                     @foreach($data_student as $student)
                     <input type="text" value="{{$student->dt_student_grade}}" name="dt_aktivitas_grade" class="form-control not-res" readonly="true" />
                     @endforeach
                   </div>
+                  @else
+                  <input id="tyclass" type="hidden" name="type_class" value="tk">
+                  <div class="col-xs-6 col-md-4">
+                      <label for="exampleInputPassword1">Select Grade</label>
+                      <select id="selecttypegrade" onclick="openClass()" name="dt_aktivitas_grade" class="form-control not-res">
+                        @foreach($data_kelas as $grade)
+                        <option value="{{$grade->dt_kelas_type}}">{{$grade->dt_kelas_type}}</option>
+                        @endforeach
+                      </select>
+                    </div>
+                    @endif
                    @if(session('akses_type') == "student")
                   <div style="display:none"  class="col-xs-6 col-md-4">
                       <label for="exampleInputPassword1">Permission</label>
@@ -81,33 +93,59 @@
                   </div>
                   <br>
                   <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                  <input id="tyclass" type="hidden" name="type_class" value="tk"> 
                   <div class="row">
+                  @if(session('akses_type') == "student")
                   <div class="col-xs-6 col-md-4">
                     <label for="exampleInputPassword1">Student Class</label>
                     @foreach($data_student as $student)
                     <input type="text" value="{{$student->dt_student_kelas}}" name="dt_aktivitas_class" class="form-control not-res" readonly="true" />
                     @endforeach
                   </div>
-
+                  @else
                   <input id="namestudent" type="hidden" name="name_student" value="tk1a">   
+                    <div id="selecttypeclass" class="col-xs-6 col-md-4">
+                      <label for="dt_kelas_name">Select Class</label>
+                      <select onclick="openStudent()" name="dt_aktivitas_class" id="dt_kelas_name" class="form-control not-res">
+                        <option value="">--Select Grade First--</option>
+                      </select>
+                    </div>
+                    @endif
+
+                  @if(session('akses_type') == "student")
                     <div class="col-xs-6 col-md-4">
                     <label for="exampleInputPassword1">Student Name</label>
                     @foreach($data_student as $student)
                     <input type="text" value="{{$student->dt_student_name}}" name="dt_aktivitas_name" class="form-control not-res" readonly="true" />
                     @endforeach
                   </div>
+                  @else
+                  <div  id="selectstudent" class="col-xs-6 col-md-4">
+                  <label for="dt_student">Select Student</label>
+                  <select onclick="openStudentNISN()" name="dt_aktivitas_name" id="dt_student_name" class="form-control not-res">
+                    <option value="">--Select Class First--</option>
+                  </select>
+                </div>
+                @endif
                   </div>
                   <br>
                   
                   <div class="row">
 
+                  @if(session('akses_type') == "student")
                   <div class="col-xs-6 col-md-4">
                     <label for="exampleInputPassword1">Student NISN</label>
                     @foreach($data_student as $student)
                     <input type="text" value="{{$student->dt_student_nisn}}" name="dt_aktivitas_nisn" class="form-control not-res" readonly="true" />
                     @endforeach
                   </div>
+                  @else
+                  <div  id="selectstudent" class="col-xs-6 col-md-4">
+                  <label for="dt_student">Select Student NISN</label>
+                  <select name="dt_aktivitas_nisn" id="dt_student_nisn" class="form-control not-res">
+                    <option value="">--Select Student First--</option>
+                  </select>
+                </div>
+                @endif
                   <div class="col-xs-6 col-md-4">
                     <label for="exampleInputPassword1">Date</label>
                     <div class='input-group date' id='datetimepicker1'>
@@ -132,8 +170,7 @@
                 </form>
                 </div><!-- /.box-body -->
               </div><!-- /.box -->
-              @else
-              @endif
+              
               
 
 <!--               <form method="POST" action="{{ url('manage_student/import_data_student') }}" enctype="multipart/form-data">
@@ -186,7 +223,7 @@
                   <a href="{{ url('manage_student/activity/export_data/xlsx') }}"><button class="btn btn-info"><i class="fa fa-paper-plane-o"></i> xlsx</button></a>
                   <a href="{{ url('manage_student/activity/export_data/csv') }}"><button class="btn btn-warning"><i class="fa fa-paper-plane-o"></i> csv</button></a>
                   </div>
-                  <div style="float:right;margin-top:40px;">
+                  <!-- <div style="float:right;margin-top:40px;">
                   <form method="POST" action="{{ url('manage_student/import_data_activity_student') }}" enctype="multipart/form-data" class="form-inline">
                     <div class="form-group">
                       <input type="file" name="import_data_activity_student" class="form-control" placeholder="File">
@@ -194,7 +231,7 @@
                     </div>
                     <button type="submit" class="btn btn-default">Import File</button>
                   </form>
-                  </div>   
+                  </div>    -->
                 </div><!-- /.box-body -->
               </div><!-- /.box -->
               </div>
@@ -217,6 +254,82 @@
     $('.birth_date').datetimepicker({ format: 'YYYY-MM-DD' });
     </script>
 
+<script>
+  function openClass(){
+    var grade = $("#selecttypegrade").val();
+    $.ajax({
+      url:'{{url("manage_teacher_recap/get_class")}}',
+      dataType:'json',
+      type:'POST',
+      beforeSend: function (xhr) {
+            var token = $('meta[name="csrf_token"]').attr('content');
+
+            if (token) {
+                  return xhr.setRequestHeader('X-CSRF-TOKEN', token);
+            }
+        },
+      data:{grade:grade},
+      success:function(data){
+        var isikelas = '';
+        for(kelas in data){
+          isikelas+= '<option value="'+data[kelas].dt_kelas_name+'">'+data[kelas].dt_kelas_name+'</option>';
+        }
+        $("#dt_kelas_name").html(isikelas);
+        $("#dt_kelas_name").attr('onclick','openStudent()');
+      }
+    });
+  }
+  
+  function openStudent(){
+    var kelas = $("#dt_kelas_name").val();
+    $.ajax({
+      url:'{{url("manage_teacher_recap/get_student")}}',
+      dataType:'json',
+      type:'POST',
+      beforeSend: function (xhr) {
+            var token = $('meta[name="csrf_token"]').attr('content');
+
+            if (token) {
+                  return xhr.setRequestHeader('X-CSRF-TOKEN', token);
+            }
+        },
+      data:{class:kelas},
+      success:function(data){
+        var isikelas = '';
+        for(kelas in data){
+          isikelas+= '<option value="'+data[kelas].dt_student_name+'">'+data[kelas].dt_student_name+'</option>';
+        }
+        $("#dt_student_name").html(isikelas);
+        $("#dt_student_name").attr('onclick','openStudentNISN()');
+      }
+    });
+  }
+
+  function openStudentNISN(){
+    var nisn = $("#dt_student_name").val();
+    $.ajax({
+      url:'{{url("manage_student/get_student_nisn")}}',
+      dataType:'json',
+      type:'POST',
+      beforeSend: function (xhr) {
+            var token = $('meta[name="csrf_token"]').attr('content');
+
+            if (token) {
+                  return xhr.setRequestHeader('X-CSRF-TOKEN', token);
+            }
+        },
+      data:{student:nisn},
+      success:function(data){
+        var isinisn = '';
+        for(nisn in data){
+          isinisn+= '<option value="'+data[nisn].dt_student_nisn+'">'+data[nisn].dt_student_nisn+'</option>';
+        }
+        $("#dt_student_nisn").html(isinisn);
+      }
+    });
+  }
+
+</script>
 
 
 @endsection  

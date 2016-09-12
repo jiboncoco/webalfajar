@@ -43,7 +43,7 @@
                 <div class="box-header">
                 </div><!-- /.box-header -->
                 <div style="width:1500px" class="box-body">
-                  <table id="for_datatable" class="table table-bordered table-hover">
+                  <table class="for_datatable table table-bordered table-hover">
                     <thead>
                       <tr>
                         <th>No.</th>
@@ -255,7 +255,7 @@
                   <label style="float:right"><a data-toggle="modal" data-target="#myModaldetailteacher" href="#">View Detail</a></label>
                 </div><!-- /.box-header -->
                 <div class="box-body">
-                  <table id="example2" class="table table-bordered table-hover">
+                  <table class="for_datatable table table-bordered table-hover">
                     <thead>
                       <tr>
                         <th>No.</th>
@@ -310,13 +310,14 @@
 </div>
 </body>
     <script type="text/javascript">
-            $('#example2').DataTable({
+            $('.for_datatable').DataTable({
               "paging": true,
               "lengthChange": true,
               "searching": true,
               "ordering": true,
               "info": true,
-              "autoWidth": true
+              "autoWidth": true,
+              "responsive": true
             });
     $('.birth_date').datetimepicker({ format: 'YYYY-MM-DD' });
     </script>

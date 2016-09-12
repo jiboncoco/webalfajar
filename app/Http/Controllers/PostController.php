@@ -593,6 +593,114 @@ class PostController extends Controller
 
     }
 
+
+    public function exportxls_data_activity_student()
+    {
+      if(session('akses_type') == "student"){
+        $data_aktivitas = \App\dt_aktivitas::select('dt_aktivitas.dt_aktivitas_name','dt_aktivitas.dt_aktivitas_nisn','dt_aktivitas.dt_aktivitas_grade','dt_aktivitas.dt_aktivitas_class','dt_aktivitas.dt_aktivitas_reason','dt_aktivitas.dt_aktivitas_permission','dt_aktivitas.dt_aktivitas_date')->where('dt_aktivitas_nisn', session('akses_code'))->get()->toArray();
+      }else{
+      $data_aktivitas = \App\dt_aktivitas::select('dt_aktivitas.dt_aktivitas_name','dt_aktivitas.dt_aktivitas_nisn','dt_aktivitas.dt_aktivitas_grade','dt_aktivitas.dt_aktivitas_class','dt_aktivitas.dt_aktivitas_reason','dt_aktivitas.dt_aktivitas_permission','dt_aktivitas.dt_aktivitas_date')->get()->toArray();
+    }
+      return \Excel::create('Master_Data_Activity_Student', function($excel) use ($data_aktivitas)
+      {
+          $excel->sheet('mySheet', function($sheet) use ($data_aktivitas)
+          {
+              $sheet->fromArray($data_aktivitas);
+          });
+      })->download('xls');
+
+    }
+
+        public function exportxlsx_data_activity_student()
+    {
+
+      if(session('akses_type') == "student"){
+        $data_aktivitas = \App\dt_aktivitas::select('dt_aktivitas.dt_aktivitas_name','dt_aktivitas.dt_aktivitas_nisn','dt_aktivitas.dt_aktivitas_grade','dt_aktivitas.dt_aktivitas_class','dt_aktivitas.dt_aktivitas_reason','dt_aktivitas.dt_aktivitas_permission','dt_aktivitas.dt_aktivitas_date')->where('dt_aktivitas_nisn', session('akses_code'))->get()->toArray();
+      }else{
+      $data_aktivitas = \App\dt_aktivitas::select('dt_aktivitas.dt_aktivitas_name','dt_aktivitas.dt_aktivitas_nisn','dt_aktivitas.dt_aktivitas_grade','dt_aktivitas.dt_aktivitas_class','dt_aktivitas.dt_aktivitas_reason','dt_aktivitas.dt_aktivitas_permission','dt_aktivitas.dt_aktivitas_date')->get()->toArray();
+    }
+      return \Excel::create('Master_Data_Activity_Student', function($excel) use ($data_aktivitas)
+      {
+          $excel->sheet('mySheet', function($sheet) use ($data_aktivitas)
+          {
+              $sheet->fromArray($data_aktivitas);
+          });
+      })->download('xlsx');
+
+    }
+
+        public function exportcsv_data_activity_student()
+    {
+
+      if(session('akses_type') == "student"){
+        $data_aktivitas = \App\dt_aktivitas::select('dt_aktivitas.dt_aktivitas_name','dt_aktivitas.dt_aktivitas_nisn','dt_aktivitas.dt_aktivitas_grade','dt_aktivitas.dt_aktivitas_class','dt_aktivitas.dt_aktivitas_reason','dt_aktivitas.dt_aktivitas_permission','dt_aktivitas.dt_aktivitas_date')->where('dt_aktivitas_nisn', session('akses_code'))->get()->toArray();
+      }else{
+      $data_aktivitas = \App\dt_aktivitas::select('dt_aktivitas.dt_aktivitas_name','dt_aktivitas.dt_aktivitas_nisn','dt_aktivitas.dt_aktivitas_grade','dt_aktivitas.dt_aktivitas_class','dt_aktivitas.dt_aktivitas_reason','dt_aktivitas.dt_aktivitas_permission','dt_aktivitas.dt_aktivitas_date')->get()->toArray();
+    }
+      return \Excel::create('Master_Data_Activity_Student', function($excel) use ($data_aktivitas)
+      {
+          $excel->sheet('mySheet', function($sheet) use ($data_aktivitas)
+          {
+              $sheet->fromArray($data_aktivitas);
+          });
+      })->download('csv');
+
+    }
+
+    public function exportxls_data_absen_teacher()
+    {
+    session_start();
+    if(session('akses_type') == "Teacher") {
+      $data_absen = \App\dt_absen::select('dt_absen.dt_absen_name','dt_absen.dt_absen_type','dt_absen.dt_absen_code','dt_absen.dt_absen_time','dt_absen.dt_absen_shift','dt_absen.dt_absen_detail')->where('dt_absen_create_by', session('akses_email'))->get()->toArray();
+    }else{
+      $data_absen = \App\dt_absen::select('dt_absen.dt_absen_name','dt_absen.dt_absen_type','dt_absen.dt_absen_code','dt_absen.dt_absen_time','dt_absen.dt_absen_shift','dt_absen.dt_absen_detail')->get()->toArray();
+    }
+      return \Excel::create('Master_Data_Absen', function($excel) use ($data_absen)
+      {
+          $excel->sheet('mySheet', function($sheet) use ($data_absen)
+          {
+              $sheet->fromArray($data_absen);
+          });
+      })->download('xls');
+
+    }
+
+        public function exportxlsx_data_absen_teacher()
+    {
+    session_start();
+    if(session('akses_type') == "Teacher") {
+      $data_absen = \App\dt_absen::select('dt_absen.dt_absen_name','dt_absen.dt_absen_type','dt_absen.dt_absen_code','dt_absen.dt_absen_time','dt_absen.dt_absen_shift','dt_absen.dt_absen_detail')->where('dt_absen_create_by', session('akses_email'))->get()->toArray();
+    }else{
+      $data_absen = \App\dt_absen::select('dt_absen.dt_absen_name','dt_absen.dt_absen_type','dt_absen.dt_absen_code','dt_absen.dt_absen_time','dt_absen.dt_absen_shift','dt_absen.dt_absen_detail')->get()->toArray();
+    }
+      return \Excel::create('Master_Data_Absen', function($excel) use ($data_absen)
+      {
+          $excel->sheet('mySheet', function($sheet) use ($data_absen)
+          {
+              $sheet->fromArray($data_absen);
+          });
+      })->download('xlsx');
+
+    }
+
+        public function exportcsv_data_absen_teacher()
+    {
+    session_start();
+    if(session('akses_type') == "Teacher") {
+      $data_absen = \App\dt_absen::select('dt_absen.dt_absen_name','dt_absen.dt_absen_type','dt_absen.dt_absen_code','dt_absen.dt_absen_time','dt_absen.dt_absen_shift','dt_absen.dt_absen_detail')->where('dt_absen_create_by', session('akses_email'))->get()->toArray();
+    }else{
+      $data_absen = \App\dt_absen::select('dt_absen.dt_absen_name','dt_absen.dt_absen_type','dt_absen.dt_absen_code','dt_absen.dt_absen_time','dt_absen.dt_absen_shift','dt_absen.dt_absen_detail')->get()->toArray();
+    }
+      return \Excel::create('Master_Data_Absen', function($excel) use ($data_absen)
+      {
+          $excel->sheet('mySheet', function($sheet) use ($data_absen)
+          {
+              $sheet->fromArray($data_absen);
+          });
+      })->download('csv');
+
+    }
+
     public function exportxls_data_master_class()
     {
 

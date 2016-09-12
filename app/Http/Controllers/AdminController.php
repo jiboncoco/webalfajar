@@ -69,6 +69,37 @@ public function admin(Request $request)
         }   
     }
 
+    public function teacher_absen()
+    {
+        session_start();
+        if(isset($_SESSION['logged_in'])){
+            $uname = \App\akses::where('akses_email', session('akses_email'))->get();
+            if(session('akses_type') == "Teacher")
+            {
+            $absensi = \App\dt_absen::where('dt_absen_create_by', session('akses_email'))->get();
+            return \View::make('teacher_absen')->with('uname',$uname)->with('absensi', $absensi);
+            }else{
+            $absensi = \App\dt_absen::all();
+            return \View::make('teacher_absen')->with('uname',$uname)->with('absensi', $absensi);
+            }
+        }
+        else{
+            return redirect('login');
+        }   
+    }
+
+    public function delete_absen_teacher($id)
+    {
+       session_start();
+        if(isset($_SESSION['logged_in'])){
+            \App\dt_absen::find($id)->delete();
+            return redirect()->back();
+        }
+        else{
+            return redirect(url('login'));
+        }
+    }
+
             public function manage_all()
     {
        session_start();
@@ -1375,6 +1406,12 @@ public function admin(Request $request)
         $class = Input::get('class');
         $student = \App\dt_student::where('dt_student_kelas',$class)->get();
         echo json_encode($student);
+    }
+    public function getNISNByStudent()
+    {
+        $student = Input::get('student');
+        $nisn = \App\dt_student::where('dt_student_name',$student)->get();
+        echo json_encode($nisn);
     }
 
         public function save_recap()

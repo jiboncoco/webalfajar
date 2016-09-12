@@ -44,7 +44,7 @@
               <ul class="treeview-menu">
                 <li><a style="font-size:13px;" href="{{ url('manage_teacher/master_teacher') }}"><i class="fa fa-user-secret"></i> Master Teacher & Employee</a></li>
                 <li><a style="font-size:12px;" href="{{ url('manage_teacher/schedule_teacher') }}"><i class="fa fa-calendar"></i> Schedule Teacher & Employee</a></li>
-                <li><a style="font-size:13px;" href="{{ url('manage_teacher/absen_teacher') }}"><i class="fa fa-thumb-tack"></i> Absen Teacher & Employee</a></li>
+                <li><a style="font-size:13px;" href="{{ url('manage_teacher/absen_teacher_and_employee') }}"><i class="fa fa-thumb-tack"></i> Absen Teacher & Employee</a></li>
                 <li><a style="font-size:13px;" href="{{ url('manage_teacher/master_teacher_recap') }}"><i class="fa fa-envelope"></i> Master Teacher Recap</a></li>
               </ul>
             </li>
@@ -159,7 +159,7 @@
               <ul class="treeview-menu">
                 <li><a style="font-size:13px;" href="{{ url('manage_teacher/master_teacher') }}"><i class="fa fa-user-secret"></i> Master Teacher & Employee</a></li>
                 <li><a style="font-size:12px;" href="{{ url('manage_teacher/schedule_teacher') }}"><i class="fa fa-calendar"></i> Schedule Teacher & Employee</a></li>
-                <li><a style="font-size:13px;" href="{{ url('manage_teacher/absen_teacher') }}"><i class="fa fa-thumb-tack"></i> Absen Teacher & Employee</a></li>
+                <li><a style="font-size:13px;" href="{{ url('manage_teacher/absen_teacher_and_employee') }}"><i class="fa fa-thumb-tack"></i> Absen Teacher & Employee</a></li>
                 <li><a style="font-size:13px;" href="{{ url('manage_teacher/master_teacher_recap') }}"><i class="fa fa-envelope"></i> Master Teacher Recap</a></li>
               </ul>
             </li>
@@ -285,7 +285,7 @@
               <ul class="treeview-menu">
                 <li><a style="font-size:13px;" href="{{ url('manage_teacher/master_teacher') }}"><i class="fa fa-user-secret"></i> Master Teacher & Employee</a></li>
                 <li><a style="font-size:12px;" href="{{ url('manage_teacher/schedule_teacher') }}"><i class="fa fa-calendar"></i> Schedule Teacher & Employee</a></li>
-                <li><a style="font-size:13px;" href="{{ url('manage_teacher/absen_teacher') }}"><i class="fa fa-thumb-tack"></i> Absen Teacher & Employee</a></li>
+                <li><a style="font-size:13px;" href="{{ url('manage_teacher/absen_teacher_and_employee') }}"><i class="fa fa-thumb-tack"></i> Absen Teacher & Employee</a></li>
                 <li><a style="font-size:13px;" href="{{ url('manage_teacher/master_teacher_recap') }}"><i class="fa fa-envelope"></i> Master Teacher Recap</a></li>
               </ul>
             </li>
