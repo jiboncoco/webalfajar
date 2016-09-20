@@ -1576,7 +1576,7 @@ public function admin(Request $request)
         $post->dt_absen_datevalid = Input::get('dt_absen_datevalid');
         $post->save();
 
-        return redirect(url('manage_absen/all_data_absen'));
+        return redirect(url('manage_absen/master_absen'));
     }
 
     public function delete_all_absen($id)
@@ -1584,7 +1584,7 @@ public function admin(Request $request)
        session_start();
         if(isset($_SESSION['logged_in'])){
             \App\dt_absen::find($id)->delete();
-            return redirect( url('manage_absen/all_data_absen'));
+            return redirect( url('manage_absen/master_absen'));
         }
         else{
             return redirect(url('login'));

@@ -56,8 +56,8 @@
               </a>
               <ul class="treeview-menu">
                 <li><a href="{{ url('manage_student/master_student') }}"><i class="fa fa-user"></i> Master Student</a></li>
-                <li><a href="{{ url('manage_student/absen_student') }}"><i class="fa fa-thumb-tack"></i> Absen Student</a></li>
-                <li><a href="{{ url('manage_student/update_grade_student') }}"><i class="fa fa-envelope"></i> Update Grade Student</a></li>
+                <!-- <li><a href="{{ url('manage_student/absen_student') }}"><i class="fa fa-thumb-tack"></i> Absen Student</a></li> -->
+                <!-- <li><a href="{{ url('manage_student/update_grade_student') }}"><i class="fa fa-envelope"></i> Update Grade Student</a></li> -->
                 <li><a href="{{ url('manage_student/post_activity') }}"><i class="fa fa-exchange"></i> Post Activity </a></li>
               </ul>
             </li>
@@ -106,7 +106,7 @@
                 <li><a href="{{ url('manage_feature/master_feature') }}"><i class="fa fa-user-secret"></i> Master Feature</a></li>
                </ul>
             </li>
-            <li class="treeview">
+            <!-- <li class="treeview">
               <a href="#">
                 <i class="fa fa-folder"></i> 
                 <span>Manage Registration</span>
@@ -117,7 +117,7 @@
                 <li><a href="{{ url('manage_registration/filter_new_student')}}"><i class="fa fa-check-square-o"></i> Filter New Student</a></li>
                 <li><a href="{{ url('manage_registration/manage_code')}}"><i class="fa fa-puzzle-piece"></i> Manage Code Registration</a></li>
               </ul>
-            </li>
+            </li> -->
             <li class="treeview">
               <a href="#">
                 <i class="fa fa-cogs"></i>
@@ -171,8 +171,8 @@
               </a>
               <ul class="treeview-menu">
                 <li><a href="{{ url('manage_student/master_student') }}"><i class="fa fa-user"></i> Master Student</a></li>
-                <li><a href="{{ url('manage_student/absen_student') }}"><i class="fa fa-thumb-tack"></i> Absen Student</a></li>
-                <li><a href="{{ url('manage_student/update_grade_student') }}"><i class="fa fa-envelope"></i> Update Grade Student</a></li>
+                <!-- <li><a href="{{ url('manage_student/absen_student') }}"><i class="fa fa-thumb-tack"></i> Absen Student</a></li> -->
+                <!-- <li><a href="{{ url('manage_student/update_grade_student') }}"><i class="fa fa-envelope"></i> Update Grade Student</a></li> -->
                 <li><a href="{{ url('manage_student/post_activity') }}"><i class="fa fa-exchange"></i> Post Activity </a></li>
               </ul>
             </li>
@@ -221,7 +221,7 @@
                 <li><a href="{{ url('manage_feature/master_feature') }}"><i class="fa fa-user-secret"></i> Master Feature</a></li>
                </ul>
             </li>
-            <li class="treeview">
+            <!-- <li class="treeview">
               <a href="#">
                 <i class="fa fa-folder"></i> 
                 <span>Manage Registration</span>
@@ -232,7 +232,7 @@
                 <li><a href="{{ url('manage_registration/filter_new_student')}}"><i class="fa fa-check-square-o"></i> Filter New Student</a></li>
                 <li><a href="{{ url('manage_registration/manage_code')}}"><i class="fa fa-puzzle-piece"></i> Manage Code Registration</a></li>
               </ul>
-            </li>
+            </li> -->
              <li class="treeview">
               <a href="#">
                 <i class="fa fa-laptop"></i> 
@@ -240,8 +240,8 @@
                 <i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">
-                <li><a href="{{ url('manage_absen/master_absen') }}"><i class="fa fa-rss"></i> Master Absen</a></li>
-                <li><a href="{{ url('manage_absen/all_data_absen') }}"><i class="fa fa-map-o"></i> All Data Absen</a></li>
+                <!-- <li><a href="{{ url('manage_absen/master_absen') }}"><i class="fa fa-rss"></i> Master Absen</a></li> -->
+                <li><a href="{{ url('manage_absen/master_absen') }}"><i class="fa fa-map-o"></i> Master Absen</a></li>
               </ul>
             </li>
             <li class="treeview">
@@ -297,8 +297,8 @@
               </a>
               <ul class="treeview-menu">
                 <li><a href="{{ url('manage_student/master_student') }}"><i class="fa fa-user"></i> Master Student</a></li>
-                <li><a href="{{ url('manage_student/absen_student') }}"><i class="fa fa-thumb-tack"></i> Absen Student</a></li>
-                <li><a href="{{ url('manage_student/update_grade_student') }}"><i class="fa fa-envelope"></i> Update Grade Student</a></li>
+                <!-- <li><a href="{{ url('manage_student/absen_student') }}"><i class="fa fa-thumb-tack"></i> Absen Student</a></li> -->
+                <!-- <li><a href="{{ url('manage_student/update_grade_student') }}"><i class="fa fa-envelope"></i> Update Grade Student</a></li> -->
                 <li><a href="{{ url('manage_student/post_activity') }}"><i class="fa fa-exchange"></i> Post Activity </a></li>
               </ul>
             </li>
@@ -347,7 +347,7 @@
                 <li><a href="{{ url('manage_feature/master_feature') }}"><i class="fa fa-user-secret"></i> Master Feature</a></li>
                </ul>
             </li>
-            <li class="treeview">
+            <!-- <li class="treeview">
               <a href="#">
                 <i class="fa fa-folder"></i> 
                 <span>Manage Registration</span>
@@ -358,7 +358,7 @@
                 <li><a href="{{ url('manage_registration/filter_new_student')}}"><i class="fa fa-check-square-o"></i> Filter New Student</a></li>
                 <li><a href="{{ url('manage_registration/manage_code')}}"><i class="fa fa-puzzle-piece"></i> Manage Code Registration</a></li>
               </ul>
-            </li>
+            </li> -->
             <li class="treeview">
               <a href="#">
                 <i class="fa fa-laptop"></i> 
@@ -366,8 +366,8 @@
                 <i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">
-                <li><a href="{{ url('manage_absen/master_absen') }}"><i class="fa fa-rss"></i> Master Absen</a></li>
-                <li><a href="{{ url('manage_absen/all_data_absen') }}"><i class="fa fa-map-o"></i> All Data Absen</a></li>
+                <!-- <li><a href="{{ url('manage_absen/master_absen') }}"><i class="fa fa-rss"></i> Master Absen</a></li> -->
+                <li><a href="{{ url('manage_absen/master_absen') }}"><i class="fa fa-map-o"></i> Master Absen</a></li>
               </ul>
             </li>
             <li class="treeview">

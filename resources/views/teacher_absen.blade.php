@@ -40,7 +40,11 @@
 
           <div style="width:95%;margin:auto" class="box">
                 <div class="box-header">
+                @if(session('akses_type') != 'root' || session('akses_type') != 'root+')
                   <h3 class="box-title">My Absen</h3>
+                @else
+                  <h3 class="box-title">Absen Teacher and Employee</h3>
+                @endif
                 </div><!-- /.box-header -->
                 <div class="box-body">
                    <table class="for_datatable table table-bordered table-hover">
@@ -51,8 +55,8 @@
                         <th>Type</th>
                         <th>Code</th>
                         <th>Time</th>
-                        <th>Shift</th>
-                        <th>Detail</th>
+                        <!-- <th>Shift</th>
+                        <th>Detail</th> -->
                         @if(session('akses_type') != "Teacher")
                         <th style="text-align:center">Action</th>
                         @endif
@@ -67,8 +71,8 @@
                         <td>{{ $absen->dt_absen_type }}</td>
                         <td>{{ $absen->dt_absen_code }}</td>
                         <td>{{ $absen->dt_absen_time }}</td>
-                        <td>{{ $absen->dt_absen_shift }}</td>
-                        <td>{{ $absen->dt_absen_detail }}</td>
+                        <!-- <td>{{ $absen->dt_absen_shift }}</td>
+                        <td>{{ $absen->dt_absen_detail }}</td> -->
                         <td style="text-align:center">
                         <!-- <a href="{{ url('manage_absen/edit_absen/'.$absen->id)}}"><i style="font-size:20px;margin-right:50px" class="fa fa-pencil-square-o"></i> </a> -->
                         @if(session('akses_type') != "Teacher")

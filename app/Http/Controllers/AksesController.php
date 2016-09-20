@@ -629,6 +629,20 @@ class AksesController extends Controller
         return redirect()->back()->with('status', 'Absen Success !');
     }
 
+    public function save_absen_manual()
+    {
+        $post = new \App\dt_absen;
+        $post->dt_absen_name = Input::get('dt_absen_name');
+        $post->dt_absen_type = Input::get('dt_absen_type');
+        $post->dt_absen_code = Input::get('dt_absen_code');
+        $post->dt_absen_ket = "sudah";
+        $post->dt_absen_time = Input::get('dt_absen_time');
+        $post->dt_absen_create_by = session('akses_email');
+        $post->save();
+
+        return redirect()->back();
+    }
+
     public function search_print()
     {
         session_start();

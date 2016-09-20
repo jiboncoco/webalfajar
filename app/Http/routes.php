@@ -69,8 +69,9 @@ Route::post('manage_absen/update_absen', 'AdminController@update_absen');
 Route::get('manage_absen/delete_absen/{id}', 'AdminController@delete_absen');
 
 Route::post('manage_absen/save_absen_p', 'AksesController@save_absen_p');
+Route::post('manage_absen/save_absen_manual', 'AksesController@save_absen_manual');
 
-Route::get('manage_absen/all_data_absen', 'AdminController@all_absen');
+Route::get('manage_absen/master_absen', 'AdminController@all_absen');
 Route::get('manage_absen/edit_all_absen/{id}', 'AdminController@edit_all_absen');
 Route::post('manage_absen/update_all_absen', 'AdminController@update_all_absen');
 Route::get('manage_absen/delete_all_absen/{id}', 'AdminController@delete_all_absen');
