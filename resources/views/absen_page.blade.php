@@ -78,7 +78,7 @@ function handleLocationError(browserHasGeolocation, infoWindow, pos) {
 function cekjarak()
         {
        $('#myModalcekjarak').modal('hide');
-            if (km < 100 || km == 100) {
+            if (km < 500 || km == 500) {
               $('#myModalabsen').modal();
               // swal({title : "Here's a message!", text: "It's pretty, isn't it?"},function(){ window.location.href = "{{ url('manage_absen/save_absen_p')}}"; });
               console.log(km);
