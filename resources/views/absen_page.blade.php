@@ -243,13 +243,13 @@ function cekjarak()
             type: "get",
             success:function(data)
             {
-                if (data[0]["stat"] == "kosong") {
+                // if (data[0]["stat"] == "kosong") {
                     // $('#myModalcekjarak').modal();
                     swal({title: "Cek Jarak",   text: "Cek Jarak Anda dengan Sekolah", confirmButtonColor: "#4476cc", confirmButtonText: "Cek Jarak",   closeOnConfirm: true }, function(){ cekjarak(); });
-                }else{
+                // }else{
                     // $('#myModalwarn').modal();
-                    swal("Thank You!", "You've been absent!", "success");
-                }
+                //     swal("Thank You!", "You've been absent!", "success");
+                // }
             }
 
         });

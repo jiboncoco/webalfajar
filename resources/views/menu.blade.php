@@ -31,8 +31,12 @@
                 </ul> -->
               <!-- </li> -->
 
-              @elseif(session('akses_type') == "Teacher")
+              @elseif(session('akses_type') == "Teacher" || session('akses_type') == "teacher")
               <li class="dropdown notifications-menu">
+                <a href="{{ url('absen_page') }}">
+                  <i style="font-size:20px;color:white" class="fa fa-user"></i>
+                </a>
+              <!-- <li class="dropdown notifications-menu">
                 <a href="{{ url('absen_page') }}">
                   <i style="font-size:20px;color:white" class="fa fa-user"></i>
                 </a>
@@ -56,10 +60,10 @@
                       </li>
                     </ul>
                     </li>
-                </ul>
+                </ul> -->
               </li>
 
-              @elseif(session('akses_type') == "Employee")
+              @elseif(session('akses_type') == "Employee" || session('akses_type') == "employee")
               <li class="dropdown notifications-menu">
                 <a href="{{ url('absen_page') }}">
                   <i style="font-size:20px;color:white" class="fa fa-user"></i>
@@ -98,7 +102,7 @@
                 <a href="{{ url('manage_message/message_staff') }}">
                   <i style="font-size:17px;" class="fa fa-envelope-o"></i>
                 </a>
-              @elseif(session('akses_type') == "Teacher")
+              @elseif(session('akses_type') == "Teacher" || session('akses_type') == "teacher")
                 <a href="{{ url('manage_message/message_teacher') }}">
                   <i style="font-size:17px;" class="fa fa-envelope-o"></i>
                 </a>
@@ -111,7 +115,7 @@
                 <a href="{{ url('manage_message/message_parent') }}">
                   <i style="font-size:17px;" class="fa fa-envelope-o"></i>
                 </a>
-              @elseif(session('akses_type') == "employee")
+              @elseif(session('akses_type') == "employee" || session('akses_type') == "Employee")
                 <a href="{{ url('manage_message/message_teacher') }}">
                   <i style="font-size:17px;" class="fa fa-envelope-o"></i>
                 </a>

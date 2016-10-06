@@ -207,7 +207,7 @@ public function admin(Request $request)
         $post->dt_teacher_for = Input::get('dt_teacher_for');
         $post->dt_teacher_statuslog = Input::get('dt_teacher_statuslog');
         $post->dt_teacher_update_by = session('akses_email');
-        $post->dt_teacher_code_absen = Input::get('dt_teacher_nip')."".Input::get('dt_teacher_fname');
+        $post->dt_teacher_code_absen = Input::get('dt_teacher_nip');
          if(Input::hasFile('dt_teacher_name_img')){
             $dt_teacher_name_img = date("YmdHis")
             .uniqid()
@@ -258,7 +258,7 @@ public function admin(Request $request)
         $post->dt_teacher_for = Input::get('dt_teacher_for');
         $post->dt_teacher_statuslog = Input::get('dt_teacher_statuslog');
         $post->dt_teacher_update_by = session('akses_email');
-        $post->dt_teacher_code_absen = Input::get('dt_teacher_nip')."".Input::get('dt_teacher_fname');
+        $post->dt_teacher_code_absen = Input::get('dt_teacher_nip');
          if(Input::hasFile('dt_teacher_name_img')){
             $dt_teacher_name_img = date("YmdHis")
             .uniqid()
@@ -289,7 +289,7 @@ public function admin(Request $request)
         $post->dt_teacher_for = Input::get('dt_teacher_for');
         $post->dt_teacher_statuslog = Input::get('dt_teacher_statuslog');
         $post->dt_teacher_update_by = session('akses_email');
-        $post->dt_teacher_code_absen = Input::get('dt_teacher_nip')."".Input::get('dt_teacher_fname');
+        $post->dt_teacher_code_absen = Input::get('dt_teacher_nip');
          if(Input::hasFile('dt_teacher_name_img')){
             $dt_teacher_name_img = date("YmdHis")
             .uniqid()
@@ -1422,6 +1422,8 @@ public function admin(Request $request)
         $post->dt_rekap_class = Input::get('dt_rekap_class');
         $post->dt_rekap_name_student = Input::get('dt_rekap_name_student');
         $post->dt_rekap_nilai = Input::get('dt_rekap_nilai');
+        $post->dt_rekap_pelajaran = Input::get('dt_rekap_pelajaran');
+        $post->dt_rekap_semester = Input::get('dt_rekap_semester');
         $post->dt_rekap_create_by = session('akses_email');
         $post->save();
 
@@ -1462,6 +1464,8 @@ public function admin(Request $request)
         $post->dt_rekap_name_student = Input::get('dt_rekap_name_student');
         $post->dt_rekap_nilai = Input::get('dt_rekap_nilai');
         $post->dt_rekap_update_by = session('akses_email');
+        $post->dt_rekap_pelajaran = Input::get('dt_rekap_pelajaran');
+        $post->dt_rekap_semester = Input::get('dt_rekap_semester');
         $post->save();
 
         return redirect(url('manage_teacher/master_teacher_recap'));

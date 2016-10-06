@@ -38,7 +38,8 @@
         <section class="content">
         <div class="admin-seacrh" style="height:2px;">
             </div>
-
+            @if(session('akses_type') == "parent")
+            @else
               <div style="width:95%;margin:auto;" class="box box-default collapsed-box box-solid">
                 <div class="box-header with-border">
                   <h3 class="box-title">Post Activity</h3>
@@ -170,6 +171,7 @@
                 </form>
                 </div><!-- /.box-body -->
               </div><!-- /.box -->
+              @endif
               
               
 
@@ -196,7 +198,10 @@
                         <th>Date</th>
                         <th>Permission</th>
                         <th>Reason</th>
+                        @if(session('akses_type') == "parent")
+                        @else
                         <th style="text-align:center">Action</th>
+                        @endif
                       </tr>
                     </thead>
                     <tbody>
@@ -210,8 +215,10 @@
                         <td>{{ $aktivitass->dt_aktivitas_date }}</td>
                         <td>{{ $aktivitass->dt_aktivitas_permission }}</td>
                         <td>{{ $aktivitass->dt_aktivitas_reason }}</td>
+                        @if(session('akses_type') == "parent")
+                        @elseif(session('akses_type') == "student")
                         <td style="text-align:center">
-                        @if(session('akses_type') == "student")
+                        
                         <a href="{{ url('manage_student/edit_student_activity/'.$aktivitass->id)}}"><i style="font-size:20px;margin-right:50px" class="fa fa-pencil-square-o"></i> </a>
                         @else
                         <a href="{{ url('manage_student/edit_student_activity/'.$aktivitass->id)}}"><i style="font-size:20px;margin-right:50px" class="fa fa-pencil-square-o"></i> </a>

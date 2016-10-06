@@ -145,6 +145,7 @@
                   <div class="col-xs-6 col-md-4">
                       <label for="exampleInputPassword1">Select NIP Teacher</label>
                       <select id="selectteacher" name="akses_code_nip" class="form-control not-res">
+                        <option value="{{ $akses_edit->akses_code }}">{{ $akses_edit->akses_code }}</option>
                         @foreach($dt_teachers as $teacher)
                         <option value="{{$teacher->dt_teacher_nip}}">{{$teacher->dt_teacher_nip}} ({{ preg_replace('/\|/', ' ', $teacher->dt_teacher_name) }})</option>
                         @endforeach
@@ -157,6 +158,7 @@
                   <div class="col-xs-6 col-md-4">
                       <label for="exampleInputPassword1">Select NISN Student</label>
                       <select id="selectparent" name="akses_code_parent" class="form-control not-res">
+                        <option value="{{ $akses_edit->akses_code }}">{{ $akses_edit->akses_code }}</option>
                         @foreach($dt_parents as $parent)
                         <option value="{{$parent->dt_parent_nisn}}">{{$parent->dt_parent_nisn}} ({{preg_replace('/\|/', ' ', $parent->dt_parent_name)}})</option>
                         @endforeach
@@ -168,6 +170,7 @@
                   <div class="col-xs-6 col-md-4">
                       <label for="exampleInputPassword1">Select NIP Employee</label>
                       <select id="selectparent" name="akses_code_employee" class="form-control not-res">
+                        <option value="{{ $akses_edit->akses_code }}">{{ $akses_edit->akses_code }}</option>
                         @foreach($dt_employees as $employee)
                         <option value="{{$employee->dt_teacher_nip}}">{{$employee->dt_teacher_nip}} ({{ preg_replace('/\|/', ' ', $employee->dt_teacher_name) }})</option>
                         @endforeach
@@ -180,6 +183,7 @@
                   <div class="col-xs-6 col-md-4">
                       <label for="exampleInputPassword1">Select NISN Students</label>
                       <select id="selectstudent" name="akses_code_student" class="form-control not-res">
+                        <option value="{{ $akses_edit->akses_code }}">{{ $akses_edit->akses_code }}</option>
                         @foreach($dt_students as $student)
                         <option value="{{$student->dt_student_nisn}}">{{$student->dt_student_nisn}} ({{preg_replace('/\|/', ' ', $student->dt_student_name)}})</option>
                         @endforeach
@@ -202,6 +206,7 @@
                   <div class="col-xs-6 col-md-4">
                       <label for="exampleInputPassword1">Select Email Teacher</label>
                       <select id="emailteacher" name="akses_email_teacher" class="form-control not-res">
+                        <option value="{{ $akses_edit->akses_email }}">{{ $akses_edit->akses_email }}</option>
                         @foreach($dt_teachers as $teacher)
                         <option value="{{$teacher->dt_teacher_email}}">{{$teacher->dt_teacher_email}} ({{ preg_replace('/\|/', ' ', $teacher->dt_teacher_name) }})</option>
                         @endforeach
@@ -214,9 +219,11 @@
                   <div class="col-xs-6 col-md-4">
                       <label for="exampleInputPassword1">Select Email Employee</label>
                       <select id="emailemployee" name="akses_email_employee" class="form-control not-res">
+                        <option value="{{ $akses_edit->akses_email }}">{{ $akses_edit->akses_email }}</option>
                         @foreach($dt_employees as $employee)
                         <option value="{{$employee->dt_teacher_email}}">{{$employee->dt_teacher_email}} ({{ preg_replace('/\|/', ' ', $employee->dt_teacher_name) }})</option>
                         @endforeach
+                        
                       </select>
                     </div>
                   </div>
@@ -225,9 +232,11 @@
                   <div class="col-xs-6 col-md-4">
                       <label for="exampleInputPassword1">Select Email Parents</label>
                       <select id="emailparent" name="akses_email_parent" class="form-control not-res">
+                        <option value="{{ $akses_edit->akses_email }}">{{ $akses_edit->akses_email }}</option>
                         @foreach($dt_parents as $parent)
                         <option value="{{$parent->dt_parent_email}}">{{$parent->dt_parent_email}} ({{preg_replace('/\|/', ' ', $parent->dt_parent_name)}})</option>
                         @endforeach
+                        
                       </select>
                     </div>
                   </div>
@@ -237,9 +246,11 @@
                   <div class="col-xs-6 col-md-4">
                       <label for="exampleInputPassword1">Select Email Students</label>
                       <select id="emailstudent" name="akses_email_student" class="form-control not-res">
+                        <option value="{{ $akses_edit->akses_email }}">{{ $akses_edit->akses_email }}</option>
                         @foreach($dt_students as $student)
                         <option value="{{$student->dt_student_email}}">{{$student->dt_student_email}} ({{preg_replace('/\|/', ' ', $student->dt_student_name)}})</option>
                         @endforeach
+
                       </select>
                     </div>
                   </div>

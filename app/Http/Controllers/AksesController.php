@@ -61,6 +61,13 @@ class AksesController extends Controller
                      ->where('dt_kelas_type', '<>', 1)
                      ->groupBy('dt_kelas_type')
                      ->get();
+        }else if(session('akses_type') == "parent"){
+            $data_aktivitas = \App\dt_aktivitas::where('dt_aktivitas_nisn', session('akses_code'))->get();
+            $data_kelas = \DB::table('dt_kelas')
+                     ->select(\DB::raw('count(*) as class, dt_kelas_type'))
+                     ->where('dt_kelas_type', '<>', 1)
+                     ->groupBy('dt_kelas_type')
+                     ->get();
         }else{
             $data_kelas = \DB::table('dt_kelas')
                      ->select(\DB::raw('count(*) as class, dt_kelas_type'))

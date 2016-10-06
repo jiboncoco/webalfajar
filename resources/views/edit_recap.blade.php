@@ -98,6 +98,22 @@
                   </div>
                   </div>
                   <br>
+                  <div class="row">
+                   <div class="col-xs-6 col-md-4">
+                    <label for="exampleInputPassword1">Pelajaran</label>
+                    <input value="{{ $rekap_edit->dt_rekap_pelajaran }}" type="text" name="dt_rekap_pelajaran" class="form-control not-res" placeholder="Parent Name"/>
+                  </div>
+                    <div class="col-xs-6 col-md-4">
+                      <label for="exampleInputPassword1">Semester</label>
+                      <select name="dt_rekap_semester" class="form-control not-res">
+                        <option value="{{ $rekap_edit->dt_rekap_semester }}">{{ $rekap_edit->dt_rekap_semester }}</option>
+                        <option value="MID SEMESTER 1">MID SEMESTER 1</option>
+                        <option value="SEMESTER 1">SEMESTER 1</option>
+                        <option value="MID SEMESTER 2">MID SEMESTER 2</option>
+                        <option value="SEMESTER 2">SEMESTER 2</option>
+                      </select>
+                    </div>
+                  </div>
                   
                   <br><br>
                     <button type="submit" class="btn btn-primary">Save Data</button>
@@ -128,6 +144,8 @@
                         <th>Grade</th>
                         <th>Class</th>
                         <th>Point</th>
+                        <th>Pelajaran</th>
+                        <th>Semester</th>
                         <th style="text-align:center">Action</th>
                       </tr>
                     </thead>
@@ -141,6 +159,8 @@
                         <td>{{ $rekaps->dt_rekap_for }}</td>
                         <td>{{ $rekaps->dt_rekap_class }}</td>
                         <td>{{ $rekaps->dt_rekap_nilai }}</td>
+                        <td>{{ $rekaps->dt_rekap_pelajaran }}</td>
+                        <td>{{ $rekaps->dt_rekap_semester }}</td>
                         <td style="text-align:center">
                         <a href="{{ url('manage_teacher/edit_teacher_recap/'.$rekaps->id)}}"><i style="font-size:20px;margin-right:50px" class="fa fa-pencil-square-o"></i> </a>
                         <a href="{{ url('manage_teacher/delete_teacher_recap/'.$rekaps->id)}}"><i style="font-size:20px;margin:0px " class="fa fa-trash"></i> </a>
