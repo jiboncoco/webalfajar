@@ -221,9 +221,11 @@
                         
                         <a href="{{ url('manage_student/edit_student_activity/'.$aktivitass->id)}}"><i style="font-size:20px;margin-right:50px" class="fa fa-pencil-square-o"></i> </a>
                         @else
+                        <td style="text-align:center">
                         <a href="{{ url('manage_student/edit_student_activity/'.$aktivitass->id)}}"><i style="font-size:20px;margin-right:50px" class="fa fa-pencil-square-o"></i> </a>
                         <a href="{{ url('manage_student/delete_student_activity/'.$aktivitass->id)}}"><i style="font-size:20px;margin:0px " class="fa fa-trash"></i> </a>
                         @endif
+                        </td>
                         </td>
                       </tr>
                     @endforeach
