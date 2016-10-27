@@ -181,6 +181,10 @@
                   <a href="{{ url('manage_teacher_sch/export_data/xls') }}"><button class="btn btn-success"><i class="fa fa-paper-plane-o"></i> xls</button></a>
                   <a href="{{ url('manage_teacher_sch/export_data/xlsx') }}"><button class="btn btn-info"><i class="fa fa-paper-plane-o"></i> xlsx</button></a>
                   <a href="{{ url('manage_teacher_sch/export_data/csv') }}"><button class="btn btn-warning"><i class="fa fa-paper-plane-o"></i> csv</button></a>
+                  @if(session('akses_type')== "root" || session('akses_type')== "root+" || session('akses_type')== "staff")
+                  <a onclick="return confirm('Yakin hapus semua data teacher schedule?')" href="{{url('delete/all/data/teacher_sch')}}"><button class="btn btn-danger">Delete All</button></a>
+                  @else
+                  @endif
                   </div>
                   <div style="float:right;margin-top:40px;">
                   <form method="POST" action="{{ url('manage_teacher_sch/import_data_teacher_sch') }}" enctype="multipart/form-data" class="form-inline">

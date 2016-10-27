@@ -1677,4 +1677,108 @@ public function admin(Request $request)
         }    
     }
 
+    public function del_all_account()
+    {
+        \DB::table('akses')->delete();
+        return redirect()->back();
+    }
+
+    public function del_all_access_code()
+    {
+        \DB::table('akses')->delete();
+        return redirect()->back();
+
+    }
+
+    public function del_all_teacher()
+    {
+        \DB::table('dt_teacher')->delete();
+        return redirect()->back();
+
+    }
+
+    public function del_all_teacher_sch()
+    {
+        \DB::table('dt_sch')->delete();
+        return redirect()->back();
+
+    }
+
+    public function del_all_teacher_absen()
+    {
+        \DB::table('dt_absen')->delete();
+        return redirect()->back();
+
+    }
+
+    public function del_all_teacher_rekap()
+    {
+        \DB::table('dt_rekap')->delete();
+        return redirect()->back();
+
+    }
+
+    public function del_all_student()
+    {
+        \DB::table('dt_student')->delete();
+        return redirect()->back();
+
+    }
+
+    public function del_all_activity()
+    {
+        \DB::table('dt_aktivitas')->delete();
+        return redirect()->back();
+
+    }
+
+    public function del_all_parent()
+    {
+        \DB::table('dt_parent')->delete();
+        return redirect()->back();
+
+    }
+
+    public function del_all_sch_class()
+    {
+        \DB::table('sch_class')->delete();
+        return redirect()->back();
+
+    }
+
+    public function del_all_kelas()
+    {
+        \DB::table('dt_kelas')->delete();
+        return redirect()->back();
+
+    }
+
+    public function del_all_type_post()
+    {
+        \DB::table('m_blog')->delete();
+        return redirect()->back();
+
+    }
+
+    public function del_all_post()
+    {
+        \DB::table('dt_blog')->delete();
+        return redirect()->back();
+
+    }
+
+    public function del_all_class_post()
+    {
+        \DB::table('m_kelas')->delete();
+        return redirect()->back();
+
+    }
+
+    public function del_all_feature()
+    {
+        \DB::table('dt_feature')->delete();
+        return redirect()->back();
+
+    }
+
 }

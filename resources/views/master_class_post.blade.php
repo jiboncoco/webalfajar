@@ -117,11 +117,15 @@
                     @endforeach
                     </tfoot>
                   </table>
-<!--                   <div class="export">
-                  <a href="{{ url('manage_all_account/export_data/xls') }}"><button class="btn btn-success"><i class="fa fa-paper-plane-o"></i> xls</button></a>
+                  <div class="export">
+                  <!-- <a href="{{ url('manage_all_account/export_data/xls') }}"><button class="btn btn-success"><i class="fa fa-paper-plane-o"></i> xls</button></a>
                   <a href="{{ url('manage_all_account/export_data/xlsx') }}"><button class="btn btn-info"><i class="fa fa-paper-plane-o"></i> xlsx</button></a>
-                  <a href="{{ url('manage_all_account/export_data/csv') }}"><button class="btn btn-warning"><i class="fa fa-paper-plane-o"></i> csv</button></a>
-                  </div> -->
+                  <a href="{{ url('manage_all_account/export_data/csv') }}"><button class="btn btn-warning"><i class="fa fa-paper-plane-o"></i> csv</button></a> -->
+                  @if(session('akses_type')== "root" || session('akses_type')== "root+" || session('akses_type')== "staff")
+                  <a onclick="return confirm('Yakin hapus semua data class post?')" href="{{url('delete/all/data/class_post')}}"><button class="btn btn-danger">Delete All</button></a>
+                  @else
+                  @endif
+                  </div>
 
                 </div><!-- /.box-body -->
               </div><!-- /.box -->

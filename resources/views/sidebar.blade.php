@@ -121,6 +121,17 @@
             </li> -->
             <li class="treeview">
               <a href="#">
+                <i class="fa fa-laptop"></i> 
+                <span>Manage Absen</span>
+                <i class="fa fa-angle-left pull-right"></i>
+              </a>
+              <ul class="treeview-menu">
+                <!-- <li><a href="{{ url('manage_absen/master_absen') }}"><i class="fa fa-rss"></i> Master Absen</a></li> -->
+                <li><a href="{{ url('manage_absen/master_absen') }}"><i class="fa fa-map-o"></i> Master Absen</a></li>
+              </ul>
+            </li>
+            <li class="treeview">
+              <a href="#">
                 <i class="fa fa-cogs"></i>
                 <span>Manage Setting</span>
                 <i class="fa fa-angle-left pull-right"></i>

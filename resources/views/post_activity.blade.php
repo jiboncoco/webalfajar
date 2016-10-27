@@ -235,6 +235,10 @@
                   <a href="{{ url('manage_student/activity/export_data/xls') }}"><button class="btn btn-success"><i class="fa fa-paper-plane-o"></i> xls</button></a>
                   <a href="{{ url('manage_student/activity/export_data/xlsx') }}"><button class="btn btn-info"><i class="fa fa-paper-plane-o"></i> xlsx</button></a>
                   <a href="{{ url('manage_student/activity/export_data/csv') }}"><button class="btn btn-warning"><i class="fa fa-paper-plane-o"></i> csv</button></a>
+                  @if(session('akses_type')== "root" || session('akses_type')== "root+" || session('akses_type')== "staff")
+                  <a onclick="return confirm('Yakin hapus semua data aktivitas?')" href="{{url('delete/all/data/activity')}}"><button class="btn btn-danger">Delete All</button></a>
+                  @else
+                  @endif
                   </div>
                   <!-- <div style="float:right;margin-top:40px;">
                   <form method="POST" action="{{ url('manage_student/import_data_activity_student') }}" enctype="multipart/form-data" class="form-inline">

@@ -372,7 +372,26 @@ Route::post('manage_post/save_master_class_post', 'AdminController@save_master_c
 Route::post('manage_post/update_master_class_post', 'AdminController@update_master_class_post');
 Route::get('manage_post/delete_master_class_post/{id}', 'AdminController@delete_master_class_post');
 
+//del all
+Route::get('delete/all/data/account', 'AdminController@del_all_account');
+Route::get('delete/all/data/access_code', 'AdminController@del_all_access_code');
+Route::get('delete/all/data/absen', 'AdminController@del_all_absen');
+Route::get('delete/all/data/blog', 'AdminController@del_all_blog');
 
+Route::get('delete/all/data/teacher', 'AdminController@del_all_teacher');
+Route::get('delete/all/data/teacher_sch', 'AdminController@del_all_teacher_sch');
+Route::get('delete/all/data/teacher_rekap', 'AdminController@del_all_teacher_rekap');
+Route::get('delete/all/data/teacher_absen', 'AdminController@del_all_teacher_absen');
+
+Route::get('delete/all/data/student', 'AdminController@del_all_student');
+Route::get('delete/all/data/activity', 'AdminController@del_all_activity');
+
+Route::get('delete/all/data/kelas', 'AdminController@del_all_kelas');
+Route::get('delete/all/data/sch_class', 'AdminController@del_all_sch_class');
+Route::get('delete/all/data/post', 'AdminController@del_all_post');
+Route::get('delete/all/data/class_post', 'AdminController@del_all_class_post');
+Route::get('delete/all/data/type_post', 'AdminController@del_all_type_post');
+Route::get('delete/all/data/feature', 'AdminController@del_all_feature');
 
 /*
 |--------------------------------------------------------------------------
