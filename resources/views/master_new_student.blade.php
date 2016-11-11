@@ -46,7 +46,6 @@
                     <thead>
                       <tr>
                         <th>No.</th>
-                        <th>No.</th>
                         <th>Name</th>
                         <th>Grade</th>
                         <th>Class</th>
@@ -79,7 +78,6 @@
                         <td>{{ $statuscode->dt_reg_before }}</td>
                         <td>{{ $statuscode->dt_reg_namefather }}</td>
                         <td>{{ $statuscode->dt_reg_namemother }}</td>
-                        <td>{{ $statuscode->dt_reg_codereg }}</td>
                         <td>{{ $statuscode->dt_reg_contact }}</td>
                         <td>{{ $statuscode->dt_reg_emailparent }}</td>
                         <td>{{ $statuscode->dt_reg_codereg }}</td>
