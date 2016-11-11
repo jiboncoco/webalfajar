@@ -49,6 +49,7 @@
                         <th>Name</th>
                         <th>Grade</th>
                         <th>Class</th>
+                        <th>School Year</th>
                         <th>Gender</th>
                         <th>Religion</th>
                         <th>Birth Date Place</th>
@@ -71,6 +72,7 @@
                         <td>{{ $statuscode->dt_reg_name_student }}</td>
                         <td>{{ $statuscode->dt_reg_type }}</td>
                         <td>{{ $statuscode->dt_reg_class }}</td>
+                        <td>{{ $statuscode->dt_reg_year }}</td>
                         <td>{{ $statuscode->dt_reg_gender }}</td>
                         <td>{{ $statuscode->dt_reg_religion }}</td>
                         <td>{{ $statuscode->dt_reg_place }}, {{ $statuscode->dt_reg_dob }}</td>
