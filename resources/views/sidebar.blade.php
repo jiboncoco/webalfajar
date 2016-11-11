@@ -107,7 +107,7 @@
                 <li><a href="{{ url('manage_feature/master_feature') }}"><i class="fa fa-user-secret"></i> Master Feature</a></li>
                </ul>
             </li>
-            <!-- <li class="treeview">
+            <li class="treeview">
               <a href="#">
                 <i class="fa fa-folder"></i> 
                 <span>Manage Registration</span>
@@ -115,10 +115,10 @@
               </a>
               <ul class="treeview-menu">
                 <li><a href="{{ url('manage_registration/master_new_student')}}"><i class="fa fa-user-plus"></i> Master New Student</a></li>
-                <li><a href="{{ url('manage_registration/filter_new_student')}}"><i class="fa fa-check-square-o"></i> Filter New Student</a></li>
-                <li><a href="{{ url('manage_registration/manage_code')}}"><i class="fa fa-puzzle-piece"></i> Manage Code Registration</a></li>
+                <!-- <li><a href="{{ url('manage_registration/filter_new_student')}}"><i class="fa fa-check-square-o"></i> Filter New Student</a></li> -->
+                <li><a href="{{ url('manage_registration/manage_status_code')}}"><i class="fa fa-puzzle-piece"></i> Manage Code Registration</a></li>
               </ul>
-            </li> -->
+            </li>
             <li class="treeview">
               <a href="#">
                 <i class="fa fa-laptop"></i> 
@@ -233,7 +233,7 @@
                 <li><a href="{{ url('manage_feature/master_feature') }}"><i class="fa fa-user-secret"></i> Master Feature</a></li>
                </ul>
             </li>
-            <!-- <li class="treeview">
+            <li class="treeview">
               <a href="#">
                 <i class="fa fa-folder"></i> 
                 <span>Manage Registration</span>
@@ -241,10 +241,10 @@
               </a>
               <ul class="treeview-menu">
                 <li><a href="{{ url('manage_registration/master_new_student')}}"><i class="fa fa-user-plus"></i> Master New Student</a></li>
-                <li><a href="{{ url('manage_registration/filter_new_student')}}"><i class="fa fa-check-square-o"></i> Filter New Student</a></li>
-                <li><a href="{{ url('manage_registration/manage_code')}}"><i class="fa fa-puzzle-piece"></i> Manage Code Registration</a></li>
+                <!-- <li><a href="{{ url('manage_registration/filter_new_student')}}"><i class="fa fa-check-square-o"></i> Filter New Student</a></li> -->
+                <li><a href="{{ url('manage_registration/manage_status_code')}}"><i class="fa fa-puzzle-piece"></i> Manage Code Registration</a></li>
               </ul>
-            </li> -->
+            </li>
              <li class="treeview">
               <a href="#">
                 <i class="fa fa-laptop"></i> 
@@ -359,7 +359,7 @@
                 <li><a href="{{ url('manage_feature/master_feature') }}"><i class="fa fa-user-secret"></i> Master Feature</a></li>
                </ul>
             </li>
-            <!-- <li class="treeview">
+            <li class="treeview">
               <a href="#">
                 <i class="fa fa-folder"></i> 
                 <span>Manage Registration</span>
@@ -367,10 +367,10 @@
               </a>
               <ul class="treeview-menu">
                 <li><a href="{{ url('manage_registration/master_new_student')}}"><i class="fa fa-user-plus"></i> Master New Student</a></li>
-                <li><a href="{{ url('manage_registration/filter_new_student')}}"><i class="fa fa-check-square-o"></i> Filter New Student</a></li>
-                <li><a href="{{ url('manage_registration/manage_code')}}"><i class="fa fa-puzzle-piece"></i> Manage Code Registration</a></li>
+                <!-- <li><a href="{{ url('manage_registration/filter_new_student')}}"><i class="fa fa-check-square-o"></i> Filter New Student</a></li> -->
+                <li><a href="{{ url('manage_registration/manage_status_code')}}"><i class="fa fa-puzzle-piece"></i> Manage Code Registration</a></li>
               </ul>
-            </li> -->
+            </li>
             <li class="treeview">
               <a href="#">
                 <i class="fa fa-laptop"></i> 

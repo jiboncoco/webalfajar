@@ -701,4 +701,32 @@ class AksesController extends Controller
                                             
     }
 
+public function search_codereg()
+    {
+        session_start();
+        $dt_reg_name_student     = $_POST['dt_reg_name_student'];
+        $dt_reg_type = $_POST['dt_reg_type'];
+
+        $check_data = \DB::table('dt_reg')->where([
+                                        ['dt_reg_name_student', 'like', $dt_reg_name_student], 
+                                        ['dt_reg_type', 'like', $dt_reg_type]
+                                    ])->count();
+
+                                    if (!empty($check_data)) {
+                                    $check_data = \DB::table('dt_reg')->where([
+                                        ['dt_reg_name_student', 'like', $dt_reg_name_student], 
+                                        ['dt_reg_type', 'like', $dt_reg_type]
+                                    ])->get();
+                                            foreach ($check_data as $check_data) {
+                                            $_SESSION['error_msg'] = "Code Registration of $check_data->dt_reg_name_student grade $check_data->dt_reg_type is $check_data->dt_reg_codereg";
+                                        }
+                                            return redirect('registration')->with('check_data',$check_data);
+                                            
+                                        } else {
+                                            $_SESSION['error_msg'] = "There's no code registration of $dt_reg_name_student";
+                                            return redirect('registration');
+                                    }
+                                            
+    }
+
 }

@@ -56,6 +56,74 @@ public function admin(Request $request)
         }   
     }
 
+    public function manage_status_code(Request $request)
+    {
+        session_start();
+        if(isset($_SESSION['logged_in'])){
+            $uname = \App\akses::where('akses_email', session('akses_email'))->get();
+            $dt_registrasi = \App\dt_reg::all();
+            return \View::make('manage_status_code')->with('request',$request)->with('dt_registrasi',$dt_registrasi)->with('uname',$uname);
+        }
+        else{
+            return redirect('login')->with('request',$request);
+        }   
+    }
+
+    public function edit_status_code($id)
+    {
+        session_start();
+        if(isset($_SESSION['logged_in'])){
+            $uname = \App\akses::where('akses_email', session('akses_email'))->get();
+            $edit_statuscode = \App\dt_reg::find($id);
+            $dt_registrasi = \App\dt_reg::all();
+            return \View::make('edit_status_code')->with('dt_registrasi',$dt_registrasi)->with('edit_statuscode',$edit_statuscode)->with('uname',$uname);
+        }
+        else{
+            return redirect('login');
+        }   
+    }
+
+    public function update_status_code()
+    {
+        
+        $post = \App\dt_reg::find(Input::get('id'));
+        $post->dt_reg_status_code = Input::get('dt_reg_status_code');
+
+        $post->save();
+
+        $post_code = \App\dt_codereg::find(Input::get('id'));
+        $post_code->dt_codereg_status = Input::get('dt_reg_status_code');
+
+        $post_code->save();
+        return redirect(url('manage_registration/manage_status_code'));
+    }    
+
+    public function delete_status_code($id)
+    {
+       session_start();
+        if(isset($_SESSION['logged_in'])){
+            \App\dt_reg::find($id)->delete();
+            \App\dt_codereg::find($id)->delete();
+            return redirect()->back();
+        }
+        else{
+            return redirect(url('manage_registration/manage_status_code'));
+        }
+    }
+
+    public function master_new_student(Request $request)
+    {
+        session_start();
+        if(isset($_SESSION['logged_in'])){
+            $uname = \App\akses::where('akses_email', session('akses_email'))->get();
+            $dt_registrasi = \App\dt_reg::all();
+            return \View::make('master_new_student')->with('request',$request)->with('dt_registrasi',$dt_registrasi)->with('uname',$uname);
+        }
+        else{
+            return redirect('login')->with('request',$request);
+        }   
+    }
+
     public function underc()
     {
         session_start();
@@ -1625,6 +1693,7 @@ public function admin(Request $request)
         $post->dt_reg_contact = Input::get('dt_reg_contact');
         $post->dt_reg_emailparent = Input::get('dt_reg_emailparent');
         $post->dt_reg_create_by = Input::get('dt_reg_emailparent');
+        $post->dt_reg_status_code = "disable";
         $post->dt_reg_codereg = $code;
         $post->save();
         

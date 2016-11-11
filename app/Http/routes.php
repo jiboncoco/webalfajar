@@ -50,10 +50,20 @@ Route::get('absen', 'AdminController@underc');
 Route::get('manage_teacher/absen_teacher', 'AdminController@underc');
 Route::get('manage_student/absen_student', 'AdminController@underc');
 Route::get('manage_student/update_grade_student', 'AdminController@underc');
-Route::get('manage_registration/master_new_student', 'AdminController@underc');
 Route::get('manage_registration/filter_new_student', 'AdminController@underc');
 Route::get('manage_setting/alfajar_help', 'AdminController@underc');
 Route::get('manage_teacher/my_absen', 'AdminController@teacher_absen');
+
+Route::get('manage_registration/manage_status_code', 'AdminController@manage_status_code');
+Route::post('manage_registration/update_status_code', 'AdminController@update_status_code');
+Route::get('manage_registration/edit_status_code/{id}', 'AdminController@edit_status_code');
+Route::get('manage_registration/delete_status_code/{id}', 'AdminController@delete_status_code');
+
+Route::get('manage_registration/master_new_student', 'AdminController@master_new_student');
+Route::post('manage_registration/update_new_student', 'AdminController@update_new_student');
+Route::get('manage_registration/edit_new_student/{id}', 'AdminController@edit_new_student');
+Route::get('manage_registration/delete_new_student/{id}', 'AdminController@delete_new_student');
+
 
 Route::get('manage_teacher/delete_absen/{id}', 'AdminController@delete_absen_teacher');
 Route::get('manage_teacher/absen_teacher_and_employee', 'AdminController@teacher_absen');
@@ -326,9 +336,10 @@ Route::post('save_comment', 'PostController@save_comment');
 Route::get('logout', 'LoginController@logout');
 
 Route::get('absen_page', 'AdminController@absen_page');
-Route::get('cekabsen', 'AdminController@cekabsen');
+Route::get('cekabsen', 'AdminController@cekabsen'); 
 
 Route::post('search_print', 'AksesController@search_print');
+Route::post('search_codereg', 'AksesController@search_codereg');
 
 Route::get('search_post_tk/{search_tk?}', 'PostController@search_post_tk');
 Route::get('search_post_sd/{search_sd?}', 'PostController@search_post_sd');
