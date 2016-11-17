@@ -1210,4 +1210,133 @@ class PostController extends Controller
       return redirect()->back();
     }
 
+    public function exportxls_data_master_new_student()
+    {
+
+      $new_student = \App\dt_reg::select('dt_reg.dt_reg_name_student','dt_reg.dt_reg_year','dt_reg.dt_reg_type','dt_reg.dt_reg_class','dt_reg.dt_reg_gender','dt_reg.dt_reg_place','dt_reg.dt_reg_dob','dt_reg.dt_reg_religion','dt_reg.dt_reg_before','dt_reg.dt_reg_address','dt_reg.dt_reg_namefather','dt_reg.dt_reg_namemother','dt_reg.dt_reg_contact','dt_reg.dt_reg_emailparent','dt_reg.dt_reg_codereg','dt_reg.dt_reg_status_code')->get()->toArray();
+      return \Excel::create('Master New Student', function($excel) use ($new_student)
+      {
+          $excel->sheet('mySheet', function($sheet) use ($new_student)
+          {
+              $sheet->fromArray($new_student);
+          });
+      })->download('xls');
+
+    }
+
+        public function exportxlsx_data_master_new_student()
+    {
+
+      $new_student = \App\dt_reg::select('dt_reg.dt_reg_name_student','dt_reg.dt_reg_year','dt_reg.dt_reg_type','dt_reg.dt_reg_class','dt_reg.dt_reg_gender','dt_reg.dt_reg_place','dt_reg.dt_reg_dob','dt_reg.dt_reg_religion','dt_reg.dt_reg_before','dt_reg.dt_reg_address','dt_reg.dt_reg_namefather','dt_reg.dt_reg_namemother','dt_reg.dt_reg_contact','dt_reg.dt_reg_emailparent','dt_reg.dt_reg_codereg','dt_reg.dt_reg_status_code')->get()->toArray();
+      return \Excel::create('Master New Student', function($excel) use ($new_student)
+      {
+          $excel->sheet('mySheet', function($sheet) use ($new_student)
+          {
+              $sheet->fromArray($new_student);
+          });
+      })->download('xlsx');
+
+    }
+
+        public function exportcsv_data_master_new_student()
+    {
+
+      $new_student = \App\dt_reg::select('dt_reg.dt_reg_name_student','dt_reg.dt_reg_year','dt_reg.dt_reg_type','dt_reg.dt_reg_class','dt_reg.dt_reg_gender','dt_reg.dt_reg_place','dt_reg.dt_reg_dob','dt_reg.dt_reg_religion','dt_reg.dt_reg_before','dt_reg.dt_reg_address','dt_reg.dt_reg_namefather','dt_reg.dt_reg_namemother','dt_reg.dt_reg_contact','dt_reg.dt_reg_emailparent','dt_reg.dt_reg_codereg','dt_reg.dt_reg_status_code')->get()->toArray();
+      return \Excel::create('Master New Student', function($excel) use ($new_student)
+      {
+          $excel->sheet('mySheet', function($sheet) use ($new_student)
+          {
+              $sheet->fromArray($new_student);
+          });
+      })->download('csv');
+
+    }
+
+    public function exportxls_data_master_status_code()
+    {
+
+      $status_code = \App\dt_reg::select('dt_reg.dt_reg_name_student','dt_reg.dt_reg_type','dt_reg.dt_reg_codereg','dt_reg.dt_reg_status_code')->get()->toArray();
+      return \Excel::create('Master Status Code', function($excel) use ($status_code)
+      {
+          $excel->sheet('mySheet', function($sheet) use ($status_code)
+          {
+              $sheet->fromArray($status_code);
+          });
+      })->download('xls');
+
+    }
+
+        public function exportxlsx_data_master_status_code()
+    {
+
+      $status_code = \App\dt_reg::select('dt_reg.dt_reg_name_student','dt_reg.dt_reg_type','dt_reg.dt_reg_codereg','dt_reg.dt_reg_status_code')->get()->toArray();
+      return \Excel::create('Master Status Code', function($excel) use ($status_code)
+      {
+          $excel->sheet('mySheet', function($sheet) use ($status_code)
+          {
+              $sheet->fromArray($status_code);
+          });
+      })->download('xlsx');
+
+    }
+
+        public function exportcsv_data_master_status_code()
+    {
+
+      $status_code = \App\dt_reg::select('dt_reg.dt_reg_name_student','dt_reg.dt_reg_type','dt_reg.dt_reg_codereg','dt_reg.dt_reg_status_code')->get()->toArray();
+      return \Excel::create('Master Status Code', function($excel) use ($status_code)
+      {
+          $excel->sheet('mySheet', function($sheet) use ($status_code)
+          {
+              $sheet->fromArray($status_code);
+          });
+      })->download('csv');
+
+    }
+
+    public function import_data_master_new_student()
+    {
+
+      if(Input::hasFile('import_data_master_new_student'))
+      {
+        $path = Input::file('import_data_master_new_student')->getRealPath();
+        $data = \Excel::load($path, function($reader){
+        })->get();
+        if(!empty($data) && $data->count())
+        {
+          foreach ($data as $key => $value)
+          {
+            $insert[] = ['dt_reg_year' => $value->dt_reg_year, 
+                        'dt_reg_name_student' => $value->dt_reg_name_student,
+                        'dt_reg_type' => $value->dt_reg_type,
+                        'dt_reg_class' => $value->dt_reg_class,
+                        'dt_reg_gender' => $value->dt_reg_gender,
+                        'dt_reg_place' => $value->dt_reg_place,
+                        'dt_reg_dob' => $value->dt_reg_dob,
+                        'dt_reg_religion' => $value->dt_reg_religion,
+                        'dt_reg_before' => $value->dt_reg_before,
+                        'dt_reg_address' => $value->dt_reg_address,
+                        'dt_reg_namefather' => $value->dt_reg_email,
+                        'dt_reg_namemother' => $value->dt_reg_contact,
+                        'dt_reg_contact' => $value->dt_reg_contact,
+                        'dt_reg_emailparent' => $value->dt_reg_emailparent,
+                        'dt_reg_codereg' => $value->dt_reg_codereg,
+                        'dt_reg_status_code' => $value->dt_reg_status_code,
+                        'dt_reg_statuscode' => $value->dt_reg_status_code,
+                        ];
+            $insert2[] = ['dt_codereg_type' => $value->dt_reg_type,
+                        'dt_codereg_code' => $value->dt_reg_codereg,
+                        'dt_codereg_status' => $value->dt_reg_status_code,
+                        ];
+          }
+          if(!empty($insert) && !empty($insert2))
+          {
+            \DB::table('dt_reg')->insert($insert);
+            \DB::table('dt_codereg')->insert($insert2);
+          }
+        }
+      }
+      return redirect()->back();
+    }
+
 }         

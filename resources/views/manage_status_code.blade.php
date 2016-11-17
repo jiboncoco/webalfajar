@@ -81,7 +81,6 @@
         <div class="admin-seacrh" style="height:2px;">
             </div>
 
-              <br><br>
           <div style="width:95%;margin:auto" class="box">
                 <div class="box-header">
                   <h3 class="box-title">Data Status Code Registration</h3>
@@ -116,7 +115,20 @@
                     @endforeach
                     </tfoot>
                   </table>
-                  
+                  <div class="export">
+                  <a href="{{ url('manage_status_code/export_data/xls') }}"><button class="btn btn-success"><i class="fa fa-paper-plane-o"></i> xls</button></a>
+                  <a href="{{ url('manage_status_code/export_data/xlsx') }}"><button class="btn btn-info"><i class="fa fa-paper-plane-o"></i> xlsx</button></a>
+                  <a href="{{ url('manage_status_code/export_data/csv') }}"><button class="btn btn-warning"><i class="fa fa-paper-plane-o"></i> csv</button></a>
+                  </div>
+                  <!-- <div style="float:right;margin-top:40px;">
+                  <form method="POST" action="{{ url('manage_status_code/import_data_status_code') }}" enctype="multipart/form-data" class="form-inline">
+                    <div class="form-group">
+                      <input type="file" name="import_data_master_recap" class="form-control" placeholder="Email">
+                      <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                    </div>
+                    <button type="submit" class="btn btn-default">Import File</button>
+                  </form>
+                  </div> -->
                 </div><!-- /.box-body -->
               </div><!-- /.box -->
               </div>

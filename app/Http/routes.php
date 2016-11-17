@@ -58,11 +58,19 @@ Route::get('manage_registration/manage_status_code', 'AdminController@manage_sta
 Route::post('manage_registration/update_status_code', 'AdminController@update_status_code');
 Route::get('manage_registration/edit_status_code/{id}', 'AdminController@edit_status_code');
 Route::get('manage_registration/delete_status_code/{id}', 'AdminController@delete_status_code');
+Route::get('manage_status_code/export_data/xls', 'PostController@exportxls_data_master_status_code');
+Route::get('manage_status_code/export_data/xlsx', 'PostController@exportxlsx_data_master_status_code');
+Route::get('manage_status_code/export_data/csv', 'PostController@exportcsv_data_master_status_code');
+Route::post('manage_status_code/import_data_status_code', 'PostController@import_data_master_status_code');
 
 Route::get('manage_registration/master_new_student', 'AdminController@master_new_student');
 Route::post('manage_registration/update_new_student', 'AdminController@update_new_student');
 Route::get('manage_registration/edit_new_student/{id}', 'AdminController@edit_new_student');
 Route::get('manage_registration/delete_new_student/{id}', 'AdminController@delete_new_student');
+Route::get('manage_new_student/export_data/xls', 'PostController@exportxls_data_master_new_student');
+Route::get('manage_new_student/export_data/xlsx', 'PostController@exportxlsx_data_master_new_student');
+Route::get('manage_new_student/export_data/csv', 'PostController@exportcsv_data_master_new_student');
+Route::post('manage_new_student/import_data_new_student', 'PostController@import_data_master_new_student');
 
 
 Route::get('manage_teacher/delete_absen/{id}', 'AdminController@delete_absen_teacher');
