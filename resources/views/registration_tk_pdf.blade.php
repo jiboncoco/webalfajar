@@ -36,10 +36,13 @@
 	<tr>
 		<th><blockquote></blockquote><p class="pt-i">* IDENTITAS PESERTA DIDIK</p></th>
 	</tr>
+	@foreach ($get_data as $get) {
 	<tr>
 		<td>Nama Lengkap</td>
 		<td>:</td>
+		<td>{{ $get->dt_reg_nama }}</td>
 	</tr>
+	@endforeach
 	<tr>
 		<td>Nama Panggilan</td>
 		<td>:</td>

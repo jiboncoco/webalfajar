@@ -55,7 +55,7 @@
                     @foreach($dt_registrasi as $statuscode)
                       <tr>
                         <td>{{$i++}}</td>
-                        <td>{{ $statuscode->dt_reg_codereg}}</td>
+                        <td>{{ $statuscode->dt_reg_code}}</td>
                         <td>{{ $statuscode->dt_reg_status_code }}</td>
                         
                       </tr>
@@ -103,9 +103,9 @@
                     @foreach($dt_registrasi as $statuscode)
                       <tr>
                         <td>{{$i++}}</td>
-                        <td>{{ $statuscode->dt_reg_name_student}}</td>
-                        <td>{{ $statuscode->dt_reg_type}}</td>
-                        <td>{{ $statuscode->dt_reg_codereg}}</td>
+                        <td>{{ $statuscode->dt_reg_nama}}</td>
+                        <td>{{ $statuscode->dt_reg_unit}}</td>
+                        <td>{{ $statuscode->dt_reg_code}}</td>
                         <td>{{ $statuscode->dt_reg_status_code }}</td>
                         <td style="text-align:center">
                         <a href="{{ url('manage_registration/edit_status_code/'.$statuscode->id)}}"><i style="font-size:20px;margin-right:50px" class="fa fa-pencil-square-o"></i> </a>

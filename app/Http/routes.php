@@ -346,7 +346,7 @@ Route::get('logout', 'LoginController@logout');
 Route::get('absen_page', 'AdminController@absen_page');
 Route::get('cekabsen', 'AdminController@cekabsen'); 
 
-Route::post('search_print', 'AksesController@search_print');
+Route::post('Print_Formulir', 'AksesController@search_print');
 Route::post('search_codereg', 'AksesController@search_codereg');
 
 Route::get('search_post_tk/{search_tk?}', 'PostController@search_post_tk');

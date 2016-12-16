@@ -69,20 +69,20 @@
                     @foreach($dt_registrasi as $statuscode)
                       <tr>
                         <td>{{$i++}}</td>
-                        <td>{{ $statuscode->dt_reg_name_student }}</td>
-                        <td>{{ $statuscode->dt_reg_type }}</td>
-                        <td>{{ $statuscode->dt_reg_class }}</td>
-                        <td>{{ $statuscode->dt_reg_year }}</td>
+                        <td>{{ $statuscode->dt_reg_nama }}</td>
+                        <td>{{ $statuscode->dt_reg_unit }}</td>
+                        <td>{{ $statuscode->dt_reg_kelas }}</td>
+                        <td>{{ $statuscode->dt_reg_th }}</td>
                         <td>{{ $statuscode->dt_reg_gender }}</td>
-                        <td>{{ $statuscode->dt_reg_religion }}</td>
-                        <td>{{ $statuscode->dt_reg_place }}, {{ $statuscode->dt_reg_dob }}</td>
-                        <td>{{ $statuscode->dt_reg_address }}</td>
-                        <td>{{ $statuscode->dt_reg_before }}</td>
-                        <td>{{ $statuscode->dt_reg_namefather }}</td>
-                        <td>{{ $statuscode->dt_reg_namemother }}</td>
-                        <td>{{ $statuscode->dt_reg_contact }}</td>
-                        <td>{{ $statuscode->dt_reg_emailparent }}</td>
-                        <td>{{ $statuscode->dt_reg_codereg }}</td>
+                        <td>{{ $statuscode->dt_reg_agama }}</td>
+                        <td>{{ $statuscode->dt_reg_tempat_lahir }}, {{ $statuscode->dt_reg_tgl_lahir }}</td>
+                        <td>{{ $statuscode->dt_reg_alamat }}</td>
+                        <td>{{ $statuscode->dt_reg_asal_sekolah }}</td>
+                        <td>{{ $statuscode->dt_reg_bpk_nama }}</td>
+                        <td>{{ $statuscode->dt_reg_ibu_nama }}</td>
+                        <td>{{ $statuscode->dt_reg_telp }}</td>
+                        <td>{{ $statuscode->dt_reg_bpk_email }}</td>
+                        <td>{{ $statuscode->dt_reg_code }}</td>
                         <td>{{ $statuscode->created_at}}</td>
                         <td>{{ $statuscode->dt_reg_status_code }}</td>
                        
@@ -134,11 +134,11 @@
                     @foreach($dt_registrasi as $statuscode)
                       <tr>
                         <td>{{$i++}}</td>
-                        <td>{{ $statuscode->dt_reg_name_student }}</td>
-                        <td>{{ $statuscode->dt_reg_type }}</td>
-                        <td>{{ $statuscode->dt_reg_class }}</td>
+                        <td>{{ $statuscode->dt_reg_nama }}</td>
+                        <td>{{ $statuscode->dt_reg_unit }}</td>
+                        <td>{{ $statuscode->dt_reg_kelas }}</td>
                         <td>{{ $statuscode->dt_reg_gender }}</td>
-                        <td>{{ $statuscode->dt_reg_religion }}</td>
+                        <td>{{ $statuscode->dt_reg_agama }}</td>
                         <!-- <td>{{ $statuscode->dt_reg_codereg}}</td>
                         <td>{{ $statuscode->dt_reg_status_code }}</td> -->
                         <td style="text-align:center">

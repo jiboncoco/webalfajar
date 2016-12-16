@@ -6,6 +6,9 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
 
 use App\Http\Requests;
+use Dompdf\Adapter\CPDF;
+use Dompdf\Dompdf;
+use Dompdf\Exception;
 
 class AksesController extends Controller
 {
@@ -671,23 +674,35 @@ class AksesController extends Controller
                                                                         ['dt_codereg_status', 'like', 'active']
                                                                         ])->count();
                                         if (!empty($check_stat)) {
+                                            $get_data = \DB::table('dt_reg')->where([
+                                                ['dt_reg_code', 'like', $dt_codereg_code],
+                                                ['dt_reg_unit', 'like', $dt_codereg_type]
+                                            ])->get();
 
-                                            if ($dt_codereg_type == "TK") {
-                                                $_SESSION['available_print'] = 1;
-                                            return redirect('registration/TK-PDF');
-                                            }
-                                            else if ($dt_codereg_type == "SD") {
-                                                $_SESSION['available_print'] = 1;
-                                            return redirect('registration/SD-PDF');
-                                            }
-                                            else if ($dt_codereg_type == "SMP") {
-                                                $_SESSION['available_print'] = 1;
-                                            return redirect('registration/SMP-PDF');
-                                            }
-                                            else if ($dt_codereg_type == "SMA") {
-                                                $_SESSION['available_print'] = 1;
-                                            return redirect('registration/SMA-PDF');
-                                            }
+                                                // $pdf = new \DOMPDF();
+                                                // $pdf->set_paper('A3','potrait'); //Changed A4 to A3
+                                                // $view = \View::make('registration_sd_pdf')->with('get_data',$get_data);
+                                                // $pdf->load_html($view);
+                                                // $pdf->render();
+                                                // $options = new Options();
+                                                // $options->set('isRemoteEnabled', TRUE);
+                                                // $pdf = new \Dompdf($options);
+
+                                                $view = \View::make('registration_sd_pdf')->with('get_data',$get_data);;
+                                                $pdf = \App::make('dompdf.wrapper');
+                                                $pdf->loadHTML($view)->setPaper('a4')->setOrientation('potrait');
+                                                
+                                                // $dompdf = new \DOMPDF;
+                                                // $dompdf->set_option( 'isRemoteEnabled', true );
+                                                // $html = \View::make('registration_sd_pdf')->with('get_data',$get_data);
+                                                // $dompdf->load_html($html);
+                                                // $dompdf->setPaper('A4', 'portrait');
+                                                // $dompdf->render();
+                                                // $pdf = $dompdf->output();
+                                                // $dompdf->stream('Print');
+                                                ini_set('max_execution_time', 500);
+                                                return $pdf->stream();
+                                            
                                         } else {
                                             $_SESSION['error_msg'] = "Your Code Disable ! Please Payment or Call Admin Alfajar";
                                             return redirect('registration');
@@ -704,26 +719,29 @@ class AksesController extends Controller
 public function search_codereg()
     {
         session_start();
-        $dt_reg_name_student     = $_POST['dt_reg_name_student'];
-        $dt_reg_type = $_POST['dt_reg_type'];
+        $dt_reg_nama     = $_POST['dt_reg_nama'];
+        $dt_reg_ibu_nama     = $_POST['dt_reg_ibu_nama'];
+        $dt_reg_unit = $_POST['dt_reg_unit'];
 
         $check_data = \DB::table('dt_reg')->where([
-                                        ['dt_reg_name_student', 'like', $dt_reg_name_student], 
-                                        ['dt_reg_type', 'like', $dt_reg_type]
+                                        ['dt_reg_nama', 'like', $dt_reg_nama],
+                                         ['dt_reg_ibu_nama', 'like', $dt_reg_ibu_nama],
+                                        ['dt_reg_unit', 'like', $dt_reg_unit]
                                     ])->count();
 
                                     if (!empty($check_data)) {
                                     $check_data = \DB::table('dt_reg')->where([
-                                        ['dt_reg_name_student', 'like', $dt_reg_name_student], 
-                                        ['dt_reg_type', 'like', $dt_reg_type]
+                                        ['dt_reg_nama', 'like', $dt_reg_nama],
+                                        ['dt_reg_ibu_nama', 'like', $dt_reg_ibu_nama], 
+                                        ['dt_reg_unit', 'like', $dt_reg_unit]
                                     ])->get();
                                             foreach ($check_data as $check_data) {
-                                            $_SESSION['error_msg'] = "Code Registration of $check_data->dt_reg_name_student grade $check_data->dt_reg_type is $check_data->dt_reg_codereg";
+                                            $_SESSION['error_msg'] = "Code Registration of $check_data->dt_reg_nama grade $check_data->dt_reg_unit is $check_data->dt_reg_code";
                                         }
                                             return redirect('registration')->with('check_data',$check_data);
                                             
                                         } else {
-                                            $_SESSION['error_msg'] = "There's no code registration of $dt_reg_name_student";
+                                            $_SESSION['error_msg'] = "There's no code registration of $dt_reg_nama";
                                             return redirect('registration');
                                     }
                                             

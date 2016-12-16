@@ -1663,9 +1663,9 @@ public function admin(Request $request)
         }
     }
 
-    public function generateRandomString($length = 20) 
+    public function generateRandomString($length = 9) 
     {
-        $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+        $characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
         $charactersLength = strlen($characters);
         $randomString = '';
         for ($i = 0; $i < $length; $i++) {
@@ -1676,25 +1676,84 @@ public function admin(Request $request)
 
     public function registration_student()
     {
-        $code = $this->generateRandomString($length = 20);
+        $code = $this->generateRandomString($length = 8);
         $post = new \App\dt_reg;
-        $post->dt_reg_year = Input::get('dt_reg_year');
-        $post->dt_reg_name_student = Input::get('dt_reg_name_student');
-        $post->dt_reg_type = Input::get('dt_student_grade');
-        $post->dt_reg_class= Input::get('dt_student_kelas_'.Input::get("type_class"));
+        $post->dt_reg_th = Input::get('dt_reg_th1')."/".Input::get('dt_reg_th2');
+        $post->dt_reg_no = Input::get('dt_reg_no');
+        $post->dt_reg_unit = Input::get('dt_student_grade');
+        $post->dt_reg_kelas= Input::get('dt_student_kelas_'.Input::get("type_class"));
+        $post->dt_reg_nama = Input::get('dt_reg_nama');
+        $post->dt_reg_nama_panggilan = Input::get('dt_reg_nama_panggilan');
         $post->dt_reg_gender = Input::get('dt_reg_gender');
-        $post->dt_reg_place = Input::get('dt_reg_place');
-        $post->dt_reg_dob = Input::get('dt_reg_dob');
-        $post->dt_reg_religion = Input::get('dt_reg_religion');
-        $post->dt_reg_before = Input::get('dt_reg_before');
-        $post->dt_reg_address = Input::get('dt_reg_address');
-        $post->dt_reg_namefather = Input::get('dt_reg_namefather');
-        $post->dt_reg_namemother = Input::get('dt_reg_namemother');
-        $post->dt_reg_contact = Input::get('dt_reg_contact');
-        $post->dt_reg_emailparent = Input::get('dt_reg_emailparent');
-        $post->dt_reg_create_by = Input::get('dt_reg_emailparent');
+        $post->dt_reg_nik = Input::get('dt_reg_nik');
+        $post->dt_reg_tempat_lahir = Input::get('dt_reg_tempat_lahir');
+        $post->dt_reg_tgl_lahir = Input::get('dt_reg_tgl_lahir');
+        $post->dt_reg_agama = Input::get('dt_reg_agama');
+        $post->dt_reg_anak_ke = Input::get('dt_reg_anak_ke');
+        $post->dt_reg_jml_saudara = Input::get('dt_reg_jml_saudara');
+        $post->dt_reg_tb = Input::get('dt_reg_tb');
+        $post->dt_reg_bb = Input::get('dt_reg_bb');
+        $post->dt_reg_goldar = Input::get('dt_reg_goldar');
+        $post->dt_reg_abk = Input::get('dt_reg_abk');
+        $post->dt_reg_ket_abk = Input::get('dt_reg_ket_abk');
+        $post->dt_reg_ket_masuk = Input::get('dt_reg_ket_masuk');
+        $post->dt_reg_nisn = Input::get('dt_reg_nisn');
+        $post->dt_reg_asal_sekolah = Input::get('dt_reg_asal_sekolah');
+        $post->dt_reg_alamat = Input::get('dt_reg_alamat');
+        $post->dt_reg_alamat_dusun = Input::get('dt_reg_alamat_dusun');
+        $post->dt_reg_alamat_rw = Input::get('dt_reg_alamat_rw');
+        $post->dt_reg_alamat_rt = Input::get('dt_reg_alamat_rt');
+        $post->dt_reg_alamat_kodepos = Input::get('dt_reg_alamat_kodepos');
+        $post->dt_reg_alamat_kel = Input::get('dt_reg_alamat_kel');
+        $post->dt_reg_alamat_kec = Input::get('dt_reg_alamat_kec');
+        $post->dt_reg_alamat_kab = Input::get('dt_reg_alamat_kab');
+        $post->dt_reg_alamat_prov = Input::get('dt_reg_alamat_prov');
+        $post->dt_reg_telp = Input::get('dt_reg_telp');
+        $post->dt_reg_hp = Input::get('dt_reg_hp');
+        $post->dt_reg_jenis_tinggal = Input::get('dt_reg_jenis_tinggal');
+        $post->dt_reg_alat_transport = Input::get('dt_reg_alat_transport');
+        $post->dt_reg_jarak_kesekolah = Input::get('dt_reg_jarak_kesekolah');
+        $post->dt_reg_waktu_tempuh = Input::get('dt_reg_waktu_tempuh');
+        $post->dt_reg_kps = Input::get('dt_reg_kps');
+        $post->dt_reg_no_kps = Input::get('dt_reg_no_kps');
+        $post->dt_reg_bpk_nama = Input::get('dt_reg_bpk_nama');
+        $post->dt_reg_bpk_tempat_lahir = Input::get('dt_reg_bpk_tempat_lahir');
+        $post->dt_reg_bpk_tgl_lahir = Input::get('dt_reg_bpk_tgl_lahir');
+        $post->dt_reg_bpk_agama = Input::get('dt_reg_bpk_agama');
+        $post->dt_reg_bpk_pekerjaan = Input::get('dt_reg_bpk_pekerjaan');
+        $post->dt_reg_bpk_pendidikan = Input::get('dt_reg_bpk_pendidikan');
+        $post->dt_reg_bpk_telp = Input::get('dt_reg_bpk_telp');
+        $post->dt_reg_bpk_email = Input::get('dt_reg_bpk_email');
+        $post->dt_reg_bpk_hasil = Input::get('dt_reg_bpk_hasil');
+        $post->dt_reg_ibu_nama = Input::get('dt_reg_ibu_nama');
+        $post->dt_reg_ibu_tempat_lahir = Input::get('dt_reg_ibu_tempat_lahir');
+        $post->dt_reg_ibu_tgl_lahir = Input::get('dt_reg_ibu_tgl_lahir');
+        $post->dt_reg_ibu_agama = Input::get('dt_reg_ibu_agama');
+        $post->dt_reg_ibu_pekerjaan = Input::get('dt_reg_ibu_pekerjaan');
+        $post->dt_reg_ibu_pendidikan = Input::get('dt_reg_ibu_pendidikan');
+        $post->dt_reg_ibu_telp = Input::get('dt_reg_ibu_telp');
+        $post->dt_reg_ibu_email = Input::get('dt_reg_ibu_email');
+        $post->dt_reg_ibu_hasil = Input::get('dt_reg_ibu_hasil');
+        $post->dt_reg_wali_nama = Input::get('dt_reg_wali_nama');
+        $post->dt_reg_wali_tempat_lahir = Input::get('dt_reg_wali_tempat_lahir');
+        $post->dt_reg_wali_tgl_lahir = Input::get('dt_reg_wali_tgl_lahir');
+        $post->dt_reg_wali_agama = Input::get('dt_reg_wali_agama');
+        $post->dt_reg_wali_pekerjaan = Input::get('dt_reg_wali_pekerjaan');
+        $post->dt_reg_ibu_pendidikan = Input::get('dt_reg_ibu_pendidikan');
+        $post->dt_reg_wali_telp = Input::get('dt_reg_wali_telp');
+        $post->dt_reg_wali_email = Input::get('dt_reg_wali_email');
+        $post->dt_reg_wali_hasil = Input::get('dt_reg_wali_hasil');
         $post->dt_reg_status_code = "disable";
-        $post->dt_reg_codereg = $code;
+        $post->dt_reg_code = $code;
+         if(Input::hasFile('dt_reg_photo')){
+            $dt_reg_photo = date("YmdHis")
+            .uniqid()
+            ."."
+            .Input::file('dt_reg_photo')->getClientOriginalExtension();
+        
+            Input::file('dt_reg_photo')->move(storage_path(),$dt_reg_photo);
+            $post->dt_reg_photo = $dt_reg_photo;
+        }
         $post->save();
         
         $post2 = new \App\dt_codereg;
@@ -1705,7 +1764,7 @@ public function admin(Request $request)
 
         $post2->save();
 
-        return redirect()->back()->with('status', 'Registration Succes !');
+        return redirect()->back()->with('status', 'Registration Succes !')->with('code',$code);
     }
 
     public function cekabsen()

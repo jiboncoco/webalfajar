@@ -52,7 +52,7 @@
                   <div class="row">
                   <div class="col-xs-6 col-md-4">
                     <label for="exampleInputPassword1">Name</label>
-                    <input value="{{ $edit_statuscode->dt_reg_name_student }}" type="text" name="dt_reg_name_student" class="form-control not-res" readonly="readonly">
+                    <input value="{{ $edit_statuscode->dt_reg_nama }}" type="text" name="dt_reg_nama" class="form-control not-res" readonly="readonly">
                     <input type="hidden" name="id" value="{{ $edit_statuscode->id }}">
                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
                   </div>
@@ -60,19 +60,19 @@
                   <div class="row">
                   <div class="col-xs-6 col-md-4">
                     <label for="exampleInputPassword1">Grade</label>
-                    <input value="{{ $edit_statuscode->dt_reg_type }}" type="text" name="dt_reg_type" class="form-control not-res" readonly="readonly">
+                    <input value="{{ $edit_statuscode->dt_reg_unit }}" type="text" name="dt_reg_unit" class="form-control not-res" readonly="readonly">
                     <input type="hidden" name="id" value="{{ $edit_statuscode->id }}">
                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
                   </div>
                   <div class="col-xs-6 col-md-4">
                       <label for="exampleInputPassword1">Class Status</label>
                       <select id="selecttype" name="dt_reg_status_code" class="form-control not-res">
-                        @if($edit_statuscode->dt_reg_status_code == "active")
-                        <option value="active" selected>Active</option>
-                        <option value="disable">Disable</option>  
-                        @elseif($edit_statuscode->dt_reg_status_code == "disable")
-                        <option value="active">Active</option>
-                        <option value="disable" selected>Disable</option>  
+                        @if($edit_statuscode->dt_reg_status_code == "Active")
+                        <option value="Active" selected>Active</option>
+                        <option value="Disable">Disable</option>  
+                        @elseif($edit_statuscode->dt_reg_status_code == "Disable")
+                        <option value="Active">Active</option>
+                        <option value="Disable" selected>Disable</option>  
                         @endif                    
                       </select>
                     </div>
@@ -111,9 +111,9 @@
                     @foreach($dt_registrasi as $statuscode)
                       <tr>
                         <td>{{$i++}}</td>
-                        <td>{{ $statuscode->dt_reg_name_student}}</td>
-                        <td>{{ $statuscode->dt_reg_type}}</td>
-                        <td>{{ $statuscode->dt_reg_codereg}}</td>
+                        <td>{{ $statuscode->dt_reg_nama}}</td>
+                        <td>{{ $statuscode->dt_reg_unit}}</td>
+                        <td>{{ $statuscode->dt_reg_code}}</td>
                         <td>{{ $statuscode->dt_reg_status_code }}</td>
                         <td style="text-align:center">
                         <a href="{{ url('manage_registration/edit_status_code/'.$statuscode->id)}}"><i style="font-size:20px;margin-right:50px" class="fa fa-pencil-square-o"></i> </a>
