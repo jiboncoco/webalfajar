@@ -178,7 +178,7 @@ Route::get('portal_sma/article', 'Controller@portal_sma_article');
 Route::get('view/{id}', 'Controller@view');
 Route::get('registration', 'Controller@pendaftaran');
 Route::get('registration/TK-PDF', 'Controller@registration_tk_pdf');
-Route::get('registration/SD-PDF', 'Controller@registration_sd_pdf');
+Route::get('registration/print-formulir', 'Controller@registration_sd_pdf');
 Route::get('registration/SMP-PDF', 'Controller@registration_smp_pdf');
 Route::get('registration/SMA-PDF', 'Controller@registration_sma_pdf');
 
@@ -346,7 +346,7 @@ Route::get('logout', 'LoginController@logout');
 Route::get('absen_page', 'AdminController@absen_page');
 Route::get('cekabsen', 'AdminController@cekabsen'); 
 
-Route::post('Print_Formulir', 'AksesController@search_print');
+Route::post('Print_Formulir_Pendaftaran', 'AksesController@search_print');
 Route::post('search_codereg', 'AksesController@search_codereg');
 
 Route::get('search_post_tk/{search_tk?}', 'PostController@search_post_tk');

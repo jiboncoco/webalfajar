@@ -17,6 +17,7 @@
 	}
 	th{
 		width: 200px;
+		margin: 0;
 	}
 	.th-title{
 		border-bottom: 3px solid #333;
@@ -28,12 +29,17 @@
 
 <table>
 	<tr>
-		<th class="th-title">FORMULIR PENDAFTARAN CALON PESERTA DIDIK BARU</th>
+		<th style="width: 10%;border-bottom: 3px solid #333;">logo</th>
+		<th style="font-size: 25px;width: 85%;" class="th-title">PERGURUAN ISLAM AL-FAJAR<br>
+		<span style="font-size: 20px;">Y A Y A S A N   D A R U L   F A J A R</span><br>
+		<span style="font-size: 16px;">Jl. Swatantra V No. 1 - Vila Nusa Indah Raya, Jatiasih, Telp. (021) 82401310, 82400634, 8271139, Fax (021) 8271138</span><br>
+		<span style="font-size: 18px;">KOTA BEKASI - JAWA BARAT</span><br>
+		</th>
 	</tr>
 </table><br><br>
 <table>
 	<tr>
-		<th class="th-title" style="font-size: 20px;">FORMULIR PENDAFTARAN CALON PESERTA DIDIK BARU</th>
+		<th style="font-size: 17px;padding-left: 105px;padding-right: 105px;">FORMULIR PENDAFTARAN CALON PESERTA DIDIK BARU</th>
 	</tr>
 </table><br>
 @foreach ($get_data as $get)
@@ -46,8 +52,7 @@
 		<td>Tahun Ajaran</td>
 		<td>:</td>
 		<td>{{ $get->dt_reg_th }}</td>
-	</tr>
-	<tr>
+	
 		<td>No. Pendaftaran</td>
 		<td>:</td>
 		<td>{{ $get->dt_reg_no }}</td>
@@ -349,13 +354,37 @@
 		<td>Pas Photo</td>
 		<td>:</td>
 		<td>
-		
+		<!-- <img src="{{ url('images/2016121419003458513462b7e7d.jpg') }}"> -->
 		</td>
 	</tr>
-
-
 	
 </table>
-
+<table>
+	<tr>
+		<th style="width: 30%;padding-bottom: 120px;">photo</th>
+		<th style="padding-bottom: 120px;"><span style="margin-left: 270px;width: 65%;">Bekasi, ....................................</span></th>
+	</tr>
+		<tr>
+		<th style="padding-bottom: 100px;">
+		<span style="width: 50%;">Petugas Pendaftaran,</span>
+		</th>
+		<th style="padding-bottom: 100px;">
+		<span style="margin-left:320px;width: 50%;">Orangtua/Wali,</span>
+		</th>
+		</tr>
+		<tr>
+		<th style="padding-bottom: 30px;">
+		<span style="width: 50%;">......................................</span>
+		</th>
+		<th style="padding-bottom: 30px;">
+		<span style="margin-left:320px;width: 50%;">......................................</span>
+		</th>
+		</tr>
+</table>
+<table>
+	<tr>
+			<th style="width: 100%;font-size: 14px;font-style: italic;"><span style="width: 100%;margin: 110px;">Catatan : Formulir ini harus diisi lengkap untuk keperluan Data Dapodik</span></th>
+		</tr>
+</table>
 
 @endforeach

@@ -690,7 +690,7 @@ class AksesController extends Controller
 
                                                 $view = \View::make('registration_sd_pdf')->with('get_data',$get_data);;
                                                 $pdf = \App::make('dompdf.wrapper');
-                                                $pdf->loadHTML($view)->setPaper('a4')->setOrientation('potrait');
+                                                $pdf->load_html($view)->setPaper('a4')->setOrientation('potrait');
                                                 
                                                 // $dompdf = new \DOMPDF;
                                                 // $dompdf->set_option( 'isRemoteEnabled', true );

@@ -51,7 +51,7 @@
                     </div>
                     <div class="modal-body">
                     <div class="login-form">
-                    <form action="{{ url('Print_Formulir') }}" method="POST">
+                    <form action="{{ url('Print_Formulir_Pendaftaran') }}" method="POST">
                     {{ csrf_field() }}
                     <input style="height:40px;border:1px solid #ccc;margin-bottom:10px" class="login-input" name="dt_codereg_code" id="log-inp" placeholder="Code Reg" required></input>
                     <select style="height:40px;" name="dt_codereg_type" class="form-control" id="sg">
