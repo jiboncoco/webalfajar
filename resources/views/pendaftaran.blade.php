@@ -193,9 +193,12 @@
   <label for="inputEmail3" class="col-sm-2 form-control-label">Kelompok/Kelas </label>
   <div class="col-sm-3"> 
   <select name="dt_student_kelas_tk" class="form-control not-res">
-    @foreach($data_kelas_tk as $class_tk)
+    <!-- @foreach($data_kelas_tk as $class_tk)
     <option value="{{$class_tk->dt_kelas_name}}">{{$class_tk->dt_kelas_name}}</option>
-    @endforeach
+    @endforeach -->
+    <option value="Playgroup">Playgroup</option>
+    <option value="TK A">TK A</option>
+    <option value="TK B">TK B</option>
   </select>
 </div>
 </div>
@@ -203,9 +206,15 @@
   <label for="inputEmail3" class="col-sm-2 form-control-label">Kelompok/Kelas </label>
     <div  class="col-sm-3">
     <select name="dt_student_kelas_sd" class="form-control not-res">
-      @foreach($data_kelas_sd as $class_sd)
+      <!-- @foreach($data_kelas_sd as $class_sd)
       <option value="{{$class_sd->dt_kelas_name}}">{{$class_sd->dt_kelas_name}}</option>
-      @endforeach
+      @endforeach -->
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+      <option value="6">6</option>
     </select>
   </div>
 </div>
@@ -213,9 +222,12 @@
   <label for="inputEmail3" class="col-sm-2 form-control-label">Kelompok/Kelas </label>
     <div  class="col-sm-3">
     <select name="dt_student_kelas_smp" class="form-control not-res">
-      @foreach($data_kelas_smp as $class_smp)
+      <!-- @foreach($data_kelas_smp as $class_smp)
       <option value="{{$class_smp->dt_kelas_name}}">{{$class_smp->dt_kelas_name}}</option>
-      @endforeach
+      @endforeach -->
+      <option value="7">7</option>
+      <option value="8">8</option>
+      <option value="9">9</option>
     </select>
   </div>
 </div>
@@ -223,9 +235,12 @@
   <label for="inputEmail3" class="col-sm-2 form-control-label">Kelompok/Kelas </label>
     <div  class="col-sm-3">
     <select name="dt_student_kelas_sma" class="form-control not-res">
-      @foreach($data_kelas_sma as $class_sma)
+      <!-- @foreach($data_kelas_sma as $class_sma)
       <option value="{{$class_sma->dt_kelas_name}}">{{$class_sma->dt_kelas_name}}</option>
-      @endforeach
+      @endforeach -->
+      <option value="X">X</option>
+      <option value="XI">XI</option>
+      <option value="XII">XII</option>
     </select>
   </div>
 </div>
@@ -554,7 +569,7 @@
     </div>
     <label for="inputPassword3" style="text-align: center;" class="col-sm-2 form-control-label">Email Ayah</label>
     <div class="col-sm-3">
-      <input name="dt_reg_bpk_email" type="email" class="form-control" id="inputPassword3" required/>
+      <input name="dt_reg_bpk_email" type="email" class="form-control" id="inputPassword3"/>
     </div>
     </div>
 
@@ -655,7 +670,7 @@
     </div>
     <label for="inputPassword3" style="text-align: center;" class="col-sm-2 form-control-label">Email Ibu</label>
     <div class="col-sm-3">
-      <input name="dt_reg_ibu_email" type="email" class="form-control" id="inputPassword3" required/>
+      <input name="dt_reg_ibu_email" type="email" class="form-control" id="inputPassword3" />
     </div>
     </div>
 
@@ -673,14 +688,14 @@
     <div class="form-group row">
     <label for="inputPassword3" class="col-sm-2 form-control-label">Nama Wali </label>
     <div class="col-sm-3">
-      <input name="dt_reg_wali_nama" class="form-control" id="inputPassword3" required/>
+      <input name="dt_reg_wali_nama" class="form-control" id="inputPassword3"/>
     </div>
   </div>
 
   <div class="form-group row">
     <label for="inputPassword3" class="col-sm-2 form-control-label">Tempat Lahir Wali</label>
     <div class="col-sm-3">
-      <input name="dt_reg_wali_tempat_lahir" class="form-control" id="inputPassword3" required/>
+      <input name="dt_reg_wali_tempat_lahir" class="form-control" id="inputPassword3"/>
     </div>
   </div>
 
@@ -700,6 +715,7 @@
   <label for="inputPassword3" class="col-sm-2 form-control-label">Agama Wali</label>
   <div class="col-sm-3">
     <select name="dt_reg_wali_agama" class="form-control" id="exampleSelect1">
+      <option value=""></option>
       <option value="Islam">Islam</option>
       <option value="Kristen">Kristen</option>
       <option value="Katholik">Katholik</option>
@@ -714,6 +730,7 @@
     <label for="exampleInputPassword1" class="col-sm-2 form-control-label">Pekerjaan Wali</label>
     <div class="col-sm-2">
       <select name="dt_reg_wali_pekerjaan" class="form-control" id="exampleSelect1">
+      <option value=""></option>
       <option value="Tidak bekerja">Tidak bekerja</option>
       <option value="Nelayan">Nelayan</option>
       <option value="Petani">Petani</option>
@@ -733,6 +750,7 @@
     <label style="text-align: center;" for="exampleInputPassword1" class="col-sm-2 form-control-label">Pendidikan Wali</label>
     <div class="col-sm-2">
       <select name="dt_reg_wali_pendidikan" class="form-control" id="exampleSelect1">
+      <option value=""></option>
       <option value="Tidak Sekolah">Tidak Sekolah</option>
       <option value="Putus SD">Putus SD</option>
       <option value="SD Sederajat">SD Sederajat</option>
@@ -752,11 +770,11 @@
     <div class="form-group row">
     <label for="inputPassword3" class="col-sm-2 form-control-label">No. Telp Wali</label>
     <div class="col-sm-3">
-      <input name="dt_reg_wali_telp" type="number" class="form-control" id="inputPassword3" required/>
+      <input name="dt_reg_wali_telp" type="number" class="form-control" id="inputPassword3"/>
     </div>
     <label for="inputPassword3" style="text-align: center;" class="col-sm-2 form-control-label">Email wali</label>
     <div class="col-sm-3">
-      <input name="dt_reg_wali_email" type="email" class="form-control" id="inputPassword3" required/>
+      <input name="dt_reg_wali_email" type="email" class="form-control" id="inputPassword3"/>
     </div>
     </div>
 
@@ -764,6 +782,7 @@
     <label for="exampleInputPassword1" class="col-sm-2 form-control-label">Penghasilan Wali</label>
     <div class="col-sm-2">
       <select name="dt_reg_wali_hasil" class="form-control" id="exampleSelect1">
+      <option value=""></option>
       <option value="Kurang dari Rp 2.000.000,-">Kurang dari Rp 2.000.000,-</option>
       <option value="Rp 2.000.000 - Rp 5.000.000,- ">Rp 2.000.000 - Rp 5.000.000,- </option>
       <option value="Lebih dari Rp 5.000.000,-">Lebih dari Rp 5.000.000,-</option>
@@ -774,7 +793,7 @@
     <div class="form-group row">
     <label for="inputPassword3" class="col-sm-2 form-control-label">Pas Foto Siswa (3 x 4)</label>
     <div class="col-sm-3">
-      <input name="dt_reg_photo" type="file" class="form-control" id="inputPassword3" required/>
+      <input name="dt_reg_photo" type="file" class="form-control" id="inputPassword3"/>
     </div>
     </div>
 
