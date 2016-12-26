@@ -700,7 +700,7 @@ class AksesController extends Controller
                                                 // $dompdf->render();
                                                 // $pdf = $dompdf->output();
                                                 // $dompdf->stream('Print');
-                                                ini_set('max_execution_time', 60);
+                                                // ini_set('max_execution_time', 60);
                                                 ini_set('memory_limit', '-1');
                                                 return $pdf->stream();
                                             
