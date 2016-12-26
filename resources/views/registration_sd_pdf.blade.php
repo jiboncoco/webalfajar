@@ -29,7 +29,7 @@
 
 <table>
 	<tr>
-		<th style="width: 10%;border-bottom: 3px solid #333;">logo</th>
+		<th style="width: 10%;border-bottom: 3px solid #333;"><img src="{{ url('logo/logoalfajar.jpg') }}"></th>
 		<th style="font-size: 25px;width: 85%;" class="th-title">PERGURUAN ISLAM AL-FAJAR<br>
 		<span style="font-size: 20px;">Y A Y A S A N   D A R U L   F A J A R</span><br>
 		<span style="font-size: 16px;">Jl. Swatantra V No. 1 - Vila Nusa Indah Raya, Jatiasih, Telp. (021) 82401310, 82400634, 8271139, Fax (021) 8271138</span><br>
@@ -355,9 +355,12 @@
 		<td>:</td>
 		<td>
 		<!-- <img src="{{ url('images/2016121419003458513462b7e7d.jpg') }}"> -->
+		<!-- <img src="{{ url('pasfoto/'.$get->dt_reg_photo) }}"> -->
+		<!-- <img src="{{ public_path('pasfoto')."/".$get->dt_reg_photo }}"> -->
+		<!-- <img src="pasfoto/{{ $get->dt_reg_photo }}"> -->
 		</td>
 	</tr>
-	
+@endforeach	
 </table>
 <table>
 	<tr>
@@ -387,4 +390,3 @@
 		</tr>
 </table>
 
-@endforeach

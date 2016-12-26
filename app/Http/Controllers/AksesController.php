@@ -690,7 +690,7 @@ class AksesController extends Controller
 
                                                 $view = \View::make('registration_sd_pdf')->with('get_data',$get_data);;
                                                 $pdf = \App::make('dompdf.wrapper');
-                                                $pdf->load_html($view)->setPaper('a4')->setOrientation('potrait');
+                                                $pdf->loadHTML($view)->setPaper('a4')->setOrientation('potrait');
                                                 
                                                 // $dompdf = new \DOMPDF;
                                                 // $dompdf->set_option( 'isRemoteEnabled', true );
@@ -700,7 +700,8 @@ class AksesController extends Controller
                                                 // $dompdf->render();
                                                 // $pdf = $dompdf->output();
                                                 // $dompdf->stream('Print');
-                                                ini_set('max_execution_time', 500);
+                                                ini_set('max_execution_time', 60);
+                                                ini_set('memory_limit', '-1');
                                                 return $pdf->stream();
                                             
                                         } else {

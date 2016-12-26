@@ -1751,7 +1751,7 @@ public function admin(Request $request)
             ."."
             .Input::file('dt_reg_photo')->getClientOriginalExtension();
         
-            Input::file('dt_reg_photo')->move(storage_path(),$dt_reg_photo);
+            Input::file('dt_reg_photo')->move(public_path()."/pasfoto",$dt_reg_photo);
             $post->dt_reg_photo = $dt_reg_photo;
         }
         $post->save();
