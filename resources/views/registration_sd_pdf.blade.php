@@ -20,19 +20,21 @@
 		margin: 0;
 	}
 	.th-title{
-		border-bottom: 3px solid #333;
 		font-size: 27px;
 		text-align: center;
 		font-weight: bold;
 	}
 </style>
 
-<table>
+<table style="border-bottom: 3px solid #333;">
 	<tr>
-		<th style="width: 10%;border-bottom: 3px solid #333;"><img src="{{ url('logo/logoalfajar.jpg') }}"></th>
-		<th style="font-size: 25px;width: 85%;" class="th-title">PERGURUAN ISLAM AL-FAJAR<br>
-		<span style="font-size: 20px;">Y A Y A S A N   D A R U L   F A J A R</span><br>
-		<span style="font-size: 16px;">Jl. Swatantra V No. 1 - Vila Nusa Indah Raya, Jatiasih, Telp. (021) 82401310, 82400634, 8271139, Fax (021) 8271138</span><br>
+		<th style="width: 10%;">
+		 <img src="logo/logoalfajar.jpg" style="max-width: 130px">
+		 	
+		 </th>
+		<th style="font-size: 23px;width: 85%;" class="th-title">PERGURUAN ISLAM AL-FAJAR<br>
+		<span style="font-size: 18px;">Y A Y A S A N   D A R U L   F A J A R</span><br>
+		<span style="font-size: 14px;">Jl. Swatantra V No. 1 - Vila Nusa Indah Raya, Jatiasih, Telp. (021) 82401310, 82400634, 8271139, Fax (021) 8271138</span><br>
 		<span style="font-size: 18px;">KOTA BEKASI - JAWA BARAT</span><br>
 		</th>
 	</tr>
@@ -350,43 +352,15 @@
 		<td>:</td>
 		<td>{{ $get->dt_reg_wali_hasil }}</td>
 	</tr>
-	<tr>
-		<td>Pas Photo</td>
-		<td>:</td>
-		<td>
-		<!-- <img src="{{ url('images/2016121419003458513462b7e7d.jpg') }}"> -->
-		<!-- <img src="{{ url('pasfoto/'.$get->dt_reg_photo) }}"> -->
-		<!-- <img src="{{ public_path('pasfoto')."/".$get->dt_reg_photo }}"> -->
-		<!-- <img src="pasfoto/{{ $get->dt_reg_photo }}"> -->
-		</td>
-	</tr>
 @endforeach	
 </table>
 <table>
 	<tr>
-		<th style="width: 30%;padding-bottom: 120px;">photo</th>
-		<th style="padding-bottom: 120px;"><span style="margin-left: 270px;width: 65%;">Bekasi, ....................................</span></th>
-	</tr>
-		<tr>
-		<th style="padding-bottom: 100px;">
-		<span style="width: 50%;">Petugas Pendaftaran,</span>
+		<th style="width: 20%;padding-bottom: 110px;text-align: left;">
+		<img style="max-width: 150px" src="{{ public_path('pasfoto')."/".$get->dt_reg_photo }}">
 		</th>
-		<th style="padding-bottom: 100px;">
-		<span style="margin-left:320px;width: 50%;">Orangtua/Wali,</span>
+		<th style="padding-bottom: 120px;width: 75%;">
+		<img src="logo/ttd.jpg" style="width: 590px;height: 223px;">
 		</th>
-		</tr>
-		<tr>
-		<th style="padding-bottom: 30px;">
-		<span style="width: 50%;">......................................</span>
-		</th>
-		<th style="padding-bottom: 30px;">
-		<span style="margin-left:320px;width: 50%;">......................................</span>
-		</th>
-		</tr>
+	</tr>		
 </table>
-<table>
-	<tr>
-			<th style="width: 100%;font-size: 14px;font-style: italic;"><span style="width: 100%;margin: 110px;">Catatan : Formulir ini harus diisi lengkap untuk keperluan Data Dapodik</span></th>
-		</tr>
-</table>
-

@@ -678,31 +678,12 @@ class AksesController extends Controller
                                                 ['dt_reg_code', 'like', $dt_codereg_code],
                                                 ['dt_reg_unit', 'like', $dt_codereg_type]
                                             ])->get();
-
-                                                // $pdf = new \DOMPDF();
-                                                // $pdf->set_paper('A3','potrait'); //Changed A4 to A3
-                                                // $view = \View::make('registration_sd_pdf')->with('get_data',$get_data);
-                                                // $pdf->load_html($view);
-                                                // $pdf->render();
-                                                // $options = new Options();
-                                                // $options->set('isRemoteEnabled', TRUE);
-                                                // $pdf = new \Dompdf($options);
-
                                                 $view = \View::make('registration_sd_pdf')->with('get_data',$get_data);;
                                                 $pdf = \App::make('dompdf.wrapper');
                                                 $pdf->loadHTML($view)->setPaper('a4')->setOrientation('potrait');
-                                                
-                                                // $dompdf = new \DOMPDF;
-                                                // $dompdf->set_option( 'isRemoteEnabled', true );
-                                                // $html = \View::make('registration_sd_pdf')->with('get_data',$get_data);
-                                                // $dompdf->load_html($html);
-                                                // $dompdf->setPaper('A4', 'portrait');
-                                                // $dompdf->render();
-                                                // $pdf = $dompdf->output();
-                                                // $dompdf->stream('Print');
-                                                // ini_set('max_execution_time', 60);
-                                                ini_set('memory_limit', '-1');
+                                                // ini_set('memory_limit', '-1');
                                                 return $pdf->stream();
+                                                // return $view;
                                             
                                         } else {
                                             $_SESSION['error_msg'] = "Your Code Disable ! Please Payment or Call Admin Alfajar";
