@@ -1083,6 +1083,11 @@
           </div>
             <div class="content2-fb">
               <p class="title-fb">FACEBOOK PAGES</p>
+              <div class="fb-page"
+              data-href="https://www.facebook.com/imdb" 
+              data-width="340"
+              data-hide-cover="false"
+              data-show-facepile="true"></div>
             </div>
               <div class="content2-maps">
               <p class="title-maps">MAPS</p>

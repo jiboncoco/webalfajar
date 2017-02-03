@@ -793,7 +793,7 @@
     <div class="form-group row">
     <label for="inputPassword3" class="col-sm-2 form-control-label">Pas Foto Siswa (3 x 4)</label>
     <div class="col-sm-3">
-      <input name="dt_reg_photo" type="file" class="form-control" id="inputPassword3"/>
+      <input name="dt_reg_photo" type="file" class="form-control" id="inputPassword3" required/>
     </div>
     </div>
 

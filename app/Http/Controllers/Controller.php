@@ -5424,26 +5424,12 @@ class Controller extends BaseController
 
     public function registration_sd_pdf($get_data)
     {
-        
+        $view = \View::make('registration_sd_pdf')->with('get_data',$get_data);;
+        $pdf = \App::make('dompdf.wrapper');
+        $pdf->loadHTML($view)->setPaper('a4')->setOrientation('potrait');
 
-                                                $view = \View::make('registration_sd_pdf')->with('get_data',$get_data);;
-                                                $pdf = \App::make('dompdf.wrapper');
-                                                $pdf->loadHTML($view)->setPaper('a4')->setOrientation('potrait');
-                                                
-                                                // $dompdf = new \DOMPDF;
-                                                // $dompdf->set_option( 'isRemoteEnabled', true );
-                                                // $html = \View::make('registration_sd_pdf')->with('get_data',$get_data);
-                                                // $dompdf->load_html($html);
-                                                // $dompdf->setPaper('A4', 'portrait');
-                                                // $dompdf->render();
-                                                // $pdf = $dompdf->output();
-                                                // $dompdf->stream('Print');
-                                                ini_set('max_execution_time', 500);
-                                                return $pdf->stream();
-        // $view = \View::make('registration_sd_pdf');
-        // $pdf = \App::make('dompdf.wrapper');
-        // $pdf->loadHTML($view)->setPaper('a4')->setOrientation('potrait');
-        // return $pdf->stream();
+        ini_set('max_execution_time', 500);
+        return $pdf->stream();
     }
 
     public function registration_smp_pdf()

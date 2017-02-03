@@ -24,7 +24,7 @@ public function admin(Request $request)
             ->with('dt_blog_admins',$dt_blog_admin)         
             ->with('uname',$uname)              
             ->with('absen',$cek)            
-            ->with('maps',$maps);
+            ->with('maps',$maps); 
     }
     else{
         return redirect('login')->with('request',$request);
@@ -438,7 +438,6 @@ public function admin(Request $request)
         $post = new \App\akses;
         $post->akses_code = Input::get("akses_code_".Input::get("type_code"));
         $post->akses_type = Input::get('akses_type');
-        // $post->akses_code = Input::get('akses_code');
         $post->akses_email = Input::get("akses_email_".Input::get("type_email"));
         $post->akses_status_data = Input::get('akses_status_data');
         $post->akses_username = Input::get('akses_username');
@@ -522,7 +521,6 @@ public function admin(Request $request)
         $post = \App\akses::find(Input::get('id'));
         $post->akses_code = Input::get("akses_code_".Input::get("type_code"));
         $post->akses_type = Input::get('akses_type');
-        // $post->akses_code = Input::get('akses_code');
         $post->akses_email = Input::get("akses_email_".Input::get("type_email"));
         $post->akses_status_data = Input::get('akses_status_data');
         $post->akses_username = Input::get('akses_username');
@@ -1131,19 +1129,6 @@ public function admin(Request $request)
         }
     }
 
-    // public function detail_class_sch($id)
-    // {
-    //    session_start();
-    //     if(isset($_SESSION['logged_in'])){
-
-    //         $c_sch = \App\sch_class::find($id);
-    //         return \View::make('class_sch')->with('c_sch',$c_sch);
-    //     }
-    //     else{
-    //         return redirect(url('login'));
-    //     }
-    // }
-
     public function save_class_sch()
     {
         $post = new \App\sch_class;
@@ -1210,7 +1195,6 @@ public function admin(Request $request)
         if(isset($_SESSION['logged_in'])){
             $uname = \App\akses::where('akses_email', session('akses_email'))->get();
             $data_student = \App\dt_student::all();
-            // $data_kelas = \App\dt_kelas::all();
             $data_kelas = \DB::table('dt_kelas')
                      ->select(\DB::raw('count(*) as class, dt_kelas_type'))
                      ->where('dt_kelas_type', '<>', 1)

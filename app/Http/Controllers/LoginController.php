@@ -102,7 +102,7 @@ class LoginController extends Controller
 		$akses_type = $_POST['akses_type'];
 		$akses_password = $_POST['akses_password'];
 
-				$akses_codee = \DB::table('dt_teacher')->where('dt_teacher_nip', 'like', $akses_code)->count(); //done
+				$akses_codee = \DB::table('dt_teacher')->where('dt_teacher_nip', 'like', $akses_code)->count();
 				
 				if (!empty($akses_codee)) {
 
@@ -202,7 +202,7 @@ class LoginController extends Controller
 		$akses_password = $_POST['akses_password'];
 		$dt_student_grade	= $_POST['dt_student_grade'];
 
-				$akses_codee = \DB::table('dt_parent')->where('dt_parent_nisn', 'like', $akses_code)->count(); //done
+				$akses_codee = \DB::table('dt_parent')->where('dt_parent_nisn', 'like', $akses_code)->count();
 				
 				if (!empty($akses_codee)) {
 
@@ -321,7 +321,7 @@ class LoginController extends Controller
 		$akses_password = $_POST['akses_password'];
 		$dt_student_grade	= $_POST['dt_student_grade'];
 
-				$akses_codee = \DB::table('dt_student')->where('dt_student_nisn', 'like', $akses_code)->count(); //done
+				$akses_codee = \DB::table('dt_student')->where('dt_student_nisn', 'like', $akses_code)->count();
 				
 				if (!empty($akses_codee)) {
 

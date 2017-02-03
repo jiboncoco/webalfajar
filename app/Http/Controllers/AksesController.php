@@ -514,7 +514,6 @@ class AksesController extends Controller
         session_start();
         if(isset($_SESSION['logged_in'])){
             $data_student = \App\dt_student::all();
-            // $data_kelas = \App\dt_kelas::all();
             $data_kelas = \DB::table('dt_kelas')
                      ->select(\DB::raw('count(*) as class, dt_kelas_type'))
                      ->where('dt_kelas_type', '<>', 1)
@@ -607,25 +606,11 @@ class AksesController extends Controller
                     });
         }
         return redirect(url('manage_message/email_blast'))->with('status', 'Email Success Sent !');
-        // echo Input::get('mail_type');
     }
-
-    // public function absen_p()
-    // {
-    //     $check = \App\dt_absen::where()
-    // }
 
     public function save_absen_p()
     {
         session_start();
-        // if(session('akses_type') == "student"){
-        //     $s = \App\dt_student::where('dt_student_email', session('akses_email'))->first();
-        //     $name = $s->dt_student_name;
-        // } else if(session('akses_type') == "teacher") {
-            // $s = \App\dt_teacher::where('dt_teacher_email', session('akses_email'))->first();
-            // $name = $s->dt_teacher_name;
-        // }
-        
         date_default_timezone_set("Asia/Jakarta");
         $post = new \App\dt_absen;
         $s = \App\dt_teacher::where('dt_teacher_email', session('akses_email'))->first();
@@ -681,9 +666,7 @@ class AksesController extends Controller
                                                 $view = \View::make('registration_sd_pdf')->with('get_data',$get_data);;
                                                 $pdf = \App::make('dompdf.wrapper');
                                                 $pdf->loadHTML($view)->setPaper('a4')->setOrientation('potrait');
-                                                // ini_set('memory_limit', '-1');
                                                 return $pdf->stream();
-                                                // return $view;
                                             
                                         } else {
                                             $_SESSION['error_msg'] = "Your Code Disable ! Please Payment or Call Admin Alfajar";

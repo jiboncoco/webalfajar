@@ -13,11 +13,9 @@
     <link id="callCss"rel="stylesheet" href="css/style.css" type="text/css" media="screen" charset="utf-8" />
 
 </head>
+
 <body>
 
- 
-
-<!-- modal yayasan -->
 <div class="modal fade" id="myModalyay1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog-front">
         <div class="modal-content">
@@ -89,7 +87,6 @@
                    <div class="modal-galeri">
                   @foreach($yayasan_galery as $ygalery)
                   
-                    <!-- <img class="bm-galeri" src="{{url('img/img_galery/galery.jpg')}}"> -->
                     {!! $ygalery->feature_text !!}
                     
                     <label class="bm-desc">
@@ -107,9 +104,6 @@
     </div>
 </div>
 </div>
-<!-- modal yayasan end -->
-
-<!-- modal tk -->
 
 <div class="modal fade" id="myModaltk1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog-front">
@@ -182,7 +176,6 @@
                    <div class="modal-galeri">
                   @foreach($tk_galery as $tkgalery)
                   
-                    <!-- <img class="bm-galeri" src="{{url('img/img_galery/galery.jpg')}}"> -->
                     {!! $tkgalery->feature_text !!}
                     
                     <label class="bm-desc">
@@ -200,10 +193,6 @@
     </div>
 </div>
 </div>
-
-<!-- modal tk end -->
-
-<!-- modal sd -->
 
 <div class="modal fade" id="myModalsd1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog-front">
@@ -276,7 +265,6 @@
                    <div class="modal-galeri">
                   @foreach($sd_galery as $sdgalery)
                   
-                    <!-- <img class="bm-galeri" src="{{url('img/img_galery/galery.jpg')}}"> -->
                     {!! $sdgalery->feature_text !!}
                     
                     <label class="bm-desc">
@@ -294,11 +282,6 @@
     </div>
 </div>
 </div>
-
-
-<!-- modal sd end -->
-
-<!-- modal smp -->
 
 <div class="modal fade" id="myModalsmp1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog-front">
@@ -371,7 +354,6 @@
                    <div class="modal-galeri">
                   @foreach($smp_galery as $smpgalery)
                   
-                    <!-- <img class="bm-galeri" src="{{url('img/img_galery/galery.jpg')}}"> -->
                     {!! $smpgalery->feature_text !!}
                     
                     <label class="bm-desc">
@@ -389,10 +371,6 @@
     </div>
 </div>
 </div>
-
-<!-- modal smp end -->
-
-<!-- modal sma -->
 
 <div class="modal fade" id="myModalsma1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog-front">
@@ -465,7 +443,6 @@
                    <div class="modal-galeri">
                   @foreach($sma_galery as $smagalery)
                   
-                    <!-- <img class="bm-galeri" src="{{url('img/img_galery/galery.jpg')}}"> -->
                     {!! $smagalery->feature_text !!}
                     
                     <label class="bm-desc">
@@ -483,10 +460,6 @@
     </div>
 </div>
 </div>
-
-<!-- modal sma end -->
-
-<!-- modal dkm -->
 
 <div class="modal fade" id="myModaldkm1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog-front">
@@ -519,7 +492,6 @@
                    <div class="modal-galeri">
                   @foreach($dkm_galery as $dkmgalery)
                   
-                    <!-- <img class="bm-galeri" src="{{url('img/img_galery/galery.jpg')}}"> -->
                     {!! $dkmgalery->feature_text !!}
                     
                     <label class="bm-desc">
@@ -538,8 +510,6 @@
 </div>
 </div>
 
-
-<!-- modal dkm end -->
 
 <div id="carouselSection" class="cntr">
 </div>
@@ -653,7 +623,6 @@
 </nav>
     </div>
 
-<!--Header Ends================================================ -->
         <div id="myCarousel" class="carousel slide">
 
             <div class="carousel-inner">
@@ -663,7 +632,6 @@
                   <p style="font-size:35px;font-weight:bold;color:white">WELCOME TO WEBSITE AL-FAJAR BEKASI</p>
                   <p style="font-style:italic;font-size:20px;font-weight:bold">" Optimalisasi potensi (fitrah, bakat) peserta didik menuju insan beriman, cendekia, trampil dan tangguh. "</p>
                 </div>
-                <!-- <a href="#" class="btn btn-large btn-primary" id="btn-rm-s">READ MORE</a> -->
                 </div>
 
                 @foreach($dt_blog_all as $all_blog)
@@ -675,10 +643,8 @@
 
                           if (strlen($string) > 300) {
 
-                              // truncate string
                               $stringCut = substr($string, 0, 300);
 
-                              // make sure it ends in a word so assassinate doesn't become ass...
                               $string = substr($stringCut, 0, strrpos($stringCut, ' ')).'...';
                           }
                           echo $string;
@@ -693,12 +659,8 @@
             <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
         </div>
 
-<!-- Sectionone block ends======================================== -->
-
-<!-- informasi -->
 <div class="fullcontent">
 
-<!-- content1 -->
 
   <div class="content1">
     <div class="content-s">
@@ -719,26 +681,22 @@
 
             if (strlen($string) > 30) {
 
-                // truncate string
                 $stringCut = substr($string, 0, 30);
 
-                // make sure it ends in a word so assassinate doesn't become ass...
                 $string = substr($stringCut, 0, strrpos($stringCut, ' ')).'...';
             }
             echo $string;
           ?>
       </div>
       <div class="cb-desc">
-      <!-- {!! substr(preg_replace("/<img\s[^>]*?src\s*=\s*['\"]([^'\"]*?)['\"][^>]*?>/",'',$dt_blog_all_artikel2->dt_blog_text),0,400) !!}...... -->
+
       <?php
             $string = strip_tags($dt_blog_all_artikel2->dt_blog_text);
 
             if (strlen($string) > 40) {
 
-                // truncate string
                 $stringCut = substr($string, 0, 40);
 
-                // make sure it ends in a word so assassinate doesn't become ass...
                 $string = substr($stringCut, 0, strrpos($stringCut, ' ')).'...';
             }
             echo $string;
@@ -761,8 +719,6 @@
           </ul>
       </div>
   </div>
-
-<!-- content2 -->
 
   <div class="content2">
     <div class="content2-s">
@@ -789,10 +745,8 @@
 
             if (strlen($string) > 30) {
 
-                // truncate string
                 $stringCut = substr($string, 0, 30);
 
-                // make sure it ends in a word so assassinate doesn't become ass...
                 $string = substr($stringCut, 0, strrpos($stringCut, ' ')).'...';
             }
             echo $string;
@@ -821,10 +775,8 @@
 
             if (strlen($string) > 30) {
 
-                // truncate string
                 $stringCut = substr($string, 0, 30);
 
-                // make sure it ends in a word so assassinate doesn't become ass...
                 $string = substr($stringCut, 0, strrpos($stringCut, ' ')).'...';
             }
             echo $string;
@@ -851,7 +803,6 @@
 </div>
 </div>
 
-<!-- Letter -->
 <div id="letterServices">
 <div class="title-news">
 </div>
@@ -865,7 +816,7 @@
 </div>
 </div>
 </div>
-<!-- footer -->
+
      <div class="footerSection container">
 
 </div>
@@ -881,9 +832,6 @@
         </div>
     </div>
 </div>
-
-<!-- Wrapper end -->
-
 
 <a href="#" class="go-top" ><i class="glyphicon glyphicon-arrow-up"></i></a>
 
@@ -911,7 +859,6 @@ $.ajaxSetup({
    headers: {'X-CSRF-Token': $('meta[name=csrf_token]').attr('content')}
 });
         $("input[name='search_article']").keyup(function(e){
-            // alert('asdasd');
             setTimeout(function(){
                 $('.content1-box-all').html('<div class="content1-box-all">Loading...</div>');
                 $.ajax({

@@ -61,7 +61,8 @@ class ImageController extends Controller
     if ($validator->fails()) {
       $url = '/path/to/uploaded/file.ext';
       $message = 'File Tidak Valid';
-      return "<script type='text/javascript'>window.parent.CKEDITOR.tools.callFunction($funcNum, '', '$message');</script>";
+      return "
+<script type='text/javascript'>window.parent.CKEDITOR.tools.callFunction($funcNum, '', '$message');</script>";
     }
     else {
       if ($request->file('upload')->isValid()) {
@@ -70,11 +71,13 @@ class ImageController extends Controller
         $fileName = uniqid().'.'.$extension;
         $request->file('upload')->move(base_path() . "/public/".$destinationPath, $fileName);
         $url = "/upload//".$fileName;
-        return "<script type='text/javascript'>window.parent.CKEDITOR.tools.callFunction($funcNum, '$url', '');</script>";
+        return "
+<script type='text/javascript'>window.parent.CKEDITOR.tools.callFunction($funcNum, '$url', '');</script>";
       }
       else {
         $message = 'Upload Gagal';
-        return "<script type='text/javascript'>window.parent.CKEDITOR.tools.callFunction($funcNum, '', '$message');</script>";
+        return "
+<script type='text/javascript'>window.parent.CKEDITOR.tools.callFunction($funcNum, '', '$message');</script>";
       }
     }
   }

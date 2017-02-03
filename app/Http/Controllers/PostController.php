@@ -145,37 +145,36 @@ class PostController extends Controller
                                               ['dt_blog_title', 'LIKE', '%'.$search_news.'%'],
                                               ['dt_blog_type', '=', 'news']
                                               ])->orderBy('id', 'desc')->get();
-        // return $data;
+        
         foreach ($data as $dt_blog_all_news) {
             $string = strip_tags($dt_blog_all_news->dt_blog_text);
 
             if (strlen($string) > 300) {
 
-                // truncate string
                 $stringCut = substr($string, 0, 300);
 
-                // make sure it ends in a word so assassinate doesn't become ass...
                 $string = substr($stringCut, 0, strrpos($stringCut, ' ')).'...';
             }
             echo 
                 "<a href=".url('view/'.$dt_blog_all_news->id).">
-                <div class=\"content1-box\">
-                  <img class=\"cb-img\" src=".url('images/'.$dt_blog_all_news->cover_photo)." />
-                  <div class=\"cb-title\">
-                    ".$dt_blog_all_news->dt_blog_title."
-                  </div>
-                  <div class=\"cb-desc\">
-                  ".$string."
-                
-                  </div>
-                  <div class=\"cb-inf\">
-                    <i class=\"fa fa-user\"></i> ".$dt_blog_all_news->dt_blog_create_by ." - ".($dt_blog_all_news->dt_blog_by)."
-                    <p class=\"cb-date\">
-                      ".$dt_blog_all_news->created_at."
-                    </p>
-                  </div>
-                </div>
-                </a>";
+                    <div class=\"content1-box\">
+                      <img class=\"cb-img\" src=".url('images/'.$dt_blog_all_news->cover_photo)." />
+                      <div class=\"cb-title\">
+                                      ".$dt_blog_all_news->dt_blog_title."
+                                    </div>
+                      <div class=\"cb-desc\">
+                                    ".$string."
+                                  
+                                    </div>
+                      <div class=\"cb-inf\">
+                        <i class=\"fa fa-user\"></i> ".$dt_blog_all_news->dt_blog_create_by ." - ".($dt_blog_all_news->dt_blog_by)."
+                                      
+                        <p class=\"cb-date\">
+                                        ".$dt_blog_all_news->created_at."
+                                      </p>
+                      </div>
+                    </div>
+                  </a>";
 
         }
     }
@@ -186,37 +185,36 @@ class PostController extends Controller
                                               ['dt_blog_title', 'LIKE', '%'.$search_agenda.'%'],
                                               ['dt_blog_type', '=', 'agenda']
                                               ])->orderBy('id', 'desc')->get();
-        // return $data;
+        
         foreach ($data as $dt_blog_all_agenda) {
             $string = strip_tags($dt_blog_all_agenda->dt_blog_text);
 
             if (strlen($string) > 300) {
 
-                // truncate string
                 $stringCut = substr($string, 0, 300);
 
-                // make sure it ends in a word so assassinate doesn't become ass...
                 $string = substr($stringCut, 0, strrpos($stringCut, ' ')).'...';
             }
             echo 
                 "<a href=".url('view/'.$dt_blog_all_agenda->id).">
-                <div class=\"content1-box\">
-                  <img class=\"cb-img\" src=".url('images/'.$dt_blog_all_agenda->cover_photo)." />
-                  <div class=\"cb-title\">
-                    ".$dt_blog_all_agenda->dt_blog_title."
-                  </div>
-                  <div class=\"cb-desc\">
-                  ".$string."
-                
-                  </div>
-                  <div class=\"cb-inf\">
-                    <i class=\"fa fa-user\"></i> ".$dt_blog_all_agenda->dt_blog_create_by ." - ".($dt_blog_all_agenda->dt_blog_by)."
-                    <p class=\"cb-date\">
-                      ".$dt_blog_all_agenda->created_at."
-                    </p>
-                  </div>
-                </div>
-                </a>";
+                    <div class=\"content1-box\">
+                      <img class=\"cb-img\" src=".url('images/'.$dt_blog_all_agenda->cover_photo)." />
+                      <div class=\"cb-title\">
+                                      ".$dt_blog_all_agenda->dt_blog_title."
+                                    </div>
+                      <div class=\"cb-desc\">
+                                    ".$string."
+                                  
+                                    </div>
+                      <div class=\"cb-inf\">
+                        <i class=\"fa fa-user\"></i> ".$dt_blog_all_agenda->dt_blog_create_by ." - ".($dt_blog_all_agenda->dt_blog_by)."
+                                      
+                        <p class=\"cb-date\">
+                                        ".$dt_blog_all_agenda->created_at."
+                                      </p>
+                      </div>
+                    </div>
+                  </a>";
 
         }
     }
@@ -227,37 +225,36 @@ class PostController extends Controller
                                               ['dt_blog_title', 'LIKE', '%'.$search_article.'%'],
                                               ['dt_blog_type', '=', 'article']
                                               ])->orderBy('id', 'desc')->get();
-        // return $data;
+        
         foreach ($data as $dt_blog_all_article) {
             $string = strip_tags($dt_blog_all_article->dt_blog_text);
 
             if (strlen($string) > 300) {
 
-                // truncate string
                 $stringCut = substr($string, 0, 300);
 
-                // make sure it ends in a word so assassinate doesn't become ass...
                 $string = substr($stringCut, 0, strrpos($stringCut, ' ')).'...';
             }
             echo 
                 "<a href=".url('view/'.$dt_blog_all_article->id).">
-                <div class=\"content1-box\">
-                  <img class=\"cb-img\" src=".url('images/'.$dt_blog_all_article->cover_photo)." />
-                  <div class=\"cb-title\">
-                    ".$dt_blog_all_article->dt_blog_title."
-                  </div>
-                  <div class=\"cb-desc\">
-                  ".$string."
-                
-                  </div>
-                  <div class=\"cb-inf\">
-                    <i class=\"fa fa-user\"></i> ".$dt_blog_all_article->dt_blog_create_by ." - ".($dt_blog_all_article->dt_blog_by)."
-                    <p class=\"cb-date\">
-                      ".$dt_blog_all_article->created_at."
-                    </p>
-                  </div>
-                </div>
-                </a>";
+                    <div class=\"content1-box\">
+                      <img class=\"cb-img\" src=".url('images/'.$dt_blog_all_article->cover_photo)." />
+                      <div class=\"cb-title\">
+                                      ".$dt_blog_all_article->dt_blog_title."
+                                    </div>
+                      <div class=\"cb-desc\">
+                                    ".$string."
+                                  
+                                    </div>
+                      <div class=\"cb-inf\">
+                        <i class=\"fa fa-user\"></i> ".$dt_blog_all_article->dt_blog_create_by ." - ".($dt_blog_all_article->dt_blog_by)."
+                                      
+                        <p class=\"cb-date\">
+                                        ".$dt_blog_all_article->created_at."
+                                      </p>
+                      </div>
+                    </div>
+                  </a>";
 
         }
     }
@@ -268,37 +265,36 @@ class PostController extends Controller
                                               ['dt_blog_title', 'LIKE', '%'.$search_announcement.'%'],
                                               ['dt_blog_type', '=', 'announcement']
                                               ])->orderBy('id', 'desc')->get();
-        // return $data;
+        
         foreach ($data as $dt_blog_all_announcement) {
             $string = strip_tags($dt_blog_all_announcement->dt_blog_text);
 
             if (strlen($string) > 300) {
 
-                // truncate string
                 $stringCut = substr($string, 0, 300);
 
-                // make sure it ends in a word so assassinate doesn't become ass...
                 $string = substr($stringCut, 0, strrpos($stringCut, ' ')).'...';
             }
             echo 
                 "<a href=".url('view/'.$dt_blog_all_announcement->id).">
-                <div class=\"content1-box\">
-                  <img class=\"cb-img\" src=".url('images/'.$dt_blog_all_announcement->cover_photo)." />
-                  <div class=\"cb-title\">
-                    ".$dt_blog_all_announcement->dt_blog_title."
-                  </div>
-                  <div class=\"cb-desc\">
-                  ".$string."
-                
-                  </div>
-                  <div class=\"cb-inf\">
-                    <i class=\"fa fa-user\"></i> ".$dt_blog_all_announcement->dt_blog_create_by ." - ".($dt_blog_all_announcement->dt_blog_by)."
-                    <p class=\"cb-date\">
-                      ".$dt_blog_all_announcement->created_at."
-                    </p>
-                  </div>
-                </div>
-                </a>";
+                    <div class=\"content1-box\">
+                      <img class=\"cb-img\" src=".url('images/'.$dt_blog_all_announcement->cover_photo)." />
+                      <div class=\"cb-title\">
+                                      ".$dt_blog_all_announcement->dt_blog_title."
+                                    </div>
+                      <div class=\"cb-desc\">
+                                    ".$string."
+                                  
+                                    </div>
+                      <div class=\"cb-inf\">
+                        <i class=\"fa fa-user\"></i> ".$dt_blog_all_announcement->dt_blog_create_by ." - ".($dt_blog_all_announcement->dt_blog_by)."
+                                      
+                        <p class=\"cb-date\">
+                                        ".$dt_blog_all_announcement->created_at."
+                                      </p>
+                      </div>
+                    </div>
+                  </a>";
 
         }
     }
@@ -309,37 +305,36 @@ class PostController extends Controller
                                                ['dt_blog_title', 'LIKE', '%'.$search_tk.'%'],
                                                ['dt_blog_for', '=', 'TK']
                                                ])->orderBy('id', 'desc')->get();
-        // return $data;
+        
         foreach ($data as $dt_blog_tk) {
             $string = strip_tags($dt_blog_tk->dt_blog_text);
 
             if (strlen($string) > 300) {
 
-                // truncate string
                 $stringCut = substr($string, 0, 300);
 
-                // make sure it ends in a word so assassinate doesn't become ass...
                 $string = substr($stringCut, 0, strrpos($stringCut, ' ')).'...';
             }
             echo 
                 "<a href=".url('view/'.$dt_blog_tk->id).">
-                <div class=\"content1-box\">
-                  <img class=\"cb-img\" src=".url('images/'.$dt_blog_tk->cover_photo)." />
-                  <div class=\"cb-title\">
-                    ".$dt_blog_tk->dt_blog_title."
-                  </div>
-                  <div class=\"cb-desc\">
-                  ".$string."
-                
-                  </div>
-                  <div class=\"cb-inf\">
-                    <i class=\"fa fa-user\"></i> ".$dt_blog_tk->dt_blog_create_by ." - ".($dt_blog_tk->dt_blog_by)."
-                    <p class=\"cb-date\">
-                      ".$dt_blog_tk->created_at."
-                    </p>
-                  </div>
-                </div>
-                </a>";
+                    <div class=\"content1-box\">
+                      <img class=\"cb-img\" src=".url('images/'.$dt_blog_tk->cover_photo)." />
+                      <div class=\"cb-title\">
+                                      ".$dt_blog_tk->dt_blog_title."
+                                    </div>
+                      <div class=\"cb-desc\">
+                                    ".$string."
+                                  
+                                    </div>
+                      <div class=\"cb-inf\">
+                        <i class=\"fa fa-user\"></i> ".$dt_blog_tk->dt_blog_create_by ." - ".($dt_blog_tk->dt_blog_by)."
+                                      
+                        <p class=\"cb-date\">
+                                        ".$dt_blog_tk->created_at."
+                                      </p>
+                      </div>
+                    </div>
+                  </a>";
 
         }
     }
@@ -350,37 +345,36 @@ class PostController extends Controller
                                                ['dt_blog_title', 'LIKE', '%'.$search_sd.'%'],
                                                ['dt_blog_for', '=', 'SD']
                                                ])->orderBy('id', 'desc')->get();
-        // return $data;
+        
         foreach ($data as $dt_blog_sd) {
             $string = strip_tags($dt_blog_sd->dt_blog_text);
 
             if (strlen($string) > 300) {
 
-                // truncate string
                 $stringCut = substr($string, 0, 300);
 
-                // make sure it ends in a word so assassinate doesn't become ass...
                 $string = substr($stringCut, 0, strrpos($stringCut, ' ')).'...';
             }
             echo 
                 "<a href=".url('view/'.$dt_blog_sd->id).">
-                <div class=\"content1-box\">
-                  <img class=\"cb-img\" src=".url('images/'.$dt_blog_sd->cover_photo)." />
-                  <div class=\"cb-title\">
-                    ".$dt_blog_sd->dt_blog_title."
-                  </div>
-                  <div class=\"cb-desc\">
-                  ".$string."
-                
-                  </div>
-                  <div class=\"cb-inf\">
-                    <i class=\"fa fa-user\"></i> ".$dt_blog_sd->dt_blog_create_by ." - ".($dt_blog_sd->dt_blog_by)."
-                    <p class=\"cb-date\">
-                      ".$dt_blog_sd->created_at."
-                    </p>
-                  </div>
-                </div>
-                </a>";
+                    <div class=\"content1-box\">
+                      <img class=\"cb-img\" src=".url('images/'.$dt_blog_sd->cover_photo)." />
+                      <div class=\"cb-title\">
+                                      ".$dt_blog_sd->dt_blog_title."
+                                    </div>
+                      <div class=\"cb-desc\">
+                                    ".$string."
+                                  
+                                    </div>
+                      <div class=\"cb-inf\">
+                        <i class=\"fa fa-user\"></i> ".$dt_blog_sd->dt_blog_create_by ." - ".($dt_blog_sd->dt_blog_by)."
+                                      
+                        <p class=\"cb-date\">
+                                        ".$dt_blog_sd->created_at."
+                                      </p>
+                      </div>
+                    </div>
+                  </a>";
 
         }
     }
@@ -391,37 +385,36 @@ class PostController extends Controller
                                                ['dt_blog_title', 'LIKE', '%'.$search_smp.'%'],
                                                ['dt_blog_for', '=', 'SMP']
                                                ])->orderBy('id', 'desc')->get();
-        // return $data;
+        
         foreach ($data as $dt_blog_smp) {
             $string = strip_tags($dt_blog_smp->dt_blog_text);
 
             if (strlen($string) > 300) {
 
-                // truncate string
                 $stringCut = substr($string, 0, 300);
 
-                // make sure it ends in a word so assassinate doesn't become ass...
                 $string = substr($stringCut, 0, strrpos($stringCut, ' ')).'...';
             }
             echo 
                 "<a href=".url('view/'.$dt_blog_smp->id).">
-                <div class=\"content1-box\">
-                  <img class=\"cb-img\" src=".url('images/'.$dt_blog_smp->cover_photo)." />
-                  <div class=\"cb-title\">
-                    ".$dt_blog_smp->dt_blog_title."
-                  </div>
-                  <div class=\"cb-desc\">
-                  ".$string."
-                
-                  </div>
-                  <div class=\"cb-inf\">
-                    <i class=\"fa fa-user\"></i> ".$dt_blog_smp->dt_blog_create_by ." - ".($dt_blog_smp->dt_blog_by)."
-                    <p class=\"cb-date\">
-                      ".$dt_blog_smp->created_at."
-                    </p>
-                  </div>
-                </div>
-                </a>";
+                    <div class=\"content1-box\">
+                      <img class=\"cb-img\" src=".url('images/'.$dt_blog_smp->cover_photo)." />
+                      <div class=\"cb-title\">
+                                      ".$dt_blog_smp->dt_blog_title."
+                                    </div>
+                      <div class=\"cb-desc\">
+                                    ".$string."
+                                  
+                                    </div>
+                      <div class=\"cb-inf\">
+                        <i class=\"fa fa-user\"></i> ".$dt_blog_smp->dt_blog_create_by ." - ".($dt_blog_smp->dt_blog_by)."
+                                      
+                        <p class=\"cb-date\">
+                                        ".$dt_blog_smp->created_at."
+                                      </p>
+                      </div>
+                    </div>
+                  </a>";
 
         }
     }
@@ -432,37 +425,36 @@ class PostController extends Controller
                                                ['dt_blog_title', 'LIKE', '%'.$search_sma.'%'],
                                                ['dt_blog_for', '=', 'SMA']
                                                ])->orderBy('id', 'desc')->get();
-        // return $data;
+        
         foreach ($data as $dt_blog_sma) {
             $string = strip_tags($dt_blog_sma->dt_blog_text);
 
             if (strlen($string) > 300) {
 
-                // truncate string
                 $stringCut = substr($string, 0, 300);
 
-                // make sure it ends in a word so assassinate doesn't become ass...
                 $string = substr($stringCut, 0, strrpos($stringCut, ' ')).'...';
             }
             echo 
                 "<a href=".url('view/'.$dt_blog_sma->id).">
-                <div class=\"content1-box\">
-                  <img class=\"cb-img\" src=".url('images/'.$dt_blog_sma->cover_photo)." />
-                  <div class=\"cb-title\">
-                    ".$dt_blog_sma->dt_blog_title."
-                  </div>
-                  <div class=\"cb-desc\">
-                  ".$string."
-                
-                  </div>
-                  <div class=\"cb-inf\">
-                    <i class=\"fa fa-user\"></i> ".$dt_blog_sma->dt_blog_create_by ." - ".($dt_blog_sma->dt_blog_by)."
-                    <p class=\"cb-date\">
-                      ".$dt_blog_sma->created_at."
-                    </p>
-                  </div>
-                </div>
-                </a>";
+                    <div class=\"content1-box\">
+                      <img class=\"cb-img\" src=".url('images/'.$dt_blog_sma->cover_photo)." />
+                      <div class=\"cb-title\">
+                                      ".$dt_blog_sma->dt_blog_title."
+                                    </div>
+                      <div class=\"cb-desc\">
+                                    ".$string."
+                                  
+                                    </div>
+                      <div class=\"cb-inf\">
+                        <i class=\"fa fa-user\"></i> ".$dt_blog_sma->dt_blog_create_by ." - ".($dt_blog_sma->dt_blog_by)."
+                                      
+                        <p class=\"cb-date\">
+                                        ".$dt_blog_sma->created_at."
+                                      </p>
+                      </div>
+                    </div>
+                  </a>";
 
         }
     } 
@@ -473,38 +465,44 @@ class PostController extends Controller
                                                ['dt_blog_title', 'LIKE', '%'.$search_admin.'%'],
                                                ['dt_blog_create_by','=',session('akses_email')]
                                                ])->orderBy('id', 'desc')->take(6)->get();
-        // return $data;
+        
         foreach ($data as $dt_blog_admin) {
             $string = strip_tags($dt_blog_admin->dt_blog_text);
 
             if (strlen($string) > 300) {
 
-                // truncate string
                 $stringCut = substr($string, 0, 300);
 
-                // make sure it ends in a word so assassinate doesn't become ass...
                 $string = substr($stringCut, 0, strrpos($stringCut, ' ')).'...';
             }
             echo 
                 "<div class=\"detail-news\">
-                <a href=".url('view/'.$dt_blog_admin->id).">
-                <div class=\"img-detail-news\">
-                  <img class=\"img-dn\" src=".url('images/'.$dt_blog_admin->cover_photo)." />
-                </div>
-                  <div class=\"title-detail-news\">
-                    ".$dt_blog_admin->dt_blog_title."
-                  </div>
-                  <div class=\"content-detail-news\">
-                  ".$string."
-                
-                  </div>
-                  </a>
-                  <div class=\"attr\">
-                  <hr/>
-                  <label><a href=".url('manage_post/edit_post/'.$dt_blog_admin->id)."> <i style=\"font-size:24px;margin-right:20px;\" class=\"fa fa-pencil-square-o\"></i> </a></label>
-                  <label><a href=".url('manage_post/delete_post/'.$dt_blog_admin->id)."> <i style=\"font-size:24px;color:rgb(202, 65, 65)\" class=\"fa fa-trash\"></i> </a></label>
-                </div>
-                </div>";
+                    <a href=".url('view/'.$dt_blog_admin->id).">
+                      <div class=\"img-detail-news\">
+                        <img class=\"img-dn\" src=".url('images/'.$dt_blog_admin->cover_photo)." />
+                      </div>
+                      <div class=\"title-detail-news\">
+                                      ".$dt_blog_admin->dt_blog_title."
+                                    </div>
+                      <div class=\"content-detail-news\">
+                                    ".$string."
+                                  
+                                    </div>
+                    </a>
+                    <div class=\"attr\">
+                      <hr/>
+                      <label>
+                        <a href=".url('manage_post/edit_post/'.$dt_blog_admin->id).">
+                          <i style=\"font-size:24px;margin-right:20px;\" class=\"fa fa-pencil-square-o\"></i>
+                        </a>
+                      </label>
+                      <label>
+                        <a href=".url('manage_post/delete_post/'.$dt_blog_admin->id).">
+                          <i style=\"font-size:24px;color:rgb(202, 65, 65)\" class=\"fa fa-trash\"></i>
+                        </a>
+                      </label>
+                    </div>
+                  </div>";
 
         }
     }
@@ -1213,7 +1211,7 @@ class PostController extends Controller
     public function exportxls_data_master_new_student()
     {
 
-      $new_student = \App\dt_reg::select('dt_reg.dt_reg_nama','dt_reg.dt_reg_th','dt_reg.dt_reg_unit','dt_reg.dt_reg_kelas','dt_reg.dt_reg_gender','dt_reg.dt_reg_tempat_lahir','dt_reg.dt_reg_tgl_lahir','dt_reg.dt_reg_agama','dt_reg.dt_reg_asal_sekolah','dt_reg.dt_reg_alamat','dt_reg.dt_reg_bpk_nama','dt_reg.dt_reg_ibu_nama','dt_reg.dt_reg_bpk_telp','dt_reg.dt_reg_bpk_email','dt_reg.dt_reg_code','dt_reg.dt_reg_status_code')->get()->toArray();
+      $new_student = \App\dt_reg::select('dt_reg.dt_reg_nama','dt_reg.dt_reg_nama_panggilan','dt_reg.dt_reg_th','dt_reg.dt_reg_unit','dt_reg.dt_reg_no','dt_reg_code','dt_reg.dt_reg_kelas','dt_reg.dt_reg_gender','dt_reg.dt_reg_nik','dt_reg.dt_reg_nisn','dt_reg.dt_reg_tempat_lahir','dt_reg.dt_reg_tgl_lahir','dt_reg.dt_reg_agama','dt_reg.dt_reg_asal_sekolah','dt_reg_telp','dt_reg_hp','dt_reg.dt_reg_alamat','dt_reg.dt_reg_alamat_dusun','dt_reg.dt_reg_alamat_rt','dt_reg.dt_reg_alamat_rw','dt_reg.dt_reg_alamat_kodepos','dt_reg.dt_reg_alamat_kel','dt_reg.dt_reg_alamat_kec','dt_reg.dt_reg_alamat_kab','dt_reg.dt_reg_alamat_prov','dt_reg.dt_reg_jenis_tinggal','dt_reg.dt_reg_alat_transport','dt_reg.dt_reg_jarak_kesekolah','dt_reg.dt_reg_waktu_tempuh','dt_reg.dt_reg_kps','dt_reg.dt_reg_no_kps','dt_reg.dt_reg_bpk_nama','dt_reg.dt_reg_bpk_tempat_lahir','dt_reg.dt_reg_bpk_tgl_lahir','dt_reg.dt_reg_bpk_agama','dt_reg.dt_reg_bpk_pekerjaan','dt_reg.dt_reg_bpk_pendidikan','dt_reg.dt_reg_bpk_telp','dt_reg.dt_reg_bpk_email','dt_reg.dt_reg_bpk_hasil','dt_reg.dt_reg_ibu_nama','dt_reg.dt_reg_ibu_tempat_lahir','dt_reg.dt_reg_ibu_tgl_lahir','dt_reg.dt_reg_ibu_agama','dt_reg.dt_reg_ibu_pekerjaan','dt_reg.dt_reg_ibu_pendidikan','dt_reg.dt_reg_ibu_telp','dt_reg.dt_reg_ibu_email','dt_reg.dt_reg_ibu_hasil','dt_reg.dt_reg_wali_nama','dt_reg.dt_reg_wali_tempat_lahir','dt_reg.dt_reg_wali_tgl_lahir','dt_reg.dt_reg_wali_agama','dt_reg.dt_reg_wali_pekerjaan','dt_reg.dt_reg_wali_pendidikan','dt_reg.dt_reg_wali_telp','dt_reg.dt_reg_wali_email','dt_reg.dt_reg_wali_hasil','dt_reg.dt_reg_anak_ke','dt_reg.dt_reg_jml_saudara','dt_reg.dt_reg_tb','dt_reg.dt_reg_bb','dt_reg.dt_reg_goldar','dt_reg.dt_reg_abk','dt_reg.dt_reg_ket_abk','dt_reg.dt_reg_ket_masuk','dt_reg.dt_reg_code','dt_reg.dt_reg_status_code')->get()->toArray();
       return \Excel::create('Master New Student', function($excel) use ($new_student)
       {
           $excel->sheet('mySheet', function($sheet) use ($new_student)
@@ -1227,7 +1225,7 @@ class PostController extends Controller
         public function exportxlsx_data_master_new_student()
     {
 
-      $new_student = \App\dt_reg::select('dt_reg.dt_reg_nama','dt_reg.dt_reg_th','dt_reg.dt_reg_unit','dt_reg.dt_reg_kelas','dt_reg.dt_reg_gender','dt_reg.dt_reg_tempat_lahir','dt_reg.dt_reg_tgl_lahir','dt_reg.dt_reg_agama','dt_reg.dt_reg_asal_sekolah','dt_reg.dt_reg_alamat','dt_reg.dt_reg_bpk_nama','dt_reg.dt_reg_ibu_nama','dt_reg.dt_reg_bpk_telp','dt_reg.dt_reg_bpk_email','dt_reg.dt_reg_code','dt_reg.dt_reg_status_code')->get()->toArray();
+      $new_student = \App\dt_reg::select('dt_reg.dt_reg_nama','dt_reg.dt_reg_nama_panggilan','dt_reg.dt_reg_th','dt_reg.dt_reg_unit','dt_reg.dt_reg_no','dt_reg_code','dt_reg.dt_reg_kelas','dt_reg.dt_reg_gender','dt_reg.dt_reg_nik','dt_reg.dt_reg_nisn','dt_reg.dt_reg_tempat_lahir','dt_reg.dt_reg_tgl_lahir','dt_reg.dt_reg_agama','dt_reg.dt_reg_asal_sekolah','dt_reg_telp','dt_reg_hp','dt_reg.dt_reg_alamat','dt_reg.dt_reg_alamat_dusun','dt_reg.dt_reg_alamat_rt','dt_reg.dt_reg_alamat_rw','dt_reg.dt_reg_alamat_kodepos','dt_reg.dt_reg_alamat_kel','dt_reg.dt_reg_alamat_kec','dt_reg.dt_reg_alamat_kab','dt_reg.dt_reg_alamat_prov','dt_reg.dt_reg_jenis_tinggal','dt_reg.dt_reg_alat_transport','dt_reg.dt_reg_jarak_kesekolah','dt_reg.dt_reg_waktu_tempuh','dt_reg.dt_reg_kps','dt_reg.dt_reg_no_kps','dt_reg.dt_reg_bpk_nama','dt_reg.dt_reg_bpk_tempat_lahir','dt_reg.dt_reg_bpk_tgl_lahir','dt_reg.dt_reg_bpk_agama','dt_reg.dt_reg_bpk_pekerjaan','dt_reg.dt_reg_bpk_pendidikan','dt_reg.dt_reg_bpk_telp','dt_reg.dt_reg_bpk_email','dt_reg.dt_reg_bpk_hasil','dt_reg.dt_reg_ibu_nama','dt_reg.dt_reg_ibu_tempat_lahir','dt_reg.dt_reg_ibu_tgl_lahir','dt_reg.dt_reg_ibu_agama','dt_reg.dt_reg_ibu_pekerjaan','dt_reg.dt_reg_ibu_pendidikan','dt_reg.dt_reg_ibu_telp','dt_reg.dt_reg_ibu_email','dt_reg.dt_reg_ibu_hasil','dt_reg.dt_reg_wali_nama','dt_reg.dt_reg_wali_tempat_lahir','dt_reg.dt_reg_wali_tgl_lahir','dt_reg.dt_reg_wali_agama','dt_reg.dt_reg_wali_pekerjaan','dt_reg.dt_reg_wali_pendidikan','dt_reg.dt_reg_wali_telp','dt_reg.dt_reg_wali_email','dt_reg.dt_reg_wali_hasil','dt_reg.dt_reg_anak_ke','dt_reg.dt_reg_jml_saudara','dt_reg.dt_reg_tb','dt_reg.dt_reg_bb','dt_reg.dt_reg_goldar','dt_reg.dt_reg_abk','dt_reg.dt_reg_ket_abk','dt_reg.dt_reg_ket_masuk','dt_reg.dt_reg_code','dt_reg.dt_reg_status_code')->get()->toArray();
       return \Excel::create('Master New Student', function($excel) use ($new_student)
       {
           $excel->sheet('mySheet', function($sheet) use ($new_student)
@@ -1241,7 +1239,7 @@ class PostController extends Controller
         public function exportcsv_data_master_new_student()
     {
 
-      $new_student = \App\dt_reg::select('dt_reg.dt_reg_nama','dt_reg.dt_reg_th','dt_reg.dt_reg_unit','dt_reg.dt_reg_kelas','dt_reg.dt_reg_gender','dt_reg.dt_reg_tempat_lahir','dt_reg.dt_reg_tgl_lahir','dt_reg.dt_reg_agama','dt_reg.dt_reg_asal_sekolah','dt_reg.dt_reg_alamat','dt_reg.dt_reg_bpk_nama','dt_reg.dt_reg_ibu_nama','dt_reg.dt_reg_bpk_telp','dt_reg.dt_reg_bpk_email','dt_reg.dt_reg_code','dt_reg.dt_reg_status_code')->get()->toArray();
+      $new_student = \App\dt_reg::select('dt_reg.dt_reg_nama','dt_reg.dt_reg_nama_panggilan','dt_reg.dt_reg_th','dt_reg.dt_reg_unit','dt_reg.dt_reg_no','dt_reg_code','dt_reg.dt_reg_kelas','dt_reg.dt_reg_gender','dt_reg.dt_reg_nik','dt_reg.dt_reg_nisn','dt_reg.dt_reg_tempat_lahir','dt_reg.dt_reg_tgl_lahir','dt_reg.dt_reg_agama','dt_reg.dt_reg_asal_sekolah','dt_reg_telp','dt_reg_hp','dt_reg.dt_reg_alamat','dt_reg.dt_reg_alamat_dusun','dt_reg.dt_reg_alamat_rt','dt_reg.dt_reg_alamat_rw','dt_reg.dt_reg_alamat_kodepos','dt_reg.dt_reg_alamat_kel','dt_reg.dt_reg_alamat_kec','dt_reg.dt_reg_alamat_kab','dt_reg.dt_reg_alamat_prov','dt_reg.dt_reg_jenis_tinggal','dt_reg.dt_reg_alat_transport','dt_reg.dt_reg_jarak_kesekolah','dt_reg.dt_reg_waktu_tempuh','dt_reg.dt_reg_kps','dt_reg.dt_reg_no_kps','dt_reg.dt_reg_bpk_nama','dt_reg.dt_reg_bpk_tempat_lahir','dt_reg.dt_reg_bpk_tgl_lahir','dt_reg.dt_reg_bpk_agama','dt_reg.dt_reg_bpk_pekerjaan','dt_reg.dt_reg_bpk_pendidikan','dt_reg.dt_reg_bpk_telp','dt_reg.dt_reg_bpk_email','dt_reg.dt_reg_bpk_hasil','dt_reg.dt_reg_ibu_nama','dt_reg.dt_reg_ibu_tempat_lahir','dt_reg.dt_reg_ibu_tgl_lahir','dt_reg.dt_reg_ibu_agama','dt_reg.dt_reg_ibu_pekerjaan','dt_reg.dt_reg_ibu_pendidikan','dt_reg.dt_reg_ibu_telp','dt_reg.dt_reg_ibu_email','dt_reg.dt_reg_ibu_hasil','dt_reg.dt_reg_wali_nama','dt_reg.dt_reg_wali_tempat_lahir','dt_reg.dt_reg_wali_tgl_lahir','dt_reg.dt_reg_wali_agama','dt_reg.dt_reg_wali_pekerjaan','dt_reg.dt_reg_wali_pendidikan','dt_reg.dt_reg_wali_telp','dt_reg.dt_reg_wali_email','dt_reg.dt_reg_wali_hasil','dt_reg.dt_reg_anak_ke','dt_reg.dt_reg_jml_saudara','dt_reg.dt_reg_tb','dt_reg.dt_reg_bb','dt_reg.dt_reg_goldar','dt_reg.dt_reg_abk','dt_reg.dt_reg_ket_abk','dt_reg.dt_reg_ket_masuk','dt_reg.dt_reg_code','dt_reg.dt_reg_status_code')->get()->toArray();
       return \Excel::create('Master New Student', function($excel) use ($new_student)
       {
           $excel->sheet('mySheet', function($sheet) use ($new_student)
