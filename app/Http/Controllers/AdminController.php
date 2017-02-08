@@ -1730,8 +1730,7 @@ public function admin(Request $request)
         $post->dt_reg_status_code = "disable";
         $post->dt_reg_code = $code;
 
-        $dt_reg_photo = $_FILES['dt_reg_photo']['tmp_name'];
-        $size = filesize($dt_reg_photo);
+        $size = $_FILES['dt_reg_photo']['size'];
         if($size<=2048000){
          if(Input::hasFile('dt_reg_photo')){
             $dt_reg_photo = date("YmdHis")
