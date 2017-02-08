@@ -1731,7 +1731,7 @@ public function admin(Request $request)
         $post->dt_reg_code = $code;
 
         $size = $_FILES['dt_reg_photo']['size'];
-        if($size<=2048000){
+        if(($size<=2048000) && ($size!=0)){
          if(Input::hasFile('dt_reg_photo')){
             $dt_reg_photo = date("YmdHis")
             .uniqid()
