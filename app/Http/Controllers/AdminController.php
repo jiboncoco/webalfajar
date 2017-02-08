@@ -1751,10 +1751,10 @@ public function admin(Request $request)
 
 
         $post2->save();
-        // dd($size);
+        dd($size);
         return redirect()->back()->with('status', 'Registration Succes !')->with('code',$code);
     }else {
-        // dd($size);
+        dd($size);
         return redirect()->back()->with('error', 'Failed to register! Do not upload images that are larger than 2 mb!')->with('code',$code);
     }
 }
