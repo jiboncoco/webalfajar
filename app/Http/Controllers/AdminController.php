@@ -1658,7 +1658,7 @@ public function admin(Request $request)
         return $randomString;
     }
 
-    public function registration_student()
+    public function registration_student(Request $request)
     {
         $code = $this->generateRandomString($length = 8);
         $post = new \App\dt_reg;
@@ -1729,6 +1729,10 @@ public function admin(Request $request)
         $post->dt_reg_wali_hasil = Input::get('dt_reg_wali_hasil');
         $post->dt_reg_status_code = "disable";
         $post->dt_reg_code = $code;
+
+        $dt_reg_photo = $_FILES['dt_reg_photo']['tmp_name'];
+        $size = filesize($dt_reg_photo);
+        if($size<=2048000){
          if(Input::hasFile('dt_reg_photo')){
             $dt_reg_photo = date("YmdHis")
             .uniqid()
@@ -1747,9 +1751,13 @@ public function admin(Request $request)
 
 
         $post2->save();
-
+        // dd($size);
         return redirect()->back()->with('status', 'Registration Succes !')->with('code',$code);
+    }else {
+        // dd($size);
+        return redirect()->back()->with('error', 'Failed to register! Do not upload images that are larger than 2 mb!')->with('code',$code);
     }
+}
 
     public function cekabsen()
     {

@@ -789,7 +789,6 @@
     </select>
     </div>
     </div>
-
     <div class="form-group row">
     <label for="inputPassword3" class="col-sm-2 form-control-label">Pas Foto Siswa (3 x 4)</label>
     <div class="col-sm-3">
@@ -885,6 +884,11 @@
                 <a data-toggle="modal" data-target="#myModalinfo" href="#">
                 <button style="border:none;margin-top:-5px;margin-left:10px;padding: 10px;background-color: #d22626;" type="button" class="btn btn-success" data-dismiss="modal">Click Here</button>
                 </a>
+            </div>
+        @endif
+@if (session('error'))
+            <div style="font-size: 25px;" class="alert alert-danger">
+                {{ session('error') }}
             </div>
         @endif
 
